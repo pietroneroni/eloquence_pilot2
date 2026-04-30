@@ -1,0 +1,167 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+import faiss
+import numpy as np
+from sentence_transformers import SentenceTransformer
+
+
+def _norm(s: str) -> str:
+    return (s or "").casefold().strip()
+
+def _norm_macro(s: str) -> str:
+    x = _norm(s)
+    aliases = {
+        "north": "nord",
+        "northern italy": "nord",
+        "center": "centro",
+        "centre": "centro",
+        "central italy": "centro",
+        "south": "sud",
+        "southern italy": "sud",
+        "islands": "isole",
+        "the italian islands": "isole",
+    }
+    return aliases.get(x, x)
+
+class RAGRetriever:
+    def __init__(
+        self,
+        *,
+        faiss_path: str | None = None,
+        chunks_path: str | None = None,
+        embed_model: str = "intfloat/multilingual-e5-base",
+    ) -> None:
+        project_root = Path(__file__).resolve().parents[1]
+
+        base = project_root / "RAG_University" / "Embeddings"
+        faiss_path = faiss_path or str(base / "rag.index.faiss")
+        chunks_path = chunks_path or str(base / "rag.chunks.jsonl")
+
+        self.faiss_path = faiss_path
+        self.chunks_path = chunks_path
+        self.model = SentenceTransformer(embed_model)
+
+        fp = Path(self.faiss_path)
+        cp = Path(self.chunks_path)
+
+        if not fp.exists():
+            raise FileNotFoundError(f"FAISS index not found: {fp.resolve()} (cwd={Path.cwd()})")
+        if not cp.exists():
+            raise FileNotFoundError(f"Chunks file not found: {cp.resolve()} (cwd={Path.cwd()})")
+
+        self.index = faiss.read_index(str(fp))
+
+        self.chunks: list[dict[str, Any]] = []
+        with open(cp, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    self.chunks.append(json.loads(line))
+
+    def search(
+            self,
+            query: str,
+            *,
+            top_k: int = 5,
+            university: str | None = None,
+            course_contains: str | None = None,
+            section_contains: str | None = None,
+            preferred_region: str | None = None,
+            preferred_macroarea: str | None = None,
+            dedupe_by_course: bool = True,
+    ) -> list[dict[str, Any]]:
+        q = (query or "").strip()
+        if not q:
+            return []
+
+        q = f"query: {q}"
+
+        uni_f = _norm(university) if university else ""
+        course_f = _norm(course_contains) if course_contains else ""
+        section_f = _norm(section_contains) if section_contains else ""
+        pref_region = _norm(preferred_region) if preferred_region else ""
+        pref_macro = _norm_macro(preferred_macroarea) if preferred_macroarea else ""
+
+        emb = self.model.encode([q], normalize_embeddings=True)
+        emb = np.asarray(emb, dtype="float32")
+
+        fetch_k = min(max(top_k * 30, 100), len(self.chunks))
+        scores, idx = self.index.search(emb, fetch_k)
+
+        hits: list[dict[str, Any]] = []
+
+        for s, i in zip(scores[0], idx[0]):
+            if i < 0:
+                continue
+
+            item = self.chunks[int(i)]
+            meta = item.get("meta") or {}
+            text = item.get("text") or ""
+
+            university_name = _norm(str(meta.get("UNIVERSITY", "")))
+            course_name = _norm(str(meta.get("COURSE", "")))
+            course_code = _norm(str(meta.get("COURSE_CODE", "")))
+            section_name = _norm(str(meta.get("SECTION", "")))
+            hit_region = _norm(str(meta.get("REGION", "")))
+            hit_macro = _norm_macro(str(meta.get("MACROAREA", "")))
+
+            if uni_f and uni_f not in university_name:
+                continue
+
+            if course_f and course_f not in course_name and course_f not in course_code:
+                continue
+
+            if section_f and section_f not in section_name:
+                continue
+
+            bonus = 0.0
+
+            if pref_region and hit_region == pref_region:
+                bonus += 0.15
+
+            if pref_macro and hit_macro == pref_macro:
+                bonus += 0.10
+
+            hits.append(
+                {
+                    "score": float(s) + bonus,
+                    "base_score": float(s),
+                    "text": text,
+                    "meta": meta,
+                    "id": item.get("id"),
+                    "rank_index": int(i),
+                }
+            )
+
+        if not hits:
+            return []
+
+        hits.sort(key=lambda x: x["score"], reverse=True)
+
+        if not dedupe_by_course:
+            return hits[:top_k]
+
+        deduped: list[dict[str, Any]] = []
+        seen_courses: set[str] = set()
+
+        for h in hits:
+            meta = h.get("meta") or {}
+            course_key = _norm(str(meta.get("COURSE_CODE") or meta.get("COURSE") or ""))
+
+            if not course_key:
+                course_key = _norm(str(h.get("text") or "")[:120])
+
+            if course_key in seen_courses:
+                continue
+
+            seen_courses.add(course_key)
+            deduped.append(h)
+
+            if len(deduped) >= top_k:
+                break
+
+        return deduped

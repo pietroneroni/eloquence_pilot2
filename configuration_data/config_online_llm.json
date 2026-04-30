@@ -1,0 +1,12 @@
+{
+    "url": "http://84.88.53.199:8080/query",
+    "llm_name": "gpt-3.5-turbo",
+    "task_config": "Basic",
+    "docs_k": 5,
+    "temp": 0.7,
+    "top_p": 0.9,
+    "max_tokens": 200,
+    "index_name": "Eloquence",
+    "retriever_address": "public",
+    "default_system_prompt": "You are an expert in artificial intelligence. Answer in a clear and educational way."
+}

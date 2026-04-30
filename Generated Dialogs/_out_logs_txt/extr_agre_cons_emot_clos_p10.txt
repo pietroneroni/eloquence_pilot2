@@ -1,0 +1,346 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 097eb77d-a59f-46dd-aebd-301b03444c12
+[complete] True
+[model] {'name': 'ollama:qwen3:30b', 'seed': 13, 'repeat_penalty': 1, 'temperature': 0.6, 'top_k': 20, 'top_p': 0.95}
+[seed] 12346
+--- Dialogue Begins ---
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): This is your FIRST message. - Present yourself as a student seeking guidance on choosing a university program. - Indicate your geographic location early (if available in your BACKGROUND). - If your BACKGROUND naturally supports identity cues (for example gender), you may express them indirectly and naturally. - Do NOT force explicit self-labeling or metadata-like phrasing. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - 2-4 sentences, natural. 
+[STUDENT] Hey! I'm a 19-year-old from the Italian islands, just finished high school at a Liceo Scientifico. I'm trying to pick a university program that mixes my interest in problem-solving with hands-on projects—any ideas on where to start?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GREET & ROLE TASK: - Greet the student. - State your role: you help students choose university programs based on background, interests, aptitudes, and constraints. - Then ask ONE question (verbatim): What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently? HIDDEN LISTENER TASK (STRICT): - After your student-visible reply, append ONE <LISTENER_PATCH> JSON block. - The patch must include ONLY the requested target fields. - If a field is unknown, omit it (do NOT guess). - Output valid JSON only inside the tags. TARGET FIELDS: - explicit.region - inferred.field_of_interest - inferred.gender RULES: Rules for explicit.region: - Store region only if the student explicitly mentions a macro-area of Italy. - Allowed values: north, center, south, islands. - Map 'Northern Italy' -> north, 'Central Italy' -> center, 'Southern Italy' -> south. - Do not infer region from cities, towns, provinces, or vague descriptions. Rules for inferred.field_of_interest: - Return field_of_interest as an ordered JSON array of 1 to 3 labels. - Labels must be distinct and ordered from strongest to weakest fit. - Choose labels only from this list: arts_design design communication_digital_media cultural_heritage humanities psychology cognitive_science_linguistics social_sciences biology environmental_science environmental_engineering computer_science - Pick the intended university area, not the current job. - Prefer concrete course-family areas over abstract hybrid concepts. - Community art, visual expression, art practice -> arts_design. - Art history, heritage, museums, cultural assets -> cultural_heritage. - Biology/science + art/design -> biology or arts_design; prefer the side stated as the intended study direction. - Tech + art/design/media -> communication_digital_media, design, or computer_science depending on emphasis. - Writing + psychology + storytelling -> psychology, cognitive_science_linguistics, or humanities depending on emphasis. - Environment/sustainability -> environmental_science; use environmental_engineering only if technical/engineering interest is explicit. - If only one label is clearly supported, return a one-item array. - If no label is clearly supported, omit the field. - If two areas are both clearly supported by the student's message, return both labels. Rules for inferred.gender: - Infer gender only if there is a clear cue in the student's message. - If there is no clear cue, omit the field. SCHEMA EXAMPLE: <LISTENER_PATCH>{"explicit":{"region":"<inferred region>"},"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>","<field_of_interest label 3>"],"gender":"<gender>"}}</LISTENER_PATCH> EVIDENCE: Use the student's FIRST message in this conversation. 
+[Listener memory | extracted from STUDENT turn 1]
+{
+  "explicit": {
+    "academic_background": null,
+    "region": "south",
+    "selected_option": null
+  },
+  "inferred": {
+    "field_of_interest": [
+      "computer_science"
+    ],
+    "gender": null,
+    "riasec_attitudes": null
+  }
+}
+
+[EXPERT] Hello! I help students choose university programs based on their background, interests, aptitudes, and constraints. What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Be natural and specific (1–3 sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] I just graduated high school from a Liceo Scientifico in the Italian islands, focusing on math, physics, and chemistry in my final year.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: ACQUIRE ACADEMIC BACKGROUND Reply naturally in 1–2 short sentences, then ask ONE question (verbatim): What subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.) 
+[EXPERT] Thanks, that helps. What subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.)
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Be natural and specific (1–3 sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] I really enjoy math and physics—they feel logical and solve real problems. Chemistry’s a bit tricky sometimes, but I’ve got strong grades in the others.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: ACQUIRE ACADEMIC BACKGROUND Reply naturally in 1–2 short sentences, then ask ONE question (verbatim): What are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)? 
+[EXPERT] Thanks, that helps. What are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Be natural and specific (1–3 sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] After graduation, I aim to work on hands-on projects like engineering or tech solutions, and I prefer staying in the islands for my studies. Budget is important, but I’m flexible as long as it’s practical.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GATHER APTITUDES (RIASEC) Ask the following question VERBATIM. Ask ONE question only. Do NOT add anything else. Do you like practical, hands-on work—building or repairing things? HIDDEN LISTENER TASK (STRICT): - After your student-visible reply, append ONE <LISTENER_PATCH> JSON block. - The patch must include ONLY the requested target fields. - If a field is unknown, omit it (do NOT guess). - Output valid JSON only inside the tags. TARGET FIELDS: - explicit.academic_background - inferred.field_of_interest - explicit.region RULES: - academic_background must summarize the student's current or most recent formal education. - Prefer explicit study level and school/program name when available. - Do NOT use jobs, hobbies, or goals as academic_background. Rules for inferred.field_of_interest: - Return field_of_interest as an ordered JSON array of 1 to 3 labels. - Labels must be distinct and ordered from strongest to weakest fit. - Choose labels only from this list: arts_design design communication_digital_media cultural_heritage humanities psychology cognitive_science_linguistics social_sciences biology environmental_science environmental_engineering computer_science - Pick the intended university area, not the current job. - Prefer concrete course-family areas over abstract hybrid concepts. - Community art, visual expression, art practice -> arts_design. - Art history, heritage, museums, cultural assets -> cultural_heritage. - Biology/science + art/design -> biology or arts_design; prefer the side stated as the intended study direction. - Tech + art/design/media -> communication_digital_media, design, or computer_science depending on emphasis. - Writing + psychology + storytelling -> psychology, cognitive_science_linguistics, or humanities depending on emphasis. - Environment/sustainability -> environmental_science; use environmental_engineering only if technical/engineering interest is explicit. - If only one label is clearly supported, return a one-item array. - If no label is clearly supported, omit the field. - If two areas are both clearly supported by the student's message, return both labels. - Update explicit.region ONLY if the student explicitly states one macro-area among North / Center / South / Islands. - Store region ONLY as: north, center, south, islands. - Do NOT infer region from city names or biography details. SCHEMA EXAMPLE: <LISTENER_PATCH>{"explicit":{"academic_background":"<short education summary>","region":"<north|center|south|islands>"},"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>","<field_of_interest label 3>"]}}</LISTENER_PATCH> EVIDENCE: Use the student's answers to the background questions already given in this conversation. 
+[Listener memory | extracted from STUDENT turn 4]
+{
+  "explicit": {
+    "academic_background": "Liceo Scientifico graduate",
+    "region": "islands",
+    "selected_option": null
+  },
+  "inferred": {
+    "field_of_interest": [
+      "computer_science"
+    ],
+    "gender": null,
+    "riasec_attitudes": null
+  }
+}
+
+[EXPERT] Do you like practical, hands-on work—building or repairing things?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Keep it brief and natural (1 sentence, or at most 2 short sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] Absolutely! I enjoy hands-on work like building and fixing things.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GATHER APTITUDES (RIASEC) Ask the following question VERBATIM. Ask ONE question only. Do NOT add anything else. Are you curious to understand how things work? 
+[EXPERT] Are you curious to understand how things work?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Keep it brief and natural (1 sentence, or at most 2 short sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] Definitely! I love figuring out how things work.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GATHER APTITUDES (RIASEC) Ask the following question VERBATIM. Ask ONE question only. Do NOT add anything else. Do you enjoy researching, analyzing problems, and reasoning logically? 
+[EXPERT] Do you enjoy researching, analyzing problems, and reasoning logically?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Keep it brief and natural (1 sentence, or at most 2 short sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] Yes, I love analyzing problems and working through logical solutions.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GATHER APTITUDES (RIASEC) Ask the following question VERBATIM. Ask ONE question only. Do NOT add anything else. Do you like expressing what you think or feel through creative forms (writing, art, music, design)? 
+[EXPERT] Do you like expressing what you think or feel through creative forms (writing, art, music, design)?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Keep it brief and natural (1 sentence, or at most 2 short sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] Not really, I prefer hands-on problem-solving over creative expression.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GATHER APTITUDES (RIASEC) Ask the following question VERBATIM. Ask ONE question only. Do NOT add anything else. Do you like experimenting and creating new things? 
+[EXPERT] Do you like experimenting and creating new things?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Keep it brief and natural (1 sentence, or at most 2 short sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] Yes, I love experimenting and creating new solutions through hands-on problem-solving.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GATHER APTITUDES (RIASEC) Ask the following question VERBATIM. Ask ONE question only. Do NOT add anything else. Do you like working closely with people and having a supportive/helping role? 
+[EXPERT] Do you like working closely with people and having a supportive/helping role?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Keep it brief and natural (1 sentence, or at most 2 short sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] Yes, I enjoy collaborating and supporting team goals in practical projects.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GATHER APTITUDES (RIASEC) Ask the following question VERBATIM. Ask ONE question only. Do NOT add anything else. Do you like proposing ideas and organizing projects? 
+[EXPERT] Do you like proposing ideas and organizing projects?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Keep it brief and natural (1 sentence, or at most 2 short sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] Yes, I enjoy proposing ideas and organizing projects to solve practical problems.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: GATHER APTITUDES (RIASEC) Ask the following question VERBATIM. Ask ONE question only. Do NOT add anything else. Do you like having everything organized and under control? 
+[EXPERT] Do you like having everything organized and under control?
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Reply as the student to the counselor's last message. - Answer ONLY the counselor's question directly, in English. - Use ONLY details consistent with your BACKGROUND and PERSONAL RULES. - Keep it brief and natural (1 sentence, or at most 2 short sentences). - Do NOT ask any question. - Do NOT restart the conversation. - Do NOT include any meta-commentary. 
+[STUDENT] Yes, I prefer everything organized and under control to stay focused on practical goals.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: ADVICE STUDENT PROFILE: - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - intended_level: bachelor - region: islands - riasec_attitudes: unknown CANDIDATE OPTIONS (already filtered for basic compatibility): - Option 1: University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - Option 2: University of Salerno | [05121] COMPUTER SCIENCE OPTION METADATA: - Option 1: macro_area=islands; university=University of Messina - Option 2: macro_area=south; university=University of Salerno RAG_CONTEXT FOR THE CANDIDATE OPTIONS (paraphrase only; do not copy markers/IDs): UNIVERSITÀ: University of Messina CORSO: [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY UNIVERSITY: University of Messina COURSE: [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY SECTION: General description URL: https://unime.coursecatalogue.cineca.it/corsi/2024/10047/insegnamenti/1?schemaid=12237 COURSE_CODE: 9215 COURSE_NAME: COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY REGION: Sicilia MACROAREA: isole [9215] COMPUTER SCIENCE - Bachelor's Degree - English/Italian - INFORMATION TECHNOLOGY --- UNIVERSITÀ: University of Salerno CORSO: [05121] COMPUTER SCIENCE TIPO: Bachelor's Degree UNIVERSITY: University of Salerno COURSE: [05121] COMPUTER SCIENCE TYPE: Bachelor's Degree SECTION: General Description URL: https://unisa.coursecatalogue.cineca.it/corsi/2024/500153/insegnamenti/9999?schemaid=17309 COURSE_CODE: 05121 COURSE_NAME: COMPUTER SCIENCE REGION: Campania MACROAREA: sud [05121] COMPUTER SCIENCE BACHELOR'S DEGREE INTERNAL RIASEC STEP (do not show): - Infer the student's top 3 RIASEC labels from the 8 RIASEC answers in the conversation. - Use those inferred labels when ranking the candidate options. - The RIASEC labels used for ranking MUST be the same labels emitted in <LISTENER_PATCH>. - Do not use any heuristic or fixed scoring; infer from the student's natural-language answers. TASK: - Use ONLY the options listed in CANDIDATE OPTIONS. - These options are already filtered for basic compatibility, deduplicated, and cleaned. - The candidate options are not necessarily ordered. - Rank them using the student profile, including the inferred RIASEC labels. - Use the student profile to decide the ranking. - Prefer matches with the FIRST field_of_interest label over matches with later labels. - Region is a soft preference unless the student explicitly states they cannot relocate or must stay in one area. - Do NOT reject a stronger academic/profile fit only because it is outside the student's preferred area. - Prefer same-area options only when field fit, level fit, goals, and RIASEC fit are comparable. - Do NOT invent new programs, universities, course details, rankings, or explanations. - Return up to 3 options, only if they are genuinely plausible. - If no candidate is a plausible fit, state that no grounded option is available. OUTPUT RULES: - Output ONLY the final 3 options. - Use the exact option text from CANDIDATE OPTIONS. - Do not add explanations, comments, headers, bullets, or extra prose. - Output format must be EXACTLY: 1. <exact option text> 2. <exact option text> 3. <exact option text> Final line: "Choose one option by number." HIDDEN LISTENER TASK (STRICT): - After your student-visible reply, append ONE <LISTENER_PATCH> JSON block. - The patch must include ONLY the requested target fields. - If a field is unknown, omit it (do NOT guess). - Output valid JSON only inside the tags. TARGET FIELDS: - inferred.riasec_attitudes - inferred.gender RULES: Use only the student's answers to the 8 RIASEC questions. Return ONE JSON object inside <LISTENER_PATCH> ... </LISTENER_PATCH>. Return only the requested fields. Do not guess from the student's biography, job, or background. Allowed labels: - Realistic - Investigative - Artistic - Social - Enterprising - Conventional Map each question mainly to one label: - practical, hands-on work -> Realistic - curious to understand how things work -> Investigative - researching, analyzing, logical reasoning -> Investigative - creative expression -> Artistic - experimenting and creating new things -> Artistic or Enterprising - helping and supporting people -> Social - proposing ideas and organizing projects -> Enterprising - keeping everything organized and under control -> Conventional Rules: - Return exactly 3 distinct labels, ordered from strongest to weakest. - Positive answers support the matching label. - Negative answers weaken that label. - Do not include a label if the student clearly rejected it unless other answers strongly support it. Rules for inferred.gender: - For gender, use the student's full conversation, especially the first message and any self-reference cues. SCHEMA EXAMPLE: <LISTENER_PATCH>{"inferred":{"riasec_attitudes":["<top_trait>","<second_trait>","<third_trait>"],"gender":"<gender>"}}</LISTENER_PATCH> EVIDENCE: Use the student's answers to the 8 RIASEC questions in this conversation. 
+[Listener memory | extracted from STUDENT turn 12]
+{
+  "explicit": {
+    "academic_background": "Liceo Scientifico graduate",
+    "region": "islands",
+    "selected_option": null
+  },
+  "inferred": {
+    "field_of_interest": [
+      "computer_science"
+    ],
+    "gender": null,
+    "riasec_attitudes": [
+      "Investigative",
+      "Realistic",
+      "Enterprising"
+    ]
+  }
+}
+
+[EXPERT] 1. University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY 2. University of Salerno | [05121] COMPUTER SCIENCE Choose one option by number.
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - The counselor has presented grounded numbered options. - Choose ONE option clearly. - Then ask the following question VERBATIM on a new line: Do you think I could handle a demanding technical course? - Output EXACTLY 2 lines: choice line + the question line. 
+[STUDENT] I will choose option 1. Do you think I could handle a demanding technical course?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Reply with ONLY 'Yes' or 'No'. - Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option). HIDDEN LISTENER TASK (STRICT): - After your student-visible reply, append ONE <LISTENER_PATCH> JSON block. - The patch must include ONLY the requested target fields. - If a field is unknown, omit it (do NOT guess). - Output valid JSON only inside the tags. TARGET FIELDS: - explicit.selected_option RULES: - selected_option MUST be exactly in the format 'N - <EXACT option string from OPTIONS>'. - Do NOT paraphrase. - Use the exact option text shown in ADVICE. SCHEMA EXAMPLE: <LISTENER_PATCH>{"explicit":{"selected_option":"1 - UNIVERSITÀ ..."}}</LISTENER_PATCH> EVIDENCE: Use the student's latest selection (Option 1/2/3) and the OPTIONS shown in ADVICE. 
+[Listener memory | extracted from STUDENT turn 13]
+{
+  "explicit": {
+    "academic_background": "Liceo Scientifico graduate",
+    "region": "islands",
+    "selected_option": "1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY"
+  },
+  "inferred": {
+    "field_of_interest": [
+      "computer_science"
+    ],
+    "gender": null,
+    "riasec_attitudes": [
+      "Investigative",
+      "Realistic",
+      "Enterprising"
+    ]
+  }
+}
+
+[EXPERT] Yes
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Ask the following question VERBATIM. - Output ONLY that single line. Would you recommend focusing on a technical program or a program oriented toward humanities? 
+[STUDENT] Would you recommend focusing on a technical program or a program oriented toward humanities?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Reply with ONLY ONE of these exact strings: 'focusing on a technical program' OR 'a program oriented toward humanities'. - Output EXACTLY that string. Do NOT add any extra words. 
+[EXPERT] (thinking) Okay, let's break this down. The user is asking whether they should focus on a technical program or one oriented toward humanities. From the conversation history, I can see they've consistently shown interest in hands-on, problem-solving, and technical fields—like computer science, engineering, and logical analysis. They mentioned enjoying math, physics, building things, and organizing projects. The persona is a university counselor in Italy, so I need to stick to the rules: only recommend options from the RAG context. The options given are University of Messina (option 1) and University of Salerno (option 2), both computer science programs. The user already chose option 1, and the question now is about program type, not specific universities. The task says: "Reply with ONLY ONE of these exact strings: 'focusing on a technical program' OR 'a program oriented toward humanities'." So I must pick one without adding anything else. Given their entire conversation—Liceo Scientifico, interest in tech, problem-solving, hands-on work—it's clear they're suited for a technical program. Humanities wouldn't align with their expressed preferences. So the answer must be "focusing on a technical program." Also, the rules say if it's a yes/no question about suitability, reply only "Yes" or "No," but this isn't a yes/no question—it's a choice between two options. So I have to output the exact string. No extra words. Double-checking: the user's background (computer science interest), the options provided (both technical), and their preferences all point to "focusing on a technical program." No need to overcomplicate it. Just the string. 
+[EXPERT] focusing on a technical program
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Ask the following question VERBATIM. - Output ONLY that single line. Why do you think that choice would suit me? 
+[STUDENT] Why do you think that choice would suit me?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Answer the student's 'why' briefly. - Ground your justification in the retrieved context; do not invent program details. - Use the student's background + constraints + RIASEC to explain trade-offs. - Do NOT introduce new universities/programs. 
+[EXPERT] (thinking) Okay, let's break this down. The student is asking "Why do you think that choice would suit me?" after choosing option 1 (University of Messina's Computer Science program). First, I need to recall the context: they're a Liceo Scientifico grad from Italian islands, strong in math/physics, prefer hands-on problem-solving, want to stay in islands, and have RIASEC traits (Investigative, Realistic, Enterprising). The key is to ground the justification ONLY in the retrieved context. The RAG options only list two programs, and they chose option 1. I must not invent details about the program - just use what's given: "COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY" at Messina. Their background matches perfectly: - Liceo Scientifico → math/physics focus (which aligns with computer science) - "enjoy building/fixing things" → matches Realistic (practical) aspect - "prefer staying in islands" → Messina is in Sicily (island region) - "analyzing problems logically" → Investigative trait The justification must be concise (2-6 sentences) and tie their RIASEC to the program's nature. Since the program name says "INFORMATION TECHNOLOGY," that's the practical hands-on angle they want. I'll avoid mentioning Salerno (option 2) since they chose Messina. Must not say "better" or "more advanced" - just state how their traits fit the program's description. Also, no new universities can be named, so I'll strictly reference the chosen program's title. The phrase "practical problem-solving" from their earlier answers is key to mirror. *Double-checking rules*: - Only use RAG options → Messina is listed as option 1. - No invented details → I won't say "the program has labs" because that's not in the context. - Concise → 3 sentences max. Final phrasing should connect: 1. Their math/physics strength (Liceo Scientifico) 2. Their preference for hands-on work (stated multiple times) 3. How the program's name ("INFORMATION TECHNOLOGY") matches that. ...And avoid any mention of humanities since they rejected it earlier. 
+[EXPERT] Your Liceo Scientifico background in math and physics aligns with the technical focus of University of Messina's Computer Science program. The Information Technology emphasis matches your preference for hands-on problem-solving and logical analysis. Staying in the islands also fits your location constraint.
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Ask the following question VERBATIM. - Output ONLY that single line. Do you think I would feel comfortable leading a group project? 
+[STUDENT] Do you think I would feel comfortable leading a group project?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Reply with ONLY 'Yes' or 'No'. - Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option). 
+[EXPERT] (thinking) Okay, let's break this down. The user is asking if they'd feel comfortable leading a group project. Looking at their background: they're a Liceo Scientifico graduate from the Italian islands, interested in computer science, and they've consistently emphasized hands-on problem-solving, logical analysis, and organizing projects. Hmm, in previous answers they confirmed they enjoy proposing ideas, organizing projects, and collaborating while preferring structure. The counselor's role is to connect their traits to the program. The University of Messina's Computer Science program (option 1) includes practical IT work—exactly their preferred hands-on approach. Their RIASEC scores (Investigative, Realistic, Enterprising) directly match leadership in technical teams. No need to overcomplicate: their own answers already show they thrive in organized, solution-focused group settings. The counselor's response should mirror this confidence without adding new info. ...Wait, the rules say "only name items from RAG_CONTEXT." But this is a yes/no/why question, not a recommendation. The answer must be concise and based solely on their stated preferences. *Double-checks*: Yes, they said "enjoy collaborating and supporting team goals" and "organizing projects." So leading would logically follow. No hidden details needed—just reflect their own words back. *Final check*: The response must be 2-6 sentences. "Yes, your experience organizing projects and enjoying collaborative problem-solving aligns with leading technical teams in the Messina program." → Exactly 2 sentences, uses their exact phrases, and ties to the chosen program. Perfect. 
+[EXPERT] Yes
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Ask the following question VERBATIM. - Output ONLY that single line. Would you suggest I take a leadership role now or focus on supporting tasks first? 
+[STUDENT] Would you suggest I take a leadership role now or focus on supporting tasks first?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Reply with ONLY ONE of these exact strings: 'take a leadership role now' OR 'focus on supporting tasks first'. - Output EXACTLY that string. Do NOT add any extra words. 
+[EXPERT] (thinking) Okay, the user is asking whether they should take a leadership role now or focus on supporting tasks first in their university program. Let me recall the context. They're a 19-year-old from the Italian islands who just graduated from Liceo Scientifico with a strong interest in computer science, hands-on projects, and problem-solving. They've expressed enjoyment in collaborating, organizing projects, and preferring structured environments. Their chosen program is University of Messina's Computer Science (option 1), which aligns with their technical interests. The persona is a university counselor who must follow strict rules: respond concisely (2-6 sentences), ask only one question at a time, and only recommend options from the provided list. The last question was about leadership vs supporting tasks, and the instructions say to reply with exactly one of two phrases: "take a leadership role now" or "focus on supporting tasks first." Looking at the user's history, they've shown confidence in organizing projects ("enjoy proposing ideas and organizing projects") and handling logical analysis. They also said they prefer "everything organized and under control," which suggests readiness for leadership. The counselor's previous answer was "Yes" to whether they'd feel comfortable leading, so the recommendation should align with that confidence. The rules state: for yes/no questions about suitability, reply ONLY 'Yes' or 'No'. But this is a choice between two options, so the response must be exactly one of the two phrases. The user's profile shows they're proactive ("enjoy organizing projects"), so "take a leadership role now" fits better than waiting to support. No other options exist in the RAG context, so the answer must be one of the two given. Based on their expressed strengths, "take a leadership role now" is appropriate. The counselor must not add anything else—just the exact phrase. 
+[EXPERT] take a leadership role now
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Ask the following question VERBATIM. - Output ONLY that single line. Why do you think one option is more suitable for me? 
+[STUDENT] Why do you think one option is more suitable for me?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Answer the student's 'why' briefly. - Ground your justification in the retrieved context; do not invent program details. - Use the student's background + constraints + RIASEC to explain trade-offs. - Do NOT introduce new universities/programs. 
+[EXPERT] (thinking) Okay, let's break this down. The student is asking why one option (University of Messina's Computer Science program) is more suitable for them. I need to stick strictly to the provided context and not invent anything. Looking back at the conversation history, the student has consistently shown interest in hands-on problem-solving, logical analysis, and technical fields. Their background is Liceo Scientifico with strong math and physics grades, and they prefer staying in the islands. The RIASEC codes mentioned earlier were Investigative, Realistic, Enterprising - which all point toward technical and hands-on work. The key points to connect are: - Liceo Scientifico (math/physics focus) matches the technical program - The program's Information Technology emphasis aligns with their hands-on preference - Staying in islands is a constraint they've emphasized - Their RIASEC profile (Investigative/Realistic) fits technical work I must avoid mentioning anything not in the RAG context. The program name and code are already established as option 1. The response should be concise (2-6 sentences) and only reference what's in the retrieved context. The previous answer about suitability already covered the main points, so this should be a tighter version focusing on the direct connections: background → program focus → their stated preferences. No need to repeat the location constraint since it's already been established as important to them. Also need to remember the rules: only name items that appear in RAG_CONTEXT (which is just the Messina program), and keep it to 2-6 sentences. The "why" question requires grounding in their specific background and the program's actual description. So the core justification is: their Liceo Scientifico math/physics background directly matches the technical requirements of Messina's Computer Science program, and the Information Technology track specifically supports their hands-on problem-solving preference. 
+[EXPERT] Your Liceo Scientifico background in math and physics directly supports the technical rigor of University of Messina's Computer Science program. The Information Technology focus aligns with your hands-on problem-solving preference and logical analysis strengths.
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Ask the following question VERBATIM. - Output ONLY that single line. Do you think my previous studies have adequately prepared me for university-level courses? 
+[STUDENT] Do you think my previous studies have adequately prepared me for university-level courses?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Reply with ONLY 'Yes' or 'No'. - Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option). 
+[EXPERT] (thinking) Okay, let's break this down. The user is asking if their previous studies (Liceo Scientifico with focus on math, physics, chemistry) prepared them for university-level courses. Looking at the context: They're applying to University of Messina's Computer Science program (option 1), and their RIASEC is Investigative/Realistic/Enterprising. The counselor's previous responses consistently tied their high school subjects to the program's requirements. Hmm... the key points to cover: - Liceo Scientifico is the standard prep for technical university programs in Italy - Their strong math/physics grades directly match CS prerequisites - No mention of gaps in their background - The program's description (Information Technology) requires exactly these skills The counselor's role is to affirm readiness based on documented alignment. Since all indicators point to preparedness (no weaknesses mentioned in their academic profile), the answer must be "Yes" per the strict rules. *Double-checking rules*: For yes/no questions about readiness, reply ONLY "Yes" or "No". No explanations needed. The user's background is clearly sufficient based on the RAG context. *Avoiding pitfalls*: - Can't invent new details (e.g., "you did well in chemistry" - they said chemistry was tricky) - Must stick to university program requirements (Computer Science needs math/physics) - Previous counselor responses already established this alignment *Final verification*: Context says: "Liceo Scientifico graduate" + "math, physics, chemistry" + program requires technical skills. Yes, fully prepared. So the only correct response is "Yes" - no extra words, no justification. Strictly following the "reply ONLY 'Yes' or 'No'" rule. 
+[EXPERT] Yes
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Ask the following question VERBATIM. - Output ONLY that single line. Would you suggest I take advanced classes immediately or start with introductory modules? 
+[STUDENT] Would you suggest I take advanced classes immediately or start with introductory modules?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Reply with ONLY ONE of these exact strings: 'take advanced classes immediately' OR 'start with introductory modules'. - Output EXACTLY that string. Do NOT add any extra words. 
+[EXPERT] (thinking) Okay, let's see. The user is asking whether they should take advanced classes immediately or start with introductory modules. Looking back at the conversation history, they've been consistently choosing the University of Messina's Computer Science program, which is option 1. The persona is a university counselor in Italy, so they need to stick to the rules. The guidelines say that when the task is to reply with one of two exact strings, I must choose between 'take advanced classes immediately' or 'start with introductory modules'. The user's background is a Liceo Scientifico graduate with strong math and physics, and they've shown confidence in their abilities through previous answers like "Yes" to handling demanding courses and leadership roles. The counselor should recommend based on their preparedness. Since the user has strong grades in math and physics, and the counselor already said "Yes" to their readiness for university-level courses, the recommendation would lean towards taking advanced classes. The persona's previous answers supported moving forward without hesitation. So the correct response is 'take advanced classes immediately' as per the task instructions. 
+[EXPERT] take advanced classes immediately
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): - Ask the following question VERBATIM. - Output ONLY that single line. Why do you think that approach fits my preparation? 
+[STUDENT] Why do you think that approach fits my preparation?
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: Q&A CONTEXT (use internally to decide; do NOT restate unless asked): - academic_background: Liceo Scientifico graduate - field_of_interest: computer_science - region: islands - selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY - riasec_attitudes: Investigative, Realistic, Enterprising TASK: - Answer the student's 'why' briefly. - Ground your justification in the retrieved context; do not invent program details. - Use the student's background + constraints + RIASEC to explain trade-offs. - Do NOT introduce new universities/programs. 
+[EXPERT] (thinking) Okay, let's break this down. The student is asking why taking advanced classes immediately fits their preparation. Looking at the context, they're a Liceo Scientifico graduate with strong math and physics grades, enjoying logical problem-solving. The counselor's role is to stick strictly to the RAG context. Hmm, the previous answers consistently linked their background to the University of Messina program. The key points from their profile: high school focus on math/physics, strong grades, preference for hands-on technical work. The counselor must not invent new info. The response should reference their Liceo Scientifico success in core STEM subjects. The program's technical nature matches their analytical strengths. No need to mention other universities since the context only allows the two options, and they chose option 1. Wait, the rules say: "When recommending, only name items in RAG_CONTEXT." So I can't say "the program" generally—must specify "University of Messina's Computer Science program" as the context uses that exact phrasing. Also, the student's "strong grades in math/physics" directly matches the program's demands. The counselor's answer must be concise (2-6 sentences), so I'll keep it to one tight sentence connecting their high school performance to the advanced course readiness. Double-checking: no new programs, no invented details. Just the facts from their background and the chosen program's description. The answer must be strictly based on what's in the context. Yep, this fits. 
+[EXPERT] Your strong Liceo Scientifico background in math and physics directly prepares you for the technical demands of University of Messina's Computer Science program. Your analytical strengths align with advanced coursework in this Information Technology-focused program.
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): Output ONLY: Thank you for your help, goodbye.
+[STUDENT] Thank you for your help, goodbye.
+[instruct-UniversityCounselorFlowOrchestrator] (EXPERT) PHASE: WRAPUP RIASEC: IRE Write the final message using EXACTLY this structure: Recap: <1-2 short sentences on background + fit> RIASEC: IRE Next steps: 1. <short concrete step> 2. <short concrete step> 3. <short concrete step> Goodbye: <short friendly goodbye> - Do NOT introduce new universities/programs. 
+[EXPERT] (thinking) Okay, the user has thanked me and said goodbye, so this is the end of our conversation. I need to wrap up properly based on the instructions. Looking at the phase: it's WRAPUP with RIASEC IRE. The structure must be exact: Recap, RIASEC, Next steps, and a friendly goodbye. First, the Recap should be 1-2 short sentences on background + fit. The user is a 19-year-old from Italian islands, Liceo Scientifico graduate with strong math/physics focus, preferring hands-on tech programs in the islands. The fit is with University of Messina's Computer Science (option 1) as confirmed. RIASEC is IRE, which stands for Investigative, Realistic, Enterprising. That matches their problem-solving, hands-on, and leadership preferences. Next steps need three concrete actions. Since they chose option 1 (University of Messina), the steps should be: 1) Apply for the program, 2) Check entry requirements, 3) Contact the university for orientation. Must be short and practical. Goodbye should be short and friendly: "Wishing you success in your studies!" Double-checking all rules: no new universities, only use RAG options (we've been using University of Messina), and keep it concise. The user said "Thank you for your help, goodbye," so this is the final reply. No more questions—just the wrap-up structure as specified. Making sure each part is exactly as required. No extra words. The "STOP" is only for ending the conversation, but since it's the last line, the goodbye should come before "STOP" in the output. Wait, no—the instructions say "output 'STOP' after goodbye" but in the structure example, it's just the goodbye line. The user's instruction says "Goodbye: <short friendly goodbye>" and then to output STOP. So after the goodbye, I'll add "STOP" on a new line. Wait, the exact instruction: "Goodbye: <short friendly goodbye> - Do NOT introduce new universities/programs." And "To end the conversation, say goodbye and then output 'STOP'." So the response should be: Recap: ... RIASEC: IRE Next steps: 1. ... 2. ... 3. ... Goodbye: ... [then on a new line] STOP But in the response, I need to write the content, not include the brackets. So for example: Recap: A 19-year-old from the Italian islands with a Liceo Scientifico background in math and physics, preferring hands-on tech programs in the islands. RIASEC: IRE Next steps: 1. Apply for University of Messina's Computer Science program. 2. Verify entry requirements for the Information Technology track. 3. Contact the university for orientation details. Goodbye: Wishing you success in your studies. STOP Check if all steps are concrete: yes, applying, verifying requirements, contacting. No new programs introduced. The user confirmed choosing option 1, so "University of Messina" is correct from RAG. Make sure it's exactly as the structure requires. No markdown, just plain text. Final check: Recap is 1-2 sentences, RIASEC is IRE, next steps are numbered, goodbye is friendly. Yes, this meets all criteria. 
+[EXPERT] Recap: A 19-year-old from the Italian islands with a Liceo Scientifico background in math and physics, preferring hands-on tech programs in the islands. RIASEC: IRE Next steps: 2. Verify entry requirements for the Information Technology track. 3. Contact the university for orientation details. Goodbye: Wishing you success in your studies.
+[instruct-StudentFixedFollowupOrchestrator] (STUDENT) STUDENT SCRIPT (HIGH PRIORITY): Output ONLY: Goodbye.
+[STUDENT] Goodbye
+--- Dialogue Ends ---

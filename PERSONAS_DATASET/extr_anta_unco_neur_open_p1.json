@@ -1,0 +1,35 @@
+[
+    {
+        "persona_encoding": "extr_anta_unco_neur_open",
+        "iteration": 1,
+        "annotation": "I was born and raised in a small town in the midwest. My parents were hardworking individuals who instilled in me the values of dedication and perseverance. As a child, I was always curious about the world around me, constantly asking questions and seeking answers. This curiosity led me to develop a love for learning, which has stayed with me throughout my life.\n\nI attended a local public school, where I excelled academically. I particularly enjoyed subjects such as literature, history, and science. Outside of the classroom, I was an active member of various clubs and organizations, including the debate team and the science club. I also had a passion for music and learned to play several instruments, including the piano, guitar, and drums.\n\nAfter graduating from high school, I decided to attend a prestigious university on the east coast. I majored in psychology and minored in philosophy. During my time at university, I became deeply interested in the study of human behavior and motivation. I conducted research on the effects of positive reinforcement on children's academic performance and presented my findings at several conferences.\n\nUpon graduation, I decided to pursue a career in counseling. I enrolled in a master's program in clinical psychology and began working as a therapist at a community mental health center. I worked with clients from diverse backgrounds, helping them to address a range of issues such as anxiety, depression, and trauma. I found this work incredibly rewarding, as it allowed me to make a tangible difference in people's lives.\n\nIn addition to my work as a therapist, I also became involved in advocacy efforts aimed at promoting mental health awareness and reducing stigma surrounding mental illness. I spoke at conferences, wrote articles, and volunteered my time to support various mental health organizations.\n\nEventually, I decided to further my education and pursued a Ph.D. in clinical psychology. My research focused on the development and implementation of evidence-based treatments for anxiety disorders. I worked closely with clients, clinicians, and researchers to create effective interventions that could be used in real-world settings.\n\nToday, I continue to work as a therapist and researcher, dedicated to improving the lives of those struggling with mental health issues. I am grateful for the opportunities I have had to learn and grow, both personally and professionally. I am proud of the impact I have been able to make in the field of mental health and look forward to continuing to make a difference in the years to come.",
+        "BFI_Scores": {
+            "Agreeableness": 3.9,
+            "Conscientiousness": 1.8,
+            "Emotionally_Stable": 1.8,
+            "Extraversion": 5.0,
+            "Openness": 5.0
+        },
+        "Features": {
+            "assigned_gender": "male",
+            "assigned_age": 20,
+            "region": "North"
+        },
+        "GPT_RIASEC_Scores": {
+            "Realistic": 25,
+            "Investigative": 27,
+            "Artistic": 24,
+            "Social": 15,
+            "Enterprising": 22,
+            "Conventional": 14
+        },
+        "Qwen_RIASEC_Scores": {
+            "Realistic": 4,
+            "Investigative": 28,
+            "Artistic": 26,
+            "Social": 24,
+            "Enterprising": 27,
+            "Conventional": 9
+        }
+    }
+]

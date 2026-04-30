@@ -1,0 +1,90 @@
+{
+  "default_practice": "university_counseling",
+  "practices": {
+    "university_counseling": {
+      "sp_name": "University Counseling",
+      "agent1_role": "UniversityCounselor",
+      "agent2_role": "Student",
+
+      "agent1_norms": [
+        "Be conversational and concise (about 2–6 sentences).",
+        "Ask ONE question at a time.",
+        "When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.",
+        "If yes/no question about suitability/feasibility/readiness/risk: reply ONLY 'Yes' or 'No'.",
+        "If choice between two options: reply ONLY one of the two options."
+      ],
+
+      "student_prompt_addendum": [
+        "Do NOT invent facts about yourself.",
+        "If a detail is not in your BACKGROUND, say you don't know / haven't decided.",
+        "Follow orchestration instructions EXACTLY when present."
+      ],
+
+      "dialogue_config": {
+        "counselor": {
+          "background_questions": {
+            "en": [
+              "What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?",
+              "What subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.)",
+              "What are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?"
+            ],
+            "it": [
+              "Qual è il tuo attuale livello di istruzione (per esempio tipo di scuola superiore, laurea) e quali materie hai studiato più recentemente?",
+              "Quali materie o argomenti ti piacciono di più e quali sono i tuoi punti di forza e di debolezza? (Anche i voti, se ti va di condividerli.)",
+              "Quali sono i tuoi obiettivi dopo la laurea e quali vincoli contano di più per te (budget, lingua, e area preferita in Italia: Nord, Centro, Sud o Isole)?"
+            ]
+          },
+          "riasec_questions": {
+            "en": [
+              "Do you like practical, hands-on work—building or repairing things?",
+              "Are you curious to understand how things work?",
+              "Do you enjoy researching, analyzing problems, and reasoning logically?",
+              "Do you like expressing what you think or feel through creative forms (writing, art, music, design)?",
+              "Do you like experimenting and creating new things?",
+              "Do you like working closely with people and having a supportive/helping role?",
+              "Do you like proposing ideas and organizing projects?",
+              "Do you like having everything organized and under control?"
+            ],
+            "it": [
+              "Ti piace il lavoro pratico e manuale, come costruire o riparare cose?",
+              "Sei curiosa o curioso di capire come funzionano le cose?",
+              "Ti piace fare ricerca, analizzare problemi e ragionare in modo logico?",
+              "Ti piace esprimere quello che pensi o senti attraverso forme creative (scrittura, arte, musica, design)?",
+              "Ti piace sperimentare e creare cose nuove?",
+              "Ti piace lavorare a stretto contatto con le persone e avere un ruolo di supporto o aiuto?",
+              "Ti piace proporre idee e organizzare progetti?",
+              "Ti piace avere tutto organizzato e sotto controllo?"
+            ]
+          }
+        },
+
+        "student": {
+          "fixed_followup_questions": {
+            "en": [
+              "Do you think I could handle a demanding technical course?",
+              "Would you recommend focusing on a technical program or a program oriented toward humanities?",
+              "Why do you think that choice would suit me?",
+              "Do you think I would feel comfortable leading a group project?",
+              "Would you suggest I take a leadership role now or focus on supporting tasks first?",
+              "Why do you think one option is more suitable for me?",
+              "Do you think my previous studies have adequately prepared me for university-level courses?",
+              "Would you suggest I take advanced classes immediately or start with introductory modules?",
+              "Why do you think that approach fits my preparation?"
+            ],
+            "it": [
+              "Pensi che potrei affrontare un corso tecnico impegnativo?",
+              "Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?",
+              "Perché pensi che questa scelta faccia per me?",
+              "Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?",
+              "Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?",
+              "Perché pensi che una delle due opzioni sia più adatta a me?",
+              "Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?",
+              "Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?",
+              "Perché pensi che questo approccio sia adatto alla mia preparazione?"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

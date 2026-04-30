@@ -1,0 +1,35 @@
+[
+    {
+        "persona_encoding": "extr_anta_cons_emot_clos",
+        "iteration": 10,
+        "annotation": "I was born and raised in a small town, where I developed a love for nature and the great outdoors. From a young age, I was always curious about the world around me, asking questions and seeking answers to everything. My parents nurtured this curiosity, encouraging me to explore and learn as much as I could.\n\nAs I grew older, I became more and more interested in science and technology. I spent hours tinkering with gadgets and devices, trying to figure out how they worked. This interest eventually led me to pursue a degree in engineering, where I excelled academically and made many lifelong friends.\n\nAfter graduation, I landed my dream job at a major tech company. There, I worked on cutting-edge projects that pushed the boundaries of what was possible. It was challenging, but also incredibly rewarding. I loved working with a team of talented individuals, all striving towards a common goal.\n\nOutside of work, I am an avid hiker and camper. I find that spending time in nature helps clear my mind and recharge my batteries. I also enjoy reading widely, from fiction to non-fiction, and I'm always looking for new perspectives and ideas.\n\nOver the years, I've come to appreciate the importance of community and connection. I've been fortunate enough to build strong relationships with family, friends, and colleagues. I believe that we are all interconnected, and that by supporting each other, we can create a better world for everyone.\n\nRecently, I've started giving back to my community through volunteering and mentoring. It's been a humbling experience, and I've learned so much from those I've had the privilege of helping. I hope to continue making a positive impact in whatever way I can.\n\nIn conclusion, I am grateful for the opportunities I've had and the people I've met along the way. I am excited about the future, and I look forward to continuing to learn, grow, and contribute to the world around me.",
+        "BFI_Scores": {
+            "Agreeableness": 3.5,
+            "Conscientiousness": 5.0,
+            "Emotionally_Stable": 3.4,
+            "Extraversion": 5.0,
+            "Openness": 3.0
+        },
+        "Features": {
+            "assigned_gender": "female",
+            "assigned_age": 19,
+            "region": "Islands"
+        },
+        "GPT_RIASEC_Scores": {
+            "Realistic": 25,
+            "Investigative": 29,
+            "Artistic": 13,
+            "Social": 20,
+            "Enterprising": 20,
+            "Conventional": 25
+        },
+        "Qwen_RIASEC_Scores": {
+            "Realistic": 26,
+            "Investigative": 28,
+            "Artistic": 20,
+            "Social": 22,
+            "Enterprising": 27,
+            "Conventional": 25
+        }
+    }
+]

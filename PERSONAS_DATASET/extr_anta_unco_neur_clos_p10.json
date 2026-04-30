@@ -1,0 +1,35 @@
+[
+    {
+        "persona_encoding": "extr_anta_unco_neur_clos",
+        "iteration": 10,
+        "annotation": "I was born and raised in a small town, where the community was tight-knit, and everyone knew each other. My parents were hardworking individuals who instilled in me the values of determination and resilience. They owned a small convenience store, where I spent most of my after-school hours helping them out. I enjoyed interacting with the customers, learning about their lives, and providing them with the products they needed.\n\nAs I grew older, I became more interested in exploring the world beyond my town. I enrolled in a university located in a bustling city, where I pursued a degree in business administration. The city was vibrant and full of energy, which initially overwhelmed me. However, I quickly adapted and thrived in the new environment. I joined various student organizations, where I met people from diverse backgrounds and cultures. I learned to appreciate the beauty of differences and the power of collaboration.\n\nDuring my junior year, I interned at a multinational corporation, where I gained valuable experience in the corporate world. I worked hard and proved myself to be a reliable and dedicated employee. After graduation, I secured a full-time position at the company, where I have been working for the past five years. I started as a junior analyst and have since been promoted to a senior position, leading a team of talented professionals.\n\nOutside of work, I enjoy spending time alone, reflecting on my experiences and learning new things. I am an avid reader, particularly fond of historical fiction and science fiction novels. I also enjoy hiking and camping, where I can connect with nature and disconnect from the hustle and bustle of city life. I find solace in these activities, which rejuvenate me and prepare me for the challenges ahead.\n\nOver the years, I have faced numerous obstacles and setbacks, but I have never given up. I believe that success comes to those who persevere and remain committed to their goals. I am grateful for the opportunities I have had and the people I have met along the way. I look forward to continuing my journey, exploring new horizons, and making a positive impact on the world.",
+        "BFI_Scores": {
+            "Agreeableness": 2.5,
+            "Conscientiousness": 1.8,
+            "Emotionally_Stable": 1.3,
+            "Extraversion": 2.6,
+            "Openness": 1.9
+        },
+        "Features": {
+            "assigned_gender": "female",
+            "assigned_age": 21,
+            "region": "South"
+        },
+        "GPT_RIASEC_Scores": {
+            "Realistic": 25,
+            "Investigative": 20,
+            "Artistic": 17,
+            "Social": 15,
+            "Enterprising": 16,
+            "Conventional": 15
+        },
+        "Qwen_RIASEC_Scores": {
+            "Realistic": 14,
+            "Investigative": 16,
+            "Artistic": 17,
+            "Social": 18,
+            "Enterprising": 20,
+            "Conventional": 15
+        }
+    }
+]
