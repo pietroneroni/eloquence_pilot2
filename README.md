@@ -39,9 +39,10 @@ The listener stores information in the following structure:
     "selected_option": null
   },
   "inferred": {
-    "field_of_interest": null,
     "gender": null,
-    "riasec_attitudes": null
+    "field_of_interest": null,
+    "riasec_attitudes": null,
+    "riasec_confidence": null
   }
 }
 ```

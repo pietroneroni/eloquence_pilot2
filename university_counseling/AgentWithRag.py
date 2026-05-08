@@ -62,7 +62,227 @@ ZONE_CHAINS = {
     "islands": ["islands", "south", "center", "north"],
 }
 
-_MAX_ADVICE_RETRIES = 2
+FIELD_OF_INTEREST_LABELS = (
+    "arts_design",
+    "communication_digital_media",
+    "cultural_heritage",
+    "humanities",
+    "psychology",
+    "cognitive_science_linguistics",
+    "social_sciences",
+    "life_sciences",
+    "environmental_science",
+    "environmental_engineering",
+    "computer_science",
+    "engineering_technology",
+    "physical_sciences",
+    "health_technology",
+)
+
+FIELD_QUERY_TERMS = {
+    "arts_design": [
+        "art and design",
+        "arts design",
+        "visual arts",
+        "arti visive",
+        "design",
+        "grafica",
+        "creative design",
+    ],
+    "communication_digital_media": [
+        "digital communication",
+        "digital media",
+        "communication design",
+        "comunicazione digitale",
+        "comunicazione e media",
+        "media digitali",
+    ],
+    "cultural_heritage": [
+        "cultural heritage",
+        "patrimonio culturale",
+        "beni culturali",
+        "art history",
+        "storia dell'arte",
+        "archaeology",
+        "archeologia",
+        "museums",
+        "musei",
+    ],
+    "humanities": [
+        "humanities",
+        "scienze umanistiche",
+        "lettere",
+        "literature",
+        "letteratura",
+        "philosophy",
+        "filosofia",
+        "languages",
+        "lingue",
+        "classics",
+        "studi classici",
+    ],
+    "psychology": [
+        "psychology",
+        "psicologia",
+        "clinical psychology",
+        "psicologia clinica",
+        "counseling",
+        "mental health",
+        "salute mentale",
+        "psychotherapy",
+        "psicoterapia",
+    ],
+    "cognitive_science_linguistics": [
+        "cognitive science",
+        "scienze cognitive",
+        "linguistics",
+        "linguistica",
+        "mind and language",
+        "mente e linguaggio",
+        "neuroscience",
+        "neuroscienze",
+    ],
+    "social_sciences": [
+        "social sciences",
+        "scienze sociali",
+        "sociology",
+        "sociologia",
+        "political studies",
+        "scienze politiche",
+        "community studies",
+    ],
+    "life_sciences": [
+        "biology",
+        "biologia",
+        "biological sciences",
+        "scienze biologiche",
+        "biotechnology",
+        "biotecnologie",
+        "life sciences",
+        "scienze della vita",
+        "conservation biology",
+    ],
+    "environmental_science": [
+        "environmental science",
+        "scienze ambientali",
+        "ecology",
+        "ecologia",
+        "conservation",
+        "conservazione",
+        "sustainability",
+        "sostenibilità",
+        "ecosystems",
+        "ecosistemi",
+    ],
+    "environmental_engineering": [
+        "environmental engineering",
+        "ingegneria ambientale",
+        "engineering for the environment",
+        "ingegneria per l'ambiente",
+        "ambiente e territorio",
+        "environmental technology",
+        "tecnologia ambientale",
+    ],
+    "computer_science": [
+        "computer science",
+        "informatica",
+        "software",
+        "data systems",
+        "data analysis",
+        "GIS",
+        "artificial intelligence",
+        "intelligenza artificiale",
+    ],
+    "engineering_technology": [
+        "engineering",
+        "ingegneria",
+        "technology",
+        "tecnologia",
+        "mechanical engineering",
+        "civil engineering",
+        "electronics",
+        "mechatronics",
+        "industrial systems",
+    ],
+    "physical_sciences": [
+        "physics",
+        "fisica",
+        "chemistry",
+        "chimica",
+        "mathematics",
+        "matematica",
+        "physical sciences",
+        "scienze fisiche",
+        "applied sciences",
+        "scienze applicate",
+    ],
+    "health_technology": [
+        "health technology",
+        "healthcare technology",
+        "biomedical technology",
+        "tecnologie sanitarie",
+        "medical technology",
+        "neurophysiopathology",
+        "neurofisiopatologia",
+        "rehabilitation",
+        "riabilitazione",
+    ],
+}
+
+
+def _field_label_list_for_prompt() -> str:
+    return "\n".join(f"  {label}" for label in FIELD_OF_INTEREST_LABELS)
+
+
+FIELD_OF_INTEREST_RULES = (
+    "Rules for inferred.field_of_interest:\n"
+    "- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n"
+    "- Labels must be distinct and ordered from strongest to weakest fit.\n"
+    "- Choose labels only from this list:\n"
+    f"{_field_label_list_for_prompt()}\n"
+    "- Pick the intended university area, not the current job.\n"
+    "- Prefer concrete course-family areas over abstract hybrid concepts.\n"
+    "- Visual art, art practice, design, product/graphic/visual design -> arts_design.\n"
+    "- Digital communication, media, communication design, online/media production -> communication_digital_media.\n"
+    "- Art history, archaeology, museums, cultural assets, heritage tourism -> cultural_heritage.\n"
+    "- Literature, philosophy, languages, classics, history as humanities -> humanities.\n"
+    "- Psychology, counseling, psychotherapy, mental health, clinical behavior -> psychology.\n"
+    "- Cognitive science, linguistics, mind/language, computational cognition -> cognitive_science_linguistics.\n"
+    "- Sociology, political/social studies, international or community social studies -> social_sciences.\n"
+    "- Biology, biotechnology, life sciences, lab biology -> life_sciences.\n"
+    "- Ecology, conservation, sustainability, ecosystems, nature reserves -> environmental_science.\n"
+    "- Environmental engineering, environmental technology, technical conservation systems, environment/territory engineering -> environmental_engineering.\n"
+    "- Informatics, computer science, software, AI, data systems, GIS/data tech -> computer_science.\n"
+    "- Engineering, mechanics, mechatronics, electronics, industrial/civil/technical systems -> engineering_technology.\n"
+    "- Physics, chemistry, mathematics, laboratory science, broad applied/physical sciences -> physical_sciences.\n"
+    "- Biomedical/healthcare technology, rehabilitation techniques, neurophysiopathology, medical technology -> health_technology.\n"
+    "- If a profile mixes tech + environment, return environmental_engineering first if the student wants technical systems; otherwise environmental_science first.\n"
+    "- If a profile mixes biology/biotech + environment, return life_sciences first if biotech/lab biology is central; otherwise environmental_science first.\n"
+    "- If a profile mixes psychology + cognition/linguistics, return psychology first for clinical/helping goals; return cognitive_science_linguistics first for mind/language/research goals.\n"
+    "- If only one label is clearly supported, return a one-item array.\n"
+    "- If no label is clearly supported, omit the field.\n"
+    "- Do not invent a label outside the list.\n"
+)
+
+REGION_TO_RAG_MACROAREA = {
+    "north": "Nord",
+    "center": "Centro",
+    "south": "Sud",
+    "islands": "Isole",
+}
+
+CHOICE_REPLY_OPTIONS = {
+    "en": {
+        1: ("focusing on a technical program", "a program oriented toward humanities"),
+        4: ("take a leadership role now", "focus on supporting tasks first"),
+        7: ("take advanced classes immediately", "start with introductory modules"),
+    },
+    "it": {
+        1: ("concentrarti su un percorso tecnico", "un percorso orientato alle discipline umanistiche"),
+        4: ("assumere già ora un ruolo di leadership", "concentrarti prima su compiti di supporto"),
+        7: ("iniziare subito con corsi avanzati", "partire da moduli introduttivi"),
+    },
+}
 
 _OPT_RX = re.compile(r"\b(?:option|opzione)\s*([1-3])\b", re.I)
 
@@ -105,6 +325,90 @@ _RIASEC_ALLOWED_LABELS = {
     "conventional": "Conventional",
 }
 
+_RIASEC_LABEL_ORDER = [
+    "Realistic",
+    "Investigative",
+    "Artistic",
+    "Social",
+    "Enterprising",
+    "Conventional",
+]
+
+_RIASEC_WEIGHTS_BY_Q: List[Dict[str, float]] = [
+    {"Realistic": 1.0},
+    {"Investigative": 0.75, "Realistic": 0.25},
+    {"Investigative": 1.0},
+    {"Artistic": 1.0},
+    {"Artistic": 0.45, "Investigative": 0.35, "Enterprising": 0.20},
+    {"Social": 1.0},
+    {"Enterprising": 0.75, "Conventional": 0.25},
+    {"Conventional": 1.0},
+]
+
+def _normalize_riasec_valences(value: Any) -> Optional[List[int]]:
+    if not isinstance(value, list) or len(value) != 8:
+        return None
+
+    out: List[int] = []
+    for item in value:
+        if isinstance(item, bool):
+            return None
+        try:
+            v = int(item)
+        except Exception:
+            return None
+        if v < -2 or v > 2:
+            return None
+        out.append(v)
+
+    return out
+
+def _compute_riasec_normalized_scores(valences: List[int]) -> Dict[str, float]:
+    scores = {label: 0.0 for label in _RIASEC_LABEL_ORDER}
+    max_abs = {label: 0.0 for label in _RIASEC_LABEL_ORDER}
+
+    for idx, valence in enumerate(valences):
+        for label, weight in _RIASEC_WEIGHTS_BY_Q[idx].items():
+            scores[label] += float(valence) * weight
+            max_abs[label] += 2.0 * weight
+
+    return {
+        label: round(scores[label] / max_abs[label], 3) if max_abs[label] else 0.0
+        for label in _RIASEC_LABEL_ORDER
+    }
+
+
+def _riasec_differentiation(scores: Dict[str, float]) -> float:
+    vals = sorted(scores.values(), reverse=True)
+    return round(vals[0] - vals[-1], 3)
+
+def _riasec_top3_and_confidence_from_valences(valences: List[int]) -> Tuple[List[str], str]:
+    scores = _compute_riasec_normalized_scores(valences)
+    differentiation = _riasec_differentiation(scores)
+
+    ordered = sorted(
+        _RIASEC_LABEL_ORDER,
+        key=lambda label: (-scores[label], _RIASEC_LABEL_ORDER.index(label)),
+    )
+
+    top3 = ordered[:3]
+
+    top_score = scores[top3[0]]
+    third = scores[top3[2]]
+    fourth = scores[ordered[3]]
+    third_fourth_gap = abs(third - fourth)
+
+    if top_score <= 0.1 or third_fourth_gap < 0.10 or differentiation < 0.35:
+        confidence = "low"
+    elif top_score >= 0.55 and third_fourth_gap >= 0.20 and differentiation >= 0.60:
+        confidence = "high"
+    else:
+        confidence = "medium"
+
+    return top3, confidence
+
+
+
 _REQ_RXES: List[Tuple[re.Pattern, List[str]]] = [
     (
         re.compile(r"\b(tuition|fees?|costs?|scholarship|grant)\b", re.I),
@@ -127,6 +431,38 @@ def set_dialog_language(dialog_language: str = "English") -> None:
 
 def _t(en: str, it: str) -> str:
     return it if _DIALOG_LANGUAGE == "it" else en
+
+def _require_practice_list(
+    practice: Dict[str, Any],
+    *path: str,
+    dialog_language: str = "English",
+    min_len: int = 1,
+    exact_len: Optional[int] = None,
+) -> List[str]:
+    values = get_practice_list(
+        practice,
+        *path,
+        dialog_language=dialog_language,
+        default=[],
+    )
+
+    dotted_path = ".".join(path)
+
+    if exact_len is not None and len(values) != exact_len:
+        raise ValueError(
+            f"Invalid social_practices config: '{dotted_path}' for "
+            f"{dialog_language!r} must contain exactly {exact_len} items, "
+            f"found {len(values)}."
+        )
+
+    if len(values) < min_len:
+        raise ValueError(
+            f"Invalid social_practices config: '{dotted_path}' for "
+            f"{dialog_language!r} must contain at least {min_len} item(s), "
+            f"found {len(values)}."
+        )
+
+    return values
 
 # =============================================================================
 # Generic helpers
@@ -249,30 +585,9 @@ def _university_matches_allowed(university: str, allowed_universities: Optional[
 
     return False
 
-def _extract_university_from_block(text: str) -> Optional[str]:
-    if not text:
-        return None
-    for line in text.splitlines():
-        line = line.strip()
-        if line.upper().startswith("UNIVERSITÀ:"):
-            value = line.split(":", 1)[1].strip()
-            return value or None
-    return None
-
-def _normalize_university_name(value: str) -> str:
-    return _normalize(value).replace("universita", "università")
 
 
-def _hit_university_name(hit: Dict[str, Any]) -> str:
-    meta = hit.get("meta") or {}
-    for key in ("UNIVERSITY", "UNIVERSITÀ", "UNIVERSITA", "university", "ateneo"):
-        v = meta.get(key)
-        if isinstance(v, str) and v.strip():
-            return v.strip()
 
-    txt = (hit.get("text") or "").strip()
-    uni = _extract_university_from_block(txt)
-    return uni or ""
 
 
 def _infer_zone_from_university(university: Optional[str]) -> Optional[str]:
@@ -353,20 +668,6 @@ def _riasec_labels_to_code(labels: Any) -> Optional[str]:
         return None
 
 
-def _riasec_code_to_labels(code: str) -> List[str]:
-    mapping = {
-        "R": "Realistic",
-        "I": "Investigative",
-        "A": "Artistic",
-        "S": "Social",
-        "E": "Enterprising",
-        "C": "Conventional",
-    }
-    out: List[str] = []
-    for ch in (code or "").upper():
-        if ch in mapping and mapping[ch] not in out:
-            out.append(mapping[ch])
-    return out[:3]
 
 
 
@@ -543,10 +844,6 @@ def _course_domain_mismatch(course: str, field_of_interest: Any) -> bool:
             "architettura", "architecture",
             "progetto", "progettazione",
         ],
-        "design": [
-            "design", "visual", "grafica", "communication", "comunicazione",
-            "media", "architecture", "architettura", "progetto", "progettazione",
-        ],
         "communication_digital_media": [
             "communication", "comunicazione", "media", "digital", "digitale",
             "visual", "grafica", "design",
@@ -573,13 +870,71 @@ def _course_domain_mismatch(course: str, field_of_interest: Any) -> bool:
             "ecology", "ecologia", "ecosystem", "ecosystems",
             "territorio", "paesaggio", "sustainability", "sostenibil",
         ],
-        "biology": [
-            "biology", "biologia", "biological", "biologico", "biologica",
-            "biotechnology", "biotecnologie", "scienze biologiche",
-        ],
         "computer_science": [
             "computer science", "informatica", "software", "data",
             "artificial intelligence", "intelligenza artificiale",
+        ],
+        "health_technology": [
+            "health", "healthcare", "sanitar", "biomedical", "biomed",
+            "neurophysiopathology", "neurofisiopatologia",
+            "rehabilitation", "riabilitazione", "medical technology",
+        ],
+        "life_sciences": [
+            "biology", "biologia", "biological", "biologico", "biologica",
+            "biotechnology", "biotecnologie", "scienze biologiche",
+            "life sciences", "scienze della vita",
+        ],
+
+        "engineering_technology": [
+            "engineering", "ingegneria", "technology", "tecnologia",
+            "mechanical", "meccanica", "civil", "civile",
+            "electronic", "elettronica", "mechatronics", "meccatronica",
+            "industrial", "industriale",
+        ],
+
+        "physical_sciences": [
+            "physics", "fisica", "physical", "chemistry", "chimica",
+            "mathematics", "matematica", "applied sciences", "scienze applicate",
+            "planetary sciences", "scienze planetarie", "astronomy", "astronomia",
+        ],
+        "environmental_engineering": [
+            "environmental engineering",
+            "ingegneria ambientale",
+            "engineering for the environment",
+            "ingegneria per l'ambiente",
+            "territory",
+            "territorio",
+            "ambiente e territorio",
+            "environmental technology",
+            "tecnologia ambientale",
+            "technical conservation systems",
+        ],
+        "psychology": [
+            "psychology",
+            "psicologia",
+            "clinical psychology",
+            "psicologia clinica",
+            "counseling",
+            "counselling",
+            "psychotherapy",
+            "psicoterapia",
+            "mental health",
+            "salute mentale",
+            "behavior",
+            "behaviour",
+            "comportamento",
+        ],
+        "cognitive_science_linguistics": [
+            "cognitive science",
+            "scienze cognitive",
+            "linguistics",
+            "linguistica",
+            "mind",
+            "mente",
+            "language",
+            "linguaggio",
+            "neuroscience",
+            "neuroscienze",
         ],
     }
 
@@ -589,11 +944,6 @@ def _course_domain_mismatch(course: str, field_of_interest: Any) -> bool:
             "pharmacy", "farmacia", "odontoiatria",
             "chemistry", "chimica", "physics", "fisica",
             "economics", "finance", "statistica", "law", "giurisprudenza",
-        ],
-        "design": [
-            "medicine", "medicina", "pharmacy", "farmacia",
-            "chemistry", "chimica", "physics", "fisica",
-            "economics", "law", "giurisprudenza",
         ],
         "humanities": [
             "engineering", "ingegneria", "computer science", "informatica",
@@ -626,16 +976,20 @@ def _course_domain_mismatch(course: str, field_of_interest: Any) -> bool:
     # Per campi creativi/umanistici/sociali, se non c'è nessun segnale positivo, scarta.
     strict_fields = {
         "arts_design",
-        "design",
         "communication_digital_media",
         "humanities",
         "cultural_heritage",
         "social_sciences",
         "environmental_science",
-        "biology",
+        "environmental_engineering",
+        "life_sciences",
         "computer_science",
+        "engineering_technology",
+        "physical_sciences",
+        "health_technology",
+        "psychology",
+        "cognitive_science_linguistics",
     }
-
     if any(field in strict_fields for field in fields):
         return True
 
@@ -850,6 +1204,7 @@ def canonical_listener_memory() -> Dict[str, Any]:
             "gender": None,
             "field_of_interest": None,
             "riasec_attitudes": None,
+            "riasec_confidence": None,
         },
     }
 
@@ -858,20 +1213,7 @@ def _empty_listener_memory() -> dict:
     return canonical_listener_memory()
 
 def _normalize_field_of_interest(value: Any) -> Optional[List[str]]:
-    allowed = {
-        "arts_design",
-        "design",
-        "communication_digital_media",
-        "cultural_heritage",
-        "humanities",
-        "psychology",
-        "cognitive_science_linguistics",
-        "social_sciences",
-        "biology",
-        "environmental_science",
-        "environmental_engineering",
-        "computer_science",
-    }
+    allowed = set(FIELD_OF_INTEREST_LABELS)
 
     if isinstance(value, str):
         s = value.strip()
@@ -945,13 +1287,21 @@ def apply_listener_patch(mem: Dict[str, Any], patch: Dict[str, Any]) -> Dict[str
     if isinstance(pinf.get("gender"), str) and pinf["gender"].strip():
         inf["gender"] = pinf["gender"].strip()
 
-    labels = _normalize_riasec_labels(pinf.get("riasec_attitudes"))
-    if labels:
-        inf["riasec_attitudes"] = labels
+    valences = _normalize_riasec_valences(pinf.get("riasec_question_valences"))
+    if valences:
+        top3, confidence = _riasec_top3_and_confidence_from_valences(valences)
+        inf["riasec_attitudes"] = top3
+        inf["riasec_confidence"] = confidence
+    else:
+        labels = _normalize_riasec_labels(pinf.get("riasec_attitudes"))
+        if labels:
+            inf["riasec_attitudes"] = labels
+            inf["riasec_confidence"] = inf.get("riasec_confidence") or "unknown"
 
     mem["explicit"] = exp
     mem["inferred"] = inf
     return mem
+
 
 
 # =============================================================================
@@ -998,9 +1348,6 @@ def get_listener_patches() -> List[Dict[str, Any]]:
     return list(_LISTENER_PATCH_HISTORY)
 
 
-def log_listener_patch(patch: Dict[str, Any]) -> None:
-    if isinstance(patch, dict):
-        _LISTENER_PATCH_HISTORY.append(copy.deepcopy(patch))
 
 
 def strip_and_buffer_listener_patch(text: str) -> str:
@@ -1038,11 +1385,8 @@ class _RAGState:
     query: str = ""
     phase: str = ""
     expected_verbatim: str = ""
-    expected_wrapup_riasec: str = ""
     advice_fallback: bool = False
     allowed_entities: set[str] = field(default_factory=set)
-    allowed_locations: set[str] = field(default_factory=set)
-    choice_options: List[str] = field(default_factory=list)
     advice_options: List[str] = field(default_factory=list)
 
 
@@ -1055,20 +1399,15 @@ def update_last_rag_state(
     query: str = "",
     phase: str = "",
     expected_verbatim: str = "",
-    expected_wrapup_riasec: str = "",
     advice_fallback: bool = False,
-    allowed_locations: Optional[Sequence[str]] = None,
-    choice_options: Optional[Sequence[str]] = None,
     advice_options: Optional[Sequence[str]] = None,
 ) -> None:
     _LAST_RAG_STATE.ctx = ctx or ""
     _LAST_RAG_STATE.query = query or ""
     _LAST_RAG_STATE.phase = (phase or "").strip().lower()
     _LAST_RAG_STATE.expected_verbatim = (expected_verbatim or "").strip()
-    _LAST_RAG_STATE.expected_wrapup_riasec = (expected_wrapup_riasec or "").strip().upper()
     _LAST_RAG_STATE.advice_fallback = bool(advice_fallback)
 
-    _LAST_RAG_STATE.choice_options = [str(x).strip() for x in (choice_options or []) if str(x).strip()][:2]
     _LAST_RAG_STATE.advice_options = [
         str(x).strip()
         for x in (advice_options or [])
@@ -1086,12 +1425,6 @@ def update_last_rag_state(
             if nuni:
                 _LAST_RAG_STATE.allowed_entities.add(nuni)
 
-    _LAST_RAG_STATE.allowed_locations = set()
-    if allowed_locations:
-        for x in allowed_locations:
-            nx = _normalize(str(x))
-            if nx:
-                _LAST_RAG_STATE.allowed_locations.add(nx)
 
 def clear_last_rag_state() -> None:
     update_last_rag_state(
@@ -1099,10 +1432,7 @@ def clear_last_rag_state() -> None:
         query="",
         phase="",
         expected_verbatim="",
-        expected_wrapup_riasec="",
         advice_fallback=False,
-        allowed_locations=None,
-        choice_options=None,
         advice_options=None,
     )
 
@@ -1206,7 +1536,6 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
     expected = (_LAST_RAG_STATE.expected_verbatim or "").strip()
     ctx = _LAST_RAG_STATE.ctx or ""
     advice_fallback = bool(getattr(_LAST_RAG_STATE, "advice_fallback", False))
-    expected_wrapup_riasec = (_LAST_RAG_STATE.expected_wrapup_riasec or "").strip().upper()
 
     yes_tok, no_tok = ("Sì", "No") if _DIALOG_LANGUAGE == "it" else ("Yes", "No")
     patch_block = _extract_listener_patch_block(ans)
@@ -1351,22 +1680,6 @@ class RetrievalScopeResult:
 # Orchestrator
 # =============================================================================
 class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
-    BG_QUESTIONS = [
-        "What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?",
-        "What subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.)",
-        "What are your goals after graduation, and what constraints matter most (budget, language, mobility, preferred area in Italy: North, Center, South, or Islands)?",
-    ]
-
-    RIASEC_QUESTIONS = [
-        "Do you like practical, hands-on work—building or repairing things?",
-        "Are you curious to understand how things work?",
-        "Do you enjoy researching, analyzing problems, and reasoning logically?",
-        "Do you like expressing what you think or feel through creative forms (writing, art, music, design)?",
-        "Do you like experimenting and creating new things?",
-        "Do you like working closely with people and having a supportive/helping role?",
-        "Do you like proposing ideas and organizing projects?",
-        "Do you like having everything organized and under control?",
-    ]
 
     _CHOICE_CONNECTOR = re.compile(r"\s+(?:or|vs\.?|versus)\s+", re.I)
     _WH_RX = re.compile(r"\b(why|how|what|which|where|when)\b", re.IGNORECASE)
@@ -1391,33 +1704,46 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self.lang = _lang_code(dialog_language)
         self.practice = practice or default_university_counseling_practice()
 
-        default_bg_questions = list(self.BG_QUESTIONS)
-        default_riasec_questions = list(self.RIASEC_QUESTIONS)
+        self.agent1_norms = [
+            str(x).strip()
+            for x in (self.practice.get("agent1_norms") or [])
+            if isinstance(x, str) and x.strip()
+        ]
 
-        self.BG_QUESTIONS = get_practice_list(
+        self.BG_QUESTIONS = _require_practice_list(
             self.practice,
             "dialogue_config",
             "counselor",
             "background_questions",
             dialog_language=dialog_language,
-            default=default_bg_questions,
+            min_len=1,
         )
 
-        self.RIASEC_QUESTIONS = get_practice_list(
+        self.RIASEC_QUESTIONS = _require_practice_list(
             self.practice,
             "dialogue_config",
             "counselor",
             "riasec_questions",
             dialog_language=dialog_language,
-            default=default_riasec_questions,
+            exact_len=8,
         )
+
+        self.FIXED_FOLLOWUP_QUESTIONS = get_practice_list(
+            self.practice,
+            "dialogue_config",
+            "student",
+            "fixed_followup_questions",
+            dialog_language=dialog_language,
+            default=[],
+        )
+
         self.retriever = retriever
-        self.required_slots = tuple(required_slots)
+        # required_slots is accepted for backward compatibility with agents_setup.py.
         self.top_k = int(top_k)
         self.max_ctx_chars = int(max_ctx_chars)
-        self.history_turns = int(history_turns)
+        # history_turns is accepted for backward compatibility with agents_setup.py.
         self.debug = bool(debug)
-        self.min_options_target = max(1, int(min_options_target))
+        # min_options_target is accepted for backward compatibility.
 
         self._slots = StudentSlots()
         self._listener_memory = _empty_listener_memory()
@@ -1426,7 +1752,6 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._bg_i = 0
         self._riasec_i = 0
         self._last_ctx: str = ""
-        self._last_raw_blocks: List[str] = []
         self._advice_given = False
         self._pending_selection_ack = False
 
@@ -1465,7 +1790,6 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._bg_i = 0
         self._riasec_i = 0
         self._last_ctx = ""
-        self._last_raw_blocks = []
         self._advice_given = False
         self._pending_selection_ack = False
 
@@ -1500,6 +1824,13 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             + f"SCHEMA EXAMPLE:\n{schema_example}\n"
               f"EVIDENCE:\n{evidence}\n"
         )
+
+    def _agent_norms_block(self) -> str:
+        if not self.agent1_norms:
+            return ""
+        lines = ["COUNSELOR NORMS FROM SOCIAL PRACTICE:"]
+        lines.extend(f"- {norm}" for norm in self.agent1_norms)
+        return "\n".join(lines) + "\n"
 
     # -------------------
     # ------------------------------------------------------
@@ -1561,6 +1892,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         self._sync_slots_from_listener_memory()
         record_debug_snapshot(self._listener_memory, self._slots.summary())
+
+    def _riasec_answer_evidence_block(self) -> str:
+        lines = ["RIASEC QUESTION/ANSWER EVIDENCE:"]
+
+        for i, question in enumerate(self.RIASEC_QUESTIONS[:8]):
+            answer = self._riasec_answers[i] if i < len(self._riasec_answers) else ""
+            lines.append(f"Q{i + 1}: {question}")
+            lines.append(f"A{i + 1}: {answer or '[missing]'}")
+
+        return "\n".join(lines)
 
     # -------------------------------------------------------------------------
     # Retrieval
@@ -1672,78 +2013,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         return merged
 
     def _expand_field_label_for_query(self, label: str) -> List[str]:
-        mapping = {
-            "cultural_heritage": [
-                "cultural heritage",
-                "patrimonio culturale",
-                "beni culturali",
-                "storia dell'arte",
-                "archeologia",
-            ],
-            "arts_design": [
-                "arts design",
-                "art and design",
-                "arti visive",
-                "design",
-                "arti",
-            ],
-            "design": [
-                "design",
-                "visual design",
-                "grafica",
-                "design della comunicazione",
-            ],
-            "communication_digital_media": [
-                "digital communication",
-                "digital media",
-                "comunicazione digitale",
-                "comunicazione e media",
-            ],
-            "humanities": [
-                "humanities",
-                "scienze umanistiche",
-                "lettere",
-                "studi umanistici",
-            ],
-            "psychology": [
-                "psychology",
-                "psicologia",
-            ],
-            "cognitive_science_linguistics": [
-                "cognitive science",
-                "linguistics",
-                "mente e linguaggio",
-                "scienze cognitive",
-                "linguistica",
-            ],
-            "social_sciences": [
-                "social sciences",
-                "scienze sociali",
-                "sociologia",
-            ],
-            "biology": [
-                "biology",
-                "biologia",
-                "scienze biologiche",
-            ],
-            "environmental_science": [
-                "environmental science",
-                "scienze ambientali",
-                "ambiente",
-                "ecologia",
-            ],
-            "environmental_engineering": [
-                "environmental engineering",
-                "ingegneria ambientale",
-                "ambiente e territorio",
-            ],
-            "computer_science": [
-                "computer science",
-                "informatica",
-                "scienze informatiche",
-            ],
-        }
-        return mapping.get(label, [label.replace("_", " ")])
+        return FIELD_QUERY_TERMS.get(label, [label.replace("_", " ")])
 
     def _build_query_candidates(self, query: str) -> List[str]:
         queries: List[str] = []
@@ -1824,13 +2094,6 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
             if section_contains:
                 kwargs["section_contains"] = section_contains
-
-            REGION_TO_RAG_MACROAREA = {
-                "north": "Nord",
-                "center": "Centro",
-                "south": "Sud",
-                "islands": "Isole",
-            }
 
             if use_preferred_macroarea and self._slots.region:
                 kwargs["preferred_macroarea"] = REGION_TO_RAG_MACROAREA.get(
@@ -2144,6 +2407,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
     def _extract_choice_options(self, q: str) -> List[str]:
         qq = (q or "").strip()
         low = qq.lower()
+
+        # Prefer the configured fixed follow-up questions from social_practices.json.
+        # This keeps the counselor-side choice handling aligned with the student script.
+        q_norm = _normalize(qq)
+        for idx, pair in CHOICE_REPLY_OPTIONS.get(self.lang, {}).items():
+            if idx < len(self.FIXED_FOLLOWUP_QUESTIONS):
+                configured_q = self.FIXED_FOLLOWUP_QUESTIONS[idx]
+                if q_norm == _normalize(configured_q):
+                    return list(pair)
+
         if ("percorso tecnico" in low) and ("discipline umanistiche" in low):
             return [
                 "concentrarti su un percorso tecnico",
@@ -2346,10 +2619,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
             if qtype == "choice":
                 ch = self._extract_choice_options(q_for_qa)
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_choice", choice_options=ch)
+                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_choice")
                 if len(ch) == 2:
                     return _ret(
                         "PHASE: Q&A\n"
+                        + self._agent_norms_block()
                         + self._qa_context_block() +
                         "TASK:\n"
                         f"- Reply with ONLY ONE of these exact strings: '{ch[0]}' OR '{ch[1]}'.\n"
@@ -2357,6 +2631,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     )
                 return _ret(
                     "PHASE: Q&A\n"
+                    + self._agent_norms_block()
                     + self._qa_context_block() +
                     "TASK:\n"
                     "- Reply with ONLY one of the two options mentioned in the student's question.\n"
@@ -2367,6 +2642,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_why")
                 return _ret(
                     "PHASE: Q&A\n"
+                    + self._agent_norms_block()
                     + self._qa_context_block() +
                     "TASK:\n"
                     "- Answer the student's 'why' briefly.\n"
@@ -2379,6 +2655,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_yesno")
                 return _ret(
                     "PHASE: Q&A\n"
+                    + self._agent_norms_block()
                     + self._qa_context_block() +
                     "TASK:\n"
                     "- Reply with ONLY 'Yes' or 'No'.\n"
@@ -2388,6 +2665,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_other")
             return _ret(
                 "PHASE: Q&A\n"
+                + self._agent_norms_block()
                 + self._qa_context_block() +
                 "TASK:\n"
                 "- Answer briefly and pragmatically.\n"
@@ -2410,36 +2688,10 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "- Store region only if the student explicitly mentions a macro-area of Italy.\n"
                     "- Allowed values: north, center, south, islands.\n"
                     "- Map 'Northern Italy' -> north, 'Central Italy' -> center, 'Southern Italy' -> south.\n"
+                    "- Map 'Italian islands', 'the Italian islands', 'Sicily', 'Sardinia' -> islands.\n"
                     "- Do not infer region from cities, towns, provinces, or vague descriptions.\n"
                     "\n"
-                            "Rules for inferred.field_of_interest:\n"
-                            "- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n"
-                            "- Labels must be distinct and ordered from strongest to weakest fit.\n"
-                            "- Choose labels only from this list:\n"
-                            "  arts_design\n"
-                            "  design\n"
-                            "  communication_digital_media\n"
-                            "  cultural_heritage\n"
-                            "  humanities\n"
-                            "  psychology\n"
-                            "  cognitive_science_linguistics\n"
-                            "  social_sciences\n"
-                            "  biology\n"
-                            "  environmental_science\n"
-                            "  environmental_engineering\n"
-                            "  computer_science\n"
-                            "- Pick the intended university area, not the current job.\n"
-                            "- Prefer concrete course-family areas over abstract hybrid concepts.\n"
-                            "- Community art, visual expression, art practice -> arts_design.\n"
-                            "- Art history, heritage, museums, cultural assets -> cultural_heritage.\n"
-                            "- Biology/science + art/design -> biology or arts_design; prefer the side stated as the intended study direction.\n"
-                            "- Tech + art/design/media -> communication_digital_media, design, or computer_science depending on emphasis.\n"
-                            "- Writing + psychology + storytelling -> psychology, cognitive_science_linguistics, or humanities depending on emphasis.\n"
-                            "- Environment/sustainability -> environmental_science; use environmental_engineering only if technical/engineering interest is explicit.\n"
-                            "- If only one label is clearly supported, return a one-item array.\n"
-                            "- If no label is clearly supported, omit the field.\n"
-                            "- If two areas are both clearly supported by the student's message, return both labels.\n"
-                            "\n"
+                    + FIELD_OF_INTEREST_RULES +
                     "Rules for inferred.gender:\n"
                     "- Infer gender only if there is a clear cue in the student's message.\n"
                     "- If there is no clear cue, omit the field."
@@ -2488,49 +2740,27 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 update_last_rag_state("", phase=f"riasec_q{self._riasec_i}", expected_verbatim=q)
 
                 bg_patch = ""
-                need_academic_background = not (
-                    isinstance(self._listener_memory, dict)
-                    and isinstance(self._listener_memory.get("explicit"), dict)
-                    and isinstance(self._listener_memory["explicit"].get("academic_background"), str)
-                    and self._listener_memory["explicit"]["academic_background"].strip()
-                )
 
                 if self._riasec_i == 1:
                     bg_patch = self._listener_patch_request(
                         targets="- explicit.academic_background\n- inferred.field_of_interest\n- explicit.region",
                         rules=(
-                            "- academic_background must summarize the student's current or most recent formal education. \n"
-                            "- Prefer explicit study level and school/program name when available.\n"
-                            "- Do NOT use jobs, hobbies, or goals as academic_background.\n"
+                            "Rules for explicit.academic_background:\n"
+                            "- If the student states any current or completed formal education, you MUST include academic_background.\n"
+                            "- academic_background must summarize only formal education, not jobs, hobbies, internships, goals, or personal interests.\n"
+                            "- Include education level + field when available.\n"
+                            "- Prefer the current or most recent formal education.\n"
+                            "- Keep it short and normalized.\n"
+                            "- Examples:\n"
+                            "  - \"I am completing my master's in clinical psychology\" -> \"master's in clinical psychology\"\n"
+                            "  - \"I just finished Liceo Classico\" -> \"Liceo Classico\"\n"
+                            "  - \"I graduated from a Liceo Scientifico\" -> \"Liceo Scientifico\"\n"
+                            "  - \"I'm pursuing a bachelor's in environmental science\" -> \"bachelor's in environmental science\"\n"
+                            "  - \"I finished an Istituto Professionale in art and design\" -> \"Istituto Professionale in art and design\"\n"
+                            "- Do not omit academic_background when formal education is explicitly present.\n"
+                            "- If no formal education is explicitly stated, omit academic_background.\n"
                             "\n"
-                            "Rules for inferred.field_of_interest:\n"
-                            "- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n"
-                            "- Labels must be distinct and ordered from strongest to weakest fit.\n"
-                            "- Choose labels only from this list:\n"
-                            "  arts_design\n"
-                            "  design\n"
-                            "  communication_digital_media\n"
-                            "  cultural_heritage\n"
-                            "  humanities\n"
-                            "  psychology\n"
-                            "  cognitive_science_linguistics\n"
-                            "  social_sciences\n"
-                            "  biology\n"
-                            "  environmental_science\n"
-                            "  environmental_engineering\n"
-                            "  computer_science\n"
-                            "- Pick the intended university area, not the current job.\n"
-                            "- Prefer concrete course-family areas over abstract hybrid concepts.\n"
-                            "- Community art, visual expression, art practice -> arts_design.\n"
-                            "- Art history, heritage, museums, cultural assets -> cultural_heritage.\n"
-                            "- Biology/science + art/design -> biology or arts_design; prefer the side stated as the intended study direction.\n"
-                            "- Tech + art/design/media -> communication_digital_media, design, or computer_science depending on emphasis.\n"
-                            "- Writing + psychology + storytelling -> psychology, cognitive_science_linguistics, or humanities depending on emphasis.\n"
-                            "- Environment/sustainability -> environmental_science; use environmental_engineering only if technical/engineering interest is explicit.\n"
-                            "- If only one label is clearly supported, return a one-item array.\n"
-                            "- If no label is clearly supported, omit the field.\n"
-                            "- If two areas are both clearly supported by the student's message, return both labels.\n"
-                            "\n"
+                            + FIELD_OF_INTEREST_RULES +
                             "- Update explicit.region ONLY if the student explicitly states one macro-area among North / Center / South / Islands.\n"
                             "- Store region ONLY as: north, center, south, islands.\n"
                             "- Do NOT infer region from city names or biography details."
@@ -2555,62 +2785,100 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         # ---------------------------------------------------------------------
         # ADVICE
         # ---------------------------------------------------------------------
+        if not self._slots.academic_background:
+            message = _t(
+                "Before I recommend programs, could you clarify your current or most recent formal education?",
+                "Prima di consigliarti dei corsi, puoi chiarire qual è il tuo percorso di istruzione formale attuale o più recente?"
+            )
+
+            update_last_rag_state(
+                "",
+                query="",
+                phase="clarify_scope",
+                expected_verbatim=message,
+                advice_fallback=True,
+                advice_options=[],
+            )
+
+            return (
+                "PHASE: CLARIFY_SCOPE\n"
+                "Ask ONE short question only.\n"
+                f"{message}\n"
+            )
         query = self._build_query()
         retrieval, candidate_pool = self._get_llm_candidate_pool(query)
 
         self._last_ctx = retrieval.short_ctx
-        self._last_raw_blocks = list(retrieval.raw_blocks)
         self._last_options = list(candidate_pool)
 
         riasec_patch = ""
         if not self._riasec_patch_requested:
             self._riasec_patch_requested = True
             riasec_patch = self._listener_patch_request(
-                targets="- inferred.riasec_attitudes\n- inferred.gender",
+                targets="- inferred.riasec_question_valences",
                 rules=(
-                    "Use only the student's answers to the 8 RIASEC questions.\n"
-                    "Return ONE JSON object inside <LISTENER_PATCH> ... </LISTENER_PATCH>.\n"
-                    "Return only the requested fields.\n"
-                    "Do not guess from the student's biography, job, or background.\n"
+                    "Use ONLY the student's answers to the 8 RIASEC questions.\n"
+                    "Do NOT use biography, gender, academic background, grades, job, goals, "
+                    "field_of_interest, selected_option, or university options.\n"
                     "\n"
-                    "Allowed labels:\n"
-                    "- Realistic\n"
-                    "- Investigative\n"
-                    "- Artistic\n"
-                    "- Social\n"
-                    "- Enterprising\n"
-                    "- Conventional\n"
+                    "Your task is to estimate the student's expressed INTEREST/PREFERENCE "
+                    "for each RIASEC question.\n"
+                    "Do NOT estimate ability, confidence, preparation, social desirability, "
+                    "or academic readiness.\n"
                     "\n"
-                    "Map each question mainly to one label:\n"
-                    "- practical, hands-on work -> Realistic\n"
-                    "- curious to understand how things work -> Investigative\n"
-                    "- researching, analyzing, logical reasoning -> Investigative\n"
-                    "- creative expression -> Artistic\n"
-                    "- experimenting and creating new things -> Artistic or Enterprising\n"
-                    "- helping and supporting people -> Social\n"
-                    "- proposing ideas and organizing projects -> Enterprising\n"
-                    "- keeping everything organized and under control -> Conventional\n"
+                    "Return exactly one JSON object inside <LISTENER_PATCH> ... </LISTENER_PATCH>.\n"
+                    "Return only the requested field.\n"
                     "\n"
-                    "Rules:\n"
-                    "- Return exactly 3 distinct labels, ordered from strongest to weakest.\n"
-                    "- Positive answers support the matching label.\n"
-                    "- Negative answers weaken that label.\n"
-                    "- Do not include a label if the student clearly rejected it unless other answers strongly support it.\n"
+                    "Return an array of exactly 8 integers named riasec_question_valences.\n"
+                    "Each integer corresponds to Q1..Q8 in order.\n"
                     "\n"
-                    "Rules for inferred.gender:\n"
-                    "- For gender, use the student's full conversation, especially the first message and any self-reference cues.\n"
+                    "Scale:\n"
+                    "- 2 = clear and strong liking, with explicit enthusiasm or concrete examples\n"
+                    "- 1 = moderate liking, curiosity, or generally positive attitude\n"
+                    "- 0 = unclear, mixed, conditional, only ability mentioned, or insufficient evidence\n"
+                    "- -1 = moderate dislike, avoidance, or low preference\n"
+                    "- -2 = clear and strong dislike or rejection\n"
+                    "\n"
+                    "Calibration rules:\n"
+                    "- If the student likes an activity but feels insecure about being good at it, "
+                    "score the interest as positive.\n"
+                    "- If the student says they are good at an activity but do not enjoy it, "
+                    "score it neutral or negative.\n"
+                    "- Do not treat long or enthusiastic wording as strong evidence unless it is "
+                    "about the specific activity in the question.\n"
+                    "- Do not infer a RIASEC type from career goals, school background, grades, "
+                    "gender, or biography.\n"
+                    "- Do not force a positive score: neutral or unclear answers should be 0.\n"
+                    "- Ambivalent answers such as 'sometimes', 'it depends', 'maybe', or 'a little' "
+                    "are usually 0 or 1, not 2.\n"
+                    "- Strong rejection such as 'I really do not like it', 'I avoid it', or "
+                    "'I would not want to do that' is -2.\n"
+                    "\n"
+                    "Question mapping used later by Python:\n"
+                    "- Q1 practical, hands-on work, building or repairing things -> Realistic\n"
+                    "- Q2 understanding how things work -> Investigative; possible Realistic nuance "
+                    "only if the answer mentions concrete mechanisms, tools, objects, or systems\n"
+                    "- Q3 researching, analyzing problems, logical reasoning -> Investigative\n"
+                    "- Q4 creative expression through writing, art, music, or design -> Artistic\n"
+                    "- Q5 experimenting and creating new things -> Artistic / Investigative / Enterprising nuance; "
+                    "score the general preference for experimenting and creating\n"
+                    "- Q6 working closely with people in a supportive or helping role -> Social\n"
+                    "- Q7 proposing ideas and organizing projects -> Enterprising / Conventional nuance\n"
+                    "- Q8 keeping everything organized and under control -> Conventional\n"
+                    "\n"
+                    "Do NOT output final RIASEC labels. Python will calculate the top 3 labels "
+                    "and confidence from riasec_question_valences.\n"
                 ),
                 schema_example=(
-                    '<LISTENER_PATCH>{"inferred":{"riasec_attitudes":["<top_trait>","<second_trait>","<third_trait>"],"gender":"<gender>"}}</LISTENER_PATCH>'
+                    '<LISTENER_PATCH>{"inferred":{"riasec_question_valences":[0,0,0,0,0,0,0,0]}}</LISTENER_PATCH>'
                 ),
-                evidence="Use the student's answers to the 8 RIASEC questions in this conversation.",
+                evidence=self._riasec_answer_evidence_block(),
             )
-
         if retrieval.is_empty or not candidate_pool:
             self._advice_retry_count += 1
 
             if self._advice_retry_count <= 1:
-                message, fallback_patch, should_finish = self._build_advice_fallback()
+                message, fallback_patch, _ = self._build_advice_fallback()
 
                 update_last_rag_state(
                     retrieval.short_ctx,
@@ -2687,6 +2955,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         final_line = _advice_final_line()
         internal_riasec_step = ""
+        riasec_evidence_for_ranking = ""
+        if riasec_profile == "unknown" and len(self._riasec_answers) >= 8:
+            riasec_evidence_for_ranking = (
+                "RIASEC ANSWERS FOR RANKING:\n"
+                f"{self._riasec_answer_evidence_block()}\n\n"
+            )
         if riasec_profile == "unknown":
             internal_riasec_step = (
                 "INTERNAL RIASEC STEP (do not show):\n"
@@ -2697,6 +2971,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             )
         return (
             "PHASE: ADVICE\n"
+            + self._agent_norms_block()
             + student_profile_block + "\n"
             + search_note
             + "CANDIDATE OPTIONS (already filtered for basic compatibility):\n"
@@ -2706,6 +2981,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
               "RAG_CONTEXT FOR THE CANDIDATE OPTIONS (paraphrase only; do not copy markers/IDs):\n"
               f"{retrieval.short_ctx}\n\n"
             + internal_riasec_step
+            + riasec_evidence_for_ranking
             +"TASK:\n"
             "- Use ONLY the options listed in CANDIDATE OPTIONS.\n"
             "- These options are already filtered for basic compatibility, deduplicated, and cleaned.\n"
