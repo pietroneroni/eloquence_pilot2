@@ -138,6 +138,28 @@ def sanitize_student_output(text: str) -> str:
 # =============================================================================
 def _configure_rag_env() -> None:
     project_root = Path(__file__).resolve().parents[1]
+    backend = os.environ.get("SDIALOG_RAG_BACKEND", "lancedb").lower()
+
+    if backend == "lancedb":
+        default_lancedb_dir = project_root / "RAG_University" / "Embeddings" / "lancedb"
+
+        os.environ.setdefault("SDIALOG_LANCEDB_DIR", str(default_lancedb_dir))
+        os.environ.setdefault("SDIALOG_LANCEDB_TABLE", "universities")
+
+        lancedb_dir = Path(os.environ["SDIALOG_LANCEDB_DIR"])
+
+        if lancedb_dir.exists():
+            try:
+                import lancedb
+                db = lancedb.connect(str(lancedb_dir))
+                table_name = os.environ.get("SDIALOG_LANCEDB_TABLE", "universities")
+                os.environ["SDIALOG_ENABLE_RAG"] = "1" if table_name in db.table_names() else "0"
+            except Exception:
+                os.environ["SDIALOG_ENABLE_RAG"] = "0"
+        else:
+            os.environ["SDIALOG_ENABLE_RAG"] = "0"
+
+        return
 
     candidate_dirs = [
         project_root / "RAG_University" / "Embeddings",
@@ -159,7 +181,6 @@ def _configure_rag_env() -> None:
     os.environ["SDIALOG_RAG_FAISS"] = str(fallback_dir / "rag.index.faiss")
     os.environ["SDIALOG_RAG_CHUNKS"] = str(fallback_dir / "rag.chunks.jsonl")
     os.environ["SDIALOG_ENABLE_RAG"] = "0"
-
 
 class TimedRetriever:
     def __init__(self, retriever, warn_s: float = 6.0):
@@ -253,14 +274,25 @@ def create_agents_offline(
     _configure_rag_env()
 
     if os.environ.get("SDIALOG_ENABLE_RAG", "0") == "1":
-        from RAG_Scripts.rag_retriever import RAGRetriever  # type: ignore
+        backend = os.environ.get("SDIALOG_RAG_BACKEND", "lancedb").lower()
 
-        retriever = TimedRetriever(
-            RAGRetriever(
-                faiss_path=os.environ.get("SDIALOG_RAG_FAISS", ""),
-                chunks_path=os.environ.get("SDIALOG_RAG_CHUNKS", ""),
+        if backend == "lancedb":
+            from RAG_Scripts.lancedb_university_retriever import LanceDBUniversityRetriever
+            retriever = TimedRetriever(
+                LanceDBUniversityRetriever(
+                    lancedb_dir=os.environ.get("SDIALOG_LANCEDB_DIR", str(Path(__file__).resolve().parents[1] / "RAG_University" / "Embeddings" / "lancedb")),
+                    table_name=os.environ.get("SDIALOG_LANCEDB_TABLE", "universities"),
+                )
             )
-        )
+        else:
+            from RAG_Scripts.rag_retriever import RAGRetriever
+
+            retriever = TimedRetriever(
+                RAGRetriever(
+                    faiss_path=os.environ.get("SDIALOG_RAG_FAISS", ""),
+                    chunks_path=os.environ.get("SDIALOG_RAG_CHUNKS", ""),
+                )
+            )
 
         expert_agent = expert_agent | UniversityCounselorFlowOrchestrator(
             retriever=retriever,
