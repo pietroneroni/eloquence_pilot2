@@ -11,7 +11,7 @@
   },
   {
     "explicit": {
-      "academic_background": "Istituto Professionale in art and design",
+      "academic_background": "high school",
       "region": "north"
     },
     "inferred": {
@@ -21,18 +21,44 @@
     }
   },
   {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
     "inferred": {
-      "riasec_attitudes": [
-        "Artistic",
-        "Social",
-        "Enterprising"
-      ],
-      "gender": "female"
+      "field_of_interest": [
+        "arts_design"
+      ]
     }
   },
   {
     "explicit": {
-      "selected_option": "1 - University of Sassari | [A116] DESIGN, MANAGEMENT, AND PROMOTION OF TOURIST ITINERARIES OF CULTURE AND ENVIRONMENT"
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "social_sciences"
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "riasec_question_valences": [
+        2,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "selected_option": "1 - University of Trento | [0611G] SOCIOLOGY"
     }
   }
 ]

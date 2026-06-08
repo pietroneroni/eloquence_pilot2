@@ -1,0 +1,157 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 08da7c91-2d5f-43d6-be7a-55a6fc0aff8a
+[model] {'name': 'ollama:qwen3:30b', 'seed': 13, 'temperature': 0.6, 'top_k': 20, 'top_p': 0.95, 'repeat_penalty': 1}
+[seed] 12349
+--- Dialogue Begins ---
+[STUDENT] Hi! I'm 21 and from Northern Italy, and I just finished my master's in clinical psychology. Now I'm trying to pick the right university program for my next step, but I'm a bit overwhelmed by all the options. Any tips on how to narrow it down?
+[EXPERT] Hello! I help students choose university programs based on their background, interests, aptitudes, and constraints. What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?
+[Listener memory | extracted from STUDENT turn 1]
+{
+  "explicit": {
+    "academic_background": null,
+    "region": "north",
+    "selected_option": null
+  },
+  "inferred": {
+    "field_of_interest": [
+      "psychology"
+    ],
+    "gender": null,
+    "riasec_attitudes": null,
+    "riasec_confidence": null
+  }
+}
+
+[STUDENT] I'm currently finishing my master's in clinical psychology, so my most recent studies have been in that field.
+[EXPERT] Thanks, that helps. What subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.)
+[STUDENT] I really enjoy clinical psychology topics like cognitive behavioral therapy and trauma counseling. My strengths are in practical applications and empathy, though I sometimes get stressed during high-pressure assessments.
+[EXPERT] Thanks, that helps. What are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?
+[STUDENT] I want to work in mental health clinics after graduation, preferably in Northern Italy where I'm based. Budget is important, and I'd like to avoid relocating too far from my current area.
+[EXPERT] Do you like practical, hands-on work—building or repairing things?
+[Listener memory | extracted from STUDENT turn 4]
+{
+  "explicit": {
+    "academic_background": "master's in clinical psychology",
+    "region": "north",
+    "selected_option": null
+  },
+  "inferred": {
+    "field_of_interest": [
+      "psychology"
+    ],
+    "gender": null,
+    "riasec_attitudes": null,
+    "riasec_confidence": null
+  }
+}
+
+[STUDENT] I enjoy practical work in clinical settings like therapy sessions, but not building or repairing objects.
+[EXPERT] Are you curious to understand how things work?
+[STUDENT] Yes, I'm really curious about how things work, especially in psychological contexts.
+[EXPERT] Do you enjoy researching, analyzing problems, and reasoning logically?
+[STUDENT] Yes, I really enjoy researching and analyzing problems logically—it's key to my clinical psychology work.
+[EXPERT] Do you like expressing what you think or feel through creative forms (writing, art, music, design)?
+[STUDENT] Not really, I prefer structured analysis in my work rather than creative expression.
+[EXPERT] Do you like experimenting and creating new things?
+[STUDENT] Not really—I focus on evidence-based approaches in therapy rather than creating new things.
+[EXPERT] Do you like working closely with people and having a supportive/helping role?
+[STUDENT] Absolutely, I love helping clients and working closely with people in therapy settings.
+[EXPERT] Do you like proposing ideas and organizing projects?
+[STUDENT] Yes, I enjoy organizing therapy sessions and proposing structured approaches in my clinical work.
+[EXPERT] Do you like having everything organized and under control?
+[STUDENT] Yes, I prefer everything organized and under control—it helps me stay focused on my goals.
+[EXPERT] 1. University of Trento | [0707H] PSYCHOLOGY Choose one option by number.
+[Listener memory | extracted from STUDENT turn 12]
+{
+  "explicit": {
+    "academic_background": "master's in clinical psychology",
+    "region": "north",
+    "selected_option": null
+  },
+  "inferred": {
+    "field_of_interest": [
+      "psychology"
+    ],
+    "gender": null,
+    "riasec_attitudes": [
+      "Social",
+      "Conventional",
+      "Investigative"
+    ],
+    "riasec_confidence": "high"
+  }
+}
+
+[STUDENT] I will choose option 1. Do you think I could handle a demanding technical course?
+[EXPERT] Yes
+[Listener memory | extracted from STUDENT turn 13]
+{
+  "explicit": {
+    "academic_background": "master's in clinical psychology",
+    "region": "north",
+    "selected_option": "1 - University of Trento | [0707H] PSYCHOLOGY"
+  },
+  "inferred": {
+    "field_of_interest": [
+      "psychology"
+    ],
+    "gender": null,
+    "riasec_attitudes": [
+      "Social",
+      "Conventional",
+      "Investigative"
+    ],
+    "riasec_confidence": "high"
+  }
+}
+
+[STUDENT] Would you recommend focusing on a technical program or a program oriented toward humanities?
+[EXPERT] a program oriented toward humanities
+[STUDENT] Why do you think that choice would suit me?
+[EXPERT] Your clinical psychology background and preference for structured, evidence-based approaches align well with humanities-oriented psychology programs. Trento's [0707H] PSYCHOLOGY emphasizes applied research and clinical practice in Northern Italy—perfect for your goal of working in mental health clinics without relocating.
+[STUDENT] Do you think I would feel comfortable leading a group project?
+[EXPERT] Yes
+[STUDENT] Would you suggest I take a leadership role now or focus on supporting tasks first?
+[EXPERT] take a leadership role now
+[STUDENT] Why do you think one option is more suitable for me?
+[EXPERT] Trento's [0707H] PSYCHOLOGY emphasizes applied clinical practice in Northern Italy, matching your master's in clinical psychology and preference for structured, evidence-based work without relocation. Its humanities focus aligns with your interest in research and client-centered therapy over technical skills.
+[STUDENT] Do you think my previous studies have adequately prepared me for university-level courses?
+[EXPERT] Yes
+[STUDENT] Would you suggest I take advanced classes immediately or start with introductory modules?
+[EXPERT] take advanced classes immediately
+[STUDENT] Why do you think that approach fits my preparation?
+[EXPERT] Your master's in clinical psychology provides strong foundational knowledge for advanced coursework. Trento's [0707H] PSYCHOLOGY program expects this level of preparation and focuses on applied clinical practice—exactly matching your evidence-based, structured approach.
+[STUDENT] Thank you for your help, goodbye.
+[EXPERT] Recap: Your master's in clinical psychology and goal to work in Northern Italy mental health clinics align perfectly with Trento's [0707H] PSYCHOLOGY program's applied clinical focus. RIASEC: SCI Next steps: 1. review the official course plan and admission requirements 2. verify costs, location, commuting, or housing constraints 3. prepare documents, portfolio, or prerequisite review Goodbye: Wishing you all the best with your studies!
+[STUDENT] Goodbye
+--- Dialogue Ends ---

@@ -164,22 +164,26 @@ def clean_and_dedup_options(raw_options: list[str], max_options: int | None = No
     deduped = list(best_by_family.values())
 
     # 2) secondary near-duplicate pass:
-    # stessa università + titolo quasi uguale -> tieni il migliore
+    # stessa università + titolo quasi uguale -> tieni il migliore, ma preserva
+    # l'ordine di retrieval. Ordinare per informativeness qui altera ranking e
+    # vincoli geografici già decisi a monte.
     final_items: list[dict] = []
-    for cand in sorted(deduped, key=_informativeness_score, reverse=True):
+    for cand in deduped:
         cand_uni = _strip_accents(cand["university"].lower())
         cand_title = _normalized_title_for_similarity(cand["title"])
 
-        is_dup = False
-        for kept in final_items:
+        dup_index = None
+        for idx, kept in enumerate(final_items):
             kept_uni = _strip_accents(kept["university"].lower())
             kept_title = _normalized_title_for_similarity(kept["title"])
             if cand_uni == kept_uni and _similar(cand_title, kept_title):
-                is_dup = True
+                dup_index = idx
                 break
 
-        if not is_dup:
+        if dup_index is None:
             final_items.append(cand)
+        elif _informativeness_score(cand) > _informativeness_score(final_items[dup_index]):
+            final_items[dup_index] = cand
 
     results = [item["raw"] for item in final_items]
 

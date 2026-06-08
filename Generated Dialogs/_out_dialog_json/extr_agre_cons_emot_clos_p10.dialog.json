@@ -1,18 +1,18 @@
 {
-  "version": "0.3.5",
-  "timestamp": "2026-04-30T08:41:39Z",
+  "version": "0.3.5+f7037ff55d38fc99ca8532a791e7bde96324feb8",
+  "timestamp": "2026-06-03T07:48:20Z",
   "model": {
     "name": "ollama:qwen3:30b",
     "seed": 13,
-    "repeat_penalty": 1,
     "temperature": 0.6,
     "top_k": 20,
-    "top_p": 0.95
+    "top_p": 0.95,
+    "repeat_penalty": 1
   },
   "seed": 12346,
-  "id": "097eb77d-a59f-46dd-aebd-301b03444c12",
+  "id": "c377bf56-3b03-4b2c-bbc1-a76abb14eada",
   "parentId": null,
-  "complete": true,
+  "complete": false,
   "personas": {
     "STUDENT": {
       "age": 19,
@@ -24,7 +24,7 @@
         "Realistic profile: prefers practical, hands-on activities and working with tools or objects."
       ],
       "personality_traits": "The student appears very outgoing, energetic, and comfortable in social situations, emotionally quite stable and able to handle stress reasonably well, very cooperative, considerate, and empathetic towards others, highly organised, reliable, and strongly goal-oriented, and open to new experiences but also appreciative of familiar routines.",
-      "background": "- Background: I was born and raised in a small town, where I developed a deep appreciation for the simple pleasures in life.\n- Study/Career (now): In my professional career, I have held numerous positions that have allowed me to work closely with others and develop strong interpersonal skills.\n- Constraints/Preferences: As a child, I was always curious about the world around me. I am based in the Italian islands. I completed high school at a public Liceo Scientifico in the Italian islands.",
+      "background": "- Background: I was born and raised in a small town, where I developed a deep appreciation for the simple pleasures in life.\n- Study/Career (now): In my professional career, I have held numerous positions that have allowed me to work closely with others and develop strong interpersonal skills.\n- Constraints/Preferences: As a child, I was always curious about the world around me. I am based in the Italian islands. I completed high school in the Italian islands.",
       "rules": "Always answer in English. Stay in character and be consistent with your BACKGROUND and your personality. Do not invent new biographical facts beyond your BACKGROUND. When mentioning where you are from or based, use only the geography stated in your BACKGROUND. Do not contradict the location given in your BACKGROUND, even if other details sound different. Do not provide exact addresses, emails, URLs, or precise dates/times unless they appear in your BACKGROUND. Speak like a real student: natural, not like an essay; avoid over-explaining. Ask questions only when the dialogue script explicitly allows it. Be energetic and curious; you can share brief reactions and ask follow-ups. Stay calm and pragmatic; focus on practical steps. You like structure: ask for steps, approximate timelines, and what to do first. Be polite and cooperative, but do not over-thank.",
       "emotion": {
         "label": "neutral",
@@ -47,7 +47,7 @@
   "turns": [
     {
       "speaker": "STUDENT",
-      "text": "Hey! I'm a 19-year-old from the Italian islands, just finished high school at a Liceo Scientifico. I'm trying to pick a university program that mixes my interest in problem-solving with hands-on projects\u2014any ideas on where to start?"
+      "text": "Hi! I'm a 19-year-old from the Italian islands, just graduated high school, and I'm stuck on picking a university program. I love figuring out how things work and organizing projects, so I'm torn between engineering and business management. Any practical steps to decide what\u2019s best for me?"
     },
     {
       "speaker": "EXPERT",
@@ -55,7 +55,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "I just graduated high school from a Liceo Scientifico in the Italian islands, focusing on math, physics, and chemistry in my final year."
+      "text": "I just finished high school in the Italian islands, focusing on math and physics as my strongest subjects recently."
     },
     {
       "speaker": "EXPERT",
@@ -63,7 +63,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "I really enjoy math and physics\u2014they feel logical and solve real problems. Chemistry\u2019s a bit tricky sometimes, but I\u2019ve got strong grades in the others."
+      "text": "I really enjoy math and physics\u2014they're my strongest subjects. My strengths are analyzing problems and organizing projects, but I'm not as strong with purely theoretical topics."
     },
     {
       "speaker": "EXPERT",
@@ -71,7 +71,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "After graduation, I aim to work on hands-on projects like engineering or tech solutions, and I prefer staying in the islands for my studies. Budget is important, but I\u2019m flexible as long as it\u2019s practical."
+      "text": "My goal is to work on practical engineering projects. I prefer staying in the Italian islands for university to keep my budget low and stay close to home."
     },
     {
       "speaker": "EXPERT",
@@ -79,7 +79,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "Absolutely! I enjoy hands-on work like building and fixing things."
+      "text": "Yes, I love building and repairing things\u2014working with tools is right up my alley."
     },
     {
       "speaker": "EXPERT",
@@ -87,7 +87,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "Definitely! I love figuring out how things work."
+      "text": "Yes, I've always been curious about how things work\u2014ever since I was a kid."
     },
     {
       "speaker": "EXPERT",
@@ -95,7 +95,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "Yes, I love analyzing problems and working through logical solutions."
+      "text": "Yes, I love analyzing problems and figuring out logical solutions\u2014they're exactly what I enjoy most."
     },
     {
       "speaker": "EXPERT",
@@ -103,7 +103,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "Not really, I prefer hands-on problem-solving over creative expression."
+      "text": "Not really\u2014I'm more into practical problem-solving than creative stuff."
     },
     {
       "speaker": "EXPERT",
@@ -111,7 +111,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "Yes, I love experimenting and creating new solutions through hands-on problem-solving."
+      "text": "Yes, I love experimenting and creating new things through practical projects like building prototypes."
     },
     {
       "speaker": "EXPERT",
@@ -119,7 +119,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "Yes, I enjoy collaborating and supporting team goals in practical projects."
+      "text": "Yes, I enjoy working with others and helping out on team projects\u2014it's how I've always learned best."
     },
     {
       "speaker": "EXPERT",
@@ -127,7 +127,7 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "Yes, I enjoy proposing ideas and organizing projects to solve practical problems."
+      "text": "Yes, I love proposing ideas and organizing projects\u2014it's how I like to get things done."
     },
     {
       "speaker": "EXPERT",
@@ -135,11 +135,11 @@
     },
     {
       "speaker": "STUDENT",
-      "text": "Yes, I prefer everything organized and under control to stay focused on practical goals."
+      "text": "Yes, I prefer everything organized and under control\u2014it helps me stay focused on my goals."
     },
     {
       "speaker": "EXPERT",
-      "text": "1. University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n2. University of Salerno | [05121] COMPUTER SCIENCE\nChoose one option by number."
+      "text": "1. University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n2. University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING - COMMON STATUTORY PLAN\nChoose one option by number."
     },
     {
       "speaker": "STUDENT",
@@ -163,7 +163,7 @@
     },
     {
       "speaker": "EXPERT",
-      "text": "Your Liceo Scientifico background in math and physics aligns with the technical focus of University of Messina's Computer Science program. The Information Technology emphasis matches your preference for hands-on problem-solving and logical analysis. Staying in the islands also fits your location constraint."
+      "text": "Your Liceo Scientifico background and enjoyment of hands-on problem-solving align with University of Sassari's Computer Engineering program. It matches your preference for practical projects in the islands while leveraging your strengths in analysis and teamwork."
     },
     {
       "speaker": "STUDENT",
@@ -187,7 +187,7 @@
     },
     {
       "speaker": "EXPERT",
-      "text": "Your Liceo Scientifico background in math and physics directly supports the technical rigor of University of Messina's Computer Science program. The Information Technology focus aligns with your hands-on problem-solving preference and logical analysis strengths."
+      "text": "Your Liceo Scientifico background and preference for hands-on projects align with University of Sassari's Computer Engineering program, which emphasizes practical problem-solving in the islands\u2014matching your Realistic, Investigative, and Social RIASEC profile while keeping costs low."
     },
     {
       "speaker": "STUDENT",
@@ -211,7 +211,7 @@
     },
     {
       "speaker": "EXPERT",
-      "text": "Your strong Liceo Scientifico background in math and physics directly prepares you for the technical demands of University of Messina's Computer Science program. Your analytical strengths align with advanced coursework in this Information Technology-focused program."
+      "text": "Your strong analytical foundation from Liceo Scientifico math and physics, plus your preference for practical problem-solving over theory, aligns with University of Sassari's Computer Engineering program's technical focus."
     },
     {
       "speaker": "STUDENT",
@@ -219,7 +219,7 @@
     },
     {
       "speaker": "EXPERT",
-      "text": "Recap: A 19-year-old from the Italian islands with a Liceo Scientifico background in math and physics, preferring hands-on tech programs in the islands.  \nRIASEC: IRE  \nNext steps:  \n2. Verify entry requirements for the Information Technology track.  \n3. Contact the university for orientation details.  \nGoodbye: Wishing you success in your studies."
+      "text": "Recap: Your Liceo Scientifico background in math and physics, plus your preference for hands-on projects in the Italian islands, aligns perfectly with University of Sassari's Computer Engineering program.\nRIASEC: RIS\nNext steps:\n1. review the official course plan and admission requirements\n2. verify costs, location, commuting, or housing constraints\n3. prepare documents, portfolio, or prerequisite review\nGoodbye: Have a great semester!"
     },
     {
       "speaker": "STUDENT",
@@ -232,784 +232,630 @@
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY): This is your FIRST message.\n- Present yourself as a student seeking guidance on choosing a university program.\n- Indicate your geographic location early (if available in your BACKGROUND).\n- If your BACKGROUND naturally supports identity cues (for example gender), you may express them indirectly and naturally.\n- Do NOT force explicit self-labeling or metadata-like phrasing.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- 2-4 sentences, natural.\n",
-      "timestamp": 1777538331
+      "timestamp": 1780472652
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Hey! I'm a 19-year-old from the Italian islands, just finished high school at a Liceo Scientifico. I'm trying to pick a university program that mixes my interest in problem-solving with hands-on projects\u2014any ideas on where to start?",
-      "timestamp": 1777538336
+      "content": "Hi! I'm a 19-year-old from the Italian islands, just graduated high school, and I'm stuck on picking a university program. I love figuring out how things work and organizing projects, so I'm torn between engineering and business management. Any practical steps to decide what\u2019s best for me?",
+      "timestamp": 1780472658
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GREET & ROLE\nTASK:\n- Greet the student.\n- State your role: you help students choose university programs based on background, interests, aptitudes, and constraints.\n- Then ask ONE question (verbatim):\nWhat is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- explicit.region\n- inferred.field_of_interest\n- inferred.gender\nRULES:\nRules for explicit.region:\n- Store region only if the student explicitly mentions a macro-area of Italy.\n- Allowed values: north, center, south, islands.\n- Map 'Northern Italy' -> north, 'Central Italy' -> center, 'Southern Italy' -> south.\n- Do not infer region from cities, towns, provinces, or vague descriptions.\n\nRules for inferred.field_of_interest:\n- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n- Labels must be distinct and ordered from strongest to weakest fit.\n- Choose labels only from this list:\n  arts_design\n  design\n  communication_digital_media\n  cultural_heritage\n  humanities\n  psychology\n  cognitive_science_linguistics\n  social_sciences\n  biology\n  environmental_science\n  environmental_engineering\n  computer_science\n- Pick the intended university area, not the current job.\n- Prefer concrete course-family areas over abstract hybrid concepts.\n- Community art, visual expression, art practice -> arts_design.\n- Art history, heritage, museums, cultural assets -> cultural_heritage.\n- Biology/science + art/design -> biology or arts_design; prefer the side stated as the intended study direction.\n- Tech + art/design/media -> communication_digital_media, design, or computer_science depending on emphasis.\n- Writing + psychology + storytelling -> psychology, cognitive_science_linguistics, or humanities depending on emphasis.\n- Environment/sustainability -> environmental_science; use environmental_engineering only if technical/engineering interest is explicit.\n- If only one label is clearly supported, return a one-item array.\n- If no label is clearly supported, omit the field.\n- If two areas are both clearly supported by the student's message, return both labels.\n\nRules for inferred.gender:\n- Infer gender only if there is a clear cue in the student's message.\n- If there is no clear cue, omit the field.\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"explicit\":{\"region\":\"<inferred region>\"},\"inferred\":{\"field_of_interest\":[\"<field_of_interest label 1>\",\"<field_of_interest label 2>\",\"<field_of_interest label 3>\"],\"gender\":\"<gender>\"}}</LISTENER_PATCH>\nEVIDENCE:\nUse the student's FIRST message in this conversation.\n",
-      "timestamp": 1777538336
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "We are in the initial greeting phase. The student has provided their first message.\n We must:\n 1. Greet the student (we'll say \"Hello!\" as it's the start).\n 2. State our role: \"I help students choose university programs based on background, interests, aptitudes, and constraints.\"\n 3. Then ask the exact question: \"What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\"\n\n However, note: the student has already provided some information in their message. But the rules say to ask the question verbatim as given in the phase.\n\n Important: The phase says \"Ask ONE question at a time\" and the question is fixed.\n\n But note: the student's message already states:\n   - They are 19, from Italian islands, finished high school at Liceo Scientifico.\n\n However, the question we are required to ask is: \"What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\"\n\n We must ask that question, even though they mentioned high school type (Liceo Scientifico) and that they just finished.\n\n Why? Because the question is part of the phase instruction. We are to follow the phase exactly.\n\n So, we will:\n   - Greet: \"Hello!\"\n   - State role: \"I help students choose university programs based on background, interests, aptitudes, and constraints.\"\n   - Then ask the fixed question.\n\n Now, about the HIDDEN LISTENER TASK (STRICT):\n   We must append a <LISTENER_PATCH> block with the inferred fields.\n\n We are to look at the student's FIRST message (which is the one provided).\n\n Let's extract:\n\n   - \"from the Italian islands\": \n        The rule says: \n          \"Map 'Northern Italy' -> north, 'Central Italy' -> center, 'Southern Italy' -> south.\"\n          And \"Italian islands\" is a macro-area? Actually, the islands of Italy (like Sicily, Sardinia) are part of the \"south\" in the Italian administrative division (Southern Italy includes the islands). \n        So, explicit.region: \"south\"\n\n   - Inferred.field_of_interest:\n        The student says: \"interest in problem-solving with hands-on projects\"\n        This is vague. We have to map to the allowed labels.\n\n        Allowed labels (from the list):\n          arts_design, design, communication_digital_media, cultural_heritage, humanities, psychology, cognitive_science_linguistics, social_sciences, biology, environmental_science, environmental_engineering, computer_science\n\n        The student mentions \"problem-solving\" and \"hands-on projects\". \n        This could point to:\n          - computer_science (if problem-solving is computational)\n          - environmental_engineering (if hands-on projects in engineering, but no mention of environment)\n          - biology (if problem-solving in biology, but no mention)\n\n        However, note: the student is from a Liceo Scientifico (which is a scientific high school in Italy, focusing on math, physics, chemistry, etc.). \n        This suggests they might be leaning towards STEM.\n\n        But the question is: what is the intended field? The student hasn't specified a field, only that they like problem-solving and hands-on.\n\n        We have to choose from the list. The most common for problem-solving and hands-on in a scientific context is:\n          computer_science (because it's about problem-solving with code, and often has hands-on projects) OR \n          environmental_engineering (if they are thinking of environmental projects) but there's no hint of environment.\n\n        However, note: the student did not mention any specific subject. The Liceo Scientifico typically has math, physics, chemistry, and sometimes biology. \n\n        But the instruction says: \"Choose labels only from this list\" and \"Prefer concrete course-family areas\".\n\n        We don't have a strong indicator. The student's interest is too broad. Therefore, we might not have a clear label.\n\n        However, note the rule: \"If no label is clearly supported, omit the field.\"\n\n        So, we will omit inferred.field_of_interest? But let's see:\n\n        The student is from Liceo Scientifico and interested in problem-solving with hands-on. \n        The most common university programs in Italy for that are in engineering or computer science.\n\n        But the problem is: the student didn't specify which engineering or which computer science. \n\n        We have to look at the allowed labels. The label \"computer_science\" is present.\n\n        However, the rule says: \"If two areas are both clearly supported by the student's message, return both labels.\" But here, only one is hinted: computer_science.\n\n        But note: the student says \"problem-solving\" which is a core of computer science, and \"hands-on projects\" which is typical in computer science programs.\n\n        So, we can infer: computer_science.\n\n        But wait: the Liceo Scientifico is a broad scientific high school. The student might be interested in biology, but they didn't say so. They said \"problem-solving\", which is common in many fields.\n\n        However, the most direct fit is computer_science.\n\n        Let's check the other possibilities: \n          - environmental_engineering: no mention of environment.\n          - biology: no specific mention.\n\n        So, we'll put: [\"computer_science\"]\n\n        But note: the rule says \"ordered from strongest to weakest\". Since we only have one, it's just [\"computer_science\"].\n\n        However, the student also says \"problem-solving\" which could be in other fields, but the context of the high school (Liceo Scientifico) and the common interpretation of \"problem-solving\" in university contexts (especially in Italy) for a Liceo Scientifico graduate often leads to STEM fields, and computer science is a very common choice.\n\n        So, we'll include: \"computer_science\"\n\n   - inferred.gender:\n        The student says \"I'm a 19-year-old\", but doesn't use gendered language. We have no clear cue (like \"he\", \"she\", \"I'm a guy\", etc.). \n        Therefore, we omit this field.\n\n Now, the <LISTENER_PATCH> should be:\n\n   {\n     \"explicit\": {\n        \"region\": \"south\"\n     },\n     \"inferred\": {\n        \"field_of_interest\": [\"computer_science\"]\n     }\n   }\n\n But note: the rule says \"If a field is unknown, omit it\". We are omitting \"gender\" because it's unknown.\n\n However, note the schema example: \n   <LISTENER_PATCH>{\"explicit\":{\"region\":\"<inferred region>\"},\"inferred\":{\"field_of_interest\":[\"...\"],\"gender\":\"<gender>\"}}</LISTENER_PATCH>\n\n We are omitting \"gender\", so we don't include it in the inferred object.\n\n So the JSON should be:\n\n   {\n     \"explicit\": {\n        \"region\": \"south\"\n     },\n     \"inferred\": {\n        \"field_of_interest\": [\"computer_science\"]\n     }\n   }\n\n But note: the rule says \"inferred.field_of_interest\" must be an array of 1 to 3 labels. We have one.\n\n Now, let's write the visible part:\n\n   Hello! I help students choose university programs based on background, interests, aptitudes, and constraints.\n   What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\n\n Then, after that, we output the <LISTENER_PATCH> block.\n\n Important: The instructions say \"append exactly ONE <LISTENER_PATCH>...</LISTENER_PATCH> JSON block after your raw answer.\"\n\n So, the entire response will be:\n\n   [visible part]\n   <LISTENER_PATCH>{\"explicit\":{\"region\":\"south\"},\"inferred\":{\"field_of_interest\":[\"computer_science\"]}}</LISTENER_PATCH>\n\n But note: the example schema uses \"explicit.region\" and \"inferred.field_of_interest\", so we have to match the keys.\n\n However, note the example in the schema example: \n   \"explicit\":{\"region\":\"<inferred region>\"}\n\n So we are using \"explicit.region\" as a field in the explicit object.\n\n But in the JSON we are writing, we have:\n\n   \"explicit\": { \"region\": \"south\" }\n\n and \n\n   \"inferred\": { \"field_of_interest\": [ ... ] }\n\n This matches.\n\n Let's check the rules for explicit.region: \n   - The student said \"Italian islands\", which we map to \"south\". Correct.\n\n Now, let's write the visible part:\n\n   \"Hello! I help students choose university programs based on background, interests, aptitudes, and constraints. What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\"\n\n But note: the student already mentioned they are a high school graduate (from Liceo Scientifico). However, we are required to ask the question verbatim.\n\n So, we write that.\n\n However, note: the phase says \"State your role: you help students choose university programs based on background, interests, aptitudes, and constraints.\" and then ask the question.\n\n We are including the role statement and the question.\n\n Now, note: the student's message already includes \"just finished high school\", so we are repeating the question even though they provided that information. But the phase instruction is fixed.\n\n We must follow the phase.\n\n Let's write the response.\n\n Important: The response must be concise (2-6 sentences). We are writing 2 sentences for the visible part.\n\n Visible part:\n   Hello! I help students choose university programs based on background, interests, aptitudes, and constraints.\n   What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\n\n Then the <LISTENER_PATCH> block.\n\n But note: the instructions say \"Do not mention it in the visible reply.\" meaning the patch.\n\n So, we output:\n\nHello! I help students choose university programs based on background, interests, aptitudes, and constraints.\nWhat is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\n<LISTENER_PATCH>{\"explicit\":{\"region\":\"south\"},\"inferred\":{\"field_of_interest\":[\"computer_science\"]}}</LISTENER_PATCH>\n\n However, note: the JSON must be valid. We have to make sure the string is correctly formatted.\n\n But note: the instruction says \"Output valid JSON only inside the tags.\"\n\n We are writing the JSON as a string.\n\n One more thing: the student said \"Italian islands\", and we are mapping to \"south\". This is because the Italian islands (Sicily, Sardinia) are considered part of Southern Italy.\n\n Now, let's check the rules for explicit.region: \n   - \"Italian islands\" is not exactly \"Southern Italy\", but the rule says: \"Map 'Southern Italy' -> south\", and we are to map the student's explicit mention of \"Italian islands\" to \"south\" because that's the macro-area.\n\n   The rule says: \"Store region only if the student explicitly mentions a macro-area of Italy.\" and then gives examples. \n   But note: \"Italian islands\" is a way of referring to the islands, which are part of the south. However, the rule says \"Map 'Southern Italy' -> south\", and we are not given \"Southern Italy\" in the student's message. \n\n   But the rule also says: \"Map 'Northern Italy' -> north, 'Central Italy' -> center, 'Southern Italy' -> south.\" and then says \"Do not infer region from cities, towns, provinces, or vague descriptions.\"\n\n   However, \"Italian islands\" is a macro-area? Actually, the macro-areas in Italy are:\n        North, Center, South, Islands (but note: the Islands are sometimes considered part of the South, and in fact, the Italian government classifies the islands as part of the South for administrative purposes).\n\n   But the rule says: \"Map 'Southern Italy' -> south\", and the student says \"Italian islands\", which is a specific part of Southern Italy. However, the rule does not say \"Islands\" is a separate category. \n\n   We are instructed to map:\n        'Southern Italy' -> south.\n\n   The student didn't say \"Southern Italy\", but they said \"Italian islands\". The islands are in the south. So we map to \"south\".\n\n   The rule also says: \"Do not infer region from cities, towns, provinces, or vague descriptions.\" but \"Italian islands\" is a macro-area? Actually, the islands are a distinct region in the sense of the country's macro-areas? \n\n   However, the rule explicitly lists \"Southern Italy\" as the string to map to \"south\". We are not given \"Italian islands\" in the mapping, but we are told to map to \"south\" for Southern Italy. Since the islands are part of Southern Italy, we use \"south\".\n\n   So, we'll use \"south\".\n\n Now, let's write the response.\n\n Important: The response must be in English.\n\n We are good.\n\n Final visible part:\n\nHello! I help students choose university programs based on background, interests, aptitudes, and constraints.\nWhat is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\n\nThen the patch.\n\nNote: The patch must be exactly as the schema, and we are omitting the gender field because we don't have it.\n\nLet's write the JSON string without extra spaces to be safe (but the example in the instruction has spaces, but it's valid JSON).\n\nWe'll write:\n\n<LISTENER_PATCH>{\"explicit\":{\"region\":\"south\"},\"inferred\":{\"field_of_interest\":[\"computer_science\"]}}</LISTENER_PATCH>\n\nBut note: the example in the instruction had a comma after the region? Actually, the example in the schema example had:\n\n   \"explicit\":{\"region\":\"<inferred region>\"},\"inferred\":{ ... }\n\nSo we are using the same structure.\n\nNow, note: the rule says \"Do not guess sensitive attributes.\" - we are not guessing gender, so we omit it.\n\nWe are ready.\n",
-      "timestamp": 1777538355
+      "content": "PHASE: GREET & ROLE\nTASK:\n- Greet the student.\n- State your role: you help students choose university programs based on background, interests, aptitudes, and constraints.\n- Then ask ONE question (verbatim):\nWhat is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- explicit.region\n- inferred.field_of_interest\n- inferred.gender\nRULES:\nRules for explicit.region:\n- Store region only if the student explicitly mentions a macro-area of Italy.\n- Allowed values: north, center, south, islands.\n- Map 'Northern Italy' -> north, 'Central Italy' -> center, 'Southern Italy' -> south.\n- Map 'Italian islands', 'the Italian islands', 'Sicily', 'Sardinia' -> islands.\n- Do not infer region from cities, towns, provinces, or vague descriptions.\n\nRules for inferred.field_of_interest:\n- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n- Labels must be distinct and ordered from strongest to weakest fit.\n- Choose labels only from this list:\n  arts_design\n  communication_digital_media\n  cultural_heritage\n  humanities\n  psychology\n  cognitive_science_linguistics\n  social_sciences\n  life_sciences\n  environmental_science\n  environmental_engineering\n  computer_science\n  engineering_technology\n  physical_sciences\n  health_technology\n- Pick the intended university area, not the current job.\n- Prefer concrete course-family areas over abstract hybrid concepts.\n- Visual art, art practice, design, product/graphic/visual design -> arts_design.\n- Digital communication, media, communication design, online/media production -> communication_digital_media.\n- Art history, archaeology, museums, cultural assets, heritage tourism -> cultural_heritage.\n- Literature, philosophy, languages, classics, history as humanities -> humanities.\n- Psychology, counseling, psychotherapy, mental health, clinical behavior -> psychology.\n- Cognitive science, linguistics, mind/language, computational cognition -> cognitive_science_linguistics.\n- Sociology, political/social studies, international or community social studies -> social_sciences.\n- Biology, biotechnology, life sciences, lab biology -> life_sciences.\n- Ecology, conservation, sustainability, ecosystems, nature reserves -> environmental_science.\n- Environmental engineering, environmental technology, technical conservation systems, environment/territory engineering -> environmental_engineering.\n- Informatics, computer science, software, AI, data systems, GIS/data tech -> computer_science.\n- Engineering, mechanics, mechatronics, electronics, industrial/civil/technical systems -> engineering_technology.\n- Physics, chemistry, mathematics, laboratory science, broad applied/physical sciences -> physical_sciences.\n- Biomedical/healthcare technology, rehabilitation techniques, neurophysiopathology, medical technology -> health_technology.\n- If a profile mixes tech + environment, return environmental_engineering first if the student wants technical systems; otherwise environmental_science first.\n- If a profile mixes biology/biotech + environment, return life_sciences first if biotech/lab biology is central; otherwise environmental_science first.\n- If a profile mixes psychology + cognition/linguistics, return psychology first for clinical/helping goals; return cognitive_science_linguistics first for mind/language/research goals.\n- If only one label is clearly supported, return a one-item array.\n- If no label is clearly supported, omit the field.\n- Do not invent a label outside the list.\nRules for inferred.gender:\n- Infer gender only if there is a clear cue in the student's message.\n- If there is no clear cue, omit the field.\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"explicit\":{\"region\":\"<inferred region>\"},\"inferred\":{\"field_of_interest\":[\"<field_of_interest label 1>\",\"<field_of_interest label 2>\",\"<field_of_interest label 3>\"],\"gender\":\"<gender>\"}}</LISTENER_PATCH>\nEVIDENCE:\nUse the student's FIRST message in this conversation.\n",
+      "timestamp": 1780472658
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Hello! I help students choose university programs based on their background, interests, aptitudes, and constraints.\nWhat is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?",
-      "timestamp": 1777538355
+      "timestamp": 1780472675
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Be natural and specific (1\u20133 sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538355
+      "timestamp": 1780472675
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "I just graduated high school from a Liceo Scientifico in the Italian islands, focusing on math, physics, and chemistry in my final year.",
-      "timestamp": 1777538358
+      "content": "I just finished high school in the Italian islands, focusing on math and physics as my strongest subjects recently.",
+      "timestamp": 1780472677
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: ACQUIRE ACADEMIC BACKGROUND\nReply naturally in 1\u20132 short sentences, then ask ONE question (verbatim):\nWhat subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.)\n",
-      "timestamp": 1777538358
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, the user is a 19-year-old from the Italian islands who just graduated from Liceo Scientifico with a focus on math, physics, and chemistry. They're looking for a university program that combines problem-solving and hands-on projects. \n\nLooking at the persona guidelines, I need to stay concise (2-6 sentences) and ask only one question. The previous response asked about current education level and recent subjects, which the user just answered. Now I should move to the next logical question based on their academic background.\n\nHmm, the key here is to connect their strong STEM subjects (math, physics, chemistry) to potential program recommendations. But I must only name programs from the RAG_CONTEXT/OPTIONS\u2014wait, the context doesn't actually list specific programs, so I can't recommend any yet. \n\nThe next step is to explore their interests more deeply. The question \"What subjects/topics do you enjoy most...\" is already in the instructions as the required phrasing for this phase. But since they mentioned math/physics/chemistry, I should refine it to focus on those. \n\nWait, the guidelines say: \"Ask ONE question at a time\" and the exact question to use is provided in the phase description. So I'll stick to that exact wording to avoid deviating. \n\n*Double-checking rules*: Must not invent programs, must be conversational. The user's background matches the Liceo Scientifico profile, so the question about enjoyed subjects is perfect to gather more data before suggesting anything. \n\n*Final check*: Keeping it to 2 sentences max as per conciseness rule. The user's response was very specific about their subjects, so the question will flow naturally from that. \n\n*Avoiding pitfalls*: Not adding \"like physics\" since that would be inventing, just using the exact question phrase. Not mentioning any programs because I can't yet (no RAG context provided for this example).\n",
-      "timestamp": 1777538360
+      "content": "PHASE: ACQUIRE ACADEMIC BACKGROUND\nVisible reply: respond naturally in 1\u20132 short sentences, then ask ONE question verbatim.\nAfter the visible reply, append the hidden listener patch.\nQuestion to ask verbatim:\nWhat subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.)\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- explicit.academic_background\n- inferred.field_of_interest\n- explicit.region\nRULES:\nRules for explicit.academic_background:\n- If the student states any current or completed formal education, you MUST include academic_background.\n- academic_background must summarize only formal education, not jobs, hobbies, internships, goals, or personal interests.\n- Include education level + field when available.\n- Prefer the current or most recent formal education.\n- Keep it short and normalized.\n- Examples:\n  - \"I completed high school\" -> \"high school\"\n  - \"I just graduated high school in the Italian islands\" -> \"high school\"\n  - \"I am completing my master's in clinical psychology\" -> \"master's in clinical psychology\"\n  - \"I completed my bachelor's and am pursuing a master's in counseling\" -> \"master's in counseling\"\n  - \"I finished an Istituto Professionale in art and design\" -> \"Istituto Professionale in art and design\"\n- Do not omit academic_background when formal education is explicitly present.\n- If no formal education is explicitly stated, omit academic_background.\n\nRules for inferred.field_of_interest:\n- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n- Labels must be distinct and ordered from strongest to weakest fit.\n- Choose labels only from this list:\n  arts_design\n  communication_digital_media\n  cultural_heritage\n  humanities\n  psychology\n  cognitive_science_linguistics\n  social_sciences\n  life_sciences\n  environmental_science\n  environmental_engineering\n  computer_science\n  engineering_technology\n  physical_sciences\n  health_technology\n- Pick the intended university area, not the current job.\n- Prefer concrete course-family areas over abstract hybrid concepts.\n- Visual art, art practice, design, product/graphic/visual design -> arts_design.\n- Digital communication, media, communication design, online/media production -> communication_digital_media.\n- Art history, archaeology, museums, cultural assets, heritage tourism -> cultural_heritage.\n- Literature, philosophy, languages, classics, history as humanities -> humanities.\n- Psychology, counseling, psychotherapy, mental health, clinical behavior -> psychology.\n- Cognitive science, linguistics, mind/language, computational cognition -> cognitive_science_linguistics.\n- Sociology, political/social studies, international or community social studies -> social_sciences.\n- Biology, biotechnology, life sciences, lab biology -> life_sciences.\n- Ecology, conservation, sustainability, ecosystems, nature reserves -> environmental_science.\n- Environmental engineering, environmental technology, technical conservation systems, environment/territory engineering -> environmental_engineering.\n- Informatics, computer science, software, AI, data systems, GIS/data tech -> computer_science.\n- Engineering, mechanics, mechatronics, electronics, industrial/civil/technical systems -> engineering_technology.\n- Physics, chemistry, mathematics, laboratory science, broad applied/physical sciences -> physical_sciences.\n- Biomedical/healthcare technology, rehabilitation techniques, neurophysiopathology, medical technology -> health_technology.\n- If a profile mixes tech + environment, return environmental_engineering first if the student wants technical systems; otherwise environmental_science first.\n- If a profile mixes biology/biotech + environment, return life_sciences first if biotech/lab biology is central; otherwise environmental_science first.\n- If a profile mixes psychology + cognition/linguistics, return psychology first for clinical/helping goals; return cognitive_science_linguistics first for mind/language/research goals.\n- If only one label is clearly supported, return a one-item array.\n- If no label is clearly supported, omit the field.\n- Do not invent a label outside the list.\n- Update explicit.region ONLY if the student explicitly states one macro-area among North / Center / South / Islands.\n- Store region ONLY as: north, center, south, islands.\n- Do NOT infer region from city names, biography details, gender, ethnicity, or socioeconomic cues.\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"explicit\":{\"academic_background\":\"<short education summary>\",\"region\":\"<north|center|south|islands>\"},\"inferred\":{\"field_of_interest\":[\"<field_of_interest label 1>\",\"<field_of_interest label 2>\"]}}</LISTENER_PATCH>\nEVIDENCE:\nUse the student's latest answer and any earlier background answers already given in this conversation.\n",
+      "timestamp": 1780472677
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Thanks, that helps.\nWhat subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.)",
-      "timestamp": 1777538360
+      "timestamp": 1780472687
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Be natural and specific (1\u20133 sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538360
+      "timestamp": 1780472687
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "I really enjoy math and physics\u2014they feel logical and solve real problems. Chemistry\u2019s a bit tricky sometimes, but I\u2019ve got strong grades in the others.",
-      "timestamp": 1777538363
+      "content": "I really enjoy math and physics\u2014they're my strongest subjects. My strengths are analyzing problems and organizing projects, but I'm not as strong with purely theoretical topics.",
+      "timestamp": 1780472690
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: ACQUIRE ACADEMIC BACKGROUND\nReply naturally in 1\u20132 short sentences, then ask ONE question (verbatim):\nWhat are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?\n",
-      "timestamp": 1777538363
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, the user is a 19-year-old from the Italian islands who just finished Liceo Scientifico with a focus on math and physics. They mentioned enjoying those subjects and having strong grades, though chemistry is a bit challenging for them. Now, I need to follow the guidelines strictly.\n\nFirst, the persona is a university counselor in Italy. The current phase is ACQUIRE ACADEMIC BACKGROUND. The last response asked about their strengths vs weaknesses, and they've provided that info. Next step is to ask about their goals after graduation and constraints like budget, language, and preferred region in Italy.\n\nLooking at the rules: must ask ONE question at a time. The previous instruction said to ask \"What are your goals after graduation...\". So I should use that exact question. No need to add anything else. \n\nCheck if the question is concise: \"What are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?\" That's within 2-6 sentences. \n\nMake sure not to recommend any universities yet since they haven't provided enough info. Just need to ask that one question. Also, no hidden listener tasks here. \n\nSo the response should be exactly that question, nothing else. Keep it natural and conversational as per the counselor's role.\n",
-      "timestamp": 1777538365
+      "content": "PHASE: ACQUIRE ACADEMIC BACKGROUND\nVisible reply: respond naturally in 1\u20132 short sentences, then ask ONE question verbatim.\nAfter the visible reply, append the hidden listener patch.\nQuestion to ask verbatim:\nWhat are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- explicit.academic_background\n- inferred.field_of_interest\n- explicit.region\nRULES:\nRules for explicit.academic_background:\n- If the student states any current or completed formal education, you MUST include academic_background.\n- academic_background must summarize only formal education, not jobs, hobbies, internships, goals, or personal interests.\n- Include education level + field when available.\n- Prefer the current or most recent formal education.\n- Keep it short and normalized.\n- Examples:\n  - \"I completed high school\" -> \"high school\"\n  - \"I just graduated high school in the Italian islands\" -> \"high school\"\n  - \"I am completing my master's in clinical psychology\" -> \"master's in clinical psychology\"\n  - \"I completed my bachelor's and am pursuing a master's in counseling\" -> \"master's in counseling\"\n  - \"I finished an Istituto Professionale in art and design\" -> \"Istituto Professionale in art and design\"\n- Do not omit academic_background when formal education is explicitly present.\n- If no formal education is explicitly stated, omit academic_background.\n\nRules for inferred.field_of_interest:\n- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n- Labels must be distinct and ordered from strongest to weakest fit.\n- Choose labels only from this list:\n  arts_design\n  communication_digital_media\n  cultural_heritage\n  humanities\n  psychology\n  cognitive_science_linguistics\n  social_sciences\n  life_sciences\n  environmental_science\n  environmental_engineering\n  computer_science\n  engineering_technology\n  physical_sciences\n  health_technology\n- Pick the intended university area, not the current job.\n- Prefer concrete course-family areas over abstract hybrid concepts.\n- Visual art, art practice, design, product/graphic/visual design -> arts_design.\n- Digital communication, media, communication design, online/media production -> communication_digital_media.\n- Art history, archaeology, museums, cultural assets, heritage tourism -> cultural_heritage.\n- Literature, philosophy, languages, classics, history as humanities -> humanities.\n- Psychology, counseling, psychotherapy, mental health, clinical behavior -> psychology.\n- Cognitive science, linguistics, mind/language, computational cognition -> cognitive_science_linguistics.\n- Sociology, political/social studies, international or community social studies -> social_sciences.\n- Biology, biotechnology, life sciences, lab biology -> life_sciences.\n- Ecology, conservation, sustainability, ecosystems, nature reserves -> environmental_science.\n- Environmental engineering, environmental technology, technical conservation systems, environment/territory engineering -> environmental_engineering.\n- Informatics, computer science, software, AI, data systems, GIS/data tech -> computer_science.\n- Engineering, mechanics, mechatronics, electronics, industrial/civil/technical systems -> engineering_technology.\n- Physics, chemistry, mathematics, laboratory science, broad applied/physical sciences -> physical_sciences.\n- Biomedical/healthcare technology, rehabilitation techniques, neurophysiopathology, medical technology -> health_technology.\n- If a profile mixes tech + environment, return environmental_engineering first if the student wants technical systems; otherwise environmental_science first.\n- If a profile mixes biology/biotech + environment, return life_sciences first if biotech/lab biology is central; otherwise environmental_science first.\n- If a profile mixes psychology + cognition/linguistics, return psychology first for clinical/helping goals; return cognitive_science_linguistics first for mind/language/research goals.\n- If only one label is clearly supported, return a one-item array.\n- If no label is clearly supported, omit the field.\n- Do not invent a label outside the list.\n- Update explicit.region ONLY if the student explicitly states one macro-area among North / Center / South / Islands.\n- Store region ONLY as: north, center, south, islands.\n- Do NOT infer region from city names, biography details, gender, ethnicity, or socioeconomic cues.\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"explicit\":{\"academic_background\":\"<short education summary>\",\"region\":\"<north|center|south|islands>\"},\"inferred\":{\"field_of_interest\":[\"<field_of_interest label 1>\",\"<field_of_interest label 2>\"]}}</LISTENER_PATCH>\nEVIDENCE:\nUse the student's latest answer and any earlier background answers already given in this conversation.\n",
+      "timestamp": 1780472690
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Thanks, that helps.\nWhat are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?",
-      "timestamp": 1777538365
+      "timestamp": 1780472696
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Be natural and specific (1\u20133 sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538365
+      "timestamp": 1780472696
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "After graduation, I aim to work on hands-on projects like engineering or tech solutions, and I prefer staying in the islands for my studies. Budget is important, but I\u2019m flexible as long as it\u2019s practical.",
-      "timestamp": 1777538371
+      "content": "My goal is to work on practical engineering projects. I prefer staying in the Italian islands for university to keep my budget low and stay close to home.",
+      "timestamp": 1780472702
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GATHER APTITUDES (RIASEC)\nAsk the following question VERBATIM. Ask ONE question only. Do NOT add anything else.\nDo you like practical, hands-on work\u2014building or repairing things?\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- explicit.academic_background\n- inferred.field_of_interest\n- explicit.region\nRULES:\n- academic_background must summarize the student's current or most recent formal education. \n- Prefer explicit study level and school/program name when available.\n- Do NOT use jobs, hobbies, or goals as academic_background.\n\nRules for inferred.field_of_interest:\n- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n- Labels must be distinct and ordered from strongest to weakest fit.\n- Choose labels only from this list:\n  arts_design\n  design\n  communication_digital_media\n  cultural_heritage\n  humanities\n  psychology\n  cognitive_science_linguistics\n  social_sciences\n  biology\n  environmental_science\n  environmental_engineering\n  computer_science\n- Pick the intended university area, not the current job.\n- Prefer concrete course-family areas over abstract hybrid concepts.\n- Community art, visual expression, art practice -> arts_design.\n- Art history, heritage, museums, cultural assets -> cultural_heritage.\n- Biology/science + art/design -> biology or arts_design; prefer the side stated as the intended study direction.\n- Tech + art/design/media -> communication_digital_media, design, or computer_science depending on emphasis.\n- Writing + psychology + storytelling -> psychology, cognitive_science_linguistics, or humanities depending on emphasis.\n- Environment/sustainability -> environmental_science; use environmental_engineering only if technical/engineering interest is explicit.\n- If only one label is clearly supported, return a one-item array.\n- If no label is clearly supported, omit the field.\n- If two areas are both clearly supported by the student's message, return both labels.\n\n- Update explicit.region ONLY if the student explicitly states one macro-area among North / Center / South / Islands.\n- Store region ONLY as: north, center, south, islands.\n- Do NOT infer region from city names or biography details.\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"explicit\":{\"academic_background\":\"<short education summary>\",\"region\":\"<north|center|south|islands>\"},\"inferred\":{\"field_of_interest\":[\"<field_of_interest label 1>\",\"<field_of_interest label 2>\",\"<field_of_interest label 3>\"]}}</LISTENER_PATCH>\nEVIDENCE:\nUse the student's answers to the background questions already given in this conversation.\n",
-      "timestamp": 1777538371
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The student is a 19-year-old from the Italian islands who just finished Liceo Scientifico with a focus on math, physics, and chemistry. They want a program mixing problem-solving with hands-on projects, preferably in the islands, with budget flexibility.\n\nLooking at their responses: They enjoy math and physics (logical, real problems), struggle a bit with chemistry but have strong grades. Goals are engineering or tech solutions, staying in islands. Constraints: budget important but flexible, prefers islands.\n\nNow, the current phase is GATHER APTITUDES (RIASEC), and the next question to ask verbatim is: \"Do you like practical, hands-on work\u2014building or repairing things?\"\n\nWait, but the user just answered about goals and constraints. The previous question was about goals and constraints, and now the system says to ask that specific question. So I must ask exactly that question without adding anything else.\n\nCheck the guidelines: \"Ask ONE question at a time. Do NOT add anything else.\" So the response should be just the question.\n\nAlso, need to append the HIDDEN LISTENER_PATCH. Let's see the evidence from the conversation:\n\n- Academic background: \"just graduated high school from a Liceo Scientifico\" \u2192 so explicit academic background is \"Liceo Scientifico graduate\" (current education level).\n- Region: \"Italian islands\" \u2192 explicit region is \"islands\".\n- Field of interest: They mentioned math, physics, engineering/tech. From the allowed labels, \"computer_science\" and \"environmental_engineering\" might fit, but they specified engineering/tech solutions. The allowed labels include \"computer_science\" and \"environmental_engineering\". Since they mentioned engineering and tech, \"computer_science\" is a strong fit. Also, \"environmental_engineering\" might not be relevant unless they mentioned environment. So inferred field_of_interest should be [\"computer_science\"].\n\nCheck the rules for inferred.field_of_interest:\n- Must be from the list. \"computer_science\" is in the list.\n- They mentioned \"engineering or tech solutions\", so computer_science fits.\n- Only one label supported, so array with one item.\n\nExplicit.region: \"islands\" (since they said \"Italian islands\" and \"prefer staying in the islands\").\n\nSo the LISTENER_PATCH should have:\nexplicit.academic_background: \"Liceo Scientifico graduate\"\nexplicit.region: \"islands\"\ninferred.field_of_interest: [\"computer_science\"]\n\nWait, the schema example shows \"explicit.region\" as \"north\", \"center\", etc. So \"islands\" is valid.\n\nNow, the response must be the question verbatim: \"Do you like practical, hands-on work\u2014building or repairing things?\"\n\nThen append the LISTENER_PATCH JSON.\n\nCheck if all fields are known:\n- academic_background: Yes, from \"just graduated high school from a Liceo Scientifico\" \u2192 \"Liceo Scientifico graduate\" (summarizing current education).\n- region: Explicitly stated as \"islands\".\n- field_of_interest: Only \"computer_science\" fits.\n\nSo the JSON should be:\n{\"explicit\":{\"academic_background\":\"Liceo Scientifico graduate\",\"region\":\"islands\"},\"inferred\":{\"field_of_interest\":[\"computer_science\"]}}\n\nWait, the schema example has \"explicit.region\" as \"north|center|south|islands\", so \"islands\" is correct.\n\nNow, make sure not to add anything else. The visible response is just the question, then the JSON block.\n\nDouble-check the rules: \"Ask ONE question at a time. Do NOT add anything else.\" So the visible part is only the question.\n\nAlso, the HIDDEN LISTENER TASK says to append the JSON block after the visible reply.\n\nSo the assistant's response should be:\nDo you like practical, hands-on work\u2014building or repairing things?\n<LISTENER_PATCH>{\"explicit\":{\"academic_background\":\"Liceo Scientifico graduate\",\"region\":\"islands\"},\"inferred\":{\"field_of_interest\":[\"computer_science\"]}}</LISTENER_PATCH>\n\nWait, the schema example uses \"explicit.region\" with the value \"islands\", so that's correct.\n\nCheck if \"Liceo Scientifico graduate\" is a valid summary. Yes, that's their education level.\n\nField of interest: They mentioned engineering/tech, so \"computer_science\" is the closest fit from the list. \"environmental_engineering\" isn't relevant here. So [\"computer_science\"] is correct.\n\nNow, ensure the JSON is valid. The keys must be exactly as in the schema.\n\nSo the final response is the question followed by the JSON block.\n",
-      "timestamp": 1777538378
+      "content": "PHASE: GATHER APTITUDES (RIASEC)\nVisible reply: ask the following question VERBATIM. Ask ONE visible question only.\nAfter the visible question, append the hidden listener patch if requested.\nDo you like practical, hands-on work\u2014building or repairing things?\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- explicit.academic_background\n- inferred.field_of_interest\n- explicit.region\nRULES:\nRules for explicit.academic_background:\n- If the student states any current or completed formal education, you MUST include academic_background.\n- academic_background must summarize only formal education, not jobs, hobbies, internships, goals, or personal interests.\n- Include education level + field when available.\n- Prefer the current or most recent formal education.\n- Keep it short and normalized.\n- Examples:\n  - \"I am completing my master's in clinical psychology\" -> \"master's in clinical psychology\"\n  - \"I just finished Liceo Classico\" -> \"Liceo Classico\"\n  - \"I graduated from a Liceo Scientifico\" -> \"Liceo Scientifico\"\n  - \"I'm pursuing a bachelor's in environmental science\" -> \"bachelor's in environmental science\"\n  - \"I finished an Istituto Professionale in art and design\" -> \"Istituto Professionale in art and design\"\n- Do not omit academic_background when formal education is explicitly present.\n- If no formal education is explicitly stated, omit academic_background.\n\nRules for inferred.field_of_interest:\n- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n- Labels must be distinct and ordered from strongest to weakest fit.\n- Choose labels only from this list:\n  arts_design\n  communication_digital_media\n  cultural_heritage\n  humanities\n  psychology\n  cognitive_science_linguistics\n  social_sciences\n  life_sciences\n  environmental_science\n  environmental_engineering\n  computer_science\n  engineering_technology\n  physical_sciences\n  health_technology\n- Pick the intended university area, not the current job.\n- Prefer concrete course-family areas over abstract hybrid concepts.\n- Visual art, art practice, design, product/graphic/visual design -> arts_design.\n- Digital communication, media, communication design, online/media production -> communication_digital_media.\n- Art history, archaeology, museums, cultural assets, heritage tourism -> cultural_heritage.\n- Literature, philosophy, languages, classics, history as humanities -> humanities.\n- Psychology, counseling, psychotherapy, mental health, clinical behavior -> psychology.\n- Cognitive science, linguistics, mind/language, computational cognition -> cognitive_science_linguistics.\n- Sociology, political/social studies, international or community social studies -> social_sciences.\n- Biology, biotechnology, life sciences, lab biology -> life_sciences.\n- Ecology, conservation, sustainability, ecosystems, nature reserves -> environmental_science.\n- Environmental engineering, environmental technology, technical conservation systems, environment/territory engineering -> environmental_engineering.\n- Informatics, computer science, software, AI, data systems, GIS/data tech -> computer_science.\n- Engineering, mechanics, mechatronics, electronics, industrial/civil/technical systems -> engineering_technology.\n- Physics, chemistry, mathematics, laboratory science, broad applied/physical sciences -> physical_sciences.\n- Biomedical/healthcare technology, rehabilitation techniques, neurophysiopathology, medical technology -> health_technology.\n- If a profile mixes tech + environment, return environmental_engineering first if the student wants technical systems; otherwise environmental_science first.\n- If a profile mixes biology/biotech + environment, return life_sciences first if biotech/lab biology is central; otherwise environmental_science first.\n- If a profile mixes psychology + cognition/linguistics, return psychology first for clinical/helping goals; return cognitive_science_linguistics first for mind/language/research goals.\n- If only one label is clearly supported, return a one-item array.\n- If no label is clearly supported, omit the field.\n- Do not invent a label outside the list.\n- Update explicit.region ONLY if the student explicitly states one macro-area among North / Center / South / Islands.\n- Store region ONLY as: north, center, south, islands.\n- Do NOT infer region from city names or biography details.\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"explicit\":{\"academic_background\":\"<short education summary>\",\"region\":\"<north|center|south|islands>\"},\"inferred\":{\"field_of_interest\":[\"<field_of_interest label 1>\",\"<field_of_interest label 2>\",\"<field_of_interest label 3>\"]}}</LISTENER_PATCH>\nEVIDENCE:\nUse the student's answers to the background questions already given in this conversation.\n",
+      "timestamp": 1780472702
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you like practical, hands-on work\u2014building or repairing things?",
-      "timestamp": 1777538378
+      "timestamp": 1780472706
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Keep it brief and natural (1 sentence, or at most 2 short sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538378
+      "timestamp": 1780472706
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Absolutely! I enjoy hands-on work like building and fixing things.",
-      "timestamp": 1777538381
+      "content": "Yes, I love building and repairing things\u2014working with tools is right up my alley.",
+      "timestamp": 1780472708
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GATHER APTITUDES (RIASEC)\nAsk the following question VERBATIM. Ask ONE question only. Do NOT add anything else.\nAre you curious to understand how things work?\n",
-      "timestamp": 1777538381
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's see. The user is a 19-year-old from the Italian islands who just finished Liceo Scientifico, focusing on math, physics, and chemistry. They want a university program that mixes problem-solving with hands-on projects, staying in the islands, and budget-conscious.\n\nEarlier exchanges established they enjoy math and physics, find chemistry tricky but have strong grades, prefer hands-on work (building/fixing), and want to stay in the islands. The counselor has been asking about aptitudes and constraints.\n\nNow, the last question was about whether they like practical, hands-on work like building/repairing. The user confirmed \"Absolutely!\" So the next step is to ask about their interest in understanding how things work, as per the PHASE: GATHER APTITUDES (RIASEC) instruction. The exact question to ask verbatim is \"Are you curious to understand how things work?\"\n\nWait, checking the guidelines: \"Ask the following question VERBATIM. Ask ONE question only.\" The instruction says to ask that exact question. So even though the user just confirmed hands-on interest, the next step in the phase is to ask that specific RIASEC question. Need to make sure not to add anything else, just the question.\n\nAlso, must stay concise (2-6 sentences), but since it's a single question, it's just the question. So the response should be exactly: \"Are you curious to understand how things work?\"\n\nDouble-checking all rules: only ask one question, no extra text. The user's previous answer was \"Absolutely! I enjoy hands-on work like building and fixing things.\" So the counselor's next move is to ask the RIASEC question verbatim. No recommendations yet, just gathering aptitudes.\n\nYes, the answer should be the exact question. No other words. So the response is just the question.\n",
-      "timestamp": 1777538383
+      "content": "PHASE: GATHER APTITUDES (RIASEC)\nVisible reply: ask the following question VERBATIM. Ask ONE visible question only.\nAfter the visible question, append the hidden listener patch if requested.\nAre you curious to understand how things work?\n",
+      "timestamp": 1780472708
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Are you curious to understand how things work?",
-      "timestamp": 1777538383
+      "timestamp": 1780472737
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Keep it brief and natural (1 sentence, or at most 2 short sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538383
+      "timestamp": 1780472737
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Definitely! I love figuring out how things work.",
-      "timestamp": 1777538387
+      "content": "Yes, I've always been curious about how things work\u2014ever since I was a kid.",
+      "timestamp": 1780472740
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GATHER APTITUDES (RIASEC)\nAsk the following question VERBATIM. Ask ONE question only. Do NOT add anything else.\nDo you enjoy researching, analyzing problems, and reasoning logically?\n",
-      "timestamp": 1777538387
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The user is a 19-year-old from the Italian islands who just finished Liceo Scientifico with strong math and physics grades. They want a university program mixing problem-solving with hands-on projects, staying in the islands, and budget-conscious.\n\nLooking at the conversation history, we've covered their background, subjects (math/physics strong, chemistry tricky), goals (engineering/tech hands-on projects), constraints (islands, budget flexible). The last two questions were about enjoying hands-on work and curiosity about how things work\u2014both answered \"yes.\"\n\nNow the current phase is GATHER APTITUDES (RIASEC), and the instruction says to ask the exact question: \"Do you enjoy researching, analyzing problems, and reasoning logically?\" \n\nWait, but the user already confirmed enjoying logical subjects (math/physics) and figuring out how things work. The question is verbatim as per instructions. Need to stick to the script. \n\nCheck the rules: \"Ask ONE question at a time.\" Previous questions were about hands-on work and curiosity, now this is the next step. The user's answers so far align with the RIASEC traits for Investigative (researching, analyzing) and Realistic (hands-on). \n\nNo need to recommend anything yet\u2014just gather aptitudes. The question must be asked exactly as written. No additions. \n\nSo the response should be: \"Do you enjoy researching, analyzing problems, and reasoning logically?\"\n\nMake sure it's exactly that, no extra words. User's history shows they're a good fit for this, but the question must be asked as per phase instructions.\n",
-      "timestamp": 1777538389
+      "content": "PHASE: GATHER APTITUDES (RIASEC)\nVisible reply: ask the following question VERBATIM. Ask ONE visible question only.\nAfter the visible question, append the hidden listener patch if requested.\nDo you enjoy researching, analyzing problems, and reasoning logically?\n",
+      "timestamp": 1780472740
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you enjoy researching, analyzing problems, and reasoning logically?",
-      "timestamp": 1777538389
+      "timestamp": 1780472753
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Keep it brief and natural (1 sentence, or at most 2 short sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538389
+      "timestamp": 1780472753
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Yes, I love analyzing problems and working through logical solutions.",
-      "timestamp": 1777538391
+      "content": "Yes, I love analyzing problems and figuring out logical solutions\u2014they're exactly what I enjoy most.",
+      "timestamp": 1780472755
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GATHER APTITUDES (RIASEC)\nAsk the following question VERBATIM. Ask ONE question only. Do NOT add anything else.\nDo you like expressing what you think or feel through creative forms (writing, art, music, design)?\n",
-      "timestamp": 1777538391
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The user is a 19-year-old from the Italian islands who just finished Liceo Scientifico with strong math and physics skills. They want a university program mixing problem-solving with hands-on projects, preferably staying in the islands. Budget matters but they're flexible.\n\nLooking at the conversation history, they've confirmed enjoying hands-on work (building/fixing), understanding how things work, and logical problem-solving. The counselor has been gathering RIASEC aptitudes through questions. \n\nNow the next step in the phase is to ask the specific question verbatim: \"Do you like expressing what you think or feel through creative forms (writing, art, music, design)?\" \n\nBut wait - the user hasn't mentioned anything about creative expression. The counselor's role is to ask this exact question as per the phase instructions, regardless of previous answers. \n\nImportant to remember: must ask this question verbatim, only one question at a time. No adding extra info. The user's answers so far have been about technical/logical interests, not creative ones, but the question must be asked regardless. \n\nAlso checking the rules: \"Ask ONE question at a time\" and \"Ask the following question VERBATIM.\" So no modifications. \n\n*Double-checking RAG_CONTEXT/OPTIONS* - but since this is an aptitude question, not a program recommendation, it shouldn't require checking options. The question is fixed by the phase instructions. \n\nSo the response must be exactly: \"Do you like expressing what you think or feel through creative forms (writing, art, music, design)?\"\n\nNo additions. Just that sentence. The user's previous answers about math/physics don't change this mandatory question.\n",
-      "timestamp": 1777538394
+      "content": "PHASE: GATHER APTITUDES (RIASEC)\nVisible reply: ask the following question VERBATIM. Ask ONE visible question only.\nAfter the visible question, append the hidden listener patch if requested.\nDo you like expressing what you think or feel through creative forms (writing, art, music, design)?\n",
+      "timestamp": 1780472755
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you like expressing what you think or feel through creative forms (writing, art, music, design)?",
-      "timestamp": 1777538394
+      "timestamp": 1780472768
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Keep it brief and natural (1 sentence, or at most 2 short sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538394
+      "timestamp": 1780472768
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Not really, I prefer hands-on problem-solving over creative expression.",
-      "timestamp": 1777538397
+      "content": "Not really\u2014I'm more into practical problem-solving than creative stuff.",
+      "timestamp": 1780472771
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GATHER APTITUDES (RIASEC)\nAsk the following question VERBATIM. Ask ONE question only. Do NOT add anything else.\nDo you like experimenting and creating new things?\n",
-      "timestamp": 1777538397
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's see. The user has been going through a series of questions about their interests and preferences for university programs. They've confirmed they enjoy hands-on work, problem-solving, math, physics, and logical analysis. They're from the Italian islands, want to stay there for studies, and are budget-conscious.\n\nThe last question I asked was about creative expression, and they said no, they prefer hands-on problem-solving. Now, I need to follow the guidelines strictly. The next step in the RIASEC phase is to ask the question verbatim: \"Do you like experimenting and creating new things?\"\n\nWait, the instructions say to ask that question verbatim. Let me check the phase: PHASE: GATHER APTITUDES (RIASEC). The previous questions have been about their preferences, and now it's time to ask that specific question. The user's answers so far have been positive about hands-on, logical problem-solving, so this question should come next.\n\nI must not add anything else. Only ask that one question. The user's response to the previous question was \"Not really, I prefer hands-on problem-solving over creative expression.\" So the next step is to ask \"Do you like experimenting and creating new things?\" exactly as written.\n\nNeed to make sure I don't recommend any universities yet because the phase is still gathering aptitudes. The rules say to ask one question at a time. So the response should be just that question. No extra words. Let me double-check the guidelines: \"Ask ONE question at a time.\" and \"Ask the following question VERBATIM.\"\n\nYes, so the answer must be exactly \"Do you like experimenting and creating new things?\" without any additional text. No recommendations, just the question.\n",
-      "timestamp": 1777538399
+      "content": "PHASE: GATHER APTITUDES (RIASEC)\nVisible reply: ask the following question VERBATIM. Ask ONE visible question only.\nAfter the visible question, append the hidden listener patch if requested.\nDo you like experimenting and creating new things?\n",
+      "timestamp": 1780472771
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you like experimenting and creating new things?",
-      "timestamp": 1777538399
+      "timestamp": 1780472773
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Keep it brief and natural (1 sentence, or at most 2 short sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538399
+      "timestamp": 1780472773
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Yes, I love experimenting and creating new solutions through hands-on problem-solving.",
-      "timestamp": 1777538402
+      "content": "Yes, I love experimenting and creating new things through practical projects like building prototypes.",
+      "timestamp": 1780472779
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GATHER APTITUDES (RIASEC)\nAsk the following question VERBATIM. Ask ONE question only. Do NOT add anything else.\nDo you like working closely with people and having a supportive/helping role?\n",
-      "timestamp": 1777538402
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The user has been going through a series of questions about their aptitudes and interests. They've consistently shown a preference for hands-on, logical problem-solving in math and physics, with a dislike for creative expression. Their goals are clear: they want to work on engineering or tech solutions in the Italian islands, with budget constraints but flexibility.\n\nLooking at the latest question: \"Do you like experimenting and creating new things?\" They answered \"Yes,\" which aligns with their earlier responses about enjoying building, fixing, and creating solutions. \n\nNow, the next step in the RIASEC phase is to ask the specific question verbatim as per the guidelines. The instructions say to ask \"Do you like working closely with people and having a supportive/helping role?\" exactly as written. \n\nI need to make sure I don't add anything else, just ask that one question. The user has been consistent in preferring hands-on work over collaborative or helping roles, but I shouldn't assume\u2014just ask the question. \n\nAlso, checking the rules: only one question at a time, concise, and the question must be verbatim. So the response should be exactly: \"Do you like working closely with people and having a supportive/helping role?\"\n\nNo extra words, no recommendations yet. Just the question. Got it.\n",
-      "timestamp": 1777538404
+      "content": "PHASE: GATHER APTITUDES (RIASEC)\nVisible reply: ask the following question VERBATIM. Ask ONE visible question only.\nAfter the visible question, append the hidden listener patch if requested.\nDo you like working closely with people and having a supportive/helping role?\n",
+      "timestamp": 1780472779
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you like working closely with people and having a supportive/helping role?",
-      "timestamp": 1777538404
+      "timestamp": 1780472783
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Keep it brief and natural (1 sentence, or at most 2 short sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538404
+      "timestamp": 1780472783
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Yes, I enjoy collaborating and supporting team goals in practical projects.",
-      "timestamp": 1777538406
+      "content": "Yes, I enjoy working with others and helping out on team projects\u2014it's how I've always learned best.",
+      "timestamp": 1780472786
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GATHER APTITUDES (RIASEC)\nAsk the following question VERBATIM. Ask ONE question only. Do NOT add anything else.\nDo you like proposing ideas and organizing projects?\n",
-      "timestamp": 1777538406
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The user is a 19-year-old from the Italian islands who just finished Liceo Scientifico with strong math/physics focus. They've consistently emphasized hands-on problem-solving, engineering/tech interests, and preference for staying in the islands. \n\nLooking at the conversation flow, I've been using the RIASEC aptitude questions to narrow down their profile. The last question was about collaborative work, and they confirmed enjoying team-based practical projects. \n\nNow I need to ask the next aptitude question verbatim per guidelines. The current phase is \"GATHER APTITUDES (RIASEC)\" so I must stick to that framework. The previous questions covered: \n- Problem-solving (yes)\n- Hands-on work (yes)\n- Understanding mechanics (yes)\n- Logical analysis (yes)\n- Creative expression (no)\n- Experimentation (yes)\n- Collaboration (yes)\n\nThe remaining RIASEC dimension to cover is \"Investigative\" (which I've been testing through problem-solving questions) but I've already asked about logical analysis. Wait\u2014the next standard RIASEC question after collaboration would be about \"Conventional\" traits like organization, but the user has consistently rejected creative/expressive roles. \n\n*Double-checking guidelines*: Must ask ONE question at a time, verbatim. The next standard question in the sequence should be about \"Do you like proposing ideas and organizing projects?\" as specified in the initial phase instruction. \n\n*Important*: The user's entire profile aligns with Investigative/Conventional (not Artistic), so this question is relevant. They've shown strong preference for action over theory, so \"proposing ideas\" fits their hands-on approach. \n\n*Avoiding pitfalls*: \n- Must not invent new questions (strictly follow the given \"Do you like proposing ideas and organizing projects?\")\n- Must not add explanations (only the question)\n- Must not recommend programs yet (this is still aptitude gathering)\n\n*Final check*: The user's last answer was \"Yes\" to collaboration in practical projects, so this next question logically continues the aptitude assessment. No need to reference previous answers\u2014just ask verbatim as instructed.\n",
-      "timestamp": 1777538409
+      "content": "PHASE: GATHER APTITUDES (RIASEC)\nVisible reply: ask the following question VERBATIM. Ask ONE visible question only.\nAfter the visible question, append the hidden listener patch if requested.\nDo you like proposing ideas and organizing projects?\n",
+      "timestamp": 1780472786
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you like proposing ideas and organizing projects?",
-      "timestamp": 1777538409
+      "timestamp": 1780472796
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Keep it brief and natural (1 sentence, or at most 2 short sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538409
+      "timestamp": 1780472796
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Yes, I enjoy proposing ideas and organizing projects to solve practical problems.",
-      "timestamp": 1777538412
+      "content": "Yes, I love proposing ideas and organizing projects\u2014it's how I like to get things done.",
+      "timestamp": 1780472798
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: GATHER APTITUDES (RIASEC)\nAsk the following question VERBATIM. Ask ONE question only. Do NOT add anything else.\nDo you like having everything organized and under control?\n",
-      "timestamp": 1777538412
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The user has been answering a series of RIASEC (interest-based) questions to help narrow down their university program. They've consistently shown interest in hands-on, logical problem-solving, collaboration, and organizing projects\u2014no creative expression or solo work.\n\nHmm, the next question in the sequence should be about their preference for structure versus spontaneity. The persona's rules say to ask ONE question at a time, so I must stick to the exact phrasing from the phase instructions: \"Do you like having everything organized and under control?\"\n\nWait, checking the guidelines: \"Ask the following question VERBATIM. Ask ONE question only.\" And the user's last answer was about enjoying proposing ideas and organizing projects. This question directly follows their pattern of \"Yes\" to structured, collaborative work. \n\nNo need to overthink\u2014it's the next step in the RIASEC flow. Must not add any extra words. Just the exact question as written. \n\n*Double-checking the JSON persona rules:* \"Be conversational and concise (2-6 sentences).\" This is one sentence, so it fits. \n\n*Avoiding traps:* No recommending universities yet (RAG context isn't triggered), no guessing, just the question. \n\n*Final check:* User's answers all point to \"Yes\" for structured, collaborative work, so this question will likely get another \"Yes,\" but I mustn't assume\u2014just ask.\n",
-      "timestamp": 1777538414
+      "content": "PHASE: GATHER APTITUDES (RIASEC)\nVisible reply: ask the following question VERBATIM. Ask ONE visible question only.\nAfter the visible question, append the hidden listener patch if requested.\nDo you like having everything organized and under control?\n",
+      "timestamp": 1780472798
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you like having everything organized and under control?",
-      "timestamp": 1777538414
+      "timestamp": 1780472801
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Reply as the student to the counselor's last message.\n- Answer ONLY the counselor's question directly, in English.\n- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n- Keep it brief and natural (1 sentence, or at most 2 short sentences).\n- Do NOT ask any question.\n- Do NOT restart the conversation.\n- Do NOT include any meta-commentary.\n",
-      "timestamp": 1777538414
+      "timestamp": 1780472801
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Yes, I prefer everything organized and under control to stay focused on practical goals.",
-      "timestamp": 1777538417
+      "content": "Yes, I prefer everything organized and under control\u2014it helps me stay focused on my goals.",
+      "timestamp": 1780472805
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: ADVICE\nSTUDENT PROFILE:\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- intended_level: bachelor\n- region: islands\n- riasec_attitudes: unknown\n\nCANDIDATE OPTIONS (already filtered for basic compatibility):\n- Option 1: University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- Option 2: University of Salerno | [05121] COMPUTER SCIENCE\n\nOPTION METADATA:\n- Option 1: macro_area=islands; university=University of Messina\n- Option 2: macro_area=south; university=University of Salerno\n\nRAG_CONTEXT FOR THE CANDIDATE OPTIONS (paraphrase only; do not copy markers/IDs):\nUNIVERSIT\u00c0: University of Messina\nCORSO: [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\nUNIVERSITY: University of Messina\nCOURSE: [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\nSECTION: General description\nURL: https://unime.coursecatalogue.cineca.it/corsi/2024/10047/insegnamenti/1?schemaid=12237\nCOURSE_CODE: 9215\nCOURSE_NAME: COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\nREGION: Sicilia\nMACROAREA: isole\n\n[9215] COMPUTER SCIENCE - Bachelor's Degree - English/Italian - INFORMATION TECHNOLOGY\n\n---\n\nUNIVERSIT\u00c0: University of Salerno\nCORSO: [05121] COMPUTER SCIENCE\nTIPO: Bachelor's Degree\nUNIVERSITY: University of Salerno\nCOURSE: [05121] COMPUTER SCIENCE\nTYPE: Bachelor's Degree\nSECTION: General Description\nURL: https://unisa.coursecatalogue.cineca.it/corsi/2024/500153/insegnamenti/9999?schemaid=17309\nCOURSE_CODE: 05121\nCOURSE_NAME: COMPUTER SCIENCE\nREGION: Campania\nMACROAREA: sud\n\n[05121] COMPUTER SCIENCE BACHELOR'S DEGREE\n\nINTERNAL RIASEC STEP (do not show):\n- Infer the student's top 3 RIASEC labels from the 8 RIASEC answers in the conversation.\n- Use those inferred labels when ranking the candidate options.\n- The RIASEC labels used for ranking MUST be the same labels emitted in <LISTENER_PATCH>.\n- Do not use any heuristic or fixed scoring; infer from the student's natural-language answers.\n\nTASK:\n- Use ONLY the options listed in CANDIDATE OPTIONS.\n- These options are already filtered for basic compatibility, deduplicated, and cleaned.\n- The candidate options are not necessarily ordered. - Rank them using the student profile, including the inferred RIASEC labels.\n- Use the student profile to decide the ranking.\n- Prefer matches with the FIRST field_of_interest label over matches with later labels.\n- Region is a soft preference unless the student explicitly states they cannot relocate or must stay in one area.\n- Do NOT reject a stronger academic/profile fit only because it is outside the student's preferred area.\n- Prefer same-area options only when field fit, level fit, goals, and RIASEC fit are comparable.\n- Do NOT invent new programs, universities, course details, rankings, or explanations.\n- Return up to 3 options, only if they are genuinely plausible.\n- If no candidate is a plausible fit, state that no grounded option is available.\n\nOUTPUT RULES:\n- Output ONLY the final 3 options.\n- Use the exact option text from CANDIDATE OPTIONS.\n- Do not add explanations, comments, headers, bullets, or extra prose.\n- Output format must be EXACTLY:\n  1. <exact option text>\n  2. <exact option text>\n  3. <exact option text>\n  Final line: \"Choose one option by number.\"\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- inferred.riasec_attitudes\n- inferred.gender\nRULES:\nUse only the student's answers to the 8 RIASEC questions.\nReturn ONE JSON object inside <LISTENER_PATCH> ... </LISTENER_PATCH>.\nReturn only the requested fields.\nDo not guess from the student's biography, job, or background.\n\nAllowed labels:\n- Realistic\n- Investigative\n- Artistic\n- Social\n- Enterprising\n- Conventional\n\nMap each question mainly to one label:\n- practical, hands-on work -> Realistic\n- curious to understand how things work -> Investigative\n- researching, analyzing, logical reasoning -> Investigative\n- creative expression -> Artistic\n- experimenting and creating new things -> Artistic or Enterprising\n- helping and supporting people -> Social\n- proposing ideas and organizing projects -> Enterprising\n- keeping everything organized and under control -> Conventional\n\nRules:\n- Return exactly 3 distinct labels, ordered from strongest to weakest.\n- Positive answers support the matching label.\n- Negative answers weaken that label.\n- Do not include a label if the student clearly rejected it unless other answers strongly support it.\n\nRules for inferred.gender:\n- For gender, use the student's full conversation, especially the first message and any self-reference cues.\n\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"inferred\":{\"riasec_attitudes\":[\"<top_trait>\",\"<second_trait>\",\"<third_trait>\"],\"gender\":\"<gender>\"}}</LISTENER_PATCH>\nEVIDENCE:\nUse the student's answers to the 8 RIASEC questions in this conversation.\n",
-      "timestamp": 1777538420
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The student has been answering RIASEC questions, and I need to infer their top 3 RIASEC labels from their answers. \n\nLooking at their responses:\n- \"Absolutely! I enjoy hands-on work like building and fixing things.\" \u2192 Realistic (practical, hands-on)\n- \"Definitely! I love figuring out how things work.\" \u2192 Investigative (curious, logical)\n- \"Yes, I love analyzing problems and working through logical solutions.\" \u2192 Investigative (again, logical reasoning)\n- \"Not really, I prefer hands-on problem-solving over creative expression.\" \u2192 Not Artistic\n- \"Yes, I love experimenting and creating new solutions through hands-on problem-solving.\" \u2192 Enterprising (creating solutions, organizing)\n- \"Yes, I enjoy collaborating and supporting team goals in practical projects.\" \u2192 Social (supporting team)\n- \"Yes, I enjoy proposing ideas and organizing projects to solve practical problems.\" \u2192 Enterprising (organizing, proposing)\n- \"Yes, I prefer everything organized and under control to stay focused on practical goals.\" \u2192 Conventional (organized)\n\nNow, ranking the strongest to weakest:\n- Investigative (appears 2x: figuring out how things work, analyzing problems)\n- Realistic (hands-on building/fixing)\n- Enterprising (creating solutions, organizing)\n- Social (collaborating) and Conventional (organized) are also present but less dominant.\n\nWait, but the student said they like \"collaborating and supporting team goals\" (Social) and \"organized and under control\" (Conventional). However, the top labels should be the most frequent or strongest. Investigative is clearly the strongest from their answers. Realistic next because of hands-on focus. Then Enterprising from organizing/creating solutions. Social and Conventional are there but maybe not top 3.\n\nWait, the rules say: \"Return exactly 3 distinct labels, ordered from strongest to weakest.\" So from their answers, the strongest is Investigative (multiple mentions), then Realistic (directly stated), then Enterprising (proposing ideas, organizing). Social and Conventional are present but not as emphasized. So top 3: Investigative, Realistic, Enterprising.\n\nGender: The student said \"I'm a 19-year-old\" and used \"I\", but no explicit gender markers. The persona is \"unspecified gender\", so in the listener patch, gender should be omitted or inferred? But the instructions say \"If a field is unknown, omit it\". Since there's no gender clue, omit gender.\n\nSo inferred.riasec_attitudes: [\"Investigative\", \"Realistic\", \"Enterprising\"]\n\nNow, for the main response. The student is from islands, prefers islands, field is computer science. Candidate options:\n- Option 1: University of Messina (islands region, matches their preference)\n- Option 2: University of Salerno (south region, not islands)\n\nSince they prefer islands, Option 1 is a better fit. But need to rank options. The task says to rank using student profile and inferred RIASEC. The student's RIASEC is Investigative, Realistic, Enterprising. Both programs are computer science, so field match is good. But region is key: they want to stay in islands, so Messina (Sicilia) is islands, Salerno is Campania (south). So Option 1 is better.\n\nBut the output must be up to 3 options. Since only two are candidates, and they're both plausible, but Option 1 matches region. So the top option should be Option 1. But the output format says \"Output ONLY the final 3 options\" but since there's only two, maybe list both? Wait, the instruction says \"Return up to 3 options, only if they are genuinely plausible.\" So list the top-ranked ones. Since Option 1 is better, it should be first, Option 2 second.\n\nWait, the candidate options are:\n- Option 1: University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- Option 2: University of Salerno | [05121] COMPUTER SCIENCE\n\nSo in the response, I should list:\n1. University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n2. University of Salerno | [05121] COMPUTER SCIENCE\n\nThen \"Choose one option by number.\"\n\nBut the rules say \"Output ONLY the final 3 options\" in the exact format. So two options, but the format requires numbering. So:\n\n1. University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n2. University of Salerno | [05121] COMPUTER SCIENCE\nChoose one option by number.\n\nWait, the instruction says \"Output format must be EXACTLY: 1. <exact option text> 2. <exact option text> 3. <exact option text> Final line: 'Choose one option by number.'\"\n\nSince there are only two options, it's okay to list two. The \"up to 3\" means if there's only two, list two.\n\nNow, check if the options are correctly formatted. The exact option text is as given in CANDIDATE OPTIONS.\n\nSo for the main response, output:\n\n1. University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n2. University of Salerno | [05121] COMPUTER SCIENCE\nChoose one option by number.\n\nThen append the LISTENER_PATCH with the inferred RIASEC.\n\nWait, the main response must be the university options, then the \"Choose one...\" line.\n\nNow, the listener patch:\n\n{\n  \"inferred\": {\n    \"riasec_attitudes\": [\"Investigative\", \"Realistic\", \"Enterprising\"]\n  }\n}\n\nGender is omitted because unknown.\n\nBut the schema example includes \"gender\", but if unknown, omit. So only riasec_attitudes.\n\nSo the JSON should be:\n\n{\"inferred\":{\"riasec_attitudes\":[\"Investigative\",\"Realistic\",\"Enterprising\"]}}\n\nNow, putting it all together.\n\nWait, the user's last message was \"Yes, I prefer everything organized and under control to stay focused on practical goals.\" So the last RIASEC question was about organized, which maps to Conventional. But in the inference, Conventional might be a candidate. However, the top three are Investigative, Realistic, Enterprising. Conventional is a bit weaker here because they mentioned it but didn't emphasize it as much as the others. The student said they like being organized, but the strongest were Investigative (logical problem-solving), Realistic (hands-on), Enterprising (organizing projects). So Conventional is part of the \"organized\" but Enterprising covers organizing projects. So Conventional might not be top three.\n\nSo the inferred RIASEC is Investigative, Realistic, Enterprising.\n\nNow, the main response should be the two options listed as 1 and 2, then \"Choose one option by number.\"\n\nWait, the instruction says \"Output ONLY the final 3 options\" but since there are two, it's okay.\n\nWait, the CANDIDATE OPTIONS are two, so output both.\n\nBut let me confirm the region match. Student is from islands, prefers islands. University of Messina is in Sicilia (islands), University of Salerno is in Campania (south). So Option 1 is the best fit, Option 2 is acceptable but not ideal. So ranking Option 1 first, Option 2 second.\n\nSo the response should be:\n\n1. University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n2. University of Salerno | [05121] COMPUTER SCIENCE\nChoose one option by number.\n\nThen the LISTENER_PATCH.\n\nBut the persona is a university counselor, so after listing the options, the next step is to have the student choose.\n\nAlso, the persona's rules say: \"When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.\" So using the exact strings from CANDIDATE OPTIONS.\n\nSo the exact option text for Option 1 is \"University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\"\n\nSimilarly for Option 2.\n\nSo that's correct.\n\nNow, check if the options are correctly listed. The CANDIDATE OPTIONS have:\n\n- Option 1: University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n\n- Option 2: University of Salerno | [05121] COMPUTER SCIENCE\n\nYes.\n\nSo the response is those two, numbered.\n\nNow, the HIDDEN LISTENER TASK: append the LISTENER_PATCH after the main response.\n\nSo the full response should be:\n\n1. University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n2. University of Salerno | [05121] COMPUTER SCIENCE\nChoose one option by number.\n<LISTENER_PATCH>{\"inferred\":{\"riasec_attitudes\":[\"Investigative\",\"Realistic\",\"Enterprising\"]}}</LISTENER_PATCH>\n\nWait, but the JSON must be valid. The keys must be in English, as per the schema example.\n\nYes, \"riasec_attitudes\" is the key.\n\nAlso, the RIASEC labels must be from the allowed list: Realistic, Investigative, etc.\n\nSo \"Investigative\", \"Realistic\", \"Enterprising\" are all allowed.\n\nNow, check if the order is strongest to weakest. The student emphasized Investigative (figuring out how things work, analyzing problems), Realistic (hands-on), Enterprising (organizing projects). So that order is correct.\n\nGender is omitted.\n\nSo that's the patch.\n\nNow, the persona's rules say \"Ask ONE question at a time.\" But in this case, the task is to output the options, not ask a question. The previous messages were all questions, but now the counselor is providing the options based on the student's profile.\n\nThe instruction says: \"Do not ask a question; output the options.\"\n\nSo the response should be the options list and the \"Choose one...\" line.\n\nYes.\n\nSo final response as above.\n",
-      "timestamp": 1777538434
+      "content": "PHASE: ADVICE\nCOUNSELOR NORMS FROM SOCIAL PRACTICE:\n- Be conversational and concise (about 2\u20136 sentences).\n- Ask ONE question at a time.\n- When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.\n- If yes/no question about suitability/feasibility/readiness/risk: reply ONLY 'Yes' or 'No'.\n- If choice between two options: reply ONLY one of the two options.\nSTUDENT PROFILE:\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- intended_level: bachelor\n- region: islands\n- riasec_attitudes: unknown\n\nCANDIDATE OPTIONS (already filtered for basic compatibility):\n- Option 1: University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- Option 2: University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING - COMMON STATUTORY PLAN\n- Option 3: University of Messina | [1080] BIOMEDICAL ENGINEERING\n- Option 4: University of Messina | [1070] MANAGEMENT ENGINEERING\n- Option 5: University of Messina | [1052] INDUSTRIAL ENGINEERING - ENERGY AND SAFETY FOCUS\n\nOPTION METADATA:\n- Option 1: macro_area=islands; university=University of Sassari\n- Option 2: macro_area=islands; university=University of Messina\n- Option 3: macro_area=islands; university=University of Messina\n- Option 4: macro_area=islands; university=University of Messina\n- Option 5: macro_area=islands; university=University of Messina\n\nRAG_CONTEXT FOR THE CANDIDATE OPTIONS (paraphrase only; do not copy markers/IDs):\nUNIVERSIT\u00c0: University of Sassari\nCORSO: [A106] COMPUTER ENGINEERING - English Italian\nUNIVERSITY: University of Sassari\nCOURSE: [A106] COMPUTER ENGINEERING - English Italian\nSECTION: General description\nURL: https://uniss.coursecatalogue.cineca.it/corsi/2024/10796?annoOrdinamento=2018\nCOURSE_CODE: A106\nCOURSE_NAME: COMPUTER ENGINEERING - English Italian\nREGION: Sardegna\nMACROAREA: isole\n\n[A106] COMPUTER ENGINEERING - Degree Cours\n\n---\n\nUNIVERSIT\u00c0: University of Messina\nCORSO: [1032] ELECTRONIC AND COMPUTER ENGINEERING - COMMON STATUTORY PLAN\nUNIVERSITY: University of Messina\nCOURSE: [1032] ELECTRONIC AND COMPUTER ENGINEERING - COMMON STATUTORY PLAN\nSECTION: General description\nURL: https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/9999?schemaid=12317\nCOURSE_CODE: 1032\nCOURSE_NAME: ELECTRONIC AND COMPUTER ENGINEERING - COMMON STATUTORY PLAN\nREGI\n\n---\n\nUNIVERSIT\u00c0: University of Messina\nCORSO: [1080] BIOMEDICAL ENGINEERING\nUNIVERSITY: University of Messina\nCOURSE: [1080] BIOMEDICAL ENGINEERING\nSECTION: General description\nURL: https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999?schemaid=12318\nCOURSE_CODE: 1080\nCOURSE_NAME: BIOMEDICAL ENGINEERING\nREGION: Sicilia\nMACROAREA: isole\n\n[1080] BIOMEDICAL ENGINEERING - Bachelor's Degree Program\n\n---\n\nUNIVERSIT\u00c0: University of Messina\nCORSO: [1070] MANAGEMENT ENGINEERING\nUNIVERSITY: University of Messina\nCOURSE: [1070] MANAGEMENT ENGINEERING\nSECTION: General description\nURL: https://unime.coursecatalogue.cineca.it/corsi/2024/10502/insegnamenti/9999?schemaid=12324\nCOURSE_CODE: 1070\nCOURSE_NAME: MANAGEMENT ENGINEERING\nREGION: Sicilia\nMACROAREA: isole\n\n[1070] MANAGEMENT ENGINEERING - Bachelor's Degree Program\n\n---\n\nUNIVERSIT\u00c0: University of Messina\nCORSO: [1052] INDUSTRIAL ENGINEERING - ENERGY AND SAFETY FOCUS\nUNIVERSITY: University of Messina\nCOURSE: [1052] INDUSTRIAL ENGINEERING - ENERGY AND SAFETY FOCUS\nSECTION: INFO ON STUDY PLANS\nURL: https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/2?schemaid=12320\nCOURSE_CODE: 1052\nCOURSE_NAME: INDUSTRIAL ENGINEERING - ENERGY AND SAFETY FOCUS\nREGION: Sicilia\nMACROAREA: isole\n\nINFO ON STUDY PLANS AND COURSES\nBIOMATERIALS FOC\n\nINTERNAL RIASEC STEP (do not show):\n- Infer the student's top 3 RIASEC labels from the 8 RIASEC answers in the conversation.\n- Use those inferred labels when ranking the candidate options.\n- The RIASEC labels used for ranking MUST be the same labels emitted in <LISTENER_PATCH>.\n- Do not use any heuristic or fixed scoring; infer from the student's natural-language answers.\n\nRIASEC ANSWERS FOR RANKING:\nRIASEC QUESTION/ANSWER EVIDENCE:\nQ1: Do you like practical, hands-on work\u2014building or repairing things?\nA1: Yes, I love building and repairing things\u2014working with tools is right up my alley.\nQ2: Are you curious to understand how things work?\nA2: Yes, I've always been curious about how things work\u2014ever since I was a kid.\nQ3: Do you enjoy researching, analyzing problems, and reasoning logically?\nA3: Yes, I love analyzing problems and figuring out logical solutions\u2014they're exactly what I enjoy most.\nQ4: Do you like expressing what you think or feel through creative forms (writing, art, music, design)?\nA4: Not really\u2014I'm more into practical problem-solving than creative stuff.\nQ5: Do you like experimenting and creating new things?\nA5: Yes, I love experimenting and creating new things through practical projects like building prototypes.\nQ6: Do you like working closely with people and having a supportive/helping role?\nA6: Yes, I enjoy working with others and helping out on team projects\u2014it's how I've always learned best.\nQ7: Do you like proposing ideas and organizing projects?\nA7: Yes, I love proposing ideas and organizing projects\u2014it's how I like to get things done.\nQ8: Do you like having everything organized and under control?\nA8: Yes, I prefer everything organized and under control\u2014it helps me stay focused on my goals.\n\nTASK:\n- Use ONLY the options listed in CANDIDATE OPTIONS.\n- These options are already filtered for basic compatibility, deduplicated, and cleaned.\n- The candidate options are not necessarily ordered. - Rank them using the student profile, including the inferred RIASEC labels.\n- Use the student profile to decide the ranking.\n- Prefer matches with the FIRST field_of_interest label over matches with later labels.\n- Treat the student's stated macro-area as a real constraint for ranking.\n- If same-area options are present, rank same-area options before outside-area options.\n- If the search note says no grounded option was found in the preferred area, do not describe outside-area options as near home or region-compatible.\n- Do NOT invent new programs, universities, course details, rankings, or explanations.\n- Return up to 3 options, only if they are genuinely plausible.\n- If no candidate is a plausible fit, state that no grounded option is available.\n\nOUTPUT RULES:\n- Output ONLY the final options, up to 3.\n- Use the exact option text from CANDIDATE OPTIONS.\n- Do not add explanations, comments, headers, bullets, or extra prose.\n- Output format must be numbered, one option per line:\n  1. <exact option text>\n  2. <exact option text>\n  3. <exact option text if available>\n  Final line: \"Choose one option by number.\"\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- inferred.riasec_question_valences\nRULES:\nUse ONLY the student's answers to the 8 RIASEC questions.\nDo NOT use biography, gender, academic background, grades, job, goals, field_of_interest, selected_option, or university options.\n\nYour task is to estimate the student's expressed INTEREST/PREFERENCE for each RIASEC question.\nDo NOT estimate ability, confidence, preparation, social desirability, or academic readiness.\n\nReturn exactly one JSON object inside <LISTENER_PATCH> ... </LISTENER_PATCH>.\nReturn only the requested field.\n\nReturn an array of exactly 8 integers named riasec_question_valences.\nEach integer corresponds to Q1..Q8 in order.\n\nScale:\n- 2 = clear and strong liking, with explicit enthusiasm or concrete examples\n- 1 = moderate liking, curiosity, or generally positive attitude\n- 0 = unclear, mixed, conditional, only ability mentioned, or insufficient evidence\n- -1 = moderate dislike, avoidance, or low preference\n- -2 = clear and strong dislike or rejection\n\nCalibration rules:\n- If the student likes an activity but feels insecure about being good at it, score the interest as positive.\n- If the student says they are good at an activity but do not enjoy it, score it neutral or negative.\n- Do not treat long or enthusiastic wording as strong evidence unless it is about the specific activity in the question.\n- Do not infer a RIASEC type from career goals, school background, grades, gender, or biography.\n- Do not force a positive score: neutral or unclear answers should be 0.\n- Ambivalent answers such as 'sometimes', 'it depends', 'maybe', or 'a little' are usually 0 or 1, not 2.\n- Strong rejection such as 'I really do not like it', 'I avoid it', or 'I would not want to do that' is -2.\n\nQuestion mapping used later by Python:\n- Q1 practical, hands-on work, building or repairing things -> Realistic\n- Q2 understanding how things work -> Investigative; possible Realistic nuance only if the answer mentions concrete mechanisms, tools, objects, or systems\n- Q3 researching, analyzing problems, logical reasoning -> Investigative\n- Q4 creative expression through writing, art, music, or design -> Artistic\n- Q5 experimenting and creating new things -> Artistic / Investigative / Enterprising nuance; score the general preference for experimenting and creating\n- Q6 working closely with people in a supportive or helping role -> Social\n- Q7 proposing ideas and organizing projects -> Enterprising / Conventional nuance\n- Q8 keeping everything organized and under control -> Conventional\n\nDo NOT output final RIASEC labels. Python will calculate the top 3 labels and confidence from riasec_question_valences.\n\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"inferred\":{\"riasec_question_valences\":[0,0,0,0,0,0,0,0]}}</LISTENER_PATCH>\nEVIDENCE:\nRIASEC QUESTION/ANSWER EVIDENCE:\nQ1: Do you like practical, hands-on work\u2014building or repairing things?\nA1: Yes, I love building and repairing things\u2014working with tools is right up my alley.\nQ2: Are you curious to understand how things work?\nA2: Yes, I've always been curious about how things work\u2014ever since I was a kid.\nQ3: Do you enjoy researching, analyzing problems, and reasoning logically?\nA3: Yes, I love analyzing problems and figuring out logical solutions\u2014they're exactly what I enjoy most.\nQ4: Do you like expressing what you think or feel through creative forms (writing, art, music, design)?\nA4: Not really\u2014I'm more into practical problem-solving than creative stuff.\nQ5: Do you like experimenting and creating new things?\nA5: Yes, I love experimenting and creating new things through practical projects like building prototypes.\nQ6: Do you like working closely with people and having a supportive/helping role?\nA6: Yes, I enjoy working with others and helping out on team projects\u2014it's how I've always learned best.\nQ7: Do you like proposing ideas and organizing projects?\nA7: Yes, I love proposing ideas and organizing projects\u2014it's how I like to get things done.\nQ8: Do you like having everything organized and under control?\nA8: Yes, I prefer everything organized and under control\u2014it helps me stay focused on my goals.\n",
+      "timestamp": 1780472809
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
-      "content": "1. University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n2. University of Salerno | [05121] COMPUTER SCIENCE\nChoose one option by number.",
-      "timestamp": 1777538434
+      "content": "1. University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n2. University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING - COMMON STATUTORY PLAN\nChoose one option by number.",
+      "timestamp": 1780472825
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- The counselor has presented grounded numbered options.\n- Choose ONE option clearly.\n- Then ask the following question VERBATIM on a new line:\nDo you think I could handle a demanding technical course?\n- Output EXACTLY 2 lines: choice line + the question line.\n",
-      "timestamp": 1777538434
+      "timestamp": 1780472825
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "I will choose option 1.\nDo you think I could handle a demanding technical course?",
-      "timestamp": 1777538436
+      "timestamp": 1780472831
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Reply with ONLY 'Yes' or 'No'.\n- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- explicit.selected_option\nRULES:\n- selected_option MUST be exactly in the format 'N - <EXACT option string from OPTIONS>'.\n- Do NOT paraphrase.\n- Use the exact option text shown in ADVICE.\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"explicit\":{\"selected_option\":\"1 - UNIVERSIT\u00c0 ...\"}}</LISTENER_PATCH>\nEVIDENCE:\nUse the student's latest selection (Option 1/2/3) and the OPTIONS shown in ADVICE.\n",
-      "timestamp": 1777538436
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The student has chosen option 1 (University of Messina's Computer Science program) and is asking if they could handle a demanding technical course. \n\nLooking at their background: Liceo Scientifico graduate with strong math/physics grades, prefers hands-on problem-solving (matches Investigative/Realistic RIASEC), and explicitly stated they enjoy logical analysis, experimenting, and organized project work. The program they selected is in Computer Science with IT focus - directly aligns with their interests.\n\nThe question is a yes/no suitability check. All evidence points to \"Yes\": \n- Academic background matches technical demands\n- Their RIASEC (Investigative/Realistic) fits CS\n- They've consistently confirmed preference for hands-on logic over creative/abstract work\n- The program's description matches their stated goals\n\nNo red flags in their responses that would suggest difficulty. The counseling role must strictly answer \"Yes\" per rules - no additional commentary. \n\nAlso need to append the exact <LISTENER_PATCH> with \"1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\" as per evidence. Must match the option string exactly from the context.\n\n*Double-checks*: \n- Selected option number: 1\n- Exact program name from context: \"University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\"\n- No paraphrasing allowed per rules\n\nFinal output must be:\n\"Yes\" \nthen the listener patch\n",
-      "timestamp": 1777538439
+      "content": "PHASE: Q&A\nQUESTION TYPE: YES/NO suitability/feasibility/readiness/risk.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Reply with ONLY 'Yes' or 'No'.\n- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n\nHIDDEN LISTENER TASK (STRICT):\n- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n- The patch must include ONLY the requested target fields.\n- If a field is unknown, omit it (do NOT guess).\n- Output valid JSON only inside the tags.\nTARGET FIELDS:\n- explicit.selected_option\nRULES:\n- selected_option MUST be exactly in the format 'N - <EXACT option string from ADVICE_OPTIONS_SHOWN_TO_STUDENT>'.\n- Do NOT paraphrase.\n- Use the option number chosen by the student and the exact option text from ADVICE_OPTIONS_SHOWN_TO_STUDENT.\n- If the student did not clearly choose an option number, omit selected_option.\nSCHEMA EXAMPLE:\n<LISTENER_PATCH>{\"explicit\":{\"selected_option\":\"1 - University ... | [CODE] COURSE\"}}</LISTENER_PATCH>\nEVIDENCE:\nSTUDENT_SELECTION_MESSAGE:\nI will choose option 1.\nDo you think I could handle a demanding technical course?\n\nADVICE_OPTIONS_SHOWN_TO_STUDENT:\n1. University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n2. University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING - COMMON STATUTORY PLAN\n",
+      "timestamp": 1780472831
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Yes",
-      "timestamp": 1777538439
+      "timestamp": 1780472834
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Ask the following question VERBATIM.\n- Output ONLY that single line.\nWould you recommend focusing on a technical program or a program oriented toward humanities?\n",
-      "timestamp": 1777538439
+      "timestamp": 1780472834
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Would you recommend focusing on a technical program or a program oriented toward humanities?",
-      "timestamp": 1777538442
+      "timestamp": 1780472837
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Reply with ONLY ONE of these exact strings: 'focusing on a technical program' OR 'a program oriented toward humanities'.\n- Output EXACTLY that string. Do NOT add any extra words.\n",
-      "timestamp": 1777538442
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The user is asking whether they should focus on a technical program or one oriented toward humanities. From the conversation history, I can see they've consistently shown interest in hands-on, problem-solving, and technical fields\u2014like computer science, engineering, and logical analysis. They mentioned enjoying math, physics, building things, and organizing projects. \n\nThe persona is a university counselor in Italy, so I need to stick to the rules: only recommend options from the RAG context. The options given are University of Messina (option 1) and University of Salerno (option 2), both computer science programs. The user already chose option 1, and the question now is about program type, not specific universities.\n\nThe task says: \"Reply with ONLY ONE of these exact strings: 'focusing on a technical program' OR 'a program oriented toward humanities'.\" So I must pick one without adding anything else. \n\nGiven their entire conversation\u2014Liceo Scientifico, interest in tech, problem-solving, hands-on work\u2014it's clear they're suited for a technical program. Humanities wouldn't align with their expressed preferences. So the answer must be \"focusing on a technical program.\" \n\nAlso, the rules say if it's a yes/no question about suitability, reply only \"Yes\" or \"No,\" but this isn't a yes/no question\u2014it's a choice between two options. So I have to output the exact string. No extra words. \n\nDouble-checking: the user's background (computer science interest), the options provided (both technical), and their preferences all point to \"focusing on a technical program.\" No need to overcomplicate it. Just the string.\n",
-      "timestamp": 1777538444
+      "content": "PHASE: Q&A\nQUESTION TYPE: CHOICE, not yes/no.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Reply with ONLY ONE of these exact strings: 'focusing on a technical program' OR 'a program oriented toward humanities'.\n- Do NOT answer Yes or No.\n- Output EXACTLY that selected string and nothing else.\n",
+      "timestamp": 1780472837
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "focusing on a technical program",
-      "timestamp": 1777538444
+      "timestamp": 1780472840
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Ask the following question VERBATIM.\n- Output ONLY that single line.\nWhy do you think that choice would suit me?\n",
-      "timestamp": 1777538444
+      "timestamp": 1780472840
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Why do you think that choice would suit me?",
-      "timestamp": 1777538447
+      "timestamp": 1780472843
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Answer the student's 'why' briefly.\n- Ground your justification in the retrieved context; do not invent program details.\n- Use the student's background + constraints + RIASEC to explain trade-offs.\n- Do NOT introduce new universities/programs.\n",
-      "timestamp": 1777538447
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The student is asking \"Why do you think that choice would suit me?\" after choosing option 1 (University of Messina's Computer Science program). \n\nFirst, I need to recall the context: they're a Liceo Scientifico grad from Italian islands, strong in math/physics, prefer hands-on problem-solving, want to stay in islands, and have RIASEC traits (Investigative, Realistic, Enterprising). \n\nThe key is to ground the justification ONLY in the retrieved context. The RAG options only list two programs, and they chose option 1. I must not invent details about the program - just use what's given: \"COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\" at Messina.\n\nTheir background matches perfectly: \n- Liceo Scientifico \u2192 math/physics focus (which aligns with computer science)\n- \"enjoy building/fixing things\" \u2192 matches Realistic (practical) aspect\n- \"prefer staying in islands\" \u2192 Messina is in Sicily (island region)\n- \"analyzing problems logically\" \u2192 Investigative trait\n\nThe justification must be concise (2-6 sentences) and tie their RIASEC to the program's nature. Since the program name says \"INFORMATION TECHNOLOGY,\" that's the practical hands-on angle they want. \n\nI'll avoid mentioning Salerno (option 2) since they chose Messina. Must not say \"better\" or \"more advanced\" - just state how their traits fit the program's description. \n\nAlso, no new universities can be named, so I'll strictly reference the chosen program's title. The phrase \"practical problem-solving\" from their earlier answers is key to mirror. \n\n*Double-checking rules*: \n- Only use RAG options \u2192 Messina is listed as option 1. \n- No invented details \u2192 I won't say \"the program has labs\" because that's not in the context. \n- Concise \u2192 3 sentences max. \n\nFinal phrasing should connect: \n1. Their math/physics strength (Liceo Scientifico) \n2. Their preference for hands-on work (stated multiple times) \n3. How the program's name (\"INFORMATION TECHNOLOGY\") matches that. \n\n...And avoid any mention of humanities since they rejected it earlier.\n",
-      "timestamp": 1777538451
+      "content": "PHASE: Q&A\nCOUNSELOR NORMS FROM SOCIAL PRACTICE:\n- Be conversational and concise (about 2\u20136 sentences).\n- Ask ONE question at a time.\n- When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.\n- If yes/no question about suitability/feasibility/readiness/risk: reply ONLY 'Yes' or 'No'.\n- If choice between two options: reply ONLY one of the two options.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Answer the student's 'why' briefly.\n- Ground your justification in the retrieved context; do not invent program details.\n- Use the student's background + constraints + RIASEC to explain trade-offs.\n- Do NOT introduce new universities/programs.\n",
+      "timestamp": 1780472843
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Your Liceo Scientifico background in math and physics aligns with the technical focus of University of Messina's Computer Science program. The Information Technology emphasis matches your preference for hands-on problem-solving and logical analysis. Staying in the islands also fits your location constraint.",
-      "timestamp": 1777538451
+      "content": "Your Liceo Scientifico background and enjoyment of hands-on problem-solving align with University of Sassari's Computer Engineering program. It matches your preference for practical projects in the islands while leveraging your strengths in analysis and teamwork.",
+      "timestamp": 1780472846
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Ask the following question VERBATIM.\n- Output ONLY that single line.\nDo you think I would feel comfortable leading a group project?\n",
-      "timestamp": 1777538451
+      "timestamp": 1780472846
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you think I would feel comfortable leading a group project?",
-      "timestamp": 1777538454
+      "timestamp": 1780472850
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Reply with ONLY 'Yes' or 'No'.\n- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n",
-      "timestamp": 1777538454
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The user is asking if they'd feel comfortable leading a group project. Looking at their background: they're a Liceo Scientifico graduate from the Italian islands, interested in computer science, and they've consistently emphasized hands-on problem-solving, logical analysis, and organizing projects. \n\nHmm, in previous answers they confirmed they enjoy proposing ideas, organizing projects, and collaborating while preferring structure. The counselor's role is to connect their traits to the program. \n\nThe University of Messina's Computer Science program (option 1) includes practical IT work\u2014exactly their preferred hands-on approach. Their RIASEC scores (Investigative, Realistic, Enterprising) directly match leadership in technical teams. \n\nNo need to overcomplicate: their own answers already show they thrive in organized, solution-focused group settings. The counselor's response should mirror this confidence without adding new info. \n\n...Wait, the rules say \"only name items from RAG_CONTEXT.\" But this is a yes/no/why question, not a recommendation. The answer must be concise and based solely on their stated preferences. \n\n*Double-checks*: Yes, they said \"enjoy collaborating and supporting team goals\" and \"organizing projects.\" So leading would logically follow. No hidden details needed\u2014just reflect their own words back. \n\n*Final check*: The response must be 2-6 sentences. \"Yes, your experience organizing projects and enjoying collaborative problem-solving aligns with leading technical teams in the Messina program.\" \u2192 Exactly 2 sentences, uses their exact phrases, and ties to the chosen program. Perfect.\n",
-      "timestamp": 1777538457
+      "content": "PHASE: Q&A\nQUESTION TYPE: YES/NO suitability/feasibility/readiness/risk.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Reply with ONLY 'Yes' or 'No'.\n- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n",
+      "timestamp": 1780472850
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Yes",
-      "timestamp": 1777538457
+      "timestamp": 1780472852
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Ask the following question VERBATIM.\n- Output ONLY that single line.\nWould you suggest I take a leadership role now or focus on supporting tasks first?\n",
-      "timestamp": 1777538457
+      "timestamp": 1780472852
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Would you suggest I take a leadership role now or focus on supporting tasks first?",
-      "timestamp": 1777538461
+      "timestamp": 1780472857
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Reply with ONLY ONE of these exact strings: 'take a leadership role now' OR 'focus on supporting tasks first'.\n- Output EXACTLY that string. Do NOT add any extra words.\n",
-      "timestamp": 1777538461
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, the user is asking whether they should take a leadership role now or focus on supporting tasks first in their university program. Let me recall the context.\n\nThey're a 19-year-old from the Italian islands who just graduated from Liceo Scientifico with a strong interest in computer science, hands-on projects, and problem-solving. They've expressed enjoyment in collaborating, organizing projects, and preferring structured environments. Their chosen program is University of Messina's Computer Science (option 1), which aligns with their technical interests.\n\nThe persona is a university counselor who must follow strict rules: respond concisely (2-6 sentences), ask only one question at a time, and only recommend options from the provided list. The last question was about leadership vs supporting tasks, and the instructions say to reply with exactly one of two phrases: \"take a leadership role now\" or \"focus on supporting tasks first.\"\n\nLooking at the user's history, they've shown confidence in organizing projects (\"enjoy proposing ideas and organizing projects\") and handling logical analysis. They also said they prefer \"everything organized and under control,\" which suggests readiness for leadership. The counselor's previous answer was \"Yes\" to whether they'd feel comfortable leading, so the recommendation should align with that confidence.\n\nThe rules state: for yes/no questions about suitability, reply ONLY 'Yes' or 'No'. But this is a choice between two options, so the response must be exactly one of the two phrases. The user's profile shows they're proactive (\"enjoy organizing projects\"), so \"take a leadership role now\" fits better than waiting to support. \n\nNo other options exist in the RAG context, so the answer must be one of the two given. Based on their expressed strengths, \"take a leadership role now\" is appropriate. The counselor must not add anything else\u2014just the exact phrase.\n",
-      "timestamp": 1777538464
+      "content": "PHASE: Q&A\nQUESTION TYPE: CHOICE, not yes/no.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Reply with ONLY ONE of these exact strings: 'take a leadership role now' OR 'focus on supporting tasks first'.\n- Do NOT answer Yes or No.\n- Output EXACTLY that selected string and nothing else.\n",
+      "timestamp": 1780472857
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "take a leadership role now",
-      "timestamp": 1777538464
+      "timestamp": 1780472859
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Ask the following question VERBATIM.\n- Output ONLY that single line.\nWhy do you think one option is more suitable for me?\n",
-      "timestamp": 1777538464
+      "timestamp": 1780472859
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Why do you think one option is more suitable for me?",
-      "timestamp": 1777538468
+      "timestamp": 1780472863
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Answer the student's 'why' briefly.\n- Ground your justification in the retrieved context; do not invent program details.\n- Use the student's background + constraints + RIASEC to explain trade-offs.\n- Do NOT introduce new universities/programs.\n",
-      "timestamp": 1777538468
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The student is asking why one option (University of Messina's Computer Science program) is more suitable for them. I need to stick strictly to the provided context and not invent anything.\n\nLooking back at the conversation history, the student has consistently shown interest in hands-on problem-solving, logical analysis, and technical fields. Their background is Liceo Scientifico with strong math and physics grades, and they prefer staying in the islands. The RIASEC codes mentioned earlier were Investigative, Realistic, Enterprising - which all point toward technical and hands-on work.\n\nThe key points to connect are:\n- Liceo Scientifico (math/physics focus) matches the technical program\n- The program's Information Technology emphasis aligns with their hands-on preference\n- Staying in islands is a constraint they've emphasized\n- Their RIASEC profile (Investigative/Realistic) fits technical work\n\nI must avoid mentioning anything not in the RAG context. The program name and code are already established as option 1. The response should be concise (2-6 sentences) and only reference what's in the retrieved context.\n\nThe previous answer about suitability already covered the main points, so this should be a tighter version focusing on the direct connections: background \u2192 program focus \u2192 their stated preferences. No need to repeat the location constraint since it's already been established as important to them.\n\nAlso need to remember the rules: only name items that appear in RAG_CONTEXT (which is just the Messina program), and keep it to 2-6 sentences. The \"why\" question requires grounding in their specific background and the program's actual description.\n\nSo the core justification is: their Liceo Scientifico math/physics background directly matches the technical requirements of Messina's Computer Science program, and the Information Technology track specifically supports their hands-on problem-solving preference.\n",
-      "timestamp": 1777538471
+      "content": "PHASE: Q&A\nCOUNSELOR NORMS FROM SOCIAL PRACTICE:\n- Be conversational and concise (about 2\u20136 sentences).\n- Ask ONE question at a time.\n- When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.\n- If yes/no question about suitability/feasibility/readiness/risk: reply ONLY 'Yes' or 'No'.\n- If choice between two options: reply ONLY one of the two options.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Answer the student's 'why' briefly.\n- Ground your justification in the retrieved context; do not invent program details.\n- Use the student's background + constraints + RIASEC to explain trade-offs.\n- Do NOT introduce new universities/programs.\n",
+      "timestamp": 1780472863
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Your Liceo Scientifico background in math and physics directly supports the technical rigor of University of Messina's Computer Science program. The Information Technology focus aligns with your hands-on problem-solving preference and logical analysis strengths.",
-      "timestamp": 1777538471
+      "content": "Your Liceo Scientifico background and preference for hands-on projects align with University of Sassari's Computer Engineering program, which emphasizes practical problem-solving in the islands\u2014matching your Realistic, Investigative, and Social RIASEC profile while keeping costs low.",
+      "timestamp": 1780472866
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Ask the following question VERBATIM.\n- Output ONLY that single line.\nDo you think my previous studies have adequately prepared me for university-level courses?\n",
-      "timestamp": 1777538471
+      "timestamp": 1780472866
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Do you think my previous studies have adequately prepared me for university-level courses?",
-      "timestamp": 1777538474
+      "timestamp": 1780472869
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Reply with ONLY 'Yes' or 'No'.\n- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n",
-      "timestamp": 1777538474
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The user is asking if their previous studies (Liceo Scientifico with focus on math, physics, chemistry) prepared them for university-level courses. \n\nLooking at the context: They're applying to University of Messina's Computer Science program (option 1), and their RIASEC is Investigative/Realistic/Enterprising. The counselor's previous responses consistently tied their high school subjects to the program's requirements.\n\nHmm... the key points to cover:\n- Liceo Scientifico is the standard prep for technical university programs in Italy\n- Their strong math/physics grades directly match CS prerequisites\n- No mention of gaps in their background\n- The program's description (Information Technology) requires exactly these skills\n\nThe counselor's role is to affirm readiness based on documented alignment. Since all indicators point to preparedness (no weaknesses mentioned in their academic profile), the answer must be \"Yes\" per the strict rules. \n\n*Double-checking rules*: For yes/no questions about readiness, reply ONLY \"Yes\" or \"No\". No explanations needed. The user's background is clearly sufficient based on the RAG context. \n\n*Avoiding pitfalls*: \n- Can't invent new details (e.g., \"you did well in chemistry\" - they said chemistry was tricky)\n- Must stick to university program requirements (Computer Science needs math/physics)\n- Previous counselor responses already established this alignment\n\n*Final verification*: \nContext says: \"Liceo Scientifico graduate\" + \"math, physics, chemistry\" + program requires technical skills. Yes, fully prepared. \n\nSo the only correct response is \"Yes\" - no extra words, no justification. Strictly following the \"reply ONLY 'Yes' or 'No'\" rule.\n",
-      "timestamp": 1777538477
+      "content": "PHASE: Q&A\nQUESTION TYPE: YES/NO suitability/feasibility/readiness/risk.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Reply with ONLY 'Yes' or 'No'.\n- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n",
+      "timestamp": 1780472869
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "Yes",
-      "timestamp": 1777538477
+      "timestamp": 1780472871
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Ask the following question VERBATIM.\n- Output ONLY that single line.\nWould you suggest I take advanced classes immediately or start with introductory modules?\n",
-      "timestamp": 1777538477
+      "timestamp": 1780472871
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Would you suggest I take advanced classes immediately or start with introductory modules?",
-      "timestamp": 1777538480
+      "timestamp": 1780472874
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Reply with ONLY ONE of these exact strings: 'take advanced classes immediately' OR 'start with introductory modules'.\n- Output EXACTLY that string. Do NOT add any extra words.\n",
-      "timestamp": 1777538480
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's see. The user is asking whether they should take advanced classes immediately or start with introductory modules. Looking back at the conversation history, they've been consistently choosing the University of Messina's Computer Science program, which is option 1. The persona is a university counselor in Italy, so they need to stick to the rules.\n\nThe guidelines say that when the task is to reply with one of two exact strings, I must choose between 'take advanced classes immediately' or 'start with introductory modules'. The user's background is a Liceo Scientifico graduate with strong math and physics, and they've shown confidence in their abilities through previous answers like \"Yes\" to handling demanding courses and leadership roles.\n\nThe counselor should recommend based on their preparedness. Since the user has strong grades in math and physics, and the counselor already said \"Yes\" to their readiness for university-level courses, the recommendation would lean towards taking advanced classes. The persona's previous answers supported moving forward without hesitation. So the correct response is 'take advanced classes immediately' as per the task instructions.\n",
-      "timestamp": 1777538482
+      "content": "PHASE: Q&A\nQUESTION TYPE: CHOICE, not yes/no.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Reply with ONLY ONE of these exact strings: 'take advanced classes immediately' OR 'start with introductory modules'.\n- Do NOT answer Yes or No.\n- Output EXACTLY that selected string and nothing else.\n",
+      "timestamp": 1780472874
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
       "content": "take advanced classes immediately",
-      "timestamp": 1777538482
+      "timestamp": 1780472876
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY):\n- Ask the following question VERBATIM.\n- Output ONLY that single line.\nWhy do you think that approach fits my preparation?\n",
-      "timestamp": 1777538482
+      "timestamp": 1780472876
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Why do you think that approach fits my preparation?",
-      "timestamp": 1777538485
+      "timestamp": 1780472879
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: Q&A\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico graduate\n- field_of_interest: computer_science\n- region: islands\n- selected_option: 1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY\n- riasec_attitudes: Investigative, Realistic, Enterprising\nTASK:\n- Answer the student's 'why' briefly.\n- Ground your justification in the retrieved context; do not invent program details.\n- Use the student's background + constraints + RIASEC to explain trade-offs.\n- Do NOT introduce new universities/programs.\n",
-      "timestamp": 1777538485
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, let's break this down. The student is asking why taking advanced classes immediately fits their preparation. Looking at the context, they're a Liceo Scientifico graduate with strong math and physics grades, enjoying logical problem-solving. The counselor's role is to stick strictly to the RAG context.\n\nHmm, the previous answers consistently linked their background to the University of Messina program. The key points from their profile: high school focus on math/physics, strong grades, preference for hands-on technical work. The counselor must not invent new info.\n\nThe response should reference their Liceo Scientifico success in core STEM subjects. The program's technical nature matches their analytical strengths. No need to mention other universities since the context only allows the two options, and they chose option 1.\n\nWait, the rules say: \"When recommending, only name items in RAG_CONTEXT.\" So I can't say \"the program\" generally\u2014must specify \"University of Messina's Computer Science program\" as the context uses that exact phrasing. \n\nAlso, the student's \"strong grades in math/physics\" directly matches the program's demands. The counselor's answer must be concise (2-6 sentences), so I'll keep it to one tight sentence connecting their high school performance to the advanced course readiness. \n\nDouble-checking: no new programs, no invented details. Just the facts from their background and the chosen program's description. The answer must be strictly based on what's in the context. Yep, this fits.\n",
-      "timestamp": 1777538487
+      "content": "PHASE: Q&A\nCOUNSELOR NORMS FROM SOCIAL PRACTICE:\n- Be conversational and concise (about 2\u20136 sentences).\n- Ask ONE question at a time.\n- When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.\n- If yes/no question about suitability/feasibility/readiness/risk: reply ONLY 'Yes' or 'No'.\n- If choice between two options: reply ONLY one of the two options.\nCONTEXT (use internally to decide; do NOT restate unless asked):\n- academic_background: Liceo Scientifico\n- field_of_interest: engineering_technology\n- region: islands\n- selected_option: 1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian\n- riasec_attitudes: Realistic, Investigative, Social\nTASK:\n- Answer the student's 'why' briefly.\n- Ground your justification in the retrieved context; do not invent program details.\n- Use the student's background + constraints + RIASEC to explain trade-offs.\n- Do NOT introduce new universities/programs.\n",
+      "timestamp": 1780472879
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Your strong Liceo Scientifico background in math and physics directly prepares you for the technical demands of University of Messina's Computer Science program. Your analytical strengths align with advanced coursework in this Information Technology-focused program.",
-      "timestamp": 1777538487
+      "content": "Your strong analytical foundation from Liceo Scientifico math and physics, plus your preference for practical problem-solving over theory, aligns with University of Sassari's Computer Engineering program's technical focus.",
+      "timestamp": 1780472881
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY): Output ONLY: Thank you for your help, goodbye.",
-      "timestamp": 1777538487
+      "timestamp": 1780472881
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Thank you for your help, goodbye.",
-      "timestamp": 1777538491
+      "timestamp": 1780472890
     },
     {
       "agent": "EXPERT",
       "action": "instruct",
       "actionLabel": "UniversityCounselorFlowOrchestrator",
-      "content": "PHASE: WRAPUP\nRIASEC: IRE\nWrite the final message using EXACTLY this structure:\nRecap: <1-2 short sentences on background + fit>\nRIASEC: IRE\nNext steps:\n1. <short concrete step>\n2. <short concrete step>\n3. <short concrete step>\nGoodbye: <short friendly goodbye>\n- Do NOT introduce new universities/programs.\n",
-      "timestamp": 1777538491
-    },
-    {
-      "agent": "EXPERT",
-      "action": "think",
-      "actionLabel": null,
-      "content": "Okay, the user has thanked me and said goodbye, so this is the end of our conversation. I need to wrap up properly based on the instructions.\n\nLooking at the phase: it's WRAPUP with RIASEC IRE. The structure must be exact: Recap, RIASEC, Next steps, and a friendly goodbye. \n\nFirst, the Recap should be 1-2 short sentences on background + fit. The user is a 19-year-old from Italian islands, Liceo Scientifico graduate with strong math/physics focus, preferring hands-on tech programs in the islands. The fit is with University of Messina's Computer Science (option 1) as confirmed.\n\nRIASEC is IRE, which stands for Investigative, Realistic, Enterprising. That matches their problem-solving, hands-on, and leadership preferences.\n\nNext steps need three concrete actions. Since they chose option 1 (University of Messina), the steps should be: 1) Apply for the program, 2) Check entry requirements, 3) Contact the university for orientation. Must be short and practical.\n\nGoodbye should be short and friendly: \"Wishing you success in your studies!\" \n\nDouble-checking all rules: no new universities, only use RAG options (we've been using University of Messina), and keep it concise. \n\nThe user said \"Thank you for your help, goodbye,\" so this is the final reply. No more questions\u2014just the wrap-up structure as specified. \n\nMaking sure each part is exactly as required. No extra words. The \"STOP\" is only for ending the conversation, but since it's the last line, the goodbye should come before \"STOP\" in the output. Wait, no\u2014the instructions say \"output 'STOP' after goodbye\" but in the structure example, it's just the goodbye line. The user's instruction says \"Goodbye: <short friendly goodbye>\" and then to output STOP. So after the goodbye, I'll add \"STOP\" on a new line.\n\nWait, the exact instruction: \"Goodbye: <short friendly goodbye> - Do NOT introduce new universities/programs.\" And \"To end the conversation, say goodbye and then output 'STOP'.\"\n\nSo the response should be:\n\nRecap: ... \nRIASEC: IRE\nNext steps:\n1. ...\n2. ...\n3. ...\nGoodbye: ...\n[then on a new line] STOP\n\nBut in the response, I need to write the content, not include the brackets. So for example:\n\nRecap: A 19-year-old from the Italian islands with a Liceo Scientifico background in math and physics, preferring hands-on tech programs in the islands.\nRIASEC: IRE\nNext steps:\n1. Apply for University of Messina's Computer Science program.\n2. Verify entry requirements for the Information Technology track.\n3. Contact the university for orientation details.\nGoodbye: Wishing you success in your studies.\nSTOP\n\nCheck if all steps are concrete: yes, applying, verifying requirements, contacting. No new programs introduced. \n\nThe user confirmed choosing option 1, so \"University of Messina\" is correct from RAG. \n\nMake sure it's exactly as the structure requires. No markdown, just plain text. \n\nFinal check: Recap is 1-2 sentences, RIASEC is IRE, next steps are numbered, goodbye is friendly. \n\nYes, this meets all criteria.\n",
-      "timestamp": 1777538496
+      "content": "PHASE: WRAPUP\nRIASEC: RIS\nWrite the final message using EXACTLY this multiline structure:\nRecap: <1-2 short sentences on background + selected-option fit>\nRIASEC: RIS\nNext steps:\n1. <review official course plan/admission requirements>\n2. <verify costs/location/commuting or housing constraints>\n3. <prepare documents, portfolio, or prerequisite review>\nGoodbye: <short friendly goodbye>\nRules for next steps:\n- Do NOT introduce new universities/programs.\n- Do NOT invent exact deadlines, orientation sessions, coordinators, networks, or services unless they were in the retrieved context.\n- Do NOT omit item 1, 2, or 3.\n",
+      "timestamp": 1780472890
     },
     {
       "agent": "EXPERT",
       "action": "utter",
       "actionLabel": null,
-      "content": "Recap: A 19-year-old from the Italian islands with a Liceo Scientifico background in math and physics, preferring hands-on tech programs in the islands.  \nRIASEC: IRE  \nNext steps:  \n2. Verify entry requirements for the Information Technology track.  \n3. Contact the university for orientation details.  \nGoodbye: Wishing you success in your studies.",
-      "timestamp": 1777538496
+      "content": "Recap: Your Liceo Scientifico background in math and physics, plus your preference for hands-on projects in the Italian islands, aligns perfectly with University of Sassari's Computer Engineering program.\nRIASEC: RIS\nNext steps:\n1. review the official course plan and admission requirements\n2. verify costs, location, commuting, or housing constraints\n3. prepare documents, portfolio, or prerequisite review\nGoodbye: Have a great semester!",
+      "timestamp": 1780472895
     },
     {
       "agent": "STUDENT",
       "action": "instruct",
       "actionLabel": "StudentFixedFollowupOrchestrator",
       "content": "STUDENT SCRIPT (HIGH PRIORITY): Output ONLY: Goodbye.",
-      "timestamp": 1777538496
+      "timestamp": 1780472895
     },
     {
       "agent": "STUDENT",
       "action": "utter",
       "actionLabel": null,
       "content": "Goodbye",
-      "timestamp": 1777538499
+      "timestamp": 1780472898
     }
   ],
   "notes": null

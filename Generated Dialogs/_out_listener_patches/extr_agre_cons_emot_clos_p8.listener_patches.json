@@ -11,7 +11,7 @@
   },
   {
     "explicit": {
-      "academic_background": "psychology bachelor's degree",
+      "academic_background": "bachelor's in psychology",
       "region": "north"
     },
     "inferred": {
@@ -21,18 +21,44 @@
     }
   },
   {
+    "explicit": {
+      "academic_background": "bachelor's in psychology",
+      "region": "north"
+    },
     "inferred": {
-      "riasec_attitudes": [
-        "Investigative",
-        "Social",
-        "Conventional"
-      ],
-      "gender": "unspecified"
+      "field_of_interest": [
+        "cognitive_science_linguistics"
+      ]
     }
   },
   {
     "explicit": {
-      "selected_option": "1 - University of Messina | [3400] TECHNIQUES OF NEUROPHYSIOPATHOLOGY (QUALIFYING FOR THE HEALTHCARE PROFESSION OF NEUROPHYSIOPATHOLOGY TECHNICIAN)"
+      "academic_background": "bachelor's in psychology",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "cognitive_science_linguistics"
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "riasec_question_valences": [
+        -2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "selected_option": "1 - University of Trento | [0708H] COGNITIVE SCIENCE"
     }
   }
 ]

@@ -11,7 +11,29 @@
   },
   {
     "explicit": {
-      "academic_background": "bachelor's degree in STEM",
+      "academic_background": "master's in analytical methods",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "master's",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "master's",
       "region": "south"
     },
     "inferred": {
@@ -22,16 +44,21 @@
   },
   {
     "inferred": {
-      "riasec_attitudes": [
-        "Investigative",
-        "Enterprising",
-        "Social"
+      "riasec_question_valences": [
+        2,
+        2,
+        2,
+        -2,
+        2,
+        2,
+        2,
+        2
       ]
     }
   },
   {
     "explicit": {
-      "selected_option": "1 - University of Salerno | [02727] DATA SCIENCE AND DIGITAL INNOVATION FOR INSURANCE & FINANCIAL SERVICES, FIRST-LEVEL MASTER'S DEGREE"
+      "selected_option": "1 - University of Salerno | [02228] DATA SCIENCE AND INNOVATION MANAGEMENT"
     }
   }
 ]

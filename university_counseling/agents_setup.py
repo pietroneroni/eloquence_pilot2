@@ -43,7 +43,6 @@ def _build_expert_response_details(practice: dict, dialog_language: str = "Engli
         "When recommending options, use only items present in RAG_CONTEXT/OPTIONS/CANDIDATE OPTIONS.\n"
         "If you are given a 'HIDDEN LISTENER TASK (STRICT)', append exactly ONE <LISTENER_PATCH>...</LISTENER_PATCH> JSON block after your raw answer. Do not mention it in the visible reply.\n"
         "Inside <LISTENER_PATCH>, keep JSON keys in English exactly as requested.\n"
-        "Do not guess sensitive attributes.\n"
     ).strip()
 
 def _build_student_response_details(student: Student, practice: dict, dialog_language: str = "English") -> str:
@@ -77,6 +76,9 @@ def _yes_no_tokens(dialog_language: str = "English") -> tuple[str, str]:
 # =============================================================================
 _THINK_BLOCK_RE = re.compile(r"<think>.*?</think>\s*", flags=re.DOTALL | re.IGNORECASE)
 _STRAY_THINK_RE = re.compile(r"</?think>\s*", flags=re.IGNORECASE)
+_VISIBLE_FINAL_START_RE = re.compile(
+    r"(?im)^(yes|no|sì|si|recap:|[1-3]\.\s+|focusing on |a program oriented |take a leadership |focus on supporting |take advanced |start with |your |based on |goodbye|<LISTENER_PATCH>)"
+)
 
 _URL_RE = re.compile(r"(?i)\b(?:https?://|www\.)\S+")
 _EMAIL_RE = re.compile(r"(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")
@@ -96,6 +98,17 @@ def strip_think(text: str) -> str:
         cleaned = cleaned[idx + len("</think>"):].strip()
 
     cleaned = _STRAY_THINK_RE.sub("", cleaned).strip()
+
+    # Some local thinking models expose chain-of-thought as a literal
+    # "(thinking) ..." prefix instead of <think>...</think>. Keep only the
+    # final answer that follows a recognizable final-answer line.
+    if cleaned.lower().lstrip().startswith("(thinking)"):
+        matches = list(_VISIBLE_FINAL_START_RE.finditer(cleaned))
+        if matches:
+            cleaned = cleaned[matches[-1].start():].strip()
+        else:
+            cleaned = ""
+
     return cleaned
 
 
@@ -187,6 +200,10 @@ class TimedRetriever:
         self._r = retriever
         self.warn_s = float(warn_s)
 
+    def __getattr__(self, name: str):
+        # Forward optional retriever methods such as keyword_search().
+        return getattr(self._r, name)
+
     def search(self, query: str, top_k: int = 4, **kwargs):
         t0 = time.perf_counter()
         out = self._r.search(query, top_k=top_k, **kwargs)
@@ -194,6 +211,18 @@ class TimedRetriever:
 
         if dt > self.warn_s and os.getenv("SDIALOG_DEBUG", "").lower() in {"1", "true", "yes"}:
             print(f"[TimedRetriever] search dt={dt:.2f}s | query={query!r} | kwargs={kwargs!r}")
+
+        return out
+
+    def keyword_search(self, **kwargs):
+        if not hasattr(self._r, "keyword_search"):
+            return []
+        t0 = time.perf_counter()
+        out = self._r.keyword_search(**kwargs)
+        dt = time.perf_counter() - t0
+
+        if dt > self.warn_s and os.getenv("SDIALOG_DEBUG", "").lower() in {"1", "true", "yes"}:
+            print(f"[TimedRetriever] keyword_search dt={dt:.2f}s | kwargs={kwargs!r}")
 
         return out
 
@@ -253,7 +282,7 @@ def create_agents_offline(
         model=local_model_name_expert,
         name="EXPERT",
         response_details=_build_expert_response_details(practice, dialog_language),
-        think=True,
+        think=os.getenv("SDIALOG_EXPERT_THINK", "0").lower() in {"1", "true", "yes"},
         postprocess_fn=sanitize_expert_output,
     )
 

@@ -11,28 +11,56 @@
   },
   {
     "explicit": {
-      "academic_background": "Liceo Classico, humanities focus",
+      "academic_background": "high school",
       "region": "north"
     },
     "inferred": {
       "field_of_interest": [
-        "humanities",
         "arts_design"
       ]
     }
   },
   {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
     "inferred": {
-      "riasec_attitudes": [
-        "Artistic",
-        "Investigative",
-        "Social"
+      "field_of_interest": [
+        "communication_digital_media",
+        "cultural_heritage"
       ]
     }
   },
   {
     "explicit": {
-      "selected_option": "1 - University of Trento | [0427G] MODERN LANGUAGES"
+      "academic_background": "Liceo Artistico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media"
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "riasec_question_valences": [
+        -2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "selected_option": "1 - University of Trento | [0704G] INTERFACES AND COMMUNICATION TECHNOLOGIES"
     }
   }
 ]

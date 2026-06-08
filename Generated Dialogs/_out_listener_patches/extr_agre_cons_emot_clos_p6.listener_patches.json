@@ -11,7 +11,29 @@
   },
   {
     "explicit": {
-      "academic_background": "Master's in Counseling",
+      "academic_background": "master's in counseling",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "master's in counseling",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "master's in counseling",
       "region": "north"
     },
     "inferred": {
@@ -22,16 +44,21 @@
   },
   {
     "inferred": {
-      "riasec_attitudes": [
-        "Social",
-        "Enterprising",
-        "Investigative"
+      "riasec_question_valences": [
+        -2,
+        2,
+        2,
+        -2,
+        -2,
+        2,
+        2,
+        2
       ]
     }
   },
   {
     "explicit": {
-      "selected_option": "1 - University of Messina | [3400] TECHNIQUES OF NEUROPHYSIOPATHOLOGY (QUALIFYING FOR THE HEALTHCARE PROFESSION OF NEUROPHYSIOPATHOLOGY TECHNICIAN)"
+      "selected_option": "1 - University of Trento | [0707H] PSYCHOLOGY"
     }
   }
 ]

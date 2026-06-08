@@ -23,12 +23,21 @@ from university_counseling.AgentWithRag import (
 
 _ANSI_RE = re.compile(r"\x1b\[[0-?]*[ -/]*[@-~]")
 
+# Clean evaluation defaults: force them when running from PyCharm too.
+os.environ["SDIALOG_DEBUG"] = "0"
+os.environ["SDIALOG_LOG_ORCHESTRATION"] = "0"
+os.environ["SDIALOG_LOG_THINKING"] = "0"
+os.environ["SDIALOG_EXPERT_THINK"] = "0"
+os.environ["SDIALOG_EXPOSE_SENSITIVE_CONTEXT"] = "0"
+os.environ["SDIALOG_ADD_SYNTHETIC_SCHOOL_TYPE"] = "0"
 
 def strip_ansi(s: str) -> str:
     return _ANSI_RE.sub("", s or "")
 
 
-os.environ.setdefault("SDIALOG_DEBUG", "1")
+os.environ.setdefault("SDIALOG_DEBUG", "0")
+os.environ.setdefault("SDIALOG_LOG_ORCHESTRATION", "0")
+os.environ.setdefault("SDIALOG_LOG_THINKING", "0")
 
 
 class Tee(io.TextIOBase):
@@ -38,18 +47,35 @@ class Tee(io.TextIOBase):
         self.file_stream = file_stream
 
     def write(self, s: str) -> int:
-        # drop tqdm-ish progress lines
+        original_len = len(s or "")
+        if not s:
+            return 0
+
+        # Drop tqdm-ish progress chunks. Returning the original length keeps
+        # callers from retrying writes.
         if "Batches:" in s or "%|" in s or "it/s" in s:
-            return len(s)
+            return original_len
 
-        s = s.replace("\r", "")
+        show_orchestration = os.getenv("SDIALOG_LOG_ORCHESTRATION", "0").lower() in {"1", "true", "yes"}
+        show_thinking = os.getenv("SDIALOG_LOG_THINKING", "0").lower() in {"1", "true", "yes"}
 
-        # Console: keep colors
-        self.console_stream.write(s)
+        cleaned_lines: list[str] = []
+        for line in s.replace("\r", "").splitlines(True):
+            plain = strip_ansi(line).lstrip()
+            if (not show_orchestration) and plain.startswith("[instruct-"):
+                continue
+            if (not show_thinking) and plain.startswith("[EXPERT]") and "(thinking)" in plain:
+                continue
+            cleaned_lines.append(line)
 
-        # File: strip colors
-        self.file_stream.write(strip_ansi(s))
-        return len(s)
+        cleaned = "".join(cleaned_lines)
+        if not cleaned:
+            return original_len
+
+        # Console: keep colors; file: strip colors.
+        self.console_stream.write(cleaned)
+        self.file_stream.write(strip_ansi(cleaned))
+        return original_len
 
     def flush(self) -> None:
         self.console_stream.flush()
@@ -73,7 +99,8 @@ MILESTONE_TURNS = {1, 4, 12, 13, 14}
 def _interleave_listener_memory(dialog_text: str) -> str:
     from university_counseling.AgentWithRag import canonical_listener_memory, apply_listener_patch, get_listener_patches
 
-    THINKING_FROM_TURN = 14
+    show_thinking = os.getenv("SDIALOG_LOG_THINKING", "0").lower() in {"1", "true", "yes"}
+    show_orchestration = os.getenv("SDIALOG_LOG_ORCHESTRATION", "0").lower() in {"1", "true", "yes"}
 
     patches = get_listener_patches()
     pi = 0
@@ -86,18 +113,21 @@ def _interleave_listener_memory(dialog_text: str) -> str:
     pending_src_turn: int | None = None
 
     for line in dialog_text.splitlines(True):
-        # Track student turns
+        # Track student turns from the real visible transcript.
         if line.startswith("[STUDENT]"):
             student_turn += 1
 
-        # Detect patch request in orchestration
-        if line.startswith("[instruct-UniversityCounselorFlowOrchestrator]") and "HIDDEN LISTENER TASK" in line:
-            expect_patch = True
-            pending_src_turn = student_turn  # patch refers to latest student message
+        # Use orchestration lines internally to align hidden listener patches, but do
+        # not write them to the clean text log unless explicitly requested.
+        if line.startswith("[instruct-"):
+            if line.startswith("[instruct-UniversityCounselorFlowOrchestrator]") and "HIDDEN LISTENER TASK" in line:
+                expect_patch = True
+                pending_src_turn = student_turn
+            if show_orchestration:
+                out_lines.append(line)
+            continue
 
-        # Handle expert thinking lines:
-        # - keep applying listener patches
-        # - print thinking only from STUDENT turn 15 onward
+        # Handle expert thinking lines. Keep patch alignment; print thinking only in debug logs.
         if line.startswith("[EXPERT]") and "(thinking)" in line:
             src = pending_src_turn or student_turn
 
@@ -110,15 +140,14 @@ def _interleave_listener_memory(dialog_text: str) -> str:
                 expect_patch = False
                 pending_src_turn = None
 
-            if src >= THINKING_FROM_TURN:
+            if show_thinking:
                 out_lines.append(line)
-
             continue
 
-        # Print the original line (non-thinking)
         out_lines.append(line)
 
-        # Fallback: if there is no thinking line, apply+print right after the visible EXPERT line
+        # Fallback for non-thinking models: apply the pending hidden patch right after
+        # the visible EXPERT line that produced it.
         if line.startswith("[EXPERT]") and expect_patch:
             if pi < len(patches):
                 mem = apply_listener_patch(mem, patches[pi])
@@ -146,8 +175,8 @@ def main() -> None:
         project_root / "configuration_data" / "social_practices.json"
     )
 
-    local_model_name_student = "ollama:qwen3:30b"
-    local_model_name_expert = "ollama:qwen3:30b-thinking"
+    local_model_name_student = os.getenv("SDIALOG_STUDENT_MODEL", "ollama:qwen3:30b")
+    local_model_name_expert = os.getenv("SDIALOG_EXPERT_MODEL", "ollama:qwen3:30b")
 
     input_dir = project_root / "PERSONAS_DATASET"
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import hashlib
 from typing import Any, Dict, List
@@ -305,23 +306,27 @@ def _extract_student_fields(record: Dict[str, Any], dialog_language: str = "Engl
     if background and not background.endswith((".", "!", "?")):
         background = background.rstrip() + "."
 
-    # Se manca una riga sulla scuola, la aggiungiamo usando SEMPRE la regione del JSON
+    # Se manca una riga sulla scuola, aggiungi solo un livello neutro.
+    # Non sintetizzare un tipo di scuola usando il genere: creerebbe una
+    # correlazione artificiale tra attributo protetto e background scolastico.
     if not _BG_HAS_SCHOOL_RX.search(background or ""):
-        seed = f"{annotation}|{region}|{age}|{gender}"
-        hs_type = _det_choice(seed, [
-            "Liceo Scientifico",
-            "Liceo Classico",
-            "Liceo delle Scienze Umane",
-            "Liceo Artistico",
-            "Istituto Tecnico (Informatica/Industriale)",
-            "Istituto Tecnico Economico",
-            "Istituto Professionale",
-        ])
-        sector = _det_choice(seed + "|sector", ["public", "private"])
         bg_region = JSON_REGION_TO_BIO_PHRASE.get(region, "Italy")
-        background = (background + " " if background else "") + (
-            f"I completed high school at a {sector} {hs_type} in {bg_region}."
-        )
+        if os.getenv("SDIALOG_ADD_SYNTHETIC_SCHOOL_TYPE", "0").lower() in {"1", "true", "yes"}:
+            seed = f"{annotation}|{region}|{age}"
+            hs_type = _det_choice(seed, [
+                "Liceo Scientifico",
+                "Liceo Classico",
+                "Liceo delle Scienze Umane",
+                "Liceo Artistico",
+                "Istituto Tecnico (Informatica/Industriale)",
+                "Istituto Tecnico Economico",
+                "Istituto Professionale",
+            ])
+            sector = _det_choice(seed + "|sector", ["public", "private"])
+            school_sentence = f"I completed high school at a {sector} {hs_type} in {bg_region}."
+        else:
+            school_sentence = f"I completed high school in {bg_region}."
+        background = (background + " " if background else "") + school_sentence
 
     interests = riasec_to_interests_descriptions(gpt_riasec)
     personality_traits = bfi_to_personality_traits(bfi)

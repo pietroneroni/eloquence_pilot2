@@ -1,37 +1,64 @@
 [
   {
     "explicit": {
-      "region": "south"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "computer_science"
-      ]
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "Liceo Scientifico graduate",
       "region": "islands"
     },
     "inferred": {
       "field_of_interest": [
-        "computer_science"
-      ]
-    }
-  },
-  {
-    "inferred": {
-      "riasec_attitudes": [
-        "Investigative",
-        "Realistic",
-        "Enterprising"
+        "engineering_technology"
       ]
     }
   },
   {
     "explicit": {
-      "selected_option": "1 - University of Messina | [9215] COMPUTER SCIENCE - English/Italian - INFORMATION TECHNOLOGY"
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences"
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "riasec_question_valences": [
+        2,
+        2,
+        2,
+        -2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "selected_option": "1 - University of Sassari | [A106] COMPUTER ENGINEERING - English Italian"
     }
   }
 ]
