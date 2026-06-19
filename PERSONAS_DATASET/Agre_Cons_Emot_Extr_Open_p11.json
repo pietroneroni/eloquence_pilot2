@@ -1,0 +1,35 @@
+[
+    {
+        "persona_encoding": "Agre_Cons_Emot_Extr_Open",
+        "iteration": 11,
+        "annotation": "I was born and raised in a small town in the Midwest. My parents were hardworking individuals who instilled in me the values of responsibility and dedication. As a child, I was always curious about the world around me, constantly asking questions and seeking answers. This curiosity led me to develop a love for learning, which has stayed with me throughout my life.\n\nI attended a local college, where I pursued a degree in psychology. During my studies, I became fascinated by the human mind and behavior. I was particularly interested in how people interact with each other and how their experiences shape their personalities. After graduation, I decided to further my education and went on to obtain a master's degree in clinical psychology.\n\nThroughout my career, I have had the opportunity to work with a diverse group of people, including children, adolescents, and adults. I have worked in various settings, including hospitals, clinics, and private practices. In my current role, I specialize in treating anxiety and depression, using evidence-based therapies to help my clients overcome their challenges.\n\nOutside of work, I enjoy spending time with my family and friends. I am an avid reader and enjoy exploring new genres and authors. I also enjoy hiking and camping, taking advantage of the natural beauty of the great outdoors. I believe that staying active and engaged in activities that bring me joy is essential to maintaining my overall well-being.\n\nOver the years, I have learned that life can be unpredictable and challenging, but it is also full of opportunities for growth and self-discovery. I am grateful for the experiences I have had and the lessons I have learned along the way. I look forward to continuing to learn, grow, and make a positive impact on the lives of those around me.",
+        "BFI_Scores": {
+            "Agreeableness": 4.1,
+            "Conscientiousness": 3.4,
+            "Emotionally_Stable": 3.0,
+            "Extraversion": 3.3,
+            "Openness": 3.7
+        },
+        "Features": {
+            "assigned_gender": "female",
+            "assigned_age": 40,
+            "region": "North"
+        },
+        "GPT_RIASEC_Scores": {
+            "Realistic": 25,
+            "Investigative": 26,
+            "Artistic": 22,
+            "Social": 14,
+            "Enterprising": 17,
+            "Conventional": 19
+        },
+        "Qwen_RIASEC_Scores": {
+            "Realistic": 9,
+            "Investigative": 20,
+            "Artistic": 15,
+            "Social": 26,
+            "Enterprising": 18,
+            "Conventional": 14
+        }
+    }
+]

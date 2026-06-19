@@ -1,5 +1,4 @@
 # lancedb_university_retriever.py
-
 from __future__ import annotations
 
 import json
@@ -11,6 +10,12 @@ from typing import Any
 import lancedb
 import numpy as np
 from sentence_transformers import SentenceTransformer
+
+DEFAULT_DATASET_DIRS = {
+    "eng": "RAG_University_Eng",
+    "ita": "RAG_University_Ita",
+}
+SUPPORTED_LANGS = ("eng", "ita")
 
 
 def _norm(s: str) -> str:
@@ -31,6 +36,35 @@ def _norm_macro(s: str) -> str:
         "the italian islands": "isole",
     }
     return aliases.get(x, x)
+
+
+def _normalize_language(lang: str | None) -> str:
+    lang = (lang or "eng").strip().lower()
+    aliases = {
+        "en": "eng",
+        "english": "eng",
+        "inglese": "eng",
+        "it": "ita",
+        "italian": "ita",
+        "italiano": "ita",
+    }
+    lang = aliases.get(lang, lang)
+    if lang not in SUPPORTED_LANGS:
+        raise ValueError(f"Unsupported language '{lang}'. Use one of: {', '.join(SUPPORTED_LANGS)}")
+    return lang
+
+
+def _default_rag_dir(project_root: Path, lang: str) -> Path:
+    lang = _normalize_language(lang)
+    preferred = project_root / DEFAULT_DATASET_DIRS[lang]
+
+    # Backward compatibility with old layout.
+    if lang == "eng" and not preferred.exists():
+        legacy = project_root / "RAG_University"
+        if legacy.exists():
+            return legacy
+
+    return preferred
 
 
 def _ascii_norm(s: str) -> str:
@@ -73,10 +107,20 @@ class LanceDBUniversityRetriever:
     def __init__(
         self,
         *,
-        lancedb_dir: str,
+        lang: str = "eng",
+        rag_dir: str | None = None,
+        lancedb_dir: str | None = None,
         table_name: str = "universities",
         embed_model: str = "intfloat/multilingual-e5-base",
     ) -> None:
+        self.lang = _normalize_language(lang)
+        project_root = Path(__file__).resolve().parents[1]
+
+        if not lancedb_dir:
+            dataset_dir = Path(rag_dir) if rag_dir else _default_rag_dir(project_root, self.lang)
+            lancedb_dir = str(dataset_dir / "Embeddings" / "lancedb")
+
+        self.lancedb_dir = lancedb_dir
         self.db = lancedb.connect(lancedb_dir)
         self.table = self.db.open_table(table_name)
         self.model = SentenceTransformer(embed_model)

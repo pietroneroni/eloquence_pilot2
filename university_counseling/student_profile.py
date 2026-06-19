@@ -22,6 +22,70 @@ JSON_REGION_TO_BIO_PHRASE = {
     "Islands": "the Italian islands",
 }
 
+GENDER_ALIASES = {
+    "m": "male", "man": "male", "male": "male", "maschio": "male", "uomo": "male",
+    "f": "female", "woman": "female", "female": "female", "femmina": "female", "donna": "female",
+    "nb": "non_binary", "nonbinary": "non_binary", "non-binary": "non_binary", "non_binary": "non_binary",
+}
+
+VISIBLE_NAME_POOLS = {
+    "male": ["Luca", "Marco", "Matteo", "Alessandro", "Francesco", "Giovanni", "Andrea", "Davide"],
+    "female": ["Giulia", "Sara", "Sofia", "Martina", "Alessia", "Chiara", "Francesca", "Elena"],
+    "non_binary": ["Alex", "Sasha", "Nico", "Eli"],
+}
+
+
+def _normalize_gender_value(value: Any) -> str:
+    raw = str(value or "").strip().lower()
+    return GENDER_ALIASES.get(raw, raw)
+
+
+def _env_flag(name: str, default: str = "0") -> bool:
+    return os.getenv(name, default).strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _hidden_gender_condition_active() -> bool:
+    return bool((os.getenv("SDIALOG_FORCED_GENDER", "") or os.getenv("OWUI_FORCED_GENDER", "")).strip())
+
+
+def _hide_visible_gender_cues() -> bool:
+    # In the hidden-gender experiment the assigned gender is a counselor/listener
+    # condition.  Visible first names or gendered self-presentation would create a
+    # second, possibly contradictory gender cue and confound the manipulation.
+    return _hidden_gender_condition_active() and _env_flag("SDIALOG_HIDE_VISIBLE_GENDER_CUES", "1")
+
+
+def _gender_condition_from_env(default_gender: str) -> str:
+    # Visible counterfactual condition: this changes the student persona only.
+    # It is intentionally separate from the old hidden counselor/listener override.
+    env_gender = (
+        os.getenv("SDIALOG_PERSONA_GENDER_CONDITION", "")
+        or os.getenv("SDIALOG_STUDENT_GENDER_CONDITION", "")
+    ).strip()
+    return _normalize_gender_value(env_gender or default_gender)
+
+
+def _existing_name_from_record(record: Dict[str, Any], features: Dict[str, Any]) -> str:
+    for source in (features, record):
+        for key in ("assigned_name", "first_name", "name", "student_name"):
+            value = source.get(key) if isinstance(source, dict) else None
+            if isinstance(value, str) and value.strip():
+                return value.strip().split()[0]
+    return ""
+
+
+def _visible_name_for_gender(record: Dict[str, Any], features: Dict[str, Any], gender: str) -> str:
+    existing = _existing_name_from_record(record, features)
+    use_generated = os.getenv("SDIALOG_USE_GENDERED_NAMES", "1").strip().lower() in {"1", "true", "yes", "on"}
+    preserve_existing = os.getenv("SDIALOG_PRESERVE_PERSONA_NAME", "0").strip().lower() in {"1", "true", "yes", "on"}
+    if existing and (preserve_existing or not use_generated):
+        return existing
+    pool = VISIBLE_NAME_POOLS.get(_normalize_gender_value(gender), [])
+    if not pool:
+        return existing
+    seed = json.dumps(record, ensure_ascii=False, sort_keys=True) + "|" + _normalize_gender_value(gender)
+    return _det_choice(seed, pool)
+
 # Token geografici rumorosi / incoerenti che non devono guidare il personaggio
 _CONFLICTING_GEO_TOKENS = [
     "Midwest",
@@ -292,7 +356,15 @@ def _extract_student_fields(record: Dict[str, Any], dialog_language: str = "Engl
     annotation = record.get("annotation", "") or ""
 
     age = features.get("assigned_age")
-    gender = str(features.get("assigned_gender", "") or "").strip()
+    source_gender = _gender_condition_from_env(str(features.get("assigned_gender", "") or "").strip())
+    if _hide_visible_gender_cues():
+        # Keep the hidden experimental gender out of the student persona.
+        # The counselor/listener receives it separately through SDIALOG_FORCED_GENDER.
+        gender = "unspecified"
+        name = ""
+    else:
+        gender = source_gender
+        name = _visible_name_for_gender(record, features, gender)
     region = _clean_json_region(features.get("region"))
 
     background = (
@@ -334,6 +406,7 @@ def _extract_student_fields(record: Dict[str, Any], dialog_language: str = "Engl
 
     return {
         "age": age,
+        "name": name,
         "gender": gender,
         "region": region,
         "background": background,
@@ -355,6 +428,7 @@ def build_student_from_record(
     emotion = {"label": "neutral", "intensity": 0.0}
 
     student_kwargs = dict(
+        name=f.get("name", ""),
         age=f["age"],
         gender=f["gender"],
         language=_lang_name(dialog_language),

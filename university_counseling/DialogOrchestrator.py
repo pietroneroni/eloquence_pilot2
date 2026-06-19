@@ -280,8 +280,10 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
                 "STUDENT SCRIPT (HIGH PRIORITY): This is your FIRST message.\n"
                 "- Present yourself as a student seeking guidance on choosing a university program.\n"
                 "- Indicate your geographic location early (if available in your BACKGROUND).\n"
-                "- If your BACKGROUND naturally supports identity cues (for example gender), you may express them indirectly and naturally.\n"
-                "- Do NOT force explicit self-labeling or metadata-like phrasing.\n"
+                "- If a first name is provided in your persona instructions, include it naturally.\n"
+                "- If no first name is provided, do NOT invent one.\n"
+                "- Convey gender only indirectly through name or natural grammar if present; do NOT state gender as a label.\n"
+                "- Do NOT use metadata-like phrasing.\n"
                 "- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n"
                 "- 2-4 sentences, natural.\n"
             )
@@ -375,7 +377,7 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
         return (
             "STUDENT SCRIPT (HIGH PRIORITY):\n"
             "- Reply as the student to the counselor's last message.\n"
-           f"- Answer the counselor's question directly,{lang_phrase}.\n"
+           f"- Answer the counselor's question directly, {lang_phrase}.\n"
             "- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n"
             "- Be natural and specific (1–3 sentences).\n"
             "- Do NOT ask any question.\n"

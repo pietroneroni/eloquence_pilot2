@@ -1,3 +1,4 @@
+# rag_retriever.py
 from __future__ import annotations
 
 import json
@@ -8,9 +9,16 @@ import faiss
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
+DEFAULT_DATASET_DIRS = {
+    "eng": "RAG_University_Eng",
+    "ita": "RAG_University_Ita",
+}
+SUPPORTED_LANGS = ("eng", "ita")
+
 
 def _norm(s: str) -> str:
     return (s or "").casefold().strip()
+
 
 def _norm_macro(s: str) -> str:
     x = _norm(s)
@@ -27,17 +35,56 @@ def _norm_macro(s: str) -> str:
     }
     return aliases.get(x, x)
 
+
+def _normalize_language(lang: str | None) -> str:
+    lang = (lang or "eng").strip().lower()
+    aliases = {
+        "en": "eng",
+        "english": "eng",
+        "inglese": "eng",
+        "it": "ita",
+        "italian": "ita",
+        "italiano": "ita",
+    }
+    lang = aliases.get(lang, lang)
+    if lang not in SUPPORTED_LANGS:
+        raise ValueError(f"Unsupported language '{lang}'. Use one of: {', '.join(SUPPORTED_LANGS)}")
+    return lang
+
+
+def _default_rag_dir(project_root: Path, lang: str) -> Path:
+    lang = _normalize_language(lang)
+    preferred = project_root / DEFAULT_DATASET_DIRS[lang]
+
+    # Backward compatibility with old layout.
+    if lang == "eng" and not preferred.exists():
+        legacy = project_root / "RAG_University"
+        if legacy.exists():
+            return legacy
+
+    return preferred
+
+
 class RAGRetriever:
     def __init__(
         self,
         *,
+        lang: str = "eng",
+        rag_dir: str | None = None,
+        embeddings_dir: str | None = None,
         faiss_path: str | None = None,
         chunks_path: str | None = None,
         embed_model: str = "intfloat/multilingual-e5-base",
     ) -> None:
+        self.lang = _normalize_language(lang)
         project_root = Path(__file__).resolve().parents[1]
 
-        base = project_root / "RAG_University" / "Embeddings"
+        if embeddings_dir:
+            base = Path(embeddings_dir)
+        else:
+            dataset_dir = Path(rag_dir) if rag_dir else _default_rag_dir(project_root, self.lang)
+            base = dataset_dir / "Embeddings"
+
         faiss_path = faiss_path or str(base / "rag.index.faiss")
         chunks_path = chunks_path or str(base / "rag.chunks.jsonl")
 
@@ -60,7 +107,9 @@ class RAGRetriever:
             for line in f:
                 line = line.strip()
                 if line:
-                    self.chunks.append(json.loads(line))
+                    item = json.loads(line)
+                    item.setdefault("meta", {}).setdefault("LANGUAGE", self.lang)
+                    self.chunks.append(item)
 
     def search(
             self,
@@ -150,9 +199,12 @@ class RAGRetriever:
 
         for h in hits:
             meta = h.get("meta") or {}
+            university_key = _norm(str(meta.get("UNIVERSITY") or ""))
             course_key = _norm(str(meta.get("COURSE_CODE") or meta.get("COURSE") or ""))
 
-            if not course_key:
+            if course_key:
+                course_key = f"{university_key}|{course_key}"
+            else:
                 course_key = _norm(str(h.get("text") or "")[:120])
 
             if course_key in seen_courses:

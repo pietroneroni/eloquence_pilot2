@@ -21,16 +21,28 @@ from Build_rag_index import (
     FILESTEM_TO_REGION,
     REGION_TO_MACRO,
     CANONICAL_HEADER_KEYS,
+    EMBED_MODEL,
+    SUPPORTED_LANGS,
+    DEFAULT_INPUT_PATTERNS,
+    default_project_root,
+    default_rag_dir,
+    discover_input_paths,
+    normalize_language,
 )
 
-EMBED_MODEL = "intfloat/multilingual-e5-base"
 VECTOR_DIM = 768
+
 
 def build_lancedb_index(
     rag_dir: str,
     lancedb_dir: str,
     table_name: str = "universities",
+    *,
+    lang: str = "eng",
+    input_glob: str | None = None,
+    embed_model: str = EMBED_MODEL,
 ):
+    lang = normalize_language(lang)
     rag_dir = Path(rag_dir)
     db = lancedb.connect(lancedb_dir)
 
@@ -45,16 +57,24 @@ def build_lancedb_index(
         pa.field("section", pa.string()),
         pa.field("region", pa.string()),
         pa.field("macroarea", pa.string()),
+        pa.field("language", pa.string()),
     ])
 
     tbl = db.create_table(table_name, schema=schema, mode="overwrite")
 
-    model = SentenceTransformer(EMBED_MODEL)
+    model = SentenceTransformer(embed_model)
     rows = []
 
-    paths = sorted(rag_dir.glob("merged_outputUniversità*_translated_en.txt"))
+    paths = discover_input_paths(rag_dir, lang=lang, input_glob=input_glob)
     if not paths:
-        raise SystemExit(f"No RAG input files found in: {rag_dir}")
+        pattern_msg = input_glob or ", ".join(DEFAULT_INPUT_PATTERNS[lang])
+        raise SystemExit(f"No RAG input files found in {rag_dir} with pattern: {pattern_msg}")
+
+    print("RAG dir =", rag_dir)
+    print("LanceDB dir =", lancedb_dir)
+    print("Table =", table_name)
+    print("Language =", lang)
+    print("Matches =", [str(p) for p in paths])
 
     for path in paths:
         text = read_text(str(path))
@@ -64,6 +84,7 @@ def build_lancedb_index(
 
         for bi, block in enumerate(iter_blocks(text)):
             meta, content = parse_block(block)
+            meta["LANGUAGE"] = lang
 
             if "UNIVERSITY" in meta:
                 meta["UNIVERSITY_RAW"] = meta["UNIVERSITY"]
@@ -92,11 +113,12 @@ def build_lancedb_index(
                 header_lines.append(f"REGION: {meta['REGION']}")
             if "MACROAREA" in meta:
                 header_lines.append(f"MACROAREA: {meta['MACROAREA']}")
+            header_lines.append(f"LANGUAGE: {lang}")
 
             header = "\n".join(header_lines).strip()
 
             for ci, ch in enumerate(chunk_text(content, max_chars=1200, overlap=120)):
-                chunk_id = f"{stem}__b{bi:05d}__c{ci:03d}"
+                chunk_id = f"{lang}__{stem}__b{bi:05d}__c{ci:03d}"
                 final_text = (header + "\n\n" + ch).strip()
 
                 rows.append({
@@ -114,7 +136,11 @@ def build_lancedb_index(
                     "section": meta.get("SECTION", ""),
                     "region": meta.get("REGION", ""),
                     "macroarea": meta.get("MACROAREA", ""),
+                    "language": lang,
                 })
+
+    if not rows:
+        raise SystemExit("No rows created: check filters/sections.")
 
     batch_size = 128
 
@@ -128,35 +154,60 @@ def build_lancedb_index(
 
         tbl.add(pd.DataFrame(batch))
 
+    print(f"OK: created LanceDB table '{table_name}' in {lancedb_dir}")
+    print(f"Rows: {len(rows)}")
     return table_name
+
 
 if __name__ == "__main__":
     import argparse
 
-    project_root = Path(__file__).resolve().parents[1]
+    project_root = default_project_root()
 
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--lang",
+        choices=SUPPORTED_LANGS,
+        default="eng",
+        help="Dataset language: eng uses RAG_University_Eng, ita uses RAG_University_Ita.",
+    )
+    parser.add_argument(
         "--rag-dir",
-        default=str(project_root / "RAG_University"),
+        default=None,
+        help="Override dataset directory. If omitted, it is inferred from --lang.",
+    )
+    parser.add_argument(
+        "--input-glob",
+        default=None,
+        help="Override input glob inside rag-dir.",
     )
     parser.add_argument(
         "--lancedb-dir",
-        default=str(project_root / "RAG_University" / "Embeddings" / "lancedb"),
+        default=None,
+        help="Override LanceDB output directory. Default: <rag-dir>/Embeddings/lancedb.",
     )
     parser.add_argument(
         "--table-name",
         default="universities",
     )
-
-    args = parser.parse_args()
-
-    Path(args.lancedb_dir).mkdir(parents=True, exist_ok=True)
-
-    table_name = build_lancedb_index(
-        rag_dir=args.rag_dir,
-        lancedb_dir=args.lancedb_dir,
-        table_name=args.table_name,
+    parser.add_argument(
+        "--embed-model",
+        default=EMBED_MODEL,
     )
 
-    print(f"OK: created LanceDB table '{table_name}' in {args.lancedb_dir}")
+    args = parser.parse_args()
+    lang = normalize_language(args.lang)
+    rag_dir = Path(args.rag_dir) if args.rag_dir else default_rag_dir(project_root, lang)
+    lancedb_dir = Path(args.lancedb_dir) if args.lancedb_dir else rag_dir / "Embeddings" / "lancedb"
+    lancedb_dir.mkdir(parents=True, exist_ok=True)
+
+    table_name = build_lancedb_index(
+        rag_dir=str(rag_dir),
+        lancedb_dir=str(lancedb_dir),
+        table_name=args.table_name,
+        lang=lang,
+        input_glob=args.input_glob,
+        embed_model=args.embed_model,
+    )
+
+    print(f"OK: created LanceDB table '{table_name}' in {lancedb_dir}")

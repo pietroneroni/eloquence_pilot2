@@ -1,0 +1,35 @@
+[
+    {
+        "persona_encoding": "Agre_Cons_Emot_Extr_Open",
+        "iteration": 143,
+        "annotation": "I was born and raised in a small town in the Midwest. My parents were hardworking individuals who instilled in me the value of a strong work ethic from a young age. I have two younger siblings, and we were very close growing up. Our parents ensured that we had a happy and stable childhood, despite the financial struggles that came with raising three children on modest incomes.\n\nI have always been an avid reader, and I would often spend hours lost in a book, exploring new worlds and expanding my imagination. This love for reading eventually led me to pursue a degree in English Literature from a local university. During my time in college, I discovered a passion for writing and spent many late nights working on short stories and essays.\n\nAfter graduation, I moved to New York City to pursue a career in journalism. I started out as an intern at a small publishing house, where I worked my way up to become an editor. I have since had the opportunity to work with many talented writers and artists, and I have learned so much from them.\n\nIn my free time, I enjoy volunteering at a local community center, where I teach creative writing classes to underprivileged children. It is incredibly rewarding to see these kids develop a love for writing and expressing themselves through storytelling.\n\nI have also been fortunate enough to travel to many different countries, and I have a deep appreciation for the beauty and diversity of our world. I believe that traveling allows us to broaden our perspectives and gain a better understanding of other cultures.\n\nRecently, I have begun working on a novel based on my experiences growing up in the Midwest. It has been a challenging but fulfilling experience, and I am excited to see where it will take me.\n\nThroughout my life, I have been guided by a few core values: curiosity, compassion, and perseverance. I believe that these qualities have helped me to overcome obstacles and achieve my goals, and I strive to embody them in all aspects of my life.",
+        "BFI_Scores": {
+            "Agreeableness": 4.0,
+            "Conscientiousness": 3.3,
+            "Emotionally_Stable": 3.9,
+            "Extraversion": 3.2,
+            "Openness": 4.1
+        },
+        "Features": {
+            "assigned_gender": "male",
+            "assigned_age": 30,
+            "region": "North"
+        },
+        "GPT_RIASEC_Scores": {
+            "Realistic": 13,
+            "Investigative": 17,
+            "Artistic": 19,
+            "Social": 16,
+            "Enterprising": 11,
+            "Conventional": 12
+        },
+        "Qwen_RIASEC_Scores": {
+            "Realistic": 8,
+            "Investigative": 16,
+            "Artistic": 24,
+            "Social": 20,
+            "Enterprising": 12,
+            "Conventional": 10
+        }
+    }
+]

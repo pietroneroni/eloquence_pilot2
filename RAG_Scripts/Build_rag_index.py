@@ -2,7 +2,6 @@
 import re
 import json
 import glob
-import os
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
@@ -10,6 +9,31 @@ from typing import Iterable
 import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
+
+# -----------------------------
+# Dataset / language config
+# -----------------------------
+
+EMBED_MODEL = "intfloat/multilingual-e5-base"
+SUPPORTED_LANGS = ("eng", "ita")
+
+# Default project layout:
+#   Sdialog/
+#     RAG_University_Eng/
+#       merged_outputUniversità*_translated_en.txt
+#       Embeddings/
+#     RAG_University_Ita/
+#       merged_outputUniversità*.txt
+#       Embeddings/
+DEFAULT_DATASET_DIRS = {
+    "eng": "RAG_University_Eng",
+    "ita": "RAG_University_Ita",
+}
+
+DEFAULT_INPUT_PATTERNS = {
+    "eng": ["merged_outputUniversità*_translated_en.txt"],
+    "ita": ["merged_outputUniversità*.txt"],
+}
 
 # -----------------------------
 # Parsing config
@@ -39,7 +63,8 @@ HEADER_RE = re.compile(
 
 CANONICAL_HEADER_KEYS = ["UNIVERSITY", "COURSE", "TYPE", "CURRICULUM", "SECTION", "URL"]
 
-# Map file-stem -> region (extend as you add more universities)
+# Map file-stem -> region. The normalize_stem() function removes suffixes like
+# _translated_en, so the same mapping works for both Italian and English files.
 FILESTEM_TO_REGION = {
     "merged_outputUniversitàAquila": "Abruzzo",
     "merged_outputUniversitàChieti": "Abruzzo",
@@ -50,7 +75,6 @@ FILESTEM_TO_REGION = {
     "merged_outputUniversitàSiena": "Toscana",
     "merged_outputUniversitàTrento": "Trentino-Alto Adige",
 }
-
 
 REGION_TO_MACRO = {
     "Valle d'Aosta": "nord",
@@ -90,8 +114,68 @@ class Chunk:
 
 
 # -----------------------------
-# I/O helpers
+# I/O and dataset helpers
 # -----------------------------
+
+def normalize_language(lang: str | None) -> str:
+    lang = (lang or "eng").strip().lower()
+    aliases = {
+        "en": "eng",
+        "english": "eng",
+        "inglese": "eng",
+        "it": "ita",
+        "italian": "ita",
+        "italiano": "ita",
+    }
+    lang = aliases.get(lang, lang)
+    if lang not in SUPPORTED_LANGS:
+        raise ValueError(f"Unsupported language '{lang}'. Use one of: {', '.join(SUPPORTED_LANGS)}")
+    return lang
+
+
+def default_project_root() -> Path:
+    # Project root: Sdialog/
+    return Path(__file__).resolve().parents[1]
+
+
+def default_rag_dir(project_root: Path, lang: str) -> Path:
+    lang = normalize_language(lang)
+    preferred = project_root / DEFAULT_DATASET_DIRS[lang]
+
+    # Backward compatibility with the old layout. Useful until you rename the
+    # current RAG_University folder to RAG_University_Eng.
+    if lang == "eng" and not preferred.exists():
+        legacy = project_root / "RAG_University"
+        if legacy.exists():
+            return legacy
+
+    return preferred
+
+
+def discover_input_paths(
+    rag_dir: str | Path,
+    *,
+    lang: str = "eng",
+    input_glob: str | None = None,
+) -> list[Path]:
+    rag_dir = Path(rag_dir)
+    lang = normalize_language(lang)
+
+    patterns = [input_glob] if input_glob else DEFAULT_INPUT_PATTERNS[lang]
+    paths: list[Path] = []
+    for pattern in patterns:
+        paths.extend(rag_dir.glob(pattern))
+
+    # In the Italian folder, keep the original Italian files and avoid indexing
+    # English translated copies if they are accidentally present.
+    if lang == "ita" and not input_glob:
+        paths = [
+            p for p in paths
+            if not p.stem.endswith("_translated_en") and not p.stem.endswith("_en")
+        ]
+
+    return sorted(dict.fromkeys(paths))
+
 
 def read_text(path: str) -> str:
     raw = Path(path).read_bytes()
@@ -102,6 +186,10 @@ def read_text(path: str) -> str:
             pass
     return raw.decode("utf-8", errors="ignore")
 
+
+# -----------------------------
+# Parsing helpers
+# -----------------------------
 
 def iter_blocks(text: str) -> Iterable[str]:
     # split on lines like "-----"
@@ -150,15 +238,17 @@ def should_keep_block(meta: dict, content: str) -> bool:
 
     return True
 
+
 def normalize_stem(stem: str) -> str:
     for suffix in ("_translated_en", "_en", "_translated"):
         if stem.endswith(suffix):
             return stem[: -len(suffix)]
     return stem
 
+
 def chunk_text(text: str, max_chars=1200, overlap=150):
     """
-    max_chars: tienilo più basso se noti che molta roba viene troncata dal modello.
+    max_chars: tienilo piu basso se noti che molta roba viene troncata dal modello.
     E5 gestisce bene ma resta un encoder con max length.
     """
     paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
@@ -215,6 +305,7 @@ def batched(iterable, batch_size: int):
     if batch:
         yield batch
 
+
 def normalize_university_name(name: str) -> str:
     n = name.strip()
     n_upper = n.upper()
@@ -245,6 +336,7 @@ def normalize_university_name(name: str) -> str:
 
     return n
 
+
 def section_group(section: str) -> str:
     s = section.lower()
 
@@ -265,51 +357,64 @@ def section_group(section: str) -> str:
 
     return "other"
 
+
 # -----------------------------
-# Main
+# Index build
 # -----------------------------
 
-def main():
-    # Project root: Sdialog/
-    project_root = Path(__file__).resolve().parents[1]
-
-    rag_dir = project_root / "RAG_University"
-    embeddings_dir = rag_dir / "Embeddings"
+def build_faiss_index(
+    *,
+    rag_dir: str | Path,
+    embeddings_dir: str | Path | None = None,
+    lang: str = "eng",
+    input_glob: str | None = None,
+    index_filename: str = "rag.index.faiss",
+    chunks_filename: str = "rag.chunks.jsonl",
+    embed_model: str = EMBED_MODEL,
+) -> dict:
+    lang = normalize_language(lang)
+    rag_dir = Path(rag_dir)
+    embeddings_dir = Path(embeddings_dir) if embeddings_dir else rag_dir / "Embeddings"
     embeddings_dir.mkdir(parents=True, exist_ok=True)
 
-    # Input / output
-    input_glob = str(rag_dir / "merged_outputUniversità*_translated_en.txt")
-    out_index = str(embeddings_dir / "rag.index.faiss")
-    out_chunks = str(embeddings_dir / "rag.chunks.jsonl")
+    paths = discover_input_paths(rag_dir, lang=lang, input_glob=input_glob)
+    if not paths:
+        pattern_msg = input_glob or ", ".join(DEFAULT_INPUT_PATTERNS[lang])
+        raise SystemExit(f"Nessun file trovato in {rag_dir} con pattern: {pattern_msg}")
 
-    print("PROJECT_ROOT =", project_root)
+    out_index = embeddings_dir / index_filename
+    out_chunks = embeddings_dir / chunks_filename
+
     print("RAG dir =", rag_dir)
     print("Embeddings dir =", embeddings_dir)
-    print("Matches =", glob.glob(input_glob))
-
-    paths = sorted(glob.glob(input_glob))
-    if not paths:
-        raise SystemExit(f"Nessun file trovato: {input_glob}")
+    print("Language =", lang)
+    print("Matches =", [str(p) for p in paths])
 
     all_chunks: list[Chunk] = []
 
     for path in paths:
-        text = read_text(path)
+        text = read_text(str(path))
         stem = Path(path).stem
         base_stem = normalize_stem(stem)
         region = FILESTEM_TO_REGION.get(base_stem)
 
         for bi, block in enumerate(iter_blocks(text)):
             meta, content = parse_block(block)
+            meta["LANGUAGE"] = lang
+
             if "UNIVERSITY" in meta:
                 meta["UNIVERSITY_RAW"] = meta["UNIVERSITY"]
                 meta["UNIVERSITY"] = normalize_university_name(meta["UNIVERSITY"])
+
             if not should_keep_block(meta, content):
                 continue
 
             if region:
                 meta["REGION"] = region
                 meta["MACROAREA"] = REGION_TO_MACRO.get(region, "")
+
+            if "SECTION" in meta:
+                meta["SECTION_GROUP"] = section_group(meta["SECTION"])
 
             header_lines = []
             for k in CANONICAL_HEADER_KEYS:
@@ -318,25 +423,19 @@ def main():
 
             if "COURSE_CODE" in meta:
                 header_lines.append(f"COURSE_CODE: {meta['COURSE_CODE']}")
-
             if "COURSE_NAME" in meta:
                 header_lines.append(f"COURSE_NAME: {meta['COURSE_NAME']}")
-
             if "REGION" in meta:
                 header_lines.append(f"REGION: {meta['REGION']}")
-
             if "MACROAREA" in meta:
                 header_lines.append(f"MACROAREA: {meta['MACROAREA']}")
-
-            if "SECTION" in meta:
-                meta["SECTION_GROUP"] = section_group(meta["SECTION"])
+            header_lines.append(f"LANGUAGE: {lang}")
 
             header = "\n".join(header_lines).strip()
-
             content_chunks = chunk_text(content, max_chars=1200, overlap=120)
 
             for ci, ch in enumerate(content_chunks):
-                chunk_id = f"{stem}__b{bi:05d}__c{ci:03d}"
+                chunk_id = f"{lang}__{stem}__b{bi:05d}__c{ci:03d}"
                 chunk_text_final = (header + "\n\n" + ch).strip() if header else ch.strip()
 
                 all_chunks.append(
@@ -354,6 +453,7 @@ def main():
 
     if not all_chunks:
         raise SystemExit("Nessun chunk creato: controlla filtri/sezioni.")
+
     print("Files:", len(paths))
     print("Chunks:", len(all_chunks))
 
@@ -362,7 +462,6 @@ def main():
     print("Universities:", Counter(c.meta.get("UNIVERSITY", "") for c in all_chunks).most_common(20))
 
     # ---- Embeddings (E5)
-    embed_model = "intfloat/multilingual-e5-base"
     print(f"Embedding model = {embed_model}")
     model = SentenceTransformer(embed_model)
 
@@ -381,7 +480,7 @@ def main():
     index = faiss.IndexFlatIP(dim)
     index.add(embeddings)
 
-    faiss.write_index(index, out_index)
+    faiss.write_index(index, str(out_index))
 
     with open(out_chunks, "w", encoding="utf-8") as f:
         for c in all_chunks:
@@ -391,6 +490,73 @@ def main():
     print("Chunks without COURSE_CODE:", missing_course_code)
     print(f"OK: {len(all_chunks)} chunk indicizzati")
     print(f"Creati: {out_index} + {out_chunks}")
+
+    return {
+        "lang": lang,
+        "rag_dir": str(rag_dir),
+        "embeddings_dir": str(embeddings_dir),
+        "input_files": [str(p) for p in paths],
+        "chunks": len(all_chunks),
+        "index_path": str(out_index),
+        "chunks_path": str(out_chunks),
+    }
+
+
+def main():
+    project_root = default_project_root()
+
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--lang",
+        choices=SUPPORTED_LANGS,
+        default="eng",
+        help="Dataset language: eng uses RAG_University_Eng, ita uses RAG_University_Ita.",
+    )
+    parser.add_argument(
+        "--rag-dir",
+        default=None,
+        help="Override dataset directory. If omitted, it is inferred from --lang.",
+    )
+    parser.add_argument(
+        "--input-glob",
+        default=None,
+        help="Override input glob inside rag-dir, e.g. 'merged_outputUniversità*.txt'.",
+    )
+    parser.add_argument(
+        "--embeddings-dir",
+        default=None,
+        help="Override embeddings output directory. Default: <rag-dir>/Embeddings.",
+    )
+    parser.add_argument(
+        "--index-filename",
+        default="rag.index.faiss",
+    )
+    parser.add_argument(
+        "--chunks-filename",
+        default="rag.chunks.jsonl",
+    )
+    parser.add_argument(
+        "--embed-model",
+        default=EMBED_MODEL,
+    )
+
+    args = parser.parse_args()
+    lang = normalize_language(args.lang)
+    rag_dir = Path(args.rag_dir) if args.rag_dir else default_rag_dir(project_root, lang)
+
+    print("PROJECT_ROOT =", project_root)
+
+    build_faiss_index(
+        rag_dir=rag_dir,
+        embeddings_dir=args.embeddings_dir,
+        lang=lang,
+        input_glob=args.input_glob,
+        index_filename=args.index_filename,
+        chunks_filename=args.chunks_filename,
+        embed_model=args.embed_model,
+    )
 
 
 if __name__ == "__main__":

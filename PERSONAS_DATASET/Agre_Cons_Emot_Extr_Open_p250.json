@@ -1,0 +1,35 @@
+[
+    {
+        "persona_encoding": "Agre_Cons_Emot_Extr_Open",
+        "iteration": 250,
+        "annotation": "I was born and raised in a small town in the Midwest. My parents were hardworking individuals who instilled in me the value of a strong work ethic from a young age. I have two older siblings, both of whom have been significant influences in my life. We were a close-knit family, and our home was always filled with laughter and love.\n\nAs a child, I was curious and imaginative, spending hours lost in books and daydreams. I had a particular fascination with animals and spent many afternoons at the local zoo, sketching the creatures that captivated me. This passion for art led me to pursue a degree in Fine Arts from a prestigious university.\n\nDuring my college years, I discovered a love for travel. I studied abroad in several countries, immersing myself in new cultures and broadening my horizons. These experiences shaped my worldview and strengthened my independence.\n\nUpon graduation, I moved to New York City to pursue a career in graphic design. The city presented numerous challenges, but also infinite opportunities. I worked tirelessly, refining my skills and building a reputation in the industry. Eventually, I started my own design studio, which has allowed me to combine my creativity with my entrepreneurial spirit.\n\nOutside of my professional life, I am an avid volunteer. I believe in giving back to my community and have dedicated countless hours to various causes. Whether it's mentoring young artists or helping at local food banks, I find joy in making a difference in people's lives.\n\nIn my personal life, I have had my fair share of ups and downs. However, I remain optimistic and resilient. I cherish my relationships and strive to be a supportive friend and partner. I continue to learn and grow, embracing life's twists and turns with grace and humor.\n\nThroughout my journey, I have remained true to my roots while constantly evolving. I am proud of what I have achieved, yet I know there is so much more to explore and experience. As I move forward, I am excited about the possibilities that lie ahead.",
+        "BFI_Scores": {
+            "Agreeableness": 3.4,
+            "Conscientiousness": 2.1,
+            "Emotionally_Stable": 2.7,
+            "Extraversion": 3.0,
+            "Openness": 4.4
+        },
+        "Features": {
+            "assigned_gender": "female",
+            "assigned_age": 22,
+            "region": "North"
+        },
+        "GPT_RIASEC_Scores": {
+            "Realistic": 20,
+            "Investigative": 18,
+            "Artistic": 24,
+            "Social": 15,
+            "Enterprising": 16,
+            "Conventional": 12
+        },
+        "Qwen_RIASEC_Scores": {
+            "Realistic": 16,
+            "Investigative": 21,
+            "Artistic": 28,
+            "Social": 19,
+            "Enterprising": 24,
+            "Conventional": 13
+        }
+    }
+]

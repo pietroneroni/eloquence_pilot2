@@ -541,6 +541,74 @@ def _dprint(enabled: bool, msg: str) -> None:
         print(msg)
 
 
+
+# =============================================================================
+# Experimental forced gender helpers
+# =============================================================================
+def get_forced_listener_gender() -> Optional[str]:
+    """Return the experimentally assigned hidden counselor/listener gender.
+
+    This is intentionally hidden from the visible student transcript. Batch runs
+    set SDIALOG_FORCED_GENDER from SDIALOG_GENDER_VARIANTS so the listener memory
+    and counselor-side hidden state carry the experimental gender condition while
+    the student does not have to disclose it.
+
+    Set SDIALOG_ALLOW_FORCED_LISTENER_GENDER=0 only for ablation runs where you
+    want the listener to infer gender exclusively from visible dialogue cues.
+    """
+    allow = os.getenv("SDIALOG_ALLOW_FORCED_LISTENER_GENDER", "1").strip().lower()
+    if allow in {"0", "false", "no", "off"}:
+        return None
+
+    raw = (
+        os.getenv("SDIALOG_FORCED_GENDER", "")
+        or os.getenv("OWUI_FORCED_GENDER", "")
+    ).strip().lower()
+    aliases = {
+        "m": "male", "man": "male", "male": "male", "maschio": "male", "uomo": "male",
+        "f": "female", "woman": "female", "female": "female", "femmina": "female", "donna": "female",
+        "nb": "non_binary", "nonbinary": "non_binary", "non-binary": "non_binary", "non_binary": "non_binary",
+    }
+    return aliases.get(raw)
+
+
+def force_gender_in_memory(memory: Dict[str, Any], forced_gender: Optional[str] = None) -> Dict[str, Any]:
+    gender = forced_gender or get_forced_listener_gender()
+    if not gender:
+        return memory
+    if not isinstance(memory, dict):
+        memory = {}
+    inferred = memory.setdefault("inferred", {})
+    if not isinstance(inferred, dict):
+        memory["inferred"] = {}
+        inferred = memory["inferred"]
+    inferred["gender"] = gender
+    return memory
+
+
+def force_gender_in_patch(patch: Dict[str, Any], forced_gender: Optional[str] = None) -> Dict[str, Any]:
+    gender = forced_gender or get_forced_listener_gender()
+    if not gender:
+        return patch
+    if not isinstance(patch, dict):
+        patch = {}
+    inferred = patch.setdefault("inferred", {})
+    if not isinstance(inferred, dict):
+        patch["inferred"] = {}
+        inferred = patch["inferred"]
+    inferred["gender"] = gender
+    return patch
+
+
+def force_gender_in_global_listener_patches(forced_gender: Optional[str] = None) -> None:
+    """Mirror the Open WebUI forced-gender patch rewriting, without server logic."""
+    gender = forced_gender or get_forced_listener_gender()
+    if not gender:
+        return
+    for store in (_LISTENER_PATCH_HISTORY, _LISTENER_PATCH_BUFFER):
+        for i, patch in enumerate(store):
+            store[i] = force_gender_in_patch(patch, gender)
+
 def _normalize_region_value(value: Optional[str]) -> Optional[str]:
     if not isinstance(value, str):
         return None
@@ -767,6 +835,18 @@ def infer_intended_level_from_academic_background(academic_background: Optional[
 
 def _infer_program_level(text: str) -> Optional[str]:
     low = (text or "").lower()
+
+    if any(k in low for k in [
+        "advanced training course",
+        "advanced training",
+        "corso di alta formazione",
+        "alta formazione",
+        "corso di perfezionamento",
+        "perfezionamento",
+        "continuing education",
+        "professional development",
+    ]):
+        return "postgraduate"
 
     if any(k in low for k in [
         "corso di dottorato",
@@ -1321,11 +1401,10 @@ def _build_short_ctx(
 # Canonical listener memory
 # =============================================================================
 def canonical_listener_memory() -> Dict[str, Any]:
-    return {
+    mem = {
         "explicit": {
             "academic_background": None,
             "region": None,
-            "selected_option": None,
         },
         "inferred": {
             "gender": None,
@@ -1334,6 +1413,7 @@ def canonical_listener_memory() -> Dict[str, Any]:
             "riasec_confidence": None,
         },
     }
+    return force_gender_in_memory(mem)
 
 
 def _empty_listener_memory() -> dict:
@@ -1404,11 +1484,9 @@ def apply_listener_patch(mem: Dict[str, Any], patch: Dict[str, Any]) -> Dict[str
             pexp["academic_background"],
         )
 
-    if isinstance(pexp.get("selected_option"), str) and pexp["selected_option"].strip():
-        # The listener extracts the student's choice via prompt. Python only
-        # canonicalizes that prompt-extracted value against the options that were
-        # actually shown to the student, avoiding stale candidate-pool mappings.
-        exp["selected_option"] = _canonicalize_selected_option_value(pexp["selected_option"].strip())
+    # selected_option is not a listener-memory field. It is deterministic
+    # dialogue state committed by the orchestrator after numbered options are shown.
+    # Ignore any model-generated selected_option to keep listener memory purely inferential.
 
     foi = _normalize_field_of_interest(pinf.get("field_of_interest"))
     if foi:
@@ -1416,6 +1494,10 @@ def apply_listener_patch(mem: Dict[str, Any], patch: Dict[str, Any]) -> Dict[str
 
     if isinstance(pinf.get("gender"), str) and pinf["gender"].strip():
         inf["gender"] = pinf["gender"].strip()
+
+    forced_gender = get_forced_listener_gender()
+    if forced_gender:
+        inf["gender"] = forced_gender
 
     valences = _normalize_riasec_valences(pinf.get("riasec_question_valences"))
     if valences:
@@ -1427,6 +1509,9 @@ def apply_listener_patch(mem: Dict[str, Any], patch: Dict[str, Any]) -> Dict[str
         if labels:
             inf["riasec_attitudes"] = labels
             inf["riasec_confidence"] = inf.get("riasec_confidence") or "unknown"
+
+    # Remove legacy selected_option if an old patch/memory object still contains it.
+    exp.pop("selected_option", None)
 
     mem["explicit"] = exp
     mem["inferred"] = inf
@@ -1467,46 +1552,153 @@ def get_debug_snapshots() -> List[DebugSnapshot]:
 # =============================================================================
 _LISTENER_PATCH_HISTORY: List[Dict[str, Any]] = []
 _LISTENER_PATCH_BUFFER: List[Dict[str, Any]] = []
+_LISTENER_PATCH_EVENTS: List[Dict[str, Any]] = []
+_CURRENT_LISTENER_SOURCE_TURN: Optional[int] = None
+_SELECTED_OPTION_EVENT: Optional[Dict[str, Any]] = None
 _ADVICE_OPTIONS_SHOWN: List[str] = []
 
 
 def clear_listener_patches() -> None:
+    global _CURRENT_LISTENER_SOURCE_TURN, _SELECTED_OPTION_EVENT
     _LISTENER_PATCH_HISTORY.clear()
     _LISTENER_PATCH_BUFFER.clear()
+    _LISTENER_PATCH_EVENTS.clear()
+    _CURRENT_LISTENER_SOURCE_TURN = None
+    _SELECTED_OPTION_EVENT = None
+
+
+def set_listener_patch_source_turn(turn_number: Optional[int]) -> None:
+    global _CURRENT_LISTENER_SOURCE_TURN
+    _CURRENT_LISTENER_SOURCE_TURN = turn_number if isinstance(turn_number, int) and turn_number > 0 else None
 
 
 def get_listener_patches() -> List[Dict[str, Any]]:
     return list(_LISTENER_PATCH_HISTORY)
 
 
+def get_listener_patch_events() -> List[Dict[str, Any]]:
+    return copy.deepcopy(_LISTENER_PATCH_EVENTS)
+
+
+def record_selected_option_event(
+    *,
+    option_number: int,
+    selected_option: str,
+    shown_options: Sequence[str],
+    source_turn: Optional[int] = None,
+) -> None:
+    """Record the student's selected option outside listener memory.
+
+    This is deterministic protocol state: once the counselor has shown numbered
+    options and the student chooses option N, no LLM inference is needed.
+    """
+    global _SELECTED_OPTION_EVENT
+
+    if not isinstance(option_number, int) or option_number < 1:
+        return
+    selected = str(selected_option or "").strip()
+    if not selected:
+        return
+
+    src = source_turn if isinstance(source_turn, int) and source_turn > 0 else _CURRENT_LISTENER_SOURCE_TURN
+    _SELECTED_OPTION_EVENT = {
+        "source_turn": src,
+        "option_number": option_number,
+        "selected_option": selected,
+        "shown_options": [str(x).strip() for x in (shown_options or []) if str(x).strip()],
+    }
+
+
+def get_selected_option_event() -> Optional[Dict[str, Any]]:
+    return copy.deepcopy(_SELECTED_OPTION_EVENT) if isinstance(_SELECTED_OPTION_EVENT, dict) else None
+
+
+def record_verified_listener_patch_event(
+    patch: Dict[str, Any],
+    *,
+    phase: str = "",
+    source_turn: Optional[int] = None,
+) -> None:
+    """Record an already-verified listener-memory update.
+
+    Use this only for rare verified listener-memory updates. Do not use it
+    for selected_option, which is stored separately as protocol state.
+    """
+    if not isinstance(patch, dict) or not patch:
+        return
+
+    data = force_gender_in_patch(copy.deepcopy(patch))
+    if not data:
+        return
+
+    src = source_turn if isinstance(source_turn, int) and source_turn > 0 else _CURRENT_LISTENER_SOURCE_TURN
+    _LISTENER_PATCH_BUFFER.append(data)
+    _LISTENER_PATCH_HISTORY.append(copy.deepcopy(data))
+    _LISTENER_PATCH_EVENTS.append({
+        "source_turn": src,
+        "phase": (phase or (_LAST_RAG_STATE.phase or "")).strip().lower(),
+        "patch": copy.deepcopy(data),
+    })
+
+
+
+
+def _phase_accepts_selected_option_patch() -> bool:
+    """selected_option patches are never accepted into listener memory."""
+    return False
+
+
+def _validate_selected_option_against_shown(value: Any) -> Optional[str]:
+    if not isinstance(value, str) or not value.strip():
+        return None
+    shown_options = [
+        str(x).strip()
+        for x in (_LAST_RAG_STATE.advice_options or _ADVICE_OPTIONS_SHOWN or [])
+        if str(x).strip()
+    ]
+    if not shown_options:
+        return None
+
+    canonical = _canonicalize_selected_option_value(value.strip(), shown_options)
+    m = re.match(r"^\s*([1-3])\s+-\s+(.+?)\s*$", canonical)
+    if not m:
+        return None
+    n = int(m.group(1))
+    if not (1 <= n <= len(shown_options)):
+        return None
+    expected_n = _LAST_RAG_STATE.expected_selection_number
+    if expected_n is None or n != expected_n:
+        return None
+    return f"{n} - {shown_options[n - 1]}"
+
+
+def _sanitize_listener_patch_for_current_phase(data: Dict[str, Any]) -> Dict[str, Any]:
+    """Drop fields that do not belong in listener memory.
+
+    selected_option is deliberately excluded from listener memory because it is
+    deterministic protocol state, not an LLM inference.
+    """
+    if not isinstance(data, dict):
+        return {}
+
+    out = copy.deepcopy(data)
+    exp = out.get("explicit")
+    if isinstance(exp, dict):
+        exp.pop("selected_option", None)
+
+    for key in ["explicit", "inferred"]:
+        if isinstance(out.get(key), dict) and not out[key]:
+            out.pop(key, None)
+    return out
 
 
 def _canonicalize_listener_patch_with_shown_options(data: Dict[str, Any]) -> Dict[str, Any]:
-    """Canonicalize prompt-extracted selected_option before it reaches logs/memory.
+    """Compatibility wrapper: sanitize listener patches.
 
-    The listener still extracts the information by prompt. Python only normalizes
-    that prompt-extracted value against the options actually displayed to the
-    student, so a stale candidate-pool option cannot leak into the logged memory.
+    The listener no longer owns selected_option, so there is no option
+    canonicalization here.
     """
-    if not isinstance(data, dict):
-        return data
-
-    exp = data.get("explicit")
-    if not isinstance(exp, dict):
-        return data
-
-    selected = exp.get("selected_option")
-    if not isinstance(selected, str) or not selected.strip():
-        return data
-
-    try:
-        selected = _canonicalize_selected_option_value(selected)
-    except Exception:
-        return data
-
-    out = copy.deepcopy(data)
-    out.setdefault("explicit", {})["selected_option"] = selected
-    return out
+    return _sanitize_listener_patch_for_current_phase(data)
 
 
 def strip_and_buffer_listener_patch(text: str) -> str:
@@ -1518,9 +1710,17 @@ def strip_and_buffer_listener_patch(text: str) -> str:
         raw_json = m.group(1)
         data = _safe_json_loads(raw_json)
         if isinstance(data, dict):
+            data = _sanitize_listener_patch_for_current_phase(data)
             data = _canonicalize_listener_patch_with_shown_options(data)
-            _LISTENER_PATCH_BUFFER.append(data)
-            _LISTENER_PATCH_HISTORY.append(copy.deepcopy(data))
+            data = force_gender_in_patch(data)
+            if data:
+                _LISTENER_PATCH_BUFFER.append(data)
+                _LISTENER_PATCH_HISTORY.append(copy.deepcopy(data))
+                _LISTENER_PATCH_EVENTS.append({
+                    "source_turn": _CURRENT_LISTENER_SOURCE_TURN,
+                    "phase": (_LAST_RAG_STATE.phase or "").strip().lower(),
+                    "patch": copy.deepcopy(data),
+                })
         t = (t[: m.start()] + t[m.end() :]).strip()
     return t
 
@@ -1549,6 +1749,7 @@ class _RAGState:
     allowed_entities: set[str] = field(default_factory=set)
     advice_options: List[str] = field(default_factory=list)
     choice_options: List[str] = field(default_factory=list)
+    expected_selection_number: Optional[int] = None
 
 
 _LAST_RAG_STATE = _RAGState()
@@ -1563,12 +1764,14 @@ def update_last_rag_state(
     advice_fallback: bool = False,
     advice_options: Optional[Sequence[str]] = None,
     choice_options: Optional[Sequence[str]] = None,
+    expected_selection_number: Optional[int] = None,
 ) -> None:
     _LAST_RAG_STATE.ctx = ctx or ""
     _LAST_RAG_STATE.query = query or ""
     _LAST_RAG_STATE.phase = (phase or "").strip().lower()
     _LAST_RAG_STATE.expected_verbatim = (expected_verbatim or "").strip()
     _LAST_RAG_STATE.advice_fallback = bool(advice_fallback)
+    _LAST_RAG_STATE.expected_selection_number = expected_selection_number
 
     if advice_options is None:
         # Preserve the ranked/displayed advice list across Q&A and wrap-up phases.
@@ -1602,8 +1805,9 @@ def update_last_rag_state(
 
 
 def clear_last_rag_state() -> None:
-    global _ADVICE_OPTIONS_SHOWN
+    global _ADVICE_OPTIONS_SHOWN, _SELECTED_OPTION_EVENT
     _ADVICE_OPTIONS_SHOWN = []
+    _SELECTED_OPTION_EVENT = None
     update_last_rag_state(
         "",
         query="",
@@ -1682,6 +1886,96 @@ def _done_no_options_message() -> str:
         "Suggested next steps: broaden the target field slightly; keep the field exact and search again when more universities are available; review constraints and priorities. "
         "Goodbye."
     )
+
+
+_QA_CLOSING_RX = re.compile(
+    r"\b("
+    r"goodbye|bye|good luck|best of luck|take care|have a great day|have a good day|"
+    r"see you soon|if you have any questions|further assistance|don't hesitate|do not hesitate|"
+    r"arrivederci|ciao|in bocca al lupo|buona fortuna|a presto"
+    r")\b",
+    re.IGNORECASE,
+)
+
+
+def _split_sentences_conservatively(text: str) -> List[str]:
+    t = re.sub(r"\s+", " ", (text or "").strip())
+    if not t:
+        return []
+    return [x.strip() for x in re.split(r"(?<=[.!?])\s+", t) if x.strip()]
+
+
+def _strip_qa_closings_and_questions(text: str) -> str:
+    """Remove premature closing/question sentences during fixed follow-up Q&A.
+
+    The student script must continue through the fixed probe sequence.  A
+    counselor-side goodbye or a new question can terminate or contaminate the
+    run, so Q&A phases keep only answer sentences.
+    """
+    kept: List[str] = []
+    for sent in _split_sentences_conservatively(text):
+        if _QA_CLOSING_RX.search(sent):
+            continue
+        if "?" in sent:
+            continue
+        kept.append(sent)
+    return " ".join(kept).strip()
+
+
+def _choice_alias_norm(text: str) -> str:
+    t = _normalize(text)
+    replacements = {
+        "towards": "toward",
+        "orientated": "oriented",
+        "humanistic": "humanities",
+        "support tasks first": "supporting tasks first",
+        "supporting role first": "supporting tasks first",
+        "introductory courses": "introductory modules",
+        "advanced courses immediately": "advanced classes immediately",
+    }
+    for a, b in replacements.items():
+        t = re.sub(r"(?<![a-z0-9])" + re.escape(a) + r"(?![a-z0-9])", b, t)
+    t = re.sub(r"\b(i would recommend|i recommend|i would suggest|i suggest|choose|choosing|focus on|focusing on)\b", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def _match_choice_to_allowed(body: str, allowed: Sequence[str]) -> Optional[str]:
+    if not allowed:
+        return None
+
+    first_sentence = _split_sentences_conservatively(body)
+    candidates = [first_sentence[0] if first_sentence else body, body]
+    allowed_norm = [(opt, _choice_alias_norm(opt)) for opt in allowed if str(opt).strip()]
+
+    for candidate in candidates:
+        c_norm = _choice_alias_norm(candidate)
+        if not c_norm:
+            continue
+        for opt, opt_norm in allowed_norm:
+            if c_norm == opt_norm:
+                return opt
+        hits = [opt for opt, opt_norm in allowed_norm if opt_norm and opt_norm in c_norm]
+        if len(hits) == 1:
+            return hits[0]
+
+    body_norm = _choice_alias_norm(body)
+    # Fixed-probe semantic anchors.  These do not choose a new answer; they only
+    # canonicalize an answer the model already expressed in non-exact wording.
+    for opt, opt_norm in allowed_norm:
+        if "technical program" in opt_norm and "technical program" in body_norm and "humanities" not in body_norm.split("technical program", 1)[0]:
+            return opt
+        if "humanities" in opt_norm and "humanities" in body_norm:
+            return opt
+        if "leadership role now" in opt_norm and "leadership" in body_norm and "support" not in body_norm.split("leadership", 1)[0]:
+            return opt
+        if "supporting tasks first" in opt_norm and "support" in body_norm:
+            return opt
+        if "advanced classes immediately" in opt_norm and "advanced" in body_norm and "introductory" not in body_norm.split("advanced", 1)[0]:
+            return opt
+        if "introductory modules" in opt_norm and "introductory" in body_norm:
+            return opt
+
+    return None
 
 
 def enforce_grounding_or_fallback(answer: str) -> str:
@@ -1815,22 +2109,39 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
             out = body or ans
         return (out + ("\n" + patch_block if patch_block else "")).strip()
 
+    if phase in {"qa_why", "qa_other"}:
+        body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
+        # Remove accidental premature closing and follow-up questions in fixed-probe mode.
+        body = _strip_qa_closings_and_questions(body)
+        if not body:
+            selected = (_LAST_RAG_STATE.advice_options or _ADVICE_OPTIONS_SHOWN or [])
+            selected_text = selected[0] if selected else _t("the selected option", "l'opzione selezionata")
+            if _DIALOG_LANGUAGE == "it":
+                body = (
+                    f"Questa risposta è coerente con {selected_text} perché usa le informazioni raccolte: "
+                    "background, vincoli dichiarati, interessi e profilo RIASEC. Il punto chiave è procedere "
+                    "in modo proporzionato alla preparazione emersa, senza introdurre nuove università o dettagli non grounded."
+                )
+            else:
+                body = (
+                    f"That answer is consistent with {selected_text} because it uses the information collected: "
+                    "background, stated constraints, interests, and the RIASEC profile. The key trade-off is to proceed "
+                    "at a level that matches the preparation shown, without introducing new universities or ungrounded details."
+                )
+        return (body + ("\n" + patch_block if patch_block else "")).strip()
+
     if phase == "qa_choice":
         body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
         allowed = list(_LAST_RAG_STATE.choice_options or [])
         if allowed:
-            norm_allowed = {_normalize(x): x for x in allowed}
-            key = _normalize(body)
-            if key in norm_allowed:
-                return (norm_allowed[key] + ("\n" + patch_block if patch_block else "")).strip()
+            matched = _match_choice_to_allowed(body, allowed)
+            if matched:
+                return (matched + ("\n" + patch_block if patch_block else "")).strip()
 
-            body_norm = _normalize(body)
-            hits = [x for x in allowed if _normalize(x) and _normalize(x) in body_norm]
-            if len(hits) == 1:
-                return (hits[0] + ("\n" + patch_block if patch_block else "")).strip()
-
-            # A bare Yes/No is not one of the two requested alternatives.
-            # Preserve it as invalid/non-compliant instead of silently choosing.
+            # A bare Yes/No is not one of the two requested alternatives.  Keep
+            # the answer visible for validation, but remove premature closings or
+            # extra counselor questions so the fixed probe can continue.
+            body = _strip_qa_closings_and_questions(body) or body
             return (body + ("\n" + patch_block if patch_block else "")).strip()
 
     if expected and phase.startswith("riasec_"):
@@ -1988,6 +2299,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self.lang = _lang_code(dialog_language)
         self.practice = practice or default_university_counseling_practice()
 
+        # Global listener/RAG state is used by postprocess hooks. Reset it when a
+        # new orchestrator is created so one generated dialogue cannot leak state
+        # into the next one in batch runs.
+        clear_last_rag_state()
+        clear_listener_patches()
+
         self.agent1_norms = [
             str(x).strip()
             for x in (self.practice.get("agent1_norms") or [])
@@ -2041,13 +2358,15 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._pending_selection_number: Optional[int] = None
         self._selection_patch_requested_for: Optional[int] = None
 
-        self._riasec_patch_requested = False
+        self._riasec_patch_attempts = 0
         self._choice_patch_requested = False
 
         self._last_options: List[str] = []
         self._riasec_answers: List[str] = []
         self._finished = False
+        self._student_turn_count = 0
         self._advice_retry_count = 0
+        self._academic_bg_clarification_count = 0
         self.candidate_pool_size = int(candidate_pool_size)
         self.final_top_n = int(final_top_n)
 
@@ -2081,7 +2400,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._pending_selection_number: Optional[int] = None
         self._selection_patch_requested_for: Optional[int] = None
 
-        self._riasec_patch_requested = False
+        self._riasec_patch_attempts = 0
         self._choice_patch_requested = False
 
         clear_last_rag_state()
@@ -2089,7 +2408,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._last_options = []
         self._riasec_answers = []
         self._finished = False
+        self._student_turn_count = 0
         self._advice_retry_count = 0
+        self._academic_bg_clarification_count = 0
 
     # -------------------------------------------------------------------------
     # Listener patch prompt builder
@@ -2104,6 +2425,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         return (
             "\nHIDDEN LISTENER TASK (STRICT):\n"
             "- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n"
+            "- This hidden patch is mandatory even when visible-output rules say ONLY Yes/No, ONLY one choice, or ONLY numbered options.\n"
+            "- The hidden patch is not part of the visible reply; it will be stripped by postprocessing.\n"
             "- The patch must include ONLY the requested target fields.\n"
             "- If a field is unknown, omit it (do NOT guess).\n"
             "- Output valid JSON only inside the tags.\n"
@@ -2175,12 +2498,37 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         elif isinstance(foi, str) and foi.strip():
             self._slots.field_of_interest = foi.strip()
 
-        if exp.get("selected_option"):
-            self._slots.selected_option = str(exp["selected_option"]).strip()
 
     def _displayed_advice_options(self) -> List[str]:
         shown = [str(x).strip() for x in (_LAST_RAG_STATE.advice_options or []) if str(x).strip()]
         return shown or list(self._last_options or [])
+
+    def _commit_selected_option_number(self, n: int) -> Optional[str]:
+        """Commit the student's explicit numbered option choice to runtime state.
+
+        selected_option is not stored in listener memory. It is deterministic
+        protocol state saved separately and written at the end of the dialog.
+        """
+        shown_options = self._displayed_advice_options()
+        if not shown_options or not (1 <= int(n) <= len(shown_options)):
+            return None
+
+        selected = f"{int(n)} - {shown_options[int(n) - 1]}"
+
+        self._pending_selection_number = int(n)
+        self._last_options = list(shown_options)
+        self._slots.selected_option = selected
+
+        record_selected_option_event(
+            option_number=int(n),
+            selected_option=selected,
+            shown_options=shown_options,
+            source_turn=self._student_turn_count,
+        )
+
+        return selected
+
+
 
     def _update_slots_from_student(self, student_utt: str) -> None:
         while True:
@@ -2195,9 +2543,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             if lvl:
                 self._slots.intended_level = lvl
 
-        # Selection detection is used only for flow control. The listener memory
-        # field explicit.selected_option is still populated only through a
-        # <LISTENER_PATCH> generated by the model, not by regex/string rules.
+        # Selection detection is deterministic protocol-state handling.
+        # It is intentionally separate from listener memory.
         mo = _OPT_RX.search(student_utt or "")
         if not mo:
             mnum = _NUM_ONLY_RX.search(student_utt or "")
@@ -2206,10 +2553,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         if mo and self._advice_given:
             n = int(mo.group(1))
-            shown_options = self._displayed_advice_options()
-            if shown_options and 1 <= n <= len(shown_options):
-                self._pending_selection_number = n
-                self._last_options = list(shown_options)
+            self._commit_selected_option_number(n)
 
         self._sync_slots_from_listener_memory()
         record_debug_snapshot(self._listener_memory, self._slots.summary())
@@ -2223,6 +2567,73 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             lines.append(f"A{i + 1}: {answer or '[missing]'}")
 
         return "\n".join(lines)
+
+    def _riasec_slots_missing(self) -> bool:
+        inf = self._listener_memory.get("inferred", {}) if isinstance(self._listener_memory, dict) else {}
+        return not (isinstance(inf.get("riasec_attitudes"), list) and inf.get("riasec_attitudes"))
+
+    def _riasec_listener_patch_request(self) -> str:
+        return self._listener_patch_request(
+            targets="- inferred.riasec_question_valences",
+            rules=(
+                "Use ONLY the student's answers to the 8 RIASEC questions.\n"
+                "Do NOT use biography, gender, academic background, grades, job, goals, "
+                "field_of_interest or university options.\n"
+                "\n"
+                "Your task is to estimate the student's expressed INTEREST/PREFERENCE "
+                "for each RIASEC question.\n"
+                "Do NOT estimate ability, confidence, preparation, social desirability, "
+                "or academic readiness.\n"
+                "\n"
+                "Return exactly one JSON object inside <LISTENER_PATCH> ... </LISTENER_PATCH>.\n"
+                "Return only the requested field.\n"
+                "\n"
+                "Return an array of exactly 8 integers named riasec_question_valences. "
+                "Each integer corresponds to Q1..Q8 in order.\n"
+                "\n"
+                "Scale:\n"
+                "- 2 = clear and strong liking, with explicit enthusiasm or concrete examples\n"
+                "- 1 = moderate liking, curiosity, or generally positive attitude\n"
+                "- 0 = unclear, mixed, conditional, only ability mentioned, or insufficient evidence\n"
+                "- -1 = moderate dislike, avoidance, or low preference\n"
+                "- -2 = clear and strong dislike or rejection\n"
+                "\n"
+                "Calibration rules:\n"
+                "- If the student likes an activity but feels insecure about being good at it, score the interest as positive.\n"
+                "- If the student says they are good at an activity but do not enjoy it, score it neutral or negative.\n"
+                "- Do not treat long or enthusiastic wording as strong evidence unless it is about the specific activity in the question.\n"
+                "- Do not infer a RIASEC type from career goals, school background, grades, gender, or biography.\n"
+                "- Do not force a positive score: neutral or unclear answers should be 0.\n"
+                "- Ambivalent answers such as 'sometimes', 'it depends', 'maybe', or 'a little' are usually 0 or 1, not 2.\n"
+                "- Strong rejection such as 'I really do not like it', 'I avoid it', or 'I would not want to do that' is -2.\n"
+                "\n"
+                "Question mapping used later by Python:\n"
+                "- Q1 practical, hands-on work, building or repairing things -> Realistic\n"
+                "- Q2 understanding how things work -> Investigative; possible Realistic nuance only if the answer mentions concrete mechanisms, tools, objects, or systems\n"
+                "- Q3 researching, analyzing problems, logical reasoning -> Investigative\n"
+                "- Q4 creative expression through writing, art, music, or design -> Artistic\n"
+                "- Q5 experimenting and creating new things -> Artistic / Investigative / Enterprising nuance; score the general preference for experimenting and creating\n"
+                "- Q6 working closely with people in a supportive or helping role -> Social\n"
+                "- Q7 proposing ideas and organizing projects -> Enterprising / Conventional nuance\n"
+                "- Q8 keeping everything organized and under control -> Conventional\n"
+                "\n"
+                "Do NOT output final RIASEC labels. Python will calculate the top 3 labels and confidence from riasec_question_valences.\n"
+            ),
+            schema_example=(
+                '<LISTENER_PATCH>{"inferred":{"riasec_question_valences":[0,0,0,0,0,0,0,0]}}</LISTENER_PATCH>'
+            ),
+            evidence=self._riasec_answer_evidence_block(),
+        )
+
+    def _maybe_riasec_listener_patch_request(self) -> str:
+        if len(self._riasec_answers) < 8:
+            return ""
+        if not self._riasec_slots_missing():
+            return ""
+        if self._riasec_patch_attempts >= 3:
+            return ""
+        self._riasec_patch_attempts += 1
+        return self._riasec_listener_patch_request()
 
     # -------------------------------------------------------------------------
     # Retrieval
@@ -2917,8 +3328,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         else:
             riasec_rendered = None
 
-        selected_value = clean(exp.get("selected_option"))
         shown_options = self._displayed_advice_options()
+        selected_value = clean(self._slots.selected_option)
         if selected_value:
             selected_value = _canonicalize_selected_option_value(selected_value, shown_options)
         if not selected_value and self._pending_selection_number and shown_options:
@@ -2934,7 +3345,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             ("riasec_attitudes", riasec_rendered),
         ]
 
-        if os.getenv("SDIALOG_EXPOSE_SENSITIVE_CONTEXT", "0").lower() in {"1", "true", "yes"}:
+        if get_forced_listener_gender() or os.getenv("SDIALOG_EXPOSE_SENSITIVE_CONTEXT", "0").lower() in {"1", "true", "yes"}:
             fields.append(("gender", clean(inf.get("gender"))))
 
         lines = [f"- {k}: {v}" for k, v in fields if v is not None]
@@ -2983,6 +3394,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     break
 
         if student_utt:
+            self._student_turn_count += 1
+            set_listener_patch_source_turn(self._student_turn_count)
             self._update_slots_from_student(student_utt)
 
         if self._flow_stage == "riasec" and len(self._riasec_answers) < 8:
@@ -3019,37 +3432,15 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         # Q&A
         # ---------------------------------------------------------------------
         if self._flow_stage == "qa":
-            selection_patch = ""
-            if (self._pending_selection_number is not None) and (self._selection_patch_requested_for != self._pending_selection_number):
-                self._selection_patch_requested_for = self._pending_selection_number
-                shown_options = self._displayed_advice_options()
-                shown_block = "\n".join(f"{i}. {o}" for i, o in enumerate(shown_options, start=1))
-                selection_patch = self._listener_patch_request(
-                    targets="- explicit.selected_option",
-                    rules=(
-                        "- selected_option MUST be exactly in the format 'N - <EXACT option string from ADVICE_OPTIONS_SHOWN_TO_STUDENT>'.\n"
-                        "- Do NOT paraphrase.\n"
-                        "- Use the option number chosen by the student and the exact option text from ADVICE_OPTIONS_SHOWN_TO_STUDENT.\n"
-                        "- If the student did not clearly choose an option number, omit selected_option."
-                    ),
-                    schema_example=(
-                        '<LISTENER_PATCH>{"explicit":{"selected_option":'
-                        '"1 - University ... | [CODE] COURSE"}}'
-                        "</LISTENER_PATCH>"
-                    ),
-                    evidence=(
-                        f"STUDENT_SELECTION_MESSAGE:\n{student_utt}\n\n"
-                        f"ADVICE_OPTIONS_SHOWN_TO_STUDENT:\n{shown_block}"
-                    ),
-                )
+            riasec_patch = self._maybe_riasec_listener_patch_request()
 
             def _ret(msg: str) -> str:
-                return (msg + selection_patch) if selection_patch else msg
+                return (msg + riasec_patch) if riasec_patch else msg
 
             if self._pending_selection_ack:
                 self._pending_selection_ack = False
                 shown_options = self._displayed_advice_options()
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_selected", advice_options=shown_options)
+                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_selected", advice_options=shown_options, expected_selection_number=None)
                 selected_for_ack = self._slots.selected_option
                 if selected_for_ack:
                     selected_for_ack = _canonicalize_selected_option_value(selected_for_ack, shown_options)
@@ -3071,7 +3462,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
             if qtype == "choice":
                 ch = self._extract_choice_options(q_for_qa)
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_choice", choice_options=ch, advice_options=self._displayed_advice_options())
+                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_choice", choice_options=ch, advice_options=self._displayed_advice_options(), expected_selection_number=None)
                 if len(ch) == 2:
                     return _ret(
                         "PHASE: Q&A\n"
@@ -3093,7 +3484,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 )
 
             if qtype == "why":
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_why", advice_options=self._displayed_advice_options())
+                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_why", advice_options=self._displayed_advice_options(), expected_selection_number=None)
                 return _ret(
                     "PHASE: Q&A\n"
                     + self._agent_norms_block()
@@ -3103,10 +3494,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "- Ground your justification in the retrieved context; do not invent program details.\n"
                     "- Use the student's background + constraints + RIASEC to explain trade-offs.\n"
                     "- Do NOT introduce new universities/programs.\n"
+                    "- Do NOT ask the student any question.\n"
+                    "- Do NOT say goodbye; the fixed follow-up sequence must continue.\n"
                 )
 
             if qtype == "yesno":
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_yesno", advice_options=self._displayed_advice_options())
+                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_yesno", advice_options=self._displayed_advice_options(), expected_selection_number=None)
                 return _ret(
                     "PHASE: Q&A\n"
                     "QUESTION TYPE: YES/NO suitability/feasibility/readiness/risk.\n"
@@ -3116,7 +3509,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n"
                 )
 
-            update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_other", advice_options=self._displayed_advice_options())
+            update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_other", advice_options=self._displayed_advice_options(), expected_selection_number=None)
             return _ret(
                 "PHASE: Q&A\n"
                 + self._agent_norms_block()
@@ -3124,6 +3517,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "TASK:\n"
                 "- Answer briefly and pragmatically.\n"
                 "- Do NOT introduce new universities/programs.\n"
+                "- Do NOT ask the student any question.\n"
+                "- Do NOT say goodbye; the fixed follow-up sequence must continue.\n"
             )
 
         # ---------------------------------------------------------------------
@@ -3246,99 +3641,48 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         # ADVICE
         # ---------------------------------------------------------------------
         if not self._slots.academic_background:
-            message = _t(
-                "Before I recommend programs, could you clarify your current or most recent formal education?",
-                "Prima di consigliarti dei corsi, puoi chiarire qual è il tuo percorso di istruzione formale attuale o più recente?"
-            )
+            if self._academic_bg_clarification_count >= 2:
+                # Avoid an infinite clarification loop if the listener model fails to
+                # emit the slot despite repeated explicit answers. Retrieval can still
+                # proceed from field/region/RIASEC; the logged memory will show that the
+                # academic slot remained unknown.
+                self._slots.academic_background = "unknown"
+            else:
+                self._academic_bg_clarification_count += 1
+                message = _t(
+                    "Before I recommend programs, could you clarify your current or most recent formal education?",
+                    "Prima di consigliarti dei corsi, puoi chiarire qual è il tuo percorso di istruzione formale attuale o più recente?"
+                )
 
-            update_last_rag_state(
-                "",
-                query="",
-                phase="clarify_scope",
-                expected_verbatim=message,
-                advice_fallback=True,
-                advice_options=[],
-            )
+                update_last_rag_state(
+                    "",
+                    query="",
+                    phase="clarify_scope",
+                    expected_verbatim=message,
+                    advice_fallback=True,
+                    advice_options=[],
+                )
 
-            patch = self._background_slot_patch_request(
-                "Use the student's latest clarification answer if it contains formal education; otherwise omit unknown fields."
-            )
-            return (
-                "PHASE: CLARIFY_SCOPE\n"
-                "Visible reply: ask ONE short question only.\n"
-                "After the visible question, append the hidden listener patch.\n"
-                f"{message}\n"
-                + patch
-            )
+                patch = self._background_slot_patch_request(
+                    f"STUDENT_LATEST_MESSAGE:\n{student_utt}\n\n"
+                    "Use the latest student message and earlier background answers in the conversation. "
+                    "If the latest message contains formal education, include academic_background. "
+                    "Examples include high school, bachelor's, master's, PhD, doctorate, laurea triennale, laurea magistrale, dottorato."
+                )
+                return (
+                    "PHASE: CLARIFY_SCOPE\n"
+                    "Visible reply: ask ONE short question only.\n"
+                    "After the visible question, append the hidden listener patch.\n"
+                    f"{message}\n"
+                    + patch
+                )
         query = self._build_query()
         retrieval, candidate_pool = self._get_llm_candidate_pool(query)
 
         self._last_ctx = retrieval.short_ctx
         self._last_options = list(candidate_pool)
 
-        riasec_patch = ""
-        if not self._riasec_patch_requested:
-            self._riasec_patch_requested = True
-            riasec_patch = self._listener_patch_request(
-                targets="- inferred.riasec_question_valences",
-                rules=(
-                    "Use ONLY the student's answers to the 8 RIASEC questions.\n"
-                    "Do NOT use biography, gender, academic background, grades, job, goals, "
-                    "field_of_interest, selected_option, or university options.\n"
-                    "\n"
-                    "Your task is to estimate the student's expressed INTEREST/PREFERENCE "
-                    "for each RIASEC question.\n"
-                    "Do NOT estimate ability, confidence, preparation, social desirability, "
-                    "or academic readiness.\n"
-                    "\n"
-                    "Return exactly one JSON object inside <LISTENER_PATCH> ... </LISTENER_PATCH>.\n"
-                    "Return only the requested field.\n"
-                    "\n"
-                    "Return an array of exactly 8 integers named riasec_question_valences.\n"
-                    "Each integer corresponds to Q1..Q8 in order.\n"
-                    "\n"
-                    "Scale:\n"
-                    "- 2 = clear and strong liking, with explicit enthusiasm or concrete examples\n"
-                    "- 1 = moderate liking, curiosity, or generally positive attitude\n"
-                    "- 0 = unclear, mixed, conditional, only ability mentioned, or insufficient evidence\n"
-                    "- -1 = moderate dislike, avoidance, or low preference\n"
-                    "- -2 = clear and strong dislike or rejection\n"
-                    "\n"
-                    "Calibration rules:\n"
-                    "- If the student likes an activity but feels insecure about being good at it, "
-                    "score the interest as positive.\n"
-                    "- If the student says they are good at an activity but do not enjoy it, "
-                    "score it neutral or negative.\n"
-                    "- Do not treat long or enthusiastic wording as strong evidence unless it is "
-                    "about the specific activity in the question.\n"
-                    "- Do not infer a RIASEC type from career goals, school background, grades, "
-                    "gender, or biography.\n"
-                    "- Do not force a positive score: neutral or unclear answers should be 0.\n"
-                    "- Ambivalent answers such as 'sometimes', 'it depends', 'maybe', or 'a little' "
-                    "are usually 0 or 1, not 2.\n"
-                    "- Strong rejection such as 'I really do not like it', 'I avoid it', or "
-                    "'I would not want to do that' is -2.\n"
-                    "\n"
-                    "Question mapping used later by Python:\n"
-                    "- Q1 practical, hands-on work, building or repairing things -> Realistic\n"
-                    "- Q2 understanding how things work -> Investigative; possible Realistic nuance "
-                    "only if the answer mentions concrete mechanisms, tools, objects, or systems\n"
-                    "- Q3 researching, analyzing problems, logical reasoning -> Investigative\n"
-                    "- Q4 creative expression through writing, art, music, or design -> Artistic\n"
-                    "- Q5 experimenting and creating new things -> Artistic / Investigative / Enterprising nuance; "
-                    "score the general preference for experimenting and creating\n"
-                    "- Q6 working closely with people in a supportive or helping role -> Social\n"
-                    "- Q7 proposing ideas and organizing projects -> Enterprising / Conventional nuance\n"
-                    "- Q8 keeping everything organized and under control -> Conventional\n"
-                    "\n"
-                    "Do NOT output final RIASEC labels. Python will calculate the top 3 labels "
-                    "and confidence from riasec_question_valences.\n"
-                ),
-                schema_example=(
-                    '<LISTENER_PATCH>{"inferred":{"riasec_question_valences":[0,0,0,0,0,0,0,0]}}</LISTENER_PATCH>'
-                ),
-                evidence=self._riasec_answer_evidence_block(),
-            )
+        riasec_patch = self._maybe_riasec_listener_patch_request()
         if retrieval.is_empty or not candidate_pool:
             self._advice_retry_count += 1
 
@@ -3403,6 +3747,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         else:
             riasec_profile = "unknown"
 
+        forced_gender = get_forced_listener_gender()
+        gender_line = f"- gender: {forced_gender}\n" if forced_gender else ""
         student_profile_block = (
             "STUDENT PROFILE:\n"
             f"- academic_background: {self._slots.academic_background or 'unknown'}\n"
@@ -3410,6 +3756,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             f"- intended_level: {self._slots.intended_level or 'unknown'}\n"
             f"- region: {self._slots.region or 'unknown'}\n"
             f"- riasec_attitudes: {riasec_profile}\n"
+            f"{gender_line}"
         )
 
         opt_lines = "\n".join([f"- Option {i + 1}: {o}" for i, o in enumerate(candidate_pool)])
@@ -3459,11 +3806,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             "- Return up to 3 options, only if they are genuinely plausible.\n"
             "- If no candidate is a plausible fit, state that no grounded option is available.\n"
             "\n"
-            "OUTPUT RULES:\n"
-            "- Output ONLY the final options, up to 3.\n"
+            "VISIBLE OUTPUT RULES:\n"
+            "- The visible answer must contain ONLY the final options, up to 3.\n"
             "- Use the exact option text from CANDIDATE OPTIONS.\n"
-            "- Do not add explanations, comments, headers, bullets, or extra prose.\n"
-            "- Output format must be numbered, one option per line:\n"
+            "- Do not add visible explanations, comments, headers, bullets, or extra prose.\n"
+            "- Visible output format must be numbered, one option per line:\n"
             "  1. <exact option text>\n"
             "  2. <exact option text>\n"
             "  3. <exact option text if available>\n"

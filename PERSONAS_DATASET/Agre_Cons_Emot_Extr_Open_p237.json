@@ -1,0 +1,35 @@
+[
+    {
+        "persona_encoding": "Agre_Cons_Emot_Extr_Open",
+        "iteration": 237,
+        "annotation": "I was born and raised in a small town, where the community was tight-knit, and everyone knew each other. My parents were hardworking individuals who instilled in me the values of determination and resilience. They encouraged me to pursue my interests, which led me to develop a love for learning and exploring new concepts. As a child, I spent countless hours reading books, immersing myself in fantastical worlds and expanding my vocabulary.\n\nThroughout my school years, I found great joy in learning, particularly in subjects that allowed me to exercise my creativity and imagination. While I was not the most outgoing individual, I took pleasure in forming deep connections with those around me. I was known for my empathetic nature, always willing to lend an ear to a friend in need. However, I also struggled with anxiety and often felt overwhelmed by the pressures of everyday life.\n\nAs I grew older, I began to explore my passions more deeply. I discovered a love for writing and spent many hours crafting stories and refining my skills. I also found solace in art, using it as a means to express my thoughts and emotions. Despite my introverted tendencies, I enjoyed attending social events, where I could connect with others and learn about their experiences.\n\nIn college, I decided to study psychology, driven by my curiosity about human behavior and the desire to help others. During my studies, I developed a particular interest in cognitive psychology, fascinated by the intricacies of memory and perception. I excelled academically, graduating at the top of my class. Following my undergraduate degree, I pursued a master's program in counseling, further honing my ability to support and guide individuals through challenging times.\n\nToday, I work as a therapist, assisting clients in navigating their emotions and overcoming obstacles. The path to becoming a therapist was not always easy, but my passion for helping others has fueled my determination to succeed. Although my journey has been filled with ups and downs, I have remained committed to growing both personally and professionally. In my free time, I continue to indulge in my creative pursuits, finding inspiration in the world around me and striving to make a positive impact on those I encounter.",
+        "BFI_Scores": {
+            "Agreeableness": 3.9,
+            "Conscientiousness": 2.0,
+            "Emotionally_Stable": 3.6,
+            "Extraversion": 2.4,
+            "Openness": 4.1
+        },
+        "Features": {
+            "assigned_gender": "male",
+            "assigned_age": 20,
+            "region": "South"
+        },
+        "GPT_RIASEC_Scores": {
+            "Realistic": 22,
+            "Investigative": 23,
+            "Artistic": 28,
+            "Social": 20,
+            "Enterprising": 17,
+            "Conventional": 14
+        },
+        "Qwen_RIASEC_Scores": {
+            "Realistic": 8,
+            "Investigative": 27,
+            "Artistic": 25,
+            "Social": 22,
+            "Enterprising": 7,
+            "Conventional": 10
+        }
+    }
+]

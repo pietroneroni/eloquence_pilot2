@@ -38,6 +38,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 import uvicorn
+import sdialog
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
@@ -67,7 +68,22 @@ HOST = os.getenv("OWUI_AGENT_HOST", "0.0.0.0")
 
 DIALOG_LANGUAGE = os.getenv("DIALOG_LANGUAGE", "Italian")
 SOCIAL_PRACTICE_NAME = os.getenv("SOCIAL_PRACTICE_NAME", "university_counseling")
-COUNSELOR_MODEL = os.getenv("COUNSELOR_MODEL", "ollama:qwen3:30b-thinking")
+# OpenAI-compatible backend used by SDialog to call the real LLM.
+# This server exposes the counselor to OpenWebUI, but it still needs a separate
+# LLM backend reachable at OPENAI_API_BASE/OPENAI_BASE_URL.
+os.environ.setdefault("OPENAI_API_KEY", os.getenv("SDIALOG_OPENAI_API_KEY", "kk"))
+OPENAI_API_BASE = os.getenv(
+    "SDIALOG_OPENAI_API_BASE",
+    os.getenv("OPENAI_API_BASE", "http://127.0.0.1:10007/v1"),
+)
+os.environ["OPENAI_API_BASE"] = OPENAI_API_BASE
+os.environ["OPENAI_BASE_URL"] = OPENAI_API_BASE
+
+COUNSELOR_MODEL = os.getenv(
+    "COUNSELOR_MODEL",
+    os.getenv("SDIALOG_MODEL_URI", "openai:gemma-3-27b-it-q8_0"),
+)
+sdialog.config.llm(COUNSELOR_MODEL)
 
 # Session cleanup. Increase this if you keep many chats open for a long time.
 SESSION_TTL_SECONDS = int(os.getenv("OWUI_SESSION_TTL_SECONDS", str(60 * 60 * 6)))
@@ -197,6 +213,31 @@ def _get_project_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
+def _default_lancedb_dir() -> Path:
+    return _get_project_root() / "RAG_University_Eng" / "Embeddings" / "lancedb"
+
+
+def _ensure_lancedb_env() -> None:
+    """
+    Keep the RAG environment aligned with the project layout used on BSC.
+
+    _configure_rag_env() can disable RAG when it does not find its default path.
+    In this project the LanceDB index is under RAG_University_Eng/Embeddings/lancedb,
+    so we re-enable RAG if the configured or default LanceDB table exists.
+    """
+    table_name = os.environ.get("SDIALOG_LANCEDB_TABLE", "universities")
+    configured_dir = os.environ.get("SDIALOG_LANCEDB_DIR")
+    lancedb_dir = Path(configured_dir) if configured_dir else _default_lancedb_dir()
+
+    if (lancedb_dir / f"{table_name}.lance").exists():
+        os.environ["SDIALOG_ENABLE_RAG"] = "1"
+        os.environ["SDIALOG_RAG_BACKEND"] = "lancedb"
+        os.environ["SDIALOG_LANCEDB_DIR"] = str(lancedb_dir)
+        os.environ["SDIALOG_LANCEDB_TABLE"] = table_name
+        logger.info("Using LanceDB index: %s table=%s", lancedb_dir, table_name)
+
+
+
 def _get_social_practice_path() -> str:
     project_root = _get_project_root()
     return os.getenv(
@@ -225,6 +266,7 @@ def get_shared_retriever() -> TimedRetriever:
             return _SHARED_RETRIEVER
 
         _configure_rag_env()
+        _ensure_lancedb_env()
 
         if os.environ.get("SDIALOG_ENABLE_RAG", "0") != "1":
             backend = os.environ.get("SDIALOG_RAG_BACKEND", "lancedb").lower()
@@ -233,12 +275,12 @@ def get_shared_retriever() -> TimedRetriever:
                 raise RuntimeError(
                     "RAG non abilitato: non trovo l'indice LanceDB. "
                     "Esegui prima: python RAG_Scripts/Build_lancedb_index_university.py "
-                    "e controlla il path RAG_University/Embeddings/lancedb."
+                    "e controlla il path RAG_University_Eng/Embeddings/lancedb."
                 )
 
             raise RuntimeError(
                 "RAG non abilitato: non trovo rag.index.faiss e rag.chunks.jsonl. "
-                "Ricostruisci l'indice FAISS o controlla i path in RAG_University/Embeddings."
+                "Ricostruisci l'indice FAISS o controlla i path in RAG_University_Eng/Embeddings."
             )
 
         backend = os.environ.get("SDIALOG_RAG_BACKEND", "lancedb").lower()
@@ -250,7 +292,7 @@ def get_shared_retriever() -> TimedRetriever:
                 LanceDBUniversityRetriever(
                     lancedb_dir=os.environ.get(
                         "SDIALOG_LANCEDB_DIR",
-                        str(_get_project_root() / "RAG_University" / "Embeddings" / "lancedb"),
+                        str(_get_project_root() / "RAG_University_Eng" / "Embeddings" / "lancedb"),
                     ),
                     table_name=os.environ.get("SDIALOG_LANCEDB_TABLE", "universities"),
                 )
@@ -721,6 +763,7 @@ def main() -> None:
     logger.info("Starting session server on %s:%s", HOST, PORT)
     logger.info("Model ID: %s", MODEL_ID)
     logger.info("Counselor model backend: %s", COUNSELOR_MODEL)
+    logger.info("OpenAI-compatible LLM base URL: %s", OPENAI_API_BASE)
     logger.info("Dialog language: %s", DIALOG_LANGUAGE)
     uvicorn.run(app, host=HOST, port=PORT, log_level=os.getenv("UVICORN_LOG_LEVEL", "info"))
 
