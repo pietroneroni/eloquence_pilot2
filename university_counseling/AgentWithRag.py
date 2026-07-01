@@ -291,6 +291,94 @@ REGION_TO_RAG_MACROAREA = {
     "islands": "Isole",
 }
 
+# Canonical Italian regions supported as a stricter preference inside the same
+# explicit.region listener field. Macro values remain: north, center, south,
+# islands. Region values are stored with their canonical Italian spelling.
+ITALY_REGION_TO_ZONE = {
+    "Valle d'Aosta": "north",
+    "Piemonte": "north",
+    "Liguria": "north",
+    "Lombardia": "north",
+    "Trentino-Alto Adige": "north",
+    "Veneto": "north",
+    "Friuli-Venezia Giulia": "north",
+    "Emilia-Romagna": "north",
+    "Toscana": "center",
+    "Umbria": "center",
+    "Marche": "center",
+    "Lazio": "center",
+    "Abruzzo": "south",
+    "Molise": "south",
+    "Campania": "south",
+    "Puglia": "south",
+    "Basilicata": "south",
+    "Calabria": "south",
+    "Sicilia": "islands",
+    "Sardegna": "islands",
+}
+
+_REGION_ALIAS_TO_CANONICAL = {
+    "valle d aosta": "Valle d'Aosta",
+    "val d aosta": "Valle d'Aosta",
+    "piemonte": "Piemonte",
+    "liguria": "Liguria",
+    "lombardia": "Lombardia",
+    "trentino alto adige": "Trentino-Alto Adige",
+    "veneto": "Veneto",
+    "friuli venezia giulia": "Friuli-Venezia Giulia",
+    "emilia romagna": "Emilia-Romagna",
+    "toscana": "Toscana",
+    "umbria": "Umbria",
+    "marche": "Marche",
+    "lazio": "Lazio",
+    "abruzzo": "Abruzzo",
+    "molise": "Molise",
+    "campania": "Campania",
+    "puglia": "Puglia",
+    "basilicata": "Basilicata",
+    "calabria": "Calabria",
+    "sicilia": "Sicilia",
+    "sardegna": "Sardegna",
+    "piedmont": "Piemonte",
+    "lombardy": "Lombardia",
+    "trentino south tyrol": "Trentino-Alto Adige",
+    "tuscany": "Toscana",
+    "latium": "Lazio",
+    "apulia": "Puglia",
+    "sicily": "Sicilia",
+    "sardinia": "Sardegna",
+}
+
+
+def _norm_geo_token(value: str) -> str:
+    t = unicodedata.normalize("NFKD", value or "")
+    t = "".join(ch for ch in t if not unicodedata.combining(ch))
+    t = t.casefold()
+    t = re.sub(r"[^a-z0-9]+", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def _region_slot_to_zone(value: Optional[str]) -> Optional[str]:
+    slot = _normalize_region_value(value)
+    if not slot:
+        return None
+    if slot in {"north", "center", "south", "islands"}:
+        return slot
+    return ITALY_REGION_TO_ZONE.get(slot)
+
+
+def _region_slot_to_rag_region(value: Optional[str]) -> Optional[str]:
+    slot = _normalize_region_value(value)
+    if not slot or slot in {"north", "center", "south", "islands"}:
+        return None
+    return slot
+
+
+def _region_slot_to_rag_macroarea(value: Optional[str]) -> Optional[str]:
+    zone = _region_slot_to_zone(value)
+    return REGION_TO_RAG_MACROAREA.get(zone) if zone else None
+
+
 CHOICE_REPLY_OPTIONS = {
     "en": {
         1: ("focusing on a technical program", "a program oriented toward humanities"),
@@ -316,6 +404,19 @@ _FLOW_NO_RX = re.compile(
     re.I,
 )
 _NUM_ONLY_RX = re.compile(r"^\s*([1-3])\b")
+
+_SINGLE_OPTION_ACCEPT_RX = re.compile(
+    r"\b("
+    r"ok|okay|va bene|va benissimo|confermo|procedi|andiamo avanti|"
+    r"scelgo questa|scelgo questo|questa|questo|la prima|il primo|prima|"
+    r"this one|choose this|i choose this|confirm"
+    r")\b",
+    re.IGNORECASE,
+)
+
+
+def _exact_background_questions_enabled() -> bool:
+    return os.getenv("SDIALOG_EXACT_BACKGROUND_QUESTIONS", "0").strip().lower() in {"1", "true", "yes", "on"}
 
 _ENTITY_RX = re.compile(
     r"\b("
@@ -484,6 +585,64 @@ def _require_practice_list(
 
     return values
 
+
+def _practice_lang_text(
+    practice: Dict[str, Any],
+    *path: str,
+    dialog_language: str = "English",
+    default: str = "",
+) -> str:
+    """Read a language-specific text from social_practices.json.
+
+    Supports either {"en": "...", "it": "..."} objects or plain strings.
+    This keeps configurable dialogue wording in the social practice file rather
+    than hard-coding variants in the orchestrator.
+    """
+    node: Any = practice
+    for key in path:
+        if not isinstance(node, dict) or key not in node:
+            return default
+        node = node[key]
+
+    lang = _lang_code(dialog_language)
+    if isinstance(node, dict):
+        value = node.get(lang) or node.get("en") or node.get("it")
+        return str(value).strip() if isinstance(value, str) and value.strip() else default
+    if isinstance(node, str) and node.strip():
+        return node.strip()
+    return default
+
+
+def _practice_advice_intro(
+    practice: Dict[str, Any],
+    *,
+    dialog_language: str = "English",
+    plural: bool = False,
+) -> str:
+    lang = _lang_code(dialog_language)
+    default = (
+        "Ti suggerisco queste opzioni:" if plural and lang == "it" else
+        "Ti suggerisco questa opzione:" if lang == "it" else
+        "I suggest these options:" if plural else
+        "I suggest this option:"
+    )
+    node: Any = practice
+    for key in ("dialogue_config", "counselor", "advice_intro"):
+        if not isinstance(node, dict) or key not in node:
+            return default
+        node = node[key]
+    if isinstance(node, dict):
+        lang_node = node.get(lang) or node.get("en") or node.get("it")
+        if isinstance(lang_node, dict):
+            key = "plural" if plural else "singular"
+            value = lang_node.get(key)
+            if isinstance(value, str) and value.strip():
+                return value.strip()
+        if isinstance(lang_node, str) and lang_node.strip():
+            return lang_node.strip()
+    return default
+
+
 # =============================================================================
 # Generic helpers
 # =============================================================================
@@ -613,28 +772,43 @@ def _normalize_region_value(value: Optional[str]) -> Optional[str]:
     if not isinstance(value, str):
         return None
 
-    s = _normalize(value)
+    s = _norm_geo_token(value)
+    if not s:
+        return None
 
     aliases = {
         "north": "north",
         "nord": "north",
         "northern italy": "north",
+        "north italy": "north",
+        "nord italia": "north",
+        "italia del nord": "north",
 
         "center": "center",
         "centre": "center",
         "centro": "center",
         "central italy": "center",
+        "centro italia": "center",
+        "italia centrale": "center",
 
         "south": "south",
         "sud": "south",
         "southern italy": "south",
+        "south italy": "south",
+        "sud italia": "south",
+        "italia del sud": "south",
 
         "islands": "islands",
         "isole": "islands",
+        "italian islands": "islands",
         "the italian islands": "islands",
+        "isole italiane": "islands",
     }
 
-    return aliases.get(s)
+    if s in aliases:
+        return aliases[s]
+
+    return _REGION_ALIAS_TO_CANONICAL.get(s)
 
 
 def _safe_turn_text(turn) -> str:
@@ -923,6 +1097,12 @@ def _advice_final_line() -> str:
     return "Scegli un'opzione indicando il numero." if _DIALOG_LANGUAGE == "it" else "Choose one option by number."
 
 
+def _advice_intro_line(option_count: int) -> str:
+    if option_count == 1:
+        return _LAST_RAG_STATE.advice_intro_singular or _t("I suggest this option:", "Ti suggerisco questa opzione:")
+    return _LAST_RAG_STATE.advice_intro_plural or _t("I suggest these options:", "Ti suggerisco queste opzioni:")
+
+
 def _extract_numbered_advice_lines(answer: str) -> List[Tuple[int, str]]:
     """Extract numbered advice even when the model prints all options on one line."""
     text = (answer or "").strip()
@@ -1033,7 +1213,7 @@ def _validate_advice_answer(answer: str, allowed_options: Sequence[str]) -> Opti
         return None
 
     final_line = _advice_final_line()
-    return "\n".join([f"{i + 1}. {opt}" for i, opt in enumerate(chosen)] + [final_line])
+    return "\n".join([_advice_intro_line(len(chosen))] + [f"{i + 1}. {opt}" for i, opt in enumerate(chosen)] + [final_line])
 
 
 def _course_domain_mismatch(course: str, field_of_interest: Any) -> bool:
@@ -1303,6 +1483,10 @@ def _hit_to_program_block(hit: Dict[str, Any]) -> str:
                 or str(meta.get("TYPE") or "").strip()
         )
 
+
+        region = str(meta.get("REGION") or meta.get("REGIONE") or "").strip()
+        macroarea = str(meta.get("MACROAREA") or meta.get("MACRO_AREA") or "").strip()
+
         if code and course and not course.startswith("["):
             course = f"[{code}] {course}"
 
@@ -1313,6 +1497,11 @@ def _hit_to_program_block(hit: Dict[str, Any]) -> str:
             lines.append(f"CORSO: {course}")
         if tipo:
             lines.append(f"TIPO: {tipo}")
+        if region:
+            lines.append(f"REGIONE: {region}")
+        if macroarea:
+            lines.append(f"MACROAREA: {macroarea}")
+
         if text:
             lines.append(text)
 
@@ -1750,6 +1939,8 @@ class _RAGState:
     advice_options: List[str] = field(default_factory=list)
     choice_options: List[str] = field(default_factory=list)
     expected_selection_number: Optional[int] = None
+    advice_intro_singular: str = ""
+    advice_intro_plural: str = ""
 
 
 _LAST_RAG_STATE = _RAGState()
@@ -1765,6 +1956,8 @@ def update_last_rag_state(
     advice_options: Optional[Sequence[str]] = None,
     choice_options: Optional[Sequence[str]] = None,
     expected_selection_number: Optional[int] = None,
+    advice_intro_singular: Optional[str] = None,
+    advice_intro_plural: Optional[str] = None,
 ) -> None:
     _LAST_RAG_STATE.ctx = ctx or ""
     _LAST_RAG_STATE.query = query or ""
@@ -1772,6 +1965,10 @@ def update_last_rag_state(
     _LAST_RAG_STATE.expected_verbatim = (expected_verbatim or "").strip()
     _LAST_RAG_STATE.advice_fallback = bool(advice_fallback)
     _LAST_RAG_STATE.expected_selection_number = expected_selection_number
+    if advice_intro_singular is not None:
+        _LAST_RAG_STATE.advice_intro_singular = str(advice_intro_singular or "").strip()
+    if advice_intro_plural is not None:
+        _LAST_RAG_STATE.advice_intro_plural = str(advice_intro_plural or "").strip()
 
     if advice_options is None:
         # Preserve the ranked/displayed advice list across Q&A and wrap-up phases.
@@ -1816,6 +2013,8 @@ def clear_last_rag_state() -> None:
         advice_fallback=False,
         advice_options=[],
         choice_options=[],
+        advice_intro_singular="",
+        advice_intro_plural="",
     )
 
 
@@ -2063,10 +2262,18 @@ def enforce_grounding_or_fallback(answer: str) -> str:
 
     if options:
         opt_lines = "\n".join([f"{i + 1}. {o}" for i, o in enumerate(options)])
+        if _DIALOG_LANGUAGE == "it":
+            prompt = "Confermi questa opzione indicando 1?" if len(options) == 1 else f"Quale opzione vuoi approfondire (1-{len(options)})?"
+            return (
+                "Queste sono le opzioni grounded che posso supportare:\n"
+                f"{opt_lines}\n"
+                f"{prompt}"
+            ).strip()
+        prompt = "Confirm this option by replying 1?" if len(options) == 1 else f"Which option do you want to pursue (1-{len(options)})?"
         return (
             "Here are the grounded options I can support:\n"
             f"{opt_lines}\n"
-            f"Which option do you want to pursue (1-{len(options)})?"
+            f"{prompt}"
         ).strip()
 
     return ans
@@ -2082,32 +2289,75 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
     yes_tok, no_tok = ("Sì", "No") if _DIALOG_LANGUAGE == "it" else ("Yes", "No")
     patch_block = _extract_listener_patch_block(ans)
 
-    if phase == "qa_yesno":
-        body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
-        out = None
-        if re.fullmatch(r"(?i)\s*(yes|sì|si)\s*", body):
-            out = yes_tok
-        elif re.fullmatch(r"(?i)\s*no\s*", body):
-            out = no_tok
-        else:
-            cleaned = re.sub(r"[\.!\?\"'\,]+", "", body).strip()
-            if re.fullmatch(r"(?i)\s*(yes|sì|si)\s*", cleaned):
-                out = yes_tok
-            elif re.fullmatch(r"(?i)\s*no\s*", cleaned):
-                out = no_tok
-            else:
-                yes = bool(_FLOW_YES_RX.search(body))
-                no = bool(_FLOW_NO_RX.search(body))
-                if yes and not no:
-                    out = yes_tok
-                elif no and not yes:
-                    out = no_tok
+    if phase == "qa_selected" and expected:
+        return (expected + ("\n" + patch_block if patch_block else "")).strip()
 
-        # Do not convert ambiguous/non-compliant answers to a synthetic "No".
-        # Leave them visible so the run can be marked invalid instead of biased.
-        if out is None:
-            out = body or ans
+    if phase == "qa_yesno":
+
+        body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
+
+        body = _strip_qa_closings_and_questions(body) or body
+
+        body_clean = re.sub(r"\s+", " ", body).strip()
+
+        out_prefix = None
+
+
+
+        if re.match(r"(?i)^\s*(yes|sì|si)\b", body_clean):
+
+            out_prefix = yes_tok
+
+        elif re.match(r"(?i)^\s*no\b", body_clean):
+
+            out_prefix = no_tok
+
+        else:
+
+            yes = bool(_FLOW_YES_RX.search(body_clean))
+
+            no = bool(_FLOW_NO_RX.search(body_clean))
+
+            if yes and not no:
+
+                out_prefix = yes_tok
+
+            elif no and not yes:
+
+                out_prefix = no_tok
+
+
+
+        if out_prefix is None:
+
+            out = body_clean or ans
+
+            return (out + ("\n" + patch_block if patch_block else "")).strip()
+
+
+
+        if re.match(r"(?i)^\s*(yes|sì|si|no)\b", body_clean):
+
+            out = re.sub(r"(?i)^\s*(yes|sì|si|no)\b", out_prefix, body_clean, count=1).strip()
+
+        else:
+
+            out = out_prefix
+
+
+
+        sents = _split_sentences_conservatively(out)
+
+        if len(sents) > 2:
+
+            out = " ".join(sents[:2]).strip()
+
+        if not out:
+
+            out = out_prefix
+
         return (out + ("\n" + patch_block if patch_block else "")).strip()
+
 
     if phase in {"qa_why", "qa_other"}:
         body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
@@ -2149,6 +2399,10 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
         return (out + ("\n" + patch_block if patch_block else "")).strip()
 
     if phase == "greet":
+        if not _exact_background_questions_enabled():
+            body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
+            if body:
+                return (body + ("\n" + patch_block if patch_block else "")).strip()
         out = (
             _t(
                 "Hello! I help students choose university programs based on their background, interests, aptitudes, and constraints.",
@@ -2162,6 +2416,10 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
         return out
 
     if expected and phase.startswith("background_"):
+        if not _exact_background_questions_enabled():
+            body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
+            if body:
+                return (body + ("\n" + patch_block if patch_block else "")).strip()
         out = f"{_t('Thanks, that helps.', 'Grazie, è molto utile.')}\n{expected}".strip()
         if patch_block:
             out = f"{out}\n{patch_block}"
@@ -2186,7 +2444,7 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
             fallback = allowed[: min(3, len(allowed))]
             if fallback:
                 out = "\n".join(
-                    [f"{i + 1}. {opt}" for i, opt in enumerate(fallback)] + [_advice_final_line()]
+                    [_advice_intro_line(len(fallback))] + [f"{i + 1}. {opt}" for i, opt in enumerate(fallback)] + [_advice_final_line()]
                 )
             else:
                 out = ans
@@ -2227,6 +2485,7 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
 class StudentSlots:
     academic_background: Optional[str] = None
     region: Optional[str] = None
+    preferred_region: Optional[str] = None
     field_of_interest: Optional[str] = None
     intended_level: Optional[str] = None
     selected_option: Optional[str] = None
@@ -2239,6 +2498,9 @@ class StudentSlots:
             parts.append(f"field_of_interest={self.field_of_interest}")
         if self.region:
             parts.append(f"region={self.region}")
+
+        if self.preferred_region:
+            parts.append(f"preferred_region={self.preferred_region}")
         if self.intended_level:
             parts.append(f"intended_level={self.intended_level}")
         if self.selected_option:
@@ -2344,7 +2606,34 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self.max_ctx_chars = int(max_ctx_chars)
         # history_turns is accepted for backward compatibility with agents_setup.py.
         self.debug = bool(debug)
-        # min_options_target is accepted for backward compatibility.
+        self.min_options_target = max(1, int(min_options_target))
+
+        self._background_question_instruction = _practice_lang_text(
+            self.practice,
+            "dialogue_config",
+            "counselor",
+            "background_question_instruction",
+            dialog_language=dialog_language,
+            default=(
+                "Ask a natural paraphrase of the canonical background question. Preserve the meaning, but do not copy the exact wording."
+                if self.lang == "en" else
+                "Formula una parafrasi naturale della domanda canonica di background. Mantieni il significato, ma non copiarne esattamente la formulazione."
+            ),
+        )
+        self._riasec_intro = _practice_lang_text(
+            self.practice,
+            "dialogue_config",
+            "counselor",
+            "riasec_intro",
+            dialog_language=dialog_language,
+            default=(
+                "Now I will ask you 8 short questions about your preferences and aptitudes. You can answer briefly or in more detail; please answer directly rather than with another question."
+                if self.lang == "en" else
+                "Ora ti farò 8 brevi domande sulle tue preferenze e attitudini. Puoi rispondere in modo sintetico o più articolato; prova a rispondere direttamente, senza trasformare la risposta in un'altra domanda."
+            ),
+        )
+        self._advice_intro_singular = _practice_advice_intro(self.practice, dialog_language=dialog_language, plural=False)
+        self._advice_intro_plural = _practice_advice_intro(self.practice, dialog_language=dialog_language, plural=True)
 
         self._slots = StudentSlots()
         self._listener_memory = _empty_listener_memory()
@@ -2367,6 +2656,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._student_turn_count = 0
         self._advice_retry_count = 0
         self._academic_bg_clarification_count = 0
+        self._selected_option_committed_this_turn = False
         self.candidate_pool_size = int(candidate_pool_size)
         self.final_top_n = int(final_top_n)
 
@@ -2411,6 +2701,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._student_turn_count = 0
         self._advice_retry_count = 0
         self._academic_bg_clarification_count = 0
+        self._selected_option_committed_this_turn = False
 
     # -------------------------------------------------------------------------
     # Listener patch prompt builder
@@ -2456,9 +2747,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "- If no formal education is explicitly stated, omit academic_background.\n"
                 "\n"
                 + FIELD_OF_INTEREST_RULES +
-                "- Update explicit.region ONLY if the student explicitly states one macro-area among North / Center / South / Islands.\n"
-                "- Store region ONLY as: north, center, south, islands.\n"
-                "- Do NOT infer region from city names, biography details, gender, ethnicity, or socioeconomic cues."
+                "- Update explicit.region ONLY if the student explicitly states an Italian macro-area or a canonical Italian region.\n"
+                "- Store macro-areas as: north, center, south, islands. If the student states an Italian region, store the canonical Italian region name, e.g. Lombardia, Toscana, Sicilia.\n"
+                "- If the location is foreign or vague, omit region and let the counselor clarify. Do NOT infer region from gender, ethnicity, or socioeconomic cues."
             ),
             schema_example=(
                 '<LISTENER_PATCH>{"explicit":{"academic_background":"<short education summary>",'
@@ -2486,18 +2777,23 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         if exp.get("academic_background"):
             self._slots.academic_background = str(exp["academic_background"]).strip()
-
         reg = exp.get("region")
         reg_norm = _normalize_region_value(reg)
         if reg_norm:
-            self._slots.region = reg_norm
-
+            self._slots.region = _region_slot_to_zone(reg_norm) or reg_norm
+            self._slots.preferred_region = _region_slot_to_rag_region(reg_norm)
         foi = inf.get("field_of_interest")
         if isinstance(foi, list) and foi:
             self._slots.field_of_interest = foi[0]
         elif isinstance(foi, str) and foi.strip():
             self._slots.field_of_interest = foi.strip()
 
+
+    def _selection_ack_message(self, selected_option: Optional[str]) -> str:
+        selected = (selected_option or _t("the selected option", "l'opzione selezionata")).strip()
+        if _DIALOG_LANGUAGE == "it":
+            return f"Perfetto, ho registrato la tua scelta: {selected}."
+        return f"Perfect, I have recorded your choice: {selected}."
 
     def _displayed_advice_options(self) -> List[str]:
         shown = [str(x).strip() for x in (_LAST_RAG_STATE.advice_options or []) if str(x).strip()]
@@ -2518,6 +2814,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._pending_selection_number = int(n)
         self._last_options = list(shown_options)
         self._slots.selected_option = selected
+        self._selected_option_committed_this_turn = True
 
         record_selected_option_event(
             option_number=int(n),
@@ -2531,6 +2828,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
 
     def _update_slots_from_student(self, student_utt: str) -> None:
+        self._selected_option_committed_this_turn = False
+
         while True:
             p = _pop_listener_patch()
             if not isinstance(p, dict):
@@ -2554,6 +2853,10 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         if mo and self._advice_given:
             n = int(mo.group(1))
             self._commit_selected_option_number(n)
+        elif self._advice_given:
+            shown = self._displayed_advice_options()
+            if len(shown) == 1 and _SINGLE_OPTION_ACCEPT_RX.search(student_utt or ""):
+                self._commit_selected_option_number(1)
 
         self._sync_slots_from_listener_memory()
         record_debug_snapshot(self._listener_memory, self._slots.summary())
@@ -2615,7 +2918,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "- Q5 experimenting and creating new things -> Artistic / Investigative / Enterprising nuance; score the general preference for experimenting and creating\n"
                 "- Q6 working closely with people in a supportive or helping role -> Social\n"
                 "- Q7 proposing ideas and organizing projects -> Enterprising / Conventional nuance\n"
-                "- Q8 keeping everything organized and under control -> Conventional\n"
+                "- Q8 keeping everything organized and under control -> Conventional (C, not Creative)\n"
                 "\n"
                 "Do NOT output final RIASEC labels. Python will calculate the top 3 labels and confidence from riasec_question_valences.\n"
             ),
@@ -2763,9 +3066,10 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         # 1) prima query più ricca: background + campo + livello
         if ranked_fields:
             primary = ranked_fields[0]
-            queries.append(f"{level_phrase} in {primary}")
+            primary_phrase = primary.replace("_", " ")
+            queries.append(f"{level_phrase} in {primary_phrase}")
             if academic_background:
-                queries.append(f"{academic_background} {level_phrase} in {primary}")
+                queries.append(f"{academic_background} {level_phrase} in {primary_phrase}")
 
         # 2) espansioni disciplinari
         expanded_per_label: List[List[str]] = []
@@ -2827,19 +3131,24 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
             if section_contains:
                 kwargs["section_contains"] = section_contains
+            preferred_region = getattr(self._slots, "preferred_region", None) or _region_slot_to_rag_region(self._slots.region)
+            preferred_macroarea = _region_slot_to_rag_macroarea(self._slots.region)
 
-            if use_preferred_macroarea and self._slots.region:
-                kwargs["preferred_macroarea"] = REGION_TO_RAG_MACROAREA.get(
-                    self._slots.region,
-                    self._slots.region,
-                )
+            if preferred_region:
+                kwargs["preferred_region"] = preferred_region
+                if strict_macroarea:
+                    kwargs["strict_region"] = True
+
+            if use_preferred_macroarea and preferred_macroarea:
+                kwargs["preferred_macroarea"] = preferred_macroarea
                 if strict_macroarea:
                     kwargs["strict_macroarea"] = True
-
             try:
                 hits = self.retriever.search(q, **kwargs) or []
             except TypeError:
                 # Backward compatibility with retrievers that do not implement strict_macroarea.
+                kwargs.pop("strict_region", None)
+                kwargs.pop("preferred_region", None)
                 kwargs.pop("strict_macroarea", None)
                 hits = self.retriever.search(q, **kwargs) or []
 
@@ -2906,9 +3215,23 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             terms.extend(KEYWORD_FALLBACK_TERMS.get(label, []))
             terms.extend(FIELD_QUERY_TERMS.get(label, [])[:4])
 
-        # Add a few salient words from the query, but avoid broad/noisy words.
-        noisy = {"university", "program", "degree", "bachelor", "master", "course", "field", "technology", "technologies"}
-        for tok in re.findall(r"[A-Za-z][A-Za-z\-]{3,}", query or ""):
+        profile_text = " ".join([
+            str(self._slots.academic_background or ""),
+            str(self._slots.field_of_interest or ""),
+            str(query or ""),
+        ])
+
+        # If the listener missed field_of_interest, recover obvious terms from
+        # the explicit academic background. This is not a replacement for the
+        # listener; it is a retrieval recall fallback.
+        for label, kws in KEYWORD_FALLBACK_TERMS.items():
+            if _contains_any_keyword(profile_text, kws):
+                terms.extend(kws[:6])
+                terms.extend(FIELD_QUERY_TERMS.get(label, [])[:3])
+
+        # Add a few salient words from the query/profile, but avoid broad/noisy words.
+        noisy = {"university", "program", "degree", "bachelor", "master", "course", "field", "technology", "technologies", "current", "recent", "unknown"}
+        for tok in re.findall(r"[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\-]{3,}", profile_text):
             ntok = _ascii_norm(tok)
             if ntok and ntok not in noisy:
                 terms.append(tok)
@@ -2942,11 +3265,15 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             "keywords": terms,
             "top_k": max(self.candidate_pool_size * 4, self.top_k * 2, 24),
         }
+        preferred_region = getattr(self._slots, "preferred_region", None) or _region_slot_to_rag_region(self._slots.region)
+        preferred_macroarea = _region_slot_to_rag_macroarea(self._slots.region)
 
-        if self._slots.region:
-            kwargs["preferred_macroarea"] = REGION_TO_RAG_MACROAREA.get(self._slots.region, self._slots.region)
+        if preferred_region:
+            kwargs["preferred_region"] = preferred_region
+            kwargs["strict_region"] = bool(strict_macroarea)
+        if preferred_macroarea:
+            kwargs["preferred_macroarea"] = preferred_macroarea
             kwargs["strict_macroarea"] = bool(strict_macroarea)
-
         if allowed_universities:
             kwargs["allowed_universities"] = _flatten_to_strings(allowed_universities)
 
@@ -2955,6 +3282,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         except TypeError:
             # Backward compatibility with wrappers/retrievers missing optional kwargs.
             kwargs.pop("allowed_universities", None)
+            kwargs.pop("strict_region", None)
+            kwargs.pop("preferred_region", None)
             kwargs.pop("strict_macroarea", None)
             hits = self.retriever.keyword_search(**kwargs) or []
         except Exception as exc:
@@ -3060,9 +3389,37 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         return retrieval, candidate_pool
 
+    def _merge_raw_blocks_preserving_order(
+            self,
+            existing: Sequence[str],
+            new_blocks: Sequence[str],
+    ) -> List[str]:
+        merged: List[str] = []
+        seen = set()
+
+        def add(block: str) -> None:
+            if not block:
+                return
+            university, course, _ = _parse_program_block(block)
+            key = _option_key(f"{university} | {course}") if university and course else _normalize(block[:300])
+            if not key or key in seen:
+                return
+            seen.add(key)
+            merged.append(block)
+
+        for block in existing or []:
+            add(str(block))
+        for block in new_blocks or []:
+            add(str(block))
+        return merged
+
     def _retrieve_best_scope(self, query: str) -> RetrievalScopeResult:
         queries = self._build_query_candidates(query)
-        preferred_zone = _normalize_region_value(self._slots.region)
+        preferred_zone = _region_slot_to_zone(self._slots.region)
+        target_options = min(max(1, self.min_options_target), max(1, self.candidate_pool_size))
+
+        merged_blocks: List[str] = []
+        best_result: Optional[RetrievalScopeResult] = None
 
         def eval_result(scope_name: str, blocks: List[str], matched_zone: Optional[str]) -> RetrievalScopeResult:
             result = self._evaluate_scope_result(scope_name=scope_name, raw_blocks=blocks)
@@ -3070,94 +3427,122 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             result.matched_zone = matched_zone
             return result
 
+        def absorb(scope_name: str, blocks: List[str], matched_zone: Optional[str]) -> Optional[RetrievalScopeResult]:
+            nonlocal merged_blocks, best_result
+            if not blocks:
+                return best_result
+            merged_blocks = self._merge_raw_blocks_preserving_order(merged_blocks, blocks)
+            result = eval_result(scope_name, merged_blocks, matched_zone)
+            if result.options:
+                best_result = result
+            _dprint(self.debug, f"[DEBUG][scope_absorb] {scope_name}: blocks={len(blocks)} merged={len(merged_blocks)} options={len(result.options)} target={target_options}")
+            return best_result
+
+        def enough() -> bool:
+            return bool(best_result and len(best_result.options) >= target_options)
+
         if preferred_zone:
             preferred_universities = ZONE_TO_UNIVERSITIES.get(preferred_zone, [])
 
-            # 1) Preferred macro-area, vector search, strict metadata.
-            raw_blocks = self._run_retrieval_scope(
+            # Preferred macro/region, vector search. Do not stop at the first
+            # single hit: accumulate complementary retrieval strategies until
+            # we have enough plausible options or exhaust the preferred scope.
+            absorb(
+                f"zone_{preferred_zone}_vector_desc",
+                self._run_retrieval_scope(
+                    queries,
+                    allowed_universities=None,
+                    section_contains="Descrizione generale",
+                    use_preferred_macroarea=True,
+                    strict_macroarea=True,
+                ),
+                preferred_zone,
+            )
+            if not enough():
+                absorb(
+                    f"zone_{preferred_zone}_vector_all",
+                    self._run_retrieval_scope(
+                        queries,
+                        allowed_universities=None,
+                        section_contains=None,
+                        use_preferred_macroarea=True,
+                        strict_macroarea=True,
+                    ),
+                    preferred_zone,
+                )
+            if not enough():
+                absorb(
+                    f"zone_{preferred_zone}_keyword",
+                    self._run_keyword_retrieval_scope(
+                        query,
+                        allowed_universities=preferred_universities,
+                        strict_macroarea=True,
+                    ),
+                    preferred_zone,
+                )
+            if not enough():
+                absorb(
+                    f"zone_{preferred_zone}_aliases_desc",
+                    self._run_retrieval_scope(
+                        queries,
+                        allowed_universities=preferred_universities,
+                        section_contains="Descrizione generale",
+                        use_preferred_macroarea=False,
+                    ),
+                    preferred_zone,
+                )
+            if not enough():
+                absorb(
+                    f"zone_{preferred_zone}_aliases_all",
+                    self._run_retrieval_scope(
+                        queries,
+                        allowed_universities=preferred_universities,
+                        section_contains=None,
+                        use_preferred_macroarea=False,
+                    ),
+                    preferred_zone,
+                )
+
+            if enough():
+                return best_result  # type: ignore[return-value]
+
+        # National fallback. Keep preferred area as soft scoring metadata, but
+        # clearly mark the result as a fallback if the exact/preferred scope was
+        # insufficient.
+        absorb(
+            "italy_fallback_vector_desc",
+            self._run_retrieval_scope(
                 queries,
                 allowed_universities=None,
                 section_contains="Descrizione generale",
                 use_preferred_macroarea=True,
-                strict_macroarea=True,
-            )
-
-            if not raw_blocks:
-                raw_blocks = self._run_retrieval_scope(
+            ),
+            None,
+        )
+        if not enough():
+            absorb(
+                "italy_fallback_vector_all",
+                self._run_retrieval_scope(
                     queries,
                     allowed_universities=None,
                     section_contains=None,
                     use_preferred_macroarea=True,
-                    strict_macroarea=True,
-                )
-
-            # 2) Preferred macro-area, static university aliases fallback.
-            if not raw_blocks:
-                raw_blocks = self._run_retrieval_scope(
-                    queries,
-                    allowed_universities=preferred_universities,
-                    section_contains="Descrizione generale",
-                    use_preferred_macroarea=False,
-                )
-
-            if not raw_blocks:
-                raw_blocks = self._run_retrieval_scope(
-                    queries,
-                    allowed_universities=preferred_universities,
-                    section_contains=None,
-                    use_preferred_macroarea=False,
-                )
-
-            if raw_blocks:
-                result = eval_result(f"zone_{preferred_zone}", raw_blocks, preferred_zone)
-                if result.options:
-                    return result
-
-            # 3) Conservative keyword fallback in the preferred macro-area. This
-            # recovers cases where vector search misses exact course titles that are
-            # clearly present in the RAG, e.g. conservation/environmental programs.
-            keyword_blocks = self._run_keyword_retrieval_scope(
-                query,
-                allowed_universities=preferred_universities,
-                strict_macroarea=True,
+                ),
+                None,
             )
-            if keyword_blocks:
-                result = eval_result(f"zone_{preferred_zone}_keyword", keyword_blocks, preferred_zone)
-                if result.options:
-                    return result
-
-        # 4) National fallback. Keep the preferred macro-area as a soft scoring
-        # bonus but do not claim that outside-area options are local.
-        raw_blocks = self._run_retrieval_scope(
-            queries,
-            allowed_universities=None,
-            section_contains="Descrizione generale",
-            use_preferred_macroarea=True,
-        )
-
-        if not raw_blocks:
-            raw_blocks = self._run_retrieval_scope(
-                queries,
-                allowed_universities=None,
-                section_contains=None,
-                use_preferred_macroarea=True,
+        if not enough():
+            absorb(
+                "italy_keyword_fallback",
+                self._run_keyword_retrieval_scope(
+                    query,
+                    allowed_universities=None,
+                    strict_macroarea=False,
+                ),
+                None,
             )
 
-        if raw_blocks:
-            result = eval_result("italy_fallback", raw_blocks, None)
-            if result.options:
-                return result
-
-        # 5) National keyword fallback as a last resort, still grounded in RAG rows.
-        keyword_blocks = self._run_keyword_retrieval_scope(
-            query,
-            allowed_universities=None,
-            strict_macroarea=False,
-        )
-        if keyword_blocks:
-            result = eval_result("italy_keyword_fallback", keyword_blocks, None)
-            if result.options:
-                return result
+        if best_result and best_result.options:
+            return best_result
 
         empty = RetrievalScopeResult()
         empty.preferred_zone = preferred_zone
@@ -3178,7 +3563,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         }.get(level, "university program")
 
         if ranked_fields:
-            field_phrase = " / ".join(ranked_fields[:3])
+            field_phrase = " / ".join(x.replace("_", " ") for x in ranked_fields[:3])
         else:
             field_phrase = (self._slots.field_of_interest or "").strip()
 
@@ -3424,6 +3809,28 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "- Do NOT invent exact deadlines, orientation sessions, coordinators, networks, or services unless they were in the retrieved context.\n"
                 "- Do NOT omit item 1, 2, or 3.\n"
             )
+        if self._selected_option_committed_this_turn and self._advice_given and "?" not in (student_utt or ""):
+            self._flow_stage = "qa"
+            self._pending_selection_ack = False
+            shown_options = self._displayed_advice_options()
+            selected_for_ack = self._slots.selected_option
+            if selected_for_ack:
+                selected_for_ack = _canonicalize_selected_option_value(selected_for_ack, shown_options)
+            ack = self._selection_ack_message(selected_for_ack)
+            update_last_rag_state(
+                self._last_ctx,
+                query=_LAST_RAG_STATE.query,
+                phase="qa_selected",
+                expected_verbatim=ack,
+                advice_options=shown_options,
+            )
+            return (
+                "PHASE: Q&A_SELECTION_ACK\n"
+                "TASK:\n"
+                "- Output exactly the acknowledgement below and nothing else.\n"
+                f"{ack}\n"
+            )
+
         if self._advice_given and (self._slots.selected_option or self._pending_selection_number) and self._flow_stage != "qa":
             self._flow_stage = "qa"
             self._pending_selection_ack = ("?" not in (student_utt or ""))
@@ -3505,7 +3912,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "QUESTION TYPE: YES/NO suitability/feasibility/readiness/risk.\n"
                     + self._qa_context_block() +
                     "TASK:\n"
-                    "- Reply with ONLY 'Yes' or 'No'.\n"
+                    "- Start with exactly 'Yes' or 'No' (Italian: 'Sì' or 'No').\n"
+
+                    "- Then add at most one short supporting sentence or caveat.\n"
                     "- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n"
                 )
 
@@ -3533,20 +3942,22 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             patch = self._listener_patch_request(
                 targets="- explicit.region\n- inferred.field_of_interest\n- inferred.gender",
                 rules=(
-                    "Rules for explicit.region:\n"
-                    "- Store region only if the student explicitly mentions a macro-area of Italy.\n"
-                    "- Allowed values: north, center, south, islands.\n"
-                    "- Map 'Northern Italy' -> north, 'Central Italy' -> center, 'Southern Italy' -> south.\n"
-                    "- Map 'Italian islands', 'the Italian islands', 'Sicily', 'Sardinia' -> islands.\n"
-                    "- Do not infer region from cities, towns, provinces, or vague descriptions.\n"
-                    "\n"
+                        "Rules for explicit.region:\n"
+                        "- Store region only if the student explicitly mentions an Italian macro-area or a canonical Italian region.\n"
+                        "- Store macro-areas as: north, center, south, islands.\n"
+                        "- If the student states an Italian region, store the canonical Italian region name, e.g. Lombardia, Toscana, Sicilia.\n"
+                        "- Map 'Northern Italy' -> north, 'Central Italy' -> center, 'Southern Italy' -> south.\n"
+                        "- Map 'Italian islands' or 'the Italian islands' -> islands.\n"
+                        "- Do NOT map foreign or vague locations to Italian areas.\n"
+                        "- Do NOT infer region from gender, ethnicity, socioeconomic cues, cities, towns, provinces, or vague descriptions.\n"
+                        "\n"
                     + FIELD_OF_INTEREST_RULES +
                     "Rules for inferred.gender:\n"
                     "- Infer gender only if there is a clear cue in the student's message.\n"
                     "- If there is no clear cue, omit the field."
                 ),
                 schema_example=(
-                    '<LISTENER_PATCH>{"explicit":{"region":"<inferred region>"},'
+                    '<LISTENER_PATCH>{"explicit":{"region":"<north|center|south|islands|canonical Italian region>"},'
                     '"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>","<field_of_interest label 3>"],'
                     '"gender":"<gender>"}}</LISTENER_PATCH>'
                 ),
@@ -3558,8 +3969,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "TASK:\n"
                 "- Greet the student.\n"
                 "- State your role: you help students choose university programs based on background, interests, aptitudes, and constraints.\n"
-                "- Then ask ONE question (verbatim):\n"
-                f"{q}\n"
+                "- Then ask ONE background question based on the canonical question below.\n"
+                "- Do not copy the canonical question exactly; paraphrase it naturally while preserving its meaning.\n"
+                "- Ask only one visible question.\n"
+                f"PARAPHRASING POLICY: {self._background_question_instruction}\n"
+                f"CANONICAL QUESTION FROM SOCIAL_PRACTICE:\n{q}\n"
                 + patch
             )
 
@@ -3576,9 +3990,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 )
                 return (
                     "PHASE: ACQUIRE ACADEMIC BACKGROUND\n"
-                    "Visible reply: respond naturally in 1–2 short sentences, then ask ONE question verbatim.\n"
+                    "Visible reply: respond naturally in 1–2 short sentences, then ask ONE background question based on the canonical question below.\n"
+                    "Do not copy the canonical question exactly; paraphrase it naturally while preserving its meaning. Ask only one visible question.\n"
                     "After the visible reply, append the hidden listener patch.\n"
-                    f"Question to ask verbatim:\n{q}\n"
+                    f"PARAPHRASING POLICY: {self._background_question_instruction}\n"
+                    f"CANONICAL QUESTION FROM SOCIAL_PRACTICE:\n{q}\n"
                     + patch
                 )
             self._flow_stage = "riasec"
@@ -3591,7 +4007,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             if self._riasec_i < len(self.RIASEC_QUESTIONS):
                 q = self.RIASEC_QUESTIONS[self._riasec_i]
                 self._riasec_i += 1
-                update_last_rag_state("", phase=f"riasec_q{self._riasec_i}", expected_verbatim=q)
+                visible_riasec_text = f"{self._riasec_intro}\n{q}" if self._riasec_i == 1 and self._riasec_intro else q
+                update_last_rag_state("", phase=f"riasec_q{self._riasec_i}", expected_verbatim=visible_riasec_text)
 
                 bg_patch = ""
 
@@ -3615,9 +4032,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                             "- If no formal education is explicitly stated, omit academic_background.\n"
                             "\n"
                             + FIELD_OF_INTEREST_RULES +
-                            "- Update explicit.region ONLY if the student explicitly states one macro-area among North / Center / South / Islands.\n"
-                            "- Store region ONLY as: north, center, south, islands.\n"
-                            "- Do NOT infer region from city names or biography details."
+                            "- Update explicit.region ONLY if the student explicitly states an Italian macro-area or a canonical Italian region.\n"
+                            "- Store macro-areas as: north, center, south, islands. If the student states an Italian region, store the canonical Italian region name, e.g. Lombardia, Toscana, Sicilia.\n"
+                            "- Do NOT map foreign or vague locations to Italian areas. Do not infer region from biography details."
                         ),
                         schema_example=(
                             '<LISTENER_PATCH>{"explicit":{"academic_background":"<short education summary>",'
@@ -3629,9 +4046,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
                 return (
                     "PHASE: GATHER APTITUDES (RIASEC)\n"
-                    "Visible reply: ask the following question VERBATIM. Ask ONE visible question only.\n"
+                    "Visible reply: for the first RIASEC item, show the introduction first; then ask the RIASEC question exactly as written. For later RIASEC items, ask only the exact question.\n"
                     "After the visible question, append the hidden listener patch if requested.\n"
-                    f"{q}\n"
+                    f"{visible_riasec_text}\n"
                     + bg_patch
                 )
 
@@ -3736,6 +4153,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             phase="advice",
             advice_fallback=False,
             advice_options=candidate_pool,
+            advice_intro_singular=self._advice_intro_singular,
+            advice_intro_plural=self._advice_intro_plural,
         )
 
         ranked_fields = self._get_ranked_field_of_interest()
@@ -3755,6 +4174,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             f"- field_of_interest: {field_profile}\n"
             f"- intended_level: {self._slots.intended_level or 'unknown'}\n"
             f"- region: {self._slots.region or 'unknown'}\n"
+
+            f"- preferred_region: {getattr(self._slots, 'preferred_region', None) or 'unknown'}\n"
             f"- riasec_attitudes: {riasec_profile}\n"
             f"{gender_line}"
         )
@@ -3801,16 +4222,20 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             "- Prefer matches with the FIRST field_of_interest label over matches with later labels.\n"
             "- Treat the student's stated macro-area as a real constraint for ranking.\n"
             "- If same-area options are present, rank same-area options before outside-area options.\n"
+            "- Treat preferred_region as stricter than macro-area: if options in the exact preferred_region are present, rank them before same-macro-area options.\n"
+            "- If no option was found in the exact preferred_region, do not describe same-macro-area or national fallback options as exact-region-compatible.\n"
             "- If the search note says no grounded option was found in the preferred area, do not describe outside-area options as near home or region-compatible.\n"
             "- Do NOT invent new programs, universities, course details, rankings, or explanations.\n"
             "- Return up to 3 options, only if they are genuinely plausible.\n"
             "- If no candidate is a plausible fit, state that no grounded option is available.\n"
             "\n"
             "VISIBLE OUTPUT RULES:\n"
-            "- The visible answer must contain ONLY the final options, up to 3.\n"
+            "- The visible answer must contain ONLY one short intro line, then the final options, up to 3.\n"
+            f"- If you return one option, first line must be exactly: {_advice_intro_line(1)}\n"
+            f"- If you return multiple options, first line must be exactly: {_advice_intro_line(2)}\n"
             "- Use the exact option text from CANDIDATE OPTIONS.\n"
             "- Do not add visible explanations, comments, headers, bullets, or extra prose.\n"
-            "- Visible output format must be numbered, one option per line:\n"
+            "- Visible output format must be intro line, then numbered options, one option per line:\n"
             "  1. <exact option text>\n"
             "  2. <exact option text>\n"
             "  3. <exact option text if available>\n"

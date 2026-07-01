@@ -5,33 +5,30 @@
       "sp_name": "University Counseling",
       "agent1_role": "UniversityCounselor",
       "agent2_role": "Student",
-
       "agent1_norms": [
         "Be conversational and concise (about 2–6 sentences).",
         "Ask ONE question at a time.",
         "When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.",
-        "If yes/no question about suitability/feasibility/readiness/risk: reply ONLY 'Yes' or 'No'.",
-        "If choice between two options: reply ONLY one of the two options."
+        "For yes/no questions about suitability, feasibility, readiness, or risk: start with 'Yes' or 'No', then add at most one short supporting sentence or caveat.",
+        "If choice between two options: choose one of the two options clearly."
       ],
-
       "student_prompt_addendum": [
         "Do NOT invent facts about yourself.",
         "If a detail is not in your BACKGROUND, say you don't know / haven't decided.",
         "Follow orchestration instructions EXACTLY when present."
       ],
-
       "dialogue_config": {
         "counselor": {
           "background_questions": {
             "en": [
               "What is your current education level (e.g., high school type, bachelor) and what subjects have you studied most recently?",
               "What subjects/topics do you enjoy most, and what are your strengths vs weaknesses? (Grades if you want to share.)",
-              "What are your goals after graduation, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?"
+              "What are your goals for your next study or work step, and what constraints matter most (budget, language, and preferred area in Italy: North, Center, South, or Islands)?"
             ],
             "it": [
               "Qual è il tuo attuale livello di istruzione (per esempio tipo di scuola superiore, laurea) e quali materie hai studiato più recentemente?",
               "Quali materie o argomenti ti piacciono di più e quali sono i tuoi punti di forza e di debolezza? (Anche i voti, se ti va di condividerli.)",
-              "Quali sono i tuoi obiettivi dopo la laurea e quali vincoli contano di più per te (budget, lingua, e area preferita in Italia: Nord, Centro, Sud o Isole)?"
+              "Quali sono i tuoi obiettivi per il prossimo passo di studio o lavoro e quali vincoli contano di più per te (budget, lingua e area preferita in Italia: Nord, Centro, Sud o Isole)?"
             ]
           },
           "riasec_questions": {
@@ -55,9 +52,26 @@
               "Ti piace proporre idee e organizzare progetti?",
               "Ti piace avere tutto organizzato e sotto controllo?"
             ]
+          },
+          "background_question_instruction": {
+            "en": "Use the canonical background question as the meaning target, but ask it in a fresh natural wording. Keep all required information and ask only one question.",
+            "it": "Usa la domanda canonica di background come obiettivo semantico, ma formulala con parole naturali e non identiche. Mantieni tutte le informazioni richieste e fai una sola domanda."
+          },
+          "riasec_intro": {
+            "en": "Now I will ask you 8 short questions about your preferences and aptitudes. You can answer briefly or in more detail; please answer directly rather than with another question.",
+            "it": "Ora ti farò 8 brevi domande sulle tue preferenze e attitudini. Puoi rispondere in modo sintetico o più articolato; prova a rispondere direttamente, senza trasformare la risposta in un'altra domanda."
+          },
+          "advice_intro": {
+            "en": {
+              "singular": "I suggest this option:",
+              "plural": "I suggest these options:"
+            },
+            "it": {
+              "singular": "Ti suggerisco questa opzione:",
+              "plural": "Ti suggerisco queste opzioni:"
+            }
           }
         },
-
         "student": {
           "fixed_followup_questions": {
             "en": [

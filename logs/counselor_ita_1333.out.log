@@ -1,0 +1,102 @@
+INFO:     127.0.0.1:58331 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58338 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60990 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60994 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+
+[LISTENER MEMORY | session=02df0a10054b | model=university-counselor-ITA:latest]
+{
+  "explicit": {
+    "academic_background": "PhD",
+    "region": null
+  },
+  "inferred": {
+    "field_of_interest": null,
+    "gender": null,
+    "riasec_attitudes": null,
+    "riasec_confidence": null
+  }
+}
+INFO:     127.0.0.1:62338 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+
+[LISTENER MEMORY | session=02df0a10054b | model=university-counselor-ITA:latest]
+{
+  "explicit": {
+    "academic_background": "PhD in artificial intelligence",
+    "region": null
+  },
+  "inferred": {
+    "field_of_interest": [
+      "computer_science"
+    ],
+    "gender": null,
+    "riasec_attitudes": null,
+    "riasec_confidence": null
+  }
+}
+INFO:     127.0.0.1:62347 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+
+[LISTENER MEMORY | session=02df0a10054b | model=university-counselor-ITA:latest]
+{
+  "explicit": {
+    "academic_background": "dottorato di ricerca in intelligenza artificiale",
+    "region": "islands"
+  },
+  "inferred": {
+    "field_of_interest": [
+      "computer_science"
+    ],
+    "gender": null,
+    "riasec_attitudes": null,
+    "riasec_confidence": null
+  }
+}
+INFO:     127.0.0.1:58076 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58084 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+
+[LISTENER MEMORY | session=02df0a10054b | model=university-counselor-ITA:latest]
+{
+  "explicit": {
+    "academic_background": "dottorato di ricerca in intelligenza artificiale",
+    "region": "islands"
+  },
+  "inferred": {
+    "field_of_interest": [
+      "computer_science"
+    ],
+    "gender": null,
+    "riasec_attitudes": [
+      "Realistic",
+      "Investigative",
+      "Artistic"
+    ],
+    "riasec_confidence": "high"
+  }
+}
+INFO:     127.0.0.1:58133 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58141 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58141 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53747 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53754 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53759 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57148 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64788 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64792 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64799 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64803 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64809 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64818 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64822 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64850 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64812 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61685 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61692 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50803 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50815 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50874 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50881 - "GET /v1/models HTTP/1.1" 200 OK

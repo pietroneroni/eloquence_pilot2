@@ -1,4 +1,3 @@
-# lancedb_university_retriever.py
 from __future__ import annotations
 
 import json
@@ -22,18 +21,38 @@ def _norm(s: str) -> str:
     return (s or "").casefold().strip()
 
 
+def _ascii_norm(s: str) -> str:
+    t = unicodedata.normalize("NFKD", s or "")
+    t = "".join(ch for ch in t if not unicodedata.combining(ch))
+    t = t.casefold()
+    t = re.sub(r"[^a-z0-9]+", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def _norm_macro(s: str) -> str:
-    x = _norm(s)
+    x = _ascii_norm(s)
     aliases = {
         "north": "nord",
         "northern italy": "nord",
+        "nord": "nord",
+        "nord italia": "nord",
+        "italia del nord": "nord",
         "center": "centro",
         "centre": "centro",
         "central italy": "centro",
+        "centro": "centro",
+        "centro italia": "centro",
+        "italia centrale": "centro",
         "south": "sud",
         "southern italy": "sud",
+        "sud": "sud",
+        "sud italia": "sud",
+        "italia del sud": "sud",
         "islands": "isole",
         "the italian islands": "isole",
+        "italian islands": "isole",
+        "isole": "isole",
+        "isole italiane": "isole",
     }
     return aliases.get(x, x)
 
@@ -67,14 +86,6 @@ def _default_rag_dir(project_root: Path, lang: str) -> Path:
     return preferred
 
 
-def _ascii_norm(s: str) -> str:
-    t = unicodedata.normalize("NFKD", s or "")
-    t = "".join(ch for ch in t if not unicodedata.combining(ch))
-    t = t.casefold()
-    t = re.sub(r"[^a-z0-9]+", " ", t)
-    return re.sub(r"\s+", " ", t).strip()
-
-
 def _keyword_in_text(text: str, keyword: str) -> bool:
     t = _ascii_norm(text)
     k = _ascii_norm(keyword)
@@ -101,6 +112,16 @@ def _university_allowed(university: str, allowed: list[str] | None) -> bool:
         if aa and (u == aa or u in aa or aa in u):
             return True
     return False
+
+
+def _metadata_from_row(row: dict[str, Any]) -> dict[str, Any]:
+    raw_meta = row.get("metadata") or row.get("meta") or "{}"
+    if isinstance(raw_meta, dict):
+        return raw_meta
+    try:
+        return json.loads(raw_meta)
+    except Exception:
+        return {}
 
 
 class LanceDBUniversityRetriever:
@@ -144,6 +165,8 @@ class LanceDBUniversityRetriever:
         *,
         keywords: list[str],
         top_k: int = 20,
+        preferred_region: str | None = None,
+        strict_region: bool = False,
         preferred_macroarea: str | None = None,
         strict_macroarea: bool = False,
         allowed_universities: list[str] | None = None,
@@ -152,26 +175,22 @@ class LanceDBUniversityRetriever:
         if not terms:
             return []
 
+        pref_region = _ascii_norm(preferred_region) if preferred_region else ""
         pref_macro = _norm_macro(preferred_macroarea) if preferred_macroarea else ""
         scored: list[dict[str, Any]] = []
 
         for rank_index, row in enumerate(self._all_rows()):
-            raw_meta = row.get("metadata") or "{}"
-            if isinstance(raw_meta, dict):
-                meta = raw_meta
-            else:
-                try:
-                    meta = json.loads(raw_meta)
-                except Exception:
-                    meta = {}
-
+            meta = _metadata_from_row(row)
             text = str(row.get("text") or "")
             university_name = str(meta.get("UNIVERSITY", ""))
             course_name = str(meta.get("COURSE", ""))
             course_code = str(meta.get("COURSE_CODE", ""))
             section_name = str(meta.get("SECTION", ""))
+            hit_region = _ascii_norm(str(meta.get("REGION", "")))
             hit_macro = _norm_macro(str(meta.get("MACROAREA", "")))
 
+            if strict_region and pref_region and hit_region != pref_region:
+                continue
             if strict_macroarea and pref_macro and hit_macro != pref_macro:
                 continue
             if not _university_allowed(university_name, allowed_universities):
@@ -186,6 +205,8 @@ class LanceDBUniversityRetriever:
                 continue
 
             score = title_hits * 3.0 + full_hits * 1.0
+            if pref_region and hit_region == pref_region:
+                score += 0.8
             if pref_macro and hit_macro == pref_macro:
                 score += 0.5
 
@@ -224,6 +245,7 @@ class LanceDBUniversityRetriever:
         course_contains: str | None = None,
         section_contains: str | None = None,
         preferred_region: str | None = None,
+        strict_region: bool = False,
         preferred_macroarea: str | None = None,
         strict_macroarea: bool = False,
         dedupe_by_course: bool = True,
@@ -244,25 +266,20 @@ class LanceDBUniversityRetriever:
         uni_f = _norm(university) if university else ""
         course_f = _norm(course_contains) if course_contains else ""
         section_f = _norm(section_contains) if section_contains else ""
-        pref_region = _norm(preferred_region) if preferred_region else ""
+        pref_region = _ascii_norm(preferred_region) if preferred_region else ""
         pref_macro = _norm_macro(preferred_macroarea) if preferred_macroarea else ""
 
         hits: list[dict[str, Any]] = []
 
         for rank_index, row in enumerate(rows):
-            raw_meta = row.get("metadata") or "{}"
-            try:
-                meta = json.loads(raw_meta)
-            except Exception:
-                meta = {}
-
+            meta = _metadata_from_row(row)
             text = row.get("text") or ""
 
             university_name = _norm(str(meta.get("UNIVERSITY", "")))
             course_name = _norm(str(meta.get("COURSE", "")))
             course_code = _norm(str(meta.get("COURSE_CODE", "")))
             section_name = _norm(str(meta.get("SECTION", "")))
-            hit_region = _norm(str(meta.get("REGION", "")))
+            hit_region = _ascii_norm(str(meta.get("REGION", "")))
             hit_macro = _norm_macro(str(meta.get("MACROAREA", "")))
 
             if uni_f and uni_f not in university_name:
@@ -274,6 +291,9 @@ class LanceDBUniversityRetriever:
             if section_f and section_f not in section_name:
                 continue
 
+            if strict_region and pref_region and hit_region != pref_region:
+                continue
+
             if strict_macroarea and pref_macro and hit_macro != pref_macro:
                 continue
 
@@ -282,7 +302,7 @@ class LanceDBUniversityRetriever:
 
             bonus = 0.0
             if pref_region and hit_region == pref_region:
-                bonus += 0.15
+                bonus += 0.20
             if pref_macro and hit_macro == pref_macro:
                 bonus += 0.10
 

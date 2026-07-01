@@ -1,0 +1,48 @@
+C:\Users\Drako\PycharmProjects\Sdialog\university_counseling\owui_session_server.py:151: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  class ChatMessage(BaseModel):
+C:\Users\Drako\PycharmProjects\Sdialog\university_counseling\owui_session_server.py:160: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
+  class ChatCompletionRequest(BaseModel):
+[2026-06-29 13:28:15] INFO:owui-session-server:Starting session server on 0.0.0.0:1333
+[2026-06-29 13:28:15] INFO:owui-session-server:Models: university-counselor-ITA:latest
+[2026-06-29 13:28:15] INFO:owui-session-server:Aliases: {'university-counselor-ITA:latest': 'university-counselor-ITA:latest', 'university-counselor-ITA': 'university-counselor-ITA:latest', 'university-counselor:latest': 'university-counselor-ITA:latest', 'university-counselor': 'university-counselor-ITA:latest'}
+[2026-06-29 13:28:15] INFO:owui-session-server:Process model mode: ITA
+[2026-06-29 13:28:15] INFO:owui-session-server:Counselor backend for university-counselor-ITA:latest: ollama:qwen3:30b-thinking
+INFO:     Started server process [3520]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:1333 (Press CTRL+C to quit)
+[2026-06-29 14:22:20] INFO:sdialog.util:Loading Ollama model: qwen3:30b-thinking
+[2026-06-29 14:22:36] INFO:owui-session-server:Using LanceDB index for ita: C:\Users\Drako\PycharmProjects\Sdialog\RAG_University_Eng\Embeddings\lancedb table=universities
+[2026-06-29 14:22:36] INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+[2026-06-29 14:22:36] INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: intfloat/multilingual-e5-base
+[2026-06-29 14:22:39] INFO:owui-session-server:Created counselor session 02df0a10054b model=university-counselor-ITA:latest lang=Italian rag=ita backend=ollama:qwen3:30b-thinking
+[2026-06-29 14:22:39] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=new messages=1 stream=True
+[2026-06-29 14:24:10] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=3 stream=True
+[2026-06-29 14:24:44] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=5 stream=True
+[2026-06-29 14:25:13] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=7 stream=True
+[2026-06-29 14:25:35] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=9 stream=True
+[2026-06-29 14:25:48] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=11 stream=True
+[2026-06-29 14:26:03] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=13 stream=True
+[2026-06-29 14:26:14] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=15 stream=True
+[2026-06-29 14:26:25] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=17 stream=True
+[2026-06-29 14:26:35] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=19 stream=True
+[2026-06-29 14:26:45] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=21 stream=True
+[2026-06-29 14:27:16] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=23 stream=True
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  3.51it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  3.50it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 45.45it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 58.76it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 52.62it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 56.35it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 55.55it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 52.62it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 54.53it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 56.81it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 60.99it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 55.55it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 61.53it/s]
+[2026-06-29 14:27:47] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=25 stream=True
+[2026-06-29 14:27:54] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=02df0a10054b status=existing messages=27 stream=True
+[2026-06-30 13:40:30] INFO:owui-session-server:Removed expired session 02df0a10054b
+[2026-06-30 13:40:30] INFO:sdialog.util:Loading Ollama model: qwen3:30b-thinking
+[2026-06-30 13:40:47] INFO:owui-session-server:Created counselor session 196a8c0d056f model=university-counselor-ITA:latest lang=Italian rag=ita backend=ollama:qwen3:30b-thinking
+[2026-06-30 13:40:47] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=196a8c0d056f status=new messages=1 stream=True

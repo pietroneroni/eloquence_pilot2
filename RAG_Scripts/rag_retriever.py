@@ -1,7 +1,8 @@
-# rag_retriever.py
 from __future__ import annotations
 
 import json
+import re
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -20,18 +21,31 @@ def _norm(s: str) -> str:
     return (s or "").casefold().strip()
 
 
+def _ascii_norm(s: str) -> str:
+    t = unicodedata.normalize("NFKD", s or "")
+    t = "".join(ch for ch in t if not unicodedata.combining(ch))
+    t = t.casefold()
+    t = re.sub(r"[^a-z0-9]+", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def _norm_macro(s: str) -> str:
-    x = _norm(s)
+    x = _ascii_norm(s)
     aliases = {
         "north": "nord",
         "northern italy": "nord",
+        "nord": "nord",
         "center": "centro",
         "centre": "centro",
         "central italy": "centro",
+        "centro": "centro",
         "south": "sud",
         "southern italy": "sud",
+        "sud": "sud",
         "islands": "isole",
         "the italian islands": "isole",
+        "italian islands": "isole",
+        "isole": "isole",
     }
     return aliases.get(x, x)
 
@@ -112,16 +126,18 @@ class RAGRetriever:
                     self.chunks.append(item)
 
     def search(
-            self,
-            query: str,
-            *,
-            top_k: int = 5,
-            university: str | None = None,
-            course_contains: str | None = None,
-            section_contains: str | None = None,
-            preferred_region: str | None = None,
-            preferred_macroarea: str | None = None,
-            dedupe_by_course: bool = True,
+        self,
+        query: str,
+        *,
+        top_k: int = 5,
+        university: str | None = None,
+        course_contains: str | None = None,
+        section_contains: str | None = None,
+        preferred_region: str | None = None,
+        strict_region: bool = False,
+        preferred_macroarea: str | None = None,
+        strict_macroarea: bool = False,
+        dedupe_by_course: bool = True,
     ) -> list[dict[str, Any]]:
         q = (query or "").strip()
         if not q:
@@ -132,7 +148,7 @@ class RAGRetriever:
         uni_f = _norm(university) if university else ""
         course_f = _norm(course_contains) if course_contains else ""
         section_f = _norm(section_contains) if section_contains else ""
-        pref_region = _norm(preferred_region) if preferred_region else ""
+        pref_region = _ascii_norm(preferred_region) if preferred_region else ""
         pref_macro = _norm_macro(preferred_macroarea) if preferred_macroarea else ""
 
         emb = self.model.encode([q], normalize_embeddings=True)
@@ -155,7 +171,7 @@ class RAGRetriever:
             course_name = _norm(str(meta.get("COURSE", "")))
             course_code = _norm(str(meta.get("COURSE_CODE", "")))
             section_name = _norm(str(meta.get("SECTION", "")))
-            hit_region = _norm(str(meta.get("REGION", "")))
+            hit_region = _ascii_norm(str(meta.get("REGION", "")))
             hit_macro = _norm_macro(str(meta.get("MACROAREA", "")))
 
             if uni_f and uni_f not in university_name:
@@ -167,10 +183,16 @@ class RAGRetriever:
             if section_f and section_f not in section_name:
                 continue
 
+            if strict_region and pref_region and hit_region != pref_region:
+                continue
+
+            if strict_macroarea and pref_macro and hit_macro != pref_macro:
+                continue
+
             bonus = 0.0
 
             if pref_region and hit_region == pref_region:
-                bonus += 0.15
+                bonus += 0.20
 
             if pref_macro and hit_macro == pref_macro:
                 bonus += 0.10

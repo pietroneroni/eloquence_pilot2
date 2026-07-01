@@ -167,6 +167,64 @@ def _lang_name(dialog_language: str) -> str:
     return "Italian" if (dialog_language or "").strip().lower().startswith("it") else "English"
 
 
+def _rag_lang(dialog_language: str) -> str:
+    explicit = os.getenv("SDIALOG_RAG_LANG", "").strip().lower()
+    if explicit in {"eng", "ita"}:
+        return explicit
+    if explicit in {"en", "english", "inglese"}:
+        return "eng"
+    if explicit in {"it", "italian", "italiano"}:
+        return "ita"
+    return "ita" if (dialog_language or "").strip().lower().startswith("it") else "eng"
+
+
+def _first_nonempty_string(*values: Any) -> Optional[str]:
+    for value in values:
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return None
+
+
+def _stable_session_key_from_request(request: Any, raw_request: Optional[Request] = None) -> Optional[str]:
+    """Extract a stable OpenWebUI/chat session id when the client provides one.
+
+    OpenAI-compatible payloads do not standardize chat_id, but OpenWebUI/proxies
+    may pass it as an extra JSON field, metadata field, or header. If no stable
+    id is present, the server falls back to transcript matching.
+    """
+    headers = raw_request.headers if raw_request is not None else {}
+    header_value = _first_nonempty_string(
+        headers.get("x-openwebui-chat-id") if headers else None,
+        headers.get("x-chat-id") if headers else None,
+        headers.get("x-conversation-id") if headers else None,
+        headers.get("x-session-id") if headers else None,
+    )
+    if header_value:
+        return header_value
+
+    candidates = []
+    for key in ("chat_id", "conversation_id", "session_id", "thread_id"):
+        candidates.append(getattr(request, key, None))
+
+    metadata = getattr(request, "metadata", None)
+    if isinstance(metadata, dict):
+        for key in ("chat_id", "conversation_id", "session_id", "thread_id"):
+            candidates.append(metadata.get(key))
+
+    # Pydantic v1 stores extra fields as attributes; Pydantic v2 may expose them
+    # through model_extra. Support both without depending on a specific version.
+    extra = getattr(request, "model_extra", None)
+    if isinstance(extra, dict):
+        for key in ("chat_id", "conversation_id", "session_id", "thread_id"):
+            candidates.append(extra.get(key))
+        meta = extra.get("metadata")
+        if isinstance(meta, dict):
+            for key in ("chat_id", "conversation_id", "session_id", "thread_id"):
+                candidates.append(meta.get(key))
+
+    return _first_nonempty_string(*candidates)
+
+
 def resolve_model(model: str) -> Tuple[str, str]:
     """Return canonical model id and the forced listener gender for that model."""
     key = (model or "").strip()
@@ -297,8 +355,10 @@ def _get_project_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
-def _default_lancedb_dir() -> Path:
-    return _get_project_root() / "RAG_University_Eng" / "Embeddings" / "lancedb"
+def _default_lancedb_dir(lang: Optional[str] = None) -> Path:
+    rag_lang = lang or _rag_lang(DIALOG_LANGUAGE)
+    dataset_dir = "RAG_University_Ita" if rag_lang == "ita" else "RAG_University_Eng"
+    return _get_project_root() / dataset_dir / "Embeddings" / "lancedb"
 
 
 def _ensure_lancedb_env() -> None:
@@ -374,9 +434,10 @@ def get_shared_retriever() -> TimedRetriever:
 
             _SHARED_RETRIEVER = TimedRetriever(
                 LanceDBUniversityRetriever(
+                    lang=_rag_lang(DIALOG_LANGUAGE),
                     lancedb_dir=os.environ.get(
                         "SDIALOG_LANCEDB_DIR",
-                        str(_get_project_root() / "RAG_University_Eng" / "Embeddings" / "lancedb"),
+                        str(_default_lancedb_dir(_rag_lang(DIALOG_LANGUAGE))),
                     ),
                     table_name=os.environ.get("SDIALOG_LANCEDB_TABLE", "universities"),
                 )
@@ -386,6 +447,7 @@ def get_shared_retriever() -> TimedRetriever:
 
             _SHARED_RETRIEVER = TimedRetriever(
                 RAGRetriever(
+                    lang=_rag_lang(DIALOG_LANGUAGE),
                     faiss_path=os.environ.get("SDIALOG_RAG_FAISS", ""),
                     chunks_path=os.environ.get("SDIALOG_RAG_CHUNKS", ""),
                 )
@@ -411,6 +473,7 @@ class CounselorSession:
     model_id: str
     forced_gender: str
     agent: Agent
+    session_key: Optional[str] = None
     transcript: List[Tuple[str, str]] = field(default_factory=list)
     rag_globals: RagGlobalsSnapshot = field(default_factory=RagGlobalsSnapshot)
     listener_mem: Dict[str, Any] = field(default_factory=rag_state.canonical_listener_memory)
@@ -544,6 +607,7 @@ def create_new_session(
     model_id: str,
     forced_gender: str,
     initial_transcript: Optional[List[Tuple[str, str]]] = None,
+    session_key: Optional[str] = None,
 ) -> CounselorSession:
     sid = uuid.uuid4().hex[:12]
 
@@ -553,6 +617,7 @@ def create_new_session(
         model_id=model_id,
         forced_gender=forced_gender,
         agent=None,  # type: ignore[arg-type]
+        session_key=session_key,
         transcript=list(initial_transcript or []),
     )
     session.listener_mem = _force_gender_in_memory(session.listener_mem, forced_gender)
@@ -592,6 +657,7 @@ def find_or_create_session(
     model_id: str,
     forced_gender: str,
     messages: List[ChatMessage],
+    session_key: Optional[str] = None,
 ) -> Tuple[CounselorSession, str]:
     """
     Open WebUI's standard OpenAI-compatible request usually does not include a
@@ -608,6 +674,13 @@ def find_or_create_session(
     prefix_users = _user_only(prefix)
 
     with SESSIONS_LOCK:
+        # 0) Preferred path: stable client-provided session/chat id.
+        if session_key:
+            for session in SESSIONS.values():
+                if session.model_id == model_id and session.session_key == session_key:
+                    session.last_seen_at = time.time()
+                    return session, "existing-session-key"
+
         # 1) Exact match: normal path.
         for session in SESSIONS.values():
             if session.model_id == model_id and session.transcript == prefix:
@@ -646,6 +719,7 @@ def find_or_create_session(
             model_id=model_id,
             forced_gender=forced_gender,
             initial_transcript=prefix,
+            session_key=session_key,
         )
         SESSIONS[session.session_id] = session
         return session, "new"
@@ -839,10 +913,12 @@ def chat_completions(request: ChatCompletionRequest, raw_request: Request):
             )
         return JSONResponse(content=_chat_completion_payload(request, content))
 
+    session_key = _stable_session_key_from_request(request, raw_request)
     session, status = find_or_create_session(
         model_id=model_id,
         forced_gender=forced_gender,
         messages=request.messages,
+        session_key=session_key,
     )
     logger.info(
         "POST /v1/chat/completions model=%s forced_gender=%s session=%s status=%s messages=%d stream=%s",
@@ -910,7 +986,7 @@ def main() -> None:
     logger.info("Counselor model backend: %s", COUNSELOR_MODEL)
     logger.info("OpenAI-compatible LLM base URL: %s", OPENAI_API_BASE)
     logger.info("Dialog language: %s", DIALOG_LANGUAGE)
-    logger.info("SESSION MATCHING: exact + user-only fallback enabled")
+    logger.info("SESSION MATCHING: stable session key + exact + user-only fallback enabled")
     logger.info("FORCED_GENDER: %s", FORCED_GENDER)
 
     uvicorn.run(
