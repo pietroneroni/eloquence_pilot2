@@ -2,18 +2,14 @@ C:\Users\Drako\PycharmProjects\Sdialog\university_counseling\owui_session_server
   class ChatMessage(BaseModel):
 C:\Users\Drako\PycharmProjects\Sdialog\university_counseling\owui_session_server.py:160: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
   class ChatCompletionRequest(BaseModel):
-[2026-06-29 13:28:15] INFO:owui-session-server:Starting session server on 0.0.0.0:1334
-[2026-06-29 13:28:15] INFO:owui-session-server:Models: university-counselor-ENG:latest
-[2026-06-29 13:28:15] INFO:owui-session-server:Aliases: {'university-counselor-ENG:latest': 'university-counselor-ENG:latest', 'university-counselor-ENG': 'university-counselor-ENG:latest', 'university-counselor:latest': 'university-counselor-ENG:latest', 'university-counselor': 'university-counselor-ENG:latest'}
-[2026-06-29 13:28:15] INFO:owui-session-server:Process model mode: ENG
-[2026-06-29 13:28:15] INFO:owui-session-server:Counselor backend for university-counselor-ENG:latest: ollama:qwen3:30b-thinking
-INFO:     Started server process [33308]
+[2026-07-01 14:59:19] INFO:owui-session-server:Starting session server on 0.0.0.0:1334
+[2026-07-01 14:59:19] INFO:owui-session-server:Models: university-counselor-ENG:latest
+[2026-07-01 14:59:19] INFO:owui-session-server:Aliases: {'university-counselor-ENG:latest': 'university-counselor-ENG:latest', 'university-counselor-ENG': 'university-counselor-ENG:latest', 'university-counselor:latest': 'university-counselor-ENG:latest', 'university-counselor': 'university-counselor-ENG:latest'}
+[2026-07-01 14:59:19] INFO:owui-session-server:Process model mode: ENG
+[2026-07-01 14:59:19] INFO:owui-session-server:Counselor backend for university-counselor-ENG:latest: ollama:qwen3:30b-thinking
+INFO:     Started server process [38532]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:1334 (Press CTRL+C to quit)
-[2026-06-30 13:59:36] INFO:sdialog.util:Loading Ollama model: qwen3:30b-thinking
-[2026-06-30 13:59:45] INFO:owui-session-server:Using LanceDB index for eng: C:\Users\Drako\PycharmProjects\Sdialog\RAG_University_Eng\Embeddings\lancedb table=universities
-[2026-06-30 13:59:45] INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
-[2026-06-30 13:59:45] INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: intfloat/multilingual-e5-base
-[2026-06-30 13:59:48] INFO:owui-session-server:Created counselor session 87b296439c5c model=university-counselor-ENG:latest lang=English rag=eng backend=ollama:qwen3:30b-thinking
-[2026-06-30 13:59:48] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=87b296439c5c status=new messages=1 stream=True
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 1334): di norma è consentito un solo utilizzo di ogni indirizzo di socket (protocollo/indirizzo di rete/porta)
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.

@@ -527,6 +527,142 @@ def _make_session_postprocess(session: CounselorSession):
     return _postprocess
 
 
+
+# -----------------------------------------------------------------------------
+# OpenAI-compatible strict chat-template compatibility
+# -----------------------------------------------------------------------------
+
+STRICT_SYSTEM_FIRST = os.getenv("SDIALOG_STRICT_SYSTEM_FIRST", "1").strip().lower() in {
+    "1", "true", "yes", "on"
+}
+
+
+def _lc_message_role(message: Any) -> Optional[str]:
+    """Return a normalized OpenAI-style role for LangChain/dict messages."""
+    if isinstance(message, dict):
+        role = message.get("role") or message.get("type")
+    else:
+        role = getattr(message, "role", None) or getattr(message, "type", None)
+        if role is None:
+            cls_name = message.__class__.__name__.lower()
+            if "system" in cls_name:
+                role = "system"
+            elif "human" in cls_name:
+                role = "human"
+            elif "ai" in cls_name or "assistant" in cls_name:
+                role = "ai"
+    if role in {"human", "user"}:
+        return "user"
+    if role in {"ai", "assistant"}:
+        return "assistant"
+    if role == "system":
+        return "system"
+    return str(role) if role is not None else None
+
+
+def _lc_message_content(message: Any) -> str:
+    if isinstance(message, dict):
+        content = message.get("content", "")
+    else:
+        content = getattr(message, "content", "")
+    if isinstance(content, str):
+        return content
+    try:
+        return json.dumps(content, ensure_ascii=False)
+    except Exception:
+        return str(content)
+
+
+def _make_lc_message(role: str, content: str) -> Any:
+    """Create a LangChain chat message, falling back to dict if unavailable."""
+    try:
+        from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+
+        if role == "system":
+            return SystemMessage(content=content)
+        if role == "assistant":
+            return AIMessage(content=content)
+        return HumanMessage(content=content)
+    except Exception:
+        return {"role": "assistant" if role == "assistant" else "system" if role == "system" else "user", "content": content}
+
+
+def _strict_system_first_messages(messages: Any) -> Any:
+    """
+    Some OpenAI-compatible servers enforce chat templates where all system
+    messages must be before the first user/assistant message. SDialog can insert
+    additional system/context messages later in the memory. This rewrites late
+    system messages into the next user message so strict backends do not reject
+    the request with errors such as: Unexpected role 'system' after role
+    'assistant'.
+    """
+    if not STRICT_SYSTEM_FIRST or not isinstance(messages, list):
+        return messages
+
+    fixed: List[Any] = []
+    pending_late_system: List[str] = []
+    seen_non_system = False
+    changed = False
+
+    for message in messages:
+        role = _lc_message_role(message)
+        content = _lc_message_content(message)
+
+        if role == "system":
+            if seen_non_system:
+                if content.strip():
+                    pending_late_system.append(content.strip())
+                changed = True
+                continue
+            fixed.append(message)
+            continue
+
+        if role == "user" and pending_late_system:
+            merged = (
+                "[Additional system/context instructions]\n"
+                + "\n\n".join(pending_late_system)
+                + "\n\n[User message]\n"
+                + content
+            )
+            fixed.append(_make_lc_message("user", merged))
+            pending_late_system = []
+            changed = True
+        else:
+            fixed.append(message)
+
+        if role is not None:
+            seen_non_system = True
+
+    if pending_late_system:
+        addition = "\n\n[Additional system/context instructions]\n" + "\n\n".join(pending_late_system)
+        for idx in range(len(fixed) - 1, -1, -1):
+            if _lc_message_role(fixed[idx]) == "user":
+                fixed[idx] = _make_lc_message("user", _lc_message_content(fixed[idx]) + addition)
+                changed = True
+                break
+        else:
+            fixed.insert(0, _make_lc_message("system", "\n\n".join(pending_late_system)))
+            changed = True
+
+    if changed:
+        logger.debug("Rewrote late system messages for strict OpenAI-compatible backend.")
+    return fixed
+
+
+def _patch_agent_strict_system_first(agent: Any) -> Any:
+    if not STRICT_SYSTEM_FIRST:
+        return agent
+    original = getattr(agent, "_get_llm_response", None)
+    if not callable(original):
+        return agent
+
+    def _wrapped_get_llm_response(messages: Any, *args: Any, **kwargs: Any) -> Any:
+        return original(_strict_system_first_messages(messages), *args, **kwargs)
+
+    setattr(agent, "_get_llm_response", _wrapped_get_llm_response)
+    return agent
+
+
 # -----------------------------------------------------------------------------
 # Counselor factory
 # -----------------------------------------------------------------------------
@@ -556,6 +692,7 @@ def build_session_counselor(session: CounselorSession) -> Agent:
         think=ENABLE_AGENT_THINKING,
         postprocess_fn=_make_session_postprocess(session),
     )
+    counselor_agent = _patch_agent_strict_system_first(counselor_agent)
 
     counselor_agent = counselor_agent | UniversityCounselorFlowOrchestrator(
         retriever=get_shared_retriever(session.rag_lang),
