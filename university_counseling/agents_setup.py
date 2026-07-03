@@ -59,9 +59,19 @@ _DATE_RE = re.compile(r"\b(\d{4}-\d{2}-\d{2}|\d{1,2}[/-]\d{1,2}[/-]\d{2,4})\b")
 _INTERNAL_LABEL_LINE_RE = re.compile(
     r"(?im)^\s*(?:[-*]\s*)?(?:inferred\.)?(?:field_of_interest|listener_patch)\s*[:=].*$"
 )
+_LEFTOVER_LISTENER_BLOCK_RE = re.compile(
+    r"(?is)<\s*(?:LISTENER_PATCH|listener\s+memory\s+update)\s*>"
+    r"[\s\S]*?"
+    r"(?:<\s*/\s*(?:LISTENER_PATCH|listener\s+memory\s+update)\s*>|$)"
+)
+_STRAY_LISTENER_TAG_RE = re.compile(
+    r"(?is)<\s*/?\s*(?:LISTENER_PATCH|listener\s+memory\s+update)\s*>"
+)
+_INLINE_LISTENER_TOKEN_RE = re.compile(
+    r"(?i)(?<![A-Za-z0-9_])listener_patch(?![A-Za-z0-9_])"
+)
 _INTERNAL_LABEL_REPLACEMENTS = {
     "field_of_interest": "area of interest",
-    "listener_patch": "listener memory update",
     "computer_science": "computer science",
     "engineering_technology": "engineering and technology",
     "arts_design": "arts and design",
@@ -109,7 +119,10 @@ def hide_internal_labels(text: str) -> str:
     if not t:
         return ""
 
+    t = _LEFTOVER_LISTENER_BLOCK_RE.sub("", t)
+    t = _STRAY_LISTENER_TAG_RE.sub("", t)
     t = _INTERNAL_LABEL_LINE_RE.sub("", t)
+    t = _INLINE_LISTENER_TOKEN_RE.sub("", t)
     for raw, visible in _INTERNAL_LABEL_REPLACEMENTS.items():
         t = re.sub(
             rf"(?<![A-Za-z0-9_]){re.escape(raw)}(?![A-Za-z0-9_])",

@@ -392,7 +392,7 @@ CHOICE_REPLY_OPTIONS = {
     },
 }
 
-_OPT_RX = re.compile(r"\b(?:option|opzione)\s*([1-3])\b", re.I)
+_OPT_RX = re.compile(r"\b(?:option|opzione)\s*(?:n(?:um(?:ero)?)?\.?\s*)?([1-3])\b", re.I)
 
 _FLOW_YES_RX = re.compile(
     r"\b(yes|yeah|yep|sure|definitely|absolutely|sì|si|certo|assolutamente)\b",
@@ -404,6 +404,27 @@ _FLOW_NO_RX = re.compile(
     re.I,
 )
 _NUM_ONLY_RX = re.compile(r"^\s*([1-3])\b")
+_NUM_WORD_ONLY_RX = re.compile(
+    r"^\s*(?:(?:la|il|l[’'])\s*)?"
+    r"(uno|una|primo|prima|due|seconda|tre|terzo|terza|one|first|two|three|third)\b",
+    re.IGNORECASE,
+)
+_NUM_WORD_TO_DIGIT = {
+    "uno": 1,
+    "una": 1,
+    "primo": 1,
+    "prima": 1,
+    "one": 1,
+    "first": 1,
+    "due": 2,
+    "seconda": 2,
+    "two": 2,
+    "tre": 3,
+    "terzo": 3,
+    "terza": 3,
+    "three": 3,
+    "third": 3,
+}
 
 _SINGLE_OPTION_ACCEPT_RX = re.compile(
     r"\b("
@@ -430,12 +451,44 @@ _ENTITY_RX = re.compile(
     re.IGNORECASE,
 )
 
-_CLOSE_RX = re.compile(r"\b(thanks|thank you|bye|good luck|take care|goodbye)\b", re.I)
+_CLOSE_RX = re.compile(
+    r"\b("
+    r"thanks|thank you|bye|good luck|take care|goodbye|"
+    r"grazie|grazie mille|ok grazie|ciao|arrivederci|a presto|buona giornata|buona serata"
+    r")\b",
+    re.I,
+)
+_CLARIFICATION_REQUEST_RX = re.compile(
+    r"\b("
+    r"non\s+ho\s+capito|non\s+capisco|non\s+mi\s+(?:e|e'|\S{1,3})\s+chiaro|"
+    r"puoi\s+ripetere|puoi\s+spiegare|cosa\s+intendi|"
+    r"i\s+do\s+not\s+understand|i\s+don't\s+understand|what\s+do\s+you\s+mean|can\s+you\s+repeat"
+    r")\b",
+    re.I,
+)
 
 _LISTENER_PATCH_BLOCK_RX = re.compile(
     r"<LISTENER_PATCH>\s*(\{[\s\S]*?\})\s*</LISTENER_PATCH>",
     re.IGNORECASE,
 )
+_BACKGROUND_STUDENT_VOICE_LEAK_RX = re.compile(
+    r"\b("
+    r"ho\s+lavorato|ho\s+studiato|penso\s+che\s+la\s+mia|la\s+mia\s+passione|"
+    r"vorrei\s+studiare|i\s+studied|i\s+worked|my\s+passion|i\s+would\s+like\s+to\s+study"
+    r")\b",
+    re.I,
+)
+
+
+def _background_reply_looks_valid(body: str, expected: str) -> bool:
+    clean = re.sub(r"\s+", " ", body or "").strip()
+    if not clean:
+        return False
+    if "?" not in clean:
+        return False
+    if _BACKGROUND_STUDENT_VOICE_LEAK_RX.search(clean):
+        return False
+    return True
 
 _RIASEC_ALLOWED_LABELS = {
     "realistic": "Realistic",
@@ -2418,7 +2471,7 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
     if expected and phase.startswith("background_"):
         if not _exact_background_questions_enabled():
             body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
-            if body:
+            if _background_reply_looks_valid(body, expected):
                 return (body + ("\n" + patch_block if patch_block else "")).strip()
         out = f"{_t('Thanks, that helps.', 'Grazie, è molto utile.')}\n{expected}".strip()
         if patch_block:
@@ -2844,15 +2897,21 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         # Selection detection is deterministic protocol-state handling.
         # It is intentionally separate from listener memory.
+        option_number = None
         mo = _OPT_RX.search(student_utt or "")
-        if not mo:
+        if mo:
+            option_number = int(mo.group(1))
+        else:
             mnum = _NUM_ONLY_RX.search(student_utt or "")
             if mnum:
-                mo = mnum
+                option_number = int(mnum.group(1))
+            else:
+                mword = _NUM_WORD_ONLY_RX.search(student_utt or "")
+                if mword:
+                    option_number = _NUM_WORD_TO_DIGIT.get(mword.group(1).lower())
 
-        if mo and self._advice_given:
-            n = int(mo.group(1))
-            self._commit_selected_option_number(n)
+        if option_number and self._advice_given:
+            self._commit_selected_option_number(option_number)
         elif self._advice_given:
             shown = self._displayed_advice_options()
             if len(shown) == 1 and _SINGLE_OPTION_ACCEPT_RX.search(student_utt or ""):
@@ -3783,10 +3842,29 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             set_listener_patch_source_turn(self._student_turn_count)
             self._update_slots_from_student(student_utt)
 
+        if (
+            student_utt
+            and self._flow_stage == "background"
+            and _CLARIFICATION_REQUEST_RX.search(student_utt)
+            and self.BG_QUESTIONS
+        ):
+            idx = min(max(self._bg_i, 0), len(self.BG_QUESTIONS) - 1)
+            q = self.BG_QUESTIONS[idx]
+            update_last_rag_state("", phase=f"background_q{idx + 1}", expected_verbatim=q)
+            return (
+                "PHASE: CLARIFY BACKGROUND QUESTION\n"
+                "TASK:\n"
+                "- Acknowledge that the previous question was unclear in one short sentence.\n"
+                "- Rephrase the same background question in simpler words.\n"
+                "- Ask only this one question and do not advance to a new topic.\n"
+                "- Do NOT append a listener patch, because the student did not provide new profile evidence.\n"
+                f"CANONICAL QUESTION FROM SOCIAL_PRACTICE:\n{q}\n"
+            )
+
         if self._flow_stage == "riasec" and len(self._riasec_answers) < 8:
             self._riasec_answers.append(student_utt)
 
-        if self._advice_given and _CLOSE_RX.search(student_utt or ""):
+        if self._advice_given and not self._selected_option_committed_this_turn and _CLOSE_RX.search(student_utt or ""):
             update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="wrapup", advice_options=self._displayed_advice_options())
 
             riasec_labels = (self._listener_memory.get("inferred", {}) or {}).get("riasec_attitudes")
@@ -4245,5 +4323,3 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
     def can_finish(self, utterance: str) -> bool:
         return self._finished
-
-
