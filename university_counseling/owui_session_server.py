@@ -153,6 +153,15 @@ logging.basicConfig(
 logger = logging.getLogger("owui-session-server")
 
 
+def _log_dir() -> Path:
+    return Path(os.getenv("OWUI_LOG_DIR", str(_get_project_root() / "logs")))
+
+
+def _dialog_log_path() -> Path:
+    label = OWUI_PROCESS_MODEL.lower() if OWUI_PROCESS_MODEL else "both"
+    return _log_dir() / f"dialog_{label}_{PORT}.jsonl"
+
+
 @dataclass(frozen=True)
 class ModelConfig:
     model_id: str
@@ -370,12 +379,34 @@ def _default_embeddings_dir(rag_lang: str) -> Path:
     return _get_project_root() / dataset_dir / "Embeddings"
 
 
+def _path_points_to_other_bundled_rag(path_value: str, rag_lang: str) -> bool:
+    other_dataset = "RAG_University_Eng" if rag_lang == "ita" else "RAG_University_Ita"
+    try:
+        return other_dataset.lower() in {part.lower() for part in Path(path_value).parts}
+    except Exception:
+        return other_dataset.lower() in str(path_value).replace("\\", "/").lower()
+
+
 def _env_for_lang(base: str, rag_lang: str) -> Optional[str]:
     specific = os.getenv(f"{base}_{rag_lang.upper()}", "").strip()
     if specific:
         return specific
     generic = os.getenv(base, "").strip()
-    return generic or None
+    if not generic:
+        return None
+    if base in {"SDIALOG_LANCEDB_DIR", "SDIALOG_RAG_FAISS", "SDIALOG_RAG_CHUNKS"}:
+        if _path_points_to_other_bundled_rag(generic, rag_lang):
+            logger.warning(
+                "Ignoring generic %s=%s for rag_lang=%s because it points to the other bundled RAG dataset. "
+                "Use %s_%s to override intentionally.",
+                base,
+                generic,
+                rag_lang,
+                base,
+                rag_lang.upper(),
+            )
+            return None
+    return generic
 
 
 def get_shared_retriever(rag_lang: str) -> TimedRetriever:
@@ -387,7 +418,8 @@ def get_shared_retriever(rag_lang: str) -> TimedRetriever:
         if cache_key in _SHARED_RETRIEVERS:
             return _SHARED_RETRIEVERS[cache_key]
 
-        _configure_rag_env()
+        os.environ["SDIALOG_RAG_LANG"] = rag_lang
+        _configure_rag_env("Italian" if rag_lang == "ita" else "English")
 
         if backend == "lancedb":
             from RAG_Scripts.lancedb_university_retriever import LanceDBUniversityRetriever  # type: ignore
@@ -699,7 +731,7 @@ def _budget_guard_lc_messages(messages: Any) -> Any:
                 before_tokens,
                 BSC_MAX_INPUT_TOKENS,
             )
-    return messages
+        return messages
 
     normalized: List[Tuple[str, str, bool, Any]] = []
     for msg in messages:
@@ -893,14 +925,6 @@ def _patch_agent_strict_system_first(agent: Any) -> Any:
     setattr(agent, "_get_llm_response", _wrapped_get_llm_response)
     return agent
 
-    def _wrapped_get_llm_response(messages: Any, *args: Any, **kwargs: Any) -> Any:
-        messages = _strict_system_first_messages(messages)
-        messages = _budget_guard_lc_messages(messages)
-        return original(messages, *args, **kwargs)
-
-    setattr(agent, "_get_llm_response", _wrapped_get_llm_response)
-    return agent
-
 
 # -----------------------------------------------------------------------------
 # Counselor factory
@@ -1087,6 +1111,109 @@ def update_session_transcript(session: CounselorSession, request_messages: List[
     session.last_seen_at = time.time()
 
 
+def _clip_log_text(text: Any, max_chars: int = 12000) -> str:
+    value = str(text or "")
+    if len(value) <= max_chars:
+        return value
+    keep = max(0, max_chars - 80)
+    return value[:keep].rstrip() + "\n[...log text clipped...]"
+
+
+def _json_safe(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {str(k): _json_safe(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_json_safe(v) for v in value]
+    if isinstance(value, set):
+        return sorted(str(x) for x in value)
+    if isinstance(value, (str, int, float, bool)) or value is None:
+        return value
+    if hasattr(value, "__dict__"):
+        return _json_safe(vars(value))
+    return str(value)
+
+
+def _rag_state_log_summary(snapshot: RagGlobalsSnapshot) -> Dict[str, Any]:
+    state = snapshot.last_rag_state
+    if state is None:
+        return {}
+    data = _json_safe(state)
+    if isinstance(data, dict):
+        if "ctx" in data:
+            data["ctx_chars"] = len(str(data.get("ctx") or ""))
+            data["ctx_preview"] = _clip_log_text(data.get("ctx"), 1200)
+            data.pop("ctx", None)
+        if "query" in data:
+            data["query"] = _clip_log_text(data.get("query"), 1000)
+        return data
+    return {"state": data}
+
+
+def _listener_events_for_turn(session: CounselorSession, turn_index: int) -> List[Dict[str, Any]]:
+    events = session.rag_globals.listener_patch_events or []
+    return copy.deepcopy([
+        event
+        for event in events
+        if isinstance(event, dict) and event.get("source_turn") == turn_index
+    ])
+
+
+def _write_dialog_turn_log(
+    session: CounselorSession,
+    *,
+    request_messages: List[ChatMessage],
+    status: str,
+    user_text: str,
+    assistant_text: str,
+    stream: bool,
+) -> None:
+    try:
+        turn_index = len(_user_only(session.transcript))
+        request_transcript = _request_transcript(request_messages)
+        payload = {
+            "ts": datetime.now().isoformat(timespec="seconds"),
+            "event": "dialog_turn",
+            "session_id": session.session_id,
+            "session_key": session.session_key,
+            "model_id": session.model_id,
+            "dialog_language": session.dialog_language,
+            "rag_lang": session.rag_lang,
+            "backend_model": session.counselor_model,
+            "status": status,
+            "turn_index": turn_index,
+            "stream": bool(stream),
+            "request_message_count": len(request_messages),
+            "request_transcript_tail": [
+                {"role": role, "content": _clip_log_text(text, 2000)}
+                for role, text in request_transcript[-8:]
+            ],
+            "user": _clip_log_text(user_text),
+            "assistant": _clip_log_text(assistant_text),
+            "listener_memory": _json_safe(session.listener_mem),
+            "listener_patch_events_this_turn": _json_safe(_listener_events_for_turn(session, turn_index)),
+            "listener_patch_events_recent": _json_safe(session.rag_globals.listener_patch_events[-5:]),
+            "listener_patch_events_total": len(session.rag_globals.listener_patch_events),
+            "listener_patches_total": len(session.rag_globals.listener_patch_history),
+            "selected_option_event": _json_safe(session.rag_globals.selected_option_event),
+            "rag_state": _rag_state_log_summary(session.rag_globals),
+        }
+
+        path = _dialog_log_path()
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as f:
+            f.write(json.dumps(payload, ensure_ascii=False, sort_keys=True) + "\n")
+
+        logger.info(
+            "Logged dialog turn session=%s turn=%s phase=%s log=%s",
+            session.session_id,
+            turn_index,
+            payload.get("rag_state", {}).get("phase"),
+            path,
+        )
+    except Exception:
+        logger.exception("Could not write dialog turn log for session %s", session.session_id)
+
+
 # -----------------------------------------------------------------------------
 # FastAPI app
 # -----------------------------------------------------------------------------
@@ -1119,6 +1246,7 @@ def health() -> Dict[str, Any]:
         "sessions": len(session_ids),
         "indexed_sessions": len(SESSIONS_BY_KEY),
         "session_ids": session_ids,
+        "dialog_log": str(_dialog_log_path()),
     }
 
 
@@ -1209,6 +1337,14 @@ def chat_completions(request: ChatCompletionRequest, raw_request: Request):
     try:
         assistant_text = run_counselor_turn(session, last_user_text)
         update_session_transcript(session, request.messages, last_user_text, assistant_text)
+        _write_dialog_turn_log(
+            session,
+            request_messages=request.messages,
+            status=status,
+            user_text=last_user_text,
+            assistant_text=assistant_text,
+            stream=bool(request.stream),
+        )
     except Exception as exc:
         logger.exception("Error while processing session %s", session.session_id)
         raise HTTPException(status_code=500, detail=str(exc)) from exc

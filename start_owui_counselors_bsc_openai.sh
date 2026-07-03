@@ -30,10 +30,12 @@ ENG_PORT="${OWUI_ENG_PORT:-1334}"
 DEFAULT_MODEL="openai:Mistral-Small-3.1-24B-Instruct-2503"
 DEFAULT_BASE="http://127.0.0.1:58091/v1"
 
-ITA_MODEL="${COUNSELOR_MODEL_ITA:-$DEFAULT_MODEL}"
-ENG_MODEL="${COUNSELOR_MODEL_ENG:-$DEFAULT_MODEL}"
-ITA_BASE="${SDIALOG_OPENAI_API_BASE_ITA:-${OPENAI_API_BASE_ITA:-$DEFAULT_BASE}}"
-ENG_BASE="${SDIALOG_OPENAI_API_BASE_ENG:-${OPENAI_API_BASE_ENG:-$DEFAULT_BASE}}"
+COMMON_MODEL="${COUNSELOR_MODEL:-${SDIALOG_MODEL_URI:-$DEFAULT_MODEL}}"
+ITA_MODEL="${COUNSELOR_MODEL_ITA:-${SDIALOG_MODEL_URI_ITA:-$COMMON_MODEL}}"
+ENG_MODEL="${COUNSELOR_MODEL_ENG:-${SDIALOG_MODEL_URI_ENG:-$COMMON_MODEL}}"
+COMMON_BASE="${SDIALOG_OPENAI_API_BASE:-${OPENAI_API_BASE:-$DEFAULT_BASE}}"
+ITA_BASE="${SDIALOG_OPENAI_API_BASE_ITA:-${OPENAI_API_BASE_ITA:-$COMMON_BASE}}"
+ENG_BASE="${SDIALOG_OPENAI_API_BASE_ENG:-${OPENAI_API_BASE_ENG:-$COMMON_BASE}}"
 API_KEY="${SDIALOG_OPENAI_API_KEY:-${OPENAI_API_KEY:-kk}}"
 
 SESSION_TTL_SECONDS="${OWUI_SESSION_TTL_SECONDS:-3600}"
@@ -74,39 +76,28 @@ Usage: $0 [options]
 Options:
   --project-root PATH       Project root containing university_counseling/.
   --python PATH             Python executable. Default: python
-  --host HOST               FastAPI bind host. Default: 0.0.0.0
+  --model MODEL             SDialog model for both ITA and ENG. Default: $DEFAULT_MODEL
+  --base URL                OpenAI-compatible /v1 backend for both ITA and ENG. Default: $DEFAULT_BASE
   --ita-port PORT           ITA bridge port. Default: 1333
   --eng-port PORT           ENG bridge port. Default: 1334
-  --ita-model MODEL         SDialog model for ITA. Default: $DEFAULT_MODEL
-  --eng-model MODEL         SDialog model for ENG. Default: $DEFAULT_MODEL
-  --ita-base URL            OpenAI-compatible /v1 endpoint for ITA. Default: $DEFAULT_BASE
-  --eng-base URL            OpenAI-compatible /v1 endpoint for ENG. Default: $DEFAULT_BASE
-  --api-key KEY             API key passed to the backend. Default: kk
-  --top-k N                 RAG top_k. Default: $TOP_K
-  --candidate-pool-size N   RAG candidate pool size. Default: $CANDIDATE_POOL_SIZE
-  --max-ctx-chars N         Max RAG context chars. Default: $MAX_CTX_CHARS
-  --think 0|1               Agent thinking. Default: 0
-  --history-turns N         RAG/orchestrator history turns. Default: $HISTORY_TURNS
-  --context-budget-guard 0|1 Enable context budget guard for vLLM/BSC. Default: $BSC_CONTEXT_BUDGET_GUARD
-  --bsc-max-model-len N     Backend max_model_len. Default: $BSC_MAX_MODEL_LEN
-  --bsc-output-token-reserve N Reserve output tokens. Default: $BSC_OUTPUT_TOKEN_RESERVE
-  --bsc-max-input-tokens N  Max estimated input tokens. Default: $BSC_MAX_INPUT_TOKENS
-  --bsc-max-chat-messages N Keep last N chat messages. Default: $BSC_MAX_CHAT_MESSAGES
-  --bsc-max-system-chars N  Max chars for leading system prompt. Default: $BSC_MAX_SYSTEM_CHARS
-  --bsc-max-message-chars N Max chars for normal messages. Default: $BSC_MAX_MESSAGE_CHARS
-  --bsc-max-last-user-chars N Max chars for latest user msg. Default: $BSC_MAX_LAST_USER_CHARS
-  --bsc-max-listener-task-chars N Max chars for listener task. Default: $BSC_MAX_LISTENER_TASK_CHARS
-  --bsc-trim-log-always 0|1 Always log context trimming. Default: $BSC_TRIM_LOG_ALWAYS  
   --log-dir PATH            Log directory. Default: $LOG_DIR
   --skip-check              Do not test backend endpoints before start.
   --no-wait                 Start processes and return immediately.
   --stop-existing           Kill processes listening on the target ports before starting.
   -h, --help                Show this help.
 
+Advanced compatibility flags are still accepted when needed:
+  --host, --ita-model, --eng-model, --ita-base, --eng-base, --api-key,
+  --top-k, --candidate-pool-size, --max-ctx-chars, --think, --history-turns,
+  --context-budget-guard, --bsc-max-model-len, --bsc-output-token-reserve,
+  --bsc-max-input-tokens, --bsc-max-chat-messages, --bsc-max-system-chars,
+  --bsc-max-message-chars, --bsc-max-last-user-chars,
+  --bsc-max-listener-task-chars, --bsc-trim-log-always.
+
 Examples:
   $0
-  $0 --ita-base http://127.0.0.1:58099/v1 --ita-model openai:gemma-4-31B-it \\
-     --eng-base http://127.0.0.1:58091/v1 --eng-model openai:Mistral-Small-3.1-24B-Instruct-2503
+  $0 --model openai:Mistral-Small-3.1-24B-Instruct-2503
+  $0 --base http://127.0.0.1:58091/v1 --model openai:Mistral-Small-3.1-24B-Instruct-2503
 EOF
 }
 
@@ -115,6 +106,8 @@ while [[ $# -gt 0 ]]; do
     --project-root) PROJECT_ROOT="$2"; shift 2 ;;
     --python) PYTHON_BIN="$2"; shift 2 ;;
     --host) HOST_ADDRESS="$2"; shift 2 ;;
+    --model) ITA_MODEL="$2"; ENG_MODEL="$2"; shift 2 ;;
+    --base) ITA_BASE="$2"; ENG_BASE="$2"; shift 2 ;;
     --ita-port) ITA_PORT="$2"; shift 2 ;;
     --eng-port) ENG_PORT="$2"; shift 2 ;;
     --ita-model) ITA_MODEL="$2"; shift 2 ;;
@@ -219,6 +212,7 @@ start_one() {
     export OWUI_PROCESS_MODEL="$lang"
     export OWUI_AGENT_PORT="$port"
     export OWUI_AGENT_HOST="$HOST_ADDRESS"
+    export OWUI_LOG_DIR="$LOG_DIR"
     export OWUI_LEGACY_MODEL_TARGET="$legacy_target"
     export COUNSELOR_MODEL="$model"
     export SDIALOG_MODEL_URI="$model"
@@ -258,6 +252,7 @@ start_one() {
   PIDS+=("$pid")
   echo "$lang server started: pid=$pid, port=$port, model=$model, base=$base"
   echo "  logs: $stdout | $stderr"
+  echo "  dialog JSONL: $LOG_DIR/dialog_${lower}_${port}.jsonl"
 }
 
 if [[ "$SKIP_CHECK" != "1" ]]; then

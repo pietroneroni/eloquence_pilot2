@@ -56,6 +56,25 @@ _URL_RE = re.compile(r"(?i)\b(?:https?://|www\.)\S+")
 _EMAIL_RE = re.compile(r"(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b")
 _TIME_RE = re.compile(r"\b([01]?\d|2[0-3]):[0-5]\d\b")
 _DATE_RE = re.compile(r"\b(\d{4}-\d{2}-\d{2}|\d{1,2}[/-]\d{1,2}[/-]\d{2,4})\b")
+_INTERNAL_LABEL_LINE_RE = re.compile(
+    r"(?im)^\s*(?:[-*]\s*)?(?:inferred\.)?(?:field_of_interest|listener_patch)\s*[:=].*$"
+)
+_INTERNAL_LABEL_REPLACEMENTS = {
+    "field_of_interest": "area of interest",
+    "listener_patch": "listener memory update",
+    "computer_science": "computer science",
+    "engineering_technology": "engineering and technology",
+    "arts_design": "arts and design",
+    "communication_digital_media": "communication and digital media",
+    "cultural_heritage": "cultural heritage",
+    "cognitive_science_linguistics": "cognitive science and linguistics",
+    "social_sciences": "social sciences",
+    "life_sciences": "life sciences",
+    "environmental_science": "environmental science",
+    "environmental_engineering": "environmental engineering",
+    "physical_sciences": "physical sciences",
+    "health_technology": "health technology",
+}
 
 
 def strip_think(text: str) -> str:
@@ -84,6 +103,24 @@ def strip_think(text: str) -> str:
     return cleaned
 
 
+def hide_internal_labels(text: str) -> str:
+    """Keep listener/schema labels out of the student-visible reply."""
+    t = text or ""
+    if not t:
+        return ""
+
+    t = _INTERNAL_LABEL_LINE_RE.sub("", t)
+    for raw, visible in _INTERNAL_LABEL_REPLACEMENTS.items():
+        t = re.sub(
+            rf"(?<![A-Za-z0-9_]){re.escape(raw)}(?![A-Za-z0-9_])",
+            visible,
+            t,
+            flags=re.IGNORECASE,
+        )
+    t = re.sub(r"\n{3,}", "\n\n", t)
+    return t.strip()
+
+
 def sanitize_expert_output(text: str) -> str:
     # 1) Remove model thinking first.
     # This prevents accidental listener patches inside <think> from being accepted.
@@ -110,6 +147,9 @@ def sanitize_expert_output(text: str) -> str:
     # 6) If fallback reintroduced a patch block, buffer it.
     t = strip_and_buffer_listener_patch(t)
     force_gender_in_global_listener_patches()
+
+    # 7) Last visible-output guard against internal schema labels.
+    t = hide_internal_labels(t)
 
     return t
 
