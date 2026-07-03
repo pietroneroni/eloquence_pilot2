@@ -1,15 +1,17 @@
-C:\Users\Drako\PycharmProjects\Sdialog\university_counseling\owui_session_server.py:151: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
-  class ChatMessage(BaseModel):
-C:\Users\Drako\PycharmProjects\Sdialog\university_counseling\owui_session_server.py:160: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.12/migration/
-  class ChatCompletionRequest(BaseModel):
-[2026-07-01 14:59:19] INFO:owui-session-server:Starting session server on 0.0.0.0:1334
-[2026-07-01 14:59:19] INFO:owui-session-server:Models: university-counselor-ENG:latest
-[2026-07-01 14:59:19] INFO:owui-session-server:Aliases: {'university-counselor-ENG:latest': 'university-counselor-ENG:latest', 'university-counselor-ENG': 'university-counselor-ENG:latest', 'university-counselor:latest': 'university-counselor-ENG:latest', 'university-counselor': 'university-counselor-ENG:latest'}
-[2026-07-01 14:59:19] INFO:owui-session-server:Process model mode: ENG
-[2026-07-01 14:59:19] INFO:owui-session-server:Counselor backend for university-counselor-ENG:latest: ollama:qwen3:30b-thinking
-INFO:     Started server process [38532]
+[2026-07-03 10:39:59] INFO:owui-session-server:Starting session server on 0.0.0.0:1334
+[2026-07-03 10:39:59] INFO:owui-session-server:Models: university-counselor-ENG:latest
+[2026-07-03 10:39:59] INFO:owui-session-server:Aliases: {'university-counselor-ENG:latest': 'university-counselor-ENG:latest', 'university-counselor-ENG': 'university-counselor-ENG:latest', 'university-counselor:latest': 'university-counselor-ENG:latest', 'university-counselor': 'university-counselor-ENG:latest'}
+[2026-07-03 10:39:59] INFO:owui-session-server:Process model mode: ENG
+[2026-07-03 10:39:59] INFO:owui-session-server:OpenAI-compatible backend base: http://127.0.0.1:58091/v1
+[2026-07-03 10:39:59] INFO:owui-session-server:Agent thinking enabled: False
+[2026-07-03 10:39:59] INFO:owui-session-server:Context budget guard enabled: True
+[2026-07-03 10:39:59] INFO:owui-session-server:Context budget: max_model_len=4096 max_input_tokens=3300 max_chat_messages=10 listener_task_chars=2200
+[2026-07-03 10:39:59] INFO:owui-session-server:Counselor backend for university-counselor-ENG:latest: openai:Mistral-Small-3.1-24B-Instruct-2503
+INFO:     Started server process [1723019]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 1334): di norma è consentito un solo utilizzo di ogni indirizzo di socket (protocollo/indirizzo di rete/porta)
+INFO:     Uvicorn running on http://0.0.0.0:1334 (Press CTRL+C to quit)
+INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
+INFO:     Finished server process [1723019]

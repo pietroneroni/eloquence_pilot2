@@ -46,10 +46,26 @@ TOP_K="${SDIALOG_COUNSELOR_TOP_K:-6}"
 CANDIDATE_POOL_SIZE="${SDIALOG_CANDIDATE_POOL_SIZE:-4}"
 MAX_CTX_CHARS="${SDIALOG_MAX_CTX_CHARS:-2200}"
 AGENT_THINK="${SDIALOG_AGENT_THINK:-0}"
+
+HISTORY_TURNS="${SDIALOG_HISTORY_TURNS:-1}"
+
+BSC_CONTEXT_BUDGET_GUARD="${BSC_CONTEXT_BUDGET_GUARD:-1}"
+BSC_MAX_MODEL_LEN="${BSC_MAX_MODEL_LEN:-4096}"
+BSC_OUTPUT_TOKEN_RESERVE="${BSC_OUTPUT_TOKEN_RESERVE:-512}"
+BSC_MAX_INPUT_TOKENS="${BSC_MAX_INPUT_TOKENS:-3300}"
+BSC_MAX_CHAT_MESSAGES="${BSC_MAX_CHAT_MESSAGES:-10}"
+BSC_MAX_SYSTEM_CHARS="${BSC_MAX_SYSTEM_CHARS:-2500}"
+BSC_MAX_MESSAGE_CHARS="${BSC_MAX_MESSAGE_CHARS:-1800}"
+BSC_MAX_LAST_USER_CHARS="${BSC_MAX_LAST_USER_CHARS:-2400}"
+BSC_MAX_LISTENER_TASK_CHARS="${BSC_MAX_LISTENER_TASK_CHARS:-3200}"
+BSC_TRIM_LOG_ALWAYS="${BSC_TRIM_LOG_ALWAYS:-0}"
+
 LOG_DIR="${OWUI_LOG_DIR:-$PROJECT_ROOT/logs}"
 SKIP_CHECK=0
 NO_WAIT=0
 STOP_EXISTING=0
+
+BSC_MAX_LISTENER_TASK_MESSAGES="${BSC_MAX_LISTENER_TASK_MESSAGES:-2}"
 
 usage() {
   cat <<EOF
@@ -70,6 +86,17 @@ Options:
   --candidate-pool-size N   RAG candidate pool size. Default: $CANDIDATE_POOL_SIZE
   --max-ctx-chars N         Max RAG context chars. Default: $MAX_CTX_CHARS
   --think 0|1               Agent thinking. Default: 0
+  --history-turns N         RAG/orchestrator history turns. Default: $HISTORY_TURNS
+  --context-budget-guard 0|1 Enable context budget guard for vLLM/BSC. Default: $BSC_CONTEXT_BUDGET_GUARD
+  --bsc-max-model-len N     Backend max_model_len. Default: $BSC_MAX_MODEL_LEN
+  --bsc-output-token-reserve N Reserve output tokens. Default: $BSC_OUTPUT_TOKEN_RESERVE
+  --bsc-max-input-tokens N  Max estimated input tokens. Default: $BSC_MAX_INPUT_TOKENS
+  --bsc-max-chat-messages N Keep last N chat messages. Default: $BSC_MAX_CHAT_MESSAGES
+  --bsc-max-system-chars N  Max chars for leading system prompt. Default: $BSC_MAX_SYSTEM_CHARS
+  --bsc-max-message-chars N Max chars for normal messages. Default: $BSC_MAX_MESSAGE_CHARS
+  --bsc-max-last-user-chars N Max chars for latest user msg. Default: $BSC_MAX_LAST_USER_CHARS
+  --bsc-max-listener-task-chars N Max chars for listener task. Default: $BSC_MAX_LISTENER_TASK_CHARS
+  --bsc-trim-log-always 0|1 Always log context trimming. Default: $BSC_TRIM_LOG_ALWAYS  
   --log-dir PATH            Log directory. Default: $LOG_DIR
   --skip-check              Do not test backend endpoints before start.
   --no-wait                 Start processes and return immediately.
@@ -99,6 +126,17 @@ while [[ $# -gt 0 ]]; do
     --candidate-pool-size) CANDIDATE_POOL_SIZE="$2"; shift 2 ;;
     --max-ctx-chars) MAX_CTX_CHARS="$2"; shift 2 ;;
     --think) AGENT_THINK="$2"; shift 2 ;;
+    --history-turns) HISTORY_TURNS="$2"; shift 2 ;;
+    --context-budget-guard) BSC_CONTEXT_BUDGET_GUARD="$2"; shift 2 ;;
+    --bsc-max-model-len) BSC_MAX_MODEL_LEN="$2"; shift 2 ;;
+    --bsc-output-token-reserve) BSC_OUTPUT_TOKEN_RESERVE="$2"; shift 2 ;;
+    --bsc-max-input-tokens) BSC_MAX_INPUT_TOKENS="$2"; shift 2 ;;
+    --bsc-max-chat-messages) BSC_MAX_CHAT_MESSAGES="$2"; shift 2 ;;
+    --bsc-max-system-chars) BSC_MAX_SYSTEM_CHARS="$2"; shift 2 ;;
+    --bsc-max-message-chars) BSC_MAX_MESSAGE_CHARS="$2"; shift 2 ;;
+    --bsc-max-last-user-chars) BSC_MAX_LAST_USER_CHARS="$2"; shift 2 ;;
+    --bsc-max-listener-task-chars) BSC_MAX_LISTENER_TASK_CHARS="$2"; shift 2 ;;
+    --bsc-trim-log-always) BSC_TRIM_LOG_ALWAYS="$2"; shift 2 ;;
     --log-dir) LOG_DIR="$2"; shift 2 ;;
     --skip-check) SKIP_CHECK=1; shift ;;
     --no-wait) NO_WAIT=1; shift ;;
@@ -200,6 +238,19 @@ start_one() {
     export SDIALOG_COUNSELOR_TOP_K="$TOP_K"
     export SDIALOG_CANDIDATE_POOL_SIZE="$CANDIDATE_POOL_SIZE"
     export SDIALOG_MAX_CTX_CHARS="$MAX_CTX_CHARS"
+    export SDIALOG_HISTORY_TURNS="$HISTORY_TURNS"
+
+    export BSC_CONTEXT_BUDGET_GUARD="$BSC_CONTEXT_BUDGET_GUARD"
+    export BSC_MAX_MODEL_LEN="$BSC_MAX_MODEL_LEN"
+    export BSC_OUTPUT_TOKEN_RESERVE="$BSC_OUTPUT_TOKEN_RESERVE"
+    export BSC_MAX_INPUT_TOKENS="$BSC_MAX_INPUT_TOKENS"
+    export BSC_MAX_CHAT_MESSAGES="$BSC_MAX_CHAT_MESSAGES"
+    export BSC_MAX_SYSTEM_CHARS="$BSC_MAX_SYSTEM_CHARS"
+    export BSC_MAX_MESSAGE_CHARS="$BSC_MAX_MESSAGE_CHARS"
+    export BSC_MAX_LAST_USER_CHARS="$BSC_MAX_LAST_USER_CHARS"
+    export BSC_MAX_LISTENER_TASK_CHARS="$BSC_MAX_LISTENER_TASK_CHARS"
+    export BSC_TRIM_LOG_ALWAYS="$BSC_TRIM_LOG_ALWAYS"
+    export BSC_MAX_LISTENER_TASK_MESSAGES="$BSC_MAX_LISTENER_TASK_MESSAGES"
     exec "$PYTHON_BIN" -m "$MODULE_NAME"
   ) >"$stdout" 2>"$stderr" &
 

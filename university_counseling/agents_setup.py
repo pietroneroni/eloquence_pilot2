@@ -4,31 +4,13 @@ import os
 import re
 import time
 from pathlib import Path
-from typing import Tuple
-
-from sdialog.agents import Agent
-from .student import Student
-from sdialog.personas import Persona
-from .social_practice import (
-    get_social_practice,
-    student_prompt_addendum,
-)
-from .student_profile import load_student_from_json
-from .DialogOrchestrator import (
-    StudentFixedFollowupOrchestrator,
-    enforce_student_script_or_fallback,
-    set_dialog_language as set_student_dialog_language,
-)
 
 from .AgentWithRag import (
-    UniversityCounselorFlowOrchestrator,
     enforce_grounding_or_fallback,
     enforce_flow_format_or_fallback,
     strip_and_buffer_listener_patch,
     get_last_rag_phase,
-    get_forced_listener_gender,
     force_gender_in_global_listener_patches,
-    set_dialog_language as set_counselor_dialog_language,
 )
 
 
@@ -46,38 +28,6 @@ def _build_expert_response_details(practice: dict, dialog_language: str = "Engli
         "Do not reveal hidden experimental assignments or metadata in the visible reply.\n"
         "If you are given a 'HIDDEN LISTENER TASK (STRICT)', append exactly ONE <LISTENER_PATCH>...</LISTENER_PATCH> JSON block after your raw answer. Do not mention it in the visible reply.\n"
         "Inside <LISTENER_PATCH>, keep JSON keys in English exactly as requested.\n"
-    ).strip()
-
-
-def _build_student_response_details(student: Student, practice: dict, dialog_language: str = "English") -> str:
-    lang = _lang_name(dialog_language)
-    rules = (getattr(student, "rules", "") or "").strip()
-    background = (getattr(student, "background", "") or "").strip()
-    name = (getattr(student, "name", "") or "").strip()
-    identity_cue = ""
-    if name:
-        identity_cue = (
-            "VISIBLE IDENTITY CUE:\n"
-            f"- Your first name is {name}. Use it naturally in your first message if it sounds natural.\n"
-            "- Convey gender only indirectly through the name or natural grammar; do not state gender as a label.\n\n"
-        )
-    else:
-        identity_cue = (
-            "VISIBLE IDENTITY CUE:\n"
-            "- No visible first name is provided. Do NOT invent a first name.\n"
-            "- Do NOT reveal or imply any gender unless it is explicitly present in BACKGROUND.\n\n"
-        )
-
-    return (
-        f"Always answer in {lang}. "
-        "Do not invent facts about yourself. "
-        "If a detail is not in your BACKGROUND, say you don't know or haven't decided. "
-        "If you receive an orchestration instruction, follow it EXACTLY. "
-        "Do not pretend that an option exists unless the counselor has presented grounded numbered options. "
-        f"{student_prompt_addendum(practice, dialog_language)}\n\n"
-        f"{identity_cue}"
-        f"BACKGROUND:\n{background}\n\n"
-        f"PERSONAL RULES:\n{rules}\n"
     ).strip()
 
 
@@ -161,12 +111,6 @@ def sanitize_expert_output(text: str) -> str:
     t = strip_and_buffer_listener_patch(t)
     force_gender_in_global_listener_patches()
 
-    return t
-
-
-def sanitize_student_output(text: str) -> str:
-    t = strip_think(text)
-    t = enforce_student_script_or_fallback(t)
     return t
 
 
@@ -260,114 +204,3 @@ class TimedRetriever:
         return out
 
 
-# =============================================================================
-# Personas + Agents
-# =============================================================================
-def create_personas(
-        student_json_path: str = "",
-        dialog_language: str = "English",
-        social_practice_name: str = "university_counseling",
-        social_practice_path: str | None = None,
-) -> Tuple[Persona, Student]:
-    student = load_student_from_json(
-        student_json_path,
-        dialog_language=dialog_language,
-        social_practice_name=social_practice_name,
-        social_practice_path=social_practice_path,
-    )
-    practice = getattr(student, "social_practice", None) or get_social_practice(
-        social_practice_name,
-        path=social_practice_path,
-    )
-
-    counselor = Persona(
-        name="University Counselor",
-        age="middle-aged",
-        gender="unspecified",
-        role=practice.get("agent1_role", "UniversityCounselor"),
-        background="Works at the university counseling office in Italy.",
-        personality="",
-        circumstances=f"Social practice: {practice.get('sp_name', 'University Counseling')}",
-        rules="; ".join(practice.get("agent1_norms", []) or []),
-        language=_lang_name(dialog_language),
-    )
-    return counselor, student
-
-
-def create_agents_offline(
-        esperto_persona: Persona,
-        studente_persona: Student,
-        local_model_name_expert: str,
-        local_model_name_student: str,
-        dialog_language: str = "English",
-        social_practice_name: str = "university_counseling",
-        social_practice_path: str | None = None,
-) -> Tuple[Agent, Agent]:
-    practice = getattr(studente_persona, "social_practice", None) or get_social_practice(
-        social_practice_name,
-        path=social_practice_path,
-    )
-
-    set_student_dialog_language(dialog_language)
-    set_counselor_dialog_language(dialog_language)
-
-    expert_agent = Agent(
-        persona=esperto_persona,
-        model=local_model_name_expert,
-        name="EXPERT",
-        response_details=_build_expert_response_details(practice, dialog_language),
-        think=os.getenv("SDIALOG_EXPERT_THINK", "0").lower() in {"1", "true", "yes"},
-        postprocess_fn=sanitize_expert_output,
-    )
-
-    student_agent = Agent(
-        persona=studente_persona,
-        model=local_model_name_student,
-        name="STUDENT",
-        response_details=_build_student_response_details(studente_persona, practice, dialog_language),
-        think=False,
-        postprocess_fn=sanitize_student_output,
-    )
-
-    student_agent = student_agent | StudentFixedFollowupOrchestrator(
-        dialog_language=dialog_language,
-        practice=practice,
-    )
-
-    _configure_rag_env(dialog_language)
-
-    if os.environ.get("SDIALOG_ENABLE_RAG", "0") == "1":
-        backend = os.environ.get("SDIALOG_RAG_BACKEND", "lancedb").lower()
-
-        if backend == "lancedb":
-            from RAG_Scripts.lancedb_university_retriever import LanceDBUniversityRetriever
-            retriever = TimedRetriever(
-                LanceDBUniversityRetriever(
-                    lang=os.environ.get("SDIALOG_RAG_LANG", "eng"),
-                    lancedb_dir=os.environ.get("SDIALOG_LANCEDB_DIR"),
-                    table_name=os.environ.get("SDIALOG_LANCEDB_TABLE", "universities"),
-                )
-            )
-        else:
-            from RAG_Scripts.rag_retriever import RAGRetriever
-
-            retriever = TimedRetriever(
-                RAGRetriever(
-                    lang=os.environ.get("SDIALOG_RAG_LANG", "eng"),
-                    faiss_path=os.environ.get("SDIALOG_RAG_FAISS", ""),
-                    chunks_path=os.environ.get("SDIALOG_RAG_CHUNKS", ""),
-                )
-            )
-        expert_agent = expert_agent | UniversityCounselorFlowOrchestrator(
-            retriever=retriever,
-            required_slots=("academic_background", "field_of_interest", "region"),
-            top_k=12,
-            candidate_pool_size=8,
-            max_ctx_chars=2200,
-            history_turns=3,
-            debug=False,
-            dialog_language=dialog_language,
-            practice=practice,
-        )
-
-    return expert_agent, student_agent

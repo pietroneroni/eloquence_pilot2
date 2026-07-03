@@ -34,7 +34,7 @@ import uvicorn
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, StreamingResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 from sdialog.agents import Agent
 from sdialog.personas import Persona
@@ -68,16 +68,70 @@ SOCIAL_PRACTICE_NAME = os.getenv("SOCIAL_PRACTICE_NAME", "university_counseling"
 # module-level state.
 OWUI_PROCESS_MODEL = os.getenv("OWUI_PROCESS_MODEL", "BOTH").strip().upper()
 
+# BSC/remote OpenAI-compatible backend defaults from the email.
+# The /v1 endpoint is the model provider endpoint. OpenWebUI still connects to
+# this FastAPI bridge on /v1, for example http://localhost:1333/v1.
+DEFAULT_OPENAI_API_BASE = os.getenv(
+    "SDIALOG_OPENAI_API_BASE",
+    os.getenv("OPENAI_API_BASE", "http://127.0.0.1:58091/v1"),
+).strip()
+OPENAI_API_BASE_ITA = os.getenv(
+    "SDIALOG_OPENAI_API_BASE_ITA",
+    os.getenv("OPENAI_API_BASE_ITA", DEFAULT_OPENAI_API_BASE),
+).strip()
+OPENAI_API_BASE_ENG = os.getenv(
+    "SDIALOG_OPENAI_API_BASE_ENG",
+    os.getenv("OPENAI_API_BASE_ENG", DEFAULT_OPENAI_API_BASE),
+).strip()
+OPENAI_API_KEY = os.getenv("SDIALOG_OPENAI_API_KEY", os.getenv("OPENAI_API_KEY", "kk"))
+
 DEFAULT_COUNSELOR_MODEL = os.getenv(
     "COUNSELOR_MODEL",
-    os.getenv("SDIALOG_MODEL_URI", "ollama:mistral-small3.1:24b"),
+    os.getenv("SDIALOG_MODEL_URI", "openai:Mistral-Small-3.1-24B-Instruct-2503"),
 )
-COUNSELOR_MODEL_ITA = os.getenv("COUNSELOR_MODEL_ITA", DEFAULT_COUNSELOR_MODEL)
-COUNSELOR_MODEL_ENG = os.getenv("COUNSELOR_MODEL_ENG", DEFAULT_COUNSELOR_MODEL)
+COUNSELOR_MODEL_ITA = os.getenv(
+    "COUNSELOR_MODEL_ITA",
+    os.getenv("SDIALOG_MODEL_URI_ITA", DEFAULT_COUNSELOR_MODEL),
+)
+COUNSELOR_MODEL_ENG = os.getenv(
+    "COUNSELOR_MODEL_ENG",
+    os.getenv("SDIALOG_MODEL_URI_ENG", DEFAULT_COUNSELOR_MODEL),
+)
+
+
+def _selected_backend_base() -> str:
+    if OWUI_PROCESS_MODEL in {"ITA", "IT"}:
+        return OPENAI_API_BASE_ITA
+    if OWUI_PROCESS_MODEL in {"ENG", "EN"}:
+        return OPENAI_API_BASE_ENG
+    return DEFAULT_OPENAI_API_BASE
+
+
+def _selected_counselor_model() -> str:
+    if OWUI_PROCESS_MODEL in {"ITA", "IT"}:
+        return COUNSELOR_MODEL_ITA
+    if OWUI_PROCESS_MODEL in {"ENG", "EN"}:
+        return COUNSELOR_MODEL_ENG
+    return DEFAULT_COUNSELOR_MODEL
+
+
+SELECTED_OPENAI_API_BASE = _selected_backend_base()
+if SELECTED_OPENAI_API_BASE:
+    os.environ["SDIALOG_OPENAI_API_BASE"] = SELECTED_OPENAI_API_BASE
+    os.environ["OPENAI_API_BASE"] = SELECTED_OPENAI_API_BASE
+    os.environ["OPENAI_BASE_URL"] = SELECTED_OPENAI_API_BASE
+os.environ.setdefault("OPENAI_API_KEY", OPENAI_API_KEY)
+
+# Keep thinking off by default because many OpenAI-compatible servers do not
+# support vendor-specific thinking parameters. Enable only if the backend model
+# and server explicitly support it.
+ENABLE_AGENT_THINKING = os.getenv("SDIALOG_AGENT_THINK", "0").strip().lower() in {
+    "1", "true", "yes", "on"
+}
 
 # Keep a default SDialog model configured for code paths that rely on the global
 # default. Each Agent below still receives its explicit per-session model.
-sdialog.config.llm(COUNSELOR_MODEL_ITA if OWUI_PROCESS_MODEL in {"ITA", "IT"} else COUNSELOR_MODEL_ENG if OWUI_PROCESS_MODEL in {"ENG", "EN"} else DEFAULT_COUNSELOR_MODEL)
+sdialog.config.llm(_selected_counselor_model())
 
 SESSION_TTL_SECONDS = int(os.getenv("OWUI_SESSION_TTL_SECONDS", str(60 * 60)))
 SESSION_CLEANUP_INTERVAL_SECONDS = int(os.getenv("OWUI_SESSION_CLEANUP_INTERVAL_SECONDS", "60"))
@@ -153,8 +207,7 @@ class ChatMessage(BaseModel):
     content: Union[str, List[Any], Dict[str, Any]]
     name: Optional[str] = None
 
-    class Config:
-        extra = "allow"
+    model_config = ConfigDict(extra="allow")
 
 
 class ChatCompletionRequest(BaseModel):
@@ -165,8 +218,7 @@ class ChatCompletionRequest(BaseModel):
     stream: Optional[bool] = False
     stop: Optional[Union[str, List[str]]] = None
 
-    class Config:
-        extra = "allow"
+    model_config = ConfigDict(extra="allow")
 
 
 # -----------------------------------------------------------------------------
@@ -475,6 +527,381 @@ def _make_session_postprocess(session: CounselorSession):
     return _postprocess
 
 
+
+# -----------------------------------------------------------------------------
+# OpenAI-compatible strict chat-template compatibility
+# -----------------------------------------------------------------------------
+
+STRICT_SYSTEM_FIRST = os.getenv("SDIALOG_STRICT_SYSTEM_FIRST", "1").strip().lower() in {
+    "1", "true", "yes", "on"
+}
+
+
+def _lc_message_role(message: Any) -> Optional[str]:
+    """Return a normalized OpenAI-style role for LangChain/dict messages."""
+    if isinstance(message, dict):
+        role = message.get("role") or message.get("type")
+    else:
+        role = getattr(message, "role", None) or getattr(message, "type", None)
+        if role is None:
+            cls_name = message.__class__.__name__.lower()
+            if "system" in cls_name:
+                role = "system"
+            elif "human" in cls_name:
+                role = "human"
+            elif "ai" in cls_name or "assistant" in cls_name:
+                role = "ai"
+    if role in {"human", "user"}:
+        return "user"
+    if role in {"ai", "assistant"}:
+        return "assistant"
+    if role == "system":
+        return "system"
+    return str(role) if role is not None else None
+
+
+def _lc_message_content(message: Any) -> str:
+    if isinstance(message, dict):
+        content = message.get("content", "")
+    else:
+        content = getattr(message, "content", "")
+    if isinstance(content, str):
+        return content
+    try:
+        return json.dumps(content, ensure_ascii=False)
+    except Exception:
+        return str(content)
+
+
+def _make_lc_message(role: str, content: str) -> Any:
+    """Create a LangChain chat message, falling back to dict if unavailable."""
+    try:
+        from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+
+        if role == "system":
+            return SystemMessage(content=content)
+        if role == "assistant":
+            return AIMessage(content=content)
+        return HumanMessage(content=content)
+    except Exception:
+        return {"role": "assistant" if role == "assistant" else "system" if role == "system" else "user", "content": content}
+
+# -----------------------------------------------------------------------------
+# Context budget guard for strict vLLM/BSC backends
+# -----------------------------------------------------------------------------
+
+BSC_CONTEXT_BUDGET_GUARD = os.getenv("BSC_CONTEXT_BUDGET_GUARD", "1").strip().lower() in {
+    "1", "true", "yes", "on"
+}
+BSC_MAX_MODEL_LEN = int(os.getenv("BSC_MAX_MODEL_LEN", "4096"))
+BSC_OUTPUT_TOKEN_RESERVE = int(os.getenv("BSC_OUTPUT_TOKEN_RESERVE", "512"))
+BSC_MAX_INPUT_TOKENS = int(
+    os.getenv(
+        "BSC_MAX_INPUT_TOKENS",
+        str(max(1024, BSC_MAX_MODEL_LEN - BSC_OUTPUT_TOKEN_RESERVE)),
+    )
+)
+BSC_MAX_CHAT_MESSAGES = int(os.getenv("BSC_MAX_CHAT_MESSAGES", "10"))
+BSC_MAX_SYSTEM_CHARS = int(os.getenv("BSC_MAX_SYSTEM_CHARS", "2500"))
+BSC_MAX_MESSAGE_CHARS = int(os.getenv("BSC_MAX_MESSAGE_CHARS", "1800"))
+BSC_MAX_LAST_USER_CHARS = int(os.getenv("BSC_MAX_LAST_USER_CHARS", "2400"))
+BSC_MAX_LISTENER_TASK_CHARS = int(os.getenv("BSC_MAX_LISTENER_TASK_CHARS", "3200"))
+BSC_TRIM_LOG_ALWAYS = os.getenv("BSC_TRIM_LOG_ALWAYS", "0").strip().lower() in {
+    "1", "true", "yes", "on"
+}
+
+
+def _approx_tokens_for_text(text: str) -> int:
+    # Conservative estimate for Italian/English mixed prompts.
+    return max(1, int(len(text or "") / 3.5))
+
+
+def _is_listener_task_text(text: str) -> bool:
+    low = (text or "").lower()
+    return (
+        "hidden listener task" in low
+        or "listener_patch" in low
+        or "<listener_patch>" in low
+        or "append exactly one" in low and "json block" in low
+    )
+
+
+def _truncate_middle(text: str, max_chars: int) -> str:
+    text = text or ""
+    if max_chars <= 0 or len(text) <= max_chars:
+        return text
+    head_len = max_chars // 2
+    tail_len = max_chars - head_len
+    return (
+        text[:head_len].rstrip()
+        + "\n\n[...content trimmed for context budget...]\n\n"
+        + text[-tail_len:].lstrip()
+    )
+
+
+def _truncate_keep_tail(text: str, max_chars: int) -> str:
+    text = text or ""
+    if max_chars <= 0 or len(text) <= max_chars:
+        return text
+    return (
+        "[...earlier content trimmed for context budget...]\n\n"
+        + text[-max_chars:].lstrip()
+    )
+
+def _truncate_listener_task(text: str, max_chars: int) -> str:
+    """
+    Listener-task messages often contain:
+      - visible reply instruction near the beginning
+      - hidden listener patch schema/rules near the end
+
+    Preserve both sides. Do NOT keep only the tail, otherwise the model may see
+    only internal field labels and lose the visible question instruction.
+    """
+    text = text or ""
+    if max_chars <= 0 or len(text) <= max_chars:
+        return text
+
+    head_len = max_chars // 2
+    tail_len = max_chars - head_len
+
+    return (
+        text[:head_len].rstrip()
+        + "\n\n[...listener task trimmed for context budget...]\n\n"
+        + text[-tail_len:].lstrip()
+    )
+
+def _lc_total_approx_tokens(messages: List[Any]) -> int:
+    return sum(_approx_tokens_for_text(_lc_message_content(m)) for m in messages)
+
+
+def _budget_guard_lc_messages(messages: Any) -> Any:
+    """
+    Ollama-like explicit truncation for vLLM/BSC.
+
+    Keeps:
+      - leading system prompt
+      - latest user message
+      - listener-patch instruction messages
+      - last N conversational messages
+
+    Drops/truncates old context before vLLM rejects the request.
+    """
+    if not BSC_CONTEXT_BUDGET_GUARD or not isinstance(messages, list):
+        return messages
+
+    before_count = len(messages)
+    before_tokens = _lc_total_approx_tokens(messages)
+    if before_tokens <= BSC_MAX_INPUT_TOKENS:
+        if BSC_TRIM_LOG_ALWAYS:
+            logger.info(
+                "Context budget guard[langchain]: no trim, messages=%d, approx_input_tokens=%d, budget=%d",
+                before_count,
+                before_tokens,
+                BSC_MAX_INPUT_TOKENS,
+            )
+    return messages
+
+    normalized: List[Tuple[str, str, bool, Any]] = []
+    for msg in messages:
+        role = _lc_message_role(msg) or "user"
+        if role not in {"system", "user", "assistant"}:
+            role = "user"
+        content = _lc_message_content(msg)
+        is_listener = _is_listener_task_text(content)
+        normalized.append((role, content, is_listener, msg))
+
+    leading_system: List[Tuple[str, str, bool, Any]] = []
+    rest: List[Tuple[str, str, bool, Any]] = []
+
+    seen_non_system = False
+    for item in normalized:
+        role, content, is_listener, original = item
+        if role == "system" and not seen_non_system:
+            leading_system.append(item)
+        else:
+            seen_non_system = True
+            rest.append(item)
+
+    # Merge leading system messages into one compact system message.
+    compact: List[Tuple[str, str, bool, Any]] = []
+    if leading_system:
+        system_text = "\n\n".join(x[1] for x in leading_system if x[1].strip())
+        system_text = _truncate_middle(system_text, BSC_MAX_SYSTEM_CHARS)
+        compact.append(("system", system_text, False, None))
+
+    max_listener_tasks = int(os.getenv("BSC_MAX_LISTENER_TASK_MESSAGES", "2"))
+
+    listener_items = [x for x in rest if x[2]][-max_listener_tasks:]
+    recent_items = rest[-BSC_MAX_CHAT_MESSAGES:]
+
+    kept_rest: List[Tuple[str, str, bool, Any]] = []
+    seen_ids = set()
+    for item in listener_items + recent_items:
+        ident = id(item[3]) if item[3] is not None else id(item)
+        if ident in seen_ids:
+            continue
+        seen_ids.add(ident)
+        kept_rest.append(item)
+
+    # Restore original order from rest.
+    ordered_rest = []
+    kept_original_ids = {
+        id(item[3]) if item[3] is not None else id(item)
+        for item in kept_rest
+    }
+    for item in rest:
+        ident = id(item[3]) if item[3] is not None else id(item)
+        if ident in kept_original_ids:
+            ordered_rest.append(item)
+
+    # Identify latest user message among kept messages.
+    latest_user_index = None
+    for i in range(len(ordered_rest) - 1, -1, -1):
+        if ordered_rest[i][0] == "user":
+            latest_user_index = i
+            break
+
+    for i, (role, content, is_listener, original) in enumerate(ordered_rest):
+        if is_listener:
+            content = _truncate_listener_task(content, BSC_MAX_LISTENER_TASK_CHARS)
+        elif role == "user" and i == latest_user_index:
+            content = _truncate_middle(content, BSC_MAX_LAST_USER_CHARS)
+        else:
+            content = _truncate_middle(content, BSC_MAX_MESSAGE_CHARS)
+
+        compact.append((role, content, is_listener, original))
+
+    # Convert back to LangChain messages.
+    out = [_make_lc_message(role, content) for role, content, _, _ in compact if content.strip()]
+
+    # If still too large, drop oldest non-system, non-listener, non-latest-user messages.
+    def _is_latest_user_idx(idx: int, msgs: List[Any]) -> bool:
+        if _lc_message_role(msgs[idx]) != "user":
+            return False
+        for j in range(idx + 1, len(msgs)):
+            if _lc_message_role(msgs[j]) == "user":
+                return False
+        return True
+
+    while len(out) > 2 and _lc_total_approx_tokens(out) > BSC_MAX_INPUT_TOKENS:
+        remove_idx = None
+        for idx, msg in enumerate(out):
+            if _lc_message_role(msg) == "system":
+                continue
+            if _is_listener_task_text(_lc_message_content(msg)):
+                continue
+            if _is_latest_user_idx(idx, out):
+                continue
+            remove_idx = idx
+            break
+
+        if remove_idx is None:
+            break
+        out.pop(remove_idx)
+
+    after_tokens = _lc_total_approx_tokens(out)
+
+    if BSC_TRIM_LOG_ALWAYS or before_count != len(out) or before_tokens > BSC_MAX_INPUT_TOKENS:
+        logger.info(
+            "Context budget guard[langchain]: messages %d -> %d, approx_input_tokens %d -> %d, budget=%d",
+            before_count,
+            len(out),
+            before_tokens,
+            after_tokens,
+            BSC_MAX_INPUT_TOKENS,
+        )
+
+    return out
+
+def _strict_system_first_messages(messages: Any) -> Any:
+    """
+    Some OpenAI-compatible servers enforce chat templates where all system
+    messages must be before the first user/assistant message. SDialog can insert
+    additional system/context messages later in the memory. This rewrites late
+    system messages into the next user message so strict backends do not reject
+    the request with errors such as: Unexpected role 'system' after role
+    'assistant'.
+    """
+    if not STRICT_SYSTEM_FIRST or not isinstance(messages, list):
+        return messages
+
+    fixed: List[Any] = []
+    pending_late_system: List[str] = []
+    seen_non_system = False
+    changed = False
+
+    for message in messages:
+        role = _lc_message_role(message)
+        content = _lc_message_content(message)
+
+        if role == "system":
+            if seen_non_system:
+                if content.strip():
+                    pending_late_system.append(content.strip())
+                changed = True
+                continue
+            fixed.append(message)
+            continue
+
+        if role == "user" and pending_late_system:
+            merged = (
+                "[Additional system/context instructions]\n"
+                + "\n\n".join(pending_late_system)
+                + "\n\n[User message]\n"
+                + content
+            )
+            fixed.append(_make_lc_message("user", merged))
+            pending_late_system = []
+            changed = True
+        else:
+            fixed.append(message)
+
+        if role is not None:
+            seen_non_system = True
+
+    if pending_late_system:
+        addition = "\n\n[Additional system/context instructions]\n" + "\n\n".join(pending_late_system)
+        for idx in range(len(fixed) - 1, -1, -1):
+            if _lc_message_role(fixed[idx]) == "user":
+                fixed[idx] = _make_lc_message("user", _lc_message_content(fixed[idx]) + addition)
+                changed = True
+                break
+        else:
+            fixed.insert(0, _make_lc_message("system", "\n\n".join(pending_late_system)))
+            changed = True
+
+    if changed:
+        logger.debug("Rewrote late system messages for strict OpenAI-compatible backend.")
+    return fixed
+
+
+def _patch_agent_strict_system_first(agent: Any) -> Any:
+    if not STRICT_SYSTEM_FIRST and not BSC_CONTEXT_BUDGET_GUARD:
+        return agent
+
+    original = getattr(agent, "_get_llm_response", None)
+    if not callable(original):
+        return agent
+
+    def _wrapped_get_llm_response(messages: Any, *args: Any, **kwargs: Any) -> Any:
+        if STRICT_SYSTEM_FIRST:
+            messages = _strict_system_first_messages(messages)
+        if BSC_CONTEXT_BUDGET_GUARD:
+            messages = _budget_guard_lc_messages(messages)
+        return original(messages, *args, **kwargs)
+
+    setattr(agent, "_get_llm_response", _wrapped_get_llm_response)
+    return agent
+
+    def _wrapped_get_llm_response(messages: Any, *args: Any, **kwargs: Any) -> Any:
+        messages = _strict_system_first_messages(messages)
+        messages = _budget_guard_lc_messages(messages)
+        return original(messages, *args, **kwargs)
+
+    setattr(agent, "_get_llm_response", _wrapped_get_llm_response)
+    return agent
+
+
 # -----------------------------------------------------------------------------
 # Counselor factory
 # -----------------------------------------------------------------------------
@@ -501,9 +928,10 @@ def build_session_counselor(session: CounselorSession) -> Agent:
         model=session.counselor_model,
         name=session.model_id,
         response_details=_build_expert_response_details(practice, session.dialog_language),
-        think=True,
+        think=ENABLE_AGENT_THINKING,
         postprocess_fn=_make_session_postprocess(session),
     )
+    counselor_agent = _patch_agent_strict_system_first(counselor_agent)
 
     counselor_agent = counselor_agent | UniversityCounselorFlowOrchestrator(
         retriever=get_shared_retriever(session.rag_lang),
@@ -513,7 +941,7 @@ def build_session_counselor(session: CounselorSession) -> Agent:
         min_options_target=int(os.getenv("SDIALOG_MIN_OPTIONS_TARGET", "3")),
         final_top_n=int(os.getenv("SDIALOG_FINAL_TOP_N", "3")),
         max_ctx_chars=int(os.getenv("SDIALOG_MAX_CTX_CHARS", "2200")),
-        history_turns=3,
+        history_turns=int(os.getenv("SDIALOG_HISTORY_TURNS", "1")),
         debug=os.getenv("SDIALOG_DEBUG", "0").lower() in {"1", "true", "yes"},
         dialog_language=session.dialog_language,
         practice=practice,
@@ -823,6 +1251,16 @@ def main() -> None:
     logger.info("Models: %s", ", ".join(MODEL_CONFIGS.keys()))
     logger.info("Aliases: %s", MODEL_ALIASES)
     logger.info("Process model mode: %s", OWUI_PROCESS_MODEL)
+    logger.info("OpenAI-compatible backend base: %s", SELECTED_OPENAI_API_BASE)
+    logger.info("Agent thinking enabled: %s", ENABLE_AGENT_THINKING)
+    logger.info("Context budget guard enabled: %s", BSC_CONTEXT_BUDGET_GUARD)
+    logger.info(
+        "Context budget: max_model_len=%s max_input_tokens=%s max_chat_messages=%s listener_task_chars=%s",
+        BSC_MAX_MODEL_LEN,
+        BSC_MAX_INPUT_TOKENS,
+        BSC_MAX_CHAT_MESSAGES,
+        BSC_MAX_LISTENER_TASK_CHARS,
+    )
     for mid, cfg in MODEL_CONFIGS.items():
         logger.info("Counselor backend for %s: %s", mid, cfg.counselor_model)
     uvicorn.run(app, host=HOST, port=PORT, log_level=os.getenv("UVICORN_LOG_LEVEL", "info"), workers=1)
