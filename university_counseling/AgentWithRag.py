@@ -393,6 +393,11 @@ CHOICE_REPLY_OPTIONS = {
 }
 
 _OPT_RX = re.compile(r"\b(?:option|opzione)\s*(?:n(?:um(?:ero)?)?\.?\s*)?([1-3])\b", re.I)
+_SELECTION_INTENT_RX = re.compile(
+    r"\b(scelgo|sceglierei|scegliere|prendo|prendere|preferisco|opto|choose|pick|select|prefer)\b",
+    re.IGNORECASE,
+)
+_DIGIT_RX = re.compile(r"\b([1-3])\b")
 
 _FLOW_YES_RX = re.compile(
     r"\b(yes|yeah|yep|sure|definitely|absolutely|sì|si|certo|assolutamente)\b",
@@ -403,12 +408,6 @@ _FLOW_NO_RX = re.compile(
     r"\b(no|nope|not really|don't|do not|cannot|can't|never|assolutamente no|direi di no)\b",
     re.I,
 )
-_NUM_ONLY_RX = re.compile(r"^\s*([1-3])\b")
-_NUM_WORD_ONLY_RX = re.compile(
-    r"^\s*(?:(?:la|il|l[’'])\s*)?"
-    r"(uno|una|primo|prima|due|seconda|tre|terzo|terza|one|first|two|three|third)\b",
-    re.IGNORECASE,
-)
 _NUM_WORD_TO_DIGIT = {
     "uno": 1,
     "una": 1,
@@ -417,14 +416,20 @@ _NUM_WORD_TO_DIGIT = {
     "one": 1,
     "first": 1,
     "due": 2,
+    "secondo": 2,
     "seconda": 2,
     "two": 2,
+    "second": 2,
     "tre": 3,
     "terzo": 3,
     "terza": 3,
     "three": 3,
     "third": 3,
 }
+_NUM_WORD_RX = re.compile(
+    rf"\b({'|'.join(sorted(map(re.escape, _NUM_WORD_TO_DIGIT), key=len, reverse=True))})\b",
+    re.IGNORECASE,
+)
 
 _SINGLE_OPTION_ACCEPT_RX = re.compile(
     r"\b("
@@ -471,24 +476,35 @@ _LISTENER_PATCH_BLOCK_RX = re.compile(
     r"<LISTENER_PATCH>\s*(\{[\s\S]*?\})\s*</LISTENER_PATCH>",
     re.IGNORECASE,
 )
-_BACKGROUND_STUDENT_VOICE_LEAK_RX = re.compile(
-    r"\b("
-    r"ho\s+lavorato|ho\s+studiato|penso\s+che\s+la\s+mia|la\s+mia\s+passione|"
-    r"vorrei\s+studiare|i\s+studied|i\s+worked|my\s+passion|i\s+would\s+like\s+to\s+study"
-    r")\b",
-    re.I,
-)
 
 
 def _background_reply_looks_valid(body: str, expected: str) -> bool:
     clean = re.sub(r"\s+", " ", body or "").strip()
+    return bool(clean and "?" in clean)
+
+
+def _extract_selected_option_number(text: str) -> Optional[int]:
+    raw = text or ""
+    clean = re.sub(r"\s+", " ", raw).strip()
     if not clean:
-        return False
-    if "?" not in clean:
-        return False
-    if _BACKGROUND_STUDENT_VOICE_LEAK_RX.search(clean):
-        return False
-    return True
+        return None
+
+    m = _OPT_RX.search(clean)
+    if m:
+        return int(m.group(1))
+
+    has_selection_intent = bool(_SELECTION_INTENT_RX.search(clean))
+    is_short_reply = len(clean) <= 12
+
+    m = _DIGIT_RX.search(clean)
+    if m and (has_selection_intent or is_short_reply):
+        return int(m.group(1))
+
+    m = _NUM_WORD_RX.search(clean)
+    if m and (has_selection_intent or is_short_reply):
+        return _NUM_WORD_TO_DIGIT.get(m.group(1).casefold())
+
+    return None
 
 _RIASEC_ALLOWED_LABELS = {
     "realistic": "Realistic",
@@ -969,6 +985,13 @@ def _parse_program_block(block: str) -> Tuple[str, str, str]:
     tipo = ""
     for line in (block or "").splitlines():
         line = line.strip()
+        label = line.split(":", 1)[0].strip().upper() if ":" in line else ""
+        if label.startswith("UNIVERSIT"):
+            university = line.split(":", 1)[1].strip()
+            continue
+        if line.startswith(("UNIVERSITÀ:", "UNIVERSITA:")):
+            university = line.split(":", 1)[1].strip()
+            continue
         if line.startswith("UNIVERSITÀ:"):
             university = line.split(":", 1)[1].strip()
         elif line.startswith("CORSO:"):
@@ -1649,7 +1672,6 @@ def canonical_listener_memory() -> Dict[str, Any]:
             "region": None,
         },
         "inferred": {
-            "gender": None,
             "field_of_interest": None,
             "riasec_attitudes": None,
             "riasec_confidence": None,
@@ -1734,9 +1756,6 @@ def apply_listener_patch(mem: Dict[str, Any], patch: Dict[str, Any]) -> Dict[str
     if foi:
         inf["field_of_interest"] = foi
 
-    if isinstance(pinf.get("gender"), str) and pinf["gender"].strip():
-        inf["gender"] = pinf["gender"].strip()
-
     forced_gender = get_forced_listener_gender()
     if forced_gender:
         inf["gender"] = forced_gender
@@ -1798,6 +1817,10 @@ _LISTENER_PATCH_EVENTS: List[Dict[str, Any]] = []
 _CURRENT_LISTENER_SOURCE_TURN: Optional[int] = None
 _SELECTED_OPTION_EVENT: Optional[Dict[str, Any]] = None
 _ADVICE_OPTIONS_SHOWN: List[str] = []
+LISTENER_PATCH_SCHEMA = {
+    "explicit": {"academic_background", "region"},
+    "inferred": {"field_of_interest", "riasec_question_valences", "riasec_attitudes"},
+}
 
 
 def clear_listener_patches() -> None:
@@ -1883,37 +1906,6 @@ def record_verified_listener_patch_event(
     })
 
 
-
-
-def _phase_accepts_selected_option_patch() -> bool:
-    """selected_option patches are never accepted into listener memory."""
-    return False
-
-
-def _validate_selected_option_against_shown(value: Any) -> Optional[str]:
-    if not isinstance(value, str) or not value.strip():
-        return None
-    shown_options = [
-        str(x).strip()
-        for x in (_LAST_RAG_STATE.advice_options or _ADVICE_OPTIONS_SHOWN or [])
-        if str(x).strip()
-    ]
-    if not shown_options:
-        return None
-
-    canonical = _canonicalize_selected_option_value(value.strip(), shown_options)
-    m = re.match(r"^\s*([1-3])\s+-\s+(.+?)\s*$", canonical)
-    if not m:
-        return None
-    n = int(m.group(1))
-    if not (1 <= n <= len(shown_options)):
-        return None
-    expected_n = _LAST_RAG_STATE.expected_selection_number
-    if expected_n is None or n != expected_n:
-        return None
-    return f"{n} - {shown_options[n - 1]}"
-
-
 def _sanitize_listener_patch_for_current_phase(data: Dict[str, Any]) -> Dict[str, Any]:
     """Drop fields that do not belong in listener memory.
 
@@ -1923,14 +1915,28 @@ def _sanitize_listener_patch_for_current_phase(data: Dict[str, Any]) -> Dict[str
     if not isinstance(data, dict):
         return {}
 
-    out = copy.deepcopy(data)
-    exp = out.get("explicit")
-    if isinstance(exp, dict):
-        exp.pop("selected_option", None)
+    raw = copy.deepcopy(data)
+    out: Dict[str, Any] = {}
 
-    for key in ["explicit", "inferred"]:
-        if isinstance(out.get(key), dict) and not out[key]:
-            out.pop(key, None)
+    exp = raw.get("explicit")
+    if isinstance(exp, dict):
+        clean_exp = {
+            k: v
+            for k, v in exp.items()
+            if k in LISTENER_PATCH_SCHEMA["explicit"]
+        }
+        if clean_exp:
+            out["explicit"] = clean_exp
+
+    inf = raw.get("inferred")
+    if isinstance(inf, dict):
+        clean_inf = {
+            k: v
+            for k, v in inf.items()
+            if k in LISTENER_PATCH_SCHEMA["inferred"]
+        }
+        if clean_inf:
+            out["inferred"] = clean_inf
     return out
 
 
@@ -2417,8 +2423,12 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
         # Remove accidental premature closing and follow-up questions in fixed-probe mode.
         body = _strip_qa_closings_and_questions(body)
         if not body:
-            selected = (_LAST_RAG_STATE.advice_options or _ADVICE_OPTIONS_SHOWN or [])
-            selected_text = selected[0] if selected else _t("the selected option", "l'opzione selezionata")
+            selected_event = get_selected_option_event()
+            if isinstance(selected_event, dict) and selected_event.get("selected_option"):
+                selected_text = str(selected_event["selected_option"]).strip()
+            else:
+                selected = (_LAST_RAG_STATE.advice_options or _ADVICE_OPTIONS_SHOWN or [])
+                selected_text = selected[0] if selected else _t("the selected option", "l'opzione selezionata")
             if _DIALOG_LANGUAGE == "it":
                 body = (
                     f"Questa risposta è coerente con {selected_text} perché usa le informazioni raccolte: "
@@ -2695,13 +2705,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._bg_i = 0
         self._riasec_i = 0
         self._last_ctx: str = ""
+        self._last_raw_blocks: List[str] = []
         self._advice_given = False
         self._pending_selection_ack = False
         self._pending_selection_number: Optional[int] = None
-        self._selection_patch_requested_for: Optional[int] = None
 
         self._riasec_patch_attempts = 0
-        self._choice_patch_requested = False
 
         self._last_options: List[str] = []
         self._riasec_answers: List[str] = []
@@ -2738,13 +2747,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._bg_i = 0
         self._riasec_i = 0
         self._last_ctx = ""
+        self._last_raw_blocks = []
         self._advice_given = False
         self._pending_selection_ack = False
         self._pending_selection_number: Optional[int] = None
-        self._selection_patch_requested_for: Optional[int] = None
 
         self._riasec_patch_attempts = 0
-        self._choice_patch_requested = False
 
         clear_last_rag_state()
         clear_listener_patches()
@@ -2852,6 +2860,33 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         shown = [str(x).strip() for x in (_LAST_RAG_STATE.advice_options or []) if str(x).strip()]
         return shown or list(self._last_options or [])
 
+    def _selected_option_value(self) -> Optional[str]:
+        shown_options = self._displayed_advice_options()
+        selected_value = self._slots.selected_option
+        if selected_value:
+            return _canonicalize_selected_option_value(selected_value, shown_options)
+        if self._pending_selection_number and shown_options:
+            n = self._pending_selection_number
+            if 1 <= n <= len(shown_options):
+                return f"{n} - {shown_options[n - 1]}"
+        return None
+
+    def _selected_option_grounding_context(self, max_chars: int = 1800) -> str:
+        selected = self._selected_option_value()
+        if not selected:
+            return ""
+
+        selected_option = re.sub(r"^\s*[1-3]\s*-\s*", "", selected).strip()
+        blocks = _select_option_context_blocks(
+            list(self._last_raw_blocks or []),
+            [selected_option],
+            max_blocks=2,
+        )
+        if blocks:
+            return _build_short_ctx(blocks, max_chars, max_blocks=2).strip()
+
+        return (self._last_ctx or "")[:max_chars].strip()
+
     def _commit_selected_option_number(self, n: int) -> Optional[str]:
         """Commit the student's explicit numbered option choice to runtime state.
 
@@ -2897,18 +2932,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         # Selection detection is deterministic protocol-state handling.
         # It is intentionally separate from listener memory.
-        option_number = None
-        mo = _OPT_RX.search(student_utt or "")
-        if mo:
-            option_number = int(mo.group(1))
-        else:
-            mnum = _NUM_ONLY_RX.search(student_utt or "")
-            if mnum:
-                option_number = int(mnum.group(1))
-            else:
-                mword = _NUM_WORD_ONLY_RX.search(student_utt or "")
-                if mword:
-                    option_number = _NUM_WORD_TO_DIGIT.get(mword.group(1).lower())
+        option_number = _extract_selected_option_number(student_utt)
 
         if option_number and self._advice_given:
             self._commit_selected_option_number(option_number)
@@ -2992,7 +3016,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             return ""
         if not self._riasec_slots_missing():
             return ""
-        if self._riasec_patch_attempts >= 3:
+        if self._riasec_patch_attempts >= 2:
             return ""
         self._riasec_patch_attempts += 1
         return self._riasec_listener_patch_request()
@@ -3772,14 +3796,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         else:
             riasec_rendered = None
 
-        shown_options = self._displayed_advice_options()
-        selected_value = clean(self._slots.selected_option)
-        if selected_value:
-            selected_value = _canonicalize_selected_option_value(selected_value, shown_options)
-        if not selected_value and self._pending_selection_number and shown_options:
-            n = self._pending_selection_number
-            if 1 <= n <= len(shown_options):
-                selected_value = f"{n} - {shown_options[n - 1]}"
+        selected_value = self._selected_option_value()
 
         fields = [
             ("academic_background", clean(exp.get("academic_background"))),
@@ -3789,13 +3806,22 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             ("riasec_attitudes", riasec_rendered),
         ]
 
-        if get_forced_listener_gender() or os.getenv("SDIALOG_EXPOSE_SENSITIVE_CONTEXT", "0").lower() in {"1", "true", "yes"}:
-            fields.append(("gender", clean(inf.get("gender"))))
-
         lines = [f"- {k}: {v}" for k, v in fields if v is not None]
+        profile_block = "CONTEXT (use internally to decide; do NOT restate unless asked):\n"
         if not lines:
-            return "CONTEXT (use internally to decide; do NOT restate unless asked):\n"
-        return "CONTEXT (use internally to decide; do NOT restate unless asked):\n" + "\n".join(lines) + "\n"
+            out = profile_block
+        else:
+            out = profile_block + "\n".join(lines) + "\n"
+
+        grounding_ctx = self._selected_option_grounding_context()
+        if grounding_ctx:
+            out += (
+                "\nGROUNDING_CONTEXT FOR SELECTED OPTION:\n"
+                "Use this as the only source for factual course/program details. "
+                "If a detail is absent, say that it is not present in the retrieved context.\n"
+                f"{grounding_ctx}\n"
+            )
+        return out
 
     def _build_advice_fallback(self) -> Tuple[str, str, bool]:
         message = (
@@ -3918,6 +3944,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         # ---------------------------------------------------------------------
         if self._flow_stage == "qa":
             riasec_patch = self._maybe_riasec_listener_patch_request()
+            language_rule = "- Answer in Italian.\n" if self.lang == "it" else "- Answer in English.\n"
 
             def _ret(msg: str) -> str:
                 return (msg + riasec_patch) if riasec_patch else msg
@@ -3937,6 +3964,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "PHASE: Q&A\n"
                     f"The student selected: {selected_for_ack or 'the chosen option'}\n"
                     "TASK:\n"
+                    + language_rule +
                     "- Acknowledge the selection in ONE short sentence.\n"
                     "- Do NOT introduce new universities/programs.\n"
                     "- Do NOT ask any questions.\n"
@@ -3954,6 +3982,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                         "QUESTION TYPE: CHOICE, not yes/no.\n"
                         + self._qa_context_block() +
                         "TASK:\n"
+                        + language_rule +
                         f"- Reply with ONLY ONE of these exact strings: '{ch[0]}' OR '{ch[1]}'.\n"
                         "- Do NOT answer Yes or No.\n"
                         "- Output EXACTLY that selected string and nothing else.\n"
@@ -3963,6 +3992,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "QUESTION TYPE: CHOICE, not yes/no.\n"
                     + self._qa_context_block() +
                     "TASK:\n"
+                    + language_rule +
                     "- Reply with ONLY one of the two options mentioned in the student's question.\n"
                     "- Do NOT answer Yes or No.\n"
                     "- Do NOT add any extra words.\n"
@@ -3975,8 +4005,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     + self._agent_norms_block()
                     + self._qa_context_block() +
                     "TASK:\n"
+                    + language_rule +
                     "- Answer the student's 'why' briefly.\n"
-                    "- Ground your justification in the retrieved context; do not invent program details.\n"
+                    "- Ground your justification in GROUNDING_CONTEXT; do not invent program details.\n"
                     "- Use the student's background + constraints + RIASEC to explain trade-offs.\n"
                     "- Do NOT introduce new universities/programs.\n"
                     "- Do NOT ask the student any question.\n"
@@ -3992,8 +4023,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "TASK:\n"
                     "- Start with exactly 'Yes' or 'No' (Italian: 'Sì' or 'No').\n"
 
+                    + language_rule +
                     "- Then add at most one short supporting sentence or caveat.\n"
-                    "- Decide using the CONTEXT above (background, constraints, RIASEC, and the selected option).\n"
+                    "- Decide using CONTEXT and GROUNDING_CONTEXT above.\n"
                 )
 
             update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_other", advice_options=self._displayed_advice_options(), expected_selection_number=None)
@@ -4002,7 +4034,10 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 + self._agent_norms_block()
                 + self._qa_context_block() +
                 "TASK:\n"
+                + language_rule +
                 "- Answer briefly and pragmatically.\n"
+                "- Use GROUNDING_CONTEXT as the only source for factual course/program details.\n"
+                "- If the requested factual detail is absent from GROUNDING_CONTEXT, say so plainly.\n"
                 "- Do NOT introduce new universities/programs.\n"
                 "- Do NOT ask the student any question.\n"
                 "- Do NOT say goodbye; the fixed follow-up sequence must continue.\n"
@@ -4018,7 +4053,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             update_last_rag_state("", phase="greet", expected_verbatim=q)
 
             patch = self._listener_patch_request(
-                targets="- explicit.region\n- inferred.field_of_interest\n- inferred.gender",
+                targets="- explicit.region\n- inferred.field_of_interest",
                 rules=(
                         "Rules for explicit.region:\n"
                         "- Store region only if the student explicitly mentions an Italian macro-area or a canonical Italian region.\n"
@@ -4029,15 +4064,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                         "- Do NOT map foreign or vague locations to Italian areas.\n"
                         "- Do NOT infer region from gender, ethnicity, socioeconomic cues, cities, towns, provinces, or vague descriptions.\n"
                         "\n"
-                    + FIELD_OF_INTEREST_RULES +
-                    "Rules for inferred.gender:\n"
-                    "- Infer gender only if there is a clear cue in the student's message.\n"
-                    "- If there is no clear cue, omit the field."
+                    + FIELD_OF_INTEREST_RULES
                 ),
                 schema_example=(
                     '<LISTENER_PATCH>{"explicit":{"region":"<north|center|south|islands|canonical Italian region>"},'
-                    '"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>","<field_of_interest label 3>"],'
-                    '"gender":"<gender>"}}</LISTENER_PATCH>'
+                    '"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>","<field_of_interest label 3>"]}}</LISTENER_PATCH>'
                 ),
                 evidence="Use the student's FIRST message in this conversation.",
             )
@@ -4175,6 +4206,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         retrieval, candidate_pool = self._get_llm_candidate_pool(query)
 
         self._last_ctx = retrieval.short_ctx
+        self._last_raw_blocks = list(retrieval.raw_blocks or [])
         self._last_options = list(candidate_pool)
 
         riasec_patch = self._maybe_riasec_listener_patch_request()
@@ -4244,8 +4276,6 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         else:
             riasec_profile = "unknown"
 
-        forced_gender = get_forced_listener_gender()
-        gender_line = f"- gender: {forced_gender}\n" if forced_gender else ""
         student_profile_block = (
             "STUDENT PROFILE:\n"
             f"- academic_background: {self._slots.academic_background or 'unknown'}\n"
@@ -4255,7 +4285,6 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
             f"- preferred_region: {getattr(self._slots, 'preferred_region', None) or 'unknown'}\n"
             f"- riasec_attitudes: {riasec_profile}\n"
-            f"{gender_line}"
         )
 
         opt_lines = "\n".join([f"- Option {i + 1}: {o}" for i, o in enumerate(candidate_pool)])
