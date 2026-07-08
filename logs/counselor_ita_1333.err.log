@@ -1,114 +1,24 @@
-[2026-07-03 10:39:59] INFO:owui-session-server:Starting session server on 0.0.0.0:1333
-[2026-07-03 10:39:59] INFO:owui-session-server:Models: university-counselor-ITA:latest
-[2026-07-03 10:39:59] INFO:owui-session-server:Aliases: {'university-counselor-ITA:latest': 'university-counselor-ITA:latest', 'university-counselor-ITA': 'university-counselor-ITA:latest', 'university-counselor:latest': 'university-counselor-ITA:latest', 'university-counselor': 'university-counselor-ITA:latest'}
-[2026-07-03 10:39:59] INFO:owui-session-server:Process model mode: ITA
-[2026-07-03 10:39:59] INFO:owui-session-server:OpenAI-compatible backend base: http://127.0.0.1:58091/v1
-[2026-07-03 10:39:59] INFO:owui-session-server:Agent thinking enabled: False
-[2026-07-03 10:39:59] INFO:owui-session-server:Context budget guard enabled: True
-[2026-07-03 10:39:59] INFO:owui-session-server:Context budget: max_model_len=4096 max_input_tokens=3300 max_chat_messages=10 listener_task_chars=2200
-[2026-07-03 10:39:59] INFO:owui-session-server:Counselor backend for university-counselor-ITA:latest: openai:Mistral-Small-3.1-24B-Instruct-2503
-INFO:     Started server process [1723015]
+[2026-07-08 09:43:38] INFO:owui-session-server:Starting session server on 0.0.0.0:1333
+[2026-07-08 09:43:38] INFO:owui-session-server:Models: university-counselor-ITA:latest
+[2026-07-08 09:43:38] INFO:owui-session-server:Aliases: {'university-counselor-ITA:latest': 'university-counselor-ITA:latest', 'university-counselor-ITA': 'university-counselor-ITA:latest', 'university-counselor:latest': 'university-counselor-ITA:latest', 'university-counselor': 'university-counselor-ITA:latest'}
+[2026-07-08 09:43:38] INFO:owui-session-server:Process model mode: ITA
+[2026-07-08 09:43:38] INFO:owui-session-server:OpenAI-compatible backend base: http://127.0.0.1:58099/v1
+[2026-07-08 09:43:38] INFO:owui-session-server:Agent thinking enabled: False
+[2026-07-08 09:43:38] INFO:owui-session-server:Context budget guard enabled: True
+[2026-07-08 09:43:38] INFO:owui-session-server:Context budget: max_model_len=4096 max_input_tokens=3300 max_chat_messages=10 listener_task_chars=3200
+[2026-07-08 09:43:38] INFO:owui-session-server:Counselor backend for university-counselor-ITA:latest: openai:gemma-4-31B-it
+INFO:     Started server process [2065993]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:1333 (Press CTRL+C to quit)
-[2026-07-03 10:40:07] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
-[2026-07-03 10:40:09] INFO:owui-session-server:Using LanceDB index for ita: /home/pietroneroni/eloquence_pilot2/RAG_University_Eng/Embeddings/lancedb table=universities
-[2026-07-03 10:40:09] INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
-[2026-07-03 10:40:09] INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: intfloat/multilingual-e5-base
-[2026-07-03 10:40:12] INFO:owui-session-server:Created counselor session a3e085f1dfa5 model=university-counselor-ITA:latest lang=Italian rag=ita backend=openai:Mistral-Small-3.1-24B-Instruct-2503
-[2026-07-03 10:40:12] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=new messages=1 stream=True
-[2026-07-03 10:40:47] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=3 stream=True
-[2026-07-03 10:41:13] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=5 stream=True
-[2026-07-03 10:41:41] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=7 stream=True
-[2026-07-03 10:41:55] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=9 stream=True
-[2026-07-03 10:42:07] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=11 stream=True
-[2026-07-03 10:42:21] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=13 stream=True
-[2026-07-03 10:42:26] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=15 stream=True
-[2026-07-03 10:43:25] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=17 stream=True
-[2026-07-03 10:43:30] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=19 stream=True
-[2026-07-03 10:43:37] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=21 stream=True
-[2026-07-03 10:43:42] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=23 stream=True
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.66it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.66it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.97it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.96it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.14it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.14it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.06it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.06it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.23it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.23it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.59it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.59it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.18it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.18it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.02it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.02it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.09it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.09it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.01it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.01it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.19it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.19it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.09it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.09it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.14it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.13it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.33it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.33it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.98it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.98it/s]
-[2026-07-03 10:44:18] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=a3e085f1dfa5 status=existing messages=25 stream=True
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.32it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.32it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.09it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.28it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.28it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.02it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.01it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.96it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.96it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.28it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.28it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.22it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.22it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.75it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.73it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.32it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.32it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.17it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.17it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.25it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.25it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.04it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.04it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.11it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.11it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.23it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.23it/s]
-Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.19it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.19it/s]
-[2026-07-03 10:44:34] ERROR:owui-session-server:Error while processing session a3e085f1dfa5
-Traceback (most recent call last):
-  File "/home/pietroneroni/eloquence_pilot2/university_counseling/owui_session_server.py", line 1210, in chat_completions
-    assistant_text = run_counselor_turn(session, last_user_text)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/university_counseling/owui_session_server.py", line 1073, in run_counselor_turn
-    events = session.agent(user_text, return_events=True)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/sdialog/agents.py", line 359, in __call__
-    response, response_events = self._get_llm_response(self.memory)
-                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/university_counseling/owui_session_server.py", line 891, in _wrapped_get_llm_response
-    return original(messages, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/sdialog/agents.py", line 408, in _get_llm_response
-    response = self.llm.invoke(messages)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 382, in invoke
-    self.generate_prompt(
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1091, in generate_prompt
-    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 906, in generate
-    self._generate_with_cache(
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1195, in _generate_with_cache
-    result = self._generate(
-             ^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1299, in _generate
-    raise e
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1294, in _generate
-    raw_response = self.client.with_raw_response.create(**payload)
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/openai/_legacy_response.py", line 364, in wrapped
-    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
-                                      ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/openai/_utils/_utils.py", line 286, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 1156, in create
-    return self._post(
-           ^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1259, in post
-    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/openai/_base_client.py", line 1047, in request
-    raise self._make_status_error_from_response(err.response) from None
-openai.BadRequestError: Error code: 400 - {'error': {'message': "This model's maximum context length is 4096 tokens. However, you requested 0 output tokens and your prompt contains 4104 input tokens, for a total of 4104 tokens. Please reduce the length of the input prompt or the number of requested output tokens. (parameter=input_tokens, value=4104)", 'type': 'BadRequestError', 'param': 'input_tokens', 'code': 400}}
+[2026-07-08 09:43:49] INFO:sdialog.util:Loading OpenAI model: gemma-4-31B-it
+[2026-07-08 09:43:51] INFO:owui-session-server:Using LanceDB index for ita: /home/pietroneroni/eloquence_pilot2/RAG_University_Ita/Embeddings/lancedb table=universities
+[2026-07-08 09:43:51] INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+[2026-07-08 09:43:51] INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: intfloat/multilingual-e5-base
+[2026-07-08 09:43:54] INFO:owui-session-server:Created counselor session abca6d46f95c model=university-counselor-ITA:latest lang=Italian rag=ita backend=openai:gemma-4-31B-it
+[2026-07-08 09:43:54] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ITA:latest lang=Italian rag=ita session=abca6d46f95c status=new messages=1 stream=True
+[2026-07-08 09:43:56] INFO:owui-session-server:Logged dialog turn session=abca6d46f95c turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_ita_1333.jsonl
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [1723015]
+INFO:     Finished server process [2065993]

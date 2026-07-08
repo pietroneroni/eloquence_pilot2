@@ -536,19 +536,39 @@ _RIASEC_WEIGHTS_BY_Q: List[Dict[str, float]] = [
 ]
 
 def _normalize_riasec_valences(value: Any) -> Optional[List[int]]:
+    """Strict validator for model-generated RIASEC valences.
+
+    Accepted output:
+    - list of exactly 8 integers
+    - each value must be one of -2, -1, 0, 1, 2
+
+    Reject:
+    - 3, -3
+    - floats / decimals
+    - booleans
+    - nulls
+    - strings that are not plain integers
+    """
     if not isinstance(value, list) or len(value) != 8:
         return None
 
     out: List[int] = []
+    allowed = {-2, -1, 0, 1, 2}
+
     for item in value:
         if isinstance(item, bool):
             return None
-        try:
-            v = int(item)
-        except Exception:
+
+        if isinstance(item, int):
+            v = item
+        elif isinstance(item, str) and re.fullmatch(r"-?\d+", item.strip()):
+            v = int(item.strip())
+        else:
             return None
-        if v < -2 or v > 2:
+
+        if v not in allowed:
             return None
+
         out.append(v)
 
     return out
@@ -2775,17 +2795,25 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         rules: str = "",
     ) -> str:
         return (
-            "\nHIDDEN LISTENER TASK (STRICT):\n"
-            "- After your student-visible reply, append ONE <LISTENER_PATCH> JSON block.\n"
-            "- This hidden patch is mandatory even when visible-output rules say ONLY Yes/No, ONLY one choice, or ONLY numbered options.\n"
-            "- The hidden patch is not part of the visible reply; it will be stripped by postprocessing.\n"
-            "- The patch must include ONLY the requested target fields.\n"
-            "- If a field is unknown, omit it (do NOT guess).\n"
+            "\nHIDDEN LISTENER TASK (STRICT)\n"
+            "\n"
+            "After the student-visible reply, append exactly ONE valid JSON object inside:\n"
+            "<LISTENER_PATCH>...</LISTENER_PATCH>\n"
+            "\n"
+            "This hidden patch is mandatory even when visible-output rules say ONLY Yes/No, ONLY one choice, or ONLY numbered options.\n"
+            "The hidden patch is not part of the visible reply; it will be stripped by postprocessing.\n"
+            "\n"
+            "GENERAL EXTRACTION RULES:\n"
+            "- Include ONLY the requested target fields.\n"
+            "- If a field is unknown or weakly supported, omit it; do not guess.\n"
+            "- Do not infer from gender, name, ethnicity, socioeconomic cues, stereotypes, or hidden metadata.\n"
             "- Output valid JSON only inside the tags.\n"
+            "- Do not output comments, markdown, explanations, or extra text inside the tags.\n"
+            "\n"
             f"TARGET FIELDS:\n{targets}\n"
-            + (f"RULES:\n{rules}\n" if rules else "")
-            + f"SCHEMA EXAMPLE:\n{schema_example}\n"
-              f"EVIDENCE:\n{evidence}\n"
+            + (f"\nFIELD-SPECIFIC RULES:\n{rules}\n" if rules else "")
+            + f"\nSCHEMA EXAMPLE:\n{schema_example}\n"
+            + f"\nEVIDENCE:\n{evidence}\n"
         )
 
     def _background_slot_patch_request(self, evidence: str) -> str:
@@ -2959,51 +2987,98 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         return not (isinstance(inf.get("riasec_attitudes"), list) and inf.get("riasec_attitudes"))
 
     def _riasec_listener_patch_request(self) -> str:
+        if self.lang == "it":
+            calibration = (
+                "Calibration:\n"
+                "- 'mi piace moltissimo', 'mi piace molto', 'mi entusiasma', 'lo faccio volentieri spesso' -> di solito 2.\n"
+                "- 'molto' da solo, se risponde direttamente alla domanda 'quanto ti piace...', -> di solito 2, mai 3.\n"
+                "- 'mi piace', 'mi interessa', 'lo trovo interessante', 'abbastanza' -> di solito 1.\n"
+                "- 'dipende', 'a volte', 'forse', 'non saprei', 'non so', 'non credo sia necessario' -> di solito 0.\n"
+                "- 'sono bravo/a ma non mi piace', 'riesco a farlo ma non mi interessa' -> di solito 0.\n"
+                "- 'non tanto', 'non molto', 'non mi attira molto', 'preferirei di no' -> di solito -1.\n"
+                "- 'non mi piace', 'per niente', 'lo eviterei', 'lo detesto' -> di solito -2.\n"
+                "- Se una risposta è ambivalente, scegli il valore più prudente e più vicino a 0.\n"
+                "- Non usare mai 3 o -3: la scala finisce a 2 e -2.\n"
+            )
+
+            question_focus = (
+                "Question focus:\n"
+                "Q1 = attività pratiche/manuali con oggetti concreti, strumenti, costruire, riparare\n"
+                "Q2 = curiosità su come funzionano cose, sistemi o fenomeni\n"
+                "Q3 = ricerca di informazioni, analisi, problemi, ragionamento logico\n"
+                "Q4 = espressione creativa tramite scrittura, arte, musica, design o forme simili\n"
+                "Q5 = sperimentare, inventare, creare qualcosa di nuovo da idee aperte\n"
+                "Q6 = lavorare a stretto contatto con persone in ruolo di aiuto, supporto o ascolto\n"
+                "Q7 = proporre idee, prendere iniziativa, organizzare progetti o attività\n"
+                "Q8 = ordine, pianificazione, struttura, controllo, organizzazione amministrativa\n"
+            )
+        else:
+            calibration = (
+                "Calibration:\n"
+                "- 'I love it', 'I really enjoy it', 'I often choose to do it' -> usually 2.\n"
+                "- 'very much' as a direct answer to 'how much do you enjoy...' -> usually 2, never 3.\n"
+                "- 'I like it', 'I find it interesting', 'somewhat', 'quite' -> usually 1.\n"
+                "- 'It depends', 'sometimes', 'maybe', 'I'm not sure', 'I don't know', 'not necessary' -> usually 0.\n"
+                "- 'I'm good at it but don't enjoy it' -> usually 0.\n"
+                "- 'not much', 'not really', 'I prefer not to' -> usually -1.\n"
+                "- 'I don't like it', 'not at all', 'I would avoid it', 'I hate it' -> usually -2.\n"
+                "- If an answer is ambivalent, choose the safer value closer to 0.\n"
+                "- Never use 3 or -3: the scale ends at 2 and -2.\n"
+            )
+
+            question_focus = (
+                "Question focus:\n"
+                "Q1 = practical/manual work with concrete objects, tools, building, repairing\n"
+                "Q2 = curiosity about how things, systems, or phenomena work\n"
+                "Q3 = research, analysis, problem solving, logical reasoning\n"
+                "Q4 = creative expression through writing, art, music, design, or similar forms\n"
+                "Q5 = experimenting, inventing, creating new things from open-ended ideas\n"
+                "Q6 = close work with people in a helping, supportive, or listening role\n"
+                "Q7 = proposing ideas, taking initiative, organizing projects or activities\n"
+                "Q8 = order, planning, structure, control, administrative organization\n"
+            )
+
         return self._listener_patch_request(
             targets="- inferred.riasec_question_valences",
             rules=(
                 "Use ONLY the student's answers to the 8 RIASEC questions.\n"
                 "Do NOT use biography, gender, academic background, grades, job, goals, "
-                "field_of_interest or university options.\n"
+                "field_of_interest, selected option, university options, or RAG context.\n"
                 "\n"
-                "Your task is to estimate the student's expressed INTEREST/PREFERENCE "
-                "for each RIASEC question.\n"
-                "Do NOT estimate ability, confidence, preparation, social desirability, "
-                "or academic readiness.\n"
+                "Your task is NOT to assign final RIASEC labels.\n"
+                "Your task is ONLY to score the student's expressed liking/preference "
+                "for each activity.\n"
                 "\n"
-                "Return exactly one JSON object inside <LISTENER_PATCH> ... </LISTENER_PATCH>.\n"
-                "Return only the requested field.\n"
+                "ALLOWED VALUES, STRICT:\n"
+                "- Allowed values are ONLY: -2, -1, 0, 1, 2.\n"
+                "- Never output 3, -3, decimals, strings, nulls, booleans, or explanations.\n"
+                "- If the answer says 'molto', 'very much', 'I really like it', the maximum score is 2, not 3.\n"
+                "- If you are unsure between two values, choose the value closer to 0.\n"
+                "- The JSON array must contain exactly 8 integers.\n"
                 "\n"
-                "Return an array of exactly 8 integers named riasec_question_valences. "
-                "Each integer corresponds to Q1..Q8 in order.\n"
+                "Internal procedure:\n"
+                "1. Score Q1 from A1 only, Q2 from A2 only, ..., Q8 from A8 only.\n"
+                "2. Score the expressed preference for doing the activity, not ability, talent, confidence, preparation, school performance, or career usefulness.\n"
+                "3. If the answer mentions both liking and insecurity, score the liking.\n"
+                "4. If the answer mentions ability without liking, score 0 unless dislike is explicit.\n"
+                "5. If the answer is missing, evasive, off-topic, or only says 'I don't know'/'non so'/'non saprei', score 0.\n"
+                "6. Do not make a positive inference from career goals, school background, personality stereotypes, gender, or previous field of study.\n"
+                "7. Do not compensate one question with another question: each score must be local to its own answer.\n"
                 "\n"
                 "Scale:\n"
-                "- 2 = clear and strong liking, with explicit enthusiasm or concrete examples\n"
-                "- 1 = moderate liking, curiosity, or generally positive attitude\n"
-                "- 0 = unclear, mixed, conditional, only ability mentioned, or insufficient evidence\n"
-                "- -1 = moderate dislike, avoidance, or low preference\n"
-                "- -2 = clear and strong dislike or rejection\n"
+                "2 = clear strong liking, enthusiasm, or voluntary examples of doing/enjoying that activity\n"
+                "1 = mild/moderate liking, curiosity, or generally positive but not strong preference\n"
+                "0 = neutral, unclear, mixed, conditional, ability-only, off-topic, or insufficient evidence\n"
+                "-1 = mild/moderate dislike, low interest, or preference to avoid when possible\n"
+                "-2 = clear strong dislike, rejection, or explicit avoidance\n"
                 "\n"
-                "Calibration rules:\n"
-                "- If the student likes an activity but feels insecure about being good at it, score the interest as positive.\n"
-                "- If the student says they are good at an activity but do not enjoy it, score it neutral or negative.\n"
-                "- Do not treat long or enthusiastic wording as strong evidence unless it is about the specific activity in the question.\n"
-                "- Do not infer a RIASEC type from career goals, school background, grades, gender, or biography.\n"
-                "- Do not force a positive score: neutral or unclear answers should be 0.\n"
-                "- Ambivalent answers such as 'sometimes', 'it depends', 'maybe', or 'a little' are usually 0 or 1, not 2.\n"
-                "- Strong rejection such as 'I really do not like it', 'I avoid it', or 'I would not want to do that' is -2.\n"
+                + calibration +
                 "\n"
-                "Question mapping used later by Python:\n"
-                "- Q1 practical, hands-on work, building or repairing things -> Realistic\n"
-                "- Q2 understanding how things work -> Investigative; possible Realistic nuance only if the answer mentions concrete mechanisms, tools, objects, or systems\n"
-                "- Q3 researching, analyzing problems, logical reasoning -> Investigative\n"
-                "- Q4 creative expression through writing, art, music, or design -> Artistic\n"
-                "- Q5 experimenting and creating new things -> Artistic / Investigative / Enterprising nuance; score the general preference for experimenting and creating\n"
-                "- Q6 working closely with people in a supportive or helping role -> Social\n"
-                "- Q7 proposing ideas and organizing projects -> Enterprising / Conventional nuance\n"
-                "- Q8 keeping everything organized and under control -> Conventional (C, not Creative)\n"
+                + question_focus +
                 "\n"
-                "Do NOT output final RIASEC labels. Python will calculate the top 3 labels and confidence from riasec_question_valences.\n"
+                "Return exactly one array of 8 integers named riasec_question_valences.\n"
+                "Each integer corresponds to Q1-Q8 in order.\n"
+                "Do NOT output final RIASEC labels. Python will calculate labels and confidence.\n"
             ),
             schema_example=(
                 '<LISTENER_PATCH>{"inferred":{"riasec_question_valences":[0,0,0,0,0,0,0,0]}}</LISTENER_PATCH>'
@@ -3824,9 +3899,18 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         return out
 
     def _build_advice_fallback(self) -> Tuple[str, str, bool]:
-        message = (
-            "I could not find grounded options that fit your current profile closely enough in the current university set. "
-            "Please clarify one point only: should I broaden toward adjacent fields, or keep the field exact and prioritize your current constraints?"
+        message = _t(
+            (
+                "I could not find grounded options that fit your current profile closely enough "
+                "in the current university set. Please clarify one point only: should I broaden "
+                "toward adjacent fields, or keep the field exact and prioritize your current constraints?"
+            ),
+            (
+                "Non ho trovato opzioni grounded abbastanza coerenti con il tuo profilo "
+                "nell'insieme attuale di università. Chiarisci solo un punto: preferisci "
+                "allargare leggermente verso aree affini, oppure mantenere il campo esatto "
+                "e dare priorità ai vincoli attuali?"
+            ),
         )
         return message, "", False
 
@@ -3837,10 +3921,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         if scope_name.startswith("zone_"):
             return ""
 
-        if scope_name in {"italy_fallback", "italy_keyword_fallback"}:
+        if scope_name.startswith("italy_fallback") or scope_name == "italy_keyword_fallback":
             return (
                 f"NOTE: no grounded option was found in the preferred area ({self._slots.region}). "
-                "The OPTIONS below are grounded alternatives from the current university set across Italy.\n\n"
+                "The CANDIDATE OPTIONS below are grounded alternatives from the current university set across Italy. "
+                "Do not describe them as exact-region-compatible or near home unless that is explicitly grounded.\n\n"
             )
 
         return ""
@@ -3945,7 +4030,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         if self._flow_stage == "qa":
             riasec_patch = self._maybe_riasec_listener_patch_request()
             language_rule = "- Answer in Italian.\n" if self.lang == "it" else "- Answer in English.\n"
-
+            yes_no_start_rule = (
+                "- Inizia esattamente con 'Sì' o 'No'.\n"
+                if self.lang == "it"
+                else "- Start with exactly 'Yes' or 'No'.\n"
+            )
             def _ret(msg: str) -> str:
                 return (msg + riasec_patch) if riasec_patch else msg
 
@@ -4015,17 +4104,24 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 )
 
             if qtype == "yesno":
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_yesno", advice_options=self._displayed_advice_options(), expected_selection_number=None)
+                update_last_rag_state(
+                    self._last_ctx,
+                    query=_LAST_RAG_STATE.query,
+                    phase="qa_yesno",
+                    advice_options=self._displayed_advice_options(),
+                    expected_selection_number=None,
+                )
                 return _ret(
                     "PHASE: Q&A\n"
                     "QUESTION TYPE: YES/NO suitability/feasibility/readiness/risk.\n"
-                    + self._qa_context_block() +
-                    "TASK:\n"
-                    "- Start with exactly 'Yes' or 'No' (Italian: 'Sì' or 'No').\n"
-
-                    + language_rule +
-                    "- Then add at most one short supporting sentence or caveat.\n"
-                    "- Decide using CONTEXT and GROUNDING_CONTEXT above.\n"
+                    + self._qa_context_block()
+                    + "TASK:\n"
+                    + language_rule
+                    + yes_no_start_rule
+                    + "- Then add at most one short supporting sentence or caveat.\n"
+                    + "- Decide using CONTEXT and GROUNDING_CONTEXT above.\n"
+                    + "- Do NOT introduce new universities/programs.\n"
+                    + "- Do NOT ask the student any question.\n"
                 )
 
             update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_other", advice_options=self._displayed_advice_options(), expected_selection_number=None)
@@ -4243,16 +4339,29 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 advice_fallback=False,
                 advice_options=[],
             )
-            return (
-                "PHASE: DONE\n"
-                "This is the final counselor message.\n"
-                "- Briefly state that no grounded options were found in the current university set.\n"
-                "- Give the next steps in one prose sentence, not as a numbered or bulleted list.\n"
-                "- Use only these ideas: broaden the target field slightly; keep the field exact and search again later when more universities are available; review constraints/priorities.\n"
-                "- Then say goodbye.\n"
-                "- Do NOT ask any further question.\n"
-                "- Do NOT continue the conversation beyond this message.\n"
+            done_prompt = _t(
+                (
+                    "PHASE: DONE\n"
+                    "This is the final counselor message.\n"
+                    "- Briefly state that no grounded options were found in the current university set.\n"
+                    "- Give the next steps in one prose sentence, not as a numbered or bulleted list.\n"
+                    "- Use only these ideas: broaden the target field slightly; keep the field exact and search again later when more universities are available; review constraints/priorities.\n"
+                    "- Then say goodbye.\n"
+                    "- Do NOT ask any further question.\n"
+                    "- Do NOT continue the conversation beyond this message.\n"
+                ),
+                (
+                    "PHASE: DONE\n"
+                    "Questo è il messaggio finale del counselor.\n"
+                    "- Dì brevemente che non sono state trovate opzioni grounded nell'insieme attuale di università.\n"
+                    "- Dai i prossimi passi in una sola frase in prosa, non come lista numerata o puntata.\n"
+                    "- Usa solo queste idee: allargare leggermente il campo di ricerca; mantenere il campo esatto e riprovare quando saranno disponibili più università; rivedere vincoli e priorità.\n"
+                    "- Poi saluta.\n"
+                    "- Non fare ulteriori domande.\n"
+                    "- Non continuare la conversazione oltre questo messaggio.\n"
+                ),
             )
+            return done_prompt
 
         self._advice_retry_count = 0
         self._advice_given = True
@@ -4270,11 +4379,15 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         ranked_fields = self._get_ranked_field_of_interest()
         field_profile = " > ".join(ranked_fields) if ranked_fields else (self._slots.field_of_interest or "unknown")
 
-        riasec_value = (self._listener_memory.get("inferred", {}) or {}).get("riasec_attitudes")
+        inferred_mem = self._listener_memory.get("inferred", {}) or {}
+
+        riasec_value = inferred_mem.get("riasec_attitudes")
         if isinstance(riasec_value, list) and riasec_value:
             riasec_profile = ", ".join(str(x).strip() for x in riasec_value if str(x).strip())
         else:
             riasec_profile = "unknown"
+
+        riasec_confidence = inferred_mem.get("riasec_confidence") or "unknown"
 
         student_profile_block = (
             "STUDENT PROFILE:\n"
@@ -4282,9 +4395,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             f"- field_of_interest: {field_profile}\n"
             f"- intended_level: {self._slots.intended_level or 'unknown'}\n"
             f"- region: {self._slots.region or 'unknown'}\n"
-
             f"- preferred_region: {getattr(self._slots, 'preferred_region', None) or 'unknown'}\n"
             f"- riasec_attitudes: {riasec_profile}\n"
+            f"- riasec_confidence: {riasec_confidence}\n"
         )
 
         opt_lines = "\n".join([f"- Option {i + 1}: {o}" for i, o in enumerate(candidate_pool)])
@@ -4292,6 +4405,10 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         search_note = self._search_note_for_scope(retrieval.scope_name)
 
         final_line = _advice_final_line()
+        final_top_n = max(1, min(int(self.final_top_n), 3, len(candidate_pool)))
+        visible_option_template = "\n".join(
+         f"  {i}. <exact option text>" for i in range(1, final_top_n + 1)
+        )
         internal_riasec_step = ""
         riasec_evidence_for_ranking = ""
         if riasec_profile == "unknown" and len(self._riasec_answers) >= 8:
@@ -4302,11 +4419,29 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         if riasec_profile == "unknown":
             internal_riasec_step = (
                 "INTERNAL RIASEC STEP (do not show):\n"
-                "- Infer the student's top 3 RIASEC labels from the 8 RIASEC answers in the conversation.\n"
-                "- Use those inferred labels when ranking the candidate options.\n"
-                "- The RIASEC labels used for ranking MUST be the same labels emitted in <LISTENER_PATCH>.\n"
-                "- Do not use any heuristic or fixed scoring; infer from the student's natural-language answers.\n\n"
+                "- If riasec_attitudes is unknown but all 8 RIASEC answers are available, do NOT infer labels directly from biography or general impressions.\n"
+                "- First infer an internal valence vector for Q1-Q8 using the same scale used by the hidden listener patch:\n"
+                "  2 = strong liking; 1 = moderate liking; 0 = unclear/mixed/ability-only; -1 = dislike; -2 = strong dislike.\n"
+                "- Score each answer independently and locally: Q1 from A1 only, Q2 from A2 only, ..., Q8 from A8 only.\n"
+                "- Score preference/liking for the activity, not ability, talent, confidence, school performance, or career usefulness.\n"
+                "- Use only the answers to the 8 RIASEC questions.\n"
+                "- Then use the following mapping only as a weak ranking signal:\n"
+                "  Q1 -> Realistic\n"
+                "  Q2 -> Investigative, with minor Realistic nuance only when concrete mechanisms/tools/systems are explicit\n"
+                "  Q3 -> Investigative\n"
+                "  Q4 -> Artistic\n"
+                "  Q5 -> Artistic / Investigative / Enterprising nuance\n"
+                "  Q6 -> Social\n"
+                "  Q7 -> Enterprising / Conventional nuance\n"
+                "  Q8 -> Conventional\n"
+                "- If the inferred profile is flat, mixed, or uncertain, treat RIASEC as low-confidence and use it only as a tie-breaker.\n"
+                "- The RIASEC labels used for ranking must be consistent with the hidden listener patch.\n\n"
             )
+        final_top_n = max(1, min(int(self.final_top_n), 3, len(candidate_pool)))
+        visible_option_template = "\n".join(
+            f"  {i}. <exact option text>" for i in range(1, final_top_n + 1)
+        )
+
         return (
             "PHASE: ADVICE\n"
             + self._agent_norms_block()
@@ -4316,37 +4451,41 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             f"{opt_lines}\n\n"
             + "OPTION METADATA:\n"
             f"{option_meta}\n\n"
-              "RAG_CONTEXT FOR THE CANDIDATE OPTIONS (paraphrase only; do not copy markers/IDs):\n"
-              f"{retrieval.short_ctx}\n\n"
+            + "RAG_CONTEXT FOR THE CANDIDATE OPTIONS:\n"
+            + "Use this context only to verify that each option is grounded and relevant. "
+            "Do not invent facts that are not present here. Paraphrase only; do not copy markers/IDs.\n"
+            f"{retrieval.short_ctx}\n\n"
             + internal_riasec_step
             + riasec_evidence_for_ranking
-            +"TASK:\n"
-            "- Use ONLY the options listed in CANDIDATE OPTIONS.\n"
-            "- These options are already filtered for basic compatibility, deduplicated, and cleaned.\n"
-            "- The candidate options are not necessarily ordered. "
-            "- Rank them using the student profile, including the inferred RIASEC labels.\n"
-            "- Use the student profile to decide the ranking.\n"
-            "- Prefer matches with the FIRST field_of_interest label over matches with later labels.\n"
-            "- Treat the student's stated macro-area as a real constraint for ranking.\n"
-            "- If same-area options are present, rank same-area options before outside-area options.\n"
-            "- Treat preferred_region as stricter than macro-area: if options in the exact preferred_region are present, rank them before same-macro-area options.\n"
-            "- If no option was found in the exact preferred_region, do not describe same-macro-area or national fallback options as exact-region-compatible.\n"
-            "- If the search note says no grounded option was found in the preferred area, do not describe outside-area options as near home or region-compatible.\n"
-            "- Do NOT invent new programs, universities, course details, rankings, or explanations.\n"
-            "- Return up to 3 options, only if they are genuinely plausible.\n"
-            "- If no candidate is a plausible fit, state that no grounded option is available.\n"
-            "\n"
-            "VISIBLE OUTPUT RULES:\n"
-            "- The visible answer must contain ONLY one short intro line, then the final options, up to 3.\n"
-            f"- If you return one option, first line must be exactly: {_advice_intro_line(1)}\n"
-            f"- If you return multiple options, first line must be exactly: {_advice_intro_line(2)}\n"
-            "- Use the exact option text from CANDIDATE OPTIONS.\n"
-            "- Do not add visible explanations, comments, headers, bullets, or extra prose.\n"
-            "- Visible output format must be intro line, then numbered options, one option per line:\n"
-            "  1. <exact option text>\n"
-            "  2. <exact option text>\n"
-            "  3. <exact option text if available>\n"
-            f'  Final line: "{final_line}"\n'
+            + "INTERNAL RANKING RULES:\n"
+            + "- Use ONLY the options listed in CANDIDATE OPTIONS.\n"
+            + "- The candidate options are already filtered for basic compatibility, deduplicated, and cleaned.\n"
+            + "- The candidate options are not necessarily ordered.\n"
+            + "- Rank them using the student profile, including inferred RIASEC labels.\n"
+            + "- Use riasec_attitudes as a preference signal, not as a diagnosis or a hard constraint.\n"
+            + "- If riasec_confidence is low or unknown, use RIASEC only as a weak tie-breaker after field_of_interest, intended_level, and region.\n"
+            + "- If riasec_confidence is medium or high, use RIASEC to prefer options whose activities match the student's expressed preferences.\n"
+            + "- Never override a clear field_of_interest or hard factual constraint only because of RIASEC.\n"
+            + "- Prefer matches with the FIRST field_of_interest label over matches with later labels.\n"
+            + "- Respect intended_level when available.\n"
+            + "- Treat the student's stated macro-area as a real constraint for ranking.\n"
+            + "- If same-area options are present, rank same-area options before outside-area options.\n"
+            + "- Treat preferred_region as stricter than macro-area: if options in the exact preferred_region are present, rank them before same-macro-area options.\n"
+            + "- If no option was found in the exact preferred_region, do not describe same-macro-area or national fallback options as exact-region-compatible.\n"
+            + "- If the search note says no grounded option was found in the preferred area, do not describe outside-area options as near home or region-compatible.\n"
+            + "- Do NOT invent new programs, universities, course details, rankings, explanations, deadlines, contacts, or services.\n"
+            + f"- Return up to {final_top_n} options, only if they are genuinely plausible.\n"
+            + "- If no candidate is a plausible fit, state that no grounded option is available.\n"
+            + "\n"
+            + "VISIBLE OUTPUT RULES:\n"
+            + f"- The visible answer must contain ONLY one short intro line, then the final options, up to {final_top_n}.\n"
+            + f"- If you return one option, first line must be exactly: {_advice_intro_line(1)}\n"
+            + f"- If you return multiple options, first line must be exactly: {_advice_intro_line(2)}\n"
+            + "- Use the exact option text from CANDIDATE OPTIONS.\n"
+            + "- Do not add visible explanations, comments, headers, bullets, markdown, or extra prose.\n"
+            + "- Visible output format must be intro line, then numbered options, one option per line:\n"
+            + f"{visible_option_template}\n"
+            + f'  Final line: "{final_line}"\n'
             + riasec_patch
         )
 
