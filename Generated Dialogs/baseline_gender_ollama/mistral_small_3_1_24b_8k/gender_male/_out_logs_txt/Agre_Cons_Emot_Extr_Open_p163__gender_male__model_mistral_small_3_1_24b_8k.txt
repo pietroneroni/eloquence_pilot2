@@ -1,0 +1,356 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p163.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12356
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 4cde36f3-6d31-482b-89be-44dc0ee3f688
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12356
+--- Dialogue Begins ---
+[Student] Ciao. Sono uno studente del Nord Italia che cerca consigli su come scegliere il corso di laurea giusto. I miei genitori hanno sempre lavorato sodo e mi hanno insegnato l'importanza dell'impegno e dell'eccellenza, quindi so che voglio seguire una carriera che mi appassioni veramente. Però ho molti interessi: mi piace capire come funzionano le cose e sono anche creativo e sociale. Non sono sicuro da dove iniziare!
+[Counselor[mistral_small_3_1_24b_8k]] Benvenuto al servizio di orientamento universitario. Il mio compito è aiutarti a scegliere un corso di laurea basato sui tuoi interessi, competenze e vincoli personali. Che scuola superiore hai frequentato o stai frequentando?
+[Student] Ho completato il liceo in Nord Italia. Sono una persona che si sente a proprio agio con gli altri e ama capire come funzionano le cose e aiutare le persone.
+[Counselor[mistral_small_3_1_24b_8k]] Capisco, quindi sei appena uscito dal liceo in nord Italia? Tra le tue materie preferite al liceo ce n'erano alcune che ti hanno appassionato particolarmente?
+[Student] Sì. Mi sono sempre piaciuti molto i soggetti logici e scientifici, ma anche arte e disegno.
+[Counselor[mistral_small_3_1_24b_8k]] Perfetto, quindi potresti voler approfondire l'aspetto più tecnico o pratico delle cose? Vorrei raccomandarti alcuni corsi di laurea che potrebbero fare al caso tuo. Penso a un corso di Laurea in Scienze Cognitive e Linguaggio presso La Statale di Milano che potrebbe essere una scelta ideale per te.
+[Student] Mi sembra interessante. Anche se ho un po' di ansia all'idea di dover scegliere la carriera giusta.
+[Counselor[mistral_small_3_1_24b_8k]] Non preoccuparti, è normale avere un po’ di ansia in questo momento! In realtà è meglio avere chiaro dove vuoi andare piuttosto che non avere idea su come costruirti il futuro. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare? Se sei abbastanza flessibile riguardo al luogo, possiamo iniziare considerando i programmi offerti a Milano. I programmi di studio della Statale sono un'ottima scelta poiché la sede offre molte opportunità per crescere sia professionalmente che personalmente.
+[Student] Non ci ho ancora pensato molto. Se però posso dire la mia, non mi dispiacerebbe rimanere nelle vicinanze della mia città.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza. Ciao .
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO 2. University of Sassari | [A144] DESIGN Scegli un'opzione indicando il numero.
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "cognitive_science_linguistics",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "cognitive_science_linguistics",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "cognitive_science_linguistics",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "cognitive_science_linguistics",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Social",
+        "Investigative",
+        "Realistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+null
+[INVALID_PROTOCOL] missing_fixed_followup_questions=9

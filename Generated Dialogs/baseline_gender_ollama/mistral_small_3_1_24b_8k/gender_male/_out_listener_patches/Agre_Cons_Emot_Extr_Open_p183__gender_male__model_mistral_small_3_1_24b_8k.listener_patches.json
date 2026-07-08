@@ -1,0 +1,53 @@
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "ingegneria",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        -1,
+        1,
+        -1,
+        1,
+        2
+      ]
+    }
+  }
+]

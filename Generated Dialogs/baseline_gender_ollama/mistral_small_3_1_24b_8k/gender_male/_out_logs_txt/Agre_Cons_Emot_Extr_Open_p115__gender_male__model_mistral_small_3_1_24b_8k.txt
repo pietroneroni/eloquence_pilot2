@@ -1,0 +1,286 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p115.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12347
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] fa71fd1f-40ad-42f9-acda-5b53a33c53ed
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12347
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente che vive nelle isole italiane e sono alla ricerca di un programma universitario. Recentemente ho deciso di conseguire un master in data science per approfondire le mie competenze e contribuire a ricerche innovative. Vorrei dei suggerimenti su come procedere.
+[Counselor[mistral_small_3_1_24b_8k]] Benvenuto! Sono qui per aiutarti a scegliere il programma universitario più adatto al tuo background, ai tuoi interessi e alle tue capacità. Posso aiutarti a identificare le opportunità disponibili e valutare i requisiti di ciascuna. Allora, che scuola, corso o laurea stai frequentando o hai concluso di recente?
+[Student] Ho completato il liceo nelle isole italiane. Ho sempre avuto interesse per la tecnologia e ho seguito un percorso orientato verso studi logici e analitici.
+[Counselor[mistral_small_3_1_24b_8k]] Perfetto, grazie per aver condiviso questa informazione. Le tue passioni per la tecnologia e l'analisi ti guideranno nella scelta del programma giusto. Qual è il tuo campo preferito in ambito data science?
+[Student] Non ho ancora deciso quale sia il mio campo specifico di interesse nell'ambito della data science. Ho un interesse generale nelle ricerche innovative, ma non ho ancora fatto una scelta.
+[Counselor[mistral_small_3_1_24b_8k]] Perfetto! Il Master in Data Science presso la Scuola Superiore Sant'Anna è ottimo per esplorare diverse aree. Hai pensato a quale aspetto delle ricerche ti interessa di più: come il machine learning o l'analisi dei big data?
+[Student] Non ho ancora deciso se concentrarmi su machine learning, analisi dei big data o altro campo specifico all'interno della Data Science; preferisco esplorare diverse aree per identificare i miei reali interessi durante gli studi.
+[Counselor[mistral_small_3_1_24b_8k]] Hai già pensato a una zona d'Italia dove vorresti studiare? Ad esempio, le sedi sono in centro e nel nord.
+[Student] Non ho ancora deciso quale zona d'Italia preferisco per i miei studi, ma so che desidero restare vicino all'isola in cui vivo attualmente.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Messina | [9215] INFORMATICA Inglese Italiano TECNOLOGIE INFORMATICHE 2. University of Sassari | [A106] INGEGNERIA INFORMATICA Inglese Italiano 3. University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA PIANO STATUTARIO COMUNE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 2. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, è fattibile per te affrontare un corso di ingegneria informatica perché hai interesse e capacità nelle materie logistiche.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] Penso che questo corso sia adatto a te perché soddisfa il tuo interesse per la tecnologia e le materie logico-analitiche, e offre un percorso tecnico che puoi affrontare con le tue competenze. La sede di Sassari nella regione Sardegna è vicina alle isole italiane. Inoltre, questo corso ti permette di sviluppare competenze in informatica e telecomunicazioni molto utili per sbocchi occupazionali nel settore dell'informatica e delle telecomunicazioni.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, data la tua attitudine Enterprising e Conventional, potresti sentirti a tuo agio.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_8k]] Penso che il corso di Ingegneria Informatica presso la University of Sassari sia particolarmente adatto a te per diversi motivi. Innanzitutto, soddisfa le tue preferenze e capacità nelle materie logico-analitiche come informatica e matematica, nonché nei linguaggi di programmazione. Sassari è una città vicina alle isole italiane, quindi sarà facile per te raggiungere la sede universitaria. Inoltre, il corso ti preparerà a ricoprire ruoli professionali in settori tecnologici emergenti come l'informatica e le telecomunicazioni, offrendo un percorso di studio molto orientato alla carriera. Il corso è strutturato su tre anni con 180 crediti formativi universitari (CFU). Per accedervi è richiesto il titolo di Scuola Superiore. I principali sbocchi occupazionali previsti fanno riferimento a industrie dell'informatica, operanti nello sviluppo hardware e software, industrie dell'automazione, e settore delle telecomunicazioni.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, i tuoi studi di liceo ti hanno fornito una base solida per affrontare i corsi universitari in ingegneria informatica.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_8k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_8k]] Penso che partire da moduli introduttivi sia l'approccio più adatto a te perché ti permetterà di consolidare le tue competenze e abilità iniziali. Il corso di laurea in ingegneria informatica presso la University of Sassari richiede solo il titolo di scuola superiore per essere ammesso, quindi non sarai svantaggiato dai tuoi studi precedenti. Questo ti consentirà di costruire una base solida prima di affrontare corsi più avanzati nel terzo anno. In questo modo potrai acquisire le competenze necessarie per diventare un ingegnere informatico junior e trovare lavoro in settori come lo sviluppo software, l'automazione industriale o le telecomunicazioni.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: Hai completato il liceo con un interesse per la tecnologia e le materie logico-analitiche; il corso di Ingegneria Informatica della University of Sassari è una scelta che riflette molto bene i tuoi interessi e capacità. RIASEC: IEC Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Buona fortuna con il tuo percorso universitario!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        2
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          2,
+          1,
+          2,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Enterprising",
+        "Conventional"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 2,
+  "selected_option": "2 - University of Sassari | [A106] INGEGNERIA INFORMATICA Inglese Italiano",
+  "shown_options": [
+    "University of Messina | [9215] INFORMATICA Inglese Italiano TECNOLOGIE INFORMATICHE",
+    "University of Sassari | [A106] INGEGNERIA INFORMATICA Inglese Italiano",
+    "University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA PIANO STATUTARIO COMUNE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

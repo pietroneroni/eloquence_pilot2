@@ -1,0 +1,221 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p183.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12359
+[LANG] dialog=Italian rag=ita
+
+
+
+[dialog_id] 8996498f-367b-403f-805a-a3424402bbb6
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12359
+--- Dialogue Begins ---
+[Student] Ciao. Sono un ex studente di ingegneria e attualmente lavoro come ingegnere software per una grande azienda tecnologica. Vivo e lavoro nel Centro Italia. Mi chiamo [inserisci qui il nome] e sono alla ricerca di orientamento su come scegliere il miglior programma universitario per me. Penso di volermi specializzare in tecnologia informatica, ma non so da dove iniziare la mia ricerca.
+[Counselor[mistral_small_3_1_24b_8k]] Ciao! Sono qui per aiutarti a scegliere il programma universitario più adatto alle tue esigenze e obiettivi. Mi parli del tuo percorso accademico? Che scuola, corso o laurea hai frequentato o concluso di recente?
+[Student] Ho completato la scuola superiore in Centro Italia. Dopo la laurea ho scelto di lavorare per una grande azienda tecnologica come ingegnere software.
+[Counselor[mistral_small_3_1_24b_8k]] Mi sembra che tu abbia già un buon background in ingegneria e tecnologia informatica. Vuoi approfondire qualche specifico ambito della tecnologia informatica? Ad esempio, ti attira lo sviluppo di sistemi informativi o la gestione dei dati?
+[Student] Non sono sicuro al cento per cento su quale settore approfondire. Sicuramente mi piace risolvere problemi complessi e lavorare con strumenti pratici.
+[Counselor[mistral_small_3_1_24b_8k]] Perfetto, possiamo esplorare insieme le opzioni che meglio si adattano alle tue inclinazioni. Hai pensato di specializzarti in ingegneria informatica? Questo campo ti permetterebbe di approfondire tecniche avanzate per lo sviluppo di software e sistemi informatici. Un'altra possibilità è la laurea magistrale in computer science. Quale di queste due aree ritieni più affascinante per il tuo futuro professionale?
+[Student] Mi sembra che entrambi i percorsi siano molto interessanti.
+[Counselor[mistral_small_3_1_24b_8k]] La tua esperienza di lavoro come ingegnere software potrebbe essere un punto di partenza molto valido per specializzarti ulteriormente nel campo dell'ingegneria informatica. Hai già una zona d'Italia dove ti piacerebbe studiare, oppure la sede è abbastanza flessibile?
+[Student] Vivo e lavoro in Centro Italia. Magari mi piacerebbe rimanere da queste parti.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza, perché mi permette di capire meglio come funzionano le cose.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace poco.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace poco.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza. Mi sento a mio agio quando so di avere un compito ben definito da portare avanti.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace molto. Mi sento più sicuro quando ho tutto ben organizzato.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE 2. Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, data la tua esperienza di lavoro come ingegnere software e il tuo interesse per la risoluzione di problemi complessi e il lavoro pratico.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] La tua esperienza lavorativa come ingegnere software e il tuo interesse per la risoluzione di problemi complessi sono perfetti per un corso come [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE. Questo percorso ti permetterà di approfondire tecniche avanzate per lo sviluppo di software e sistemi informatici, combinando la tua predilezione per attività pratiche con un forte orientamento logico e investigativo. Il corso è offerto in Toscana ed è adatto al tuo desiderio di rimanere nel Centro Italia.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, dato il tuo interesse per l'organizzazione e la pianificazione.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE 2.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, la tua esperienza come ingegnere software ti ha già fornito una base solida per affrontare con successo il corso di laurea in [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_8k]] iniziare subito con corsi avanzati
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE 2.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: Data la tua esperienza lavorativa come ingegnere software e il tuo interesse per la risoluzione di problemi complessi, l'opzione più adatta a te sembra essere [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE all'Università di Siena. RIASEC: ICR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: In bocca al lupo per il tuo percorso!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "ingegneria",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        -1,
+        1,
+        -1,
+        1,
+        2
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "ingegneria",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          -1,
+          1,
+          -1,
+          1,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Conventional",
+        "Realistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE",
+  "shown_options": [
+    "University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE",
+    "Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_student_thank_you_goodbye

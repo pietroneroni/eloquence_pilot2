@@ -1,0 +1,219 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p130.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12349
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] fd61b97d-239a-47b9-96c6-1ecd31124748
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12349
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente della provincia di Varese che cerca consiglio su quale corso universitario scegliere. Ho sempre avuto un interesse per l'analisi dei problemi e le materie logiche, ma anche una passione per il lavoro pratico e l'arte. Non so ancora se concentrarmi su qualcosa di più teorico o pratico. Ho completato gli studi superiori con il massimo dei voti.
+[Counselor[mistral_small_3_1_24b_8k]] Benvenuto! Io sono il consulente universitario dell'ateneo e posso aiutarti a scegliere i corsi universitari che meglio si adattano ai tuoi interessi, alle tue capacità e alle tue aspirazioni. Qual è la tua attuale situazione scolastica o lavorativa? Stai frequentando o hai completato di recente un corso universitario?
+[Student] Ho completato gli studi superiori con il massimo dei voti e ora lavoro come assistente di ricerca in una rinomata università. Sono molto grato per questa opportunità, ma mi trovo a dover scegliere tra diversi corsi universitari per continuare la mia crescita professionale.
+[Counselor[mistral_small_3_1_24b_8k]] Capisco che sei alla ricerca della prossima tappa del tuo percorso educativo e lavorativo. Quale corso di laurea ti attira maggiormente?
+[Student] Non lo so ancora, a essere sincero. Vorrei scegliere qualcosa che mi permetta di unire la mia passione per l'analisi dei problemi e le materie logiche con il mio interesse per il lavoro pratico e l'arte.
+[Counselor[mistral_small_3_1_24b_8k]] Capisco la tua indecisione: ci sono molte opzioni interessanti per te. Quali soggetti hai studiato durante gli anni del liceo? Qual è stato il tuo percorso scolastico?
+[Student] Ho seguito un percorso scientifico nel mio liceo, quindi ho approfondito molto le materie come matematica, fisica e scienze naturali. Ho sempre trovato queste discipline affascinanti perché mi permettono di comprendere meglio i meccanismi del mondo intorno a me.
+[Counselor[mistral_small_3_1_24b_8k]] Grazie per aver condiviso il tuo background scolastico. Hai pensato alla possibilità di studiare nel nord Italia?
+[Student] Sì, mi piacerebbe continuare a vivere e lavorare qui. Ho sempre vissuto in questa zona e ho molti legami con la mia comunità.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Prima di consigliarti dei corsi, puoi chiarire qual è il tuo percorso di istruzione formale attuale o più recente?
+[Student] Ho completato gli studi superiori con ottimi risultati e ora sto lavorando come assistente di ricerca in un'università. Ma non ho ancora iniziato un corso universitario vero e proprio.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 2. University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE 3. University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, il tuo background scolastico nel liceo scientifico e la tua esperienza lavorativa come assistente di ricerca ti preparano bene per affrontare questo corso.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] Questo corso ti permetterà di sviluppare competenze tecniche solide in settori come la robotica, la meccatronica e i materiali sostenibili. Inoltre, il tuo interesse per l'analisi dei problemi e le materie logiche troverà applicazione pratica in progetti concreti. L'approccio multidisciplinare del corso ti consentirà anche di esplorare aspetti creativi e pratici, bilanciando così i tuoi interessi per la teoria e l'arte. Il tuo background nel liceo scientifico ti prepara bene per affrontare le sfide accademiche e tecniche di questo percorso. La tua esperienza lavorativa come assistente di ricerca dimostra che hai già competenze analitiche e pratiche che saranno molto utili in un corso tecnico impegnativo. I settori in cui potresti lavorare una volta completato il corso includono la produzione industriale, l'automazione, la robotica avanzata e lo sviluppo di materiali sostenibili. Queste sono aree di grande rilevanza per l'innovazione industriale e tecnologica del futuro. Il programma didattico è strutturato in modo da offrire una formazione completa che spazia dalle basi scientifiche alle applicazioni pratiche, garantendo un equilibrio tra teoria e pratica. Questo approccio ti permetterà di acquisire sia conoscenze teoriche solide sia competenze operative necessarie per affrontare le sfide del mondo reale. Il corso ha una forte componente laboratoriale: potrai sperimentare direttamente ciò che studi in aula. Questa esperienza pratica è fondamentale per comprendere meglio i concetti teorici e per sviluppare capacità tecniche avanzate. Il tuo interesse per l'arte e la creatività potrebbe essere soddisfatto attraverso progetti di design industriale o sviluppo di nuove tecnologie, dove potrai applicare soluzioni innovative e creative.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, la tua esperienza lavorativa come assistente di ricerca dimostra che hai già sviluppato competenze organizzative e di collaborazione che saranno molto utili in un corso tecnico impegnativo.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_8k]] Il tuo background nel liceo scientifico, unito alla tua esperienza lavorativa come assistente di ricerca e ai tuoi interessi per l'analisi dei problemi e le materie logiche, ti rende particolarmente adatto/a per assumere un ruolo di leadership. Questo percorso ti permetterà non solo di sviluppare competenze tecniche avanzate, ma anche di guidare progetti complessi, applicando la tua capacità analitica e organizzativa. Il corso offre una formazione completa che spazia dalle basi scientifiche alle applicazioni pratiche, garantendo un equilibrio tra teoria e pratica. La componente laboratoriale del programma ti permetterà di sperimentare direttamente ciò che studi in aula, consolidando le tue competenze tecniche e la tua capacità di innovazione. Inoltre, i settori di lavoro in cui potresti inserirti una volta completato il corso, come la produzione industriale, l'automazione e lo sviluppo di materiali sostenibili, richiedono spesso figure di leadership che sappiano gestire progetti complessi e guidare team multidisciplinari. Il tuo interesse per le materie logiche e analitiche troverà ampio spazio in un corso tecnico come questo, dove potrai applicare soluzioni innovative a problemi concreti. La tua esperienza lavorativa ha già dimostrato che sai lavorare efficacemente in team e assumere responsabilità, qualità essenziali per guidare progetti di successo. Infine, la tua passione per il lavoro pratico e l'arte potrebbe essere soddisfatta attraverso progetti di design industriale o sviluppo tecnologico, dove potrai esplorare soluzioni creative e innovative. Questo bilanciamento tra competenze tecniche e creatività ti permetterà di affrontare le sfide del mondo reale con un approccio integrato e interdisciplinare. L'orientamento scientifico del corso è particolarmente adatto a studenti che hanno una forte predisposizione per l'analisi logica e la risoluzione dei problemi. Il curriculum, strutturato in modo da offrire sia conoscenze teoriche solide sia competenze pratiche applicabili, ti permetterà di sviluppare un profilo professionale completo e versatile. Il corso [0327G] INGEGNERIA INDUSTRIALE offre una formazione completa che spazia dalle basi scientifiche alle applicazioni pratiche, garantendo un equilibrio tra teoria e pratica. La componente laboratoriale del programma ti permetterà di sperimentare direttamente ciò che studi in aula. Questo percorso ti preparerà per settori come la produzione industriale, l'automazione e lo sviluppo di materiali sostenibili, dove potrai applicare le tue competenze tecniche avanzate e guidare progetti innovativi. La tua esperienza lavorativa ha già dimostrato che sai lavorare efficacemente in team e assumere responsabilità, qualità essenziali per guidare progetti di successo. Infine, la tua passione per il lavoro pratico e l'arte potrebbe essere soddisfatta attraverso progetti di design industriale o sviluppo tecnologico, dove potrai esplorare soluzioni creative e innovative.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, il tuo percorso nel liceo scientifico ti ha fornito una solida base nelle materie scientifiche e tecniche.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_8k]] iniziare subito con corsi avanzati
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 2. University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE 3.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: Considerando il tuo percorso nel liceo scientifico e la tua esperienza lavorativa come assistente di ricerca, pensiamo che il corso [0327G] INGEGNERIA INDUSTRIALE presso l'Università di Trento sia una scelta eccellente per te. RIASEC: IRA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "cognitive_science_linguistics",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "cognitive_science_linguistics",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 14
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "cognitive_science_linguistics",
+        "engineering_technology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+  "shown_options": [
+    "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+    "University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE",
+    "University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO"
+  ],
+  "source_turn": 15
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

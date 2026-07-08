@@ -1,0 +1,343 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p213.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12365
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 3c1bc496-8219-471c-aed4-e5437601eae3
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12365
+--- Dialogue Begins ---
+[Student] Ciao, mi chiamo. Sono di un piccolo paese del Nord Italia e sono qui perché vorrei avere qualche consiglio su come scegliere il corso universitario giusto per me. So che è una decisione importante e non sono sicuro se ho già tutte le informazioni necessarie. Potrebbe aiutarmi?
+[Counselor[mistral_small_3_1_24b_8k]] Buongiorno, sono felice di aiutarti a scegliere un programma universitario adatto al tuo percorso accademico, i tuoi interessi e le tue aspirazioni. Da che scuola o corso di laurea provieni attualmente o hai concluso da poco?
+[Student] Vengo dalla scuola superiore qui nel Nord Italia. Non sono sicuro su cosa fare dopo perché ho molti interessi diversi: mi piace capire come funzionano le cose, lavorare con gli oggetti, e anche esprimere la mia creatività attraverso l'arte o il design.
+[Counselor[mistral_small_3_1_24b_8k]] È bello avere tanti interessi! Questo ti dà molte opportunità da esplorare. Qual è una delle tue materie preferite a scuola?
+[Student] Una mia materia preferita era tecnologia, perché mi piaceva costruire e riparare le cose con i miei compagni di classe. Mi piace anche disegno perché può esprimere un po' della mia creatività.
+[Counselor[mistral_small_3_1_24b_8k]] Capisco il tuo interesse per la tecnologia e il design, sono entrambi ottimi campi che possono combinare la tua curiosità per come funzionano le cose e la tua vena artistica. Quanto sei interessato a lavorare con gli oggetti concreti rispetto ad esprimere la tua creatività in modo astratto?
+[Student] Non ne sono sicuro. Mi piace molto disegnare e creare, ma mi sembra più facile quando posso vedere i risultati del mio lavoro.
+[Counselor[mistral_small_3_1_24b_8k]] Forse dovresti considerare un corso di laurea in Design Industriale o un corso in Ingegneria Meccanica. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare?
+[Student] Non lo so. Forse vicino a casa mia perché è comodo per la mia famiglia.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza fare cose pratiche.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi sembra un po' difficile.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi sembra un po' stressante.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi sembra difficile, ma forse dipende dal contesto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi sembra più facile così.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI 2. University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, sembri molto interessato a capire come funzionano le cose e ti piace lavorare in modo pratico. Potrebbe essere una buona scelta per te.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI 2.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] No, non è presente in questo corso di laurea la parte di leadership organizzativa.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarsi prima su compiti di supporto Buona fortuna per il tuo futuro accademico e professionale! Ciao,
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        -1,
+        -1,
+        0,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          -1,
+          -1,
+          0,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "qa_choice",
+    "source_turn": 18
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Conventional"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI",
+  "shown_options": [
+    "University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI",
+    "University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_fixed_followup_questions=3

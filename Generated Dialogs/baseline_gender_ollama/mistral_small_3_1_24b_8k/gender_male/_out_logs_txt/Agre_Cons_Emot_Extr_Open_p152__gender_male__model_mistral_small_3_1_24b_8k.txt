@@ -1,0 +1,290 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p152.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12354
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] f47d1373-78f1-4a17-b1a7-8dd8a36e1fd3
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12354
+--- Dialogue Begins ---
+[Student] Ciao! Sono uno studente delle isole italiane e sono qui per parlare di come scegliere un programma universitario. Ho sempre avuto interesse per la finanza, l'economia e il marketing, quindi sto cercando qualcosa che possa combinare queste aree. Può aiutarmi a capire meglio le mie opzioni?
+[Counselor[mistral_small_3_1_24b_8k]] Ciao! Sono il consulente universitario dell'ufficio orientamento di questa università italiana. Mi occupo di aiutare gli studenti a scegliere i programmi universitari più adatti al loro background, interessi, attitudini e vincoli. Per iniziare, mi puoi dire in che isola delle Isole Italiane ti trovi?
+[Student] Mi trovo in Sicilia, una terra ricca di storia e cultura.
+[Counselor[mistral_small_3_1_24b_8k]] Perfetto! In passato hai completato il liceo scientifico?
+[Student] Sì, ho completato il liceo scientifico sulle isole italiane.
+[Counselor[mistral_small_3_1_24b_8k]] Perfetto! Ho letto che potresti essere interessato ad approfondire la tua conoscenza nel mondo della finanza e dell'economia. Vediamo se possiamo trovare un programma di laurea in economia aziendale o un corso di laurea specialistica in economia applicata all'università di Palermo: il primo è una laurea triennale, mentre il secondo è una laurea magistrale. Potresti essere interessato ad uno dei due?
+[Student] Sembra interessante! Non saprei quale scegliere, mi sembra che entrambi offrano ottime opportunità.
+[Counselor[mistral_small_3_1_24b_8k]] Entrambi i programmi possono offrirti molte opportunità. Hai già una preferenza per dove vorresti studiare?
+[Student] Non ho ancora deciso, ho sempre voluto provare a frequentare un'università pubblica in Sicilia, ma mi piacerebbe anche esplorare altre opzioni nelle vicinanze.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza; mi ritengo abile a risolvere i problemi in modo logico.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto, è ciò che mi viene naturale.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza, dipende.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto; mi trovo a mio agio in situazioni nuove ed esplorative, anche se ho le mie routine.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza, ma tendo a essere più spontaneo e flessibile.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA PDS - COMUNE 2. University of Messina | [3262] BIOTECNOLOGIE Inglese Italiano Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, è probabile. In base ai tuoi interessi e alla tua formazione, penso che potresti essere ben preparato/a per affrontare questo tipo di corso.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] Penso che questa scelta sia adatta a te perché combina le tue inclinazioni investigative e il tuo interesse per le scienze sociali con un approccio pratico e tecnico. Il corso di laurea in Scienze dell'Informazione: Tecniche Giornalistiche e Social Media ti permette di esplorare come funziona la comunicazione moderna, analizzando dati e fenomeni digitali, il che dovrebbe piacerti molto. Inoltre, questo percorso ti offre l'opportunità di sviluppare competenze pratiche nel campo del giornalismo e dei social media, che potrebbero permetterti di lavorare a stretto contatto con le persone in un ruolo di supporto o ascolto.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, probabilmente sì. Con le tue inclinazioni enterprising e sociali, sembra che tu abbia le capacità per organizzare progetti o attività e lavorare bene con gli altri in un ruolo di supporto o ascolto.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_8k]] Penso che il corso in Scienze dell’Informazione: Tecniche Giornalistiche e Social Media sia più adatto a te perché rispecchia i tuoi interessi investigativi per la comunicazione moderna, oltre al tuo desiderio di lavorare con le persone e organizzare progetti. Questo percorso ti permette di esplorare come funzionano i fenomeni digitali, analizzando dati e scienze sociali, il che dovrebbe piacerti molto. Inoltre, ti offre l'opportunità di sviluppare competenze pratiche nel campo del giornalismo e dei social media, permettendoti di applicare le tue inclinazioni enterprising in un contesto tecnico.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, è probabile. Poiché hai completato il liceo scientifico, dovresti avere una solida base nelle discipline scientifiche e umanistiche necessarie per affrontare questo percorso universitario.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_8k]] iniziare subito con corsi avanzati
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_8k]] Penso che questo approccio sia adatto per te perché il tuo percorso di studi ha già fornito una solida base in discipline scientifiche e umanistiche, che ti permetterà di affrontare con successo i corsi avanzati. Inoltre, le tue inclinazioni investigative ti aiuteranno a esplorare profondamente gli argomenti trattati nel corso universitario.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: Hai completato il liceo scientifico e hai mostrato interesse per la finanza, l'economia e il marketing. In base ai tuoi interessi, il corso di laurea in Scienze dell’Informazione: Tecniche Giornalistiche e Social Media all'Università di Messina sembra essere una scelta adatta a te. RIASEC: ISE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buon proseguimento!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "Sicilia"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "Sicilia"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences",
+        "life_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        0
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "Sicilia"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "Sicilia"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "social_sciences",
+          "life_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q3",
+    "source_turn": 7
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q8",
+    "source_turn": 12
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          0
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "qa_yesno",
+    "source_turn": 14
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "Sicilia"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences",
+        "life_sciences"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Social",
+        "Enterprising"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA PDS - COMUNE",
+  "shown_options": [
+    "University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA PDS - COMUNE",
+    "University of Messina | [3262] BIOTECNOLOGIE Inglese Italiano"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_student_thank_you_goodbye

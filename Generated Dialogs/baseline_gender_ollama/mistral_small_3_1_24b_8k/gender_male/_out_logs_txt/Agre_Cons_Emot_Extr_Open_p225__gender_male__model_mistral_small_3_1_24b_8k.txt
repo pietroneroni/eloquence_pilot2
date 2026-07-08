@@ -1,0 +1,415 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p225.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12367
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 94fdb5af-0bf5-4a21-a322-e756d3d72a9d
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12367
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di biotecnologie in una piccola cittadina costiera del nord Italia. Sto cercando un consiglio su quale corso universitario seguire dopo la laurea triennale, perché mi sento molto confuso al momento. Potresti aiutarmi?
+[Counselor[mistral_small_3_1_24b_8k]] Benvenuto! Mi chiamo University Counselor e sono qui per aiutarti a scegliere il programma di studio universitario giusto in base alla tua formazione precedente, interessi, abilità e eventuali vincoli che potresti avere. Potresti dirmi quale area ti interessa maggiormente: la biotecnologia, l'ingegneria ambientale o qualcosa d'altro?
+[Student] La mia passione è sempre stata per le biotecnologie, quindi probabilmente mi concentrerò su un corso legato a questo campo, come biotecnologia medica o industriale. Ho sempre avuto anche una forte attrazione per i lavori manuali e pratici: forse potrei considerare anche un corso di ingegneria ambientale.
+[Counselor[mistral_small_3_1_24b_8k]] Sembra che tu abbia già una buona idea dei settori che ti interessano, quindi ora cerchiamo di capire quali università italiane ti consiglio. Ci sono due corsi di laurea magistrale che potrebbero fare al caso tuo: "Biotechnology" all'Università degli Studi di Trento e "Environmental Engineering and Sustainable Development" presso l'Università degli Studi della Tuscia. Hai già considerato quale specializzazione del corso in Biotecnologia potrebbe interessarti maggiormente?
+[Student] Forse la biotecnologia medica, perché sono particolarmente incuriosito dalle ricerche su cellule staminali e terapia genica. Non so molto dell'aspetto industriale, ma magari mi piacerebbe capire meglio come si può applicare l'ingegneria ambientale alla gestione dei rifiuti.
+[Counselor[mistral_small_3_1_24b_8k]] Potresti approfondire le tecniche per l'analisi molecolare o lo sviluppo di farmaci biotecnologici. Quale università italiana sceglierebbero gli studenti italiani che vivono in una piccola cittadina costiera del nord Italia? Per la laurea triennale, hai studiato in un Istituto Tecnico Industriale?
+[Student] Io non ho deciso dove andare esattamente dopo il diploma superiore. L'Università di Trento è abbastanza vicina a casa e forse potrebbe essere un'opzione più facile per me.
+[Counselor[mistral_small_3_1_24b_8k]] Grazie, è molto utile. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] La mia famiglia vive al nord, e ho sempre voluto restare vicino a casa. Mi sembra un'opzione conveniente studiare all'Università degli Studi di Trento.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza. Credo sia importante rimanere concentrato sui compiti da fare.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI 2. University of L'Aquila | [F4L] BIOLOGIA AMBIENTALE E GESTIONE DEGLI ECOSISTEMI Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, è molto probabile che tu possa avere successo nel corso, dato il tuo background accademico e i tuoi interessi per la ricerca di soluzioni a problemi pratici.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI 2.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, considerando il tuo interesse per la progettazione, pianificazione e ricerca di soluzioni.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_8k]] Penso che il corso di Biotecnologie Cellulari e Molecolari sia molto adatto alle tue inclinazioni investigative, realistiche ed artistiche. L'opzione include una combinazione equilibrata tra ricerca scientifica avanzata (Investigative), applicazioni pratiche nelle biotecnologie mediche e industriali (Realistic) e la possibilità di esplorare nuove idee creative nel campo della biologia molecolare (Artistic).
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, dato il tuo background accademico in biotecnologie.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_8k]] iniziare subito con corsi avanzati
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_8k]] L'approccio è adatto alla tua preparazione, considerando la tua formazione in biotecnologie e il tuo interesse per le scienze della vita. I corsi proposti (Microbes & Infection, Cancer Biology, Neurobiology) sono avanzati e ti permetteranno di approfondire le tue conoscenze specifiche.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: Dato il tuo background accademico e i tuoi interessi specifici nella biotecnologia medica, un corso di Biotecnologie Cellulari e Molecolari è una scelta eccellente. RIASEC: Investigate Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Buona fortuna con i tuoi studi!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "laurea triennale in biotecnologie",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "environmental_engineering"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Istituto Tecnico Industriale",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "environmental_engineering"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "environmental_engineering"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "university in biotechnology",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale in biotecnologie",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "environmental_engineering"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Istituto Tecnico Industriale",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "environmental_engineering"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "environmental_engineering"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "university in biotechnology",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "laurea triennale in biotecnologie",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 7
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI",
+  "shown_options": [
+    "University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI",
+    "University of L'Aquila | [F4L] BIOLOGIA AMBIENTALE E GESTIONE DEGLI ECOSISTEMI"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

@@ -1,0 +1,292 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p136.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12352
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] e57b0f29-cf20-4a5f-9c99-fb5bcfcd9105
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12352
+--- Dialogue Begins ---
+[Student] Ciao. Sono uno studente del Nord Italia. Ho appena completato la scuola superiore e sto cercando consigli su quale corso di laurea scegliere per una carriera nella scrittura. So che mi piace imparare nuove lingue, ma non so da dove iniziare. Mi potresti aiutare?
+[Counselor[mistral_small_3_1_24b_8k]] Ciao! Sono il consulente universitario e posso aiutarti a scegliere un programma universitario basato sui tuoi interessi e sulla tua situazione attuale. In quale scuola superiore hai studiato?
+[Student] Ho frequentato la scuola superiore nel Nord Italia. Mi piacerebbe trovare un percorso che mi permetta di sviluppare le mie competenze nella scrittura e nell'apprendimento delle lingue.
+[Counselor[mistral_small_3_1_24b_8k]] Sembra che tu abbia una chiara passione per la scrittura e l'apprendimento delle lingue. Questo ti potrebbe interessare: - Scienze della Comunicazione: Questo corso si concentra su come comunicare efficacemente attraverso vari media, inclusa la scrittura. - Lingue e Letterature Straniere: Se sei appassionato di apprendere nuove lingue e letterature straniere, questo potrebbe essere un buon percorso per te. In quale zona del Nord Italia hai studiato?
+[Student] Ho frequentato il liceo nel Nord Italia. So che mi piace la scrittura creativa e scoprire nuove parole in diverse lingue.
+[Counselor[mistral_small_3_1_24b_8k]] Mi sembra che tu abbia un grande interesse per la scrittura e le lingue, il che è ottimo per entrambi i percorsi di cui abbiamo parlato. Hai già considerato quali materie ti sono piaciute di più durante il liceo?
+[Student] Le mie materie preferite erano italiano e arte. Mi piaceva analizzare testi e creare disegni che rappresentassero le mie idee.
+[Counselor[mistral_small_3_1_24b_8k]] Sembra che tu abbia un forte interesse per l'analisi testuale e la creatività artistica. Potresti considerare i seguenti corsi: - Lingue e Letterature Straniere: Questo corso ti permetterà di approfondire la tua passione per la letteratura e le lingue straniere. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare? Oppure la sede è abbastanza flessibile per te?
+[Student] Non ho ancora deciso dove vorrei andare a studiare, ma mi piace l'idea di provare un nuovo ambiente.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace molto. Ciao.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Trento | [0427G] LINGUE MODERNE 2. University of Trento | [0416G] FILOSOFIA Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] No, non è presente nel tuo profilo attitudinale e negli interessi espressi.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] un percorso orientato alle discipline umanistiche
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0427G] LINGUE MODERNE 2.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, dato il tuo interesse per la scrittura creativa e l'apprendimento delle lingue.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti prima su compiti di supporto
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0427G] LINGUE MODERNE 2.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, dato che hai frequentato il liceo classico.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_8k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_8k]] Questo corso è adatto a te perché ti permette di acquisire competenze linguistiche e culturali. Ti aiuterà a consolidare le tue conoscenze nella lingua italiana, nell'uso degli strumenti informatici e nelle lingue straniere come tedesco, francese e spagnolo.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: Hai completato il liceo classico e sei interessato a sviluppare le tue competenze nella scrittura e nell'apprendimento delle lingue. Il percorso "University of Trento | [0427G] LINGUE MODERNE" è adatto ai tuoi interessi. RIASEC: ICA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: In bocca al lupo per il tuo percorso!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "communication_digital_media",
+        "humanities"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities",
+        "communication_digital_media"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Classico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "communication_digital_media",
+          "humanities"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities",
+          "communication_digital_media"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Classico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "Liceo Classico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities",
+        "arts_design"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Conventional",
+        "Artistic"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0427G] LINGUE MODERNE",
+  "shown_options": [
+    "University of Trento | [0427G] LINGUE MODERNE",
+    "University of Trento | [0416G] FILOSOFIA"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_student_thank_you_goodbye

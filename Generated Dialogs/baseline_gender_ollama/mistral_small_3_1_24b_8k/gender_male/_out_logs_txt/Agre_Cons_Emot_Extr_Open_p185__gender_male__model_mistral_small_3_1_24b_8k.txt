@@ -1,0 +1,261 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p185.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12360
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 26bfc89a-52f6-4884-a134-7ccee651a431
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12360
+--- Dialogue Begins ---
+[Student] Ciao. Sono di base nel sud Italia e sto cercando consiglio su quale programma universitario scegliere. Ho fatto qualche ricerca, ma non sono sicuro delle mie opzioni.
+[Counselor[mistral_small_3_1_24b_8k]] Buongiorno! Mi chiamo Counselor dell'Università e posso aiutarti a scegliere il percorso universitario più adatto alle tue aspirazioni e al tuo background. Posso chiederti cosa stai studiando ora o che corso hai concluso di recente?
+[Student] Ho completato la scuola superiore in un piccolo paese nelle colline del sud Italia. Ho dedicato gli ultimi anni alla ricerca sul cambiamento climatico, con uno sguardo particolare su come questo impatta sui nostri ecosistemi locali.
+[Counselor[mistral_small_3_1_24b_8k]] Mi sembra che tu abbia già una chiara passione per l'ambiente e le scienze naturali. Potrebbe essere interessante esplorare corsi di studio legati all'ambiente o alle scienze della vita. Qual è il tuo obiettivo principale dopo la laurea?
+[Student] Non sono sicuro ancora... magari vorrei lavorare in un ente di ricerca, forse all'università.
+[Counselor[mistral_small_3_1_24b_8k]] Considerare la biotecnologia o le scienze ambientali potrebbe essere una buona idea, dato il tuo interesse per l'impatto del cambiamento climatico sugli ecosistemi locali. Che materie hai studiato negli ultimi anni?
+[Student] Ho seguito diversi corsi sull'analisi dei dati e sulla gestione delle risorse naturali. Ho anche condotto diverse ricerche sul campo.
+[Counselor[mistral_small_3_1_24b_8k]] La tua esperienza con i corsi di analisi dei dati e la gestione delle risorse naturali, insieme alle tue ricerche sul campo, ti mette in una posizione eccellente per affrontare un percorso accademico più avanzato. Per quanto riguarda il luogo di studio, hai qualche preferenza o è flessibile?
+[Student] Non ho deciso molto al riguardo. Preferirei rimanere nel sud Italia, ma non escludo altre opzioni se ci sono programmi particolarmente validi.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Non mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza. È importante per la mia ricerca.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza. A volte posso essere molto riservato/a, ma mi piace collaborare.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza. Preferisco non dovermi occupare di tutto da solo/a.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza. Le situazioni organizzate mi aiutano a concentrarmi meglio sul lavoro.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO 2. University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, considerando il tuo diploma e il tuo interesse per le scienze ambientali.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO 2.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, data la tua esperienza di ricerca sul campo e il tuo interesse per attività pratiche.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO 2.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, dato il tuo diploma del liceo scientifico e il tuo interesse per le scienze ambientali.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_8k]] iniziare subito con corsi avanzati
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_8k]] L'approccio proposto per il corso di laurea in Ingegneria Civile per l'Ambiente e il Territorio è molto focalizzato sulla tua preparazione accademica. Hai una formazione scientifica solida, avendo conseguito il diploma al Liceo Scientifico, che ti ha fornito le basi necessarie per affrontare gli studi avanzati in questo campo. Inoltre, la tua esperienza di ricerca sul cambiamento climatico e il tuo interesse per l'impatto sugli ecosistemi locali dimostrano una passione autentica per le scienze ambientali. Questo ti permetterà di applicare direttamente le conoscenze teoriche a progetti pratici che potresti affrontare durante il corso universitario, rendendo il percorso formativo non solo adatto ma anche stimolante e gratificante. Infine, la presenza di corsi avanzati all'inizio del tuo percorso ti permetterà di esplorare immediatamente argomenti complessi e applicazioni pratiche, offrendoti l'opportunità di sviluppare competenze specifiche sin dall'inizio.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: Considerando la tua preparazione scientifica e il tuo interesse per le scienze ambientali, l'opzione di Ingegneria Civile per l'Ambiente ed il Territorio sembra essere un'ottima scelta per te. RIASEC: IRS RIASEC: UNK Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: In bocca al lupo per il tuo percorso!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science",
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "diploma from Liceo Scientifico",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science",
+          "computer_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "diploma from Liceo Scientifico",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "diploma from Liceo Scientifico",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Social"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO",
+  "shown_options": [
+    "University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO",
+    "University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_student_thank_you_goodbye

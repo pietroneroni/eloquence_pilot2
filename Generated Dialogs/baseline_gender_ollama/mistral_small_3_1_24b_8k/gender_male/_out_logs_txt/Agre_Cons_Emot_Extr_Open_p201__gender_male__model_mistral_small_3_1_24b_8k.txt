@@ -1,0 +1,274 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p201.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12363
+[LANG] dialog=Italian rag=ita
+
+
+
+[dialog_id] bd2cfbbf-d324-44b0-861b-1e08ed2367ef
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12363
+--- Dialogue Begins ---
+[Student] Ciao. Sono un studente di un piccolo paese in centro Italia e cerco consigli per scegliere il corso universitario giusto. Ho appena finito le superiori e mi sono trasferito a lavorare nel settore tecnologico. Mi piace molto aiutare gli altri e analizzare problemi complessi, ma non so bene come combinare questi interessi con un programma di studi che sia anche pratico ed efficace. Puoi aiutarmi?
+[Counselor[mistral_small_3_1_24b_8k]] Benvenuto! Mi chiamo [University Counselor] e sono qui per aiutarti a scegliere il corso universitario giusto in base alla tua formazione precedente, ai tuoi interessi, alle tue attitudini e alle tue limitazioni. Tu hai appena completato le superiori e lavorato nel settore tecnologico. Dove ti trovi esattamente?
+[Student] Mi trovo a lavorare presso un'azienda di tecnologia innovativa nella stessa regione del centro Italia in cui ho frequentato le scuole superiori.
+[Counselor[mistral_small_3_1_24b_8k]] Hai molta esperienza tecnica, ma stai cercando qualcosa che ti dia la soddisfazione di aiutare gli altri. Quale tipo di carriera ti immagini?
+[Student] Immagino una carriera che mi permetta di combinare le mie competenze tecniche con un ruolo in cui possa aiutare effettivamente le persone. Forse un campo come l'ingegneria biomedica o l'intelligenza artificiale applicata alla salute potrebbe essere interessante per me.
+[Counselor[mistral_small_3_1_24b_8k]] Hai degli interessi chiari nel settore sanitario e tecnologico, potresti voler guardare verso campi che combinano queste due aree. Quale università ti interessa?
+[Student] Non ho ancora deciso quale università frequentare, ma mi piace l'idea di poter studiare in una città universitaria vivace.
+[Counselor[mistral_small_3_1_24b_8k]] Grazie, è molto utile. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Mi andrebbe bene rimanere nelle vicinanze del centro Italia.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piacerebbe abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza. .
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE 2. Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA Scegli un'opzione indicando il numero.
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "field_of_interest": [
+        "health_technology",
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "diploma di Liceo Scientifico",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "health_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "health_technology",
+          "computer_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "diploma di Liceo Scientifico",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "health_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q3",
+    "source_turn": 7
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q6",
+    "source_turn": 10
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q7",
+    "source_turn": 11
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "diploma di Liceo Scientifico",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "health_technology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Social",
+        "Investigative",
+        "Realistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 9
+}
+
+[Selected option | deterministic protocol state]
+null
+[INVALID_PROTOCOL] missing_fixed_followup_questions=9

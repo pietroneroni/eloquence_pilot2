@@ -1,0 +1,87 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Classico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          1,
+          1,
+          -1,
+          0,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "qa_yesno",
+    "source_turn": 17
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "qa_choice",
+    "source_turn": 18
+  }
+]

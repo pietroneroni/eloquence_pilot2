@@ -1,0 +1,46 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "High school diploma",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]

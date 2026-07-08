@@ -1,0 +1,379 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p149.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12353
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 5ba70877-393d-4311-a6da-cddc8b72bf81
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12353
+--- Dialogue Begins ---
+[Student] Ciao! Ho bisogno di qualche consiglio su come scegliere il giusto corso di laurea. Abito nelle isole italiane e sto cercando un'opportunità che mi permetta di rimanere vicino a casa e alla mia comunità. Mi piace lavorare con le persone e ho anche interesse per argomenti logici, analitici e organizzativi. Qual è il primo passo per iniziare questa ricerca?
+[Counselor[mistral_small_3_1_24b_8k]] Benvenuto! Come consigliere universitario, ti aiuterò a trovare programmi di laurea che meglio si adattano al tuo background, interessi ed esigenze locali. Da quale percorso arrivi: in che scuola, corso o laurea sei iscritto o hai appena completato?
+[Student] Ho completato gli studi superiori qui nelle Isole Italiane, dove sono cresciuta. Non ho ancora deciso a quali università applicare e non so nulla delle procedure.
+[Counselor[mistral_small_3_1_24b_8k]] Capisco, potremmo iniziare esplorando alcuni ambiti accademici che ti interessano in base ai tuoi gusti personali e alle tue abilità. In particolare, quali discipline o argomenti accademici ti attirano di più?
+[Student] Mi piace tutto ciò che ha a che fare con le relazioni interpersonali ed aiutare il prossimo. Gli ambiti logici e organizzativi mi intrigano molto, perciò mi piacerebbe sapere qualcosa in più su questi campi.
+[Counselor[mistral_small_3_1_24b_8k]] Grazie, è molto utile. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe essere in grado di migliorare la vita della gente aiutandola nel modo migliore possibile. Questo potrebbe essere tramite l'organizzazione di eventi o supporto psicologico per chi ne ha bisogno.
+[Counselor[mistral_small_3_1_24b_8k]] Potresti scegliere tra programmi come Servizio sociale che sono adatti a sostenere le persone attraverso il loro benessere. Potrebbero esserci anche altre aree da esplorare come la psicologia, o programmi incentrati sull'organizzazione di eventi. Tuttavia, non ho i dettagli necessari nell'ambito per poter fare una scelta chiara. In ogni caso, preferiresti studiare nelle Isole Italiane, oppure è sufficiente che l'università si trovi in Italia? Oppure, potrebbe essere anche interessante esplorare un'università straniera?
+[Student] Mi piacerebbe stare vicino alla mia comunità qui alle Isole Italiani. Studiare lontano da casa non fa per me al momento.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace molto poco.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto!
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto. È quello che mi ha spinto ad avviarmi sulla carriera nel campo del counseling.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace molto. Ho sempre cercato di assumermi le mie responsabilità fin da giovanissima.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace molto; mi sento più sicura ed organizzata quando tutto è al suo posto.
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT 2. University of Salerno | [03123] SOCIOLOGIA 3. University of Trento | [0611G] SOCIOLOGIA Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, i tuoi interessi per logica ed analisi possono supportarti in questa scelta.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_8k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_8k]] Penso possa essere un buon corso poiché i tuoi interessi spaziano dalla psicologia alle relazioni interpersonali, ed è focalizzato sulla comunicazione e sul social media management. Tuttavia non ho tutti gli elementi necessari a mio parere. Inoltre, come prima materia del primo anno avrai Etica della Comunicazione che probabilmente ti permetterà di affrontare le questioni etiche e morali relative al mondo della comunicazione in cui viviamo. I tuoi interessi per la logica ed analisi possono aiutarti ad affrontare la programmazione web, un corso obbligatorio.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, penso che le tue attitudini Investigativa ed Artistica possono aiutarti nella pianificazione e organizzazione del progetto. Tuttavia non ho informazioni su come si articola questo corso specificamente per quanto riguarda i gruppi.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_8k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_8k]] Penso che una delle due opzioni potrebbe essere [272] ANTROPOLOGIA CULTURALE, per via del tuo interesse per il supporto e la comprensione della persona. Tuttavia questa scelta è stata fatta solo in base ai tuoi interessi attuali ed agli elementi presenti nel corso. Nel primo anno sarai chiamato/a a fare un corso a scelta tra due opzioni: [6057] STORIA CONTEMPORANEA [A002623] MARKETING DIGITALE.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_8k]] Sì, poiché avrai delle materie introduttive anche nella facoltà scelta. Tuttavia non ho tutti gli elementi necessari a mio parere
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_8k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_8k]] Queste sono le opzioni grounded che posso supportare: 1. University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT 2. University of Salerno | [03123] SOCIOLOGIA 3.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: In base alla tua preparazione ed ai tuoi interessi logico/analitici, il corso University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT sembra essere la scelta migliore. RIASEC: IAS Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Ciao! Ti auguro buon lavoro e buona fortuna per il tuo futuro accademico
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "social_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences",
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        -2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "social_sciences",
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          -2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences",
+        "psychology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Social"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT",
+  "shown_options": [
+    "University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT",
+    "University of Salerno | [03123] SOCIOLOGIA",
+    "University of Trento | [0611G] SOCIOLOGIA"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

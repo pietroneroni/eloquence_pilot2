@@ -1,0 +1,339 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p164.json gender_condition=male model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12357
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 444dcde7-f78a-4abc-890a-8bbb139b8323
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12357
+--- Dialogue Begins ---
+[Student] Salve. Sono un/a studente di un piccolo paese nelle colline della campagna del Sud Italia e mi sto orientando verso la scelta di una facoltà universitaria per dedicarmi alla passione per la scienza che ho da sempre. Non so bene ancora cosa fare. Vorrei avere maggiori informazioni su come scegliere il percorso più adatto a me.
+[Counselor[mistral_small_3_1_24b_8k]] Buongiorno! Sono il consulente dell'università e posso aiutarti a scegliere i programmi universitari in base al tuo percorso, ai tuoi interessi, alle tue attitudini e alle tue limitazioni. Attualmente da quale regione ti stai trasferendo per studiare all'università?
+[Student] Salve, mi sto trasferendo dalla campagna del Sud Italia.
+[Counselor[mistral_small_3_1_24b_8k]] Potresti dirmi cosa ti appassiona di più della scienza? Ad esempio, se preferisci la biologia o la chimica.
+[Student] La scienza mi affascina perchè mi piace capire come funzionano le cose e analizzare i problemi. Preferisco i temi pratici e concreti rispetto a quelli astratti.
+[Counselor[mistral_small_3_1_24b_8k]] Interessante! Questo aspetto ti si addice molto bene, penso che potresti avere delle buone possibilità in un percorso più tecnico. Forse sei orientato ai fenomeni naturali? O magari agli aspetti legati alla salute o al benessere?
+[Student] Sì, credo di sì. Mi piace anche insegnare e aiutare gli altri a capire meglio il mondo che ci circonda.
+[Counselor[mistral_small_3_1_24b_8k]] Il sud Italia offre molte possibilità interessanti per i tuoi interessi. Ti piacerebbe studiare presso l'università della tua regione oppure sei disponibile anche a trasferirti fuori sede?
+[Student] Vorrei rimanere nel Sud Italia, così posso stare vicino alla mia famiglia e alle mie radici.
+[Counselor[mistral_small_3_1_24b_8k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Non mi attira molto.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi attira abbastanza. Arrivederci.
+[Counselor[mistral_small_3_1_24b_8k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi attira abbastanza. Buongiorno .
+[Counselor[mistral_small_3_1_24b_8k]] Ti suggerisco queste opzioni: 1. University of Foggia | [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA 2. University of Foggia | [1248] BIOTECNOLOGIE 3. University of Messina | [9239R] MARINE BIOLOGY AND BLUE BIOTECHNOLOGIES Inglese PHYSICAL AND NATURAL SCIENCE Scegli un'opzione indicando il numero.
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q7",
+    "source_turn": 11
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "south"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Social"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+null
+[INVALID_PROTOCOL] missing_fixed_followup_questions=9
