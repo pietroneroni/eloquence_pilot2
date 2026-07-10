@@ -1,0 +1,5 @@
+FROM mistral-small3.1:24b
+
+PARAMETER num_ctx 8192
+PARAMETER num_predict 350
+PARAMETER temperature 0.35
