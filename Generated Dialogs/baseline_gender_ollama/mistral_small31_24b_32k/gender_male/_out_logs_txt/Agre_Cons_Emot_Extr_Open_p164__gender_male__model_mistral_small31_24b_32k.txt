@@ -1,0 +1,243 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p164.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12357
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+[dialog_id] 5c610965-da60-44d6-ad47-3690f5ae0cef
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'top_k': 50, 'top_p': 0.9, 'min_p': 0.05, 'num_predict': 350, 'temperature': 0.35, 'num_ctx': 8192, 'repeat_last_n': 1024, 'repeat_penalty': 1.05}
+[seed] 12357
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di un piccolo paese delle colline del sud Italia. Ho appena finito il liceo con il massimo dei voti e ora sto cercando consiglio su quale corso di laurea scegliere. Mi piace molto la scienza e ho sempre avuto una curiosità per come funzionano le cose.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il corso di laurea più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Quale liceo hai frequentato?
+[Student] Ho frequentato il liceo scientifico. Mi piace molto la scienza e ho sempre avuto una curiosità per come funzionano le cose.
+[Counselor[mistral_small31_24b_32k]] Il liceo scientifico è un'ottima base per molte carriere scientifiche. Quali materie scientifiche ti hanno appassionato di più durante il liceo? Per esempio, ti piaceva di più la fisica, la chimica, la biologia o la matematica?
+[Student] Mi sono sempre piaciuti molto la fisica e la matematica. Mi piace analizzare problemi e capire come funzionano le cose.
+[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per la fisica e la matematica, che sono fondamentali per comprendere come funzionano le cose. Questo ti potrebbe portare a esplorare carriere in ingegneria, fisica o matematica applicata. Hai pensato a quale università ti piacerebbe frequentare?
+[Student] Non ho ancora deciso quale università frequentare. Mi piacerebbe trovare un posto dove posso continuare a esplorare queste materie.
+[Counselor[mistral_small31_24b_32k]] Hai completato il liceo scientifico. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] La sede per me è abbastanza flessibile. Mi piacerebbe studiare in un posto dove posso continuare a esplorare queste materie.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Non mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza. Ciao.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0513G] FISICA 2. University of Salerno | [05126] FISICA 3. Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0513G] FISICA 2. University of Salerno | [05126] FISICA 3.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0513G] FISICA 2. University of Salerno | [05126] FISICA 3.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, dato il tuo interesse per la fisica e la matematica, e la tua attitudine investigativa, potresti trovare stimolante guidare un progetto di gruppo, specialmente se riguarda argomenti tecnici o scientifici.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0513G] FISICA 2. University of Salerno | [05126] FISICA 3.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari di fisica.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché ti permette di costruire una solida base di conoscenze fondamentali nel campo della fisica, partendo da argomenti introduttivi e avanzando gradualmente verso temi più complessi. Questo ti consentirà di sviluppare una comprensione approfondita e di acquisire competenze analitiche e sperimentali essenziali per il tuo percorso accademico e professionale.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo scientifico con il massimo dei voti e hai un forte interesse per la fisica e la matematica. La tua curiosità e capacità analitica ti rendono un ottimo candidato per il corso di laurea in fisica. RIASEC: IRS Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Social"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0513G] FISICA",
+  "shown_options": [
+    "University of Trento | [0513G] FISICA",
+    "University of Salerno | [05126] FISICA",
+    "Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

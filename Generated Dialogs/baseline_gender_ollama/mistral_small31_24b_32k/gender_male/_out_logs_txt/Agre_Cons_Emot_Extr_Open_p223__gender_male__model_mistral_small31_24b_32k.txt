@@ -1,0 +1,267 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p223.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12366
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] ee7d68ef-8fa9-4b0a-92b3-df9b5e34a6a4
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'top_p': 0.9, 'num_ctx': 8192, 'num_predict': 350, 'repeat_last_n': 1024, 'temperature': 0.35, 'min_p': 0.05, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12366
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di un piccolo paese tra le colline del Nord Italia. Ho appena finito il liceo e sto cercando consiglio su come scegliere un programma universitario. Mi piace molto capire come funzionano le cose e ho sempre avuto un interesse per la ricerca.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e ti aiuterò a scegliere il programma universitario più adatto a te, basandomi sui tuoi interessi e il tuo percorso scolastico. Quale corso di liceo hai frequentato?
+[Student] Ho frequentato il liceo scientifico. Mi sono sempre interessato a materie come la fisica e la matematica, ma mi piace anche disegnare e creare cose con le mie mani.
+[Counselor[mistral_small31_24b_32k]] Il liceo scientifico è un'ottima base per molte carriere. Tra le materie che hai menzionato, quali ti hanno appassionato di più?
+[Student] Mi sono appassionato molto alla fisica, perché mi piace capire come funzionano le cose e analizzare i problemi. Anche la matematica mi ha sempre affascinato per la sua logica e precisione.
+[Counselor[mistral_small31_24b_32k]] Penso che tu possa essere molto interessato a un corso di laurea in fisica o in ingegneria. Hai mai pensato a quale tipo di carriera ti piacerebbe intraprendere dopo l'università?
+[Student] Non ho ancora deciso esattamente quale carriera intraprendere. Mi piacerebbe lavorare in un campo che mi permetta di continuare a esplorare e a imparare cose nuove.
+[Counselor[mistral_small31_24b_32k]] Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove vorrei studiare. Mi piacerebbe esplorare diverse opzioni e vedere quali università offrono i migliori programmi nel campo che mi interessa.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza, ma dipende dal tipo di progetto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza, ma preferisco farlo in un contesto più strutturato.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza, ma preferisco farlo in un contesto più strutturato.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0513G] FISICA 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3. University of Trento | [0325G] INGEGNERIA CIVILE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0513G] FISICA 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0513G] FISICA 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] No, potrebbe essere difficile per te, dato che preferisci lavorare in un contesto più strutturato.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0513G] FISICA 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari di fisica.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché ti permette di acquisire una solida base teorica e pratica nei fondamenti della fisica, stimolando il tuo interesse per l'analisi e la comprensione dei fenomeni naturali. Inoltre, ti incoraggia a sviluppare competenze di ricerca e di problem-solving, che sono fondamentali per il tuo percorso accademico e professionale.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai un forte interesse per la fisica e la matematica, e il tuo percorso al liceo scientifico ti ha preparato bene per un corso di laurea in fisica. Il corso di laurea in fisica all'Università di Trento è una scelta adatta ai tuoi interessi e alle tue competenze. RIASEC: IRA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Buona fortuna con i tuoi studi e arrivederci!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0513G] FISICA",
+  "shown_options": [
+    "University of Trento | [0513G] FISICA",
+    "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+    "University of Trento | [0325G] INGEGNERIA CIVILE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

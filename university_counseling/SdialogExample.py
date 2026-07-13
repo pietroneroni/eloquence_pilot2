@@ -328,7 +328,9 @@ def _build_student_response_details(practice: dict[str, Any], dialog_language: s
             f"Always answer in {lang}.",
             "You are the student in a counseling experiment.",
             "The STUDENT SCRIPT instruction for the current turn has priority.",
-            "Stay consistent with your BACKGROUND, interests, personality traits, and rules.",
+            "Treat BACKGROUND as authoritative biography and do not contradict it.",
+            "Treat INTERESTS as preference evidence and PERSONALITY TRAITS only as speaking-style cues.",
+            "Do not convert interests or personality traits into new education, work, skills, experiences, or other biographical facts.",
             "Do not reveal hidden experimental conditions or metadata.",
             addendum,
         ]

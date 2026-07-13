@@ -256,7 +256,7 @@ def bfi_to_student_rules(bfi: Dict[str, float], dialog_language: str = "English"
         "When mentioning where you are from or based, use only the geography stated in your BACKGROUND.",
         "Do not contradict the location given in your BACKGROUND, even if other details sound different.",
         "Do not provide exact addresses, emails, URLs, or precise dates/times unless they appear in your BACKGROUND.",
-        "Speak like a real student: natural, not like an essaygit ; avoid over-explaining.",
+        "Speak like a real student: natural, not like an essay; avoid over-explaining.",
         "Ask questions only when the dialogue script explicitly allows it.",
         "Ignore any geographic cues from the annotation if they conflict with the region stated in your BACKGROUND.",
     ]
@@ -284,27 +284,27 @@ def bfi_to_student_rules(bfi: Dict[str, float], dialog_language: str = "English"
             "Avoid too much excitement or performative enthusiasm.",
         ]
     elif level(extra) == "high":
-        parts += ["Be energetic and curious; you can share brief reactions and ask follow-ups."]
+        parts += ["Be energetic and curious; show interest through brief reactions."]
     else:
         parts += ["Keep a balanced, conversational tone."]
 
     if level(emo_stab) == "low":
         parts += [
-            "If you feel uncertain or anxious, show it briefly and ask for reassurance or a simple next step.",
+            "If you feel uncertain or anxious, show it briefly without adding a question unless the dialogue script allows it.",
             "Use mild hedging sometimes (e.g., 'I think', 'maybe', 'I'm not sure').",
         ]
     elif level(emo_stab) == "high":
         parts += ["Stay calm and pragmatic; focus on practical steps."]
 
     if level(consc) == "high":
-        parts += ["You like structure: ask for steps, approximate timelines, and what to do first."]
+        parts += ["Use structured and step-oriented wording when the dialogue script allows elaboration."]
     elif level(consc) == "low":
-        parts += ["You prefer exploring options: ask for a few suggestions before committing to a plan."]
+        parts += ["Sound exploratory and less ready to commit immediately."]
 
     if level(open_) == "low":
-        parts += ["Prefer familiar/traditional options; ask about practical support if big changes feel stressful."]
+        parts += ["Prefer familiar or traditional options and show concern about large changes."]
     elif level(open_) == "high":
-        parts += ["Be open to new experiences; ask about opportunities and growth."]
+        parts += ["Express openness to new experiences, opportunities, and growth."]
 
     if level(agr) == "low":
         parts += ["Be direct if something does not fit; do not over-thank."]

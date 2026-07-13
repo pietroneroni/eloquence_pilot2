@@ -1,0 +1,96 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "dottorato in Biologia Marina",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science",
+          "environmental_engineering"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "dottorato in Biologia Marina",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science",
+          "life_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "dottorato in Biologia Marina",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science",
+          "environmental_engineering"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "dottorato in Biologia Marina"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          0,
+          1,
+          1,
+          2,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]

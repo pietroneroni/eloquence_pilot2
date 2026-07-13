@@ -1,0 +1,399 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p123.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12348
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 0c38a624-02e7-41b1-9cf7-c45adc5e4ecd
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'num_predict': 350, 'repeat_last_n': 1024, 'top_k': 50, 'top_p': 0.9, 'min_p': 0.05, 'repeat_penalty': 1.05, 'temperature': 0.35}
+[seed] 12348
+--- Dialogue Begins ---
+[Student] Ciao! Sono uno studente di una piccola città nelle colline del Nord Italia. Sto cercando consiglio su come scegliere un programma universitario. Ho sempre avuto interesse per l'analisi dei problemi e per le attività pratiche, e mi piace anche organizzare progetti.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il tuo consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sul tuo percorso, interessi, capacità e vincoli. Quale scuola superiore stai frequentando o hai concluso di recente?
+[Student] Ho completato il liceo scientifico in una scuola superiore del Nord Italia.
+[Counselor[mistral_small31_24b_32k]] Perfetto, grazie per aver condiviso questa informazione. Ora, quali materie o ambiti universitari ti attirano di più?
+[Student] Mi attirano molto gli ambiti legati all'ingegneria e alla progettazione, perché mi piace capire come funzionano le cose e lavorare con strumenti pratici. Inoltre, mi piace anche l'idea di studiare scienze sociali per poter organizzare progetti che abbiano un impatto positivo sulla comunità.
+[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per l'ingegneria e la progettazione, oltre che per le scienze sociali. Questi campi ti permetteranno di applicare le tue capacità analitiche e pratiche per risolvere problemi concreti e organizzare progetti con un impatto positivo sulla comunità. Hai già pensato a qualche programma specifico che ti potrebbe interessare? Per esempio, hai considerato il corso di laurea in Ingegneria Civile e Ambientale presso l'Università di Bologna o il corso di laurea in Scienze della Comunicazione presso l'Università di Padova?
+[Student] Non ho ancora deciso. Mi sembra interessante l'idea di combinare le due passioni, magari con un corso di laurea in Ingegneria per l'Ambiente e il Territorio, perché mi permetterebbe di lavorare su progetti che abbiano un impatto diretto sulla comunità e sull'ambiente.
+[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un interesse molto forte per l'ingegneria ambientale e territoriale. Questo campo ti permetterà di applicare le tue capacità analitiche e pratiche per risolvere problemi concreti e organizzare progetti con un impatto positivo sulla comunità e sull'ambiente. Hai già pensato a quale università ti piacerebbe frequentare?
+[Student] Non ho ancora deciso, ma mi piacerebbe frequentare un'università nel Nord Italia, magari vicino alla mia città.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO 2. University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo percorso scolastico e i tuoi interessi, dovresti essere ben preparato per affrontare un corso tecnico impegnativo come Ingegneria per l'Ambiente e il Territorio.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO 2.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, considerando i tuoi interessi per l'organizzazione di progetti e la tua attitudine enterprising.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO 2.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari di Ingegneria per l'Ambiente e il Territorio.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO 2.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Considerando il tuo interesse per l'ingegneria e la progettazione, nonché per le scienze sociali, il corso di laurea in Ingegneria per l'Ambiente e il Territorio presso l'Università di Trento sembra essere una scelta molto adatta a te. RIASEC: RIE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "social_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology",
+        "physical_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "social_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_engineering"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        2,
+        2,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology",
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_engineering"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          2,
+          2,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_engineering"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Realistic",
+        "Investigative",
+        "Enterprising"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "patch_count": 7
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO",
+  "shown_options": [
+    "University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO",
+    "University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

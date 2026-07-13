@@ -1,0 +1,260 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p225.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12367
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 00780ac9-1849-4630-8953-e087d70a6ce9
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_p': 0.9, 'min_p': 0.05, 'num_ctx': 8192, 'num_predict': 350, 'repeat_last_n': 1024, 'top_k': 50}
+[seed] 12367
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di biotecnologia di una piccola città costiera del Nord Italia. Sto cercando consigli su come scegliere il programma universitario giusto per me. Ho sempre avuto una passione per la scienza e la ricerca, ma mi sento un po' sopraffatto dalle opzioni disponibili.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e ti aiuterò a scegliere il programma universitario più adatto a te in base al tuo percorso, interessi, attitudini e vincoli. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?
+[Student] Ho completato il liceo scientifico in una scuola del Nord Italia. Ho sempre avuto una passione per la scienza e la ricerca, quindi ho scelto di iscrivermi a un corso di laurea in biotecnologia.
+[Counselor[mistral_small31_24b_32k]] Perfetto, quindi hai completato il liceo scientifico e ora stai seguendo un corso di laurea in biotecnologia. Quali sono le tue materie preferite all'interno del tuo corso di laurea?
+[Student] Le mie materie preferite sono sicuramente biologia molecolare e biochimica. Mi piace molto capire come funzionano i processi biologici a livello molecolare.
+[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per la biologia molecolare e la biochimica, il che è perfetto per un corso di laurea in biotecnologia. Hai pensato a quale aspetto specifico della biotecnologia ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe approfondire la ricerca sulle biotecnologie mediche, magari lavorare su terapie innovative per malattie genetiche.
+[Counselor[mistral_small31_24b_32k]] Hai un chiaro interesse per la ricerca e le terapie innovative nel campo delle biotecnologie mediche. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove vorrei studiare. Mi piacerebbe esplorare diverse opzioni in Italia, magari in una città universitaria con un buon programma di biotecnologia.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza, mi piace lavorare con le mani e vedere i risultati concreti.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto, è una delle cose che mi appassionano di più.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto, è una delle mie passioni.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza, mi rilassa e mi permette di esprimere me stesso in modo diverso.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza, mi piace esplorare nuove idee e vedere dove mi portano.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Non mi piace molto, preferisco lavorare in modo più indipendente.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza, mi piace prendere iniziativa e vedere le mie idee prendere forma.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza, mi aiuta a sentirmi più organizzato e meno stressato.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI 2. University of Trento | [0521H] BIOLOGIA QUANTITATIVA E COMPUTAZIONALE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI 2.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI 2.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] No, potrebbe essere una sfida per te, dato che preferisci lavorare in modo più indipendente.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] L'opzione che ho suggerito è più adatta a te perché si concentra su biotecnologie cellulari e molecolari, che sono perfettamente in linea con il tuo interesse per la biologia molecolare e la biochimica. Inoltre, il corso offre un curriculum in Microbes & Infection, che potrebbe essere molto rilevante per la tua passione per le terapie innovative per malattie genetiche.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, i tuoi studi in biotecnologia ti hanno preparato adeguatamente ai corsi universitari.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] iniziare subito con corsi avanzati
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI 2.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo scientifico e hai un forte interesse per la biologia molecolare e la biochimica. L'opzione [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI dell'Università di Trento è perfettamente in linea con i tuoi interessi e passioni. RIASEC: IRA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: A presto e buona fortuna con i tuoi studi!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "laurea in biotecnologia"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "health_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "health_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        -1,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea in biotecnologia"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "health_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "health_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          -1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "laurea in biotecnologia",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "health_technology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI",
+  "shown_options": [
+    "University of Trento | [0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI",
+    "University of Trento | [0521H] BIOLOGIA QUANTITATIVA E COMPUTAZIONALE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

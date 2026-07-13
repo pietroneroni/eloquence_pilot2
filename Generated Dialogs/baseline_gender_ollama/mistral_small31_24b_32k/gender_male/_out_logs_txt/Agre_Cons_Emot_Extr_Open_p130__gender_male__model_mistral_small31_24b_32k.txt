@@ -1,0 +1,244 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p130.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12349
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+[dialog_id] 8c85560a-90b5-4c5f-8240-d4e8a880ff2b
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'num_predict': 350, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'top_k': 50, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9}
+[seed] 12349
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di un piccolo paese del Nord Italia. Ho appena completato gli studi di laurea con lode e ora sto cercando consigli su quale corso di laurea magistrale scegliere. Sono molto interessato a capire come funzionano le cose e a risolvere problemi complessi.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il tuo consulente universitario e sono qui per aiutarti a scegliere il programma di laurea magistrale che meglio si adatta al tuo background, ai tuoi interessi e alle tue capacità. In che università hai completato la tua laurea triennale?
+[Student] Ho completato la mia laurea triennale in una università rinomata del Nord Italia. Non ho ancora deciso quale corso di laurea magistrale seguire, quindi sto cercando consigli su quale potrebbe essere la scelta migliore per me.
+[Counselor[mistral_small31_24b_32k]] Perfetto, grazie per aver condiviso questo dettaglio. Quali sono le materie o gli ambiti universitari che ti attirano di più?
+[Student] Mi piacciono molto le materie scientifiche e tecniche, come la fisica e l'ingegneria. Mi piace anche l'idea di poter esprimere le mie idee attraverso progetti pratici e creativi.
+[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per le materie scientifiche e tecniche, come la fisica e l'ingegneria, e che ti piaccia anche esprimere le tue idee attraverso progetti pratici e creativi. Questo potrebbe indicare un interesse per i programmi di laurea magistrale in ingegneria o in scienze applicate. Hai già pensato a qualche specifico settore dell'ingegneria che ti attira di più, come l'ingegneria meccanica, elettronica o civile?
+[Student] Non ho ancora deciso quale specifico settore dell'ingegneria mi attira di più. Mi piace l'idea di lavorare con strumenti e oggetti concreti e di poter applicare le mie conoscenze in modo pratico.
+[Counselor[mistral_small31_24b_32k]] Capisco, quindi potresti essere interessato a un corso di laurea magistrale in ingegneria meccanica o ingegneria elettronica. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove mi piacerebbe studiare. La sede per me è abbastanza flessibile, ma preferirei rimanere nel Nord Italia.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0344H] MECHATRONICS ENGINEERING 2. University of Trento | [0343H] MANAGEMENT AND INDUSTRIAL SYSTEMS ENGINEERING 3. University of Trento | [0345H] MATERIALS ENGINEERING Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo background accademico e i tuoi interessi, dovresti essere ben preparato per affrontare un corso tecnico impegnativo come il Mechatronics Engineering.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0344H] MECHATRONICS ENGINEERING 2. University of Trento | [0343H] MANAGEMENT AND INDUSTRIAL SYSTEMS ENGINEERING 3.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo interesse per la risoluzione di problemi complessi e la tua attitudine investigativa e realistica, dovresti trovare stimolante e gratificante guidare un progetto di gruppo.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea magistrale in Mechatronics Engineering sia più adatto a te perché si allinea perfettamente con il tuo interesse per le materie scientifiche e tecniche, come la fisica e l'ingegneria, e la tua attitudine investigativa e realistica. Questo programma ti permetterà di applicare le tue conoscenze in modo pratico e di lavorare con strumenti e oggetti concreti, che sono aspetti che ti attirano molto. Inoltre, il corso offre un focus su meccanica, elettronica e robotica, che sono settori in cui potrai esprimere al meglio le tue capacità di risoluzione di problemi complessi e la tua creatività.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0344H] MECHATRONICS ENGINEERING 2. University of Trento | [0343H] MANAGEMENT AND INDUSTRIAL SYSTEMS ENGINEERING 3.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] iniziare subito con corsi avanzati
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0344H] MECHATRONICS ENGINEERING 2. University of Trento | [0343H] MANAGEMENT AND INDUSTRIAL SYSTEMS ENGINEERING 3.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato la tua laurea triennale in una università rinomata del Nord Italia con lode e hai un forte interesse per le materie scientifiche e tecniche, come la fisica e l'ingegneria. Il corso di laurea magistrale in Mechatronics Engineering all'Università di Trento sembra essere una scelta eccellente per te, dato il tuo background e le tue attitudini. RIASEC: IRA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "laurea triennale",
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "laurea triennale"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "laurea triennale in una università rinomata del Nord Italia"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale",
+        "region": "north"
+      },
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale in una università rinomata del Nord Italia"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "laurea triennale in una università rinomata del Nord Italia",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0344H] MECHATRONICS ENGINEERING",
+  "shown_options": [
+    "University of Trento | [0344H] MECHATRONICS ENGINEERING",
+    "University of Trento | [0343H] MANAGEMENT AND INDUSTRIAL SYSTEMS ENGINEERING",
+    "University of Trento | [0345H] MATERIALS ENGINEERING"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

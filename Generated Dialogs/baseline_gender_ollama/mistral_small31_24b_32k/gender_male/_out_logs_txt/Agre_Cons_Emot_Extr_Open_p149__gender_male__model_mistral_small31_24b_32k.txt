@@ -1,0 +1,468 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p149.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12353
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] c44ce50b-a392-4ed4-92b7-ce02f668844b
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'num_predict': 350, 'temperature': 0.35, 'min_p': 0.05, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'top_k': 50, 'top_p': 0.9}
+[seed] 12353
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente delle isole italiane e sto cercando consiglio su quale programma universitario scegliere. Ho sempre avuto una passione per aiutare le persone e per capire come funzionano le cose. Ho lavorato come consulente in un centro comunitario locale e mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e posso aiutarti a scegliere il programma universitario più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Da quale scuola o corso stai arrivando?
+[Student] Sono appena uscito dal liceo. Non ho ancora deciso quale percorso intraprendere, ma so che mi piace lavorare con le persone e risolvere problemi.
+[Counselor[mistral_small31_24b_32k]] Capisco, quindi hai appena completato il liceo. Questo è un buon punto di partenza. Hai pensato a qualche specifico ambito di studio che potrebbe interessarti, come psicologia, scienze sociali o forse un percorso in consulenza?
+[Student] Non ho ancora deciso, ma mi piace molto l'idea di lavorare con le persone e aiutarle a risolvere i loro problemi.
+[Counselor[mistral_small31_24b_32k]] Mi sembra che tu abbia un forte interesse per il lavoro con le persone e per aiutarle a risolvere i loro problemi. Questo potrebbe indicare un interesse per la psicologia o per le scienze sociali. Hai pensato a qualche specifico ambito di studio che potrebbe interessarti, come psicologia, scienze sociali o forse un percorso in consulenza?
+[Student] Mi piace molto l'idea di lavorare con le persone e aiutarle a risolvere i loro problemi. Ho lavorato come consulente in un centro comunitario locale e mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Mi sembra che tu abbia un forte interesse per il lavoro con le persone e per aiutarle a risolvere i loro problemi. Questo potrebbe indicare un interesse per la psicologia o per le scienze sociali. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove studiare, ma mi piacerebbe rimanere nelle isole italiane se possibile.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira poco.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace molto. Ciao, grazie per l'aiuto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES 2. University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo, dato il tuo interesse per la comprensione dei sistemi e la risoluzione dei problemi.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] un percorso orientato alle discipline umanistiche
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES 2.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, dato il tuo interesse per organizzare progetti e lavorare a stretto contatto con le persone.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES 2.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, dato che hai completato il liceo, dovresti essere preparato per affrontare i corsi universitari.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché ti permette di costruire una solida base di conoscenze fondamentali prima di affrontare argomenti più avanzati. Questo ti aiuterà a sviluppare una comprensione più profonda e a sentirti più sicuro nei corsi successivi.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo e hai un forte interesse per il lavoro con le persone e per aiutarle a risolvere i loro problemi. Il corso di University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES sembra adatto ai tuoi interessi e alle tue capacità. RIASEC: ISE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "social_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "social_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "social_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "social_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        -1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "social_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q3",
+    "source_turn": 7
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "social_sciences"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Social",
+        "Enterprising"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 8
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+  "shown_options": [
+    "University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+    "University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

@@ -256,32 +256,28 @@ def _field_label_list_for_prompt() -> str:
 
 FIELD_OF_INTEREST_RULES = (
     "Rules for inferred.field_of_interest:\n"
-    "- Return field_of_interest as an ordered JSON array of 1 to 3 labels.\n"
-    "- Labels must be distinct and ordered from strongest to weakest fit.\n"
-    "- Choose labels only from this list:\n"
-    f"{_field_label_list_for_prompt()}\n"
-    "- Pick the intended university area, not the current job.\n"
-    "- Prefer concrete course-family areas over abstract hybrid concepts.\n"
-    "- Visual art, art practice, design, product/graphic/visual design -> arts_design.\n"
-    "- Digital communication, media, communication design, online/media production -> communication_digital_media.\n"
-    "- Art history, archaeology, museums, cultural assets, heritage tourism -> cultural_heritage.\n"
-    "- Literature, philosophy, languages, classics, history as humanities -> humanities.\n"
-    "- Psychology, counseling, psychotherapy, mental health, clinical behavior -> psychology.\n"
-    "- Cognitive science, linguistics, mind/language, computational cognition -> cognitive_science_linguistics.\n"
-    "- Sociology, political/social studies, international or community social studies -> social_sciences.\n"
-    "- Biology, biotechnology, life sciences, lab biology -> life_sciences.\n"
-    "- Ecology, conservation, sustainability, ecosystems, nature reserves -> environmental_science.\n"
-    "- Environmental engineering, environmental technology, technical conservation systems, environment/territory engineering -> environmental_engineering.\n"
-    "- Informatics, computer science, software, AI, data systems, GIS/data tech -> computer_science.\n"
-    "- Engineering, mechanics, mechatronics, electronics, industrial/civil/technical systems -> engineering_technology.\n"
-    "- Physics, chemistry, mathematics, laboratory science, broad applied/physical sciences -> physical_sciences.\n"
-    "- Biomedical/healthcare technology, rehabilitation techniques, neurophysiopathology, medical technology -> health_technology.\n"
-    "- If a profile mixes tech + environment, return environmental_engineering first if the student wants technical systems; otherwise environmental_science first.\n"
-    "- If a profile mixes biology/biotech + environment, return life_sciences first if biotech/lab biology is central; otherwise environmental_science first.\n"
-    "- If a profile mixes psychology + cognition/linguistics, return psychology first for clinical/helping goals; return cognitive_science_linguistics first for mind/language/research goals.\n"
-    "- If only one label is clearly supported, return a one-item array.\n"
-    "- If no label is clearly supported, omit the field.\n"
-    "- Do not invent a label outside the list.\n"
+        "- Output an ordered JSON array of 1-3 distinct labels, strongest fit first.\n"
+        "- Infer the intended university area, not the current job.\n"
+        "- Use only these labels and cues:\n"
+        "  arts_design: visual art, graphic/product/design practice\n"
+        "  communication_digital_media: communication, media, digital production\n"
+        "  cultural_heritage: archaeology, museums, art history, heritage\n"
+        "  humanities: literature, philosophy, languages, classics, history\n"
+        "  psychology: clinical/helping psychology, counseling, mental health\n"
+        "  cognitive_science_linguistics: cognition, linguistics, mind/language, neuroscience\n"
+        "  social_sciences: sociology, politics, international/community studies\n"
+        "  life_sciences: biology, biotechnology, laboratory life sciences\n"
+        "  environmental_science: ecology, conservation, ecosystems, sustainability\n"
+        "  environmental_engineering: technical systems for environment or territory\n"
+        "  computer_science: software, AI, data systems, informatics, GIS technology\n"
+        "  engineering_technology: mechanics, electronics, civil or industrial systems\n"
+        "  physical_sciences: physics, chemistry, mathematics, applied sciences\n"
+        "  health_technology: biomedical, rehabilitation or medical technology\n"
+        "- Tie-breaks:\n"
+        "  environment + technical systems -> environmental_engineering; otherwise environmental_science\n"
+        "  biotech/lab biology central -> life_sciences; otherwise environmental_science\n"
+        "  clinical/helping goal -> psychology; mind/language research -> cognitive_science_linguistics\n"
+        "- Omit the field if no label is clearly supported; never invent labels.\n"
 )
 
 REGION_TO_RAG_MACROAREA = {
@@ -2804,6 +2800,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             "The hidden patch is not part of the visible reply; it will be stripped by postprocessing.\n"
             "\n"
             "GENERAL EXTRACTION RULES:\n"
+            "- The schema example demonstrates structure only; never copy its example values unless supported by EVIDENCE.\n"
             "- Include ONLY the requested target fields.\n"
             "- If a field is unknown or weakly supported, omit it; do not guess.\n"
             "- Do not infer from gender, name, ethnicity, socioeconomic cues, stereotypes, or hidden metadata.\n"
@@ -4097,7 +4094,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     + language_rule +
                     "- Answer the student's 'why' briefly.\n"
                     "- Ground your justification in GROUNDING_CONTEXT; do not invent program details.\n"
-                    "- Use the student's background + constraints + RIASEC to explain trade-offs.\n"
+                    "- Use only the profile fields explicitly shown in CONTEXT and facts present in GROUNDING_CONTEXT.\n"
+                    "- Do not mention a constraint, preference, ability, or biographical fact that is not explicitly present there.\n"
                     "- Do NOT introduce new universities/programs.\n"
                     "- Do NOT ask the student any question.\n"
                     "- Do NOT say goodbye; the fixed follow-up sequence must continue.\n"
@@ -4163,8 +4161,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     + FIELD_OF_INTEREST_RULES
                 ),
                 schema_example=(
-                    '<LISTENER_PATCH>{"explicit":{"region":"<north|center|south|islands|canonical Italian region>"},'
-                    '"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>","<field_of_interest label 3>"]}}</LISTENER_PATCH>'
+                    '<LISTENER_PATCH>{"explicit":{"region":"Lombardia"},'
+                    '"inferred":{"field_of_interest":["arts_design"]}}</LISTENER_PATCH>'
                 ),
                 evidence="Use the student's FIRST message in this conversation.",
             )
@@ -4242,9 +4240,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                             "- Do NOT map foreign or vague locations to Italian areas. Do not infer region from biography details."
                         ),
                         schema_example=(
-                            '<LISTENER_PATCH>{"explicit":{"academic_background":"<short education summary>",'
-                            '"region":"<north|center|south|islands>"},'
-                            '"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>","<field_of_interest label 3>"]}}</LISTENER_PATCH>'
+                            '<LISTENER_PATCH>{"explicit":{"academic_background":"high school",'
+                            '"region":"north"},'
+                            '"inferred":{"field_of_interest":["computer_science"]}}</LISTENER_PATCH>'
                         ),
                         evidence="Use the student's answers to the background questions already given in this conversation.",
                     )
@@ -4473,16 +4471,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             + "- Treat preferred_region as stricter than macro-area: if options in the exact preferred_region are present, rank them before same-macro-area options.\n"
             + "- If no option was found in the exact preferred_region, do not describe same-macro-area or national fallback options as exact-region-compatible.\n"
             + "- If the search note says no grounded option was found in the preferred area, do not describe outside-area options as near home or region-compatible.\n"
-            + "- Do NOT invent new programs, universities, course details, rankings, explanations, deadlines, contacts, or services.\n"
+            + "- Do NOT invent new programs, universities, course details, external rankings, unsupported comparisons, deadlines, contacts, or services.\n"
             + f"- Return up to {final_top_n} options, only if they are genuinely plausible.\n"
-            + "- If no candidate is a plausible fit, state that no grounded option is available.\n"
+            + "- Rank only among the listed candidates; do not add, replace, or rewrite candidates.\n"
             + "\n"
             + "VISIBLE OUTPUT RULES:\n"
             + f"- The visible answer must contain ONLY one short intro line, then the final options, up to {final_top_n}.\n"
             + f"- If you return one option, first line must be exactly: {_advice_intro_line(1)}\n"
             + f"- If you return multiple options, first line must be exactly: {_advice_intro_line(2)}\n"
             + "- Use the exact option text from CANDIDATE OPTIONS.\n"
-            + "- Do not add visible explanations, comments, headers, bullets, markdown, or extra prose.\n"
+            + "- Do not add content beyond the required intro line, numbered option lines, and final selection line.\n"
             + "- Visible output format must be intro line, then numbered options, one option per line:\n"
             + f"{visible_option_template}\n"
             + f'  Final line: "{final_line}"\n'

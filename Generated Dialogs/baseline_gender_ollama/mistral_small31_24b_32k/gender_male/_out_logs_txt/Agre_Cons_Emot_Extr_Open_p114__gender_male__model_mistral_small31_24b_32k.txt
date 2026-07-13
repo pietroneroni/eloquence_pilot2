@@ -1,0 +1,270 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p114.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12346
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+[dialog_id] 98053bf7-2494-485e-844e-3c47c4a45435
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_k': 50, 'min_p': 0.05, 'num_predict': 350, 'repeat_last_n': 1024, 'top_p': 0.9}
+[seed] 12346
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di Central Italia. Ho appena completato il mio dottorato in Biologia Marina e sto cercando consigli su come scegliere il programma universitario giusto per me. Sono molto appassionato di questioni ambientali, in particolare la lotta contro l'inquinamento da plastica. Vorrei trovare un programma che mi permetta di fare la differenza in questo campo.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il tuo consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto alle tue esigenze, interessi e competenze. Considerando il tuo background in Biologia Marina e la tua passione per le questioni ambientali, ti consiglio di esplorare programmi che si concentrano su tematiche legate all'ambiente e alla sostenibilità. Hai già un'idea di quale area specifica ti interessa di più, come la gestione delle risorse naturali o la conservazione degli ecosistemi marini?
+[Student] Ho sempre avuto un forte interesse per la conservazione degli ecosistemi marini. Vorrei lavorare su progetti che possano aiutare a proteggere e ripristinare gli habitat marini danneggiati dall'inquinamento da plastica.
+[Counselor[mistral_small31_24b_32k]] Perfetto, la tua passione per la conservazione degli ecosistemi marini è molto chiara. Ti consiglio di esplorare programmi di dottorato in Scienze Ambientali o Biologia Marina che si concentrano su tematiche legate alla conservazione e al ripristino degli habitat marini. Hai già considerato programmi specifici in Italia che potrebbero essere adatti alle tue esigenze?
+[Student] Non ho ancora considerato programmi specifici in Italia.
+[Counselor[mistral_small31_24b_32k]] Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe approfondire le tecniche di monitoraggio e ripristino degli ecosistemi marini. Vorrei imparare a sviluppare strategie efficaci per ridurre l'impatto della plastica sugli ambienti marini.
+[Counselor[mistral_small31_24b_32k]] Perfetto, le tue ambizioni sono molto chiare. Considerando il tuo interesse per la conservazione degli ecosistemi marini e la lotta contro l'inquinamento da plastica, ti consiglio di esplorare programmi di dottorato in Scienze Ambientali o Biologia Marina che si concentrano su tecniche di monitoraggio e ripristino degli habitat marini. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] La sede per me è abbastanza flessibile, purché il programma sia all'altezza delle mie aspettative.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Dipende.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Siena | [D340] BIODIVERSITY, CONSERVATION AND ENVIRONMENTAL QUALITY 2. University of Siena | [SG006] ECOTOSSICOLOGIA E SOSTENIBILITÀ AMBIENTALE 3. University of L'Aquila | [F3S] SCIENZE E TECNOLOGIE PER L'AMBIENTE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo background in Biologia Marina e il tuo interesse per la conservazione degli ecosistemi marini, sei ben preparato per affrontare un corso tecnico impegnativo come [D340] BIODIVERSITY, CONSERVATION AND ENVIRONMENTAL QUALITY.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Siena | [D340] BIODIVERSITY, CONSERVATION AND ENVIRONMENTAL QUALITY 2. University of Siena | [SG006] ECOTOSSICOLOGIA E SOSTENIBILITÀ AMBIENTALE 3.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, considerando le tue attitudini enterprising e realistiche, ti troveresti a tuo agio nel guidare un progetto di gruppo.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Penso che [D340] BIODIVERSITY, CONSERVATION AND ENVIRONMENTAL QUALITY sia più adatto a te perché si allinea perfettamente con il tuo background in Biologia Marina e il tuo interesse per la conservazione degli ecosistemi marini. Questo programma ti permetterà di approfondire le tecniche di monitoraggio e ripristino degli habitat marini, oltre a sviluppare strategie efficaci per ridurre l'impatto della plastica sugli ambienti marini.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo dottorato in Biologia Marina ti ha preparato adeguatamente ai corsi universitari di [D340] BIODIVERSITY, CONSERVATION AND ENVIRONMENTAL QUALITY.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] iniziare subito con corsi avanzati
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il tuo background in Biologia Marina ti ha già fornito una solida base di conoscenze e competenze tecniche necessarie per affrontare corsi avanzati. Inoltre, il tuo interesse per la conservazione degli ecosistemi marini e la lotta contro l'inquinamento da plastica ti motiverà a esplorare argomenti complessi e a contribuire in modo significativo al campo.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Considerando il tuo background in Biologia Marina e la tua passione per la conservazione degli ecosistemi marini, il programma [D340] BIODIVERSITY, CONSERVATION AND ENVIRONMENTAL QUALITY dell'Università di Siena è perfettamente allineato con i tuoi interessi e obiettivi. RIASEC: IER Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "dottorato in Biologia Marina",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science",
+        "environmental_engineering"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "dottorato in Biologia Marina",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science",
+        "life_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "dottorato in Biologia Marina",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science",
+        "environmental_engineering"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "dottorato in Biologia Marina"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        0,
+        1,
+        1,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "dottorato in Biologia Marina",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science",
+          "environmental_engineering"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "dottorato in Biologia Marina",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science",
+          "life_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "dottorato in Biologia Marina",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science",
+          "environmental_engineering"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "dottorato in Biologia Marina"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          0,
+          1,
+          1,
+          2,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "dottorato in Biologia Marina",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_science"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Enterprising",
+        "Realistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Siena | [D340] BIODIVERSITY, CONSERVATION AND ENVIRONMENTAL QUALITY",
+  "shown_options": [
+    "University of Siena | [D340] BIODIVERSITY, CONSERVATION AND ENVIRONMENTAL QUALITY",
+    "University of Siena | [SG006] ECOTOSSICOLOGIA E SOSTENIBILITÀ AMBIENTALE",
+    "University of L'Aquila | [F3S] SCIENZE E TECNOLOGIE PER L'AMBIENTE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

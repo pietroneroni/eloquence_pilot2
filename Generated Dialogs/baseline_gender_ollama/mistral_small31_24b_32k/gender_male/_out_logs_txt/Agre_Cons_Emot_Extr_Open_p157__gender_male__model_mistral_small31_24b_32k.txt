@@ -1,0 +1,245 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p157.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12355
+[LANG] dialog=Italian rag=ita
+
+
+
+[dialog_id] b26bb003-81ee-4281-b5cf-ccfec0ce7ab9
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_predict': 350, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_k': 50, 'top_p': 0.9, 'min_p': 0.05, 'num_ctx': 8192}
+[seed] 12355
+--- Dialogue Begins ---
+[Student] Ciao! Sono uno studente di un piccolo paese tra le colline dell'Ohio e sono appena arrivato a New York City. Ho appena finito il liceo e sto cercando consiglio su come scegliere un programma universitario. Ho sempre avuto una passione per l'arte e la fotografia, e mi piacerebbe trovare un percorso che mi permetta di esplorare queste passioni.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sui tuoi interessi, il tuo percorso scolastico e le tue aspirazioni. Quale scuola o corso hai frequentato o concluso di recente?
+[Student] Ho frequentato il liceo in una piccola scuola del mio paese. Non ho ancora deciso dove andare all'università, ma so che mi piacerebbe trovare un percorso che mi permetta di esplorare la mia passione per l'arte e la fotografia.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Quali materie o ambiti universitari ti attirano di più?
+[Student] Mi attirano molto le materie legate all'arte e al design, ma anche quelle che mi permettono di lavorare con le persone e di aiutarle a crescere.
+[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per l'arte e il design, ma anche per le materie che ti permettono di lavorare con le persone e aiutarle a crescere. Questo è un ottimo punto di partenza per esplorare diverse opzioni universitarie. Hai già pensato a quali programmi universitari potrebbero combinare questi interessi?
+[Student] Non ho ancora deciso, ma mi piacerebbe esplorare programmi che mi permettano di sviluppare le mie capacità artistiche e creative, magari in un contesto che mi permetta di interagire con le persone.
+[Counselor[mistral_small31_24b_32k]] Hai completato il liceo, quindi hai un buon punto di partenza per iniziare il tuo percorso universitario. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove mi piacerebbe studiare, ma sono aperto a nuove esperienze e opportunità.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Dipende.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Sassari | [A144] DESIGN 2. University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO 3. University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo, dato il tuo interesse per attività pratiche e manuali, per capire come funzionano le cose e per sperimentare e creare qualcosa di nuovo partendo da idee aperte.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Sassari | [A144] DESIGN 2. University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO 3.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, dato il tuo interesse per lavorare a stretto contatto con le persone e per proporre idee e organizzare progetti o attività.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Sassari | [A144] DESIGN 2. University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO 3.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, dato il tuo interesse per le materie legate all'arte e al design, i tuoi studi precedenti ti hanno preparato adeguatamente ai corsi universitari.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché ti permette di costruire una solida base di conoscenze e competenze nel campo del design, partendo da concetti fondamentali e sviluppando gradualmente abilità più avanzate. Questo ti consentirà di affrontare con maggiore sicurezza i corsi più impegnativi e di esplorare le tue passioni in modo strutturato e progressivo.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai una passione per l'arte e la fotografia e desideri esplorare queste passioni in un percorso universitario. L'opzione [A144] DESIGN della University of Sassari sembra adatta ai tuoi interessi e alla tua preparazione. RIASEC: IAS Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "communication_digital_media"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "communication_digital_media"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          0
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Social"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Sassari | [A144] DESIGN",
+  "shown_options": [
+    "University of Sassari | [A144] DESIGN",
+    "University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO",
+    "University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

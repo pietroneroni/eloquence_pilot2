@@ -1,0 +1,296 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p136.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12352
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 05ba7f51-f86a-46c9-a21f-a6b13ee49bc0
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_k': 50, 'min_p': 0.05, 'num_predict': 350, 'top_p': 0.9}
+[seed] 12352
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di un piccolo paese costiero del nord Italia. Ho appena finito il liceo e sto cercando consiglio su quale corso di laurea scegliere. Mi piace molto scrivere e ho un interesse per le lingue. Non so ancora bene quale direzione prendere.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il corso di laurea più adatto a te, basandomi sui tuoi interessi e il tuo background. Quale liceo hai frequentato?
+[Student] Ho frequentato il liceo scientifico.
+[Counselor[mistral_small31_24b_32k]] Il liceo scientifico è un'ottima base per molte discipline. Quali materie o argomenti ti hanno appassionato di più durante il liceo?
+[Student] Mi sono sempre piaciute molto le materie umanistiche, come letteratura e storia. Mi piaceva anche la matematica, perché mi permetteva di risolvere problemi in modo logico.
+[Counselor[mistral_small31_24b_32k]] Le materie umanistiche come letteratura e storia, insieme alla matematica, possono essere un'ottima combinazione per esplorare diverse opportunità universitarie. Hai mai pensato di approfondire le lingue straniere o la scrittura creativa? Potrebbero essere aree interessanti da esplorare.
+[Student] Non ho ancora deciso se approfondire le lingue straniere o la scrittura creativa.
+[Counselor[mistral_small31_24b_32k]] Hai mai pensato a dove ti piacerebbe studiare? Hai una zona d'Italia in mente o la sede è abbastanza flessibile per te?
+[Student] Non ho ancora pensato a dove mi piacerebbe studiare. La sede è abbastanza flessibile per me.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace molto. Ciao, grazie per il tuo aiuto.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0416G] FILOSOFIA 2. University of Trento | [0417G] BENI CULTURALI 3. University of Trento | [0427G] LINGUE MODERNE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] No, non è presente nel contesto recuperato.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] un percorso orientato alle discipline umanistiche
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0416G] FILOSOFIA 2. University of Trento | [0417G] BENI CULTURALI 3.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo interesse per le discipline umanistiche e la tua attitudine a ragionare in modo logico e a organizzare progetti ti renderebbero adatto a guidare un progetto di gruppo.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] L'opzione che hai scelto, [0416G] FILOSOFIA, è più adatta a te perché valorizza le tue attitudini investigative e artistiche, permettendoti di esplorare discipline umanistiche come la letteratura, la storia e la filosofia. Inoltre, il corso offre la possibilità di acquisire competenze in ambiti etici, politici e religiosi, che possono arricchire la tua formazione e aprirti a diverse opportunità professionali.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo background nel liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari di filosofia, in particolare per quanto riguarda le competenze logiche e analitiche.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché valorizza le tue attitudini investigative e artistiche, permettendoti di esplorare discipline umanistiche come la letteratura, la storia e la filosofia. Inoltre, il corso offre la possibilità di acquisire competenze in ambiti etici, politici e religiosi, che possono arricchire la tua formazione e aprirti a diverse opportunità professionali.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Il tuo interesse per le discipline umanistiche e la tua attitudine a ragionare in modo logico e a organizzare progetti ti rendono adatto al corso di laurea in Filosofia. Questo percorso valorizza le tue competenze investigative e artistiche, permettendoti di esplorare ambiti etici, politici e religiosi. RIASEC: ICA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: In bocca al lupo per il tuo percorso!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities",
+        "communication_digital_media"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities",
+          "communication_digital_media"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "humanities"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "qa_choice",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "Liceo Scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Conventional",
+        "Artistic"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0416G] FILOSOFIA",
+  "shown_options": [
+    "University of Trento | [0416G] FILOSOFIA",
+    "University of Trento | [0417G] BENI CULTURALI",
+    "University of Trento | [0427G] LINGUE MODERNE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

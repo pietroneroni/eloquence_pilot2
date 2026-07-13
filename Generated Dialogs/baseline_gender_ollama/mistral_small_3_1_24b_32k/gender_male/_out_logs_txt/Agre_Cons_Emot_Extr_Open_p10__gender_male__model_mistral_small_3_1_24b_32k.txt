@@ -1,0 +1,474 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p10.json gender_condition=male model=mistral_small_3_1_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k
+[SEED] 12345
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] f478aed3-8252-4fe4-825f-49c121339385
+[model] {'name': 'ollama:mistral-small3.1-24b-32k', 'seed': 13, 'min_p': 0.05, 'repeat_penalty': 1.08, 'temperature': 0.15, 'top_k': 40, 'top_p': 0.9, 'num_ctx': 32768, 'num_predict': 1200}
+[seed] 12345
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di un piccolo paese del Nord Italia. Sto cercando consiglio su come scegliere un programma universitario. Ho sempre avuto interesse per la scienza e la ricerca, ma non sono sicuro di quale percorso seguire.
+[Counselor[mistral_small_3_1_24b_32k]] Benvenuto! Sono il consulente universitario e ti aiuterò a scegliere il programma universitario più adatto a te in base al tuo background, interessi, attitudini e vincoli. Quale scuola superiore hai frequentato o hai concluso di recente?
+[Student] Ho frequentato il liceo scientifico nel Nord Italia.
+[Counselor[mistral_small_3_1_24b_32k]] Perfetto, quindi hai un background in liceo scientifico. Questo ti offre una solida base per molte aree scientifiche. Quali materie o ambiti universitari ti attirano di più?
+[Student] Mi piacciono molto la biologia e la chimica, e mi interessa capire come funzionano le cose a livello molecolare.
+[Counselor[mistral_small_3_1_24b_32k]] Sembra che tu abbia un forte interesse per le scienze della vita e le scienze fisiche, in particolare a livello molecolare. Questo ti potrebbe portare a esplorare programmi come Biologia Molecolare o Chimica. Hai pensato a quale tipo di carriera ti piacerebbe intraprendere dopo la laurea?
+[Student] Non ho ancora deciso esattamente quale carriera intraprendere, ma mi piace l'idea di lavorare in un laboratorio di ricerca o in un ambiente accademico.
+[Counselor[mistral_small_3_1_24b_32k]] Hai un interesse per la ricerca e l'ambiente accademico, il che è fantastico. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove mi piacerebbe studiare, quindi la sede è abbastanza flessibile per me.
+[Counselor[mistral_small_3_1_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small_3_1_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small_3_1_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace molto. Ciao, grazie per il tuo aiuto.
+[Counselor[mistral_small_3_1_24b_32k]] Ti suggerisco queste opzioni: 1. University of Foggia | [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA 2. University of Messina | [9239R] MARINE BIOLOGY AND BLUE BIOTECHNOLOGIES Inglese PHYSICAL AND NATURAL SCIENCE 3. University of L'Aquila | [B3B] BIOTECNOLOGIE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small_3_1_24b_32k]] Sì, il tuo background in liceo scientifico e il tuo interesse per la biologia e la chimica ti preparano bene per affrontare un corso tecnico impegnativo come [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small_3_1_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small_3_1_24b_32k]] Penso che questa scelta sia adatta a te perché il tuo background in liceo scientifico e il tuo interesse per la biologia e la chimica ti preparano bene per affrontare un corso tecnico impegnativo come [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA. Inoltre, il tuo desiderio di lavorare in un laboratorio di ricerca o in un ambiente accademico si allinea perfettamente con questo percorso.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small_3_1_24b_32k]] Sì, il tuo interesse per la ricerca e l'ambiente accademico, insieme alla tua attitudine per il lavoro di gruppo e la pianificazione, ti farebbero trovare a tuo agio nel guidare un progetto di gruppo.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small_3_1_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small_3_1_24b_32k]] Penso che [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA sia più adatta a te perché si allinea perfettamente con il tuo interesse per la biologia e la chimica, e ti prepara per una carriera in ricerca o in un ambiente accademico. Inoltre, il tuo background in liceo scientifico ti fornisce una solida base per affrontare questo percorso tecnico.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small_3_1_24b_32k]] Sì, il tuo background in liceo scientifico ti ha preparato adeguatamente ai corsi universitari di [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small_3_1_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small_3_1_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché ti permetterà di consolidare le basi scientifiche che hai acquisito durante il liceo scientifico, facilitando così la transizione ai corsi più avanzati.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small_3_1_24b_32k]] Recap: Il tuo background in liceo scientifico e il tuo interesse per la biologia e la chimica ti rendono un candidato ideale per [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA. RIASEC: SIC Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Buona fortuna con i tuoi studi e arrivederci!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences",
+        "engineering_technology",
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        1,
+        2
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences",
+          "engineering_technology",
+          "computer_science"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          1,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Social",
+        "Investigative",
+        "Conventional"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Foggia | [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA",
+  "shown_options": [
+    "University of Foggia | [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA",
+    "University of Messina | [9239R] MARINE BIOLOGY AND BLUE BIOTECHNOLOGIES Inglese PHYSICAL AND NATURAL SCIENCE",
+    "University of L'Aquila | [B3B] BIOTECNOLOGIE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

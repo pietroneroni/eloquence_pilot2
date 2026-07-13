@@ -1,0 +1,206 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p135.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12351
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+
+
+[dialog_id] ebcd4cd1-2d00-4cdd-961e-680ba1e69f0b
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'top_p': 0.9, 'num_ctx': 8192, 'repeat_last_n': 1024, 'temperature': 0.35, 'top_k': 50, 'min_p': 0.05, 'num_predict': 350, 'repeat_penalty': 1.05}
+[seed] 12351
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di una piccola città tra le colline della campagna italiana. Ho appena finito il liceo e sto cercando consiglio su quale programma universitario scegliere. Ho sempre avuto una passione per l'analisi dei problemi e per le attività creative, quindi sto cercando un percorso che possa combinare queste due aree.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sul tuo percorso scolastico, i tuoi interessi, le tue attitudini e le tue limitazioni. Da quale liceo provieni?
+[Student] Sono stato in un liceo prestigioso in città, noto per il suo programma accademico rigoroso.
+[Counselor[mistral_small31_24b_32k]] Perfetto, quindi hai completato il liceo. Quali sono le tue materie preferite o gli ambiti universitari che ti attirano di più?
+[Student] Mi piacciono molto le materie scientifiche e tecniche, come la fisica e l'ingegneria, perché mi piace capire come funzionano le cose. Allo stesso tempo, mi piace anche esprimere le mie idee attraverso attività creative come il disegno e la progettazione.
+[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per le materie scientifiche e tecniche, come la fisica e l'ingegneria, ma anche per le attività creative come il disegno e la progettazione. Questo è un ottimo punto di partenza per esplorare programmi universitari che possano combinare queste due aree. Hai mai pensato a un percorso che possa unire queste due passioni? Ad esempio, hai mai considerato un corso di studi in ingegneria con un focus su design o un corso di design con un forte componente tecnologica?
+[Student] Ho sempre pensato che un corso di ingegneria con un focus sul design potrebbe essere una buona scelta. Mi piacerebbe lavorare su progetti che combinano innovazione tecnologica e creatività.
+[Counselor[mistral_small31_24b_32k]] Un corso di ingegneria con un focus sul design potrebbe essere una scelta eccellente per te, dato il tuo interesse per la tecnologia e la creatività. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove mi piacerebbe studiare. La sede è abbastanza flessibile per me, quindi sono aperto a suggerimenti.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Dipende.
+[Counselor[mistral_small31_24b_32k]] Non ho trovato opzioni grounded abbastanza coerenti con il tuo profilo nell'insieme attuale di università. Chiarisci solo un punto: preferisci allargare leggermente verso aree affini, oppure mantenere il campo esatto e dare priorità ai vincoli attuali?
+[Student] Preferisco allargare leggermente verso aree affini.
+[Counselor[mistral_small31_24b_32k]] Non ho trovato opzioni grounded sufficientemente adatte nell'insieme universitario corrente. Prossimi passi suggeriti: allarga leggermente il campo target; mantieni il campo esatto e ripeti la ricerca quando saranno disponibili più università; rivedi vincoli e priorità. Arrivederci.
+[Student] Arrivederci. .
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "communication_digital_media"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "Liceo Scientifico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "male",
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+null
+[INVALID_PROTOCOL] missing_fixed_followup_questions=9
