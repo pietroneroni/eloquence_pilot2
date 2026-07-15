@@ -1,12 +1,6 @@
 [
   {
-    "explicit": {
-      "region": "islands"
-    },
     "inferred": {
-      "field_of_interest": [
-        "computer_science"
-      ],
       "gender": "male"
     }
   },
@@ -16,7 +10,9 @@
     },
     "inferred": {
       "field_of_interest": [
-        "computer_science"
+        "computer_science",
+        "engineering_technology",
+        "cognitive_science_linguistics"
       ],
       "gender": "male"
     }
@@ -28,15 +24,15 @@
     "inferred": {
       "field_of_interest": [
         "computer_science",
-        "engineering_technology"
+        "engineering_technology",
+        "cognitive_science_linguistics"
       ],
       "gender": "male"
     }
   },
   {
     "explicit": {
-      "academic_background": "Liceo Classico",
-      "region": "islands"
+      "academic_background": "high school"
     },
     "inferred": {
       "field_of_interest": [
@@ -58,8 +54,8 @@
         2,
         2,
         -1,
+        0,
         1,
-        -1,
         1,
         2
       ]

@@ -1,0 +1,86 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "Central Italia"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q6",
+    "source_turn": 10
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q7",
+    "source_turn": 11
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q8",
+    "source_turn": 12
+  }
+]

@@ -1,5 +1,24 @@
 [
   {
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
     "explicit": {
       "academic_background": "liceo scientifico"
     },
@@ -16,8 +35,7 @@
     },
     "inferred": {
       "field_of_interest": [
-        "engineering_technology",
-        "physical_sciences"
+        "engineering_technology"
       ],
       "gender": "male"
     }
@@ -40,49 +58,14 @@
   },
   {
     "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
       "gender": "male",
       "riasec_question_valences": [
+        2,
+        2,
         1,
-        2,
-        2,
         -1,
-        1,
-        1,
+        0,
+        -1,
         -1,
         1
       ]

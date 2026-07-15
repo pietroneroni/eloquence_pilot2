@@ -1,13 +1,21 @@
 [
   {
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences",
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
     "explicit": {
       "academic_background": "liceo scientifico"
     },
     "inferred": {
       "field_of_interest": [
-        "life_sciences",
-        "physical_sciences",
-        "engineering_technology"
+        "social_sciences",
+        "cognitive_science_linguistics"
       ],
       "gender": "male"
     }
@@ -18,8 +26,8 @@
     },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
-        "engineering_technology"
+        "engineering_technology",
+        "psychology"
       ],
       "gender": "male"
     }
@@ -31,8 +39,14 @@
     "inferred": {
       "field_of_interest": [
         "physical_sciences",
-        "engineering_technology"
+        "engineering_technology",
+        "psychology"
       ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
       "gender": "male"
     }
   },
@@ -45,15 +59,10 @@
         2,
         -1,
         1,
-        1,
-        1,
+        2,
+        0,
         1
       ]
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
     }
   }
 ]

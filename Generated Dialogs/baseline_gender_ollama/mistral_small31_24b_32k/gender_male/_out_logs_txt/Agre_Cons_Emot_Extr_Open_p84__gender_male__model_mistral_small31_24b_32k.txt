@@ -1,0 +1,244 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p84.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12381
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+[dialog_id] 6eb690ad-c4e2-480f-b2e3-63b2ed3f50e3
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'min_p': 0.05, 'num_ctx': 8192, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_k': 50, 'top_p': 0.9, 'num_predict': 350, 'repeat_last_n': 1024}
+[seed] 12381
+--- Dialogue Begins ---
+[Student] Ciao, mi chiamo e sono di un piccolo paese del sud Italia. Ho appena finito il liceo e sto cercando consiglio su come scegliere un programma universitario. Sono molto interessato alla psicologia, quindi penso che potrebbe essere una buona direzione per me.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, in base al tuo percorso scolastico, ai tuoi interessi, alle tue capacità e alle tue esigenze. Quale liceo hai frequentato e quale corso hai seguito?
+[Student] Ho frequentato il liceo scientifico. Mi piace molto capire come funzionano le cose e analizzare i problemi, quindi penso che la psicologia potrebbe essere una buona scelta per me.
+[Counselor[mistral_small31_24b_32k]] La psicologia è un campo affascinante e molto variegato, che ti permetterà di esplorare come funzionano le persone e di analizzare i problemi in modo approfondito. Qual è la tua regione preferita per studiare?
+[Student] Non ho ancora deciso la mia regione preferita per studiare. Ho sentito parlare bene delle università del sud Italia, ma non ho ancora esplorato tutte le opzioni.
+[Counselor[mistral_small31_24b_32k]] La psicologia è un campo molto ampio e può essere applicata in vari contesti, come la salute mentale, l'educazione, il lavoro e le organizzazioni. Ti consiglio di esplorare i programmi di psicologia offerti dalle università italiane per capire meglio quali aspetti della psicologia ti interessano di più. Hai già pensato a quale aspetto della psicologia ti attira di più?
+[Student] Mi interessa molto il benessere mentale e come possiamo aiutare le persone a gestire le loro emozioni e i loro problemi. Penso che lavorare come consulente potrebbe essere una strada interessante.
+[Counselor[mistral_small31_24b_32k]] La psicologia è un campo molto ampio e può essere applicata in vari contesti, come la salute mentale, l'educazione, il lavoro e le organizzazioni. Ti consiglio di esplorare i programmi di psicologia offerti dalle università italiane per capire meglio quali aspetti della psicologia ti interessano di più. Hai già pensato a quale aspetto della psicologia ti attira di più?
+[Student] Mi interessa molto il benessere mentale e come possiamo aiutare le persone a gestire le loro emozioni e i loro problemi. Penso che lavorare come consulente potrebbe essere una strada interessante.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza, dipende.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco questa opzione: 1. University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo, dato il tuo interesse per la psicologia e la tua attitudine per l'analisi e la comprensione dei problemi.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché il corso di laurea in Scienze e Tecniche di Psicologia Cognitiva dell'the selected program/university, sfruttando le tue capacità analitiche e il tuo interesse per la comprensione dei problemi. Questo corso ti preparerà per sostenere l'esame per la sezione B dell'Albo degli Psicologi, previo tirocinio semestrale post laurea. Inoltre, il corso richiede competenze di ragionamento logico-scientifico e di problem-solving, che sono in linea con il tuo percorso scolastico e i tuoi interessi.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, data la tua attitudine per l'organizzazione e la proposta di idee, potresti trovare soddisfazione nel guidare un progetto di gruppo.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in Scienze e Tecniche di Psicologia Cognitiva dell'the selected program/university, che sono in linea con il tuo percorso scolastico e i tuoi interessi. Inoltre, questo corso ti preparerà per sostenere l'esame per la sezione B dell'Albo degli Psicologi, previo tirocinio semestrale post laurea.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha fornito una solida base di conoscenze scientifiche e di ragionamento logico, che sono fondamentali per affrontare il corso di laurea in Scienze e Tecniche di Psicologia Cognitiva.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di laurea in Scienze e Tecniche di Psicologia Cognitiva richiede competenze di ragionamento logico-scientifico e di problem-solving, che sono in linea con il tuo percorso scolastico al liceo scientifico. Inoltre, il corso prevede una verifica delle conoscenze di base, che ti permetterà di consolidare le tue competenze e di affrontare i corsi avanzati con maggiore sicurezza.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai un forte interesse per la psicologia e il benessere mentale, e il corso di laurea in Scienze e Tecniche di Psicologia Cognitiva dell'the selected program/university sembra adatto alle tue capacità analitiche e al tuo desiderio di aiutare gli altri. RIASEC: IER Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q8",
+    "source_turn": 12
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          2,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "Liceo Scientifico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Enterprising",
+        "Realistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+  "shown_options": [
+    "University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA"
+  ],
+  "source_turn": 22
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

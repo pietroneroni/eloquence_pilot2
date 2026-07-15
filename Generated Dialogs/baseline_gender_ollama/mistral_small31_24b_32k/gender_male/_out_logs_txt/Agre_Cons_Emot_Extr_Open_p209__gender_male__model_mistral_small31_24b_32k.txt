@@ -6,170 +6,56 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[dialog_id] 8aef27ef-4cd8-43e1-a599-d5504d06b949
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_predict': 350, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_p': 0.9, 'min_p': 0.05, 'num_ctx': 8192, 'top_k': 50}
+[dialog_id] beffba36-4e50-45d5-830d-b543c8f36e7b
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_predict': 350, 'temperature': 0.35, 'min_p': 0.05, 'num_ctx': 8192, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'top_k': 50, 'top_p': 0.9}
 [seed] 12364
 --- Dialogue Begins ---
-[Student] Ciao, mi chiamo e sono uno studente delle isole italiane. Sto cercando consiglio su come scegliere un programma universitario. Ho sempre avuto interesse per la psicologia e penso che potrebbe essere una buona strada per me.
-[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Quale scuola o corso hai frequentato o concluso di recente?
-[Student] Ho completato il liceo nelle isole italiane. Non ho ancora deciso dove studiare, ma sono aperto a nuove esperienze e opportunità.
-[Counselor[mistral_small31_24b_32k]] La psicologia è un campo molto affascinante e può offrire molte opportunità di carriera. Quali sono le tue materie preferite o quelle in cui ti senti più a tuo agio? Questo potrebbe aiutarti a scegliere un percorso universitario che si adatti meglio ai tuoi interessi e alle tue capacità.
-[Student] Mi piace molto analizzare problemi e capire come funzionano le cose. Mi sento a mio agio con le materie che richiedono un approccio logico e organizzato.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per la psicologia e un talento per l'analisi logica e organizzata. Questo potrebbe renderti molto adatto per un percorso universitario in psicologia o in scienze cognitive. Hai mai pensato a quale tipo di carriera vorresti intraprendere dopo la laurea? Questo potrebbe aiutarti a scegliere un percorso universitario che si allinei meglio con i tuoi obiettivi professionali.
-[Student] Vorrei contribuire al campo della psicologia e aiutare le persone a migliorare la loro vita. Magari potrei lavorare in ricerca o in un ambiente clinico.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per la psicologia clinica e la ricerca. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
-[Student] Non ho ancora deciso dove studiare. Sono aperto a nuove esperienze e opportunità, quindi la sede per me è abbastanza flessibile.
+[Student] Ciao, mi chiamo [nome]. Sono uno studente che ha completato il liceo e vivo nelle isole italiane. Sono qui per cercare un po' di guida su come scegliere il programma universitario giusto per me.
+[Counselor[mistral_small31_24b_32k]] Benvenuto, [nome]! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sul tuo percorso scolastico, i tuoi interessi, le tue attitudini e le tue esigenze. Per iniziare, puoi dirmi quale corso di liceo hai frequentato e concluso?
+[Student] Ho frequentato il liceo scientifico. Mi piace capire come funzionano le cose e mi piace fare attività pratiche.
+[Counselor[mistral_small31_24b_32k]] Perfetto, [nome]. Il liceo scientifico ti ha dato una solida base in scienze e matematica, che può essere molto utile in vari percorsi universitari. Dato il tuo interesse per capire come funzionano le cose e per le attività pratiche, potresti essere interessato a campi come l'ingegneria, le scienze ambientali o la tecnologia medica. In quale regione d'Italia ti piacerebbe studiare?
+[Student] Non ho ancora deciso dove vorrei studiare. Non sono sicuro di voler restare nelle isole italiane.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe approfondire la psicologia. Mi incuriosisce capire come funzionano le persone e i loro comportamenti.
+[Counselor[mistral_small31_24b_32k]] Capisco, [nome]. La psicologia è un campo affascinante che ti permetterà di esplorare in profondità i comportamenti umani e le dinamiche mentali. Dato il tuo interesse per la psicologia, potresti considerare programmi come psicologia clinica, psicologia del lavoro o psicologia sociale. Hai già pensato a quale tipo di psicologia ti interessa di più?
+[Student] Non ho ancora deciso quale tipo di psicologia mi interessa di più. Mi piace l'idea di aiutare le persone a migliorare la loro vita.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
-[Student] Mi attira abbastanza.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
-[Student] Mi piace poco.
+[Student] Non mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
-[Student] Non sono sicuro, dipende.
+[Student] Forse mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
 [Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
-[Student] Mi piace abbastanza.
+[Student] Forse mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
-[Student] Mi piace molto. Ciao, grazie per il tuo aiuto.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco questa opzione: 1. University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Scegli un'opzione indicando il numero.
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3. University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA Scegli un'opzione indicando il numero.
 [Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1.
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo interesse per capire come funzionano le cose e per le attività pratiche, potresti affrontare un corso tecnico impegnativo come Ingegneria Biomedica.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
 [Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Questo corso è perfetto per te perché combina la tua passione per la psicologia con il tuo interesse per l'analisi logica e organizzata. Il programma di Scienze e Tecniche di Psicologia Cognitiva a Trento ti permetterà di esplorare come funzionano la mente e il comportamento umano, utilizzando metodi scientifici e tecnici. Inoltre, il corso include materie come Metodi Matematici per le Scienze Cognitive e Metodi della Ricerca in Psicologia, che ti permetteranno di applicare le tue capacità analitiche in un contesto psicologico.
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché il corso di Ingegneria Biomedica ti permetterà di approfondire la tua curiosità per come funzionano le cose e di applicare queste conoscenze in un campo pratico e tecnico. Inoltre, il corso è offerto in Abruzzo, una regione centrale d'Italia, che potrebbe essere un buon compromesso se non sei sicuro di voler restare nelle isole italiane.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] Sì, il corso di Scienze e Tecniche di Psicologia Cognitiva ti permetterà di sviluppare competenze organizzative e di leadership, che ti aiuteranno a guidare progetti di gruppo.
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo interesse per le attività pratiche e per capire come funzionano le cose, potresti trovare stimolante guidare un progetto di gruppo.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
-[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] Penso che un percorso tecnico sia più adatto a te perché il corso di Scienze e Tecniche di Psicologia Cognitiva a Trento combina la tua passione per la psicologia con il tuo interesse per l'analisi logica e organizzata. Questo corso ti permetterà di esplorare come funzionano la mente e il comportamento umano, utilizzando metodi scientifici e tecnici. Inoltre, il corso include materie come Metodi Matematici per le Scienze Cognitive e Metodi della Ricerca in Psicologia, che ti permetteranno di applicare le tue capacità analitiche in un contesto psicologico.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di Ingegneria Biomedica sia più adatto a te perché ti permette di esplorare come funzionano i sistemi biologici e di applicare queste conoscenze in un campo pratico e tecnico. Inoltre, il corso è offerto in Abruzzo, una regione centrale d'Italia, che potrebbe essere un buon compromesso se non sei sicuro di voler restare nelle isole italiane.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, il tuo background di liceo ti ha fornito una base solida per affrontare i corsi universitari di Scienze e Tecniche di Psicologia Cognitiva.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha fornito una solida base in scienze e matematica, che è essenziale per affrontare i corsi di Ingegneria Biomedica.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
 [Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di Scienze e Tecniche di Psicologia Cognitiva a Trento offre una combinazione equilibrata di materie introduttive e avanzate. Inizierai con corsi fondamentali come "Basi biologiche del comportamento" e "Psicologia generale", che ti forniranno una solida base teorica. Inoltre, materie come "Metodi matematici per le scienze cognitive" e "Metodi della ricerca in psicologia" ti permetteranno di sviluppare competenze analitiche e di ricerca, che sono perfettamente allineate con i tuoi interessi e capacità.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di Ingegneria Biomedica è offerto in lingua italiana e si basa su una solida preparazione scientifica, che è tipica del liceo scientifico. Inoltre, il corso è strutturato per fornire una formazione generale in ingegneria biomedica, il che ti permetterà di acquisire competenze fondamentali nel campo.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo e hai un forte interesse per la psicologia e l'analisi logica. Il corso di Scienze e Tecniche di Psicologia Cognitiva a Trento è perfetto per te, poiché combina questi interessi e ti permette di esplorare la mente umana utilizzando metodi scientifici e tecnici. RIASEC: CIR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Buona fortuna con i tuoi studi e arrivederci!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo scientifico e sei interessato a capire come funzionano le cose e a fare attività pratiche. Il corso di Ingegneria Biomedica sembra adatto alle tue inclinazioni e preparazione. RIASEC: ICR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci, [nome]! Buona fortuna per il tuo futuro accademico.
 [Student] Arrivederci
 --- Dialogue Ends ---
 
@@ -177,47 +63,13 @@
 [
   {
     "explicit": {
-      "academic_background": "high school",
-      "region": "islands"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
       "academic_background": "high school"
     },
     "inferred": {
       "field_of_interest": [
-        "psychology",
-        "cognitive_science_linguistics"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "high school"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "Liceo",
-      "region": "islands"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology"
+        "engineering_technology",
+        "environmental_science",
+        "health_technology"
       ],
       "gender": "male"
     }
@@ -235,7 +87,7 @@
         2,
         2,
         -1,
-        0,
+        1,
         1,
         1,
         2
@@ -254,65 +106,19 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q2",
-    "source_turn": 2
-  },
-  {
-    "patch": {
-      "explicit": {
         "academic_background": "high school"
       },
       "inferred": {
         "field_of_interest": [
-          "psychology",
-          "cognitive_science_linguistics"
+          "engineering_technology",
+          "environmental_science",
+          "health_technology"
         ],
         "gender": "male"
       }
     },
     "phase": "background_q3",
     "source_turn": 3
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "high school"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q4",
-    "source_turn": 4
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "Liceo",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q1",
-    "source_turn": 5
   },
   {
     "patch": {
@@ -332,7 +138,7 @@
           2,
           2,
           -1,
-          0,
+          1,
           1,
           1,
           2
@@ -358,31 +164,35 @@
   "memory": {
     "explicit": {
       "academic_background": "high school",
-      "region": "islands"
+      "region": null
     },
     "inferred": {
       "field_of_interest": [
-        "psychology"
+        "engineering_technology",
+        "environmental_science",
+        "health_technology"
       ],
       "gender": "male",
       "riasec_attitudes": [
-        "Conventional",
         "Investigative",
+        "Conventional",
         "Realistic"
       ],
       "riasec_confidence": "low"
     }
   },
-  "patch_count": 7
+  "patch_count": 4
 }
 
 [Selected option | deterministic protocol state]
 {
   "option_number": 1,
-  "selected_option": "1 - University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+  "selected_option": "1 - Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA",
   "shown_options": [
-    "University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA"
+    "Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA",
+    "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+    "University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA"
   ],
-  "source_turn": 22
+  "source_turn": 14
 }
 [INVALID_PROTOCOL] missing_counselor_wrapup_recap

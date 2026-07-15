@@ -1,76 +1,6 @@
 [
   {
     "patch": {
-      "explicit": {
-        "region": "north"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "engineering_technology",
-          "computer_science"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "greet",
-    "source_turn": 1
-  },
-  {
-    "patch": {
-      "inferred": {
-        "field_of_interest": [
-          "computer_science",
-          "engineering_technology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q2",
-    "source_turn": 2
-  },
-  {
-    "patch": {
-      "explicit": {
-        "region": "north"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "engineering_technology",
-          "computer_science"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q3",
-    "source_turn": 3
-  },
-  {
-    "patch": {
-      "inferred": {
-        "field_of_interest": [
-          "computer_science",
-          "engineering_technology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q4",
-    "source_turn": 4
-  },
-  {
-    "patch": {
-      "inferred": {
-        "field_of_interest": [
-          "computer_science"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q1",
-    "source_turn": 5
-  },
-  {
-    "patch": {
       "inferred": {
         "gender": "male"
       }
@@ -80,20 +10,12 @@
   },
   {
     "patch": {
-      "explicit": {
-        "academic_background": "high school",
-        "region": "north"
-      },
       "inferred": {
-        "field_of_interest": [
-          "computer_science",
-          "engineering_technology"
-        ],
         "gender": "male"
       }
     },
-    "phase": "clarify_scope",
-    "source_turn": 13
+    "phase": "riasec_q3",
+    "source_turn": 7
   },
   {
     "patch": {
@@ -103,8 +25,8 @@
           1,
           2,
           2,
-          1,
-          1,
+          -1,
+          0,
           1,
           1,
           2
@@ -112,15 +34,6 @@
       }
     },
     "phase": "advice",
-    "source_turn": 14
-  },
-  {
-    "patch": {
-      "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "stop",
-    "source_turn": 24
+    "source_turn": 15
   }
 ]

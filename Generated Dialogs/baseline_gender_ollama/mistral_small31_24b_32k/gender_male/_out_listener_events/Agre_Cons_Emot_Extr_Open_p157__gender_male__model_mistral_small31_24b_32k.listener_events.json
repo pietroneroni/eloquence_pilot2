@@ -1,19 +1,30 @@
 [
   {
     "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
       "explicit": {
         "academic_background": "high school"
       },
       "inferred": {
         "field_of_interest": [
-          "arts_design",
-          "communication_digital_media"
+          "arts_design"
         ],
         "gender": "male"
       }
     },
-    "phase": "background_q2",
-    "source_turn": 2
+    "phase": "background_q3",
+    "source_turn": 3
   },
   {
     "patch": {
@@ -23,7 +34,7 @@
       "inferred": {
         "field_of_interest": [
           "arts_design",
-          "psychology"
+          "communication_digital_media"
         ],
         "gender": "male"
       }
@@ -33,10 +44,12 @@
   },
   {
     "patch": {
+      "explicit": {
+        "academic_background": "Liceo Classico"
+      },
       "inferred": {
         "field_of_interest": [
-          "arts_design",
-          "communication_digital_media"
+          "arts_design"
         ],
         "gender": "male"
       }

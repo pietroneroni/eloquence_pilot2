@@ -1,31 +1,6 @@
 [
   {
-    "explicit": {
-      "region": "north"
-    },
     "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "liceo scientifico",
-      "region": "north"
-    },
-    "inferred": {
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "liceo scientifico",
-      "region": "north"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "physical_sciences",
-        "arts_design"
-      ],
       "gender": "male"
     }
   },
@@ -36,6 +11,18 @@
     "inferred": {
       "field_of_interest": [
         "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
         "arts_design"
       ],
       "gender": "male"
@@ -43,12 +30,11 @@
   },
   {
     "explicit": {
-      "academic_background": "Liceo Scientifico",
-      "region": "north"
+      "academic_background": "Liceo Scientifico"
     },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
+        "engineering_technology",
         "arts_design"
       ],
       "gender": "male"
@@ -57,21 +43,6 @@
   {
     "inferred": {
       "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male",
-      "riasec_question_valences": [
-        1,
-        2,
-        2,
-        1,
-        1,
-        -1,
-        -1,
-        1
-      ]
     }
   }
 ]

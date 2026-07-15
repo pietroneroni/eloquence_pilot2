@@ -2,28 +2,27 @@
   {
     "patch": {
       "explicit": {
-        "region": "center"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "greet",
-    "source_turn": 1
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "high school",
-        "region": "central Italy"
+        "academic_background": "liceo scientifico"
       },
       "inferred": {
         "field_of_interest": [
           "psychology",
-          "social_sciences"
+          "health_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
         ],
         "gender": "male"
       }
@@ -39,7 +38,7 @@
       "inferred": {
         "field_of_interest": [
           "psychology",
-          "social_sciences"
+          "health_technology"
         ],
         "gender": "male"
       }
@@ -50,13 +49,12 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "Liceo",
-        "region": "Central Italy"
+        "academic_background": "Liceo Scientifico"
       },
       "inferred": {
         "field_of_interest": [
           "psychology",
-          "social_sciences"
+          "health_technology"
         ],
         "gender": "male"
       }
@@ -78,14 +76,14 @@
       "inferred": {
         "gender": "male",
         "riasec_question_valences": [
+          2,
           1,
-          2,
-          2,
+          1,
           0,
           1,
           2,
-          2,
-          2
+          1,
+          1
         ]
       }
     },

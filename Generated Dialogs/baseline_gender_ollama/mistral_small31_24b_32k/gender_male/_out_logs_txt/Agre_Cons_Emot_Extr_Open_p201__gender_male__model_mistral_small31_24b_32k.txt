@@ -24,19 +24,53 @@
 
 
 
-[dialog_id] 43b18c8e-b91e-4aa3-9170-e92a61adbf41
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'temperature': 0.35, 'top_k': 50, 'min_p': 0.05, 'num_ctx': 8192, 'repeat_last_n': 1024, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 90272089-c860-4d85-a91c-07aeec835eb1
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_predict': 350, 'temperature': 0.35, 'top_k': 50, 'top_p': 0.9, 'min_p': 0.05, 'num_ctx': 8192, 'repeat_last_n': 1024, 'repeat_penalty': 1.05}
 [seed] 12363
 --- Dialogue Begins ---
-[Student] Ciao, sono uno studente di un piccolo paese in Central Italia. Ho appena finito il liceo e sto cercando consiglio su quale programma universitario scegliere. Mi piace capire come funzionano le cose e mi piace lavorare con le persone.
-[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il tuo consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Quale corso di studi hai seguito al liceo?
-[Student] Ho seguito il liceo scientifico. Mi piaceva molto la matematica e la fisica, ma anche le materie umanistiche come la storia e la filosofia.
-[Counselor[mistral_small31_24b_32k]] Il liceo scientifico è un'ottima base per molte carriere. Mi sembra che tu abbia un interesse per le scienze esatte e per le materie umanistiche. Ti piace lavorare con le persone e capire come funzionano le cose. Quali sono le tue aspirazioni per il futuro? Vuoi lavorare in un campo che ti permetta di applicare le tue conoscenze scientifiche e umanistiche?
-[Student] Mi piacerebbe lavorare in un campo che mi permetta di applicare le mie conoscenze scientifiche e umanistiche. Magari in un lavoro che mi permetta di aiutare le persone e di lavorare in un ambiente organizzato.
-[Counselor[mistral_small31_24b_32k]] Mi sembra che tu abbia un interesse per le scienze esatte e per le materie umanistiche. Ti piacerebbe lavorare in un campo che ti permetta di applicare le tue conoscenze scientifiche e umanistiche. Magari in un lavoro che ti permetta di aiutare le persone e di lavorare in un ambiente organizzato. Ti piacerebbe approfondire o imparare a fare qualcosa in particolare all'università?
-[Student] Mi piacerebbe approfondire la mia conoscenza in informatica. Mi sembra un campo che possa permettermi di lavorare con le persone e di applicare le mie conoscenze scientifiche.
-[Counselor[mistral_small31_24b_32k]] L'informatica è un campo molto interessante e in continua evoluzione. Ti permette di lavorare con le persone e di applicare le tue conoscenze scientifiche. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
-[Student] Non ho ancora deciso dove mi piacerebbe studiare. Magari in una città universitaria, ma non ho ancora deciso.
+[Student] Ciao, sono uno studente di Central Italia. Ho completato il liceo e ora sto cercando consiglio su quale corso di laurea scegliere. Mi piace capire come funzionano le cose e risolvere problemi, quindi sto pensando a qualcosa di tecnico. Magari mi potresti aiutare a capire meglio le mie opzioni?
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono qui per aiutarti a scegliere il corso di laurea più adatto a te. Mi piace molto che tu abbia già un'idea di ciò che ti interessa. Mi puoi dire in quale scuola o liceo hai studiato e quale corso hai seguito?
+[Student] Ho frequentato il liceo scientifico nella mia città. Ho sempre avuto una predilezione per le materie scientifiche e matematiche, quindi penso che un corso di laurea tecnico potrebbe essere una buona scelta.
+[Counselor[mistral_small31_24b_32k]] Perfetto, un liceo scientifico è un'ottima base per un corso di laurea tecnico. Mi puoi dire in quale regione italiana ti piacerebbe studiare?
+[Student] Mi piacerebbe studiare nella mia regione, la Toscana. Mi sento più a mio agio in un ambiente che conosco e vicino alla mia famiglia.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe approfondire la programmazione e l'analisi dei dati. Mi sembra un campo molto interessante e in continua evoluzione.
+[Counselor[mistral_small31_24b_32k]] Ottima scelta! La programmazione e l'analisi dei dati sono settori in forte crescita e offrono molte opportunità. Hai già pensato a quale università potresti frequentare? Ti posso dare alcune informazioni su alcune università della Toscana.
+[Student] Non ho ancora deciso quale università frequentare. Mi piacerebbe trovare un programma che offra un buon equilibrio tra teoria e pratica.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
 [Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
@@ -44,36 +78,36 @@
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
-[Student] Mi piace abbastanza.
+[Student] Non mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
 [Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
-[Student] Mi piace molto.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
 [Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
 [Student] Mi piace molto.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. Gabriele d'Annunzio University of Chieti-Pescara | [OBC7] BENI CULTURALI 2. University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE 3. Gabriele d'Annunzio University of Chieti-Pescara | [L270] LETTERE Scegli un'opzione indicando il numero.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco questa opzione: 1. University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE PERCORSO GENERICO IE003 2024 Scegli un'opzione indicando il numero.
 [Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo, dato il tuo interesse per la matematica e la fisica al liceo scientifico. Tuttavia, il corso di Beni Culturali non è un corso tecnico impegnativo.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha preparato bene per un corso tecnico impegnativo.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
-[Counselor[mistral_small31_24b_32k]] un percorso orientato alle discipline umanistiche
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché ti permette di approfondire le tue conoscenze umanistiche, che hai dimostrato di apprezzare durante il liceo scientifico. Inoltre, il corso di Beni Culturali ti offre l'opportunità di lavorare con le persone e di applicare le tue capacità analitiche e organizzative. Il corso include materie come Geografia, Antropologia Culturale e Laboratorio sulle Professioni del Patrimonio Culturale, che ti permetteranno di sviluppare competenze utili per lavorare in un ambiente organizzato e di supporto alle persone.
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché hai un forte interesse per la programmazione e l'analisi dei dati, settori che sono al centro del corso di Ingegneria Informatica e dell'Informazione. Inoltre, il tuo percorso al liceo scientifico ti ha preparato bene per affrontare un corso tecnico impegnativo. Il corso offre un buon equilibrio tra teoria e pratica, con materie come "Programmazione e Progettazione Software" e "Ricerca Operativa", che ti permetteranno di sviluppare competenze pratiche e teoriche.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] Sì, dato il tuo interesse per le attività organizzate e il lavoro con le persone, ti troveresti a tuo agio nel guidare un progetto di gruppo.
+[Counselor[mistral_small31_24b_32k]] No, non è presente alcuna informazione su questo aspetto nel corso di Ingegneria Informatica e dell'Informazione.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
-[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] Penso che il corso di Beni Culturali sia più adatto a te perché ti permette di approfondire le tue conoscenze umanistiche e di lavorare con le persone, due aspetti che hai dimostrato di apprezzare. Inoltre, il corso include materie come Geografia, Antropologia Culturale e Laboratorio sulle Professioni del Patrimonio Culturale, che ti permetteranno di sviluppare competenze utili per lavorare in un ambiente organizzato e di supporto alle persone.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di Ingegneria Informatica e dell'Informazione sia più adatto a te perché il tuo interesse per la programmazione e l'analisi dei dati è ben supportato dalle materie offerte nel corso, come "Programmazione e Progettazione Software" e "Ricerca Operativa". Inoltre, il tuo percorso al liceo scientifico ti ha preparato bene per affrontare un corso tecnico impegnativo.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari di Beni Culturali.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha preparato bene per affrontare un corso tecnico impegnativo come Ingegneria Informatica e dell'Informazione.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
 [Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché ti permette di costruire una solida base di conoscenze prima di affrontare argomenti più complessi. Partire da moduli introduttivi ti aiuterà a familiarizzare con i metodi di studio universitari e a sviluppare le competenze necessarie per affrontare con successo i corsi avanzati.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di Ingegneria Informatica e dell'Informazione offre un equilibrio tra teoria e pratica, con materie come "Programmazione e Progettazione Software" e "Ricerca Operativa". Queste materie ti permetteranno di sviluppare competenze pratiche e teoriche, partendo da moduli introduttivi che ti aiuteranno a consolidare le basi necessarie per affrontare corsi più avanzati.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Hai un forte interesse per le discipline umanistiche e per il lavoro con le persone, e il corso di Beni Culturali sembra adatto alle tue aspirazioni e alla tua preparazione. RIASEC: SIC Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo scientifico e hai un forte interesse per la programmazione e l'analisi dei dati. Il corso di Ingegneria Informatica e dell'Informazione è una scelta adatta alle tue inclinazioni e preparazione. RIASEC: ICR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
 [Student] Arrivederci
 --- Dialogue Ends ---
 
@@ -81,25 +115,13 @@
 [
   {
     "explicit": {
-      "academic_background": "liceo scientifico"
+      "academic_background": "high school",
+      "region": "Toscana"
     },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
-        "humanities"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "liceo scientifico"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology",
-        "humanities",
-        "physical_sciences"
+        "engineering_technology",
+        "computer_science"
       ],
       "gender": "male"
     }
@@ -107,12 +129,12 @@
   {
     "explicit": {
       "academic_background": "high school",
-      "region": "center"
+      "region": "Toscana"
     },
     "inferred": {
       "field_of_interest": [
         "computer_science",
-        "psychology"
+        "engineering_technology"
       ],
       "gender": "male"
     }
@@ -123,8 +145,7 @@
     },
     "inferred": {
       "field_of_interest": [
-        "computer_science",
-        "humanities"
+        "computer_science"
       ],
       "gender": "male"
     }
@@ -141,9 +162,9 @@
         1,
         2,
         2,
+        -1,
         1,
         1,
-        2,
         1,
         2
       ]
@@ -161,29 +182,13 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "liceo scientifico"
+        "academic_background": "high school",
+        "region": "Toscana"
       },
       "inferred": {
         "field_of_interest": [
-          "physical_sciences",
-          "humanities"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q2",
-    "source_turn": 2
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "liceo scientifico"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology",
-          "humanities",
-          "physical_sciences"
+          "engineering_technology",
+          "computer_science"
         ],
         "gender": "male"
       }
@@ -195,12 +200,12 @@
     "patch": {
       "explicit": {
         "academic_background": "high school",
-        "region": "center"
+        "region": "Toscana"
       },
       "inferred": {
         "field_of_interest": [
           "computer_science",
-          "psychology"
+          "engineering_technology"
         ],
         "gender": "male"
       }
@@ -215,8 +220,7 @@
       },
       "inferred": {
         "field_of_interest": [
-          "computer_science",
-          "humanities"
+          "computer_science"
         ],
         "gender": "male"
       }
@@ -241,9 +245,9 @@
           1,
           2,
           2,
+          -1,
           1,
           1,
-          2,
           1,
           2
         ]
@@ -267,35 +271,32 @@
 {
   "memory": {
     "explicit": {
-      "academic_background": "liceo scientifico",
-      "region": "center"
+      "academic_background": "Liceo Scientifico",
+      "region": "Toscana"
     },
     "inferred": {
       "field_of_interest": [
-        "computer_science",
-        "humanities"
+        "computer_science"
       ],
       "gender": "male",
       "riasec_attitudes": [
-        "Social",
         "Investigative",
-        "Conventional"
+        "Conventional",
+        "Realistic"
       ],
-      "riasec_confidence": "medium"
+      "riasec_confidence": "low"
     }
   },
-  "patch_count": 7
+  "patch_count": 6
 }
 
 [Selected option | deterministic protocol state]
 {
   "option_number": 1,
-  "selected_option": "1 - Gabriele d'Annunzio University of Chieti-Pescara | [OBC7] BENI CULTURALI",
+  "selected_option": "1 - University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE PERCORSO GENERICO IE003 2024",
   "shown_options": [
-    "Gabriele d'Annunzio University of Chieti-Pescara | [OBC7] BENI CULTURALI",
-    "University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE",
-    "Gabriele d'Annunzio University of Chieti-Pescara | [L270] LETTERE"
+    "University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE PERCORSO GENERICO IE003 2024"
   ],
-  "source_turn": 14
+  "source_turn": 22
 }
 [INVALID_PROTOCOL] missing_counselor_wrapup_recap

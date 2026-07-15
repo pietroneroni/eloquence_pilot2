@@ -6,89 +6,19 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[dialog_id] 87696121-96da-4f8e-8a1d-1aa272ab5f56
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'num_predict': 350, 'repeat_penalty': 1.05, 'min_p': 0.05, 'repeat_last_n': 1024, 'temperature': 0.35, 'top_k': 50, 'top_p': 0.9}
+[dialog_id] 7706d74d-def3-4317-a537-92fa6d1f6a0e
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'min_p': 0.05, 'num_predict': 350, 'top_k': 50, 'top_p': 0.9, 'num_ctx': 8192, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35}
 [seed] 12362
 --- Dialogue Begins ---
-[Student] Ciao, sono uno studente di Central Italia. Ho completato il liceo qui e ora sto cercando consigli su come scegliere il programma universitario giusto. Mi interessa molto la psicologia e vorrei sapere di più su come posso specializzarmi in disturbi d'ansia e traumi.
-[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Posso aiutarti a esplorare diverse opzioni e a capire quali programmi potrebbero essere i migliori per te. Hai già un'idea di quali università o programmi ti interessano in particolare?
-[Student] Ho sempre avuto una passione per la psicologia, soprattutto per quanto riguarda i disturbi d'ansia e i traumi. Durante il liceo, ho partecipato a diversi progetti di ricerca e ho lavorato con professori universitari.
-[Counselor[mistral_small31_24b_32k]] La tua passione per la psicologia e il tuo interesse specifico per i disturbi d'ansia e i traumi sono molto promettenti. Hai mai considerato di specializzarti in psicologia clinica o in counseling psicologico? Quali altre materie o ambiti universitari ti attirano di più?
-[Student] Non ho ancora deciso se specializzarmi in psicologia clinica o counseling psicologico. Mi piace anche l'idea di lavorare con le mani e fare attività pratiche.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per la psicologia, in particolare per i disturbi d'ansia e i traumi. Questo ti porterebbe a esplorare sia la psicologia clinica che il counseling psicologico. Inoltre, il tuo interesse per attività pratiche potrebbe essere soddisfatto da programmi che includono laboratori o esperienze pratiche. Hai mai pensato a come queste attività pratiche potrebbero integrarsi con i tuoi studi di psicologia?
-[Student] Mi piacerebbe trovare un programma che mi permetta di combinare la teoria con esperienze pratiche. Ad esempio, mi piacerebbe fare tirocini o progetti di ricerca applicata.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per la psicologia, in particolare per i disturbi d'ansia e i traumi. Questo ti porterebbe a esplorare sia la psicologia clinica che il counseling psicologico. Inoltre, il tuo interesse per attività pratiche potrebbe essere soddisfatto da programmi che includono laboratori o esperienze pratiche. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
-[Student] Non ho ancora deciso dove vorrei studiare. Mi piacerebbe restare in Central Italia.
+[Student] Ciao, sono uno studente di Central Italia. Ho appena completato il mio percorso di laurea triennale e ora sto cercando consigli su come scegliere il programma di studi giusto per me. Mi piace capire come funzionano le cose e mi piace anche esprimere le mie idee attraverso attività creative. Non so ancora bene cosa fare.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono qui per aiutarti a scegliere il programma di studi universitario più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue aspirazioni. Per iniziare, puoi dirmi quale corso di laurea triennale hai appena concluso?
+[Student] Ho concluso un corso di laurea triennale in psicologia. Mi piace molto analizzare i problemi e le dinamiche umane.
+[Counselor[mistral_small31_24b_32k]] Perfetto, grazie per aver condiviso questa informazione. Ora, quali materie o ambiti universitari ti attirano di più?
+[Student] Mi interessano molto le materie legate alla salute mentale e al benessere psicologico. Mi piace anche esplorare argomenti che combinano la creatività con la scienza, come il design o l'arte terapeutica.
+[Counselor[mistral_small31_24b_32k]] Grazie per aver condiviso i tuoi interessi. Ora, in quale parte d'Italia ti piacerebbe studiare?
+[Student] Mi piacerebbe studiare in Central Italia, vicino alla mia città. Mi sento a mio agio in un ambiente familiare.
+[Counselor[mistral_small31_24b_32k]] Capisco, studiare in un ambiente familiare può essere molto vantaggioso. Ora, hai già pensato a quale tipo di laurea magistrale ti piacerebbe intraprendere? Ci sono alcuni programmi che potrebbero interessarti, come il Master in Psicologia Clinica e della Salute presso l'Università degli Studi di Perugia, il Master in Psicologia della Salute presso l'Università degli Studi di Roma "La Sapienza" o il Master in Psicologia della Salute presso l'Università degli Studi di Firenze.
+[Student] Non ho ancora deciso esattamente quale laurea magistrale intraprendere. Mi piacerebbe esplorare programmi che mi permettano di approfondire la mia conoscenza in psicologia clinica e della salute.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
 [Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
@@ -105,35 +35,44 @@
 [Student] Dipende.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
 [Student] Mi piace abbastanza.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco questa opzione: 1. University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Scegli un'opzione indicando il numero.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. Gabriele d'Annunzio University of Chieti-Pescara | [687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE 2. Gabriele d'Annunzio University of Chieti-Pescara | [0685] PSICOLOGIA 3. University of Trento | [0707H] PSICOLOGIA Scegli un'opzione indicando il numero.
 [Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo, dato il tuo interesse per la psicologia e la tua curiosità intellettuale.
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo background in psicologia e il tuo interesse per la comprensione dei fenomeni e l'analisi logica, potresti affrontare un corso tecnico impegnativo.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
-[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Counselor[mistral_small31_24b_32k]] un percorso orientato alle discipline umanistiche
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1.
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché il corso di laurea magistrale in Psicologia del Benessere e della Performance presso l'the selected program/university, come la salute mentale e il benessere psicologico. Inoltre, il corso è situato in Central Italia, vicino alla tua città, il che ti permetterà di studiare in un ambiente familiare.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] Sì, dato il tuo interesse per la psicologia e la tua curiosità intellettuale, potresti trovare stimolante guidare un progetto di gruppo.
+[Counselor[mistral_small31_24b_32k]] No, non è presente alcuna informazione che suggerisca che ti troveresti a tuo agio nel guidare un progetto di gruppo.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
-[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA sia più adatto a te perché combina sia aspetti tecnici che umanistici, permettendoti di esplorare la psicologia da una prospettiva scientifica e pratica. Questo corso include materie come "Basi biologiche del comportamento" e "Metodi matematici per le scienze cognitive", che potrebbero soddisfare il tuo interesse per attività pratiche e la tua curiosità intellettuale. Inoltre, il corso offre attività formative a scelta vincolata che ti permetteranno di approfondire argomenti specifici come la psicologia del linguaggio e della comunicazione, della memoria e dell'apprendimento, e della percezione e dell'attenzione.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea magistrale in Psicologia del Benessere e della Performance presso l'the selected program/university, come la salute mentale e il benessere psicologico. Inoltre, il corso è situato in Central Italia, vicino alla tua città, il che ti permetterà di studiare in un ambiente familiare.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, i tuoi studi al liceo e la tua partecipazione a progetti di ricerca ti hanno preparato adeguatamente ai corsi universitari.
+[Counselor[mistral_small31_24b_32k]] Sì, i tuoi studi precedenti in psicologia ti hanno preparato adeguatamente ai corsi universitari.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
 [Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di laurea in [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA offre una combinazione equilibrata di materie teoriche e pratiche. In particolare, il corso include insegnamenti come "Basi biologiche del comportamento" e "Metodi matematici per le scienze cognitive", che ti permetteranno di approfondire le basi scientifiche della psicologia. Inoltre, il corso prevede attività formative a scelta vincolata che ti permetteranno di esplorare argomenti specifici come la psicologia del linguaggio e della comunicazione, della memoria e dell'apprendimento, e della percezione e dell'attenzione. Questo ti darà la possibilità di sviluppare competenze pratiche e teoriche, adatte alla tua curiosità intellettuale e al tuo interesse per attività pratiche.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di laurea magistrale in Psicologia del Benessere e della Performance presso l'the selected program/universitypsicologia. Inoltre, il corso è situato in Central Italia, vicino alla tua città, il che ti permetterà di studiare in un ambiente familiare.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo in Central Italia e sei molto interessato alla psicologia, specialmente nei disturbi d'ansia e traumi. Il corso di laurea in [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA sembra adatto ai tuoi interessi e alla tua preparazione. RIASEC: IRA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato una laurea triennale in psicologia e sei interessato a programmi che combinano la creatività con la scienza, come il design o l'arte terapeutica. Il corso di laurea magistrale in Psicologia del Benessere e della Performance presso l'the selected program/university sembra adatto ai tuoi interessi e al tuo background. RIASEC: IRA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna nei tuoi studi!
 [Student] Arrivederci
 --- Dialogue Ends ---
 
 [Listener patches | raw accepted patches]
 [
   {
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
     "explicit": {
-      "region": "center"
+      "academic_background": "laurea triennale in psicologia"
     },
     "inferred": {
       "field_of_interest": [
@@ -144,41 +83,14 @@
   },
   {
     "explicit": {
-      "academic_background": "high school",
-      "region": "center"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "high school"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "Liceo",
+      "academic_background": "bachelor's in psychology",
       "region": "Central Italia"
     },
     "inferred": {
       "field_of_interest": [
-        "psychology"
+        "psychology",
+        "arts_design"
       ],
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
       "gender": "male"
     }
   },
@@ -213,12 +125,10 @@
 [
   {
     "patch": {
-      "explicit": {
-        "region": "center"
-      },
       "inferred": {
         "field_of_interest": [
-          "psychology"
+          "arts_design",
+          "cognitive_science_linguistics"
         ],
         "gender": "male"
       }
@@ -229,8 +139,7 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school",
-        "region": "center"
+        "academic_background": "laurea triennale in psicologia"
       },
       "inferred": {
         "field_of_interest": [
@@ -245,11 +154,13 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school"
+        "academic_background": "bachelor's in psychology",
+        "region": "Central Italia"
       },
       "inferred": {
         "field_of_interest": [
-          "psychology"
+          "psychology",
+          "arts_design"
         ],
         "gender": "male"
       }
@@ -259,37 +170,12 @@
   },
   {
     "patch": {
-      "explicit": {
-        "academic_background": "Liceo",
-        "region": "Central Italia"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q1",
-    "source_turn": 5
-  },
-  {
-    "patch": {
       "inferred": {
         "gender": "male"
       }
     },
     "phase": "riasec_q2",
     "source_turn": 6
-  },
-  {
-    "patch": {
-      "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q3",
-    "source_turn": 7
   },
   {
     "patch": {
@@ -325,12 +211,13 @@
 {
   "memory": {
     "explicit": {
-      "academic_background": "high school",
-      "region": "center"
+      "academic_background": "laurea triennale in psicologia",
+      "region": null
     },
     "inferred": {
       "field_of_interest": [
-        "psychology"
+        "psychology",
+        "arts_design"
       ],
       "gender": "male",
       "riasec_attitudes": [
@@ -341,16 +228,18 @@
       "riasec_confidence": "low"
     }
   },
-  "patch_count": 8
+  "patch_count": 6
 }
 
 [Selected option | deterministic protocol state]
 {
   "option_number": 1,
-  "selected_option": "1 - University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+  "selected_option": "1 - Gabriele d'Annunzio University of Chieti-Pescara | [687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE",
   "shown_options": [
-    "University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA"
+    "Gabriele d'Annunzio University of Chieti-Pescara | [687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE",
+    "Gabriele d'Annunzio University of Chieti-Pescara | [0685] PSICOLOGIA",
+    "University of Trento | [0707H] PSICOLOGIA"
   ],
-  "source_turn": 22
+  "source_turn": 14
 }
 [INVALID_PROTOCOL] missing_counselor_wrapup_recap

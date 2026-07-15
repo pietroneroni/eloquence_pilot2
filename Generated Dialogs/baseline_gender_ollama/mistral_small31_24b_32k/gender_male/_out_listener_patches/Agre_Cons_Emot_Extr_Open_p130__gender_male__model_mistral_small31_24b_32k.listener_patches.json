@@ -1,31 +1,17 @@
 [
   {
-    "explicit": {
-      "academic_background": "laurea triennale",
-      "region": "north"
-    },
     "inferred": {
       "gender": "male"
     }
   },
   {
     "explicit": {
-      "academic_background": "laurea triennale"
+      "academic_background": "liceo scientifico"
     },
     "inferred": {
       "field_of_interest": [
-        "engineering_technology",
-        "arts_design"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "laurea triennale in una università rinomata del Nord Italia"
-    },
-    "inferred": {
-      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences",
         "engineering_technology"
       ],
       "gender": "male"
@@ -49,11 +35,6 @@
         1,
         1
       ]
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
     }
   }
 ]

@@ -7,42 +7,7 @@
       "inferred": {
         "field_of_interest": [
           "engineering_technology",
-          "social_sciences"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "greet",
-    "source_turn": 1
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "liceo scientifico",
-        "region": "north"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "computer_science",
-          "engineering_technology",
           "physical_sciences"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q2",
-    "source_turn": 2
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "liceo scientifico",
-        "region": "north"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "engineering_technology",
-          "social_sciences"
         ],
         "gender": "male"
       }
@@ -53,18 +18,18 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "Liceo Scientifico",
         "region": "north"
       },
       "inferred": {
         "field_of_interest": [
-          "environmental_engineering"
+          "engineering_technology",
+          "computer_science"
         ],
         "gender": "male"
       }
     },
-    "phase": "riasec_q1",
-    "source_turn": 5
+    "phase": "background_q4",
+    "source_turn": 4
   },
   {
     "patch": {
@@ -78,13 +43,39 @@
   {
     "patch": {
       "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q3",
+    "source_turn": 7
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
         "gender": "male",
         "riasec_question_valences": [
           2,
           2,
           2,
+          -1,
           1,
-          2,
           1,
           2,
           1
@@ -92,15 +83,6 @@
       }
     },
     "phase": "advice",
-    "source_turn": 13
-  },
-  {
-    "patch": {
-      "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "stop",
-    "source_turn": 23
+    "source_turn": 14
   }
 ]

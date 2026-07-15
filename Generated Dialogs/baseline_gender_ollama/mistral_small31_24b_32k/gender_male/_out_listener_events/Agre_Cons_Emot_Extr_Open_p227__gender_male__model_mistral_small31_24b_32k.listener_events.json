@@ -1,14 +1,9 @@
 [
   {
     "patch": {
-      "explicit": {
-        "region": "north"
-      },
       "inferred": {
         "field_of_interest": [
-          "physical_sciences",
-          "engineering_technology",
-          "computer_science"
+          "engineering_technology"
         ],
         "gender": "male"
       }
@@ -19,12 +14,27 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "liceo scientifico"
+        "academic_background": "high school"
       },
       "inferred": {
         "field_of_interest": [
           "engineering_technology",
           "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
         ],
         "gender": "male"
       }
@@ -34,20 +44,12 @@
   },
   {
     "patch": {
-      "explicit": {
-        "academic_background": "Liceo Scientifico",
-        "region": "north"
-      },
       "inferred": {
-        "field_of_interest": [
-          "engineering_technology",
-          "physical_sciences"
-        ],
         "gender": "male"
       }
     },
-    "phase": "riasec_q1",
-    "source_turn": 5
+    "phase": "riasec_q2",
+    "source_turn": 6
   },
   {
     "patch": {
@@ -55,8 +57,17 @@
         "gender": "male"
       }
     },
-    "phase": "riasec_q2",
-    "source_turn": 6
+    "phase": "riasec_q3",
+    "source_turn": 7
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q6",
+    "source_turn": 10
   },
   {
     "patch": {
@@ -76,5 +87,14 @@
     },
     "phase": "advice",
     "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "qa_choice",
+    "source_turn": 18
   }
 ]

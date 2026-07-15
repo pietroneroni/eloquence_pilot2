@@ -1,14 +1,10 @@
 [
   {
     "explicit": {
-      "academic_background": "high school",
-      "region": "north"
+      "academic_background": "liceo scientifico"
     },
     "inferred": {
-      "field_of_interest": [
-        "humanities",
-        "cognitive_science_linguistics"
-      ],
+      "field_of_interest": [],
       "gender": "male"
     }
   },
@@ -19,19 +15,13 @@
     "inferred": {
       "field_of_interest": [
         "humanities",
-        "communication_digital_media"
+        "arts_design"
       ],
       "gender": "male"
     }
   },
   {
-    "explicit": {
-      "academic_background": "Liceo Scientifico"
-    },
     "inferred": {
-      "field_of_interest": [
-        "humanities"
-      ],
       "gender": "male"
     }
   },
@@ -49,15 +39,10 @@
         2,
         2,
         1,
+        0,
         1,
-        1,
-        2
+        1
       ]
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
     }
   }
 ]

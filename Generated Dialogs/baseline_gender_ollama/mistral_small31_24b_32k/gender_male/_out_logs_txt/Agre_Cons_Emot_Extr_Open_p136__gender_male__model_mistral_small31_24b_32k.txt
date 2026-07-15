@@ -8,65 +8,21 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[dialog_id] 05ba7f51-f86a-46c9-a21f-a6b13ee49bc0
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_k': 50, 'min_p': 0.05, 'num_predict': 350, 'top_p': 0.9}
+[dialog_id] f776c94b-20f9-4e1b-84d6-552ab82f02d0
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'top_p': 0.9, 'min_p': 0.05, 'repeat_last_n': 1024, 'top_k': 50, 'num_ctx': 8192, 'num_predict': 350, 'repeat_penalty': 1.05, 'temperature': 0.35}
 [seed] 12352
 --- Dialogue Begins ---
-[Student] Ciao, sono uno studente di un piccolo paese costiero del nord Italia. Ho appena finito il liceo e sto cercando consiglio su quale corso di laurea scegliere. Mi piace molto scrivere e ho un interesse per le lingue. Non so ancora bene quale direzione prendere.
-[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il corso di laurea più adatto a te, basandomi sui tuoi interessi e il tuo background. Quale liceo hai frequentato?
-[Student] Ho frequentato il liceo scientifico.
-[Counselor[mistral_small31_24b_32k]] Il liceo scientifico è un'ottima base per molte discipline. Quali materie o argomenti ti hanno appassionato di più durante il liceo?
-[Student] Mi sono sempre piaciute molto le materie umanistiche, come letteratura e storia. Mi piaceva anche la matematica, perché mi permetteva di risolvere problemi in modo logico.
-[Counselor[mistral_small31_24b_32k]] Le materie umanistiche come letteratura e storia, insieme alla matematica, possono essere un'ottima combinazione per esplorare diverse opportunità universitarie. Hai mai pensato di approfondire le lingue straniere o la scrittura creativa? Potrebbero essere aree interessanti da esplorare.
-[Student] Non ho ancora deciso se approfondire le lingue straniere o la scrittura creativa.
-[Counselor[mistral_small31_24b_32k]] Hai mai pensato a dove ti piacerebbe studiare? Hai una zona d'Italia in mente o la sede è abbastanza flessibile per te?
-[Student] Non ho ancora pensato a dove mi piacerebbe studiare. La sede è abbastanza flessibile per me.
+[Student] Ciao, mi chiamo [nome]. Sono di una piccola città costiera nel Nord Italia e ho appena completato il liceo. Vorrei avere un consiglio su quale corso di laurea scegliere.
+[Counselor[mistral_small31_24b_32k]] Benvenuto, [nome]. Sono il consulente universitario e sono qui per aiutarti a scegliere il corso di laurea più adatto a te, basandomi sul tuo percorso scolastico, i tuoi interessi e le tue aspirazioni. Quale liceo hai frequentato e quale corso hai concluso?
+[Student] Ho frequentato il liceo scientifico. Non ho ancora deciso quale corso di laurea scegliere.
+[Counselor[mistral_small31_24b_32k]] Il liceo scientifico ti offre una buona base per molte discipline. Per aiutarti a scegliere il corso di laurea più adatto, mi piacerebbe sapere quali materie o ambiti universitari ti attirano di più?
+[Student] Mi piacciono molto le materie umanistiche, come la letteratura e le lingue straniere. Mi piace anche disegnare e creare cose con le mie mani.
+[Counselor[mistral_small31_24b_32k]] Le tue passioni per le materie umanistiche e per l'arte manuale ti offrono molte opportunità. Ti consiglio di considerare corsi di laurea in letteratura, lingue straniere, o anche in design e arti visive. Dove ti piacerebbe studiare?
+[Student] Non ho ancora deciso dove studiare.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove studiare.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
-[Student] Mi attira abbastanza.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
@@ -76,32 +32,32 @@
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
 [Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
-[Student] Mi piace abbastanza.
+[Student] Dipende.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
 [Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
-[Student] Mi piace molto. Ciao, grazie per il tuo aiuto.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0416G] FILOSOFIA 2. University of Trento | [0417G] BENI CULTURALI 3. University of Trento | [0427G] LINGUE MODERNE Scegli un'opzione indicando il numero.
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Salerno | [03128] SCIENZE DEI BENI CULTURALI 2. Gabriele d'Annunzio University of Chieti-Pescara | [OBC7] BENI CULTURALI 3. University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE Scegli un'opzione indicando il numero.
 [Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] No, non è presente nel contesto recuperato.
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo background nel liceo scientifico e il tuo interesse per le attività pratiche e manuali, potresti affrontare un corso tecnico impegnativo.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
 [Counselor[mistral_small31_24b_32k]] un percorso orientato alle discipline umanistiche
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0416G] FILOSOFIA 2. University of Trento | [0417G] BENI CULTURALI 3.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in [03128] SCIENZE DEI BENI CULTURALI sia adatto a te perché combina le tue passioni per le materie umanistiche e per l'arte manuale. Questo corso ti permetterà di esplorare la storia dell'arte e la conservazione dei beni culturali, che sono in linea con il tuo interesse per la creatività e la comprensione dei fenomeni culturali. Inoltre, il curriculum archivistico bibliotecario ti offrirà l'opportunità di lavorare con oggetti concreti e di applicare le tue abilità pratiche in un contesto professionale.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] Sì, il tuo interesse per le discipline umanistiche e la tua attitudine a ragionare in modo logico e a organizzare progetti ti renderebbero adatto a guidare un progetto di gruppo.
+[Counselor[mistral_small31_24b_32k]] No, non è possibile dirlo con sicurezza, dato che non ci sono informazioni sufficienti per valutare le tue capacità di leadership.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
-[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] L'opzione che hai scelto, [0416G] FILOSOFIA, è più adatta a te perché valorizza le tue attitudini investigative e artistiche, permettendoti di esplorare discipline umanistiche come la letteratura, la storia e la filosofia. Inoltre, il corso offre la possibilità di acquisire competenze in ambiti etici, politici e religiosi, che possono arricchire la tua formazione e aprirti a diverse opportunità professionali.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in [03128] SCIENZE DEI BENI CULTURALI sia più adatto a te perché combina le tue passioni per le materie umanistiche e per l'arte manuale. Questo corso ti permetterà di esplorare la storia dell'arte e la conservazione dei beni culturali, che sono in linea con il tuo interesse per la creatività e la comprensione dei fenomeni culturali. Inoltre, il curriculum archivistico bibliotecario ti offrirà l'opportunità di lavorare con oggetti concreti e di applicare le tue abilità pratiche in un contesto professionale.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, il tuo background nel liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari di filosofia, in particolare per quanto riguarda le competenze logiche e analitiche.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso nel liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari, anche se non ci sono informazioni specifiche sul curriculum archivistico bibliotecario.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
 [Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché valorizza le tue attitudini investigative e artistiche, permettendoti di esplorare discipline umanistiche come la letteratura, la storia e la filosofia. Inoltre, il corso offre la possibilità di acquisire competenze in ambiti etici, politici e religiosi, che possono arricchire la tua formazione e aprirti a diverse opportunità professionali.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il curriculum archivistico bibliotecario del corso di laurea in [03128] SCIENZE DEI BENI CULTURALI ti permetterà di esplorare la storia dell'arte e la conservazione dei beni culturali, che sono in linea con il tuo interesse per la creatività e la comprensione dei fenomeni culturali. Inoltre, il curriculum archivistico bibliotecario ti offrirà l'opportunità di lavorare con oggetti concreti e di applicare le tue abilità pratiche in un contesto professionale.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Il tuo interesse per le discipline umanistiche e la tua attitudine a ragionare in modo logico e a organizzare progetti ti rendono adatto al corso di laurea in Filosofia. Questo percorso valorizza le tue competenze investigative e artistiche, permettendoti di esplorare ambiti etici, politici e religiosi. RIASEC: ICA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: In bocca al lupo per il tuo percorso!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo scientifico e hai un forte interesse per le materie umanistiche e per l'arte manuale. Il corso di laurea in [03128] SCIENZE DEI BENI CULTURALI sembra essere una scelta adatta alle tue passioni e competenze. RIASEC: IAR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
 [Student] Arrivederci
 --- Dialogue Ends ---
 
@@ -109,14 +65,10 @@
 [
   {
     "explicit": {
-      "academic_background": "high school",
-      "region": "north"
+      "academic_background": "liceo scientifico"
     },
     "inferred": {
-      "field_of_interest": [
-        "humanities",
-        "cognitive_science_linguistics"
-      ],
+      "field_of_interest": [],
       "gender": "male"
     }
   },
@@ -127,19 +79,13 @@
     "inferred": {
       "field_of_interest": [
         "humanities",
-        "communication_digital_media"
+        "arts_design"
       ],
       "gender": "male"
     }
   },
   {
-    "explicit": {
-      "academic_background": "Liceo Scientifico"
-    },
     "inferred": {
-      "field_of_interest": [
-        "humanities"
-      ],
       "gender": "male"
     }
   },
@@ -157,15 +103,10 @@
         2,
         2,
         1,
+        0,
         1,
-        1,
-        2
+        1
       ]
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
     }
   }
 ]
@@ -175,19 +116,15 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school",
-        "region": "north"
+        "academic_background": "liceo scientifico"
       },
       "inferred": {
-        "field_of_interest": [
-          "humanities",
-          "cognitive_science_linguistics"
-        ],
+        "field_of_interest": [],
         "gender": "male"
       }
     },
-    "phase": "background_q3",
-    "source_turn": 3
+    "phase": "background_q2",
+    "source_turn": 2
   },
   {
     "patch": {
@@ -197,28 +134,13 @@
       "inferred": {
         "field_of_interest": [
           "humanities",
-          "communication_digital_media"
+          "arts_design"
         ],
         "gender": "male"
       }
     },
     "phase": "background_q4",
     "source_turn": 4
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "Liceo Scientifico"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "humanities"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q1",
-    "source_turn": 5
   },
   {
     "patch": {
@@ -232,6 +154,15 @@
   {
     "patch": {
       "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q7",
+    "source_turn": 11
+  },
+  {
+    "patch": {
+      "inferred": {
         "gender": "male",
         "riasec_question_valences": [
           1,
@@ -239,23 +170,14 @@
           2,
           2,
           1,
+          0,
           1,
-          1,
-          2
+          1
         ]
       }
     },
     "phase": "advice",
     "source_turn": 13
-  },
-  {
-    "patch": {
-      "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "qa_choice",
-    "source_turn": 15
   }
 ]
 
@@ -263,33 +185,34 @@
 {
   "memory": {
     "explicit": {
-      "academic_background": "Liceo Scientifico",
-      "region": "north"
+      "academic_background": "liceo scientifico",
+      "region": null
     },
     "inferred": {
       "field_of_interest": [
-        "humanities"
+        "humanities",
+        "arts_design"
       ],
       "gender": "male",
       "riasec_attitudes": [
         "Investigative",
-        "Conventional",
-        "Artistic"
+        "Artistic",
+        "Realistic"
       ],
-      "riasec_confidence": "medium"
+      "riasec_confidence": "low"
     }
   },
-  "patch_count": 6
+  "patch_count": 5
 }
 
 [Selected option | deterministic protocol state]
 {
   "option_number": 1,
-  "selected_option": "1 - University of Trento | [0416G] FILOSOFIA",
+  "selected_option": "1 - University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
   "shown_options": [
-    "University of Trento | [0416G] FILOSOFIA",
-    "University of Trento | [0417G] BENI CULTURALI",
-    "University of Trento | [0427G] LINGUE MODERNE"
+    "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+    "Gabriele d'Annunzio University of Chieti-Pescara | [OBC7] BENI CULTURALI",
+    "University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE"
   ],
   "source_turn": 14
 }

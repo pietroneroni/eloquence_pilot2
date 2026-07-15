@@ -1,0 +1,107 @@
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "humanities"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale in letteratura"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "computer_science"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale in letteratura"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "humanities",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale in letteratura"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "humanities"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "bachelor's in literature"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "humanities"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]

@@ -2,65 +2,19 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q2",
-    "source_turn": 2
-  },
-  {
-    "patch": {
-      "explicit": {
         "academic_background": "high school"
       },
       "inferred": {
         "field_of_interest": [
-          "psychology",
-          "cognitive_science_linguistics"
+          "engineering_technology",
+          "environmental_science",
+          "health_technology"
         ],
         "gender": "male"
       }
     },
     "phase": "background_q3",
     "source_turn": 3
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "high school"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q4",
-    "source_turn": 4
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "Liceo",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q1",
-    "source_turn": 5
   },
   {
     "patch": {
@@ -80,7 +34,7 @@
           2,
           2,
           -1,
-          0,
+          1,
           1,
           1,
           2

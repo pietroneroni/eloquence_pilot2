@@ -326,17 +326,17 @@ def riasec_to_interests_descriptions(riasec: Dict[str, int]) -> List[str]:
     desc: List[str] = []
     for code in top_codes:
         if code == "Realistic":
-            desc.append("Realistic profile: prefers practical, hands-on activities and working with tools or objects.")
+           desc.append("Enjoys practical, hands-on activities and working with tools or objects.")
         elif code == "Investigative":
-            desc.append("Investigative profile: enjoys understanding how things work, analysing problems, and logical subjects.")
+            desc.append("Enjoys understanding how things work, analysing problems, and logical subjects.")
         elif code == "Artistic":
-            desc.append("Artistic profile: enjoys expressing ideas and feelings through creative activities like art or design.")
+            desc.append("Enjoys expressing ideas and feelings through creative activities like art or design.")
         elif code == "Social":
-            desc.append("Social profile: likes helping, teaching, listening, and working closely with people.")
+            desc.append("Likes helping, teaching, listening, and working closely with people.")
         elif code == "Enterprising":
-            desc.append("Enterprising profile: enjoys leading, proposing ideas, persuading, and organising projects.")
+           desc.append("Enjoys leading, proposing ideas, persuading, and organising projects.")
         elif code == "Conventional":
-            desc.append("Conventional profile: prefers organised settings, clear procedures, and keeping things orderly.")
+            desc.append("Prefers organised settings, clear procedures, and keeping things orderly.")
     return desc
 
 
@@ -382,23 +382,23 @@ def _extract_student_fields(record: Dict[str, Any], dialog_language: str = "Engl
     # Se manca una riga sulla scuola, aggiungi solo un livello neutro.
     # Non sintetizzare un tipo di scuola usando il genere: creerebbe una
     # correlazione artificiale tra attributo protetto e background scolastico.
-    if not _BG_HAS_SCHOOL_RX.search(background or ""):
+    if (
+        not _BG_HAS_SCHOOL_RX.search(background or "")
+        and _env_flag("SDIALOG_ADD_SYNTHETIC_SCHOOL_TYPE", "0")
+    ):
         bg_region = JSON_REGION_TO_BIO_PHRASE.get(region, "Italy")
-        if os.getenv("SDIALOG_ADD_SYNTHETIC_SCHOOL_TYPE", "0").lower() in {"1", "true", "yes"}:
-            seed = f"{annotation}|{region}|{age}"
-            hs_type = _det_choice(seed, [
-                "Liceo Scientifico",
-                "Liceo Classico",
-                "Liceo delle Scienze Umane",
-                "Liceo Artistico",
-                "Istituto Tecnico (Informatica/Industriale)",
-                "Istituto Tecnico Economico",
-                "Istituto Professionale",
-            ])
-            sector = _det_choice(seed + "|sector", ["public", "private"])
-            school_sentence = f"I completed high school at a {sector} {hs_type} in {bg_region}."
-        else:
-            school_sentence = f"I completed high school in {bg_region}."
+        seed = f"{annotation}|{region}|{age}"
+        hs_type = _det_choice(seed, [
+            "Liceo Scientifico",
+            "Liceo Classico",
+            "Liceo delle Scienze Umane",
+            "Liceo Artistico",
+            "Istituto Tecnico (Informatica/Industriale)",
+            "Istituto Tecnico Economico",
+            "Istituto Professionale",
+        ])
+        sector = _det_choice(seed + "|sector", ["public", "private"])
+        school_sentence = f"I completed high school at a {sector} {hs_type} in {bg_region}."
         background = (background + " " if background else "") + school_sentence
 
     interests = riasec_to_interests_descriptions(gpt_riasec)

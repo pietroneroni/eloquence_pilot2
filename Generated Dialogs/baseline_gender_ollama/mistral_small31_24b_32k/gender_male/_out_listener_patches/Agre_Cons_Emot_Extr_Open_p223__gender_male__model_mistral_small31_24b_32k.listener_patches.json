@@ -1,24 +1,19 @@
 [
   {
-    "explicit": {
-      "region": "north"
-    },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
-        "cognitive_science_linguistics"
+        "engineering_technology",
+        "computer_science"
       ],
       "gender": "male"
     }
   },
   {
     "explicit": {
-      "academic_background": "liceo scientifico",
-      "region": "north"
+      "academic_background": "liceo scientifico"
     },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
         "engineering_technology"
       ],
       "gender": "male"
@@ -26,26 +21,19 @@
   },
   {
     "explicit": {
-      "academic_background": "high school"
+      "academic_background": "liceo scientifico"
     },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
-        "engineering_technology"
+        "arts_design",
+        "engineering_technology",
+        "computer_science"
       ],
       "gender": "male"
     }
   },
   {
-    "explicit": {
-      "academic_background": "Liceo Scientifico",
-      "region": "north"
-    },
     "inferred": {
-      "field_of_interest": [
-        "physical_sciences",
-        "engineering_technology"
-      ],
       "gender": "male"
     }
   },
@@ -58,10 +46,15 @@
         2,
         1,
         1,
-        1,
+        0,
         1,
         1
       ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
     }
   }
 ]

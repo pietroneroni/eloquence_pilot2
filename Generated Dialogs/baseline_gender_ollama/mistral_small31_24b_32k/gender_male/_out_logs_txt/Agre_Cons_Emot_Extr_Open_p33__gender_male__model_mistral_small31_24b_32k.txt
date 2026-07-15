@@ -1,0 +1,146 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p33.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12376
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+[dialog_id] 4029f70e-4f01-42ce-b567-e682dd33741a
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_predict': 350, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'top_p': 0.9, 'min_p': 0.05, 'temperature': 0.35, 'top_k': 50, 'num_ctx': 8192}
+[seed] 12376
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di un piccolo paese della campagna del sud Italia. Ho appena completato il liceo e sto cercando consiglio su quale corso di laurea scegliere. Mi piace capire come funzionano le cose, analizzare problemi e mi piacciono i soggetti logici.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il corso di laurea più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue aspirazioni. Quale scuola superiore hai frequentato e quale corso hai completato?
+[Student] Ho frequentato il liceo scientifico. Mi piace molto lavorare con le mani e aiutare le persone.
+[Counselor[mistral_small31_24b_32k]] Perfetto, il liceo scientifico ti ha dato una solida base in materie scientifiche e matematiche. Considerando il tuo interesse per l'analisi dei problemi e la logica, potresti essere interessato a corsi di laurea in ingegneria, informatica o scienze cognitive. Inoltre, il tuo desiderio di lavorare con le mani e aiutare le persone potrebbe essere soddisfatto da corsi in ambito sanitario o tecnologico. Dove ti piacerebbe studiare?
+[Student] Non ho ancora deciso dove mi piacerebbe studiare.
+[Counselor[mistral_small31_24b_32k]] Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare? Per esempio, ti piacerebbe lavorare in un laboratorio, o magari in un ufficio, o preferisci un lavoro che ti permetta di stare all'aperto?
+[Student] Mi piacerebbe approfondire la mia conoscenza della mente umana e come funziona. Mi piace lavorare con le persone e aiutarle a risolvere i loro problemi.
+[Counselor[mistral_small31_24b_32k]] Capisco, quindi sei interessato a comprendere meglio la mente umana e a lavorare con le persone per aiutarle a risolvere i problemi. Questo potrebbe indicare un interesse per la psicologia o le scienze cognitive. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove mi piacerebbe studiare.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Non ho trovato opzioni grounded sufficientemente adatte nell'insieme universitario corrente. Prossimi passi suggeriti: allarga leggermente il campo target; mantieni il campo esatto e ripeti la ricerca quando saranno disponibili più università; rivedi vincoli e priorità. Arrivederci.
+[Student] Arrivederci. .
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "computer_science",
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "computer_science",
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male",
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "patch_count": 3
+}
+
+[Selected option | deterministic protocol state]
+null
+[INVALID_PROTOCOL] missing_fixed_followup_questions=9

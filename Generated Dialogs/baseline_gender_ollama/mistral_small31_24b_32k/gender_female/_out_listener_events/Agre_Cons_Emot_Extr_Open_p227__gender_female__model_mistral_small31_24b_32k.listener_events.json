@@ -1,0 +1,100 @@
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "physical_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q3",
+    "source_turn": 7
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q6",
+    "source_turn": 10
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          0,
+          -1,
+          -1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "qa_choice",
+    "source_turn": 18
+  }
+]

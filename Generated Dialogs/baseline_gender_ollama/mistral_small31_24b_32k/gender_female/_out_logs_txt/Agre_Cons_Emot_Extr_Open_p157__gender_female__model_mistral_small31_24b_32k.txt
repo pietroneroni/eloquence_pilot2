@@ -1,0 +1,266 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p157.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12355
+[LANG] dialog=Italian rag=ita
+
+
+
+[dialog_id] f3442db5-9166-4c37-b196-ea13c66b108c
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'top_k': 50, 'min_p': 0.05, 'num_predict': 350, 'temperature': 0.35, 'top_p': 0.9}
+[seed] 12355
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di Central York City e ho appena completato il liceo. Sono molto interessato all'arte e al design, e mi piacerebbe trovare un programma universitario che mi permetta di esplorare queste passioni. Potresti aiutarmi a scegliere il percorso giusto?
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il tuo consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto alle tue passioni e al tuo background. Mi fa molto piacere che tu sia interessato all'arte e al design. Quali sono i tuoi piani per il futuro? Hai già pensato a un percorso specifico o a un'area di studio che ti interessa particolarmente?
+[Student] Ho sempre avuto una passione per la fotografia, quindi penso che un corso di laurea in arte e design con un focus sulla fotografia potrebbe essere perfetto per me. Mi piacerebbe creare un mio spazio dove posso esprimere la mia creatività e aiutare gli altri a fare lo stesso.
+[Counselor[mistral_small31_24b_32k]] Perfetto, un corso di laurea in arte e design con un focus sulla fotografia sembra proprio adatto a te. Mi sembra che tu abbia una chiara visione di quello che vuoi fare. Hai già pensato a dove ti piacerebbe studiare? Preferisci restare vicino a casa o sei aperto a trasferirti in un'altra regione d'Italia?
+[Student] Non ho ancora deciso dove mi piacerebbe studiare. Sono aperto a trasferirmi in un'altra regione d'Italia se significa trovare il programma giusto per me.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe approfondire le tecniche di fotografia digitale e analogica, e imparare a usare software di editing per migliorare le mie foto.
+[Counselor[mistral_small31_24b_32k]] Capisco, quindi sei molto interessato alla fotografia digitale e analogica e all'editing delle immagini. Questo ti permetterà di esplorare diverse tecniche e strumenti per esprimere la tua creatività. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] La sede per me è abbastanza flessibile, quindi sono aperto a qualsiasi opportunità che mi permetta di crescere e imparare di più.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Dipende.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Sassari | [A144] DESIGN 2. University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO 3. University of Sassari | [1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Sassari | [A144] DESIGN 2. University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO 3.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in Design presso l'the selected program/university, con un focus specifico sulla fotografia. Questo corso ti offrirà l'opportunità di approfondire le tecniche di fotografia digitale e analogica, nonché di imparare a usare software di editing per migliorare le tue foto. Inoltre, il corso è situato in Sardegna, offrendoti un ambiente stimolante e creativo dove puoi esprimere la tua creatività e aiutare gli altri a fare lo stesso.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo interesse per le attività creative e il supporto alle persone suggerisce che potresti trovare gratificante guidare un progetto di gruppo.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in Design presso l'the selected program/university, con un focus specifico sulla fotografia. Questo corso ti offrirà l'opportunità di approfondire le tecniche di fotografia digitale e analogica, nonché di imparare a usare software di editing per migliorare le tue foto. Inoltre, il corso è situato in Sardegna, offrendoti un ambiente stimolante e creativo dove puoi esprimere la tua creatività e aiutare gli altri a fare lo stesso.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo background di Liceo Classico ti ha fornito una solida base culturale e ti ha preparato adeguatamente per affrontare i corsi universitari in Design.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di laurea in Design presso l'the selected program/university, in particolare la fotografia. Questo corso ti offrirà una solida base teorica e pratica, permettendoti di sviluppare le tue competenze in fotografia digitale e analogica, nonché nell'uso di software di editing. Inoltre, il corso è situato in Sardegna, offrendoti un ambiente stimolante e creativo dove puoi esprimere la tua creatività e aiutare gli altri a fare lo stesso.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo classico e sei molto interessato all'arte e al design, in particolare alla fotografia. Il corso di laurea in Design presso l'University of Sassari sembra adatto alle tue passioni e al tuo background. RIASEC: IAS Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "inferred": {
+      "field_of_interest": [
+        "arts_design"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Classico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "arts_design"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "communication_digital_media"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Classico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          0
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "Liceo Classico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Social"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 7
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Sassari | [A144] DESIGN",
+  "shown_options": [
+    "University of Sassari | [A144] DESIGN",
+    "University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO",
+    "University of Sassari | [1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

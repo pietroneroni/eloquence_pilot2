@@ -41,7 +41,10 @@ def _safe_turn_text(turn) -> str:
     return ""
 
 
-_OPT_RX = re.compile(r"\b(?:option|opzione)\s*([1-3])\b", re.I)
+_OPT_RX = re.compile(
+    r"\b(?:option|opzione)\s*([1-3])\b|\b([1-3])\b",
+    re.I,
+)
 
 
 
@@ -125,7 +128,12 @@ def enforce_student_script_or_fallback(text: str) -> str:
 
     if mode == "choose_and_q1":
         m = _OPT_RX.search(t)
-        n = m.group(1) if m else "1"
+        if not m:
+            raise ValueError(
+                "Student output did not contain a numbered option; "
+                "refusing silent option-1 fallback."
+            )
+        n = m.group(1) or m.group(2)
         choice_line = _t(
             f"I will choose option {n}.",
             f"Scelgo l'opzione {n}."
@@ -285,6 +293,8 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
                 "- Convey gender only indirectly through name or natural grammar if present; do NOT state gender as a label.\n"
                 "- Do NOT use metadata-like phrasing.\n"
                 "- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n"
+                "- For formal education, say only that you completed high school or a bachelor's degree, according to BACKGROUND.\n"
+                "- Do NOT claim to be employed, a worker, a researcher, a master's graduate, or a PhD graduate.\n"
                 "- 2-4 sentences, natural.\n"
             )
         rag_phase = ""

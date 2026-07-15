@@ -1,47 +1,29 @@
 [
   {
     "patch": {
-      "explicit": {
-        "academic_background": "laurea triennale",
-        "region": "north"
-      },
       "inferred": {
         "gender": "male"
       }
     },
-    "phase": "background_q2",
-    "source_turn": 2
+    "phase": "greet",
+    "source_turn": 1
   },
   {
     "patch": {
       "explicit": {
-        "academic_background": "laurea triennale"
+        "academic_background": "liceo scientifico"
       },
       "inferred": {
         "field_of_interest": [
-          "engineering_technology",
-          "arts_design"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q3",
-    "source_turn": 3
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "laurea triennale in una università rinomata del Nord Italia"
-      },
-      "inferred": {
-        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences",
           "engineering_technology"
         ],
         "gender": "male"
       }
     },
-    "phase": "background_q4",
-    "source_turn": 4
+    "phase": "background_q2",
+    "source_turn": 2
   },
   {
     "patch": {
@@ -70,14 +52,5 @@
     },
     "phase": "advice",
     "source_turn": 13
-  },
-  {
-    "patch": {
-      "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "stop",
-    "source_turn": 23
   }
 ]

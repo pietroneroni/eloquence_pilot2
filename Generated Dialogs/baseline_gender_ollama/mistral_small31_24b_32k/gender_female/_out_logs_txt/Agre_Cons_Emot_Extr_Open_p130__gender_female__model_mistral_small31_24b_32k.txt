@@ -1,0 +1,201 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p130.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12349
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+
+
+[dialog_id] 8d5e1e38-b16a-4a23-afe6-38f3ff6b7295
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'min_p': 0.05, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'top_k': 50, 'top_p': 0.9, 'num_ctx': 8192, 'num_predict': 350, 'temperature': 0.35}
+[seed] 12349
+--- Dialogue Begins ---
+[Student] Ciao, mi chiamo [nome]. Sono di una piccola città nella campagna del nord Italia. Ho completato il liceo con il massimo dei voti e ora sto cercando di capire quale percorso universitario scegliere. Magari posso avere qualche consiglio?
+[Counselor[mistral_small31_24b_32k]] Benvenuto, [nome]. Sono il consulente universitario e sono qui per aiutarti a scegliere il percorso universitario più adatto a te, basandomi sul tuo background, interessi, attitudini e vincoli. Per iniziare, puoi dirmi quale scuola superiore hai frequentato e quale corso di studi hai completato?
+[Student] Ho frequentato il liceo scientifico e ho completato il corso di studi con il massimo dei voti.
+[Counselor[mistral_small31_24b_32k]] Perfetto, [nome]. Il liceo scientifico ti ha preparato bene per una varietà di percorsi universitari. Ora, per aiutarti a scegliere il percorso più adatto, mi piacerebbe sapere quali materie o ambiti universitari ti attirano di più?
+[Student] Mi piacciono molto le materie scientifiche e tecniche, come la fisica e la matematica. Mi piace capire come funzionano le cose e analizzare i problemi.
+[Counselor[mistral_small31_24b_32k]] Perfetto, [nome]. Le tue passioni per la fisica e la matematica ti aprono molte porte nel mondo universitario. Ti consiglio di considerare percorsi come ingegneria, fisica, matematica o informatica. Hai già un'idea di dove ti piacerebbe studiare?
+[Student] Non ho ancora deciso dove vorrei studiare. Mi piacerebbe rimanere nella mia regione, nel nord Italia, ma non ho ancora pensato a una città specifica.
+[Counselor[mistral_small31_24b_32k]] Capisco, [nome]. Rimane nel nord Italia è un'ottima opzione. Ti consiglio di considerare alcune delle migliori università in questa zona. Per esempio, l'Università di Bologna ha un eccellente programma di ingegneria, mentre il Politecnico di Milano è rinomato per i suoi corsi di informatica e ingegneria. Hai già pensato a quale tipo di laurea ti piacerebbe ottenere?
+[Student] Non ho ancora deciso se mi piacerebbe ottenere una laurea triennale o magistrale. Mi piacerebbe avere la possibilità di specializzarmi in qualcosa che mi appassiona.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA 2. University of L'Aquila | [B3B] BIOTECNOLOGIE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo background nel liceo scientifico e il tuo interesse per le materie scientifiche e tecniche ti preparano bene per affrontare un corso tecnico impegnativo come Ingegneria Biomedica.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché il tuo background nel liceo scientifico e il tuo interesse per le materie scientifiche e tecniche ti preparano bene per affrontare un corso tecnico impegnativo come Ingegneria Biomedica. Inoltre, il corso di Ingegneria Biomedica presso l'the selected program/university, combinando la tua curiosità per come funzionano le cose con la tua attitudine per l'analisi e la risoluzione dei problemi.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] No, non è presente un'indicazione chiara di esperienza o attitudine al coordinamento di gruppi di lavoro nel tuo background.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di Ingegneria Biomedica presso l'the selected program/universitytecniche con la tua curiosità per come funzionano le cose. Questo corso ti permetterà di approfondire le tue conoscenze in un campo che unisce la fisica, la matematica e l'ingegneria, offrendoti la possibilità di specializzarti in un'area che ti appassiona.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso nel liceo scientifico ti ha preparato bene per affrontare i corsi universitari di Ingegneria Biomedica.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di Ingegneria Biomedica presso l'the selected program/universitybiomediche, che si integra bene con il tuo background nel liceo scientifico. Questo ti permetterà di approfondire le tue conoscenze in un campo che unisce la fisica, la matematica e l'ingegneria, offrendoti la possibilità di specializzarti in un'area che ti appassiona.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Il tuo percorso nel liceo scientifico e il tuo interesse per le materie scientifiche e tecniche ti rendono un candidato ideale per il corso di Ingegneria Biomedica presso l'the selected program/university. RIASEC: IRA Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "physical_sciences",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA",
+  "shown_options": [
+    "Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA",
+    "University of L'Aquila | [B3B] BIOTECNOLOGIE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

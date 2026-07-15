@@ -1,12 +1,7 @@
 [
   {
-    "explicit": {
-      "academic_background": "liceo scientifico",
-      "region": "islands"
-    },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
         "social_sciences"
       ],
       "gender": "male"
@@ -19,6 +14,31 @@
     "inferred": {
       "field_of_interest": [
         "social_sciences",
+        "life_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "finance",
+        "economics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "computer_science",
         "engineering_technology"
       ],
       "gender": "male"

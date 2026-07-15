@@ -2,29 +2,12 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology",
-          "social_sciences"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q2",
-    "source_turn": 2
-  },
-  {
-    "patch": {
-      "explicit": {
         "academic_background": "high school"
       },
       "inferred": {
         "field_of_interest": [
-          "psychology",
-          "social_sciences"
+          "computer_science",
+          "engineering_technology"
         ],
         "gender": "male"
       }
@@ -35,29 +18,12 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school"
+        "academic_background": "Liceo Scientifico"
       },
       "inferred": {
         "field_of_interest": [
-          "psychology",
-          "social_sciences"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q4",
-    "source_turn": 4
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "Liceo",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology",
-          "social_sciences"
+          "engineering_technology",
+          "computer_science"
         ],
         "gender": "male"
       }
@@ -77,25 +43,16 @@
   {
     "patch": {
       "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q3",
-    "source_turn": 7
-  },
-  {
-    "patch": {
-      "inferred": {
         "gender": "male",
         "riasec_question_valences": [
-          -1,
-          2,
-          2,
           1,
           2,
           2,
+          0,
           2,
-          1
+          2,
+          2,
+          2
         ]
       }
     },

@@ -1,12 +1,26 @@
 [
   {
     "explicit": {
-      "academic_background": "high school"
+      "academic_background": "liceo scientifico"
     },
     "inferred": {
       "field_of_interest": [
-        "arts_design",
-        "communication_digital_media"
+        "engineering_technology",
+        "physical_sciences",
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "physical_sciences",
+        "environmental_engineering"
       ],
       "gender": "male"
     }
@@ -18,19 +32,8 @@
     "inferred": {
       "field_of_interest": [
         "engineering_technology",
-        "arts_design"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "high school"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "engineering_technology",
-        "arts_design"
+        "environmental_engineering",
+        "physical_sciences"
       ],
       "gender": "male"
     }
@@ -42,7 +45,7 @@
     "inferred": {
       "field_of_interest": [
         "engineering_technology",
-        "arts_design"
+        "physical_sciences"
       ],
       "gender": "male"
     }
@@ -50,6 +53,21 @@
   {
     "inferred": {
       "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
     }
   }
 ]

@@ -1,0 +1,287 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p178.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12358
+[LANG] dialog=Italian rag=ita
+
+
+
+[dialog_id] 06ec7b0c-9de6-4a6e-aed1-b00bf2237d40
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'top_k': 50, 'top_p': 0.9, 'min_p': 0.05, 'num_ctx': 8192, 'num_predict': 350, 'temperature': 0.35}
+[seed] 12358
+--- Dialogue Begins ---
+[Student] Ciao, mi chiamo e sono uno studente di letteratura. Vivo nel Nord Italia e ho appena completato il mio corso di laurea triennale. Vorrei avere qualche consiglio su come scegliere il programma universitario giusto per me.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario che meglio si adatta al tuo background, ai tuoi interessi e alle tue aspirazioni. Hai già qualche idea su quale settore ti piacerebbe approfondire dopo la laurea triennale in letteratura?
+[Student] Mi sono sempre piaciuti i temi legati all'arte e al design, oltre a quelli logici e analitici. Non ho ancora deciso esattamente cosa fare, ma so che vorrei continuare a esplorare queste aree.
+[Counselor[mistral_small31_24b_32k]] Capisco, hai un interesse per l'arte e il design, oltre a temi logici e analitici. Questo è un buon punto di partenza. Hai già pensato a dove ti piacerebbe studiare? Preferisci rimanere nel Nord Italia o sei aperto a trasferirti in altre regioni?
+[Student] Non ho ancora deciso dove studiare. Mi piacerebbe rimanere nel Nord Italia, ma sono aperto a trasferirmi in altre regioni se trovo un programma che mi interessa veramente.
+[Counselor[mistral_small31_24b_32k]] Hai completato la tua laurea triennale in letteratura e sei interessato a esplorare temi legati all'arte, al design e a quelli logici e analitici. Hai già pensato a cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe esplorare come posso combinare la mia passione per la letteratura con l'arte e il design. Non ho ancora deciso esattamente cosa fare, ma so che vorrei continuare a esplorare queste aree.
+[Counselor[mistral_small31_24b_32k]] Hai completato la tua laurea triennale in letteratura e sei interessato a esplorare come combinare la tua passione per la letteratura con l'arte e il design. Hai già pensato a cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe approfondire il design grafico, magari con un focus sulla creazione di opere d'arte visive che possano raccontare storie o trasmettere emozioni, come ho imparato a fare attraverso la letteratura. Non ho ancora deciso esattamente cosa fare, ma so che vorrei continuare a esplorare queste aree.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira poco.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Dipende.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. Gabriele d'Annunzio University of Chieti-Pescara | [807M] ECO INCLUSIVE DESIGN 2. University of Siena | [LG004] STORIA DELL'ARTE 3. University of Sassari | [1235] ARCHITETTURA Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, hai un buon background accademico e un forte interesse per temi logici e analitici, che ti aiuteranno ad affrontare un corso tecnico impegnativo.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché il corso di laurea magistrale in Eco Inclusive Design ti permette di combinare la tua passione per la letteratura con l'arte e il design, permettendoti di creare opere visive che raccontano storie o trasmettono emozioni. Inoltre, il tuo interesse per temi logici e analitici ti aiuterà ad affrontare gli aspetti tecnici del corso.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] No, non è presente nel contesto informazioni sufficienti per valutare questa tua capacità.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea magistrale in Eco Inclusive Design sia più adatto a te perché ti permette di esplorare il design grafico con un focus sulla creazione di opere d'arte visive che possano raccontare storie o trasmettere emozioni, come hai imparato a fare attraverso la letteratura. Inoltre, il tuo interesse per temi logici e analitici ti aiuterà ad affrontare gli aspetti tecnici del corso.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, i tuoi studi precedenti in letteratura ti hanno fornito una solida base per affrontare i corsi universitari, specialmente in un campo come l'Eco Inclusive Design, che richiede competenze analitiche e creative.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di laurea magistrale in Eco Inclusive Design ti permette di esplorare il design grafico con un focus sulla creazione di opere d'arte visive che possano raccontare storie o trasmettere emozioni, come hai imparato a fare attraverso la letteratura. Inoltre, il tuo interesse per temi logici e analitici ti aiuterà ad affrontare gli aspetti tecnici del corso.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato la tua laurea triennale in letteratura e sei interessato a esplorare come combinare la tua passione per la letteratura con l'arte e il design. Il corso di laurea magistrale in Eco Inclusive Design è adatto a te perché ti permette di esplorare il design grafico con un focus sulla creazione di opere d'arte visive che possano raccontare storie o trasmettere emozioni. RIASEC: IAE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "inferred": {
+      "field_of_interest": [
+        "humanities"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "laurea triennale in letteratura"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "computer_science"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "laurea triennale in letteratura"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "humanities",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "laurea triennale in letteratura"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "humanities"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "bachelor's in literature"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "humanities"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        -1,
+        2,
+        2,
+        2,
+        1,
+        0,
+        1,
+        1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "humanities"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale in letteratura"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "computer_science"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale in letteratura"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "humanities",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "laurea triennale in letteratura"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "humanities"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "bachelor's in literature"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "humanities"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          2,
+          1,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "laurea triennale in letteratura",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "humanities"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Enterprising"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 7
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - Gabriele d'Annunzio University of Chieti-Pescara | [807M] ECO INCLUSIVE DESIGN",
+  "shown_options": [
+    "Gabriele d'Annunzio University of Chieti-Pescara | [807M] ECO INCLUSIVE DESIGN",
+    "University of Siena | [LG004] STORIA DELL'ARTE",
+    "University of Sassari | [1235] ARCHITETTURA"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

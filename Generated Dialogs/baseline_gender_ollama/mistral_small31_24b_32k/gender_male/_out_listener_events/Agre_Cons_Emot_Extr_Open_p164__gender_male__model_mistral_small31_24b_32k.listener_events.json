@@ -1,14 +1,26 @@
 [
   {
     "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "social_sciences",
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
       "explicit": {
         "academic_background": "liceo scientifico"
       },
       "inferred": {
         "field_of_interest": [
-          "life_sciences",
-          "physical_sciences",
-          "engineering_technology"
+          "social_sciences",
+          "cognitive_science_linguistics"
         ],
         "gender": "male"
       }
@@ -23,8 +35,8 @@
       },
       "inferred": {
         "field_of_interest": [
-          "physical_sciences",
-          "engineering_technology"
+          "engineering_technology",
+          "psychology"
         ],
         "gender": "male"
       }
@@ -40,13 +52,23 @@
       "inferred": {
         "field_of_interest": [
           "physical_sciences",
-          "engineering_technology"
+          "engineering_technology",
+          "psychology"
         ],
         "gender": "male"
       }
     },
     "phase": "riasec_q1",
     "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
   },
   {
     "patch": {
@@ -58,22 +80,13 @@
           2,
           -1,
           1,
-          1,
-          1,
+          2,
+          0,
           1
         ]
       }
     },
     "phase": "advice",
     "source_turn": 13
-  },
-  {
-    "patch": {
-      "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "stop",
-    "source_turn": 23
   }
 ]

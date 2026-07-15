@@ -32,56 +32,56 @@
 
 
 
-[dialog_id] 7426a1ef-8f60-4e3a-9606-76112b97fefc
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'min_p': 0.05, 'num_ctx': 8192, 'top_k': 50, 'num_predict': 350, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_p': 0.9}
+[dialog_id] 252ddd34-b596-4531-b0aa-19dd9cadadbd
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'min_p': 0.05, 'num_predict': 350, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_p': 0.9, 'num_ctx': 8192, 'repeat_last_n': 1024, 'top_k': 50}
 [seed] 12360
 --- Dialogue Begins ---
-[Student] Ciao, mi chiamo. Sono uno studente di un piccolo paese nelle colline della campagna del sud Italia. Ho appena completato la mia tesi sullo studio dell'impatto del cambiamento climatico sugli ecosistemi locali e ora sto cercando consigli su quale programma universitario scegliere per continuare i miei studi.
-[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sul tuo percorso, interessi, attitudini e vincoli. Posso aiutarti a trovare il percorso giusto per continuare i tuoi studi. Hai già un'idea di quale area di studio ti interessa di più?
-[Student] Forse mi piacerebbe continuare a studiare l'impatto del cambiamento climatico sugli ecosistemi locali. Mi sono sempre interessato a come le cose funzionano e a risolvere problemi, quindi penso che un programma che mi permetta di approfondire queste tematiche potrebbe essere una buona scelta.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per l'ambiente e la sostenibilità. Questo è un campo molto importante e in crescita. Hai già pensato a quale tipo di laurea ti piacerebbe ottenere? Un master in scienze ambientali o in ingegneria ambientale potrebbe essere una buona scelta per te. Hai già un'idea di quale università ti piacerebbe frequentare?
-[Student] Forse un master in scienze ambientali potrebbe essere una buona scelta. Non ho ancora deciso quale università frequentare, ma penso che mi piacerebbe restare nel sud Italia, vicino al mio paese.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un interesse molto forte per l'ambiente e la sostenibilità. Un master in scienze ambientali potrebbe essere perfetto per te. Ti piacerebbe approfondire le tue conoscenze sugli ecosistemi locali e il cambiamento climatico?
-[Student] Mi piacerebbe molto approfondire le mie conoscenze sugli ecosistemi locali e il cambiamento climatico. Mi sono sempre interessato a come le cose funzionano e a risolvere problemi.
-[Counselor[mistral_small31_24b_32k]] Perfetto, sembra che tu abbia un interesse molto forte per l'ambiente e la sostenibilità. Hai già pensato a quale zona d'Italia ti piacerebbe frequentare per i tuoi studi?
-[Student] Penso che mi piacerebbe restare nel sud Italia, vicino al mio paese. Mi sento più a mio agio in un ambiente familiare.
+[Student] Ciao, mi chiamo. Ho finito il liceo e sto cercando consiglio su quale corso di laurea scegliere. Vivo in una piccola città tra le colline della campagna, nel Sud Italia. Mi piace capire come funzionano le cose e analizzare i problemi, quindi penso che mi piacerebbe qualcosa di logico e pratico.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il corso di laurea più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Quale scuola superiore hai frequentato e quale corso hai concluso di recente?
+[Student] Ho frequentato il liceo scientifico e ho concluso il mio percorso di studi l'anno scorso. Mi sono sempre piaciute le materie scientifiche e ho anche apprezzato molto le attività pratiche, come il laboratorio di fisica e chimica.
+[Counselor[mistral_small31_24b_32k]] Capisco, quindi hai un forte interesse per le materie scientifiche e le attività pratiche. Questo potrebbe indicare una predisposizione per corsi di laurea in ambito scientifico o tecnico. Dove ti piacerebbe studiare? Preferisci restare nel Sud Italia o sei aperto a trasferirti in altre regioni?
+[Student] Mi piacerebbe restare nel Sud Italia, vicino alla mia famiglia e ai miei amici. Non ho ancora deciso esattamente dove, ma mi piacerebbe trovare un'università che offra corsi di laurea in scienze ambientali o ingegneria.
+[Counselor[mistral_small31_24b_32k]] Capisco, quindi preferisci restare nel Sud Italia. Ti piacerebbe approfondire le scienze ambientali o l'ingegneria?
+[Student] Forse le scienze ambientali. Mi piace molto la natura e mi interessa capire come possiamo proteggere l'ambiente.
+[Counselor[mistral_small31_24b_32k]] Le scienze ambientali potrebbero essere una scelta eccellente per te, dato il tuo interesse per la natura e la protezione dell'ambiente. Hai già pensato a quale università nel Sud Italia potrebbe offrire un buon corso di laurea in scienze ambientali?
+[Student] Non ho ancora deciso esattamente quale università scegliere, ma so che ci sono alcune buone opzioni nel Sud Italia. Ho sentito parlare bene dell'Università di Bari e dell'Università di Napoli Federico II.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
-[Student] Forse mi piace abbastanza.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
-[Student] Penso che dipende.
+[Student] Forse poco.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
-[Student] Non sono sicuro, forse mi piace abbastanza.
+[Student] Dipende.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
-[Student] Forse mi piace poco.
+[Student] Forse poco.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
-[Student] Mi piace abbastanza, ma preferisco avere una struttura chiara.
+[Student] Forse poco.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
-[Student] Mi piace molto.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE 2. University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO 3. University of Salerno | [06129] TECNICHE PER L'EDILIZIA E IL TERRITORIO Scegli un'opzione indicando il numero.
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE 2. University of Salerno | [05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ 3. University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO Scegli un'opzione indicando il numero.
 [Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] Sì, sembra che tu abbia un forte interesse per la comprensione dei sistemi e la risoluzione dei problemi, il che è fondamentale per affrontare un corso tecnico impegnativo.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo background nel liceo scientifico e il tuo interesse per le materie scientifiche e le attività pratiche suggeriscono che potresti affrontare bene un corso tecnico impegnativo.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
 [Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE 2. University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO 3.
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché il corso di laurea in Scienze Biologiche Ecologico-Ambientali presso l'the selected program/university. Inoltre, il tuo background nel liceo scientifico e il tuo interesse per le materie scientifiche e le attività pratiche ti preparano bene per affrontare questo percorso tecnico.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] No, potrebbe essere difficile per te, dato che preferisci avere una struttura chiara e non ti piace molto lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto.
+[Counselor[mistral_small31_24b_32k]] No, non è presente alcuna informazione su come ti troveresti a tuo agio nel guidare un progetto di gruppo.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
 [Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE 2. University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO 3.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in Scienze Biologiche Ecologico-Ambientali presso l'the selected program/universitydell'ambiente. Questo corso ti permetterà di approfondire le tue conoscenze in un campo che ti appassiona e che è anche molto rilevante per il futuro del nostro pianeta. Inoltre, il tuo background nel liceo scientifico ti ha preparato bene per affrontare un percorso tecnico e pratico come questo.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, dato che hai un background in Liceo Scientifico, dovresti essere ben preparato per affrontare i corsi universitari in scienze biologiche ecologico-ambientali.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo background nel liceo scientifico ti ha preparato bene per affrontare un percorso tecnico e pratico come il corso di laurea in Scienze Biologiche Ecologico-Ambientale.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
 [Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché ti permette di costruire una solida base di conoscenze fondamentali prima di affrontare argomenti più avanzati. Questo ti aiuterà a sentirti più sicuro e preparato man mano che progredisci nel corso.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di laurea in Scienze Biologiche Ecologico-Ambientale presso l'the selected program/universityper il futuro del nostro pianeta. Inoltre, il tuo background nel liceo scientifico ti ha preparato bene per affrontare un percorso tecnico e pratico come questo.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Hai completato una tesi sullo studio dell'impatto del cambiamento climatico sugli ecosistemi locali e sei interessato a continuare i tuoi studi in un programma di scienze ambientali. Il corso di University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE sembra adatto ai tuoi interessi e alla tua preparazione. RIASEC: ICR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai un forte interesse per le materie scientifiche e le attività pratiche, e il corso di laurea in Scienze Biologiche Ecologico-Ambientali presso l'the selected program/university sembra adatto alle tue passioni e al tuo background nel liceo scientifico. RIASEC: IRC Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
 [Student] Arrivederci
 --- Dialogue Ends ---
 
@@ -89,6 +89,19 @@
 [
   {
     "explicit": {
+      "academic_background": "liceo scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
       "region": "south"
     },
     "inferred": {
@@ -99,14 +112,17 @@
     }
   },
   {
-    "explicit": {
-      "academic_background": "Liceo Scientifico",
-      "region": "south"
-    },
     "inferred": {
-      "field_of_interest": [
-        "environmental_science"
-      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
       "gender": "male"
     }
   },
@@ -122,11 +138,11 @@
         1,
         2,
         2,
-        0,
-        1,
         -1,
-        1,
-        2
+        0,
+        -1,
+        -1,
+        1
       ]
     }
   },
@@ -142,22 +158,23 @@
   {
     "patch": {
       "explicit": {
-        "region": "south"
+        "academic_background": "liceo scientifico"
       },
       "inferred": {
         "field_of_interest": [
-          "environmental_science"
+          "physical_sciences",
+          "engineering_technology"
         ],
         "gender": "male"
       }
     },
-    "phase": "greet",
-    "source_turn": 1
+    "phase": "background_q2",
+    "source_turn": 2
   },
   {
     "patch": {
       "explicit": {
-        "academic_background": "Liceo Scientifico",
+        "academic_background": "high school",
         "region": "south"
       },
       "inferred": {
@@ -167,8 +184,8 @@
         "gender": "male"
       }
     },
-    "phase": "riasec_q1",
-    "source_turn": 5
+    "phase": "background_q4",
+    "source_turn": 4
   },
   {
     "patch": {
@@ -182,16 +199,43 @@
   {
     "patch": {
       "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q3",
+    "source_turn": 7
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q6",
+    "source_turn": 10
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q8",
+    "source_turn": 12
+  },
+  {
+    "patch": {
+      "inferred": {
         "gender": "male",
         "riasec_question_valences": [
           1,
           2,
           2,
-          0,
-          1,
           -1,
-          1,
-          2
+          0,
+          -1,
+          -1,
+          1
         ]
       }
     },
@@ -204,8 +248,8 @@
         "gender": "male"
       }
     },
-    "phase": "stop",
-    "source_turn": 23
+    "phase": "qa_choice",
+    "source_turn": 18
   }
 ]
 
@@ -213,7 +257,7 @@
 {
   "memory": {
     "explicit": {
-      "academic_background": "Liceo Scientifico",
+      "academic_background": "liceo scientifico",
       "region": "south"
     },
     "inferred": {
@@ -223,13 +267,13 @@
       "gender": "male",
       "riasec_attitudes": [
         "Investigative",
-        "Conventional",
-        "Realistic"
+        "Realistic",
+        "Conventional"
       ],
-      "riasec_confidence": "low"
+      "riasec_confidence": "high"
     }
   },
-  "patch_count": 5
+  "patch_count": 8
 }
 
 [Selected option | deterministic protocol state]
@@ -238,8 +282,8 @@
   "selected_option": "1 - University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE",
   "shown_options": [
     "University of Foggia | [1682] SCIENZE BIOLOGICHE ECOLOGICO-AMBIENTALE",
-    "University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO",
-    "University of Salerno | [06129] TECNICHE PER L'EDILIZIA E IL TERRITORIO"
+    "University of Salerno | [05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ",
+    "University of Salerno | [06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO"
   ],
   "source_turn": 14
 }

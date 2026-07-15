@@ -1,15 +1,19 @@
 {
   "explicit": {
-    "academic_background": "Liceo Scientifico",
+    "academic_background": "liceo scientifico",
     "region": null
   },
   "inferred": {
     "field_of_interest": [
       "engineering_technology",
-      "arts_design"
+      "physical_sciences"
     ],
     "gender": "male",
-    "riasec_attitudes": null,
-    "riasec_confidence": null
+    "riasec_attitudes": [
+      "Investigative",
+      "Realistic",
+      "Artistic"
+    ],
+    "riasec_confidence": "low"
   }
 }

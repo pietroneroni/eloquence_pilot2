@@ -6,228 +6,56 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[dialog_id] c44ce50b-a392-4ed4-92b7-ce02f668844b
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'num_predict': 350, 'temperature': 0.35, 'min_p': 0.05, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'top_k': 50, 'top_p': 0.9}
+[dialog_id] f4b225c3-8aff-41f7-b3cd-cb88a024e436
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_ctx': 8192, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50, 'min_p': 0.05, 'repeat_last_n': 1024, 'temperature': 0.35, 'top_p': 0.9}
 [seed] 12353
 --- Dialogue Begins ---
-[Student] Ciao, sono uno studente delle isole italiane e sto cercando consiglio su quale programma universitario scegliere. Ho sempre avuto una passione per aiutare le persone e per capire come funzionano le cose. Ho lavorato come consulente in un centro comunitario locale e mi piace molto.
-[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e posso aiutarti a scegliere il programma universitario più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Da quale scuola o corso stai arrivando?
-[Student] Sono appena uscito dal liceo. Non ho ancora deciso quale percorso intraprendere, ma so che mi piace lavorare con le persone e risolvere problemi.
-[Counselor[mistral_small31_24b_32k]] Capisco, quindi hai appena completato il liceo. Questo è un buon punto di partenza. Hai pensato a qualche specifico ambito di studio che potrebbe interessarti, come psicologia, scienze sociali o forse un percorso in consulenza?
-[Student] Non ho ancora deciso, ma mi piace molto l'idea di lavorare con le persone e aiutarle a risolvere i loro problemi.
-[Counselor[mistral_small31_24b_32k]] Mi sembra che tu abbia un forte interesse per il lavoro con le persone e per aiutarle a risolvere i loro problemi. Questo potrebbe indicare un interesse per la psicologia o per le scienze sociali. Hai pensato a qualche specifico ambito di studio che potrebbe interessarti, come psicologia, scienze sociali o forse un percorso in consulenza?
-[Student] Mi piace molto l'idea di lavorare con le persone e aiutarle a risolvere i loro problemi. Ho lavorato come consulente in un centro comunitario locale e mi piace molto.
-[Counselor[mistral_small31_24b_32k]] Mi sembra che tu abbia un forte interesse per il lavoro con le persone e per aiutarle a risolvere i loro problemi. Questo potrebbe indicare un interesse per la psicologia o per le scienze sociali. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
-[Student] Non ho ancora deciso dove studiare, ma mi piacerebbe rimanere nelle isole italiane se possibile.
+[Student] Ciao, sono uno studente delle isole italiane e ho appena completato il liceo. Sto cercando consiglio su come scegliere un programma universitario. Ho sempre avuto interesse per le materie logiche e scientifiche, quindi penso che un corso di ingegneria o informatica potrebbe farmi al caso mio.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sul tuo percorso scolastico, i tuoi interessi, le tue attitudini e le tue esigenze. Da quale liceo provieni e quale corso hai seguito?
+[Student] Ho frequentato il liceo scientifico. Mi sono sempre trovato bene con le materie scientifiche e logiche, come matematica e fisica.
+[Counselor[mistral_small31_24b_32k]] Perfetto, il liceo scientifico è un'ottima base per i corsi di ingegneria e informatica. Qual è la tua regione preferita per studiare?
+[Student] Non ho ancora deciso dove studiare. Mi piacerebbe esplorare diverse opzioni e vedere quali università offrono i migliori programmi in ingegneria o informatica.
+[Counselor[mistral_small31_24b_32k]] Capisco, è importante esplorare diverse opzioni per trovare il programma che meglio si adatta ai tuoi interessi e obiettivi. Ti posso suggerire alcune università italiane che offrono corsi di ingegneria e informatica. Vuoi che ti parli di alcune delle migliori università per questi corsi?
+[Student] Mi sembra una buona idea.
+[Counselor[mistral_small31_24b_32k]] Perfetto, allora ti posso suggerire alcune università italiane che offrono corsi di ingegneria e informatica. Per esempio, l'Università di Bologna offre un corso di laurea in Ingegneria Informatica e l'Università di Padova offre un corso di laurea in Informatica. Inoltre, l'Università di Pisa è molto rinomata per i suoi corsi di ingegneria. Vuoi che ti parli di altre opzioni?
+[Student] Mi sembra interessante.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
-[Student] Mi attira poco.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
-[Student] Mi piace abbastanza.
+[Student] Dipende.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
-[Student] Mi piace molto. Ciao, grazie per l'aiuto.
+[Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
-[Student] Mi piace abbastanza.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES 2. University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT Scegli un'opzione indicando il numero.
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3. Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA Scegli un'opzione indicando il numero.
 [Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo, dato il tuo interesse per la comprensione dei sistemi e la risoluzione dei problemi.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha preparato bene per affrontare un corso tecnico impegnativo come Ingegneria Informatica, delle Comunicazioni ed Elettronica.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
-[Counselor[mistral_small31_24b_32k]] un percorso orientato alle discipline umanistiche
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES 2.
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché hai un forte interesse per le materie logiche e scientifiche, come matematica e fisica, che sono fondamentali per un corso di Ingegneria Informatica, delle Comunicazioni ed Elettronica. Inoltre, il tuo percorso al liceo scientifico ti ha preparato bene per affrontare un corso tecnico impegnativo. Questo corso ti permetterà di approfondire le tue conoscenze in aree come le telecomunicazioni, l'informatica e l'elettronica, che sono tutte discipline in cui hai dimostrato un grande interesse e attitudine.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] Sì, dato il tuo interesse per organizzare progetti e lavorare a stretto contatto con le persone.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo interesse per attività di coordinamento e organizzazione potrebbe aiutarti a gestire efficacemente un progetto di gruppo.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
 [Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES 2.
+[Counselor[mistral_small31_24b_32k]] Penso che una delle due opzioni sia più adatta a te perché il corso di Ingegneria Informatica, delle Comunicazioni ed Elettronica dell'the selected program/university, l'informatica e l'elettronica, che sono tutte discipline in cui hai dimostrato un grande interesse e attitudine. Inoltre, il corso offre una formazione specifica ed approfondita in questi ambiti, garantendo una preparazione metodologica ed applicativa finalizzata all'analisi, alla modellazione e alla progettazione di sistemi, apparati e infrastrutture riguardanti l'acquisizione, l'elaborazione e la trasmissione delle informazioni.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, dato che hai completato il liceo, dovresti essere preparato per affrontare i corsi universitari.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha preparato bene per affrontare un corso tecnico impegnativo come Ingegneria Informatica, delle Comunicazioni ed Elettronica.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
 [Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché ti permette di costruire una solida base di conoscenze fondamentali prima di affrontare argomenti più avanzati. Questo ti aiuterà a sviluppare una comprensione più profonda e a sentirti più sicuro nei corsi successivi.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di Ingegneria Informatica, delle Comunicazioni ed Elettronica dell'the selected program/university, dell'informatica e dell'elettronica, che sono tutte discipline in cui hai dimostrato un grande interesse e attitudine. Inoltre, il corso garantisce una preparazione metodologica ed applicativa finalizzata all'analisi, alla modellazione e alla progettazione di sistemi, apparati e infrastrutture riguardanti l'acquisizione, l'elaborazione e la trasmissione delle informazioni.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo e hai un forte interesse per il lavoro con le persone e per aiutarle a risolvere i loro problemi. Il corso di University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES sembra adatto ai tuoi interessi e alle tue capacità. RIASEC: ISE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo scientifico con un forte interesse per le materie logiche e scientifiche, e il corso di Ingegneria Informatica, delle Comunicazioni ed Elettronica dell'the selected program/university, è un'ottima scelta per te. RIASEC: ISE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
 [Student] Arrivederci
 --- Dialogue Ends ---
 
@@ -235,56 +63,25 @@
 [
   {
     "explicit": {
-      "academic_background": "high school",
-      "region": "islands"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology",
-        "social_sciences"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
       "academic_background": "high school"
     },
     "inferred": {
       "field_of_interest": [
-        "psychology",
-        "social_sciences"
+        "computer_science",
+        "engineering_technology"
       ],
       "gender": "male"
     }
   },
   {
     "explicit": {
-      "academic_background": "high school"
+      "academic_background": "Liceo Scientifico"
     },
     "inferred": {
       "field_of_interest": [
-        "psychology",
-        "social_sciences"
+        "engineering_technology",
+        "computer_science"
       ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "Liceo",
-      "region": "islands"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology",
-        "social_sciences"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
       "gender": "male"
     }
   },
@@ -297,14 +94,14 @@
     "inferred": {
       "gender": "male",
       "riasec_question_valences": [
-        -1,
-        2,
-        2,
         1,
         2,
         2,
+        0,
         2,
-        1
+        2,
+        2,
+        2
       ]
     }
   },
@@ -320,29 +117,12 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology",
-          "social_sciences"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q2",
-    "source_turn": 2
-  },
-  {
-    "patch": {
-      "explicit": {
         "academic_background": "high school"
       },
       "inferred": {
         "field_of_interest": [
-          "psychology",
-          "social_sciences"
+          "computer_science",
+          "engineering_technology"
         ],
         "gender": "male"
       }
@@ -353,29 +133,12 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school"
+        "academic_background": "Liceo Scientifico"
       },
       "inferred": {
         "field_of_interest": [
-          "psychology",
-          "social_sciences"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q4",
-    "source_turn": 4
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "Liceo",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "psychology",
-          "social_sciences"
+          "engineering_technology",
+          "computer_science"
         ],
         "gender": "male"
       }
@@ -395,25 +158,16 @@
   {
     "patch": {
       "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q3",
-    "source_turn": 7
-  },
-  {
-    "patch": {
-      "inferred": {
         "gender": "male",
         "riasec_question_valences": [
-          -1,
-          2,
-          2,
           1,
           2,
           2,
+          0,
           2,
-          1
+          2,
+          2,
+          2
         ]
       }
     },
@@ -435,13 +189,13 @@
 {
   "memory": {
     "explicit": {
-      "academic_background": "high school",
-      "region": "islands"
+      "academic_background": "Liceo Scientifico",
+      "region": null
     },
     "inferred": {
       "field_of_interest": [
-        "psychology",
-        "social_sciences"
+        "engineering_technology",
+        "computer_science"
       ],
       "gender": "male",
       "riasec_attitudes": [
@@ -449,19 +203,20 @@
         "Social",
         "Enterprising"
       ],
-      "riasec_confidence": "high"
+      "riasec_confidence": "low"
     }
   },
-  "patch_count": 8
+  "patch_count": 5
 }
 
 [Selected option | deterministic protocol state]
 {
   "option_number": 1,
-  "selected_option": "1 - University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+  "selected_option": "1 - University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
   "shown_options": [
-    "University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
-    "University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA SOCIAL MEDIA MANAGEMENT"
+    "University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+    "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+    "Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA"
   ],
   "source_turn": 14
 }

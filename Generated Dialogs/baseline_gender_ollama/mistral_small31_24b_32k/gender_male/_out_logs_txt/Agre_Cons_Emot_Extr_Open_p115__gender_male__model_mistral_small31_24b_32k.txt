@@ -8,93 +8,63 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[dialog_id] 57f27b6a-e479-4e99-ab29-e1aa94e45de5
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'temperature': 0.35, 'top_k': 50, 'top_p': 0.9, 'num_ctx': 8192, 'num_predict': 350, 'repeat_penalty': 1.05, 'min_p': 0.05, 'repeat_last_n': 1024}
+[dialog_id] 1d1fb5fe-c008-4d04-b43b-9410d7c5eca6
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'top_k': 50, 'top_p': 0.9, 'num_ctx': 8192, 'num_predict': 350, 'temperature': 0.35, 'min_p': 0.05, 'repeat_last_n': 1024, 'repeat_penalty': 1.05}
 [seed] 12347
 --- Dialogue Begins ---
-[Student] Ciao, sono uno studente che vive nelle isole italiane e sto cercando consigli su come scegliere il programma universitario giusto per me. Ho recentemente deciso di seguire un master in data science per migliorare le mie competenze e contribuire alla ricerca all'avanguardia. Mi piacerebbe sapere quali sono i fattori più importanti da considerare quando si sceglie un programma.
-[Counselor[mistral_small31_24b_32k]] Buongiorno! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sul tuo percorso, interessi, attitudini e vincoli. Quale università o corso di laurea stai frequentando o hai concluso di recente?
-[Student] Ho completato il liceo nelle isole italiane. Ho deciso di seguire un master in data science perché mi piace capire come funzionano le cose e analizzare i problemi.
-[Counselor[mistral_small31_24b_32k]] Perfetto, è un buon punto di partenza. Quali sono le tue aspirazioni professionali dopo aver completato il master in data science?
-[Student] Vorrei lavorare in un campo che mi permetta di applicare le mie competenze analitiche e di risoluzione dei problemi. Mi piacerebbe contribuire a progetti innovativi e avere un impatto significativo nel settore della ricerca o dell'industria.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per l'analisi dei dati e la risoluzione dei problemi, il che è perfetto per un master in data science. Hai pensato a quali competenze specifiche vorresti sviluppare o approfondire durante il tuo percorso accademico?
-[Student] Mi piacerebbe sviluppare competenze avanzate in machine learning e intelligenza artificiale, oltre a migliorare le mie capacità di programmazione e gestione dei dati.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un interesse molto specifico per il machine learning e l'intelligenza artificiale, il che è ottimo per un master in data science. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
-[Student] La sede non è un problema per me, quindi sono aperto a qualsiasi opzione che mi permetta di sviluppare le competenze che desidero.
+[Student] Ciao, mi chiamo [nome]. Vivo nelle isole italiane e ho completato il mio diploma di scuola superiore. Sto cercando consigli su come scegliere il programma universitario giusto per me.
+[Counselor[mistral_small31_24b_32k]] Benvenuto, [nome]. Sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sul tuo percorso scolastico, i tuoi interessi e le tue aspirazioni. Per iniziare, puoi dirmi quale scuola o corso hai frequentato o concluso di recente?
+[Student] Ho completato il mio diploma di scuola superiore in una piccola città del Vermont. Ho sempre avuto una passione per i problemi logici e per capire come funzionano le cose, quindi sto cercando un programma che mi permetta di esplorare questi interessi.
+[Counselor[mistral_small31_24b_32k]] Perfetto, [nome]. Data la tua passione per i problemi logici e per comprendere il funzionamento delle cose, potresti essere interessato a programmi di informatica, ingegneria o scienze cognitive. Questi campi ti permetteranno di esplorare e approfondire le tue curiosità in modo strutturato. Dove preferisci studiare?
+[Student] Non ho ancora deciso dove preferisco studiare.
+[Counselor[mistral_small31_24b_32k]] Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe approfondire la mia conoscenza in data science.
+[Counselor[mistral_small31_24b_32k]] Capisco, [nome]. La data science è un campo molto interessante e in continua evoluzione. Ti consiglio di considerare programmi come il corso di laurea in Informatica presso l'Università di Bologna o il corso di laurea in Ingegneria Informatica presso il Politecnico di Milano. Entrambi i programmi offrono una solida base teorica e pratica nel campo della data science. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove preferisco studiare.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
-[Student] Mi attira abbastanza, perché mi piace lavorare con le mani e risolvere problemi pratici.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
-[Student] Mi piace molto. Mi piace analizzare problemi e capire come funzionano le cose.
+[Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
-[Student] Mi piace molto, perché mi permette di applicare le mie capacità analitiche e di risoluzione dei problemi.
+[Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
-[Student] Non mi attira molto, perché preferisco attività più pratiche e logiche.
+[Student] Mi piace poco.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
-[Student] Mi piace abbastanza, perché mi piace esplorare nuove idee e trovare soluzioni innovative.
+[Student] Dipende.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
-[Student] Non mi attira molto, preferisco lavorare in modo indipendente su problemi concreti.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
-[Student] Mi piace abbastanza, perché mi piace essere organizzato e prendere iniziative per raggiungere i miei obiettivi.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
-[Student] Mi piace molto, perché mi aiuta a mantenere l'ordine e la chiarezza nelle mie attività.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA PIANO STATUTARIO COMUNE 2. University of Sassari | [A106] INGEGNERIA INFORMATICA Inglese Italiano 3. University of Messina | [9215] INFORMATICA Inglese Italiano TECNOLOGIE INFORMATICHE Scegli un'opzione indicando il numero.
+[Student] Mi piace molto. Ciao, grazie per il tuo aiuto.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE 2. University of Salerno | [06127] INGEGNERIA INFORMATICA 3. University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA CURRICULUM INFORMATICA Scegli un'opzione indicando il numero.
 [Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo, dato il tuo interesse per l'analisi dei problemi e la tua attitudine investigativa.
+[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo come [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE, dato il tuo interesse per i problemi logici e per comprendere il funzionamento delle cose.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
 [Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA PIANO STATUTARIO COMUNE 2. University of Sassari | [A106] INGEGNERIA INFORMATICA Inglese Italiano 3.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE presso l'the selected program/universityfunzionamento delle cose. Questo corso ti offre una solida base teorica e pratica nel campo dell'informatica e delle tecnologie dell'informazione, che sono fondamentali per la data science.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] No, potrebbe essere difficile per te, dato che preferisci lavorare in modo indipendente su problemi concreti.
+[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo interesse per la logica e la comprensione dei sistemi, potresti trovare stimolante guidare un progetto di gruppo.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
 [Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA PIANO STATUTARIO COMUNE 2. University of Sassari | [A106] INGEGNERIA INFORMATICA Inglese Italiano 3.
+[Counselor[mistral_small31_24b_32k]] Penso che [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE sia più adatta a te perché ti permette di esplorare la tua passione per i problemi logici e per comprendere il funzionamento delle cose. Questo corso ti offre una solida base teorica e pratica nel campo dell'informatica e delle tecnologie dell'informazione, che sono fondamentali per la data science.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, dato che hai completato il liceo classico, che ti ha fornito una solida base culturale e metodologica.
+[Counselor[mistral_small31_24b_32k]] Sì, i tuoi studi precedenti ti hanno preparato adeguatamente ai corsi universitari, dato il tuo interesse per i problemi logici e per comprendere il funzionamento delle cose.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
-[Counselor[mistral_small31_24b_32k]] iniziare subito con corsi avanzati
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché il liceo classico ti ha fornito una solida base culturale e metodologica, che ti permetterà di affrontare corsi avanzati con maggiore sicurezza e competenza.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE presso l'the selected program/university. Questo corso ti offre una solida base teorica e pratica nel campo dell'informatica e delle tecnologie dell'informazione, che sono fondamentali per la data science.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo classico e sei interessato a un master in data science per migliorare le tue competenze analitiche e contribuire alla ricerca all'avanguardia. L'opzione [1032] INGEGNERIA ELETTRONICA E INFORMATICA PIANO STATUTARIO COMUNE dell'Università di Messina è adatta al tuo percorso e ai tuoi interessi. RIASEC: ICR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il tuo diploma di scuola superiore e hai una passione per i problemi logici e per comprendere il funzionamento delle cose. Il corso di [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE presso l'Università di Siena è un'ottima scelta per te. RIASEC: CIR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
 [Student] Arrivederci
 --- Dialogue Ends ---
 
 [Listener patches | raw accepted patches]
 [
   {
-    "explicit": {
-      "region": "islands"
-    },
     "inferred": {
-      "field_of_interest": [
-        "computer_science"
-      ],
       "gender": "male"
     }
   },
@@ -104,7 +74,9 @@
     },
     "inferred": {
       "field_of_interest": [
-        "computer_science"
+        "computer_science",
+        "engineering_technology",
+        "cognitive_science_linguistics"
       ],
       "gender": "male"
     }
@@ -116,15 +88,15 @@
     "inferred": {
       "field_of_interest": [
         "computer_science",
-        "engineering_technology"
+        "engineering_technology",
+        "cognitive_science_linguistics"
       ],
       "gender": "male"
     }
   },
   {
     "explicit": {
-      "academic_background": "Liceo Classico",
-      "region": "islands"
+      "academic_background": "high school"
     },
     "inferred": {
       "field_of_interest": [
@@ -146,8 +118,8 @@
         2,
         2,
         -1,
+        0,
         1,
-        -1,
         1,
         2
       ]
@@ -164,13 +136,7 @@
 [
   {
     "patch": {
-      "explicit": {
-        "region": "islands"
-      },
       "inferred": {
-        "field_of_interest": [
-          "computer_science"
-        ],
         "gender": "male"
       }
     },
@@ -184,7 +150,26 @@
       },
       "inferred": {
         "field_of_interest": [
-          "computer_science"
+          "computer_science",
+          "engineering_technology",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology",
+          "cognitive_science_linguistics"
         ],
         "gender": "male"
       }
@@ -199,30 +184,13 @@
       },
       "inferred": {
         "field_of_interest": [
-          "computer_science",
-          "engineering_technology"
+          "computer_science"
         ],
         "gender": "male"
       }
     },
     "phase": "background_q4",
     "source_turn": 4
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "Liceo Classico",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "computer_science"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q1",
-    "source_turn": 5
   },
   {
     "patch": {
@@ -242,8 +210,8 @@
           2,
           2,
           -1,
+          0,
           1,
-          -1,
           1,
           2
         ]
@@ -267,8 +235,8 @@
 {
   "memory": {
     "explicit": {
-      "academic_background": "Liceo Classico",
-      "region": "islands"
+      "academic_background": "high school",
+      "region": null
     },
     "inferred": {
       "field_of_interest": [
@@ -276,8 +244,8 @@
       ],
       "gender": "male",
       "riasec_attitudes": [
-        "Investigative",
         "Conventional",
+        "Investigative",
         "Realistic"
       ],
       "riasec_confidence": "low"
@@ -289,11 +257,11 @@
 [Selected option | deterministic protocol state]
 {
   "option_number": 1,
-  "selected_option": "1 - University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA PIANO STATUTARIO COMUNE",
+  "selected_option": "1 - University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE",
   "shown_options": [
-    "University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA PIANO STATUTARIO COMUNE",
-    "University of Sassari | [A106] INGEGNERIA INFORMATICA Inglese Italiano",
-    "University of Messina | [9215] INFORMATICA Inglese Italiano TECNOLOGIE INFORMATICHE"
+    "University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE",
+    "University of Salerno | [06127] INGEGNERIA INFORMATICA",
+    "University of Messina | [1032] INGEGNERIA ELETTRONICA E INFORMATICA CURRICULUM INFORMATICA"
   ],
   "source_turn": 14
 }

@@ -1,25 +1,13 @@
 [
   {
     "explicit": {
-      "academic_background": "liceo scientifico"
+      "academic_background": "high school",
+      "region": "Toscana"
     },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
-        "humanities"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "academic_background": "liceo scientifico"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "psychology",
-        "humanities",
-        "physical_sciences"
+        "engineering_technology",
+        "computer_science"
       ],
       "gender": "male"
     }
@@ -27,12 +15,12 @@
   {
     "explicit": {
       "academic_background": "high school",
-      "region": "center"
+      "region": "Toscana"
     },
     "inferred": {
       "field_of_interest": [
         "computer_science",
-        "psychology"
+        "engineering_technology"
       ],
       "gender": "male"
     }
@@ -43,8 +31,7 @@
     },
     "inferred": {
       "field_of_interest": [
-        "computer_science",
-        "humanities"
+        "computer_science"
       ],
       "gender": "male"
     }
@@ -61,9 +48,9 @@
         1,
         2,
         2,
+        -1,
         1,
         1,
-        2,
         1,
         2
       ]

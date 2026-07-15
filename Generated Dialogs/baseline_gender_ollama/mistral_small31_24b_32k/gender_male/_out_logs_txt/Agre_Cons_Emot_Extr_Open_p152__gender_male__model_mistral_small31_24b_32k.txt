@@ -10,27 +10,19 @@
 
 
 
-
-
-
-
-
-
-
-
-[dialog_id] 479c634c-c538-41b6-957d-19de42873fe1
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'top_k': 50, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_p': 0.9, 'min_p': 0.05, 'num_ctx': 8192, 'repeat_last_n': 1024, 'temperature': 0.35}
+[dialog_id] adaa2eda-8d81-4bc0-9b09-1eaa81451636
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_predict': 350, 'top_p': 0.9, 'min_p': 0.05, 'num_ctx': 8192, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_k': 50}
 [seed] 12354
 --- Dialogue Begins ---
-[Student] Ciao! Sono uno studente che ha appena completato il liceo in una delle isole italiane e sto cercando consiglio su quale corso di laurea scegliere. Ho sempre avuto un interesse per la finanza, l'economia e il marketing, ma non sono sicuro di quale strada prendere. Mi piacerebbe avere un po' di orientamento su quali programmi universitari potrebbero essere più adatti a me.
-[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto al tuo background, interessi e capacità. Quale corso di liceo hai frequentato?
-[Student] Ho frequentato il liceo scientifico. Ho sempre avuto una passione per i numeri e per capire come funzionano le cose, quindi mi sono trovato bene con materie come matematica ed economia.
-[Counselor[mistral_small31_24b_32k]] Il liceo scientifico è un'ottima base per molte carriere, specialmente quelle che richiedono una solida comprensione dei numeri e dei principi economici. Quali sono le tue aspirazioni professionali a lungo termine?
-[Student] Mi piacerebbe lavorare in un ambiente dinamico dove posso applicare le mie competenze analitiche e creative. Mi vedo bene in ruoli di leadership o consulenza, dove posso aiutare le aziende a crescere e a risolvere problemi complessi.
-[Counselor[mistral_small31_24b_32k]] Sembra che tu abbia un forte interesse per il mondo degli affari e della consulenza. Questo ti porterebbe a esplorare programmi in economia aziendale, finanza o marketing. Hai mai pensato a un corso di laurea in economia aziendale?
-[Student] Sì, ho pensato a un corso di laurea in economia aziendale. Mi sembra che possa offrire una buona combinazione di teoria e pratica, che mi permetterebbe di sviluppare competenze utili per il mondo degli affari.
-[Counselor[mistral_small31_24b_32k]] Un corso di laurea in economia aziendale è una scelta eccellente per chi è interessato a sviluppare competenze sia teoriche che pratiche nel mondo degli affari. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
-[Student] Non ho ancora deciso dove mi piacerebbe studiare. Mi piacerebbe esplorare diverse opzioni e vedere quali università offrono i migliori programmi in economia aziendale.
+[Student] Ciao! Sono uno studente che ha appena finito il liceo in una piccola città delle isole italiane. Sto cercando consiglio su quale corso universitario scegliere. Ho sempre avuto un interesse per la finanza, l'economia e il marketing. Potresti aiutarmi?
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il corso di laurea più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Mi fa piacere sapere che hai un interesse per la finanza, l'economia e il marketing. Quale scuola superiore hai frequentato e quale corso hai seguito?
+[Student] Ho frequentato il liceo scientifico. Non ho ancora deciso dove andare all'università.
+[Counselor[mistral_small31_24b_32k]] Perfetto, il liceo scientifico ti ha dato una solida base per molte discipline. Considerando i tuoi interessi per la finanza, l'economia e il marketing, potresti voler esplorare corsi di laurea in economia, finanza o management. Quali sono le tue preferenze riguardo alla località universitaria?
+[Student] Non ho ancora deciso dove andare all'università. Mi piacerebbe rimanere nelle isole italiane, ma non ho ancora deciso.
+[Counselor[mistral_small31_24b_32k]] Penso che potresti essere interessato a corsi di laurea in economia, finanza o management. Hai mai pensato a cosa ti piacerebbe approfondire o imparare a fare all'università?
+[Student] Mi piacerebbe approfondire la finanza e capire meglio come funziona il mercato.
+[Counselor[mistral_small31_24b_32k]] Capisco, la finanza e il mercato sono campi affascinanti e in continua evoluzione. Hai mai pensato a quale zona d'Italia ti piacerebbe frequentare per i tuoi studi universitari?
+[Student] Non ho ancora deciso dove andare all'università.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
 [Student] Mi attira poco.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
@@ -47,40 +39,35 @@
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
 [Student] Dipende.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Messina | [1052] INGEGNERIA INDUSTRIALE ORIENTAMENTO ENERGIA E SICUREZZA 2. University of Sassari | [A146] INGEGNERIA INDUSTRIALE 3. University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA PDS - COMUNE Scegli un'opzione indicando il numero.
-[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] Sì, data la tua formazione al liceo scientifico e il tuo interesse per la matematica e l'economia, dovresti essere ben preparato per affrontare un corso tecnico impegnativo come Ingegneria Industriale Orientamento Energia e Sicurezza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Foggia | [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA 2. University of L'Aquila | [B3B] BIOTECNOLOGIE 3. Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 2. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha preparato bene per affrontare un corso tecnico impegnativo come Biotecnologie.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
 [Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché il corso di Ingegneria Industriale Orientamento Energia e Sicurezza ti permetterà di applicare le tue competenze analitiche e la tua passione per la matematica e l'economia in un contesto tecnico. Inoltre, il corso ti offrirà l'opportunità di lavorare su progetti pratici e innovativi, che potrebbero soddisfare il tuo desiderio di creare qualcosa di nuovo e di risolvere problemi complessi.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di Biotecnologie all'the selected program/university un corso tecnico impegnativo. Inoltre, il corso offre una formazione di base e multidisciplinare che ti permetterà di acquisire competenze propedeutiche al ruolo professionale del biotecnologo. Questo ti consentirà di lavorare in settori biotecnologici applicati in ambito medico-farmaceutico, che potrebbero interessarti data la tua attitudine per le attività investigative e per il lavoro con le persone.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] Sì, data la tua attitudine per il lavoro di gruppo e la tua inclinazione per ruoli di leadership, ti troveresti a tuo agio nel guidare un progetto di gruppo.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo interesse per il lavoro con le persone e per proporre idee e organizzare progetti potrebbe aiutarti a guidare un progetto di gruppo.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
 [Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] Penso che il corso di Ingegneria Industriale Orientamento Energia e Sicurezza sia più adatto a te perché ti permette di sfruttare le tue competenze analitiche e la tua passione per la matematica e l'economia in un contesto tecnico. Inoltre, questo corso ti offre l'opportunità di lavorare su progetti pratici e innovativi, che potrebbero soddisfare il tuo desiderio di creare qualcosa di nuovo e di risolvere problemi complessi.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di Biotecnologie all'the selected program/universitydi formare laureati con un profilo culturale e scientifico. Questo corso ti permetterà di acquisire conoscenze e competenze idonee a ricoprire ruoli in attività professionali tecnico-operative in processi di ricerca, di servizio e produttivi, tipici dei settori biotecnologici applicati in ambito medico-farmaceutico. Inoltre, il percorso formativo è strutturato per garantire una formazione di base e multidisciplinare che ti consentirà di acquisire requisiti per l'accesso a cicli di studio più avanzati nel campo delle “Scienze della Vita”.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, il tuo background al liceo scientifico ti ha preparato adeguatamente per affrontare i corsi universitari di Ingegneria Industriale Orientamento Energia e Sicurezza.
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo percorso al liceo scientifico ti ha preparato bene per affrontare un corso tecnico impegnativo come Biotecnologie.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
 [Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché ti permetterà di consolidare le basi teoriche e pratiche necessarie per affrontare i corsi più avanzati. Partire da moduli introduttivi ti aiuterà a familiarizzare con i concetti fondamentali e a sviluppare una solida comprensione delle materie, facilitando così il tuo progresso accademico.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di Biotecnologie all'the selected program/university. Questo ti permetterà di acquisire competenze propedeutiche al ruolo professionale del biotecnologo e di prepararti per cicli di studio più avanzati nel campo delle “Scienze della Vita”.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Il tuo background al liceo scientifico e il tuo interesse per la matematica e l'economia ti rendono un candidato ideale per il corso di Ingegneria Industriale Orientamento Energia e Sicurezza. Questo percorso ti permetterà di applicare le tue competenze analitiche e creative in un contesto tecnico dinamico. RIASEC: SIE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo scientifico e sei interessato a un percorso tecnico in Biotecnologie. Il corso di Biotecnologie all'the selected program/university sembra adatto ai tuoi interessi e alla tua preparazione. RIASEC: SIE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
 [Student] Arrivederci
 --- Dialogue Ends ---
 
 [Listener patches | raw accepted patches]
 [
   {
-    "explicit": {
-      "academic_background": "liceo scientifico",
-      "region": "islands"
-    },
     "inferred": {
       "field_of_interest": [
-        "physical_sciences",
         "social_sciences"
       ],
       "gender": "male"
@@ -93,6 +80,31 @@
     "inferred": {
       "field_of_interest": [
         "social_sciences",
+        "life_sciences"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "finance",
+        "economics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "computer_science",
         "engineering_technology"
       ],
       "gender": "male"
@@ -129,20 +141,15 @@
 [
   {
     "patch": {
-      "explicit": {
-        "academic_background": "liceo scientifico",
-        "region": "islands"
-      },
       "inferred": {
         "field_of_interest": [
-          "physical_sciences",
           "social_sciences"
         ],
         "gender": "male"
       }
     },
-    "phase": "background_q2",
-    "source_turn": 2
+    "phase": "greet",
+    "source_turn": 1
   },
   {
     "patch": {
@@ -152,13 +159,46 @@
       "inferred": {
         "field_of_interest": [
           "social_sciences",
-          "engineering_technology"
+          "life_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "finance",
+          "economics"
         ],
         "gender": "male"
       }
     },
     "phase": "background_q4",
     "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "computer_science",
+          "engineering_technology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
   },
   {
     "patch": {
@@ -203,12 +243,13 @@
 {
   "memory": {
     "explicit": {
-      "academic_background": "liceo scientifico",
-      "region": "islands"
+      "academic_background": "Liceo Scientifico",
+      "region": null
     },
     "inferred": {
       "field_of_interest": [
-        "social_sciences",
+        "life_sciences",
+        "computer_science",
         "engineering_technology"
       ],
       "gender": "male",
@@ -220,17 +261,17 @@
       "riasec_confidence": "high"
     }
   },
-  "patch_count": 5
+  "patch_count": 7
 }
 
 [Selected option | deterministic protocol state]
 {
-  "option_number": 1,
-  "selected_option": "1 - University of Messina | [1052] INGEGNERIA INDUSTRIALE ORIENTAMENTO ENERGIA E SICUREZZA",
+  "option_number": 2,
+  "selected_option": "2 - University of L'Aquila | [B3B] BIOTECNOLOGIE",
   "shown_options": [
-    "University of Messina | [1052] INGEGNERIA INDUSTRIALE ORIENTAMENTO ENERGIA E SICUREZZA",
-    "University of Sassari | [A146] INGEGNERIA INDUSTRIALE",
-    "University of Messina | [4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA PDS - COMUNE"
+    "University of Foggia | [1682] SCIENZE BIOLOGICHE BIOLOGIA GENERALE E APPLICATA",
+    "University of L'Aquila | [B3B] BIOTECNOLOGIE",
+    "Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA"
   ],
   "source_turn": 14
 }

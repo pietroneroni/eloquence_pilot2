@@ -8,9 +8,7 @@
       "agent1_norms": [
         "Unless the current PHASE defines an exact output format, be conversational and concise (about 2-6 sentences).",
         "Unless the current PHASE forbids questions or defines an exact output format, ask at most ONE question.",
-        "When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.",
-        "For yes/no questions about suitability, feasibility, readiness, or risk: start with 'Yes' or 'No', then add at most one short supporting sentence or caveat.",
-        "If choice between two options: choose one of the two options clearly."
+        "When recommending universities/programs, use exact items from CANDIDATE OPTIONS/OPTIONS and use RAG_CONTEXT/GROUNDING_CONTEXT only for factual details."
       ],
       "student_prompt_addendum": [
         "Do NOT invent facts about yourself.",

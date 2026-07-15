@@ -1,0 +1,278 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p51.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12377
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+[dialog_id] 6b9718a5-0ad4-4ee7-a0ff-bb65c2f755c3
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_predict': 350, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_k': 50, 'top_p': 0.9, 'num_ctx': 8192, 'min_p': 0.05}
+[seed] 12377
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente di Central Italia che ha appena completato il liceo. Sto cercando consigli su come scegliere un corso di laurea. Ho sempre avuto interesse per attività creative e pratiche, e mi piace lavorare con le persone.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il corso di laurea più adatto a te, basandomi sui tuoi interessi, le tue capacità e le tue circostanze. Per iniziare, mi puoi dire quale scuola o corso hai appena concluso?
+[Student] Ho appena finito il liceo. Non ho ancora deciso dove andare a studiare, ma so che mi piace esprimere le mie idee attraverso attività creative come l'arte o il design.
+[Counselor[mistral_small31_24b_32k]] Perfetto, grazie per aver condiviso questo. Ti consiglio di considerare corsi di laurea che ti permettano di esplorare le tue passioni per l'arte e il design. Hai qualche preferenza per la regione in cui vorresti studiare?
+[Student] Non ho ancora deciso dove andare a studiare. So solo che mi piace lavorare con le persone e aiutarle.
+[Counselor[mistral_small31_24b_32k]] Mi sembra che tu abbia un forte interesse per le attività creative e per lavorare con le persone. Ti consiglio di considerare corsi di laurea in comunicazione, design o psicologia. Hai qualche preferenza per la regione in cui vorresti studiare?
+[Student] Non ho ancora deciso dove andare a studiare. So solo che mi piace lavorare con le persone e aiutarle.
+[Counselor[mistral_small31_24b_32k]] Mi sembra che tu abbia un forte interesse per le attività creative e per lavorare con le persone. Ti consiglio di considerare corsi di laurea in comunicazione, design o psicologia. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove andare a studiare. So solo che mi piace lavorare con le persone e aiutarle.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Dipende.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO 2. Gabriele d'Annunzio University of Chieti-Pescara | [707T] DESIGN Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, potresti affrontare un corso tecnico impegnativo, dato il tuo interesse per attività pratiche e manuali. Tuttavia, è importante considerare che il corso di laurea in Discipline delle Arti Visive, della Musica e dello Spettacolo non è un corso tecnico.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] un percorso orientato alle discipline umanistiche
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché il corso di laurea in Discipline delle Arti Visive, della Musica e dello Spettacolo ti permetterà di esplorare le tue passioni per l'arte e il design, oltre a sviluppare competenze creative e pratiche. Inoltre, il corso include materie come storia del cinema e del teatro, che possono aiutarti a comprendere meglio il contesto culturale e storico delle arti visive e dello spettacolo.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] No, non è presente alcuna informazione su questo aspetto nel corso di laurea in Discipline delle Arti Visive, della Musica e dello Spettacolo.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in Discipline delle Arti Visive, della Musica e dello Spettacolo sia più adatto a te perché ti permette di esplorare le tue passioni per l'arte e il design, oltre a sviluppare competenze creative e pratiche. Inoltre, il corso include materie come storia del cinema e del teatro, che possono aiutarti a comprendere meglio il contesto culturale e storico delle arti visive e dello spettacolo.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, i tuoi studi al liceo ti hanno preparato adeguatamente ai corsi universitari, dato che il corso di laurea in Discipline delle Arti Visive, della Musica e dello Spettacolo include materie come letteratura italiana e storia contemporanea, che sono probabilmente state trattate anche nel tuo percorso scolastico.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di laurea in Discipline delle Arti Visive, della Musica e dello Spettacolo include materie come letteratura italiana e storia contemporanea, che sono probabilmente state trattate anche nel tuo percorso scolastico al liceo. Inoltre, il corso offre moduli introduttivi che ti permetteranno di acquisire una solida base di conoscenze prima di affrontare argomenti più avanzati.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo e sei interessato a un corso di laurea che ti permetta di esplorare le tue passioni per l'arte e il design, oltre a sviluppare competenze creative e pratiche. Il corso di laurea in Discipline delle Arti Visive, della Musica e dello Spettacolo presso l'Università di Salerno sembra essere una scelta adatta per te. RIASEC: ASE Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media",
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "communication_digital_media",
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "arts_design"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        1,
+        0,
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "communication_digital_media"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "communication_digital_media",
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "communication_digital_media",
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "arts_design"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          1,
+          1,
+          0,
+          2,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "stop",
+    "source_turn": 23
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "arts_design"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Artistic",
+        "Social",
+        "Enterprising"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "patch_count": 7
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO",
+  "shown_options": [
+    "University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO",
+    "Gabriele d'Annunzio University of Chieti-Pescara | [707T] DESIGN"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

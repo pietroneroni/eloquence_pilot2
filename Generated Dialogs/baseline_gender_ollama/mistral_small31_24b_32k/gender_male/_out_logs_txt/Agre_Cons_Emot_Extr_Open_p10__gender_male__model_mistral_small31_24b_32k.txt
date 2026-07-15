@@ -9,136 +9,72 @@
 
 
 
-
-
-
-
-
-
-
-
-[dialog_id] c1eb81f6-4c87-4bdf-ba9a-29db92723a93
-[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'temperature': 0.35, 'top_k': 50, 'min_p': 0.05, 'repeat_penalty': 1.05, 'top_p': 0.9, 'num_ctx': 8192, 'num_predict': 350, 'repeat_last_n': 1024}
+[dialog_id] 34dbe67d-c5df-4314-8c7b-0713157cb524
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'top_k': 50, 'num_predict': 350, 'repeat_last_n': 1024, 'repeat_penalty': 1.05, 'temperature': 0.35, 'top_p': 0.9, 'min_p': 0.05, 'num_ctx': 8192}
 [seed] 12345
 --- Dialogue Begins ---
-[Student] Ciao, sono uno studente di un piccolo paese del Nord Italia e sto cercando consiglio su come scegliere il programma universitario giusto per me. Lavoro attualmente come ricercatore in un laboratorio importante, ma non sono sicuro su quale direzione prendere per il mio futuro accademico. Mi piace molto analizzare problemi e trovare soluzioni logiche, quindi penso che un corso di laurea in ingegneria o scienze informatiche potrebbe essere una buona scelta.
-[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono il consulente universitario e sono qui per aiutarti a scegliere il programma universitario più adatto al tuo background, interessi e capacità. Considerando il tuo lavoro attuale come ricercatore in un laboratorio, ti consiglio di esplorare programmi in ingegneria o scienze informatiche, che potrebbero essere molto in linea con le tue competenze e passioni. Hai già un'idea di quale specifico corso di laurea in ingegneria o scienze informatiche ti interessa di più?
-[Student] Mi piace molto l'idea di un corso di laurea in ingegneria informatica, perché mi permetterebbe di combinare la mia passione per l'analisi logica con la tecnologia. Inoltre, mi piace molto l'idea di lavorare in un ambiente organizzato e strutturato, che mi permetterebbe di applicare le mie competenze in modo efficace.
-[Counselor[mistral_small31_24b_32k]] Un corso di laurea in ingegneria informatica potrebbe essere una scelta eccellente per te, dato il tuo interesse per l'analisi logica e la tecnologia. Questo percorso ti permetterebbe di lavorare in un ambiente organizzato e strutturato, dove potresti applicare le tue competenze in modo efficace. Hai già pensato a quali università italiane offrono programmi di ingegneria informatica che potrebbero interessarti?
-[Student] Non ho ancora deciso quale università scegliere, ma so che ci sono diverse opzioni in Italia che offrono programmi di ingegneria informatica di alta qualità.
-[Counselor[mistral_small31_24b_32k]] L'ingegneria informatica è un campo molto interessante e con molte opportunità. Per aiutarti a scegliere l'università giusta, mi piacerebbe sapere: quali aspetti dell'ingegneria informatica ti piacerebbe approfondire o imparare a fare?
-[Student] Mi piacerebbe approfondire l'intelligenza artificiale e il machine learning, perché mi affascina l'idea di creare sistemi che possono imparare e migliorare nel tempo. Inoltre, mi interessa molto la sicurezza informatica, per proteggere i dati e le informazioni.
-[Counselor[mistral_small31_24b_32k]] L'intelligenza artificiale e il machine learning sono campi molto affascinanti e in rapida evoluzione, e la sicurezza informatica è una competenza sempre più richiesta. Questi argomenti sono ben coperti nei programmi di ingegneria informatica. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
-[Student] Non ho ancora deciso dove mi piacerebbe studiare, quindi la sede è abbastanza flessibile per me.
+[Student] Ciao, sono uno studente di un piccolo paese del Nord Italia e ho appena completato il liceo. Sto cercando consiglio su come scegliere un programma universitario. Mi piace capire come funzionano le cose e risolvere problemi, quindi sto cercando un percorso che mi permetta di sviluppare queste abilità.
+[Counselor[mistral_small31_24b_32k]] Benvenuto! Sono qui per aiutarti a scegliere il programma universitario più adatto a te, basandomi sul tuo percorso scolastico, i tuoi interessi e le tue aspirazioni. Quale corso di liceo hai frequentato?
+[Student] Ho frequentato il liceo scientifico. Mi piace molto analizzare problemi e capire come funzionano le cose, quindi penso che un percorso che mi permetta di sviluppare queste abilità sarebbe perfetto per me.
+[Counselor[mistral_small31_24b_32k]] Il liceo scientifico è un'ottima base per molti percorsi universitari. Considerando il tuo interesse per l'analisi dei problemi e la comprensione dei meccanismi, potresti essere interessato a campi come l'ingegneria, la fisica, o l'informatica. Dove ti piacerebbe studiare?
+[Student] Non ho ancora deciso dove vorrei studiare. Mi piacerebbe trovare un'università che offra un buon programma in uno di questi campi e che abbia un ambiente accogliente.
+[Counselor[mistral_small31_24b_32k]] Perfetto, possiamo esplorare insieme le opzioni disponibili. Ti posso suggerire alcune università italiane che offrono programmi in ingegneria, fisica e informatica. Per esempio, l'Università di Bologna offre un corso di laurea in Ingegneria Informatica e l'Università di Padova ha un corso di laurea in Fisica. L'Università di Trento offre un corso di laurea in Informatica. Quale di questi campi ti interessa di più?
+[Student] Mi affascina molto l'informatica. Mi piace l'idea di lavorare con sistemi complessi e risolvere problemi attraverso la programmazione.
+[Counselor[mistral_small31_24b_32k]] L'informatica è un campo molto stimolante e in continua evoluzione. Potresti considerare l'Università di Trento, che offre un corso di laurea in Informatica. Ti piacerebbe saperne di più su questo programma?
+[Student] Sì, mi piacerebbe saperne di più su questo programma. Ciao.
 [Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
-[Student] Mi piace abbastanza, dipende dal tipo di attività.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
 [Student] Mi piace molto.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
-[Student] Mi piace abbastanza, dipende dal tipo di espressione creativa.
+[Student] Mi piace poco.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
-[Student] Mi piace abbastanza, ma preferisco quando c'è una struttura chiara.
+[Student] Dipende.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
-[Student] Mi piace abbastanza, mi piace aiutare gli altri.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
-[Student] Mi piace abbastanza, mi piace quando posso essere responsabile e organizzare.
+[Student] Mi piace abbastanza.
 [Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
-[Student] Mi piace molto.
+[Student] Mi piace molto. Ciao.
 [Counselor[mistral_small31_24b_32k]] Prima di consigliarti dei corsi, puoi chiarire qual è il tuo percorso di istruzione formale attuale o più recente?
-[Student] Ho completato il liceo scientifico in un piccolo paese del Nord Italia.
-[Counselor[mistral_small31_24b_32k]] Ti suggerisco queste opzioni: 1. University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3. University of Trento | [0325G] INGEGNERIA CIVILE Scegli un'opzione indicando il numero.
+[Student] Ho appena completato il liceo scientifico.
+[Counselor[mistral_small31_24b_32k]] Prima di consigliarti dei corsi, puoi chiarire qual è il tuo percorso di istruzione formale attuale o più recente?
+[Student] Ho appena completato il liceo scientifico.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco questa opzione: 1. University of Trento | [0346H] INGEGNERIA DELL'INFORMAZIONE Scegli un'opzione indicando il numero.
 [Student] Scelgo l'opzione 1. Pensi che potrei affrontare un corso tecnico impegnativo?
-[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo background in liceo scientifico e il tuo interesse per l'analisi logica e la tecnologia, dovresti essere ben preparato per affrontare un corso tecnico impegnativo come quello di Interfacce e Tecnologie della Comunicazione.
+[Counselor[mistral_small31_24b_32k]] Sì, sembra che tu abbia le attitudini giuste per affrontare un corso tecnico impegnativo.
 [Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
 [Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
 [Student] Perché pensi che questa scelta faccia per me?
-[Counselor[mistral_small31_24b_32k]] Queste sono le opzioni grounded che posso supportare: 1. University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3.
+[Counselor[mistral_small31_24b_32k]] Penso che questa scelta sia adatta a te perché hai un forte interesse per l'analisi dei problemi e la comprensione dei meccanismi, che sono competenze fondamentali per l'ingegneria dell'informazione. Inoltre, il corso di laurea magistrale in Ingegneria dell'Informazione presso l'the selected program/university, che potrebbe essere molto stimolante per te.
 [Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
-[Counselor[mistral_small31_24b_32k]] Sì, considerando il tuo interesse per l'organizzazione e la responsabilità, dovresti trovarti a tuo agio nel guidare un progetto di gruppo.
+[Counselor[mistral_small31_24b_32k]] No, non è presente alcuna informazione su questo aspetto nel contesto disponibile.
 [Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
-[Counselor[mistral_small31_24b_32k]] assumere già ora un ruolo di leadership
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
 [Student] Perché pensi che una delle due opzioni sia più adatta a me?
-[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea in Interfacce e Tecnologie della Comunicazione sia più adatto a te perché si allinea perfettamente con il tuo interesse per l'analisi logica, la tecnologia e la sicurezza informatica. Questo corso ti permetterà di approfondire l'intelligenza artificiale e il machine learning, oltre a sviluppare competenze nella progettazione e valutazione di sistemi di comunicazione, che sono fondamentali per la sicurezza informatica. Inoltre, il corso offre un approccio pratico e sperimentale, che ti permetterà di applicare le tue competenze in modo efficace e strutturato.
+[Counselor[mistral_small31_24b_32k]] Penso che il corso di laurea magistrale in Ingegneria dell'Informazione presso l'the selected program/university, che sono competenze fondamentali per questo percorso. Inoltre, il corso offre un curriculum in Biomedical Engineering, che potrebbe essere molto stimolante per te.
 [Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
-[Counselor[mistral_small31_24b_32k]] Sì, il tuo background in liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari in Interfacce e Tecnologie della Comunicazione.
+[Counselor[mistral_small31_24b_32k]] Sì, il liceo scientifico ti ha fornito una solida base per affrontare i corsi universitari in ingegneria dell'informazione.
 [Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
 [Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
 [Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
-[Counselor[mistral_small31_24b_32k]] Questo approccio è adatto alla tua preparazione perché il corso di laurea in Interfacce e Tecnologie della Comunicazione si basa su competenze teoriche, metodologiche, sperimentali ed applicative, che sono in linea con il tuo background in liceo scientifico. Inoltre, il corso ti permetterà di acquisire conoscenze pratiche e sperimentali, che sono fondamentali per la progettazione e valutazione di sistemi di comunicazione.
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso di laurea magistrale in Ingegneria dell'Informazione presso l'the selected program/university, che potrebbe essere molto stimolante per te. Inoltre, il corso è strutturato in modo da fornire una solida base teorica e pratica, che è ideale per chi ha un interesse per l'analisi dei problemi e la comprensione dei meccanismi.
 [Student] Grazie per il tuo aiuto, arrivederci.
-[Counselor[mistral_small31_24b_32k]] Recap: Considerando il tuo background in liceo scientifico e il tuo interesse per l'analisi logica e la tecnologia, il corso di laurea in Interfacce e Tecnologie della Comunicazione dell'Università di Trento sembra essere una scelta molto adatta a te. RIASEC: ICR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna con i tuoi studi!
+[Counselor[mistral_small31_24b_32k]] Recap: Hai completato il liceo scientifico e sei interessato a un percorso che ti permetta di sviluppare le tue abilità analitiche e di risoluzione dei problemi. Il corso di laurea magistrale in Ingegneria dell'Informazione presso l'Università di Trento sembra essere una scelta adatta alle tue attitudini e interessi. RIASEC: CIR Next steps: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Goodbye: Arrivederci e buona fortuna per il tuo futuro accademico!
 [Student] Arrivederci
 --- Dialogue Ends ---
 
 [Listener patches | raw accepted patches]
 [
   {
-    "explicit": {
-      "region": "north"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "engineering_technology",
-        "computer_science"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "field_of_interest": [
-        "computer_science",
-        "engineering_technology"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "region": "north"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "engineering_technology",
-        "computer_science"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "field_of_interest": [
-        "computer_science",
-        "engineering_technology"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "field_of_interest": [
-        "computer_science"
-      ],
-      "gender": "male"
-    }
-  },
-  {
     "inferred": {
       "gender": "male"
     }
   },
   {
-    "explicit": {
-      "academic_background": "high school",
-      "region": "north"
-    },
     "inferred": {
-      "field_of_interest": [
-        "computer_science",
-        "engineering_technology"
-      ],
       "gender": "male"
     }
   },
@@ -149,93 +85,18 @@
         1,
         2,
         2,
-        1,
-        1,
+        -1,
+        0,
         1,
         1,
         2
       ]
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
     }
   }
 ]
 
 [Listener events | turn and phase]
 [
-  {
-    "patch": {
-      "explicit": {
-        "region": "north"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "engineering_technology",
-          "computer_science"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "greet",
-    "source_turn": 1
-  },
-  {
-    "patch": {
-      "inferred": {
-        "field_of_interest": [
-          "computer_science",
-          "engineering_technology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q2",
-    "source_turn": 2
-  },
-  {
-    "patch": {
-      "explicit": {
-        "region": "north"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "engineering_technology",
-          "computer_science"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q3",
-    "source_turn": 3
-  },
-  {
-    "patch": {
-      "inferred": {
-        "field_of_interest": [
-          "computer_science",
-          "engineering_technology"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "background_q4",
-    "source_turn": 4
-  },
-  {
-    "patch": {
-      "inferred": {
-        "field_of_interest": [
-          "computer_science"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q1",
-    "source_turn": 5
-  },
   {
     "patch": {
       "inferred": {
@@ -247,20 +108,12 @@
   },
   {
     "patch": {
-      "explicit": {
-        "academic_background": "high school",
-        "region": "north"
-      },
       "inferred": {
-        "field_of_interest": [
-          "computer_science",
-          "engineering_technology"
-        ],
         "gender": "male"
       }
     },
-    "phase": "clarify_scope",
-    "source_turn": 13
+    "phase": "riasec_q3",
+    "source_turn": 7
   },
   {
     "patch": {
@@ -270,8 +123,8 @@
           1,
           2,
           2,
-          1,
-          1,
+          -1,
+          0,
           1,
           1,
           2
@@ -279,16 +132,7 @@
       }
     },
     "phase": "advice",
-    "source_turn": 14
-  },
-  {
-    "patch": {
-      "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "stop",
-    "source_turn": 24
+    "source_turn": 15
   }
 ]
 
@@ -296,35 +140,30 @@
 {
   "memory": {
     "explicit": {
-      "academic_background": "high school",
-      "region": "north"
+      "academic_background": null,
+      "region": null
     },
     "inferred": {
-      "field_of_interest": [
-        "computer_science",
-        "engineering_technology"
-      ],
+      "field_of_interest": null,
       "gender": "male",
       "riasec_attitudes": [
-        "Investigative",
         "Conventional",
+        "Investigative",
         "Realistic"
       ],
       "riasec_confidence": "low"
     }
   },
-  "patch_count": 9
+  "patch_count": 3
 }
 
 [Selected option | deterministic protocol state]
 {
   "option_number": 1,
-  "selected_option": "1 - University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE",
+  "selected_option": "1 - University of Trento | [0346H] INGEGNERIA DELL'INFORMAZIONE",
   "shown_options": [
-    "University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE",
-    "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
-    "University of Trento | [0325G] INGEGNERIA CIVILE"
+    "University of Trento | [0346H] INGEGNERIA DELL'INFORMAZIONE"
   ],
-  "source_turn": 15
+  "source_turn": 24
 }
 [INVALID_PROTOCOL] missing_counselor_wrapup_recap

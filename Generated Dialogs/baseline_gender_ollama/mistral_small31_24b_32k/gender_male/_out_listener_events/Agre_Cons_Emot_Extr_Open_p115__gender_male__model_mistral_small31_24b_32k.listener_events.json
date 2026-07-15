@@ -1,13 +1,7 @@
 [
   {
     "patch": {
-      "explicit": {
-        "region": "islands"
-      },
       "inferred": {
-        "field_of_interest": [
-          "computer_science"
-        ],
         "gender": "male"
       }
     },
@@ -21,7 +15,26 @@
       },
       "inferred": {
         "field_of_interest": [
-          "computer_science"
+          "computer_science",
+          "engineering_technology",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology",
+          "cognitive_science_linguistics"
         ],
         "gender": "male"
       }
@@ -36,30 +49,13 @@
       },
       "inferred": {
         "field_of_interest": [
-          "computer_science",
-          "engineering_technology"
+          "computer_science"
         ],
         "gender": "male"
       }
     },
     "phase": "background_q4",
     "source_turn": 4
-  },
-  {
-    "patch": {
-      "explicit": {
-        "academic_background": "Liceo Classico",
-        "region": "islands"
-      },
-      "inferred": {
-        "field_of_interest": [
-          "computer_science"
-        ],
-        "gender": "male"
-      }
-    },
-    "phase": "riasec_q1",
-    "source_turn": 5
   },
   {
     "patch": {
@@ -79,8 +75,8 @@
           2,
           2,
           -1,
+          0,
           1,
-          -1,
           1,
           2
         ]

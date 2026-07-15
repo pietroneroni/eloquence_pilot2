@@ -1,14 +1,25 @@
 [
   {
     "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "humanities"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
       "explicit": {
-        "academic_background": "liceo",
-        "region": "north"
+        "academic_background": "laurea triennale in letteratura"
       },
       "inferred": {
         "field_of_interest": [
-          "humanities",
-          "arts_design"
+          "arts_design",
+          "computer_science"
         ],
         "gender": "male"
       }
@@ -19,13 +30,13 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school",
-        "region": "north"
+        "academic_background": "laurea triennale in letteratura"
       },
       "inferred": {
         "field_of_interest": [
+          "arts_design",
           "humanities",
-          "arts_design"
+          "cognitive_science_linguistics"
         ],
         "gender": "male"
       }
@@ -36,13 +47,12 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "high school"
+        "academic_background": "laurea triennale in letteratura"
       },
       "inferred": {
         "field_of_interest": [
-          "humanities",
           "arts_design",
-          "communication_digital_media"
+          "humanities"
         ],
         "gender": "male"
       }
@@ -53,13 +63,12 @@
   {
     "patch": {
       "explicit": {
-        "academic_background": "Liceo Classico",
-        "region": "north"
+        "academic_background": "bachelor's in literature"
       },
       "inferred": {
         "field_of_interest": [
-          "humanities",
-          "arts_design"
+          "arts_design",
+          "humanities"
         ],
         "gender": "male"
       }
@@ -85,8 +94,8 @@
           2,
           2,
           2,
-          2,
           1,
+          0,
           1,
           1
         ]
@@ -94,14 +103,5 @@
     },
     "phase": "advice",
     "source_turn": 13
-  },
-  {
-    "patch": {
-      "inferred": {
-        "gender": "male"
-      }
-    },
-    "phase": "stop",
-    "source_turn": 23
   }
 ]

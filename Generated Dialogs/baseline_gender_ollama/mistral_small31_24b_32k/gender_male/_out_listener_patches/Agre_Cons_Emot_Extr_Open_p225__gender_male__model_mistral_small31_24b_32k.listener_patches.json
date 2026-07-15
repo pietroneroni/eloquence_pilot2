@@ -1,22 +1,21 @@
 [
   {
-    "explicit": {
-      "region": "north"
-    },
     "inferred": {
       "field_of_interest": [
-        "life_sciences"
+        "life_sciences",
+        "engineering_technology"
       ],
       "gender": "male"
     }
   },
   {
     "explicit": {
-      "academic_background": "laurea in biotecnologia"
+      "academic_background": "laurea triennale in biotecnologia"
     },
     "inferred": {
       "field_of_interest": [
         "life_sciences",
+        "environmental_science",
         "health_technology"
       ],
       "gender": "male"
@@ -24,14 +23,51 @@
   },
   {
     "explicit": {
-      "academic_background": "Liceo Scientifico",
+      "academic_background": "laurea triennale in biotecnologia"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "environmental_science",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "bachelor's in biotechnology",
       "region": "north"
     },
     "inferred": {
       "field_of_interest": [
         "life_sciences",
-        "health_technology"
+        "environmental_science",
+        "engineering_technology"
       ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "bachelor's in biotechnology"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "environmental_science",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
       "gender": "male"
     }
   },
@@ -48,6 +84,11 @@
         1,
         1
       ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
     }
   }
 ]

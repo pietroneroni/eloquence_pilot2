@@ -1,69 +1,11 @@
 [
   {
-    "explicit": {
-      "region": "north"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "engineering_technology",
-        "computer_science"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "field_of_interest": [
-        "computer_science",
-        "engineering_technology"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "explicit": {
-      "region": "north"
-    },
-    "inferred": {
-      "field_of_interest": [
-        "engineering_technology",
-        "computer_science"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "field_of_interest": [
-        "computer_science",
-        "engineering_technology"
-      ],
-      "gender": "male"
-    }
-  },
-  {
-    "inferred": {
-      "field_of_interest": [
-        "computer_science"
-      ],
-      "gender": "male"
-    }
-  },
-  {
     "inferred": {
       "gender": "male"
     }
   },
   {
-    "explicit": {
-      "academic_background": "high school",
-      "region": "north"
-    },
     "inferred": {
-      "field_of_interest": [
-        "computer_science",
-        "engineering_technology"
-      ],
       "gender": "male"
     }
   },
@@ -74,17 +16,12 @@
         1,
         2,
         2,
-        1,
-        1,
+        -1,
+        0,
         1,
         1,
         2
       ]
-    }
-  },
-  {
-    "inferred": {
-      "gender": "male"
     }
   }
 ]

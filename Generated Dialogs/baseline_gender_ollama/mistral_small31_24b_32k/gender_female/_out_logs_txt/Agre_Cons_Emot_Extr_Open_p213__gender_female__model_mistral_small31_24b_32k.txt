@@ -1,0 +1,186 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p213.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12365
+[LANG] dialog=Italian rag=ita
+
+
+
+
+
+[dialog_id] 54942378-cb98-4c94-8e8c-5e343e322ba0
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'num_predict': 350, 'repeat_last_n': 1024, 'temperature': 0.35, 'top_p': 0.9, 'min_p': 0.05, 'repeat_penalty': 1.05, 'top_k': 50, 'num_ctx': 8192}
+[seed] 12365
+--- Dialogue Begins ---
+[Student] Ciao, mi chiamo [name]. Vivo in un piccolo paese nel Nord Italia. Ho completato il liceo e ora sto cercando consiglio su quale corso universitario scegliere.
+[Counselor[mistral_small31_24b_32k]] Benvenuto, [name]. Sono qui per aiutarti a scegliere il corso universitario più adatto a te, basandomi sul tuo percorso scolastico, i tuoi interessi e le tue aspirazioni. Per iniziare, puoi dirmi quale liceo hai frequentato e quale corso hai seguito o concluso di recente?
+[Student] Ho frequentato il liceo scientifico. Mi piace capire come funzionano le cose e analizzare i problemi, quindi ho seguito un percorso che mi permettesse di sviluppare queste capacità.
+[Counselor[mistral_small31_24b_32k]] Perfetto, il liceo scientifico è un'ottima base per molti percorsi universitari. Quali materie o ambiti universitari ti attirano di più?
+[Student] Mi piacciono molto le materie scientifiche, come la fisica e la matematica. Mi piace anche disegnare e creare cose con le mie mani, quindi magari un corso che unisca queste due cose.
+[Counselor[mistral_small31_24b_32k]] Capisco, quindi ti interessano sia le materie scientifiche come la fisica e la matematica, sia la creatività manuale. Un corso di ingegneria potrebbe essere una buona scelta, dato che unisce la matematica e la fisica con la progettazione e la creazione di oggetti. Hai qualche idea su dove ti piacerebbe studiare?
+[Student] Non ho ancora deciso dove vorrei studiare. Ho sentito parlare di alcune università nella mia regione, ma non ho ancora fatto una scelta definitiva.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Non ho ancora deciso dove vorrei studiare. Ho sentito parlare di alcune università nella mia regione, ma non ho ancora fatto una scelta definitiva.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Non mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Non mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Non ho trovato opzioni grounded sufficientemente adatte nell'insieme universitario corrente. Prossimi passi suggeriti: allarga leggermente il campo target; mantieni il campo esatto e ripeti la ricerca quando saranno disponibili più università; rivedi vincoli e priorità. Arrivederci.
+[Student] Arrivederci. .
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "Liceo Scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "arts_design"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q2",
+    "source_turn": 6
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "arts_design"
+      ],
+      "gender": "female",
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+null
+[INVALID_PROTOCOL] missing_fixed_followup_questions=9

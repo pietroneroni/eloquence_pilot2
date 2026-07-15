@@ -1,6 +1,19 @@
 [
   {
     "explicit": {
+      "academic_background": "liceo scientifico"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences",
+        "engineering_technology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
       "region": "south"
     },
     "inferred": {
@@ -11,14 +24,17 @@
     }
   },
   {
-    "explicit": {
-      "academic_background": "Liceo Scientifico",
-      "region": "south"
-    },
     "inferred": {
-      "field_of_interest": [
-        "environmental_science"
-      ],
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
       "gender": "male"
     }
   },
@@ -34,11 +50,11 @@
         1,
         2,
         2,
-        0,
-        1,
         -1,
-        1,
-        2
+        0,
+        -1,
+        -1,
+        1
       ]
     }
   },
