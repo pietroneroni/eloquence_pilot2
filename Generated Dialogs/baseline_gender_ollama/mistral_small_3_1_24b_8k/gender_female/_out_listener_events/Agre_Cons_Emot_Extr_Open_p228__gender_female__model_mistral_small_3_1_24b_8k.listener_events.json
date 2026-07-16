@@ -1,0 +1,88 @@
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "environmental_engineering",
+          "life_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "environmental_engineering",
+          "life_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "",
+        "region": "central"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_science",
+          "life_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q8",
+    "source_turn": 12
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_engineering"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          2,
+          2,
+          2,
+          1,
+          2,
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 15
+  }
+]

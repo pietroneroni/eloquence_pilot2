@@ -1,0 +1,61 @@
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "cognitive_science_linguistics",
+        "psychology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        1,
+        2,
+        -1,
+        1
+      ]
+    }
+  }
+]

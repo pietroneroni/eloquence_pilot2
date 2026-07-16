@@ -1,0 +1,69 @@
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "health_technology",
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 14
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          -1,
+          0,
+          2,
+          0,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 15
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "qa_yesno",
+    "source_turn": 16
+  }
+]

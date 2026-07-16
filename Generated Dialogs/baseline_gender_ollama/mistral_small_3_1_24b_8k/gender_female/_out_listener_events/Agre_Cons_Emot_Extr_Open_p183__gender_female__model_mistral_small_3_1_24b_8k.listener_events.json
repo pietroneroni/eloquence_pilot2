@@ -1,0 +1,69 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Scientifico",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          2,
+          2,
+          2,
+          1,
+          2,
+          1,
+          0,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]

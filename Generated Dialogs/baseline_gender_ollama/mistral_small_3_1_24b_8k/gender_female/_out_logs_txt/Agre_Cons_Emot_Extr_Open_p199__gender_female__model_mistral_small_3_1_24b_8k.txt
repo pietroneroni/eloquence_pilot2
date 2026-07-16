@@ -1,0 +1,264 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p199.json gender_condition=female model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12362
+[LANG] dialog=english rag=eng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] d32c19f0-2219-4c0a-811d-3d42b72d05e3
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12362
+--- Dialogue Begins ---
+[Student] Hello. I'm based in Central Italy, but I'm looking into options for university programs abroad. It's been a bit overwhelming trying to figure out which one would be the best fit for me. Have you got any advice on how to narrow down my choices?
+[Counselor[mistral_small_3_1_24b_8k]] I can help with that. Based on your background and interests, we can explore suitable university programs. What are you studying now, or what was your most recent study path?
+[Student] I'm currently engaged in research projects during my undergraduate years, working alongside esteemed professors in the field. I've always been drawn to practical, hands-on activities, as well as understanding how things work and analysing problems.
+[Counselor[mistral_small_3_1_24b_8k]] That sounds like a strong academic foundation. Are you considering continuing your studies in a related area?
+[Student] I'm leaning towards specializing in anxiety disorders and trauma for my future practice, but I haven't decided on a specific program just yet.
+[Counselor[mistral_small_3_1_24b_8k]] That sounds like an important focus area. What kind of things do you hope to learn or be able to do with a university degree? Do you want to study abroad or locally?
+[Student] I'd like to deepen my understanding of evidence-based therapies and gain more practical experience in clinical settings. I am not sure where to study yet, but I would prefer staying close to Central Italy if possible.
+[Counselor[mistral_small_3_1_24b_8k]] You have a clear direction in mind with your interest in anxiety disorders and trauma, as well as evidence-based therapies. Would you prefer to focus on research or practice? Let's explore some options.
+[Student] I think I'd like to focus on both research and practice, honestly. I enjoy the blend of analytical work and hands-on experience.
+[Counselor[mistral_small_3_1_24b_8k]] Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends. How much do you enjoy practical, hands-on activities, such as building, repairing, or working with tools and concrete objects?
+[Student] I enjoy that quite a bit, especially when I get to work with my hands.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy understanding how things, systems, or phenomena work?
+[Student] I find that very interesting; I like figuring out why something happens.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy researching information, analyzing problems, and reasoning logically?
+[Student] I like that a lot. I've been doing it with my research projects during my undergraduate years, working alongside professors in the field.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy expressing ideas or emotions through creative forms such as writing, art, music, or design?
+[Student] I really like that. It helps me express myself in a way that words sometimes can't.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy experimenting and creating something new from open-ended ideas?
+[Student] I like that a lot; I find it very rewarding to see where my ideas take me.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy working closely with people in a helping, supportive, or listening role?
+[Student] I find that very fulfilling and important.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy proposing ideas, taking initiative, and organizing projects or activities?
+[Student] I like that a bit, but I prefer to focus on one thing at a time.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy keeping activities ordered, planned, and under control?
+[Student] I like to keep things organized but I also appreciate a bit of spontaneity.
+[Counselor[mistral_small_3_1_24b_8k]] I suggest these options: 1. Gabriele d'Annunzio University of Chieti-Pescara | [0685] PSYCHOLOGY 2. Gabriele d'Annunzio University of Chieti-Pescara | [687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE Choose one option by number.
+[Student] I will choose option 1. Do you think I could handle a demanding technical course?
+[Counselor[mistral_small_3_1_24b_8k]] Yes, based on your background in research projects and your interest in understanding how things work and analyzing problems.
+[Student] Would you recommend focusing on a technical program or a program oriented toward humanities?
+[Counselor[mistral_small_3_1_24b_8k]] a program oriented toward humanities
+[Student] Why do you think that choice would suit me?
+[Counselor[mistral_small_3_1_24b_8k]] This program aligns well with your interest in both research and practical experience. It offers a strong theoretical foundation while integrating applied methodologies and hands-on tools for psychological investigation, which should appeal to your investigative and social tendencies. The program's focus on cognitive, developmental, and social psychology, as well as work and organizations, provides a broad range of topics that can help you deepen your understanding of evidence-based therapies and gain practical experience in clinical settings.
+[Student] Do you think I would feel comfortable leading a group project?
+[Counselor[mistral_small_3_1_24b_8k]] Yes, given your interest in understanding how things work and analyzing problems.
+[Student] Would you suggest I take a leadership role now or focus on supporting tasks first?
+[Counselor[mistral_small_3_1_24b_8k]] focus on supporting tasks first
+[Student] Why do you think one option is more suitable for me?
+[Counselor[mistral_small_3_1_24b_8k]] The program in Psychology at Gabriele d'Annunzio University of Chieti-Pescara suits your investigative and social tendencies well. The curriculum's strong theoretical foundation, along with its applied methodologies and practical tools for psychological investigation, aligns with your interest in understanding how things work and analyzing problems. This focus on cognitive, developmental, and social psychology, as well as work and organizations, will help you deepen your understanding of evidence-based therapies and gain practical experience in clinical settings, all while staying close to Central Italy.
+[Student] Do you think my previous studies have adequately prepared me for university-level courses?
+[Counselor[mistral_small_3_1_24b_8k]] Yes, your background in research projects alongside esteemed professors should serve you well.
+[Student] Would you suggest I take advanced classes immediately or start with introductory modules?
+[Counselor[mistral_small_3_1_24b_8k]] start with introductory modules
+[Student] Why do you think that approach fits my preparation?
+[Counselor[mistral_small_3_1_24b_8k]] The program in Psychology at Gabriele d'Annunzio University of Chieti-Pescara is designed to equip students with advanced cognitive, methodological, and operational tools across several key areas. This aligns well with your background in research projects and your investigative tendencies. The curriculum's strong theoretical foundation, combined with applied methodologies and practical tools for psychological investigation, will build upon the skills you've developed during your undergraduate years working alongside professors. Additionally, the program’s focus on cognitive, developmental, and social psychology, as well as work and organizations, should appeal to your interest in understanding how things work and analyzing problems.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] Recap: You have a strong academic background and practical experience working with professors on research projects. The Psychology program at Gabriele d'Annunzio University of Chieti-Pescara will suit you well. RIASEC: IAS Next steps: 1. review the official course plan and admission requirements 2. verify costs, location, commuting, or housing constraints 3. prepare documents, portfolio, or prerequisite review Goodbye: Have a great day!
+[Student] Goodbye
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "center"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "undergraduate",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "undergraduate",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "bachelor's",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        -1
+      ]
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "center"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "undergraduate",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "undergraduate",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "bachelor's",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          -1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "undergraduate",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Social"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - Gabriele d'Annunzio University of Chieti-Pescara | [0685] PSYCHOLOGY",
+  "shown_options": [
+    "Gabriele d'Annunzio University of Chieti-Pescara | [0685] PSYCHOLOGY",
+    "Gabriele d'Annunzio University of Chieti-Pescara | [687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE"
+  ],
+  "source_turn": 14
+}
+[INVALID_PROTOCOL] missing_counselor_wrapup_recap

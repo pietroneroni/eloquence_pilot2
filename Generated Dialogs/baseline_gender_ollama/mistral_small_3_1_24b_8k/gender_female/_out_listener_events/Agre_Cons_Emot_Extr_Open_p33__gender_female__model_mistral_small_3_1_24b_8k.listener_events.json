@@ -1,0 +1,81 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "Liceo Classico",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          1,
+          2,
+          1,
+          1,
+          0
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]

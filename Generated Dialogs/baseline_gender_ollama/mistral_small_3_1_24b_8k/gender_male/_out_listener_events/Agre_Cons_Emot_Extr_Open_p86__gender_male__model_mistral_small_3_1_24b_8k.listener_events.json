@@ -1,0 +1,71 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "central Italy"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q5",
+    "source_turn": 9
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q6",
+    "source_turn": 10
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          2,
+          2,
+          2,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]

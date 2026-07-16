@@ -1,0 +1,246 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p201.json gender_condition=female model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12363
+[LANG] dialog=english rag=eng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[dialog_id] 1279d249-5e2e-4003-a761-7b1905f71bea
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12363
+--- Dialogue Begins ---
+[Student] Hello there. I hope you can help me figure out what program to take at university? I just graduated from high school in Central Italy and I think I want to study something related to technology since that's where the future is heading but I'm not sure which exact program would be best for me. I've always liked understanding how things work, and I like helping people. Maybe I could combine these interests somehow? Any thoughts on what might suit someone like me?
+[Counselor[mistral_small_3_1_24b_8k]] Hello! As a University Counselor, I assist students in choosing programs based on your background, interests, aptitudes, and constraints. There are many options that can help you combine these interests. For example, Biomedical/Healthcare Technology is an option. But if you want to focus more on helping people through mental health or clinical practices, Psychology might be better for you. What do you think?
+[Student] I appreciate the suggestion of Biomedical and Healthcare Technology because it seems relevant to what I've always enjoyed doing: understanding how things work and helping others, but I'm not sure if psychology could fit me. I like working with people, but I don't know if counseling is my strong suit.
+[Counselor[mistral_small_3_1_24b_8k]] Given that you are interested in technology as well as people, one option for combining these interests might be a program in Health Technology which focuses on how to use tech and tools to help people. Which subjects or university areas catch your interest the most?
+[Student] I am curious about what it takes to keep systems running smoothly. And I'd like to find out more about computer science and networking, but I'm not sure exactly which subjects would be best for me because I haven't decided yet.
+[Counselor[mistral_small_3_1_24b_8k]] To determine the exact program that aligns with your interests in understanding how technology works, I suggest considering a degree in Computer Science or Engineering. This field covers both software development as well as infrastructure management. What do you think about starting with an undergraduate degree in one of these areas?
+[Student] I’m not sure. It seems like it would be hard to study because there is so much to learn.
+[Counselor[mistral_small_3_1_24b_8k]] Since your interest is in computer science, you will find out that Computer Science and Engineering programs are quite structured and can offer a lot of support for students. For which Italian macro-area do you want to start looking at universities?
+[Student] I’m not sure. I'd like to go to school somewhere that’s well-organized and has clear procedures.
+[Counselor[mistral_small_3_1_24b_8k]] Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends. How much do you enjoy practical, hands-on activities, such as building, repairing, or working with tools and concrete objects?
+[Student] Somewhat.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy understanding how things, systems, or phenomena work?
+[Student] I like this a lot.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy researching information, analyzing problems, and reasoning logically?
+[Student] I like that a lot.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy expressing ideas or emotions through creative forms such as writing, art, music, or design?
+[Student] I’m not sure. It depends on how structured it is because I’m not so creative and maybe I could like it a little but only if it’s well-organized.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy experimenting and creating something new from open-ended ideas?
+[Student] It depends: I'm not sure I like it very much. It seems challenging, but I might like it a little if someone guides me through it.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy working closely with people in a helping, supportive, or listening role?
+[Student] I like that a lot.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy proposing ideas, taking initiative, and organizing projects or activities?
+[Student] I'm not sure if I like this a lot.
+[Counselor[mistral_small_3_1_24b_8k]] How much do you enjoy keeping activities ordered, planned, and under control?
+[Student] I like this a lot.
+[Counselor[mistral_small_3_1_24b_8k]] Before I recommend programs, could you clarify your current or most recent formal education?
+[Student] I don't know. I didn't decide about my further studies.
+[Counselor[mistral_small_3_1_24b_8k]] Before I recommend programs, could you clarify your current or most recent formal education?
+[Student] I have just finished high school in Central Italy. Goodbye.
+[Counselor[mistral_small_3_1_24b_8k]] I suggest this option: 1. University of Salerno | [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE Choose one option by number.
+[Student] I will choose option 1. Do you think I could handle a demanding technical course?
+[Counselor[mistral_small_3_1_24b_8k]] Yes. You can definitely handle a demanding technical course, particularly one in [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE because of your interest in understanding how things work and how to keep systems running smoothly.
+[Student] Would you recommend focusing on a technical program or a program oriented toward humanities?
+[Counselor[mistral_small_3_1_24b_8k]] focusing on a technical program
+[Student] Why do you think that choice would suit me?
+[Counselor[mistral_small_3_1_24b_8k]] Given your interests in technology and helping others, [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE at the University of Salerno is an excellent fit. You enjoy understanding how things work and keeping systems running smoothly. This course will allow you to develop these skills in a technical environment while also applying them to help people through medical technology. The program focuses on engineering and computer science, which aligns well with your preferences for structured activities and logical reasoning. The course includes subjects like Analisi Matematica 1, which are fundamental for developing the analytical and technical skills you need. You seem to be interested in working closely with people in a helping role, so this course will allow you to apply these interests within a structured and technical field. Your interest in understanding how systems work and keeping things running smoothly fits well with the structured nature of engineering programs. You may also appreciate the focus on logical reasoning and problem-solving that is central to computer science and engineering.
+[Student] Do you think I would feel comfortable leading a group project?
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "inferred": {
+      "field_of_interest": [
+        "health_technology",
+        "psychology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        -1,
+        0,
+        2,
+        0,
+        2
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "health_technology",
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 14
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          -1,
+          0,
+          2,
+          0,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 15
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "qa_yesno",
+    "source_turn": 16
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": null,
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Social",
+        "Investigative",
+        "Conventional"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Salerno | [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE",
+  "shown_options": [
+    "University of Salerno | [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE"
+  ],
+  "source_turn": 16
+}
+[INVALID_PROTOCOL] missing_fixed_followup_questions=5

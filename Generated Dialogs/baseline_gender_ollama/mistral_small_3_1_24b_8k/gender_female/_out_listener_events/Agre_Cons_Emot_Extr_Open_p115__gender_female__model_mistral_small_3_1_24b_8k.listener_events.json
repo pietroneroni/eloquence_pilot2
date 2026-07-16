@@ -1,0 +1,62 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "master's in data science",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "master's in data science",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q3",
+    "source_turn": 3
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          2,
+          2,
+          2,
+          1,
+          2,
+          1,
+          2,
+          2
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "qa_choice",
+    "source_turn": 18
+  }
+]

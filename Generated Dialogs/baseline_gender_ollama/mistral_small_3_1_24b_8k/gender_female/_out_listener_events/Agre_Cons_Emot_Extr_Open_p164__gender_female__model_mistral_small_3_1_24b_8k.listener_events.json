@@ -1,0 +1,64 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "life_sciences",
+          "environmental_engineering",
+          "physical_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q5",
+    "source_turn": 9
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "environmental_engineering"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          2,
+          2,
+          1,
+          0,
+          -1,
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 14
+  }
+]

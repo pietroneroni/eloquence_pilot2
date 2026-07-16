@@ -1,0 +1,47 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "secondary school",
+        "region": "south"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "environmental_engineering",
+          "life_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          1,
+          0,
+          1,
+          -1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 14
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "qa_choice",
+    "source_turn": 22
+  }
+]

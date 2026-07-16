@@ -1,0 +1,41 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p130.json gender_condition=female model=mistral_small_3_1_24b_8k
+[MODEL] counselor=ollama:mistral-small3.1-24b-8k
+[MODEL] student=ollama:mistral-small3.1-24b-8k
+[SEED] 12349
+[LANG] dialog=english rag=eng
+
+[dialog_id] ae46e0b5-bc4a-41b7-8fe5-d76b2e2bfa88
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-8k', 'seed': 13, 'num_ctx': 8192, 'temperature': 0.8}
+[seed] 12349
+--- Dialogue Begins ---
+[Student] Hi there. I'm currently based in Northern Italy and looking to further my education by choosing a university program that aligns well with my interests. I've always been drawn to understanding how things work and enjoy practical activities. I'd like some advice on the best path forward for me.
+[Counselor[mistral_small_3_1_24b_8k]] Hello! I'm here to help students choose university programs based on their background, interests, aptitudes, and constraints. Which program are you studying now or did you study most recently?
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[]
+
+[Listener events | turn and phase]
+[]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": null,
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": null,
+      "gender": "female",
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "patch_count": 0
+}
+
+[Selected option | deterministic protocol state]
+null
+[INVALID_PROTOCOL] missing_fixed_followup_questions=9

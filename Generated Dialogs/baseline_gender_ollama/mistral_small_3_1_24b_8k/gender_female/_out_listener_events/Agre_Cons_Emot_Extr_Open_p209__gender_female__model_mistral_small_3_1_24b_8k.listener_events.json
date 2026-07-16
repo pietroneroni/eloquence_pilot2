@@ -1,0 +1,38 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          2,
+          2,
+          2,
+          1,
+          2,
+          0,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 13
+  }
+]

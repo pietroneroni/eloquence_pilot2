@@ -9,7 +9,6 @@ from typing import Any, Dict, List
 
 from .student import Student
 
-from .annotation_compact import compact_annotation
 from .social_practice import get_social_practice
 
 # -----------------------------
@@ -86,40 +85,15 @@ def _visible_name_for_gender(record: Dict[str, Any], features: Dict[str, Any], g
     seed = json.dumps(record, ensure_ascii=False, sort_keys=True) + "|" + _normalize_gender_value(gender)
     return _det_choice(seed, pool)
 
-# Token geografici rumorosi / incoerenti che non devono guidare il personaggio
-_CONFLICTING_GEO_TOKENS = [
-    "Midwest",
-    "Mid-West",
-    "Mideast",
-    "Mid-East",
-    "Northeast",
-    "North-East",
-    "Northwest",
-    "North-West",
-    "Southeast",
-    "South-East",
-    "Southwest",
-    "South-West",
-    "USA",
-    "United States",
-]
-
-_BG_HAS_SCHOOL_RX = re.compile(
-    r"\b(high\s*school|liceo|istituto\s+tecnico|istituto\s+professionale|diploma)\b",
+_BG_HAS_FORMAL_EDU_RX = re.compile(
+    r"\b(high\s*school|liceo|istituto\s+tecnico|istituto\s+professionale|diploma|"
+    r"bachelor(?:'s)?(?:\s+degree)?|undergraduate\s+degree)\b",
     re.IGNORECASE,
 )
-
-# Pattern semplici per frasi geografiche che vogliamo rendere coerenti col JSON
-_LOCATION_CLAUSE_PATTERNS = [
-    re.compile(
-        r"\b(?:i(?:'m| am)\s+from|i(?:'m| am)\s+based\s+in|i\s+live\s+in|i\s+grew\s+up\s+in|i\s+was\s+born\s+in)\s+[^.!?]+",
-        re.IGNORECASE,
-    ),
-    re.compile(
-        r"\bfrom\s+(?:a\s+|an\s+|the\s+)?(?:small\s+town|town|city|rural\s+county|county|area|region)?[^.!?]{0,80}",
-        re.IGNORECASE,
-    ),
-]
+_BACHELOR_EDU_RX = re.compile(
+    r"\b(?:bachelor(?:'s)?(?:\s+degree)?|undergraduate\s+degree)\b",
+    re.IGNORECASE,
+)
 
 def _lang_name(dialog_language: str = "English") -> str:
     return "Italian" if (dialog_language or "").strip().lower().startswith("it") else "English"
@@ -134,30 +108,6 @@ def _det_choice(seed: str, options: List[str]) -> str:
     return options[int(h[:8], 16) % len(options)]
 
 
-def _replace_conflicting_tokens(text: str, display_region: str) -> str:
-    t = text
-    for tok in _CONFLICTING_GEO_TOKENS:
-        t = re.sub(rf"\b{re.escape(tok)}\b", display_region, t, flags=re.IGNORECASE)
-    return t
-
-
-def _normalize_location_clauses(text: str, display_region: str) -> str:
-    t = text
-
-    # Se ci sono frasi tipo "I'm from ...", "I grew up in ...", ecc.,
-    # le rendiamo coerenti con la regione del JSON.
-    replacements = [
-        f"I am based in {display_region}",
-        f"I am from {display_region}",
-    ]
-
-    for i, rx in enumerate(_LOCATION_CLAUSE_PATTERNS):
-        repl = replacements[min(i, len(replacements) - 1)]
-        t = rx.sub(repl, t)
-
-    return t
-
-
 def normalize_background_geography(text: str, *, authoritative_region: str = "") -> str:
     t = (text or "").strip()
     region = _clean_json_region(authoritative_region)
@@ -166,22 +116,17 @@ def normalize_background_geography(text: str, *, authoritative_region: str = "")
         return t
 
     display_region = JSON_REGION_TO_BIO_PHRASE[region]
+    location = f"- Location: I am based in {display_region}."
+    return f"{t}\n{location}" if t else location
 
-    # 1) sostituisci token incoerenti tipo Midwest/USA
-    t = _replace_conflicting_tokens(t, display_region)
 
-    # 2) rendi coerenti eventuali clausole geografiche libere nella biography
-    t = _normalize_location_clauses(t, display_region)
-
-    # 3) aggiungi una frase finale autorevole, se non già presente
-    low = t.lower()
-    if display_region.lower() not in low:
-        t = t.rstrip()
-        if t and not t.endswith((".", "!", "?")):
-            t += "."
-        t += f" I am based in {display_region}."
-
-    return t
+def _student_stage_background(annotation: str) -> str:
+    """Map an adult source biography to the academic stage used by this experiment."""
+    if _BACHELOR_EDU_RX.search(annotation or ""):
+        return "- Formal education: I completed a bachelor's degree."
+    if _env_flag("SDIALOG_ADD_SYNTHETIC_SCHOOL_TYPE", "0"):
+        return ""
+    return "- Formal education: I completed high school."
 
 
 # -----------------------------
@@ -368,12 +313,12 @@ def _extract_student_fields(record: Dict[str, Any], dialog_language: str = "Engl
         name = _visible_name_for_gender(record, features, gender)
     region = _clean_json_region(features.get("region"))
 
-    background = (
-        normalize_background_geography(
-            compact_annotation(annotation),
-            authoritative_region=region,
-        )
-        if annotation else ""
+    # Source annotations may describe a later adult life stage. The runtime
+    # persona receives only the experiment's student stage and structured region;
+    # BFI and RIASEC remain the sources for personality and interests.
+    background = normalize_background_geography(
+        _student_stage_background(annotation),
+        authoritative_region=region,
     )
 
     if background and not background.endswith((".", "!", "?")):
@@ -383,7 +328,7 @@ def _extract_student_fields(record: Dict[str, Any], dialog_language: str = "Engl
     # Non sintetizzare un tipo di scuola usando il genere: creerebbe una
     # correlazione artificiale tra attributo protetto e background scolastico.
     if (
-        not _BG_HAS_SCHOOL_RX.search(background or "")
+        not _BG_HAS_FORMAL_EDU_RX.search(background or "")
         and _env_flag("SDIALOG_ADD_SYNTHETIC_SCHOOL_TYPE", "0")
     ):
         bg_region = JSON_REGION_TO_BIO_PHRASE.get(region, "Italy")

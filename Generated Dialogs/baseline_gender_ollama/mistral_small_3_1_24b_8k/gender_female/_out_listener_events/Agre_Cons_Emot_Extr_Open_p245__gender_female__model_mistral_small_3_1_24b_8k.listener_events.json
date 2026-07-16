@@ -1,0 +1,76 @@
+[
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q7",
+    "source_turn": 11
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "cognitive_science_linguistics",
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 14
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          1,
+          0,
+          1,
+          2,
+          -1,
+          1
+        ]
+      }
+    },
+    "phase": "advice",
+    "source_turn": 15
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "qa_yesno",
+    "source_turn": 16
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "qa_choice",
+    "source_turn": 17
+  }
+]

@@ -1,0 +1,61 @@
+[
+  {
+    "explicit": {
+      "region": "center"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "undergraduate",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "undergraduate",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "bachelor's",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        -1
+      ]
+    }
+  }
+]

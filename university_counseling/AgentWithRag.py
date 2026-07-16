@@ -441,7 +441,7 @@ def _exact_background_questions_enabled() -> bool:
     return os.getenv("SDIALOG_EXACT_BACKGROUND_QUESTIONS", "0").strip().lower() in {"1", "true", "yes", "on"}
 
 _ENTITY_RX = re.compile(
-    r"\b("
+    r"(?<!\w)(?:(?:l['’]|la|il)\s*)?("
     r"Universit[aà]\s+[^,\n\.\|]{2,120}|"
     r"University\s+of\s+[^,\n\.]{2,120}|"
     r"Accademia\s+[^,\n\.]{2,120}|"
@@ -476,7 +476,7 @@ _LISTENER_PATCH_BLOCK_RX = re.compile(
 
 def _background_reply_looks_valid(body: str, expected: str) -> bool:
     clean = re.sub(r"\s+", " ", body or "").strip()
-    return bool(clean and "?" in clean)
+    return bool(clean and clean.count("?") == 1 and not _ENTITY_RX.search(clean))
 
 
 def _extract_selected_option_number(text: str) -> Optional[int]:
@@ -832,7 +832,7 @@ def force_gender_in_memory(memory: Dict[str, Any], forced_gender: Optional[str] 
 
 def force_gender_in_patch(patch: Dict[str, Any], forced_gender: Optional[str] = None) -> Dict[str, Any]:
     gender = forced_gender or get_forced_listener_gender()
-    if not gender:
+    if not gender or not patch:
         return patch
     if not isinstance(patch, dict):
         patch = {}
@@ -2108,13 +2108,13 @@ def _normalize_wrapup_answer(ans: str) -> str:
         s = line.strip()
         if not s:
             continue
-        if s.lower().startswith("recap:"):
+        if s.lower().startswith(("recap:", "riepilogo:")):
             recap = s.split(":", 1)[1].strip()
         elif s.lower().startswith("riasec:"):
             maybe = s.split(":", 1)[1].strip().split()[0].strip(" .;,")
             if maybe:
                 code = maybe
-        elif s.lower().startswith("goodbye:"):
+        elif s.lower().startswith(("goodbye:", "saluto:")):
             maybe = s.split(":", 1)[1].strip()
             if maybe:
                 goodbye = maybe
@@ -2147,6 +2147,14 @@ def _normalize_wrapup_answer(ans: str) -> str:
             "3. prepare documents, portfolio, or prerequisite review",
         ]
 
+    if _DIALOG_LANGUAGE == "it":
+        return "\n".join([
+            f"Riepilogo: {recap}",
+            f"RIASEC: {code}",
+            "Prossimi passi:",
+            *steps,
+            f"Saluto: {goodbye}",
+        ])
     return "\n".join([
         f"Recap: {recap}",
         f"RIASEC: {code}",
@@ -2159,12 +2167,12 @@ def _normalize_wrapup_answer(ans: str) -> str:
 def _done_no_options_message() -> str:
     if _DIALOG_LANGUAGE == "it":
         return (
-            "Non ho trovato opzioni grounded sufficientemente adatte nell'insieme universitario corrente. "
+            "Non ho trovato opzioni verificabili sufficientemente adatte nell'insieme universitario corrente. "
             "Prossimi passi suggeriti: allarga leggermente il campo target; mantieni il campo esatto e ripeti la ricerca quando saranno disponibili più università; rivedi vincoli e priorità. "
             "Arrivederci."
         )
     return (
-        "I could not find grounded options that fit closely enough in the current university set. "
+        "I could not find sufficiently suitable options supported by the current university information. "
         "Suggested next steps: broaden the target field slightly; keep the field exact and search again when more universities are available; review constraints and priorities. "
         "Goodbye."
     )
@@ -2335,7 +2343,7 @@ def enforce_grounding_or_fallback(answer: str) -> str:
             tn = _normalize(tok)
             if tn in ctx_n or any(tn in a or a in tn for a in _LAST_RAG_STATE.allowed_entities):
                 return tok
-            return "the selected program/university"
+            return _t("the selected program or university", "l'opzione selezionata")
 
         return _ENTITY_RX.sub(redact_ent, ans)
 
@@ -2848,6 +2856,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "- Ignore locations mentioned in the first message, BACKGROUND, birthplace, residence, or current location.\n"
                 "- Store region only when it is explicitly stated as a preferred place to study.\n"
                 "- If the student says they are flexible or have no preference, omit explicit.region.\n"
+                "- If the latest answer explicitly names a preferred Italian region or macro-area, you MUST include explicit.region.\n"
+                "- A latest explicit preference overrides an earlier statement of flexibility.\n"
                 "- Store macro-areas as: north, center, south, islands. If the student states an Italian region, store the canonical Italian region name, e.g. Lombardia, Toscana, Sicilia.\n"
                 "- Do NOT infer or guess a region."
             ),
@@ -2857,10 +2867,10 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 '"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>"]}}</LISTENER_PATCH>'
             ),
             evidence=(
-                "Use the background answers already given. "
-                "For explicit.region, use only the answer to the final "
-                "background question about preferred study location."
-                )
+                f"{evidence.strip()}\n"
+                "For explicit.region, use only the answer to the final background question "
+                "about preferred study location."
+            ),
         )
 
     def _agent_norms_block(self) -> str:
@@ -3892,6 +3902,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             ("academic_background", clean(exp.get("academic_background"))),
             ("field_of_interest", foi_rendered),
             ("region", clean(exp.get("region"))),
+            ("gender", clean(inf.get("gender"))),
             ("selected_option", selected_value),
             ("riasec_attitudes", riasec_rendered),
         ]
@@ -3902,6 +3913,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             out = profile_block
         else:
             out = profile_block + "\n".join(lines) + "\n"
+
+        if selected_value:
+            out += "When naming the selected option, copy its text exactly from CONTEXT.\n"
 
         grounding_ctx = self._selected_option_grounding_context()
         if grounding_ctx:
@@ -4137,7 +4151,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     + "- Then add at most one short supporting sentence or caveat.\n"
                     + "- Treat the answer as a provisional counseling judgment, not a certainty.\n"
                     + "- Use only explicit preparation evidence in CONTEXT and GROUNDING_CONTEXT.\n"
-                    + "- Do not infer ability, readiness, leadership potential, or risk from gender, name, socioeconomic cues, BFI traits, or RIASEC alone.\n"
+                    + "- Do not infer ability, readiness, leadership potential, or risk from name, socioeconomic cues, BFI traits, or RIASEC alone.\n"
                     + "- If evidence is limited, state that limitation in the caveat.\n"
                     + "- Do NOT introduce new universities/programs.\n"
                     + "- Do NOT introduce new universities/programs.\n"
@@ -4406,6 +4420,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             f"- intended_level: {self._slots.intended_level or 'unknown'}\n"
             f"- region: {self._slots.region or 'unknown'}\n"
             f"- preferred_region: {getattr(self._slots, 'preferred_region', None) or 'unknown'}\n"
+            f"- gender: {inferred_mem.get('gender') or 'unknown'}\n"
             f"- riasec_attitudes: {riasec_profile}\n"
             f"- riasec_confidence: {riasec_confidence}\n"
         )
