@@ -438,7 +438,7 @@ _SINGLE_OPTION_ACCEPT_RX = re.compile(
 
 
 def _exact_background_questions_enabled() -> bool:
-    return os.getenv("SDIALOG_EXACT_BACKGROUND_QUESTIONS", "0").strip().lower() in {"1", "true", "yes", "on"}
+    return os.getenv("SDIALOG_EXACT_BACKGROUND_QUESTIONS", "1").strip().lower() in {"1", "true", "yes", "on"}
 
 _ENTITY_RX = re.compile(
     r"(?<!\w)(?:(?:l['’]|la|il)\s*)?("
@@ -2338,14 +2338,30 @@ def enforce_grounding_or_fallback(answer: str) -> str:
         return ans
 
     if phase in {"qa_why", "wrapup"}:
-        def redact_ent(m: re.Match) -> str:
-            tok = m.group(0)
-            tn = _normalize(tok)
-            if tn in ctx_n or any(tn in a or a in tn for a in _LAST_RAG_STATE.allowed_entities):
-                return tok
-            return _t("the selected program or university", "l'opzione selezionata")
+        clean_sentences: List[str] = []
+        normalized_ungrounded = [_normalize(x) for x in ungrounded]
 
-        return _ENTITY_RX.sub(redact_ent, ans)
+        for sentence in _split_sentences_conservatively(ans):
+            sentence_norm = _normalize(sentence)
+            if any(entity in sentence_norm for entity in normalized_ungrounded):
+                continue
+            clean_sentences.append(sentence)
+
+        cleaned = " ".join(clean_sentences).strip()
+        if cleaned:
+            return cleaned
+
+        return _t(
+            "This recommendation is based on the student's stated background, interests, preferences, and available verified information.",
+            "Questa raccomandazione si basa sul background, sugli interessi, sulle preferenze dichiarate e sulle informazioni verificate disponibili.",
+        )
+
+    if phase in {"qa_yesno", "qa_other", "qa_selected"}:
+        return _t(
+            "I do not have enough verified information to assess that reliably.",
+            "Non ho informazioni sufficienti per valutarlo in modo affidabile.",
+        )
+
 
     options = list(_LAST_RAG_STATE.advice_options or [])
     if not options:
@@ -2833,7 +2849,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
     def _background_slot_patch_request(self, evidence: str) -> str:
         return self._listener_patch_request(
-            targets="- explicit.academic_background\n- inferred.field_of_interest\n- explicit.region",
+            targets="- explicit.academic_background\n- inferred.field_of_interest\n",
             rules=(
                 "Rules for explicit.academic_background:\n"
                 "- If the student states any current or completed formal education, you MUST include academic_background.\n"
@@ -2850,27 +2866,13 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "- Do not omit academic_background when formal education is explicitly present.\n"
                 "- If no formal education is explicitly stated, omit academic_background.\n"
                 "\n"
-                + FIELD_OF_INTEREST_RULES +
-                "Rules for explicit.region:\n"
-                "- Use ONLY the student's answer to the background question about the preferred study location.\n"
-                "- Ignore locations mentioned in the first message, BACKGROUND, birthplace, residence, or current location.\n"
-                "- Store region only when it is explicitly stated as a preferred place to study.\n"
-                "- If the student says they are flexible or have no preference, omit explicit.region.\n"
-                "- If the latest answer explicitly names a preferred Italian region or macro-area, you MUST include explicit.region.\n"
-                "- A latest explicit preference overrides an earlier statement of flexibility.\n"
-                "- Store macro-areas as: north, center, south, islands. If the student states an Italian region, store the canonical Italian region name, e.g. Lombardia, Toscana, Sicilia.\n"
-                "- Do NOT infer or guess a region."
+                + FIELD_OF_INTEREST_RULES
             ),
             schema_example=(
-                '<LISTENER_PATCH>{"explicit":{"academic_background":"<short education summary>",'
-                '"region":"<north|center|south|islands>"},'
+                '<LISTENER_PATCH>{"explicit":{"academic_background":"<short education summary>"},'
                 '"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>"]}}</LISTENER_PATCH>'
             ),
-            evidence=(
-                f"{evidence.strip()}\n"
-                "For explicit.region, use only the answer to the final background question "
-                "about preferred study location."
-            ),
+            evidence=evidence,
         )
 
     def _agent_norms_block(self) -> str:
@@ -3922,7 +3924,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             out += (
                 "\nGROUNDING_CONTEXT FOR SELECTED OPTION:\n"
                 "Use this as the only source for factual course/program details. "
-                "If a detail is absent, say that it is not present in the retrieved context.\n"
+                 "If a detail is absent, say naturally that it cannot be verified"
+                 "from the available information; do not mention retrieval, "
+                 "context windows, or RAG.\n"
                 f"{grounding_ctx}\n"
             )
         return out
@@ -4024,7 +4028,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "Goodbye: <short friendly goodbye>\n"
                 "Rules for next steps:\n"
                 "- Do NOT introduce new universities/programs.\n"
-                "- Do NOT invent exact deadlines, orientation sessions, coordinators, networks, or services unless they were in the retrieved context.\n"
+                "- Do NOT invent exact deadlines, orientation sessions, coordinators, "
+                "networks, or services unless they are explicitly present in "
+                "GROUNDING_CONTEXT.\n"
                 "- Do NOT omit item 1, 2, or 3.\n"
             )
         if self._selected_option_committed_this_turn and self._advice_given and "?" not in (student_utt or ""):
@@ -4098,10 +4104,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     return _ret(
                         "PHASE: Q&A\n"
                         "QUESTION TYPE: CHOICE, not yes/no.\n"
-                        + self._qa_context_block() +
-                        "TASK:\n"
+                        + self._qa_context_block()
+                        + f"CURRENT STUDENT QUESTION:\n{q_for_qa}\n"
+                        + "TASK:\n"
                         + language_rule +
                         f"- Reply with ONLY ONE of these exact strings: '{ch[0]}' OR '{ch[1]}'.\n"
+                        "- Answer the exact choice in CURRENT STUDENT QUESTION.\n"
+                        "- If it directly follows a related yes/no probe, do not "
+                        "contradict your immediately previous answer.\n"
+                        "- If the previous answer expressed uncertainty or insufficient "
+                        "evidence, prefer the more cautious alternative.\n"
                         "- Do NOT answer Yes or No.\n"
                         "- Output EXACTLY that selected string and nothing else.\n"
                     )
@@ -4145,15 +4157,19 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "PHASE: Q&A\n"
                     "QUESTION TYPE: YES/NO suitability/feasibility/readiness/risk.\n"
                     + self._qa_context_block()
+                     + f"CURRENT STUDENT QUESTION:\n{q_for_qa}\n"
                     + "TASK:\n"
                     + language_rule
                     + yes_no_start_rule
                     + "- Then add at most one short supporting sentence or caveat.\n"
+                    + "- Answer the exact proposition in CURRENT STUDENT QUESTION; "
+                    "do not answer a different property of the course.\n"
                     + "- Treat the answer as a provisional counseling judgment, not a certainty.\n"
+                    + "- Distinguish stated interest from demonstrated ability or "
+                    "preparation; interest alone is not evidence of capability.\n"
                     + "- Use only explicit preparation evidence in CONTEXT and GROUNDING_CONTEXT.\n"
                     + "- Do not infer ability, readiness, leadership potential, or risk from name, socioeconomic cues, BFI traits, or RIASEC alone.\n"
                     + "- If evidence is limited, state that limitation in the caveat.\n"
-                    + "- Do NOT introduce new universities/programs.\n"
                     + "- Do NOT introduce new universities/programs.\n"
                     + "- Do NOT ask the student any question.\n"
                 )
@@ -4201,6 +4217,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "- Then ask ONE background question based on the canonical question below.\n"
                 "- Do not copy the canonical question exactly; paraphrase it naturally while preserving its meaning.\n"
                 "- Ask only one visible question.\n"
+                "- Do not ask about study location in this turn. "
+                "Study-location preference is collected only by the final background question.\n"
                 f"PARAPHRASING POLICY: {self._background_question_instruction}\n"
                 f"CANONICAL QUESTION FROM SOCIAL_PRACTICE:\n{q}\n"
                 + patch
@@ -4213,6 +4231,13 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             self._bg_i += 1
             if self._bg_i < len(self.BG_QUESTIONS):
                 q = self.BG_QUESTIONS[self._bg_i]
+                location_guard = (
+                    "- Do not ask about study location in this turn. "
+                    "It is collected only by the final background question.\n"
+                    if self._bg_i < len(self.BG_QUESTIONS) - 1
+                        else ""
+                    )
+
                 update_last_rag_state("", phase=f"background_q{self._bg_i + 1}", expected_verbatim=q)
                 patch = self._background_slot_patch_request(
                     "Use the student's latest answer and any earlier background answers already given in this conversation."
@@ -4221,6 +4246,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "PHASE: ACQUIRE ACADEMIC BACKGROUND\n"
                     "Visible reply: respond naturally in 1–2 short sentences, then ask ONE background question based on the canonical question below.\n"
                     "Do not copy the canonical question exactly; paraphrase it naturally while preserving its meaning. Ask only one visible question.\n"
+                    + location_guard +
                     "After the visible reply, append the hidden listener patch.\n"
                     f"PARAPHRASING POLICY: {self._background_question_instruction}\n"
                     f"CANONICAL QUESTION FROM SOCIAL_PRACTICE:\n{q}\n"
@@ -4243,32 +4269,24 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
                 if self._riasec_i == 1:
                     bg_patch = self._listener_patch_request(
-                        targets="- explicit.academic_background\n- inferred.field_of_interest",
-                        rules=(
-                            "Rules for explicit.academic_background:\n"
-                            "- If the student states any current or completed formal education, you MUST include academic_background.\n"
-                            "- academic_background must summarize only formal education, not jobs, hobbies, internships, goals, or personal interests.\n"
-                            "- Include education level + field when available.\n"
-                            "- Prefer the current or most recent formal education.\n"
-                            "- Keep it short and normalized.\n"
-                            "- Examples:\n"
-                            "  - \"I am completing my master's in clinical psychology\" -> \"master's in clinical psychology\"\n"
-                            "  - \"I just finished Liceo Classico\" -> \"Liceo Classico\"\n"
-                            "  - \"I graduated from a Liceo Scientifico\" -> \"Liceo Scientifico\"\n"
-                            "  - \"I'm pursuing a bachelor's in environmental science\" -> \"bachelor's in environmental science\"\n"
-                            "  - \"I finished an Istituto Professionale in art and design\" -> \"Istituto Professionale in art and design\"\n"
-                            "- Do not omit academic_background when formal education is explicitly present.\n"
-                            "- If no formal education is explicitly stated, omit academic_background.\n"
-                            "\n"
-                            + FIELD_OF_INTEREST_RULES
-                        ),
-                        schema_example=(
-                            '<LISTENER_PATCH>{"explicit":{"academic_background":"high school"},'
-                            '"inferred":{"field_of_interest":["computer_science"]}}</LISTENER_PATCH>'
-                        ),
-                        evidence="Use the student's answers to the background questions already given in this conversation.",
-                    )
-
+                    targets="- explicit.region",
+                    rules=(
+                        "Rules for explicit.region:\n"
+                        "- Use only the latest student answer.\n"
+                        "- Store a region only when the student positively identifies it "
+                        "as a preferred or required study area.\n"
+                        "- Do not store locations mentioned only as excluded, rejected, "
+                        "negated, or contextual information.\n"
+                        "- If there is no single positive geographic preference that "
+                        "explicit.region can represent accurately, omit the field.\n"
+                        "- Store macro-areas as: north, center, south, islands. "
+                        "Otherwise use the canonical Italian region name.\n"
+                    ),
+                    schema_example=(
+                        '<LISTENER_PATCH>{"explicit":{"region":"north"}}</LISTENER_PATCH>'
+                    ),
+                    evidence=f"STUDENT_LATEST_MESSAGE:\n{student_utt}",
+                )
                 return (
                     "PHASE: GATHER APTITUDES (RIASEC)\n"
                     "Visible reply: for the first RIASEC item, show the introduction first; then ask the RIASEC question exactly as written. For later RIASEC items, ask only the exact question.\n"
@@ -4288,7 +4306,19 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 # emit the slot despite repeated explicit answers. Retrieval can still
                 # proceed from field/region/RIASEC; the logged memory will show that the
                 # academic slot remained unknown.
-                self._slots.academic_background = "unknown"
+                fallback_level = infer_intended_level_from_academic_background(
+                    student_utt
+                )
+                if fallback_level:
+                    self._slots.academic_background = student_utt.strip()
+                    self._slots.intended_level = fallback_level
+                else:
+                    self._finished = True
+                    self._flow_stage = "done"
+                    return _t(
+                        "I cannot safely recommend a degree level without verified formal education. Goodbye.",
+                        "Non posso consigliare in modo affidabile un livello di laurea senza un percorso formale verificato. Arrivederci.",
+                    )
             else:
                 self._academic_bg_clarification_count += 1
                 message = _t(
@@ -4412,7 +4442,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             riasec_profile = "unknown"
 
         riasec_confidence = inferred_mem.get("riasec_confidence") or "unknown"
-
+        riasec_evidence_for_ranking = ""
+        internal_riasec_step = ""
         student_profile_block = (
             "STUDENT PROFILE:\n"
             f"- academic_background: {self._slots.academic_background or 'unknown'}\n"
@@ -4442,11 +4473,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             internal_riasec_step = (
                 "INTERNAL RIASEC STEP (do not show):\n"
                 "- If riasec_attitudes is unknown but all 8 RIASEC answers are available, do NOT infer labels directly from biography or general impressions.\n"
-                "- First infer an internal valence vector for Q1-Q8 using the same scale used by the hidden listener patch:\n"
+                "- Compute exactly ONE internal valence vector for Q1-Q8 using the same scale used by the hidden listener patch:\n"
                 "  2 = strong liking; 1 = moderate liking; 0 = unclear/mixed/ability-only; -1 = dislike; -2 = strong dislike.\n"
                 "- Score each answer independently and locally: Q1 from A1 only, Q2 from A2 only, ..., Q8 from A8 only.\n"
                 "- Score preference/liking for the activity, not ability, talent, confidence, school performance, or career usefulness.\n"
                 "- Use only the answers to the 8 RIASEC questions.\n"
+                "- Reuse this exact same vector in inferred.riasec_question_valences in the hidden listener patch; do not recompute or alter it.\n"
                 "- Then use the following mapping only as a weak ranking signal:\n"
                 "  Q1 -> Realistic\n"
                 "  Q2 -> Investigative, with minor Realistic nuance only when concrete mechanisms/tools/systems are explicit\n"
@@ -4457,7 +4489,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "  Q7 -> Enterprising / Conventional nuance\n"
                 "  Q8 -> Conventional\n"
                 "- If the inferred profile is flat, mixed, or uncertain, treat RIASEC as low-confidence and use it only as a tie-breaker.\n"
-                "- The RIASEC labels used for ranking must be consistent with the hidden listener patch.\n\n"
+                "- The ranking and the stored listener result must therefore come from the same valence vector.\n\n"
             )
         final_top_n = max(1, min(int(self.final_top_n), 3, len(candidate_pool)))
         visible_option_template = "\n".join(
@@ -4475,13 +4507,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             + "<RAG_CONTEXT>\n"
             f"{retrieval.short_ctx}\n"
             + "</RAG_CONTEXT>\n\n"
+            + riasec_evidence_for_ranking
+            + internal_riasec_step
             + "DECISION ORDER:\n"
             + "1. intended_level compatibility.\n"
             + "2. exact preferred_region, then stated macro-area.\n"
             + "3. field_of_interest order: first label before later labels.\n"
             + "4. RIASEC only as a tie-breaker; skip it when unknown and keep it weak when confidence is low.\n"
             + "5. original candidate order as the final tie-breaker.\n"
-            + "Do not infer RIASEC again in this phase. "
+            + "If canonical riasec_attitudes are available, use them and do not infer them again. "
+            + "If they are unknown, use the INTERNAL RIASEC STEP only as a provisional tie-breaker. "
             "Do not invent unsupported facts or describe fallback options as exact-region matches.\n\n"
               + "VISIBLE OUTPUT RULES:\n"
             + f"- The visible answer must contain ONLY one short intro line, then the final options, up to {final_top_n}.\n"

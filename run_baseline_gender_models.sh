@@ -298,4 +298,4 @@ if [[ "$ExitCode" -ne 0 ]]; then
 fi
 
 echo ""
-echo "Done. Manifest: Generated Dialogs/$ExperimentName/run_manifest.csv"
+echo "Done. Manifest: Generated Dialogs/$ExperimentName/run_manifest.csv"git 

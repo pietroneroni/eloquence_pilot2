@@ -253,7 +253,10 @@ def _dialog_protocol_status(
     if not thank_ok:
         return False, "missing_student_thank_you_goodbye"
 
-    if "[EXPERT] Recap:" not in text:
+    recap_rx = re.compile(
+    r"(?im)^\[(?:EXPERT|Counselor[^\n]*)\]\s*"
+    r"(?:Recap|Riepilogo)\s*:")
+    if not recap_rx.search(text):
         return False, "missing_counselor_wrapup_recap"
 
     tail = text.rstrip().splitlines()[-3:]
@@ -605,7 +608,6 @@ def main() -> None:
                                     retriever=retriever,
                                 )
 
-                                _save_dialog(dialog, out_dialog_json)
                                 _write_json(out_patches_json, get_listener_patches())
                                 _write_json(out_events_json, get_listener_patch_events())
                                 _write_json(out_memory_json, _final_listener_memory())
@@ -613,6 +615,13 @@ def main() -> None:
                                 _write_json(out_selected_json, selected_event or None)
 
                                 protocol_ok, protocol_error = _dialog_protocol_status(dialog_text, practice, dialog_language)
+                                try:
+                                    dialog.complete = bool(protocol_ok)
+                                except Exception:
+                                    pass
+
+                                _save_dialog(dialog, out_dialog_json)
+
                                 if not protocol_ok:
                                     print(f"[INVALID_PROTOCOL] {protocol_error}")
                                 success = True

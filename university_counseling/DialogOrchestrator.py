@@ -302,6 +302,14 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
             rag_phase = str(get_last_rag_phase() or "").strip().lower()
         except Exception:
             rag_phase = ""
+            
+        if rag_phase == "done":
+            self._done = True
+            set_student_script_state("goodbye_only", "Goodbye")
+            return (
+                "STUDENT SCRIPT (HIGH PRIORITY): "
+                "Output ONLY: Goodbye."
+            )
 
         if rag_phase == "clarify_scope":
             set_student_script_state("answer_only_no_question")
