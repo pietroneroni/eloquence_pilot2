@@ -22,6 +22,7 @@ from university_counseling.AgentWithRag import (
     clear_last_rag_state,
     clear_listener_patches,
     get_debug_snapshots,
+    get_last_rag_phase,
     get_listener_patch_events,
     get_listener_patches,
     get_selected_option_event,
@@ -333,8 +334,9 @@ def _build_student_response_details(practice: dict[str, Any], dialog_language: s
             "The STUDENT SCRIPT instruction for the current turn has priority.",
             "Treat BACKGROUND as authoritative except where it conflicts with the ACADEMIC STATUS rules below.",
             "ACADEMIC STATUS (STRICT): your highest completed formal education is either a high-school diploma or a bachelor's degree, whichever is explicitly present in BACKGROUND.",
-            "You are not employed, not a worker or researcher, and you do not have a master's degree, PhD, doctorate, or other postgraduate qualification.",
-            "Never describe a job, laboratory role, internship, research activity, or professional title as your academic background.",
+            "You have no current or past employment, job, internship, research role, retail work, or professional experience.",
+            "Never claim or mention employment, work experience, internships, professional roles, or research experience.",
+            "You do not have a master's degree, PhD, doctorate, or other postgraduate qualification.",
             "Treat INTERESTS as preference evidence and PERSONALITY TRAITS only as speaking-style cues.",
             "Do not convert interests or personality traits into new education, work, skills, experiences, or other biographical facts.",
             "Do not reveal hidden experimental conditions or metadata.",
@@ -491,6 +493,15 @@ def main() -> None:
     )
 
     max_turns = _env_int("SDIALOG_MAX_TURNS", 100) or 100
+    max_run_attempts = max(
+        1,
+        _env_int("SDIALOG_RUN_ATTEMPTS", 3) or 3,
+    )
+    retry_seed_stride = max(
+        1,
+        _env_int("SDIALOG_RETRY_SEED_STRIDE", 1) or 1,
+    )
+
     base_seed = _env_int("SDIALOG_BASE_SEED", 12345) or 12345
     start_persona = _env_int("SDIALOG_START_PERSONA", 0) or 0
     max_personas = _env_int("SDIALOG_MAX_PERSONAS", None)
@@ -553,95 +564,204 @@ def main() -> None:
         for model_label, expert_model in model_conditions:
             student_model = expert_model if same_student_as_expert or not fixed_student_model else fixed_student_model
 
-            for gender in gender_variants:
-                gender_label = _normalize_condition_label(gender, "gender")
-                os.environ["SDIALOG_FORCED_GENDER"] = gender
-                os.environ["OWUI_FORCED_GENDER"] = gender
-                os.environ.pop("SDIALOG_PERSONA_GENDER_CONDITION", None)
-                os.environ.pop("SDIALOG_STUDENT_GENDER_CONDITION", None)
+            for local_i, persona_path in enumerate(persona_files):
+                global_i = start_persona + local_i
+                seed = base_seed + global_i
+                final_results: dict[str, dict[str, Any]] = {}
 
-                out_dir = out_base_dir / model_label / f"gender_{gender_label}"
-                out_dialog_dir = out_dir / "_out_dialog_json"
-                out_text_dir = out_dir / "_out_logs_txt"
-                out_patches_dir = out_dir / "_out_listener_patches"
-                out_events_dir = out_dir / "_out_listener_events"
-                out_memory_dir = out_dir / "_out_listener_memory"
-                out_selected_dir = out_dir / "_out_selected_options"
-                for path in (out_dialog_dir, out_text_dir, out_patches_dir, out_events_dir, out_memory_dir, out_selected_dir):
-                    path.mkdir(parents=True, exist_ok=True)
+                for attempt in range(1, max_run_attempts + 1):
+                    attempt_seed = seed + (attempt - 1) * retry_seed_stride
+                    attempt_results: dict[str, dict[str, Any]] = {}
+                    pair_valid = True
 
-                for local_i, persona_path in enumerate(persona_files):
-                    global_i = start_persona + local_i
-                    seed = base_seed + global_i
-                    run_id = f"{persona_path.stem}__gender_{gender_label}__model_{model_label}"
+                    for gender in gender_variants:
+                        gender_label = _normalize_condition_label(gender, "gender")
+                        os.environ["SDIALOG_FORCED_GENDER"] = gender
+                        os.environ["OWUI_FORCED_GENDER"] = gender
+                        os.environ.pop("SDIALOG_PERSONA_GENDER_CONDITION", None)
+                        os.environ.pop("SDIALOG_STUDENT_GENDER_CONDITION", None)
 
-                    out_txt = out_text_dir / f"{run_id}.txt"
-                    out_dialog_json = out_dialog_dir / f"{run_id}.dialog.json"
-                    out_patches_json = out_patches_dir / f"{run_id}.listener_patches.json"
-                    out_events_json = out_events_dir / f"{run_id}.listener_events.json"
-                    out_memory_json = out_memory_dir / f"{run_id}.listener_memory.json"
-                    out_selected_json = out_selected_dir / f"{run_id}.selected_option.json"
+                        out_dir = out_base_dir / model_label / f"gender_{gender_label}"
+                        out_dialog_dir = out_dir / "_out_dialog_json"
+                        out_text_dir = out_dir / "_out_logs_txt"
+                        out_patches_dir = out_dir / "_out_listener_patches"
+                        out_events_dir = out_dir / "_out_listener_events"
+                        out_memory_dir = out_dir / "_out_listener_memory"
+                        out_selected_dir = out_dir / "_out_selected_options"
+                        for path in (
+                            out_dialog_dir,
+                            out_text_dir,
+                            out_patches_dir,
+                            out_events_dir,
+                            out_memory_dir,
+                            out_selected_dir,
+                        ):
+                            path.mkdir(parents=True, exist_ok=True)
 
-                    success = False
-                    protocol_ok = False
-                    protocol_error = ""
-                    error = ""
-                    selected_event: dict[str, Any] = {}
+                        run_id = f"{persona_path.stem}__gender_{gender_label}__model_{model_label}"
+                        out_txt = out_text_dir / f"{run_id}.txt"
+                        out_dialog_json = out_dialog_dir / f"{run_id}.dialog.json"
+                        out_patches_json = out_patches_dir / f"{run_id}.listener_patches.json"
+                        out_events_json = out_events_dir / f"{run_id}.listener_events.json"
+                        out_memory_json = out_memory_dir / f"{run_id}.listener_memory.json"
+                        out_selected_json = out_selected_dir / f"{run_id}.selected_option.json"
 
-                    with out_txt.open("w", encoding="utf-8") as log_file:
-                        tee_out = Tee(sys.stdout, log_file)
-                        tee_err = Tee(sys.stderr, log_file)
-                        with redirect_stdout(tee_out), redirect_stderr(tee_err):
-                            try:
-                                dialog, dialog_text = _run_one_dialog(
-                                    persona_path=persona_path,
-                                    expert_model=expert_model,
-                                    student_model=student_model,
-                                    model_label=model_label,
-                                    gender=gender,
-                                    seed=seed,
-                                    max_turns=max_turns,
-                                    dialog_language=dialog_language,
-                                    practice=practice,
-                                    social_practice_name=social_practice_name,
-                                    social_practice_path=social_practice_path,
-                                    retriever=retriever,
-                                )
+                        if attempt == 1:
+                            for stale_path in (
+                                out_dialog_json,
+                                out_patches_json,
+                                out_events_json,
+                                out_memory_json,
+                                out_selected_json,
+                            ):
+                                stale_path.unlink(missing_ok=True)
 
-                                _write_json(out_patches_json, get_listener_patches())
-                                _write_json(out_events_json, get_listener_patch_events())
-                                _write_json(out_memory_json, _final_listener_memory())
-                                selected_event = get_selected_option_event() or {}
-                                _write_json(out_selected_json, selected_event or None)
+                        result: dict[str, Any] = {
+                            "dialog": None,
+                            "dialog_text": "",
+                            "patches": [],
+                            "events": [],
+                            "memory": canonical_listener_memory(),
+                            "selected_event": {},
+                            "protocol_ok": False,
+                            "protocol_error": "",
+                            "terminal_without_options": False,
+                            "error": "",
+                            "valid": False,
+                            "attempt_used": attempt,
+                            "effective_seed": attempt_seed,
+                            "run_id": run_id,
+                            "gender_label": gender_label,
+                            "out_txt": out_txt,
+                            "out_dialog_json": out_dialog_json,
+                            "out_patches_json": out_patches_json,
+                            "out_events_json": out_events_json,
+                            "out_memory_json": out_memory_json,
+                            "out_selected_json": out_selected_json,
+                        }
 
-                                protocol_ok, protocol_error = _dialog_protocol_status(dialog_text, practice, dialog_language)
+                        log_mode = "w" if attempt == 1 else "a"
+                        with out_txt.open(log_mode, encoding="utf-8") as log_file:
+                            tee_out = Tee(sys.stdout, log_file)
+                            tee_err = Tee(sys.stderr, log_file)
+                            with redirect_stdout(tee_out), redirect_stderr(tee_err):
+                                if attempt > 1:
+                                    print(
+                                        f"[RETRY_PAIR] persona={persona_path.name} "
+                                        f"attempt={attempt}/{max_run_attempts} "
+                                        f"seed={attempt_seed} gender={gender_label}"
+                                    )
                                 try:
-                                    dialog.complete = bool(protocol_ok)
-                                except Exception:
-                                    pass
+                                    dialog, dialog_text = _run_one_dialog(
+                                        persona_path=persona_path,
+                                        expert_model=expert_model,
+                                        student_model=student_model,
+                                        model_label=model_label,
+                                        gender=gender,
+                                        seed=attempt_seed,
+                                        max_turns=max_turns,
+                                        dialog_language=dialog_language,
+                                        practice=practice,
+                                        social_practice_name=social_practice_name,
+                                        social_practice_path=social_practice_path,
+                                        retriever=retriever,
+                                    )
 
-                                _save_dialog(dialog, out_dialog_json)
+                                    protocol_ok, protocol_error = _dialog_protocol_status(
+                                        dialog_text,
+                                        practice,
+                                        dialog_language,
+                                    )
+                                    selected_event = get_selected_option_event() or {}
+                                    terminal_without_options = (
+                                        str(get_last_rag_phase() or "").strip().lower() == "done"
+                                        and not selected_event
+                                    )
+                                    if terminal_without_options:
+                                        protocol_ok = True
+                                        protocol_error = ""
 
-                                if not protocol_ok:
-                                    print(f"[INVALID_PROTOCOL] {protocol_error}")
-                                success = True
-                            except Exception as exc:
-                                error = repr(exc)
-                                print(f"\n[ERROR] Exception while processing {persona_path.name}", file=sys.stderr)
-                                traceback.print_exc()
+                                    result.update(
+                                        {
+                                            "dialog": dialog,
+                                            "dialog_text": dialog_text,
+                                            "patches": get_listener_patches(),
+                                            "events": get_listener_patch_events(),
+                                            "memory": _final_listener_memory(),
+                                            "selected_event": selected_event,
+                                            "protocol_ok": protocol_ok,
+                                            "protocol_error": protocol_error,
+                                            "terminal_without_options": terminal_without_options,
+                                            "valid": bool(protocol_ok or terminal_without_options),
+                                        }
+                                    )
+                                except Exception as exc:
+                                    result["error"] = repr(exc)
+                                    print(
+                                        f"\n[ERROR] Exception while processing {persona_path.name} "
+                                        f"gender={gender_label} attempt={attempt}/{max_run_attempts}",
+                                        file=sys.stderr,
+                                    )
+                                    traceback.print_exc()
 
-                    status = "success" if success and protocol_ok else ("invalid_protocol" if success else "failed")
+                        attempt_results[gender_label] = result
+                        pair_valid = pair_valid and bool(result["valid"])
+
+                    final_results = attempt_results
+                    if pair_valid:
+                        break
+
+                    if attempt < max_run_attempts:
+                        failed_conditions = ", ".join(
+                            label for label, item in attempt_results.items() if not item["valid"]
+                        )
+                        print(
+                            f"[RETRY_PAIR_INVALID] persona={persona_path.name} "
+                            f"failed={failed_conditions or 'unknown'} "
+                            f"next_seed={attempt_seed + retry_seed_stride}"
+                        )
+
+                for gender in gender_variants:
+                    gender_label = _normalize_condition_label(gender, "gender")
+                    result = final_results[gender_label]
+                    dialog = result["dialog"]
+                    selected_event = result["selected_event"] or {}
+                    protocol_ok = bool(result["protocol_ok"])
+                    terminal_without_options = bool(result["terminal_without_options"])
+                    error = str(result["error"] or "")
+                    protocol_error = str(result["protocol_error"] or "")
+
+                    if dialog is not None:
+                        try:
+                            dialog.complete = bool(protocol_ok or terminal_without_options)
+                        except Exception:
+                            pass
+
+                        _write_json(result["out_patches_json"], result["patches"])
+                        _write_json(result["out_events_json"], result["events"])
+                        _write_json(result["out_memory_json"], result["memory"])
+                        _write_json(result["out_selected_json"], selected_event or None)
+                        _save_dialog(dialog, result["out_dialog_json"])
+
+                    status = (
+                        "success"
+                        if dialog is not None and (protocol_ok or terminal_without_options)
+                        else "invalid_protocol"
+                        if dialog is not None
+                        else "failed"
+                    )
+
                     if status == "failed":
-                        print(f"[FAILED] {persona_path.name} (see log: {out_txt.resolve()})")
+                        print(f"[FAILED] {persona_path.name} (see log: {result['out_txt'].resolve()})")
                     elif status == "invalid_protocol":
-                        print(f"[SAVED INVALID_PROTOCOL] {out_txt.resolve()}")
+                        print(f"[SAVED INVALID_PROTOCOL] {result['out_txt'].resolve()}")
                     else:
-                        print(f"[SAVED] {out_txt.resolve()}")
+                        print(f"[SAVED] {result['out_txt'].resolve()}")
 
                     rows.append(
                         {
                             "experiment": experiment_name,
-                            "run_id": run_id,
+                            "run_id": result["run_id"],
                             "persona_file": persona_path.name,
                             "persona_path": str(persona_path),
                             "gender_condition": gender_label,
@@ -649,16 +769,18 @@ def main() -> None:
                             "expert_model": expert_model,
                             "student_model": student_model,
                             "seed": str(seed),
+                            "effective_seed": str(result["effective_seed"]),
+                            "attempt_used": str(result["attempt_used"]),
                             "status": status,
                             "error": error or protocol_error,
                             "protocol_ok": str(bool(protocol_ok)),
                             "protocol_error": protocol_error,
-                            "log_path": str(out_txt),
-                            "dialog_json_path": str(out_dialog_json),
-                            "patches_json_path": str(out_patches_json),
-                            "events_json_path": str(out_events_json),
-                            "memory_json_path": str(out_memory_json),
-                            "selected_options_path": str(out_selected_json),
+                            "log_path": str(result["out_txt"]),
+                            "dialog_json_path": str(result["out_dialog_json"]),
+                            "patches_json_path": str(result["out_patches_json"]),
+                            "events_json_path": str(result["out_events_json"]),
+                            "memory_json_path": str(result["out_memory_json"]),
+                            "selected_options_path": str(result["out_selected_json"]),
                             "selected_option_number": str(selected_event.get("option_number", "")) if isinstance(selected_event, dict) else "",
                             "selected_option": str(selected_event.get("selected_option", "")) if isinstance(selected_event, dict) else "",
                             "selected_option_source_turn": str(selected_event.get("source_turn", "")) if isinstance(selected_event, dict) else "",
@@ -667,10 +789,10 @@ def main() -> None:
                         }
                     )
 
-                    with manifest_path.open("w", newline="", encoding="utf-8") as manifest_file:
-                        writer = csv.DictWriter(manifest_file, fieldnames=list(rows[0].keys()))
-                        writer.writeheader()
-                        writer.writerows(rows)
+                with manifest_path.open("w", newline="", encoding="utf-8") as manifest_file:
+                    writer = csv.DictWriter(manifest_file, fieldnames=list(rows[0].keys()))
+                    writer.writeheader()
+                    writer.writerows(rows)
     finally:
         for name, old_value in old_env.items():
             _restore_env(name, old_value)

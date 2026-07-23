@@ -36,6 +36,8 @@ def _build_expert_response_details(practice: dict, dialog_language: str = "Engli
         "cannot be verified from the available information; do not mention "
         "retrieval, context windows, or RAG.\n"
         "- Never invent universities, programs, course details, deadlines, external rankings, URLs, emails, coordinators, services, or hidden metadata.\n"
+        "- Never infer degree duration, cycle type, or admission structure from a course name; state them only when explicit in GROUNDING_CONTEXT.\n"
+        "- Do not expose internal evidence audits or verification checklists in the visible reply.\n"
         "- When recommending options, use exact option text from CANDIDATE OPTIONS/OPTIONS only.\n"
         "\n"
         "HIDDEN LISTENER RULES:\n"
@@ -65,7 +67,7 @@ def _yes_no_tokens(dialog_language: str = "English") -> tuple[str, str]:
 _THINK_BLOCK_RE = re.compile(r"<think>.*?</think>\s*", flags=re.DOTALL | re.IGNORECASE)
 _STRAY_THINK_RE = re.compile(r"</?think>\s*", flags=re.IGNORECASE)
 _VISIBLE_FINAL_START_RE = re.compile(
-    r"(?im)^(yes|no|sì|si|recap:|[1-3]\.\s+|focusing on |a program oriented |take a leadership |focus on supporting |take advanced |start with |your |based on |goodbye|<LISTENER_PATCH>)"
+     r"(?im)^(yes|no|sì|si|thank you|grazie|recap:|[1-3]\.\s+|focusing on |a program oriented |take a leadership |focus on supporting |take advanced |start with |your |based on |goodbye|<LISTENER_PATCH>)"
 )
 
 _URL_RE = re.compile(r"(?i)\b(?:https?://|www\.)\S+")
@@ -86,6 +88,12 @@ _STRAY_LISTENER_TAG_RE = re.compile(
 _INLINE_LISTENER_TOKEN_RE = re.compile(
     r"(?i)(?<![A-Za-z0-9_])listener_patch(?![A-Za-z0-9_])"
 )
+_INTERNAL_AUDIT_PREFIX_RE = re.compile(
+    r"(?im)^\s*(?:[-*]\s*)?(?:can(?:not|'t)? be verified|"
+    r"cannot be verified|pu[oò] essere verificato|"
+    r"non pu[oò] essere verificato)\s*:?\s*"
+)
+
 _INTERNAL_LABEL_REPLACEMENTS = {
     "field_of_interest": "area of interest",
     "computer_science": "computer science",
@@ -102,6 +110,32 @@ _INTERNAL_LABEL_REPLACEMENTS = {
     "health_technology": "health technology",
 }
 
+_INTERNAL_PROMPT_TAIL_RE = re.compile(
+    r"(?is)"
+    r"(?:^|\n|(?:\s*-{2,}\s*)+)"
+    r"(?:"
+    r"PHASE|"
+    r"MATCHING\s+TASK|"
+    r"RECOMMENDATION\s+TASK|"
+    r"CURRENT\s+STUDENT\s+QUESTION|"
+    r"GROUNDING_CONTEXT|"
+    r"STUDENT\s+PROFILE|"
+    r"HIDDEN\s+LISTENER\s+TASK"
+    r")\s*:.*$"
+)
+
+_INLINE_INTERNAL_TASK_TAIL_RE = re.compile(
+    r"(?s)"
+    r"(?:^|\n|(?<=[.!?])\s+|(?:\s*-{2,}\s*)+)"
+    r"TASK\s*:.*$"
+)
+
+_LISTENER_TASKS_BLOCK_RE = re.compile(
+    r"(?is)"
+    r"\[\[\s*##\s*BEGIN\s+LISTENER\s+TASKS[^\]]*\]\]"
+    r".*?"
+    r"(?:\[\[\s*##\s*END\s+LISTENER\s+TASKS[^\]]*\]\]|$)"
+)
 
 def strip_think(text: str) -> str:
     if not text:
@@ -135,10 +169,14 @@ def hide_internal_labels(text: str) -> str:
     if not t:
         return ""
 
+    t = _LISTENER_TASKS_BLOCK_RE.sub("", t)
     t = _LEFTOVER_LISTENER_BLOCK_RE.sub("", t)
     t = _STRAY_LISTENER_TAG_RE.sub("", t)
+    t = _INLINE_INTERNAL_TASK_TAIL_RE.sub("", t)
+    t = _INTERNAL_PROMPT_TAIL_RE.sub("", t)
     t = _INTERNAL_LABEL_LINE_RE.sub("", t)
     t = _INLINE_LISTENER_TOKEN_RE.sub("", t)
+    t = _INTERNAL_AUDIT_PREFIX_RE.sub("", t)
     for raw, visible in _INTERNAL_LABEL_REPLACEMENTS.items():
         t = re.sub(
             rf"(?<![A-Za-z0-9_]){re.escape(raw)}(?![A-Za-z0-9_])",
@@ -154,6 +192,9 @@ def sanitize_expert_output(text: str) -> str:
     # 1) Remove model thinking first.
     # This prevents accidental listener patches inside <think> from being accepted.
     t = strip_think(text)
+    t = _LISTENER_TASKS_BLOCK_RE.sub("", t).strip()
+    t = _INLINE_INTERNAL_TASK_TAIL_RE.sub("", t).strip()
+    t = _INTERNAL_PROMPT_TAIL_RE.sub("", t).strip()
 
     # 2) Extract and buffer listener patches only from the final visible channel.
     t = strip_and_buffer_listener_patch(t)

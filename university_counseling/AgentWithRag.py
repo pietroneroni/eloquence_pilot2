@@ -404,6 +404,11 @@ _FLOW_NO_RX = re.compile(
     r"\b(no|nope|not really|don't|do not|cannot|can't|never|assolutamente no|direi di no)\b",
     re.I,
 )
+_FLOW_INSUFFICIENT_RX = re.compile(
+    r"\b(informazioni (?:sono )?insufficienti|insufficient information|not enough information|"
+    r"non ho informazioni sufficienti|non ci sono informazioni sufficienti)\b",
+    re.I,
+)
 _NUM_WORD_TO_DIGIT = {
     "uno": 1,
     "una": 1,
@@ -1300,10 +1305,29 @@ def _canonicalize_selected_option_value(value: str, shown_options: Optional[Sequ
 
 
 def _validate_advice_answer(answer: str, allowed_options: Sequence[str]) -> Optional[str]:
-    chosen = _extract_advice_options_from_answer(answer, allowed_options)
-    if not chosen:
+    allowed = [str(x).strip() for x in allowed_options if str(x).strip()]
+    if not allowed:
         return None
 
+    target = max(
+        1,
+        min(int(os.getenv("SDIALOG_FINAL_TOP_N", "3")), 3, len(allowed)),
+    )
+    chosen = _extract_advice_options_from_answer(answer, allowed)
+    chosen_keys = {_normalize(x) for x in chosen}
+
+    # Preserve the model's valid order, but always expose the configured number
+    # of grounded options. Missing entries are filled deterministically from the
+    # original candidate order.
+    for option in allowed:
+        if _normalize(option) in chosen_keys:
+            continue
+        chosen.append(option)
+        chosen_keys.add(_normalize(option))
+        if len(chosen) >= target:
+            break
+
+    chosen = chosen[:target]
     final_line = _advice_final_line()
     return "\n".join([_advice_intro_line(len(chosen))] + [f"{i + 1}. {opt}" for i, opt in enumerate(chosen)] + [final_line])
 
@@ -2195,6 +2219,18 @@ def _split_sentences_conservatively(text: str) -> List[str]:
     return [x.strip() for x in re.split(r"(?<=[.!?])\s+", t) if x.strip()]
 
 
+def _clean_qa_visible_text(text: str) -> str:
+    body = re.split(r"\s+-{3,}\s+", (text or "").strip(), maxsplit=1)[0].strip()
+    seen = set()
+    kept: List[str] = []
+    for sent in _split_sentences_conservatively(body):
+        key = _normalize(sent)
+        if key and key not in seen:
+            seen.add(key)
+            kept.append(sent)
+    return " ".join(kept).strip()
+
+
 def _strip_qa_closings_and_questions(text: str) -> str:
     """Remove premature closing/question sentences during fixed follow-up Q&A.
 
@@ -2394,9 +2430,18 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
     advice_fallback = bool(getattr(_LAST_RAG_STATE, "advice_fallback", False))
 
     yes_tok, no_tok = ("Sì", "No") if _DIALOG_LANGUAGE == "it" else ("Yes", "No")
+    insufficient_tok = (
+        "Informazioni insufficienti"
+        if _DIALOG_LANGUAGE == "it"
+        else "Insufficient information"
+    )
     patch_block = _extract_listener_patch_block(ans)
 
     if phase == "qa_selected" and expected:
+        return (expected + ("\n" + patch_block if patch_block else "")).strip()
+
+
+    if phase == "riasec_finalize" and expected:
         return (expected + ("\n" + patch_block if patch_block else "")).strip()
 
     if phase == "qa_yesno":
@@ -2404,12 +2449,17 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
         body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
 
         body = _strip_qa_closings_and_questions(body) or body
+        body = _clean_qa_visible_text(body) or body
 
         body_clean = re.sub(r"\s+", " ", body).strip()
 
         out_prefix = None
 
 
+
+        if _FLOW_INSUFFICIENT_RX.search(body_clean):
+            out = insufficient_tok
+            return (out + ("\n" + patch_block if patch_block else "")).strip()
 
         if re.match(r"(?i)^\s*(yes|sì|si)\b", body_clean):
 
@@ -2443,7 +2493,11 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
 
 
 
-        if re.match(r"(?i)^\s*(yes|sì|si|no)\b", body_clean):
+        if out_prefix == insufficient_tok:
+
+            out = insufficient_tok
+
+        elif re.match(r"(?i)^\s*(yes|sì|si|no)\b", body_clean):
 
             out = re.sub(r"(?i)^\s*(yes|sì|si|no)\b", out_prefix, body_clean, count=1).strip()
 
@@ -2470,6 +2524,7 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
         body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
         # Remove accidental premature closing and follow-up questions in fixed-probe mode.
         body = _strip_qa_closings_and_questions(body)
+        body = _clean_qa_visible_text(body)
         if not body:
             selected_event = get_selected_option_event()
             if isinstance(selected_event, dict) and selected_event.get("selected_option"):
@@ -3068,44 +3123,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         return self._listener_patch_request(
             targets="- inferred.riasec_question_valences",
             rules=(
-                "Use ONLY the student's answers to the 8 RIASEC questions.\n"
-                "Do NOT use biography, gender, academic background, grades, job, goals, "
-                "field_of_interest, selected option, university options, or RAG context.\n"
-                "\n"
-                "Your task is NOT to assign final RIASEC labels.\n"
-                "Your task is ONLY to score the student's expressed liking/preference "
-                "for each activity.\n"
-                "\n"
-                "ALLOWED VALUES, STRICT:\n"
-                "- Allowed values are ONLY: -2, -1, 0, 1, 2.\n"
-                "- Never output 3, -3, decimals, strings, nulls, booleans, or explanations.\n"
-                "- If the answer says 'molto', 'very much', 'I really like it', the maximum score is 2, not 3.\n"
-                "- If you are unsure between two values, choose the value closer to 0.\n"
-                "- The JSON array must contain exactly 8 integers.\n"
-                "\n"
-                "Internal procedure:\n"
-                "1. Score Q1 from A1 only, Q2 from A2 only, ..., Q8 from A8 only.\n"
-                "2. Score the expressed preference for doing the activity, not ability, talent, confidence, preparation, school performance, or career usefulness.\n"
-                "3. If the answer mentions both liking and insecurity, score the liking.\n"
-                "4. If the answer mentions ability without liking, score 0 unless dislike is explicit.\n"
-                "5. If the answer is missing, evasive, off-topic, or only says 'I don't know'/'non so'/'non saprei', score 0.\n"
-                "6. Do not make a positive inference from career goals, school background, personality stereotypes, gender, or previous field of study.\n"
-                "7. Do not compensate one question with another question: each score must be local to its own answer.\n"
-                "\n"
-                "Scale:\n"
-                "2 = clear strong liking, enthusiasm, or voluntary examples of doing/enjoying that activity\n"
-                "1 = mild/moderate liking, curiosity, or generally positive but not strong preference\n"
-                "0 = neutral, unclear, mixed, conditional, ability-only, off-topic, or insufficient evidence\n"
-                "-1 = mild/moderate dislike, low interest, or preference to avoid when possible\n"
-                "-2 = clear strong dislike, rejection, or explicit avoidance\n"
-                "\n"
-                + calibration +
-                "\n"
-                + question_focus +
-                "\n"
-                "Return exactly one array of 8 integers named riasec_question_valences.\n"
-                "Each integer corresponds to Q1-Q8 in order.\n"
-                "Do NOT output final RIASEC labels. Python will calculate labels and confidence.\n"
+                    "Use only answers A1-A8 below.\n"
+                    "Score each answer independently and in the same order.\n"
+                    "Allowed values: 2 = strong liking, 1 = liking, "
+                    "0 = unclear or neutral, -1 = dislike, -2 = strong dislike.\n"
+                    "Score liking for the activity, not ability, preparation, "
+                    "personality, biography, gender, goals, or career usefulness.\n"
+                    "When uncertain, use the value closer to 0.\n"
+                    "Return exactly 8 integers inside "
+                    "inferred.riasec_question_valences.\n"
+                    "Do not return explanations or final RIASEC labels.\n"
             ),
             schema_example=(
                 '<LISTENER_PATCH>{"inferred":{"riasec_question_valences":[0,0,0,0,0,0,0,0]}}</LISTENER_PATCH>'
@@ -3118,7 +3145,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             return ""
         if not self._riasec_slots_missing():
             return ""
-        if self._riasec_patch_attempts >= 2:
+        if self._riasec_patch_attempts >= 1:
             return ""
         self._riasec_patch_attempts += 1
         return self._riasec_listener_patch_request()
@@ -4066,9 +4093,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             riasec_patch = self._maybe_riasec_listener_patch_request()
             language_rule = "- Answer in Italian.\n" if self.lang == "it" else "- Answer in English.\n"
             yes_no_start_rule = (
-                "- Inizia esattamente con 'Sì' o 'No'.\n"
+                "- Inizia esattamente con 'Sì', 'No' oppure 'Informazioni insufficienti'.\n"
                 if self.lang == "it"
-                else "- Start with exactly 'Yes' or 'No'.\n"
+                else "- Start with exactly 'Yes', 'No', or 'Insufficient information'.\n"
             )
             def _ret(msg: str) -> str:
                 return (msg + riasec_patch) if riasec_patch else msg
@@ -4140,6 +4167,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     "- Ground your justification in GROUNDING_CONTEXT; do not invent program details.\n"
                     "- Use only the profile fields explicitly shown in CONTEXT and facts present in GROUNDING_CONTEXT.\n"
                     "- Do not mention a constraint, preference, ability, or biographical fact that is not explicitly present there.\n"
+                    "- Never invent examples, past successes, demonstrated skills, grades, or experiences.\n"
+                    "- Do not output an evidence audit, verification checklist, or labels such as can/cannot be verified.\n"
                     "- Do NOT introduce new universities/programs.\n"
                     "- Do NOT ask the student any question.\n"
                     "- Do NOT say goodbye; the fixed follow-up sequence must continue.\n"
@@ -4165,11 +4194,14 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     + "- Answer the exact proposition in CURRENT STUDENT QUESTION; "
                     "do not answer a different property of the course.\n"
                     + "- Treat the answer as a provisional counseling judgment, not a certainty.\n"
+                    + "- If explicit evidence for the exact proposition is absent, use the insufficient-information option instead of guessing Yes or No.\n"
                     + "- Distinguish stated interest from demonstrated ability or "
                     "preparation; interest alone is not evidence of capability.\n"
                     + "- Use only explicit preparation evidence in CONTEXT and GROUNDING_CONTEXT.\n"
                     + "- Do not infer ability, readiness, leadership potential, or risk from name, socioeconomic cues, BFI traits, or RIASEC alone.\n"
-                    + "- If evidence is limited, state that limitation in the caveat.\n"
+                    + "- Never invent examples, past successes, demonstrated skills, grades, or experiences.\n"
+                    + "- If evidence for the exact proposition is limited, say so directly in the caveat instead of filling the gap with an inference.\n"
+                    + "- Do not output an evidence audit, verification checklist, or labels such as can/cannot be verified.\n"
                     + "- Do NOT introduce new universities/programs.\n"
                     + "- Do NOT ask the student any question.\n"
                 )
@@ -4275,10 +4307,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                         "- Use only the latest student answer.\n"
                         "- Store a region only when the student positively identifies it "
                         "as a preferred or required study area.\n"
+                        "- A positive preference remains valid when the student is also open "
+                        "or flexible about alternatives.\n"
                         "- Do not store locations mentioned only as excluded, rejected, "
                         "negated, or contextual information.\n"
-                        "- If there is no single positive geographic preference that "
-                        "explicit.region can represent accurately, omit the field.\n"
+                        "- Omit the field only when the latest answer contains no positive "
+                        "geographic preference that explicit.region can represent accurately.\n"
                         "- Store macro-areas as: north, center, south, islands. "
                         "Otherwise use the canonical Italian region name.\n"
                     ),
@@ -4295,7 +4329,32 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     + bg_patch
                 )
 
+            self._flow_stage = "riasec_finalize"
+
+        # Finalize the canonical RIASEC profile before retrieval and advice.
+        if self._flow_stage == "riasec_finalize":
             self._flow_stage = "advice"
+
+            acknowledgement = _t(
+                "Thank you, I now have the information needed to compare the options.",
+                "Grazie, ora ho le informazioni necessarie per confrontare le opzioni.",
+            )
+
+            update_last_rag_state(
+                "",
+                query="",
+                phase="riasec_finalize",
+                expected_verbatim=acknowledgement,
+                advice_fallback=False,
+                advice_options=[],
+            )
+
+            return (
+                    "PHASE: FINALIZE RIASEC\n"
+                    "VISIBLE REPLY: output exactly the acknowledgement below and ask no question.\n"
+                    f"{acknowledgement}\n"
+                    + self._maybe_riasec_listener_patch_request()
+            )
 
         # ---------------------------------------------------------------------
         # ADVICE
@@ -4355,7 +4414,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._last_raw_blocks = list(retrieval.raw_blocks or [])
         self._last_options = list(candidate_pool)
 
-        riasec_patch = self._maybe_riasec_listener_patch_request()
+
         if retrieval.is_empty or not candidate_pool:
             self._advice_retry_count += 1
 
@@ -4380,7 +4439,6 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                         "No grounded options are available yet.\n"
                         "Ask ONE short clarification question only.\n"
                         + fallback_patch
-                        + riasec_patch
                 )
 
             self._finished = True
@@ -4527,7 +4585,6 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             + "- Visible output format must be intro line, then numbered options, one option per line:\n"
             + f"{visible_option_template}\n"
             + f'  Final line: "{final_line}"\n'
-            + riasec_patch
         )
 
     def can_finish(self, utterance: str) -> bool:

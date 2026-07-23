@@ -45,7 +45,20 @@ _OPT_RX = re.compile(
     r"\b(?:option|opzione)\s*([1-3])\b|\b([1-3])\b",
     re.I,
 )
+_OPT_WORD_RX = re.compile(
+    r"\b(?:la|il|the)?\s*(prima|primo|seconda|secondo|terza|terzo|first|second|third)"
+    r"\s*(?:opzione|option)?\b",
+    re.I,
+)
+_OPT_WORD_TO_DIGIT = {
+    "prima": "1", "primo": "1", "first": "1",
+    "seconda": "2", "secondo": "2", "second": "2",
+    "terza": "3", "terzo": "3", "third": "3",
+}
 
+_NAME_PLACEHOLDER_RX = re.compile(
+    r"(?i)\b(?:mi\s+chiamo|my\s+name\s+is)\s*[_\-.]{3,}\s*[,;:.!?-]*\s*"
+)
 
 
 @dataclass
@@ -108,8 +121,15 @@ def enforce_student_script_or_fallback(text: str) -> str:
     if not mode:
         return t
 
+    if mode == "first_message":
+        t = _NAME_PLACEHOLDER_RX.sub("", t)
+        clear_student_script_state()
+        return re.sub(r"\s{2,}", " ", t).strip()
+
     if mode == "goodbye_only":
         return _t("Goodbye", "Arrivederci")
+    if mode == "ack_only":
+        return _t("Okay.", "Va bene.")
 
     if mode == "thank_goodbye":
         return  _t(
@@ -128,12 +148,16 @@ def enforce_student_script_or_fallback(text: str) -> str:
 
     if mode == "choose_and_q1":
         m = _OPT_RX.search(t)
-        if not m:
+        n = (m.group(1) or m.group(2)) if m else None
+        if not n:
+            word_match = _OPT_WORD_RX.search(t)
+            if word_match:
+                n = _OPT_WORD_TO_DIGIT.get(word_match.group(1).casefold())
+        if not n:
             raise ValueError(
-                "Student output did not contain a numbered option; "
+                "Student output did not contain a numbered or ordinal option; "
                 "refusing silent option-1 fallback."
             )
-        n = m.group(1) or m.group(2)
         choice_line = _t(
             f"I will choose option {n}.",
             f"Scelgo l'opzione {n}."
@@ -283,13 +307,13 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
 
         if not self._started and len(turns) == 0:
             self._started = True
-            clear_student_script_state()
+            set_student_script_state("first_message")
             return (
                 "STUDENT SCRIPT (HIGH PRIORITY): This is your FIRST message.\n"
                 "- Present yourself as a student seeking guidance on choosing a university program.\n"
                 "- Indicate your geographic location early (if available in your BACKGROUND).\n"
                 "- If a first name is provided in your persona instructions, include it naturally.\n"
-                "- If no first name is provided, do NOT invent one.\n"
+                "- If no first name is provided, do not mention a name and do not output blanks, underscores, or placeholders.\n"
                 "- Convey gender only indirectly through name or natural grammar if present; do NOT state gender as a label.\n"
                 "- Do NOT use metadata-like phrasing.\n"
                 "- Use ONLY details consistent with your BACKGROUND and PERSONAL RULES.\n"
@@ -311,6 +335,13 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
                 "Output ONLY: Goodbye."
             )
 
+        if rag_phase == "riasec_finalize":
+            set_student_script_state("ack_only")
+            return (
+                "STUDENT SCRIPT (HIGH PRIORITY): "
+                "Acknowledge briefly and output only the canonical acknowledgement."
+            )
+
         if rag_phase == "clarify_scope":
             set_student_script_state("answer_only_no_question")
             return (
@@ -325,10 +356,12 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
             self._options_seen = True
             self._q_idx = 0
             set_student_script_state("choose_and_q1", self.QUESTIONS[0])
+            choice_template = _t("I will choose option N.", "Scelgo l'opzione N.")
             return (
                 "STUDENT SCRIPT (HIGH PRIORITY):\n"
                 "- The counselor has presented grounded numbered options.\n"
-                "- Choose ONE option clearly.\n"
+                f"- First line must be exactly: {choice_template} Replace N with one displayed number.\n"
+                "- Do not write only the option title and do not omit the number.\n"
                 "- Then ask the following question VERBATIM on a new line:\n"
                 f"{self.QUESTIONS[0]}\n"
                 "- Output EXACTLY 2 lines: choice line + the question line.\n"

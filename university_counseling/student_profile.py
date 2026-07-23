@@ -15,10 +15,18 @@ from .social_practice import get_social_practice
 # Small helpers
 # -----------------------------
 JSON_REGION_TO_BIO_PHRASE = {
-    "North": "Northern Italy",
-    "Center": "Central Italy",
-    "South": "Southern Italy",
-    "Islands": "the Italian islands",
+    "en": {
+        "North": "Northern Italy",
+        "Center": "Central Italy",
+        "South": "Southern Italy",
+        "Islands": "the Italian islands",
+    },
+    "it": {
+        "North": "Nord Italia",
+        "Center": "Centro Italia",
+        "South": "Sud Italia",
+        "Islands": "isole italiane",
+    },
 }
 
 GENDER_ALIASES = {
@@ -100,7 +108,12 @@ def _lang_name(dialog_language: str = "English") -> str:
 
 def _clean_json_region(value: Any) -> str:
     s = str(value or "").strip().title()
-    return s if s in JSON_REGION_TO_BIO_PHRASE else ""
+    return s if s in JSON_REGION_TO_BIO_PHRASE["en"] else ""
+
+
+def _region_bio_phrase(region: str, dialog_language: str = "English") -> str:
+    lang = "it" if _lang_name(dialog_language) == "Italian" else "en"
+    return JSON_REGION_TO_BIO_PHRASE[lang].get(region, "Italia" if lang == "it" else "Italy")
 
 
 def _det_choice(seed: str, options: List[str]) -> str:
@@ -108,15 +121,24 @@ def _det_choice(seed: str, options: List[str]) -> str:
     return options[int(h[:8], 16) % len(options)]
 
 
-def normalize_background_geography(text: str, *, authoritative_region: str = "") -> str:
+def normalize_background_geography(
+    text: str,
+    *,
+    authoritative_region: str = "",
+    dialog_language: str = "English",
+) -> str:
     t = (text or "").strip()
     region = _clean_json_region(authoritative_region)
 
     if not region:
         return t
 
-    display_region = JSON_REGION_TO_BIO_PHRASE[region]
-    location = f"- Location: I am based in {display_region}."
+    display_region = _region_bio_phrase(region, dialog_language)
+    location = (
+        f"- Posizione: vivo in {display_region}."
+        if _lang_name(dialog_language) == "Italian"
+        else f"- Location: I am based in {display_region}."
+    )
     return f"{t}\n{location}" if t else location
 
 
@@ -319,6 +341,7 @@ def _extract_student_fields(record: Dict[str, Any], dialog_language: str = "Engl
     background = normalize_background_geography(
         _student_stage_background(annotation),
         authoritative_region=region,
+        dialog_language=dialog_language,
     )
 
     if background and not background.endswith((".", "!", "?")):
@@ -331,7 +354,7 @@ def _extract_student_fields(record: Dict[str, Any], dialog_language: str = "Engl
         not _BG_HAS_FORMAL_EDU_RX.search(background or "")
         and _env_flag("SDIALOG_ADD_SYNTHETIC_SCHOOL_TYPE", "0")
     ):
-        bg_region = JSON_REGION_TO_BIO_PHRASE.get(region, "Italy")
+        bg_region = _region_bio_phrase(region, dialog_language)
         seed = f"{annotation}|{region}|{age}"
         hs_type = _det_choice(seed, [
             "Liceo Scientifico",
