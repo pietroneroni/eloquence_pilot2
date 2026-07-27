@@ -626,7 +626,7 @@ _REQ_RXES: List[Tuple[re.Pattern, List[str]]] = [
         ["tuition", "fees", "cost", "tasse", "contributi", "borsa", "scholarship", "grant"],
     ),
     (
-        re.compile(r"\b(deadline|apply|admission|enroll)\b", re.I),
+        re.compile(r"\b(deadline|apply|admission|enroll|scadenza|candidatura|ammissione|immatricolazione|test(?:\s+di)?\s+ingresso)\b", re.I),
         ["deadline", "apply", "admission", "bando", "scadenza", "ammissione", "immatricolazione"],
     ),
 ]

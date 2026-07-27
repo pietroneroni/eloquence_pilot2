@@ -36,7 +36,7 @@ def _build_expert_response_details(practice: dict, dialog_language: str = "Engli
         "cannot be verified from the available information; do not mention "
         "retrieval, context windows, or RAG.\n"
         "- Never invent universities, programs, course details, deadlines, external rankings, URLs, emails, coordinators, services, or hidden metadata.\n"
-        "- Never infer degree duration, cycle type, or admission structure from a course name; state them only when explicit in GROUNDING_CONTEXT.\n"
+        "- Never infer degree duration, cycle type, admission structure, teaching language, or entry tests from a course name; state them only when explicit in GROUNDING_CONTEXT.\n"
         "- Do not expose internal evidence audits or verification checklists in the visible reply.\n"
         "- When recommending options, use exact option text from CANDIDATE OPTIONS/OPTIONS only.\n"
         "\n"
@@ -136,6 +136,9 @@ _LISTENER_TASKS_BLOCK_RE = re.compile(
     r".*?"
     r"(?:\[\[\s*##\s*END\s+LISTENER\s+TASKS[^\]]*\]\]|$)"
 )
+_INTERNAL_PHASE_MARKER_RE = re.compile(
+    r"(?im)^\s*\[\[\s*##\s*(?:BEGIN|END)\s+PHASE[^\]]*\]\]\s*$"
+)
 
 def strip_think(text: str) -> str:
     if not text:
@@ -170,6 +173,7 @@ def hide_internal_labels(text: str) -> str:
         return ""
 
     t = _LISTENER_TASKS_BLOCK_RE.sub("", t)
+    t = _INTERNAL_PHASE_MARKER_RE.sub("", t)
     t = _LEFTOVER_LISTENER_BLOCK_RE.sub("", t)
     t = _STRAY_LISTENER_TAG_RE.sub("", t)
     t = _INLINE_INTERNAL_TASK_TAIL_RE.sub("", t)
