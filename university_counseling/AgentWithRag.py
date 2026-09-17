@@ -65,6 +65,7 @@ ZONE_CHAINS = {
 }
 
 FIELD_OF_INTEREST_LABELS = (
+    "economics_business",
     "arts_design",
     "communication_digital_media",
     "cultural_heritage",
@@ -82,6 +83,20 @@ FIELD_OF_INTEREST_LABELS = (
 )
 
 FIELD_QUERY_TERMS = {
+    "economics_business": [
+        "economics",
+        "economics and management",
+        "business administration",
+        "accounting",
+        "finance",
+        "economia",
+        "economia aziendale",
+        "amministrazione aziendale",
+        "management",
+        "contabilità",
+        "ragioneria",
+        "finanza",
+    ],
     "arts_design": [
         "art and design",
         "arts design",
@@ -233,6 +248,10 @@ FIELD_QUERY_TERMS = {
 
 
 KEYWORD_FALLBACK_TERMS = {
+    "economics_business": [
+        "economics", "economia", "business", "aziendale", "management",
+        "accounting", "contabilità", "ragioneria", "finance", "finanza",
+    ],
     "arts_design": ["design", "art", "arts", "visual", "creative", "graphics", "architecture"],
     "communication_digital_media": ["communication", "media", "digital", "interfaces", "data visualization"],
     "cultural_heritage": ["cultural heritage", "heritage", "art history", "archaeology", "museum"],
@@ -257,8 +276,9 @@ def _field_label_list_for_prompt() -> str:
 FIELD_OF_INTEREST_RULES = (
     "Rules for inferred.field_of_interest:\n"
         "- Output an ordered JSON array of 1-3 distinct labels, strongest fit first.\n"
-        "- Infer the intended university area, not the current job.\n"
+        "- Infer the intended university area from stated study interests or career goals, not from current employment.\n"
         "- Use only these labels and cues:\n"
+        "  economics_business: economics, accounting, finance, management, business administration\n"
         "  arts_design: visual art, graphic/product/design practice\n"
         "  communication_digital_media: communication, media, digital production\n"
         "  cultural_heritage: archaeology, museums, art history, heritage\n"
@@ -274,6 +294,7 @@ FIELD_OF_INTEREST_RULES = (
         "  physical_sciences: physics, chemistry, mathematics, applied sciences\n"
         "  health_technology: biomedical, rehabilitation or medical technology\n"
         "- Tie-breaks:\n"
+        "  economics/accounting/finance/management/business careers -> economics_business; do not add social_sciences unless sociology, politics, or community studies are independently explicit\n"
         "  environment + technical systems -> environmental_engineering; otherwise environmental_science\n"
         "  biotech/lab biology central -> life_sciences; otherwise environmental_science\n"
         "  clinical/helping goal -> psychology; mind/language research -> cognitive_science_linguistics\n"
@@ -390,7 +411,10 @@ CHOICE_REPLY_OPTIONS = {
 
 _OPT_RX = re.compile(r"\b(?:option|opzione)\s*(?:n(?:um(?:ero)?)?\.?\s*)?([1-3])\b", re.I)
 _SELECTION_INTENT_RX = re.compile(
-    r"\b(scelgo|sceglierei|scegliere|prendo|prendere|preferisco|opto|choose|pick|select|prefer)\b",
+    r"\b("
+    r"scelgo|prendo|preferisco|opto|"
+    r"i\s+choose|i\s+pick|i\s+select|i\s+prefer"
+    r")\b",
     re.IGNORECASE,
 )
 _DIGIT_RX = re.compile(r"\b([1-3])\b")
@@ -489,13 +513,27 @@ def _extract_selected_option_number(text: str) -> Optional[int]:
     clean = re.sub(r"\s+", " ", raw).strip()
     if not clean:
         return None
-
-    m = _OPT_RX.search(clean)
-    if m:
-        return int(m.group(1))
-
+    
     has_selection_intent = bool(_SELECTION_INTENT_RX.search(clean))
-    is_short_reply = len(clean) <= 12
+    is_short_reply = len(clean) <= 24 and "?" not in clean
+
+    option_mentions = [
+        int(match.group(1))
+        for match in _OPT_RX.finditer(clean)
+    ]
+
+    if option_mentions:
+        distinct_mentions = set(option_mentions)
+
+        # Una comparazione fra più opzioni non è una selezione.
+        if len(distinct_mentions) != 1:
+            return None
+
+        if has_selection_intent or is_short_reply:
+            return option_mentions[0]
+
+        return None
+
 
     m = _DIGIT_RX.search(clean)
     if m and (has_selection_intent or is_short_reply):
@@ -535,6 +573,8 @@ _RIASEC_WEIGHTS_BY_Q: List[Dict[str, float]] = [
     {"Enterprising": 0.75, "Conventional": 0.25},
     {"Conventional": 1.0},
 ]
+
+INTERNAL_RIASEC_CONTINUE_TOKEN = "__INTERNAL_RIASEC_CONTINUE__"
 
 def _normalize_riasec_valences(value: Any) -> Optional[List[int]]:
     """Strict validator for model-generated RIASEC valences.
@@ -626,7 +666,7 @@ _REQ_RXES: List[Tuple[re.Pattern, List[str]]] = [
         ["tuition", "fees", "cost", "tasse", "contributi", "borsa", "scholarship", "grant"],
     ),
     (
-        re.compile(r"\b(deadline|apply|admission|enroll|scadenza|candidatura|ammissione|immatricolazione|test(?:\s+di)?\s+ingresso)\b", re.I),
+        re.compile(r"\b(deadline|apply|admission|enroll)\b", re.I),
         ["deadline", "apply", "admission", "bando", "scadenza", "ammissione", "immatricolazione"],
     ),
 ]
@@ -988,16 +1028,6 @@ def _university_matches_allowed(university: str, allowed_universities: Optional[
 
 
 
-def _infer_zone_from_university(university: Optional[str]) -> Optional[str]:
-    if not isinstance(university, str) or not university.strip():
-        return None
-
-    target = _normalize(university)
-    for zone, names in ZONE_TO_UNIVERSITIES.items():
-        for name in names:
-            if _normalize(name) == target:
-                return zone
-    return None
 
 
 def _parse_program_block(block: str) -> Tuple[str, str, str]:
@@ -1349,6 +1379,12 @@ def _course_domain_mismatch(course: str, field_of_interest: Any) -> bool:
         return False
 
     positive = {
+        "economics_business": [
+            "economics", "economia", "economics and management",
+            "management", "business", "business administration",
+            "economia aziendale", "amministrazione aziendale", "aziendale",
+            "accounting", "contabilità", "ragioneria", "finance", "finanza",
+        ],
         "arts_design": [
             "design", "arte", "art", "arts", "arti", "artistic", "artistico", "artistica",
             "visual", "grafica", "creative", "creativo", "creativa",
@@ -1474,7 +1510,17 @@ def _course_domain_mismatch(course: str, field_of_interest: Any) -> bool:
         if has_any(["biotechnology", "biotechnologies", "biology", "biological", "biomolecular"]) and not has_any(["computer", "data", "software", "artificial intelligence", "informatics"]):
             return True
 
-    # Hard negative: if the course is clearly out of domain for any primary field, discard.
+    # When economics/business is the primary field, decide against that field
+    # before evaluating secondary-label hard negatives. This prevents a weaker
+    # secondary label from rejecting a valid economics or management course.
+    if fields and fields[0] == "economics_business":
+        economics_terms = positive["economics_business"]
+        return not any(
+            _keyword_in_normalized_text(course, kw)
+            for kw in economics_terms
+        )
+
+    # Hard negative: if the course is clearly out of domain for any inferred field, discard.
     for field in fields:
         for kw in hard_negative.get(field, []):
             if _keyword_in_normalized_text(course, kw):
@@ -1487,7 +1533,7 @@ def _course_domain_mismatch(course: str, field_of_interest: Any) -> bool:
             return False
 
     strict_fields = {
-        "arts_design", "communication_digital_media", "humanities", "cultural_heritage",
+        "economics_business", "arts_design", "communication_digital_media", "humanities", "cultural_heritage",
         "social_sciences", "environmental_science", "environmental_engineering",
         "life_sciences", "computer_science", "engineering_technology", "physical_sciences",
         "health_technology", "psychology", "cognitive_science_linguistics",
@@ -1642,7 +1688,7 @@ def _select_option_context_blocks(raw_blocks: List[str], options: List[str], max
         if len(matched) >= max_blocks:
             break
 
-    return matched or raw_blocks[:max_blocks]
+    return matched
 
 
 def _build_short_ctx(
@@ -2231,21 +2277,32 @@ def _clean_qa_visible_text(text: str) -> str:
     return " ".join(kept).strip()
 
 
-def _strip_qa_closings_and_questions(text: str) -> str:
-    """Remove premature closing/question sentences during fixed follow-up Q&A.
 
-    The student script must continue through the fixed probe sequence.  A
-    counselor-side goodbye or a new question can terminate or contaminate the
-    run, so Q&A phases keep only answer sentences.
+def _strip_qa_closings_and_questions(
+    text: str,
+    *,
+    allow_one_question: bool = False,
+) -> str:
+    """Remove premature closings and, normally, counselor questions.
+
+    Open Q&A may keep one clarification question when the student's option
+    reference is ambiguous. Fixed experimental probes continue to forbid
+    counselor questions.
     """
     kept: List[str] = []
+    question_kept = False
+
     for sent in _split_sentences_conservatively(text):
         if _QA_CLOSING_RX.search(sent):
             continue
         if "?" in sent:
-            continue
+            if not allow_one_question or question_kept:
+                continue
+            question_kept = True
         kept.append(sent)
+
     return " ".join(kept).strip()
+
 
 
 def _choice_alias_norm(text: str) -> str:
@@ -2304,122 +2361,74 @@ def _match_choice_to_allowed(body: str, allowed: Sequence[str]) -> Optional[str]
     return None
 
 
+
 def enforce_grounding_or_fallback(answer: str) -> str:
+    """Apply conservative fact hygiene without re-answering the model.
+
+    Grounding is primarily enforced by the phase prompt and by passing only the
+    facts for the options actually shown. This function removes only unsupported
+    high-risk detail lines (for example admissions or costs). It deliberately
+    avoids exact-name entity matching in Q&A because translated or paraphrased
+    institution names caused valid answers to be replaced by generic fallbacks.
+    """
     ans = (answer or "").strip()
     if not ans:
         return ans
 
     phase = (_LAST_RAG_STATE.phase or "").strip().lower()
+    if phase not in {
+        "advice",
+        "qa_why",
+        "qa_other",
+        "qa_yesno",
+        "qa_choice",
+        "qa_selected",
+        "wrapup",
+    }:
+        return ans
+
+    # Advice has its own exact-option validator; wrap-up contains generic next
+    # steps that should not be filtered as course facts.
+    if phase in {"advice", "wrapup"}:
+        return ans
+
     ctx = _LAST_RAG_STATE.ctx or ""
-    ctx_n = _normalize(ctx)
-
-    if phase not in {"advice", "qa_why", "qa_other", "qa_yesno", "qa_choice", "qa_selected", "wrapup"}:
-        return ans
-    if phase == "advice":
-        # In advice, let the dedicated advice validator/formatter handle structure.
-        # Do not replace the model ranking with a generic fallback here.
-        return ans
-
-    if phase == "wrapup":
-        # The wrap-up contains generic checklist items. Do not run admission/cost
-        # grounding filters here, otherwise items 1 and 2 are deleted.
-        return ans
-
     if not ctx.strip():
         return ans
 
-    if phase == "advice" and _LAST_RAG_STATE.advice_fallback:
-        return ans
-
+    ctx_n = _normalize(ctx)
     kept: List[str] = []
-    removed_admission_line = False
+    removed_sensitive_detail = False
 
     for line in ans.splitlines():
-        s = line.strip()
-        if not s:
+        stripped = line.strip()
+        if not stripped:
             kept.append(line)
             continue
 
-        drop = False
-        for rx, keys in _REQ_RXES:
-            if rx.search(s) and not _ctx_has_any(ctx_n, keys):
-                drop = True
-                if any(k in " ".join(keys).lower() for k in ["deadline", "apply", "admission", "enroll"]):
-                    removed_admission_line = True
-                break
-
-        if not drop:
-            kept.append(line)
-
-    ans = "\n".join(kept).strip() or ans
-
-    if removed_admission_line and phase in {"advice", "qa_other"}:
-        if "verify on official channels" not in ans.lower():
-            ans = (
-                ans
-                + "\n\nAdmissions details can vary by program; please verify on official channels."
-            ).strip()
-
-    ents = [m.group(0).strip() for m in _ENTITY_RX.finditer(ans)]
-    ungrounded = []
-    for e in ents:
-        en = _normalize(e)
-        if en in ctx_n:
-            continue
-        if any(en in a or a in en for a in _LAST_RAG_STATE.allowed_entities):
-            continue
-        ungrounded.append(e)
-
-    if not ungrounded:
-        return ans
-
-    if phase in {"qa_why", "wrapup"}:
-        clean_sentences: List[str] = []
-        normalized_ungrounded = [_normalize(x) for x in ungrounded]
-
-        for sentence in _split_sentences_conservatively(ans):
-            sentence_norm = _normalize(sentence)
-            if any(entity in sentence_norm for entity in normalized_ungrounded):
-                continue
-            clean_sentences.append(sentence)
-
-        cleaned = " ".join(clean_sentences).strip()
-        if cleaned:
-            return cleaned
-
-        return _t(
-            "This recommendation is based on the student's stated background, interests, preferences, and available verified information.",
-            "Questa raccomandazione si basa sul background, sugli interessi, sulle preferenze dichiarate e sulle informazioni verificate disponibili.",
+        unsupported = any(
+            rx.search(stripped) and not _ctx_has_any(ctx_n, keys)
+            for rx, keys in _REQ_RXES
         )
+        if unsupported:
+            removed_sensitive_detail = True
+            continue
+        kept.append(line)
 
-    if phase in {"qa_yesno", "qa_other", "qa_selected"}:
-        return _t(
-            "I do not have enough verified information to assess that reliably.",
-            "Non ho informazioni sufficienti per valutarlo in modo affidabile.",
+    cleaned = "\n".join(kept).strip()
+    if cleaned:
+        ans = cleaned
+
+    if removed_sensitive_detail:
+        note = _t(
+            "That specific detail is not available in the verified course information.",
+            "Quel dettaglio specifico non è disponibile nelle informazioni verificate sul corso.",
         )
-
-
-    options = list(_LAST_RAG_STATE.advice_options or [])
-    if not options:
-        options = _extract_ctx_options(ctx, max_items=3)
-
-    if options:
-        opt_lines = "\n".join([f"{i + 1}. {o}" for i, o in enumerate(options)])
-        if _DIALOG_LANGUAGE == "it":
-            prompt = "Confermi questa opzione indicando 1?" if len(options) == 1 else f"Quale opzione vuoi approfondire (1-{len(options)})?"
-            return (
-                "Queste sono le opzioni grounded che posso supportare:\n"
-                f"{opt_lines}\n"
-                f"{prompt}"
-            ).strip()
-        prompt = "Confirm this option by replying 1?" if len(options) == 1 else f"Which option do you want to pursue (1-{len(options)})?"
-        return (
-            "Here are the grounded options I can support:\n"
-            f"{opt_lines}\n"
-            f"{prompt}"
-        ).strip()
+        if _normalize(note) not in _normalize(ans):
+            ans = f"{ans} {note}".strip()
 
     return ans
+
 
 
 def enforce_flow_format_or_fallback(answer: str) -> str:
@@ -2430,11 +2439,6 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
     advice_fallback = bool(getattr(_LAST_RAG_STATE, "advice_fallback", False))
 
     yes_tok, no_tok = ("Sì", "No") if _DIALOG_LANGUAGE == "it" else ("Yes", "No")
-    insufficient_tok = (
-        "Informazioni insufficienti"
-        if _DIALOG_LANGUAGE == "it"
-        else "Insufficient information"
-    )
     patch_block = _extract_listener_patch_block(ans)
 
     if phase == "qa_selected" and expected:
@@ -2452,6 +2456,14 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
         body = _clean_qa_visible_text(body) or body
 
         body_clean = re.sub(r"\s+", " ", body).strip()
+
+        # Reference resolution takes precedence over the binary format.
+        if "?" in body_clean and not re.match(r"(?i)^\s*(yes|sì|si|no)\b", body_clean):
+            question = next(
+                (sent for sent in _split_sentences_conservatively(body_clean) if "?" in sent),
+                body_clean,
+            )
+            return (question + ("\n" + patch_block if patch_block else "")).strip()
 
         out_prefix = None
 
@@ -2497,11 +2509,7 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
 
 
 
-        if out_prefix == insufficient_tok:
-
-            out = insufficient_tok
-
-        elif re.match(r"(?i)^\s*(yes|sì|si|no)\b", body_clean):
+        if re.match(r"(?i)^\s*(yes|sì|si|no)\b", body_clean):
 
             out = re.sub(r"(?i)^\s*(yes|sì|si|no)\b", out_prefix, body_clean, count=1).strip()
 
@@ -2526,28 +2534,16 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
 
     if phase in {"qa_why", "qa_other"}:
         body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
-        # Remove accidental premature closing and follow-up questions in fixed-probe mode.
-        body = _strip_qa_closings_and_questions(body)
-        body = _clean_qa_visible_text(body)
+        body = _strip_qa_closings_and_questions(
+            body,
+            allow_one_question=(phase == "qa_other"),
+        ) or body
+        body = _clean_qa_visible_text(body) or body
         if not body:
-            selected_event = get_selected_option_event()
-            if isinstance(selected_event, dict) and selected_event.get("selected_option"):
-                selected_text = str(selected_event["selected_option"]).strip()
-            else:
-                selected = (_LAST_RAG_STATE.advice_options or _ADVICE_OPTIONS_SHOWN or [])
-                selected_text = selected[0] if selected else _t("the selected option", "l'opzione selezionata")
-            if _DIALOG_LANGUAGE == "it":
-                body = (
-                    f"Questa risposta è coerente con {selected_text} perché usa le informazioni raccolte: "
-                    "background, vincoli dichiarati, interessi e profilo RIASEC. Il punto chiave è procedere "
-                    "in modo proporzionato alla preparazione emersa, senza introdurre nuove università o dettagli non grounded."
-                )
-            else:
-                body = (
-                    f"That answer is consistent with {selected_text} because it uses the information collected: "
-                    "background, stated constraints, interests, and the RIASEC profile. The key trade-off is to proceed "
-                    "at a level that matches the preparation shown, without introducing new universities or ungrounded details."
-                )
+            body = _t(
+                "I cannot support a reliable answer from the available information.",
+                "Non posso formulare una risposta affidabile con le informazioni disponibili.",
+            )
         return (body + ("\n" + patch_block if patch_block else "")).strip()
 
     if phase == "qa_choice":
@@ -2984,21 +2980,25 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 return f"{n} - {shown_options[n - 1]}"
         return None
 
-    def _selected_option_grounding_context(self, max_chars: int = 1800) -> str:
-        selected = self._selected_option_value()
-        if not selected:
+    def _shown_options_grounding_context(self) -> str:
+        shown_options = self._displayed_advice_options()
+        if not shown_options:
             return ""
 
-        selected_option = re.sub(r"^\s*[1-3]\s*-\s*", "", selected).strip()
         blocks = _select_option_context_blocks(
             list(self._last_raw_blocks or []),
-            [selected_option],
-            max_blocks=2,
+            shown_options,
+            max_blocks=len(shown_options),
         )
-        if blocks:
-            return _build_short_ctx(blocks, max_chars, max_blocks=2).strip()
 
-        return (self._last_ctx or "")[:max_chars].strip()
+        if blocks:
+            return _build_short_ctx(
+                blocks,
+                self.max_ctx_chars,
+                max_blocks=len(shown_options),
+            ).strip()
+
+        return ""
 
     def _commit_selected_option_number(self, n: int) -> Optional[str]:
         """Commit the student's explicit numbered option choice to runtime state.
@@ -3126,7 +3126,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         return self._listener_patch_request(
             targets="- inferred.riasec_question_valences",
             rules=(
-                    "Use only answers A1-A8 below.\n"
+                    calibration
+                    + question_focus
+                    + "Use only answers A1-A8 below.\n"
                     "Score each answer independently and in the same order.\n"
                     "Allowed values: 2 = strong liking, 1 = liking, "
                     "0 = unclear or neutral, -1 = dislike, -2 = strong dislike.\n"
@@ -3791,113 +3793,38 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         return "university degree program in Italy"
 
 
-    def _option_metadata_block(self, options: List[str]) -> str:
-        lines = []
-        for i, opt in enumerate(options, start=1):
-            university = opt.split("|", 1)[0].strip() if "|" in opt else opt.strip()
-            macro_area = _infer_zone_from_university(university) or "unknown"
-            lines.append(f"- Option {i}: macro_area={macro_area}; university={university}")
-        return "\n".join(lines)
 
-    def _classify_question(self, t: str) -> str:
-        s = (t or "").strip()
-        low = s.lower()
 
-        if "?" not in s:
-            return "other"
+    def _classify_question(self, text: str) -> str:
+        """Classify only the output formats that truly need strict handling.
+
+        Exact fixed choice probes keep their canonical two-option output. Natural
+        comparisons between displayed university options remain open Q&A, so the
+        counselor can explain the choice instead of emitting a bare label.
+        """
+        question = (text or "").strip()
+        low = question.casefold()
+
+        if self._extract_choice_options(question):
+            return "choice"
         if re.search(r"\b(?:why|perch[eéè])\b", low):
             return "why"
-
-        if re.search(r"\b(like|such as|e\.g\.|for example)\b.*\bor\b", low):
-            if self._AUX_YN_RX.search(low):
-                return "yesno"
-            return "other"
-
-        if re.search(
-                r"\b("
-                r"would you recommend|would you suggest|do you recommend|do you suggest|"
-                r"should i|which is better|prefer|"
-                r"mi consiglieresti|mi suggeriresti|consigli|suggerisci|"
-                r"meglio|conviene"
-                r")\b.*\b(or|oppure|o)\b",
-                low,
-        ):
-            return "choice"
-
-        if ("tra " in low and " e " in low) or ("between" in low and " and " in low):
-            return "choice"
-
-        if ("between" in low and "and" in low):
-            return "choice"
-
-        if self._WH_RX.search(low) or self._REQ_RX.search(low):
-            return "other"
-
         if self._AUX_YN_RX.search(low):
             return "yesno"
-
         return "other"
 
-    def _extract_choice_options(self, q: str) -> List[str]:
-        qq = (q or "").strip()
-        low = qq.lower()
 
-        # Prefer the configured fixed follow-up questions from social_practices.json.
-        # This keeps the counselor-side choice handling aligned with the student script.
-        q_norm = _normalize(qq)
-        for idx, pair in CHOICE_REPLY_OPTIONS.get(self.lang, {}).items():
-            if idx < len(self.FIXED_FOLLOWUP_QUESTIONS):
-                configured_q = self.FIXED_FOLLOWUP_QUESTIONS[idx]
-                if q_norm == _normalize(configured_q):
-                    return list(pair)
 
-        if ("percorso tecnico" in low) and ("discipline umanistiche" in low):
-            return [
-                "concentrarti su un percorso tecnico",
-                "un percorso orientato alle discipline umanistiche",
-            ]
-
-        if ("ruolo di leadership" in low) and ("compiti di supporto" in low):
-            return [
-                "assumere già ora un ruolo di leadership",
-                "concentrarti prima su compiti di supporto",
-            ]
-
-        if ("corsi avanzati" in low) and ("moduli introduttivi" in low):
-            return [
-                "iniziare subito con corsi avanzati",
-                "partire da moduli introduttivi",
-            ]
-
-        qq = re.sub(r"[\s\?\.]+$", "", qq)
-
-        if ("technical program" in low) and ("program oriented toward humanities" in low):
-            return [
-                "focusing on a technical program",
-                "a program oriented toward humanities",
-            ]
-
-        if ("leadership role now" in low) and ("supporting tasks first" in low):
-            return [
-                "take a leadership role now",
-                "focus on supporting tasks first",
-            ]
-
-        if ("advanced classes immediately" in low) and ("introductory modules" in low):
-            return [
-                "take advanced classes immediately",
-                "start with introductory modules",
-            ]
-
-        parts = self._CHOICE_CONNECTOR.split(qq)
-        if len(parts) >= 2:
-            return [parts[-2].strip(), parts[-1].strip()][:2]
-
-        m = re.search(r"\bbetween\b\s+(.+?)\s+\band\b\s+(.+)$", qq, re.I)
-        if m:
-            return [m.group(1).strip(), m.group(2).strip()]
-
+    def _extract_choice_options(self, question: str) -> List[str]:
+        """Return canonical alternatives only for configured fixed probes."""
+        q_norm = _normalize(question)
+        for index, pair in CHOICE_REPLY_OPTIONS.get(self.lang, {}).items():
+            if index >= len(self.FIXED_FOLLOWUP_QUESTIONS):
+                continue
+            if q_norm == _normalize(self.FIXED_FOLLOWUP_QUESTIONS[index]):
+                return list(pair)
         return []
+
 
     def _extract_last_question_line(self, text: str) -> str:
         lines = [ln.strip() for ln in (text or "").splitlines() if ln.strip()]
@@ -3906,60 +3833,121 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 return ln
         return (text or "").strip()
 
+
     def _qa_context_block(self) -> str:
+        """Render one compact data contract shared by all Q&A phases."""
         exp = self._listener_memory.get("explicit", {}) if isinstance(self._listener_memory, dict) else {}
         inf = self._listener_memory.get("inferred", {}) if isinstance(self._listener_memory, dict) else {}
 
-        def clean(x: Any) -> Optional[str]:
-            if isinstance(x, str):
-                s = x.strip()
-                return s if s else None
+        def clean(value: Any) -> Optional[str]:
+            if isinstance(value, str) and value.strip():
+                return value.strip()
             return None
 
-        foi_value = inf.get("field_of_interest")
-        if isinstance(foi_value, list) and foi_value:
-            foi_rendered = " > ".join(str(x).strip() for x in foi_value if str(x).strip())
+        field_value = inf.get("field_of_interest")
+        if isinstance(field_value, list):
+            field_rendered = " > ".join(str(x).strip() for x in field_value if str(x).strip()) or None
         else:
-            foi_rendered = clean(foi_value)
+            field_rendered = clean(field_value)
 
         riasec_value = inf.get("riasec_attitudes")
-        if isinstance(riasec_value, list) and riasec_value:
-            riasec_rendered = ", ".join(str(x).strip() for x in riasec_value if str(x).strip())
+        if isinstance(riasec_value, list):
+            riasec_rendered = ", ".join(str(x).strip() for x in riasec_value if str(x).strip()) or None
         else:
             riasec_rendered = None
 
-        selected_value = self._selected_option_value()
-
-        fields = [
+        profile_fields = [
             ("academic_background", clean(exp.get("academic_background"))),
-            ("field_of_interest", foi_rendered),
+            ("field_of_interest", field_rendered),
             ("region", clean(exp.get("region"))),
             ("gender", clean(inf.get("gender"))),
-            ("selected_option", selected_value),
             ("riasec_attitudes", riasec_rendered),
+            ("riasec_confidence", clean(inf.get("riasec_confidence"))),
         ]
+        profile_lines = [f"- {key}: {value}" for key, value in profile_fields if value is not None]
 
-        lines = [f"- {k}: {v}" for k, v in fields if v is not None]
-        profile_block = "CONTEXT (use internally to decide; do NOT restate unless asked):\n"
-        if not lines:
-            out = profile_block
-        else:
-            out = profile_block + "\n".join(lines) + "\n"
+        shown_options = self._displayed_advice_options()
+        options_lines = [f"{i}. {option}" for i, option in enumerate(shown_options, start=1)]
+        selected_value = self._selected_option_value() or "none"
+        grounding_ctx = self._shown_options_grounding_context() or "[no verified option details available]"
 
-        if selected_value:
-            out += "When naming the selected option, copy its text exactly from CONTEXT.\n"
+        return (
+            "<STUDENT_PROFILE>\n"
+            + ("\n".join(profile_lines) if profile_lines else "[no profile fields available]")
+            + "\n</STUDENT_PROFILE>\n"
+            + "<OPTIONS_SHOWN>\n"
+            + ("\n".join(options_lines) if options_lines else "[none]")
+            + "\n</OPTIONS_SHOWN>\n"
+            + f"<CURRENT_SELECTION>{selected_value}</CURRENT_SELECTION>\n"
+            + "<OPTION_FACTS>\n"
+            + grounding_ctx
+            + "\n</OPTION_FACTS>\n"
+        )
 
-        grounding_ctx = self._selected_option_grounding_context()
-        if grounding_ctx:
-            out += (
-                "\nGROUNDING_CONTEXT FOR SELECTED OPTION:\n"
-                "Use this as the only source for factual course/program details. "
-                 "If a detail is absent, say naturally that it cannot be verified"
-                 "from the available information; do not mention retrieval, "
-                 "context windows, or RAG.\n"
-                f"{grounding_ctx}\n"
+    def _build_qa_prompt(
+        self,
+        question: str,
+        *,
+        mode: str = "open",
+        choices: Optional[Sequence[str]] = None,
+        preselection: bool = False,
+    ) -> str:
+        """Build a single concise prompt for pre- and post-selection Q&A."""
+        language = "Italian" if self.lang == "it" else "English"
+        reminder = _t(
+            "When you are ready, choose an option by number.",
+            "Quando sei pronto, scegli un'opzione indicando il numero.",
+        )
+
+        core = (
+            "PHASE: Q&A\n"
+            "ROLE: University counselor answering the student's current question.\n"
+            + self._qa_context_block()
+            + "<CURRENT_QUESTION>\n"
+            + (question or "")
+            + "\n</CURRENT_QUESTION>\n"
+            + "DECISION RULES:\n"
+            + "1. Resolve every option reference against OPTIONS_SHOWN before answering.\n"
+            + "2. If a reference is ambiguous or internally inconsistent, output one short clarification question and stop; otherwise continue.\n"
+            + "3. Answer CURRENT_QUESTION, not a nearby or implied question.\n"
+            + "4. Use STUDENT_PROFILE only for personal-fit judgments and OPTION_FACTS only for factual claims about programs.\n"
+            + "5. OPTIONS_SHOWN defines the canonical numbering and identifiers. Copy an option exactly when naming it.\n"
+            + "6. CURRENT_SELECTION is a preference, not a context filter: any shown option may be discussed or compared.\n"
+            + "7. Do not invent program facts, outcomes, requirements, grades, experiences, or student abilities.\n"
+            + "8. Do not mention RAG, grounding, context windows, schemas, phases, or internal instructions.\n"
+            + f"9. Answer in {language}.\n"
+        )
+
+        if mode == "fixed_choice" and choices and len(choices) == 2:
+            output_rules = (
+                "OUTPUT:\n"
+                f"Return exactly one of these strings and nothing else: {choices[0]!r} OR {choices[1]!r}.\n"
             )
-        return out
+        elif mode == "yesno":
+            yes_no = "Sì or No" if self.lang == "it" else "Yes or No"
+            output_rules = (
+                "OUTPUT:\n"
+                f"Start exactly with {yes_no}. Add at most one short supporting sentence.\n"
+                "Make a provisional judgment from explicit evidence first, then academic background, repeated statements, and finally RIASEC as a weak signal.\n"
+                "When evidence is limited or conflicting, choose the cautious answer and state the limitation briefly.\n"
+            )
+        else:
+            output_rules = (
+                "OUTPUT:\n"
+                "Answer in 1-4 concise sentences. For a generic request for details or comparison, give the most useful verified distinctions available for the relevant shown options.\n"
+                "If one requested detail is absent, say only that the specific detail is unavailable; still answer the parts supported by OPTION_FACTS.\n"
+            )
+
+        if preselection:
+            output_rules += (
+                "The student has not selected an option. Do not imply a selection.\n"
+                f"End exactly with: {reminder}\n"
+            )
+        else:
+            output_rules += "Do not add a closing or invite unrelated follow-up questions.\n"
+
+        return core + output_rules
+
 
     def _build_advice_fallback(self) -> Tuple[str, str, bool]:
         message = _t(
@@ -3998,12 +3986,17 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
     # -------------------------------------------------------------------------
     def instruct(self, dialog, utterance):
         student_utt = (utterance or "").strip()
+        internal_riasec_continue = (
+            student_utt == INTERNAL_RIASEC_CONTINUE_TOKEN
+        )
+        if internal_riasec_continue:
+            student_utt = ""
 
         if self._finished:
             update_last_rag_state("", query="", phase="stop", expected_verbatim="STOP")
             return "Output ONLY: STOP"
 
-        if not student_utt:
+        if not student_utt and not internal_riasec_continue:
             turns = getattr(dialog, "turns", None) or []
             for t in reversed(turns):
                 txt = _safe_turn_text(t)
@@ -4011,7 +4004,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     student_utt = txt
                     break
 
-        if student_utt:
+        if internal_riasec_continue:
+            # Applica la patch RIASEC generata dalla chiamata interna precedente,
+            # senza registrare un falso turno dello studente.
+            self._update_slots_from_student("")
+        elif student_utt:
             self._student_turn_count += 1
             set_listener_patch_source_turn(self._student_turn_count)
             self._update_slots_from_student(student_utt)
@@ -4035,10 +4032,20 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 f"CANONICAL QUESTION FROM SOCIAL_PRACTICE:\n{q}\n"
             )
 
-        if self._flow_stage == "riasec" and len(self._riasec_answers) < 8:
+        if (
+            not internal_riasec_continue
+            and student_utt
+            and self._flow_stage == "riasec"
+            and len(self._riasec_answers) < 8
+        ):
             self._riasec_answers.append(student_utt)
 
-        if self._advice_given and not self._selected_option_committed_this_turn and _CLOSE_RX.search(student_utt or ""):
+        if (
+            self._advice_given
+            and not self._selected_option_committed_this_turn
+            and "?" not in (student_utt or "")
+            and _CLOSE_RX.search(student_utt or "")
+        ):
             update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="wrapup", advice_options=self._displayed_advice_options())
 
             riasec_labels = (self._listener_memory.get("inferred", {}) or {}).get("riasec_attitudes")
@@ -4063,6 +4070,29 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "GROUNDING_CONTEXT.\n"
                 "- Do NOT omit item 1, 2, or 3.\n"
             )
+        if (
+            student_utt
+            and self._advice_given
+            and not self._selected_option_committed_this_turn
+            and not self._slots.selected_option
+            and not self._pending_selection_number
+        ):
+            shown_options = self._displayed_advice_options()
+            if shown_options:
+                qa_ctx = self._shown_options_grounding_context()
+                update_last_rag_state(
+                    qa_ctx,
+                    query=_LAST_RAG_STATE.query,
+                    phase="qa_other",
+                    advice_options=shown_options,
+                    expected_selection_number=None,
+                )
+                return self._build_qa_prompt(
+                    student_utt,
+                    mode="open",
+                    preselection=True,
+                )
+
         if self._selected_option_committed_this_turn and self._advice_given and "?" not in (student_utt or ""):
             self._flow_stage = "qa"
             self._pending_selection_ack = False
@@ -4093,134 +4123,62 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         # Q&A
         # ---------------------------------------------------------------------
         if self._flow_stage == "qa":
-            riasec_patch = self._maybe_riasec_listener_patch_request()
-            language_rule = "- Answer in Italian.\n" if self.lang == "it" else "- Answer in English.\n"
-            yes_no_start_rule = (
-                "- Inizia esattamente con 'Sì', 'No'.\n"
-                if self.lang == "it"
-                else "- Start with exactly 'Yes', 'No'.\n"
-            )
-            def _ret(msg: str) -> str:
-                return (msg + riasec_patch) if riasec_patch else msg
-
             if self._pending_selection_ack:
                 self._pending_selection_ack = False
                 shown_options = self._displayed_advice_options()
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_selected", advice_options=shown_options, expected_selection_number=None)
-                selected_for_ack = self._slots.selected_option
-                if selected_for_ack:
-                    selected_for_ack = _canonicalize_selected_option_value(selected_for_ack, shown_options)
-                if not selected_for_ack and self._pending_selection_number and shown_options:
-                    n = self._pending_selection_number
-                    if 1 <= n <= len(shown_options):
-                        selected_for_ack = f"{n} - {shown_options[n - 1]}"
-                return _ret(
-                    "PHASE: Q&A\n"
-                    f"The student selected: {selected_for_ack or 'the chosen option'}\n"
-                    "TASK:\n"
-                    + language_rule +
-                    "- Acknowledge the selection in ONE short sentence.\n"
-                    "- Do NOT introduce new universities/programs.\n"
-                    "- Do NOT ask any questions.\n"
-                )
-
-            q_for_qa = self._extract_last_question_line(student_utt)
-            qtype = self._classify_question(q_for_qa)
-
-            if qtype == "choice":
-                ch = self._extract_choice_options(q_for_qa)
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_choice", choice_options=ch, advice_options=self._displayed_advice_options(), expected_selection_number=None)
-                if len(ch) == 2:
-                    return _ret(
-                        "PHASE: Q&A\n"
-                        "QUESTION TYPE: CHOICE, not yes/no.\n"
-                        + self._qa_context_block()
-                        + f"CURRENT STUDENT QUESTION:\n{q_for_qa}\n"
-                        + "TASK:\n"
-                        + language_rule +
-                        f"- Reply with ONLY ONE of these exact strings: '{ch[0]}' OR '{ch[1]}'.\n"
-                        "- Answer the exact choice in CURRENT STUDENT QUESTION.\n"
-                        "- If it directly follows a related yes/no probe, do not "
-                        "contradict your immediately previous answer.\n"
-                        "- If the previous answer expressed uncertainty or insufficient "
-                        "evidence, prefer the more cautious alternative.\n"
-                        "- Do NOT answer Yes or No.\n"
-                        "- Output EXACTLY that selected string and nothing else.\n"
-                    )
-                return _ret(
-                    "PHASE: Q&A\n"
-                    "QUESTION TYPE: CHOICE, not yes/no.\n"
-                    + self._qa_context_block() +
-                    "TASK:\n"
-                    + language_rule +
-                    "- Reply with ONLY one of the two options mentioned in the student's question.\n"
-                    "- Do NOT answer Yes or No.\n"
-                    "- Do NOT add any extra words.\n"
-                )
-
-            if qtype == "why":
-                update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_why", advice_options=self._displayed_advice_options(), expected_selection_number=None)
-                return _ret(
-                    "PHASE: Q&A\n"
-                    + self._agent_norms_block()
-                    + self._qa_context_block() +
-                    "TASK:\n"
-                    + language_rule +
-                    "- Answer the student's 'why' briefly.\n"
-                    "- Ground your justification in GROUNDING_CONTEXT; do not invent program details.\n"
-                    "- Use only the profile fields explicitly shown in CONTEXT and facts present in GROUNDING_CONTEXT.\n"
-                    "- Do not mention a constraint, preference, ability, or biographical fact that is not explicitly present there.\n"
-                    "- Never invent examples, past successes, demonstrated skills, grades, or experiences.\n"
-                    "- Do not output an evidence audit, verification checklist, or labels such as can/cannot be verified.\n"
-                    "- Do NOT introduce new universities/programs.\n"
-                    "- Do NOT ask the student any question.\n"
-                    "- Do NOT say goodbye; the fixed follow-up sequence must continue.\n"
-                )
-
-            if qtype == "yesno":
+                selected_for_ack = self._selected_option_value()
+                ack = self._selection_ack_message(selected_for_ack)
                 update_last_rag_state(
-                    self._last_ctx,
+                    self._shown_options_grounding_context(),
                     query=_LAST_RAG_STATE.query,
-                    phase="qa_yesno",
-                    advice_options=self._displayed_advice_options(),
+                    phase="qa_selected",
+                    expected_verbatim=ack,
+                    advice_options=shown_options,
                     expected_selection_number=None,
                 )
-                return _ret(
-                    "PHASE: Q&A\n"
-                    "QUESTION TYPE: YES/NO suitability/feasibility/readiness/risk.\n"
-                    + self._qa_context_block()
-                     + f"CURRENT STUDENT QUESTION:\n{q_for_qa}\n"
-                    + "TASK:\n"
-                    + language_rule
-                    + yes_no_start_rule
-                    + "- Then add at most one short supporting sentence or caveat.\n"
-                    + "- Answer the exact proposition in CURRENT STUDENT QUESTION; "
-                    "do not answer a different property of the course.\n"
-                    + "- Treat the answer as a provisional counseling judgment, not a certainty.\n"
-                    + "- Make the best-supported provisional Yes/No judgment from the available profile.\n"
-                    + "- Use this evidence order: explicit experiences; academic background; repeated student statements; relevant RIASEC interests.\n"
-                    + "- Treat interests and RIASEC as directional signals, not as proof of demonstrated ability.\n"
-                    + "- When evidence is limited or conflicting, choose the more cautious answer, normally No, and explain the limitation in one short caveat.\n"
-                    + "- Never invent examples, past successes, demonstrated skills, grades, or experiences.\n"
-                    + "- If evidence for the exact proposition is limited, say so directly in the caveat instead of filling the gap with an inference.\n"
-                    + "- Do not output an evidence audit, verification checklist, or labels such as can/cannot be verified.\n"
-                    + "- Do NOT introduce new universities/programs.\n"
-                    + "- Do NOT ask the student any question.\n"
+                return (
+                    "PHASE: Q&A_SELECTION_ACK\n"
+                    "OUTPUT: return exactly the acknowledgement below and nothing else.\n"
+                    f"{ack}\n"
                 )
 
-            update_last_rag_state(self._last_ctx, query=_LAST_RAG_STATE.query, phase="qa_other", advice_options=self._displayed_advice_options(), expected_selection_number=None)
-            return _ret(
-                "PHASE: Q&A\n"
-                + self._agent_norms_block()
-                + self._qa_context_block() +
-                "TASK:\n"
-                + language_rule +
-                "- Answer briefly and pragmatically.\n"
-                "- Use GROUNDING_CONTEXT as the only source for factual course/program details.\n"
-                 "- If the requested factual detail is absent, say that it is not verified in the available information; do not mention retrieval or RAG.\n"
-                "- Do NOT introduce new universities/programs.\n"
-                "- Do NOT ask the student any question.\n"
-                "- Do NOT say goodbye; the fixed follow-up sequence must continue.\n"
+            question = self._extract_last_question_line(student_utt)
+            qtype = self._classify_question(question)
+            shown_options = self._displayed_advice_options()
+            qa_ctx = self._shown_options_grounding_context()
+
+            if qtype == "choice":
+                choices = self._extract_choice_options(question)
+                if len(choices) == 2:
+                    update_last_rag_state(
+                        qa_ctx,
+                        query=_LAST_RAG_STATE.query,
+                        phase="qa_choice",
+                        choice_options=choices,
+                        advice_options=shown_options,
+                        expected_selection_number=None,
+                    )
+                    return self._build_qa_prompt(
+                        question,
+                        mode="fixed_choice",
+                        choices=choices,
+                    )
+                qtype = "other"
+
+            phase = {
+                "why": "qa_why",
+                "yesno": "qa_yesno",
+            }.get(qtype, "qa_other")
+            update_last_rag_state(
+                qa_ctx,
+                query=_LAST_RAG_STATE.query,
+                phase=phase,
+                advice_options=shown_options,
+                expected_selection_number=None,
+            )
+            return self._build_qa_prompt(
+                question,
+                mode=qtype if qtype in {"why", "yesno"} else "open",
             )
 
         # ---------------------------------------------------------------------
@@ -4502,91 +4460,53 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             riasec_profile = "unknown"
 
         riasec_confidence = inferred_mem.get("riasec_confidence") or "unknown"
-        riasec_evidence_for_ranking = ""
-        internal_riasec_step = ""
         student_profile_block = (
-            "STUDENT PROFILE:\n"
-            f"- academic_background: {self._slots.academic_background or 'unknown'}\n"
-            f"- field_of_interest: {field_profile}\n"
-            f"- intended_level: {self._slots.intended_level or 'unknown'}\n"
-            f"- region: {self._slots.region or 'unknown'}\n"
-            f"- preferred_region: {getattr(self._slots, 'preferred_region', None) or 'unknown'}\n"
-            f"- gender: {inferred_mem.get('gender') or 'unknown'}\n"
-            f"- riasec_attitudes: {riasec_profile}\n"
-            f"- riasec_confidence: {riasec_confidence}\n"
+            "<STUDENT_PROFILE>\n"
+            f"academic_background: {self._slots.academic_background or 'unknown'}\n"
+            f"field_of_interest: {field_profile}\n"
+            f"intended_level: {self._slots.intended_level or 'unknown'}\n"
+            f"region: {self._slots.region or 'unknown'}\n"
+            f"preferred_region: {getattr(self._slots, 'preferred_region', None) or 'unknown'}\n"
+            f"gender: {inferred_mem.get('gender') or 'unknown'}\n"
+            f"riasec_attitudes: {riasec_profile}\n"
+            f"riasec_confidence: {riasec_confidence}\n"
+            "</STUDENT_PROFILE>\n"
         )
 
-        opt_lines = "\n".join([f"- Option {i + 1}: {o}" for i, o in enumerate(candidate_pool)])
+        option_lines = "\n".join(
+            f"{i}. {option}" for i, option in enumerate(candidate_pool, start=1)
+        )
         search_note = self._search_note_for_scope(retrieval.scope_name)
-
-        final_line = _advice_final_line()
         final_top_n = max(1, min(int(self.final_top_n), 3, len(candidate_pool)))
-        visible_option_template = "\n".join(
-         f"  {i}. <exact option text>" for i in range(1, final_top_n + 1)
-        )
-        if riasec_profile == "unknown" and len(self._riasec_answers) >= 8:
-            riasec_evidence_for_ranking = (
-                "RIASEC ANSWERS FOR RANKING:\n"
-                f"{self._riasec_answer_evidence_block()}\n\n"
-            )
-        if riasec_profile == "unknown":
-            internal_riasec_step = (
-                "INTERNAL RIASEC STEP (do not show):\n"
-                "- If riasec_attitudes is unknown but all 8 RIASEC answers are available, do NOT infer labels directly from biography or general impressions.\n"
-                "- Compute exactly ONE internal valence vector for Q1-Q8 using the same scale used by the hidden listener patch:\n"
-                "  2 = strong liking; 1 = moderate liking; 0 = unclear/mixed/ability-only; -1 = dislike; -2 = strong dislike.\n"
-                "- Score each answer independently and locally: Q1 from A1 only, Q2 from A2 only, ..., Q8 from A8 only.\n"
-                "- Score preference/liking for the activity, not ability, talent, confidence, school performance, or career usefulness.\n"
-                "- Use only the answers to the 8 RIASEC questions.\n"
-                "- Reuse this exact same vector in inferred.riasec_question_valences in the hidden listener patch; do not recompute or alter it.\n"
-                "- Then use the following mapping only as a weak ranking signal:\n"
-                "  Q1 -> Realistic\n"
-                "  Q2 -> Investigative, with minor Realistic nuance only when concrete mechanisms/tools/systems are explicit\n"
-                "  Q3 -> Investigative\n"
-                "  Q4 -> Artistic\n"
-                "  Q5 -> Artistic / Investigative / Enterprising nuance\n"
-                "  Q6 -> Social\n"
-                "  Q7 -> Enterprising / Conventional nuance\n"
-                "  Q8 -> Conventional\n"
-                "- If the inferred profile is flat, mixed, or uncertain, treat RIASEC as low-confidence and use it only as a tie-breaker.\n"
-                "- The ranking and the stored listener result must therefore come from the same valence vector.\n\n"
-            )
-        final_top_n = max(1, min(int(self.final_top_n), 3, len(candidate_pool)))
-        visible_option_template = "\n".join(
-            f"  {i}. <exact option text>" for i in range(1, final_top_n + 1)
+        output_template = "\n".join(
+            f"{i}. <exact option text>" for i in range(1, final_top_n + 1)
         )
 
         return (
             "PHASE: ADVICE\n"
-            "TASK: rank only the grounded candidates below; do not create or rewrite candidates.\n"
-            + student_profile_block + "\n"
+            "ROLE: rank only the grounded candidates supplied below.\n"
+            + student_profile_block
             + search_note
             + "<CANDIDATE_OPTIONS>\n"
-            f"{opt_lines}\n"
-            + "</CANDIDATE_OPTIONS>\n\n"
-            + "<RAG_CONTEXT>\n"
-            f"{retrieval.short_ctx}\n"
-            + "</RAG_CONTEXT>\n\n"
-            + riasec_evidence_for_ranking
-            + internal_riasec_step
-            + "DECISION ORDER:\n"
-            + "1. intended_level compatibility.\n"
-            + "2. exact preferred_region, then stated macro-area.\n"
-            + "3. field_of_interest order: first label before later labels.\n"
-            + "4. RIASEC only as a tie-breaker; skip it when unknown and keep it weak when confidence is low.\n"
-            + "5. original candidate order as the final tie-breaker.\n"
-            + "If canonical riasec_attitudes are available, use them and do not infer them again. "
-            + "If they are unknown, use the INTERNAL RIASEC STEP only as a provisional tie-breaker. "
-            "Do not invent unsupported facts or describe fallback options as exact-region matches.\n\n"
-              + "VISIBLE OUTPUT RULES:\n"
-            + f"- The visible answer must contain ONLY one short intro line, then the final options, up to {final_top_n}.\n"
-            + f"- If you return one option, first line must be exactly: {_advice_intro_line(1)}\n"
-            + f"- If you return multiple options, first line must be exactly: {_advice_intro_line(2)}\n"
-            + "- Use the exact option text from CANDIDATE OPTIONS.\n"
-            + "- Do not add content beyond the required intro line, numbered option lines, and final selection line.\n"
-            + "- Visible output format must be intro line, then numbered options, one option per line:\n"
-            + f"{visible_option_template}\n"
-            + f'  Final line: "{final_line}"\n'
+            + option_lines
+            + "\n</CANDIDATE_OPTIONS>\n"
+            + "<OPTION_FACTS>\n"
+            + retrieval.short_ctx
+            + "\n</OPTION_FACTS>\n"
+            + "RANKING RULES:\n"
+            + "1. Exclude candidates incompatible with intended_level.\n"
+            + "2. Prefer exact preferred_region, then the stated macro-area.\n"
+            + "3. Follow field_of_interest order.\n"
+            + "4. Use RIASEC only as a weak tie-breaker when available.\n"
+            + "5. Use original candidate order as the final tie-breaker.\n"
+            + "Do not invent facts or rewrite candidate identifiers.\n"
+            + "OUTPUT:\n"
+            + f"Return exactly {final_top_n} option(s) when available.\n"
+            + f"Use exactly this intro for one option: {_advice_intro_line(1)}\n"
+            + f"Use exactly this intro for multiple options: {_advice_intro_line(2)}\n"
+            + output_template
+            + f"\n{_advice_final_line()}\n"
+            + "Output only the intro, numbered option lines, and final selection line.\n"
         )
 
     def can_finish(self, utterance: str) -> bool:
