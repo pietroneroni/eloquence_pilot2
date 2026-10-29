@@ -1,0 +1,288 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p10.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12345
+[LANG] dialog=Italian rag=ita
+[RAG][audit] {"description_section": "Descrizione generale", "event": "request", "macroarea": "nord", "preferred_zone": "north", "query": "bachelor degree program in computer science / engineering technology", "query_candidates": ["bachelor degree program in computer science", "liceo scientifico bachelor degree program in computer science", "computer science", "liceo scientifico computer science", "engineering", "bachelor degree program in engineering", "liceo scientifico engineering", "informatica", "bachelor degree program in informatica", "liceo scientifico informatica", "ingegneria", "bachelor degree program in ingegneria", "liceo scientifico ingegneria", "software", "bachelor degree program in software", "liceo scientifico software", "technology", "bachelor degree program in technology", "liceo scientifico technology", "data systems", "bachelor degree program in data systems", "liceo scientifico data systems", "tecnologia", "bachelor degree program in tecnologia", "liceo scientifico tecnologia", "liceo scientifico", "bachelor degree program in computer science / engineering technology"], "region": null, "target_options": 3, "version": "courses_v3"}
+
+
+[RAG][audit] {"cities": ["Polo di città - Sociologia - via Verdi, 26"], "course": "[0625H] DATA SCIENCE", "course_code": "0625H", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00122__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3444087505340576, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10760", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50369#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50369?schemaid=8039", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50370#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50370?schemaid=8040", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti?annoOrdinamento=2024"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)"], "course": "[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA", "course_code": "0339G", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00275__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3563307225704193, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10712", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458?schemaid=8538", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459?schemaid=8535", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460?schemaid=8536", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461?schemaid=8537", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti?annoOrdinamento=2019"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 80)"], "course": "[0346H] INGEGNERIA DELL'INFORMAZIONE", "course_code": "0346H", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00029__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.36214596033096313, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10756", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50521#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50521?schemaid=8569", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50522#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50522?schemaid=8568", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50523#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50523?schemaid=8567", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50524#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50524?schemaid=8566", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50524?schemaid=8661", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti?annoOrdinamento=2023"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)"], "course": "[0514G] INFORMATICA", "course_code": "0514G", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00287__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.36480942368507385, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10114", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0522H] DATA SCIENCE", "course_code": "0522H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00240__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3698533773422241, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10692"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84"], "course": "[0708H] COGNITIVE SCIENCE - SCIENZE COGNITIVE", "course_code": "0708H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00086__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3735235035419464, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10168", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50513?schemaid=8322", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50514?schemaid=8323", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50515?schemaid=8324"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9"], "course": "[0517H] INFORMATICA", "course_code": "0517H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00238__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3751072287559509, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10117", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50539#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50539?schemaid=8571", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50540#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50540?schemaid=8570", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti?annoOrdinamento=2011"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84"], "course": "[0709H] HUMAN-COMPUTER INTERACTION - INTERAZIONE PERSONA-MACCHINA", "course_code": "0709H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00216__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3775588870048523, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10559", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559/insegnamenti/50456", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559/insegnamenti/50456?schemaid=8241"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 45)"], "course": "[0521H] BIOLOGIA QUANTITATIVA E COMPUTAZIONALE", "course_code": "0521H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00207__c004", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.37808287143707275, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10616", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10616/insegnamenti/50527", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10616/insegnamenti/50527?schemaid=8618"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Rovereto - Via Fortunato Zeni, 8 (Utenza sostenibile: 80)"], "course": "[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE", "course_code": "0347H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00241__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38515838980674744, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10761", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417?schemaid=8611", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418?schemaid=8614", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti?annoOrdinamento=2024"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Università degli Studi di Verona"], "course": "[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA", "course_code": "INT - ISMP", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00390__c006", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3870500326156616, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10799"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 47)"], "course": "[0519H] MATEMATICA", "course_code": "0519H", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00090__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38940009474754333, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10170", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50440?schemaid=8582", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50441?schemaid=8583", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50442?schemaid=8585", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50443?schemaid=8584"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 35)"], "course": "[0344H] MECHATRONICS ENGINEERING", "course_code": "0344H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00225__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3910585045814514, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10752", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50478#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50478?schemaid=8607", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50479#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50479?schemaid=8608", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50480#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50480?schemaid=8606", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti?annoOrdinamento=2021"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)"], "course": "[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO", "course_code": "0115G", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00407__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3934115469455719, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10126", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482?schemaid=8270", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483?schemaid=8268", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti?annoOrdinamento=2011", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677464"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 80)"], "course": "[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS", "course_code": "0342H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00243__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3962298333644867, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10738", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530?schemaid=8564", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531?schemaid=8562", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532?schemaid=8561", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533?schemaid=8563", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti?annoOrdinamento=2020"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 60)"], "course": "[0520H] BIOTECNOLOGIE CELLULARI E MOLECOLARI", "course_code": "0520H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00209__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.39724671840667725, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10232", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti/50432?schemaid=8554", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti/50433?schemaid=8555", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti/50434?schemaid=8556"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 30)"], "course": "[0331H] INGEGNERIA CIVILE", "course_code": "0331H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00114__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3982681632041931, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10149", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50352#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50352?schemaid=8549", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50353#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50353?schemaid=8548", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50354#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50354?schemaid=8545", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50355#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50355?schemaid=8547", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti?annoOrdinamento=2023"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84"], "course": "[0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE", "course_code": "0704G", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00382__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.39851003885269165, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10112", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10112/insegnamenti/50445", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10112/insegnamenti/50445?schemaid=8236"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 30)"], "course": "[0127H] BEHAVIOURAL AND APPLIED ECONOMICS - ECONOMIA COMPORTAMENTALE E APPLICATA Inglese", "course_code": "0127H", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00263__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4006175398826599, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10718", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/50502", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/50502?schemaid=8286", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677465"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di Rovereto - Palazzo Fedrigotti - Corso Bettini, 31"], "course": "[CBS] COGNITIVE AND BRAIN SCIENCES", "course_code": "CBS", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00427__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4014732837677002, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10764", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1718264921824"], "type": "Corso di Dottorato", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 36)"], "course": "[0332H] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO", "course_code": "0332H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00231__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4022515118122101, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10150", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50357#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50357?schemaid=8559", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50358#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50358?schemaid=8560", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50359#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50359?schemaid=8550", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50360#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50360?schemaid=8551", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti?annoOrdinamento=2021"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9"], "course": "[0343H] MANAGEMENT AND INDUSTRIAL SYSTEMS ENGINEERING", "course_code": "0343H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00099__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.40426042675971985, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10749", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10749/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10749/insegnamenti/50436#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10749/insegnamenti/50436?schemaid=8595", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10749/insegnamenti/50437#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10749/insegnamenti/50437?schemaid=8591", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10749/insegnamenti?annoOrdinamento=2021"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 75)"], "course": "[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI", "course_code": "0516G", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00375__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.40597832202911377, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10116", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10116/insegnamenti/50426", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10116/insegnamenti/50426?schemaid=8544"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1001S] MEDICINA E CHIRURGIA", "course_code": "1001S", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00006__c006", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.406585693359375, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10739", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739/insegnamenti/50517", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739/insegnamenti/50517?schemaid=8628"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Palazzo Prodi - via Tommaso Gar, 14"], "course": "[0805H] SECURITY, INTELLIGENCE AND STRATEGIC STUDIES", "course_code": "0805H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00070__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.40678223967552185, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10713", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10713/insegnamenti/50394", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10713/insegnamenti/50394?schemaid=8079"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9"], "course": "[ISI] INGEGNERIA E SCIENZA DELL'INFORMAZIONE", "course_code": "ISI", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00413__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4102117717266083, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10775"], "type": "Corso di Dottorato", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Giurisprudenza - via Verdi, 53"], "course": "[0207H] GLOBAL LAW MAKING", "course_code": "0207H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00254__c004", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4106658697128296, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10763", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10763/insegnamenti/50421", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10763/insegnamenti/50421?schemaid=8113"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 30)"], "course": "[0341H] ENVIRONMENTAL METEOROLOGY", "course_code": "0341H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00223__c004", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.41195040941238403, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10695", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10695/insegnamenti/50364", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10695/insegnamenti/50364?schemaid=8529"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9"], "course": "[0327G] INGEGNERIA INDUSTRIALE", "course_code": "0327G", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00281__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.41513267159461975, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10131", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428?schemaid=8540", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429?schemaid=8541", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430?schemaid=8539", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti?annoOrdinamento=2020"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 100)"], "course": "[0325G] INGEGNERIA CIVILE", "course_code": "0325G", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00395__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.41515493392944336, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10127", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10127/insegnamenti/50348", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10127/insegnamenti/50348?schemaid=8526"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 28)"], "course": "[0120H] INNOVATION MANAGEMENT - MANAGEMENT DELL'INNOVAZIONE", "course_code": "0120H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00252__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.415171355009079, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10176", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10176/insegnamenti/50493", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10176/insegnamenti/50493?schemaid=8277"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Palazzo Prodi - via Tommaso Gar, 14 (Utenza sostenibile: 26)"], "course": "[0804H] STUDI SULLA SICUREZZA INTERNAZIONALE", "course_code": "0804H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00194__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4205016493797302, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10615", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10615/insegnamenti/50423", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10615/insegnamenti/50423?schemaid=8127"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Sociologia - via Verdi, 26"], "course": "[0623H] GLOBAL AND LOCAL STUDIES", "course_code": "0623H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00202__c005", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.42054295539855957, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10733", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10733/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10733/insegnamenti/50389?schemaid=8060", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10733/insegnamenti/50390?schemaid=8061"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Sociologia - via Verdi, 26"], "course": "[0624H] ORGANIZZAZIONE,SOCIETÀ E TECNOLOGIA", "course_code": "0624H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00198__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4210190176963806, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10750", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10750/insegnamenti/50391", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10750/insegnamenti/50391?schemaid=8062"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 100)"], "course": "[0123H] MANAGEMENT", "course_code": "0123H", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00128__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4215400815010071, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10185", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50496#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50496?schemaid=8282", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50497#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50497?schemaid=8281", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50498#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50498?schemaid=8279", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti?annoOrdinamento=2011"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 35)"], "course": "[0119H] INTERNATIONAL MANAGEMENT - MANAGEMENT INTERNAZIONALE", "course_code": "0119H", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00173__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4221153259277344, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10136", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10136/insegnamenti/50492", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10136/insegnamenti/50492?schemaid=8276"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Giurisprudenza - via Verdi, 53 (Utenza sostenibile: 650)"], "course": "[0205F] GIURISPRUDENZA Ingegneria, informatica e tecnologie", "course_code": "0205F", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00011__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4222989082336426, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10055", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055/insegnamenti/50371", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055/insegnamenti/50371?schemaid=8041", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1679583500227"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 130)"], "course": "[0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO", "course_code": "0326G", "decision": "reject_catalog_list", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00348__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.42317020893096924, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10130", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10130/insegnamenti/50349", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10130/insegnamenti/50349?schemaid=8528"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo B - via Sommarive, 9"], "course": "[INNIND] INNOVAZIONE INDUSTRIALE", "course_code": "INNIND", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00412__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.42561572790145874, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10774"], "type": "Corso di Dottorato", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 45)"], "course": "[0518H] FISICA", "course_code": "0518H", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00221__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.42670315504074097, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10169", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169/insegnamenti/50528", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169/insegnamenti/50528?schemaid=8621"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Università degli Studi di Modena e Reggio Emilia"], "course": "[INT - BIM] BIOINGEGNERIA PER L'INNOVAZIONE IN MEDICINA", "course_code": "INT - BIM", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00211__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4267957806587219, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10801"], "type": "Laurea Magistrale", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": ["Polo di città - Sociologia - via Verdi, 26"], "course": "[0611G] SOCIOLOGIA", "course_code": "0611G", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00366__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.4271720349788666, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10137", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378?schemaid=8052", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379?schemaid=8053", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380?schemaid=8051", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381?schemaid=8054", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti?annoOrdinamento=2023"], "type": "Laurea", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[M110] COMMUNICATION OF SCIENCE AND INNOVATION - SCICOMM", "course_code": "M110", "decision": "accepted", "event": "hit", "id": "ita__merged_outputUniversitàTrento__b00436__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.42812708020210266, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10698", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1688387189212"], "type": "", "type_status": "unknown", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"event": "scope_complete", "macroarea": "nord", "pool_limit": 32, "queries": 27, "raw_blocks": 32, "region": null, "scope": "zone_north_vector_desc", "section_contains": "Descrizione generale", "version": "courses_v3"}
+[RAG][audit] {"candidates": ["University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE", "University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI", "University of Trento | [0325G] INGEGNERIA CIVILE", "University of Trento | [0611G] SOCIOLOGIA", "University of Trento | [M110] COMMUNICATION OF SCIENCE AND INNOVATION - SCICOMM"], "event": "scope_result", "matched_zone": "north", "merged_blocks": 32, "raw_blocks": 32, "scope": "zone_north_vector_desc", "target_options": 3, "version": "courses_v3"}
+[RAG][audit] {"aligned_blocks": 5, "candidates": ["University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE", "University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI", "University of Trento | [0325G] INGEGNERIA CIVILE", "University of Trento | [0611G] SOCIOLOGIA", "University of Trento | [M110] COMMUNICATION OF SCIENCE AND INNOVATION - SCICOMM"], "context_characters": 3704, "event": "candidate_pool", "query": "bachelor degree program in computer science / engineering technology", "scope": "zone_north_vector_desc", "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 5, "candidates": ["University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE", "University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI", "University of Trento | [0325G] INGEGNERIA CIVILE", "University of Trento | [0611G] SOCIOLOGIA", "University of Trento | [M110] COMMUNICATION OF SCIENCE AND INNOVATION - SCICOMM"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE"], "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 1, "candidates": ["University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE"], "version": "courses_v3"}
+
+[dialog_id] f928bb47-b4c7-4732-9179-4a6181a01bb2
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12345
+--- Dialogue Begins ---
+[Student] Ciao, sono uno studente del Nord Italia e ho appena completato il liceo. Sto cercando di capire quale corso di laurea scegliere all'università. Ho sempre avuto una passione per le materie logiche e scientifiche, quindi penso che un percorso in ingegneria o informatica potrebbe farmi al caso mio.
+[Counselor[mistral_small31_24b_32k]] Ciao! Aiuto gli studenti a scegliere un percorso universitario in base al loro background, ai loro interessi, alle attitudini e ai vincoli. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?
+[Student] Ho appena completato il liceo scientifico. Non ho ancora deciso quale corso di laurea scegliere all'università.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Quali materie o ambiti universitari ti attirano di più?
+[Student] Mi piacciono molto le materie logiche e scientifiche. Mi piace capire come funzionano le cose e analizzare problemi complessi.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?
+[Student] Mi piacerebbe approfondire la programmazione e l'intelligenza artificiale. Vorrei anche capire meglio come funzionano i sistemi informatici e le reti.
+[Counselor[mistral_small31_24b_32k]] Grazie, è molto utile. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?
+[Student] Mi piacerebbe restare nel Nord Italia. Non ho ancora deciso esattamente dove, ma preferisco rimanere vicino a casa mia.
+[Counselor[mistral_small31_24b_32k]] Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?
+[Student] Mi attira poco.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace capire come funzionano cose, sistemi o fenomeni?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?
+[Student] Dipende.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?
+[Student] Mi piace abbastanza.
+[Counselor[mistral_small31_24b_32k]] Quanto ti piace avere attività ordinate, pianificate e sotto controllo?
+[Student] Mi piace molto.
+[Counselor[mistral_small31_24b_32k]] Grazie, ora ho le informazioni necessarie per confrontare le opzioni.
+[Student] Va bene.
+[Counselor[mistral_small31_24b_32k]] Ti suggerisco questa opzione: 1. University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE Scegli un'opzione indicando il numero.
+[Student] Scelgo l'opzione N. 1. Pensi che potrei affrontare un corso tecnico impegnativo?
+[Counselor[mistral_small31_24b_32k]] Sì, dovresti essere in grado di affrontarlo. Il corso [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE dell'Università di Trento è molto interessante per chi ha una passione per le materie logiche e scientifiche. Il tuo background nel liceo scientifico ti ha già preparato a ragionare in modo logico e analitico, che sono competenze fondamentali per questo percorso. Il corso si concentra sugli aspetti cognitivi e sociali della comunicazione mediata dalle tecnologie comunicative, il che potrebbe essere molto stimolante per te.
+[Student] Mi consiglieresti di concentrarmi su un percorso tecnico o su uno orientato alle discipline umanistiche?
+[Counselor[mistral_small31_24b_32k]] concentrarti su un percorso tecnico
+[Student] Perché pensi che questa scelta faccia per me?
+[Counselor[mistral_small31_24b_32k]] Penso che il corso [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE dell'Università di Trento sia una scelta adatta per te perché combina aspetti tecnici e cognitivi, che sembrano molto interessarti. Questo percorso ti permetterà di esplorare come le tecnologie comunicative influenzano la nostra interazione con il mondo digitale, un argomento che potrebbe stimolare la tua curiosità per la logica e l'analisi dei problemi complessi. Inoltre, il corso è situato nel Nord Italia, vicino a casa tua, il che rende più facile per te rimanere nella tua regione di preferenza.
+[Student] Pensi che mi troverei a mio agio nel guidare un progetto di gruppo?
+[Counselor[mistral_small31_24b_32k]] Sì, probabilmente ti troveresti a tuo agio nel guidare un progetto di gruppo. Il corso [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE dell'Università di Trento richiede competenze organizzative e di coordinamento, che sembrano essere in linea con le tue attitudini investigative e convenzionali.
+[Student] Mi suggeriresti di assumere già ora un ruolo di leadership o di concentrarmi prima su compiti di supporto?
+[Counselor[mistral_small31_24b_32k]] concentrarti prima su compiti di supporto
+[Student] Perché pensi che una delle due opzioni sia più adatta a me?
+[Counselor[mistral_small31_24b_32k]] Penso che l'opzione 1 - University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE sia più adatta a te perché combina aspetti tecnici e cognitivi, che sembrano molto interessarti. Questo percorso ti permetterà di esplorare come le tecnologie comunicative influenzano la nostra interazione con il mondo digitale, un argomento che potrebbe stimolare la tua curiosità per la logica e l'analisi dei problemi complessi. Inoltre, il corso è situato nel Nord Italia, vicino a casa tua, il che rende più facile per te rimanere nella tua regione di preferenza.
+[Student] Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?
+[Counselor[mistral_small31_24b_32k]] Sì, il tuo background nel liceo scientifico ti ha fornito una solida base in materie logiche e scientifiche, che sono fondamentali per affrontare il corso [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE dell'Università di Trento.
+[Student] Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?
+[Counselor[mistral_small31_24b_32k]] partire da moduli introduttivi
+[Student] Perché pensi che questo approccio sia adatto alla mia preparazione?
+[Counselor[mistral_small31_24b_32k]] Penso che questo approccio sia adatto alla tua preparazione perché il corso [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE dell'Università di Trento si concentra sugli aspetti cognitivi e sociali della comunicazione mediata dalle tecnologie, un campo che richiede competenze logiche e analitiche. Il tuo background nel liceo scientifico ti ha fornito una solida base in queste aree, rendendoti ben preparato per affrontare i contenuti del corso. Inoltre, il corso è situato nel Nord Italia, vicino a casa tua, il che rende più facile per te rimanere nella tua regione di preferenza.
+[Student] Grazie per il tuo aiuto, arrivederci.
+[Counselor[mistral_small31_24b_32k]] Riepilogo: Hai completato il liceo scientifico e sei interessato a un percorso che combini logica, analisi e tecnologie comunicative. Il corso [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE dell'Università di Trento sembra essere una scelta adatta per te. RIASEC: SIC Prossimi passi: 1. rivedere il piano ufficiale del corso e i requisiti di accesso 2. verificare costi, sede, pendolarismo o vincoli abitativi 3. preparare documenti, portfolio o revisione dei prerequisiti Saluto: A presto e buon proseguimento!
+[Student] Arrivederci
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        -1,
+        2,
+        2,
+        0,
+        1,
+        2,
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "liceo scientifico",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          0,
+          1,
+          2,
+          1,
+          2
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      },
+      "selection": {
+        "option_number": 1
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Social",
+        "Investigative",
+        "Conventional"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE",
+  "shown_options": [
+    "University of Trento | [0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE"
+  ],
+  "source_turn": 16
+}
+[RUN_VALIDATION] protocol_ok=True options_shown=1 selected_option=True terminal_without_options=False error=none

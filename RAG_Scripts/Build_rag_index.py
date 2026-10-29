@@ -226,6 +226,32 @@ def parse_block(block: str):
     return meta, content
 
 
+def enrich_course_metadata(meta: dict, content: str) -> dict:
+    """Keep only explicit course metadata; never infer a city from its university."""
+    course = str(meta.get("COURSE") or "").strip()
+    match = re.match(r"^\[(?P<code>[^\]]+)\]\s*(?P<name>.*)$", course)
+    if match:
+        meta.setdefault("COURSE_CODE", match.group("code").strip())
+        meta.setdefault("COURSE_NAME", match.group("name").strip())
+
+    degree_type = str(meta.get("TYPE") or "").strip()
+    if degree_type:
+        meta.setdefault("DEGREE_TYPE", degree_type)
+
+    cities: list[str] = []
+    location_rx = re.compile(
+        r"(?im)^\s*(?:sede didattica|sede del corso|citt[aà]|city|campus city|teaching location)\s*:\s*([^\n]+)"
+    )
+    for found in location_rx.findall(content or ""):
+        for city in str(found).split(";"):
+            city = city.strip()
+            if city and city not in cities:
+                cities.append(city)
+    if cities:
+        meta["CITIES"] = cities
+    return meta
+
+
 def should_keep_block(meta: dict, content: str) -> bool:
     if not meta.get("UNIVERSITY") or not meta.get("COURSE"):
         return False

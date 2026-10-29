@@ -1,0 +1,73 @@
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "economics_business",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          0,
+          2,
+          2,
+          2,
+          0
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      },
+      "selection": {
+        "option_number": 1
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]

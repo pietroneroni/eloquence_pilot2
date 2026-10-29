@@ -7,9 +7,11 @@ import os
 import re
 import sys
 import traceback
+import urllib.error
+import urllib.request
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
-from typing import Any
+from typing import Any, Sequence
 
 import sdialog
 
@@ -27,6 +29,7 @@ from university_counseling.AgentWithRag import (
     get_last_rag_phase,
     get_listener_patch_events,
     get_listener_patches,
+    get_advice_options_shown,
     get_selected_option_event,
     set_dialog_language as set_rag_dialog_language,
 )
@@ -132,6 +135,53 @@ def _parse_model_conditions(raw: str) -> list[tuple[str, str]]:
         if label and model:
             conditions.append((label, model))
     return conditions
+
+
+def _ollama_model_name(model: str) -> str | None:
+    value = (model or "").strip()
+    if not value.lower().startswith("ollama:"):
+        return None
+    name = value.split(":", 1)[1].strip()
+    return name or None
+
+
+def _ollama_name_variants(name: str) -> set[str]:
+    variants = {name}
+    if ":" not in name.rsplit("/", 1)[-1]:
+        variants.add(f"{name}:latest")
+    return variants
+
+
+def _require_configured_ollama_models(models: Sequence[str]) -> None:
+    requested = {name for model in models if (name := _ollama_model_name(model))}
+    if not requested:
+        return
+
+    host = os.getenv("OLLAMA_HOST", "http://127.0.0.1:11434").rstrip("/")
+    request = urllib.request.Request(f"{host}/api/tags", method="GET")
+    try:
+        with urllib.request.urlopen(request, timeout=10) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+    except (OSError, urllib.error.URLError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"Cannot verify configured Ollama models at {host}: {exc}") from exc
+
+    available = {
+        str(item.get(key, "")).strip()
+        for item in payload.get("models", [])
+        if isinstance(item, dict)
+        for key in ("name", "model")
+        if str(item.get(key, "")).strip()
+    }
+    missing = sorted(
+        name for name in requested
+        if not (_ollama_name_variants(name) & available)
+    )
+    if missing:
+        raise RuntimeError(
+            "Configured Ollama model(s) not found: "
+            + ", ".join(missing)
+            + ". Use `ollama list` to select an installed model name."
+        )
 
 
 def _normalize_gender_condition(value: str) -> str:
@@ -307,6 +357,7 @@ def _build_counselor_agent(
     practice: dict[str, Any],
     retriever: TimedRetriever,
     model_label: str,
+    initial_listener_region: str | None = None,
 ) -> Agent:
     counselor_persona = Persona(
         name="University Counselor",
@@ -331,9 +382,10 @@ def _build_counselor_agent(
 
     return counselor | UniversityCounselorFlowOrchestrator(
         retriever=retriever,
+        initial_listener_region=initial_listener_region,
         required_slots=("academic_background", "field_of_interest", "region"),
         top_k=_env_int("SDIALOG_COUNSELOR_TOP_K", 6) or 6,
-        candidate_pool_size=_env_int("SDIALOG_CANDIDATE_POOL_SIZE", 4) or 4,
+        candidate_pool_size=_env_int("SDIALOG_CANDIDATE_POOL_SIZE", 6) or 6,
         min_options_target=_env_int("SDIALOG_MIN_OPTIONS_TARGET", 3) or 3,
         final_top_n=_env_int("SDIALOG_FINAL_TOP_N", 3) or 3,
         max_ctx_chars=_env_int("SDIALOG_MAX_CTX_CHARS", 4000) or 4000,
@@ -467,6 +519,7 @@ def _run_one_dialog(
     social_practice_name: str,
     social_practice_path: str,
     retriever: TimedRetriever,
+    initial_listener_region: str | None = None,
 ) -> tuple[Any, str]:
     set_rag_dialog_language(dialog_language)
     set_student_dialog_language(dialog_language)
@@ -481,6 +534,7 @@ def _run_one_dialog(
         practice=practice,
         retriever=retriever,
         model_label=model_label,
+        initial_listener_region=initial_listener_region,
     )
     student_agent = _build_student_agent(
         persona_path=persona_path,
@@ -496,6 +550,8 @@ def _run_one_dialog(
     print(f"[MODEL] student={student_model}")
     print(f"[SEED] {seed}")
     print(f"[LANG] dialog={dialog_language} rag={_rag_lang(dialog_language)}")
+    if initial_listener_region:
+        print(f"[RETRY_CONTEXT] retained_listener_region={initial_listener_region}")
 
     dialog = student_agent.dialog_with(counselor_agent, max_turns=max_turns, seed=seed)
     dialog_text = _render_dialog(dialog)
@@ -513,7 +569,11 @@ def main() -> None:
         str(project_root / "configuration_data" / "social_practices.json"),
     )
 
-    max_turns = _env_int("SDIALOG_MAX_TURNS", 100) or 100
+    requested_max_turns = _env_int("SDIALOG_MAX_TURNS", 100) or 100
+    protocol_min_turns = _env_int("SDIALOG_PROTOCOL_MIN_TURNS", 30) or 30
+    # The fixed protocol needs the background, RIASEC, choice, nine follow-ups,
+    # and the closing exchange.  Do not let a low batch setting truncate it.
+    max_turns = max(requested_max_turns, protocol_min_turns)
     max_run_attempts = max(
         1,
         _env_int("SDIALOG_RUN_ATTEMPTS", 3) or 3,
@@ -536,6 +596,10 @@ def main() -> None:
 
     fixed_student_model = os.getenv("SDIALOG_STUDENT_MODEL", "").strip()
     same_student_as_expert = _env_flag("SDIALOG_STUDENT_MODEL_SAME_AS_EXPERT", "1")
+    _require_configured_ollama_models(
+        [model for _, model in model_conditions]
+        + ([] if same_student_as_expert or not fixed_student_model else [fixed_student_model])
+    )
 
     gender_variants = [_normalize_gender_condition(x) for x in _split_env_list(os.getenv("SDIALOG_GENDER_VARIANTS", "male,female"))]
     if not gender_variants:
@@ -570,6 +634,7 @@ def main() -> None:
         "SDIALOG_EXPOSE_SENSITIVE_CONTEXT": os.environ.get("SDIALOG_EXPOSE_SENSITIVE_CONTEXT"),
         "SDIALOG_ALLOW_FORCED_LISTENER_GENDER": os.environ.get("SDIALOG_ALLOW_FORCED_LISTENER_GENDER"),
         "SDIALOG_USE_GENDERED_NAMES": os.environ.get("SDIALOG_USE_GENDERED_NAMES"),
+        "SDIALOG_RAG_AUDIT_PATH": os.environ.get("SDIALOG_RAG_AUDIT_PATH"),
     }
 
     rows: list[dict[str, str]] = []
@@ -589,6 +654,10 @@ def main() -> None:
                 global_i = start_persona + local_i
                 seed = base_seed + global_i
                 final_results: dict[str, dict[str, Any]] = {}
+                # Carry only an explicit region confirmed by the listener in a
+                # previous failed attempt of this same persona/gender condition.
+                retry_regions: dict[str, str] = {}
+                successful_results: dict[str, dict[str, Any]] = {}
 
                 for attempt in range(1, max_run_attempts + 1):
                     attempt_seed = seed + (attempt - 1) * retry_seed_stride
@@ -597,6 +666,12 @@ def main() -> None:
 
                     for gender in gender_variants:
                         gender_label = _normalize_condition_label(gender, "gender")
+                        # Preserve a complete condition from an earlier attempt.
+                        # Retrying it could otherwise overwrite a valid dialogue.
+                        if gender_label in successful_results:
+                            attempt_results[gender_label] = successful_results[gender_label]
+                            continue
+
                         os.environ["SDIALOG_FORCED_GENDER"] = gender
                         os.environ["OWUI_FORCED_GENDER"] = gender
                         os.environ.pop("SDIALOG_PERSONA_GENDER_CONDITION", None)
@@ -609,6 +684,7 @@ def main() -> None:
                         out_events_dir = out_dir / "_out_listener_events"
                         out_memory_dir = out_dir / "_out_listener_memory"
                         out_selected_dir = out_dir / "_out_selected_options"
+                        out_rag_audit_dir = out_dir / "_out_rag_audit"
                         for path in (
                             out_dialog_dir,
                             out_text_dir,
@@ -616,6 +692,7 @@ def main() -> None:
                             out_events_dir,
                             out_memory_dir,
                             out_selected_dir,
+                            out_rag_audit_dir,
                         ):
                             path.mkdir(parents=True, exist_ok=True)
 
@@ -626,6 +703,7 @@ def main() -> None:
                         out_events_json = out_events_dir / f"{run_id}.listener_events.json"
                         out_memory_json = out_memory_dir / f"{run_id}.listener_memory.json"
                         out_selected_json = out_selected_dir / f"{run_id}.selected_option.json"
+                        out_rag_audit_jsonl = out_rag_audit_dir / f"{run_id}.rag.jsonl"
 
                         if attempt == 1:
                             for stale_path in (
@@ -634,6 +712,7 @@ def main() -> None:
                                 out_events_json,
                                 out_memory_json,
                                 out_selected_json,
+                                out_rag_audit_jsonl,
                             ):
                                 stale_path.unlink(missing_ok=True)
 
@@ -644,6 +723,7 @@ def main() -> None:
                             "events": [],
                             "memory": canonical_listener_memory(),
                             "selected_event": {},
+                            "shown_options": [],
                             "protocol_ok": False,
                             "protocol_error": "",
                             "terminal_without_options": False,
@@ -653,12 +733,14 @@ def main() -> None:
                             "effective_seed": attempt_seed,
                             "run_id": run_id,
                             "gender_label": gender_label,
+                            "retained_listener_region": retry_regions.get(gender_label, ""),
                             "out_txt": out_txt,
                             "out_dialog_json": out_dialog_json,
                             "out_patches_json": out_patches_json,
                             "out_events_json": out_events_json,
                             "out_memory_json": out_memory_json,
                             "out_selected_json": out_selected_json,
+                            "out_rag_audit_jsonl": out_rag_audit_jsonl,
                         }
 
                         log_mode = "w" if attempt == 1 else "a"
@@ -666,6 +748,7 @@ def main() -> None:
                             tee_out = Tee(sys.stdout, log_file)
                             tee_err = Tee(sys.stderr, log_file)
                             with redirect_stdout(tee_out), redirect_stderr(tee_err):
+                                os.environ["SDIALOG_RAG_AUDIT_PATH"] = str(out_rag_audit_jsonl)
                                 if attempt > 1:
                                     print(
                                         f"[RETRY_PAIR] persona={persona_path.name} "
@@ -686,21 +769,32 @@ def main() -> None:
                                         social_practice_name=social_practice_name,
                                         social_practice_path=social_practice_path,
                                         retriever=retriever,
+                                        initial_listener_region=retry_regions.get(gender_label),
                                     )
 
+                                    selected_event = get_selected_option_event() or {}
+                                    shown_options = get_advice_options_shown()
                                     protocol_ok, protocol_error = _dialog_protocol_status(
                                         dialog_text,
                                         practice,
                                         dialog_language,
                                     )
-                                    selected_event = get_selected_option_event() or {}
                                     terminal_without_options = (
                                         str(get_last_rag_phase() or "").strip().lower() == "done"
-                                        and not selected_event
+                                        and not shown_options
                                     )
                                     if terminal_without_options:
                                         protocol_ok = True
                                         protocol_error = ""
+
+                                    print(
+                                        "[RUN_VALIDATION] "
+                                        f"protocol_ok={protocol_ok} "
+                                        f"options_shown={len(shown_options)} "
+                                        f"selected_option={bool(selected_event)} "
+                                        f"terminal_without_options={terminal_without_options} "
+                                        f"error={protocol_error or 'none'}"
+                                    )
 
                                     result.update(
                                         {
@@ -710,12 +804,17 @@ def main() -> None:
                                             "events": get_listener_patch_events(),
                                             "memory": _final_listener_memory(),
                                             "selected_event": selected_event,
+                                            "shown_options": shown_options,
                                             "protocol_ok": protocol_ok,
                                             "protocol_error": protocol_error,
                                             "terminal_without_options": terminal_without_options,
                                             "valid": bool(protocol_ok or terminal_without_options),
                                         }
                                     )
+                                    explicit = result["memory"].get("explicit", {}) if isinstance(result["memory"], dict) else {}
+                                    confirmed_region = explicit.get("region") if isinstance(explicit, dict) else None
+                                    if isinstance(confirmed_region, str) and confirmed_region.strip():
+                                        retry_regions[gender_label] = confirmed_region.strip()
                                 except Exception as exc:
                                     result["error"] = repr(exc)
                                     print(
@@ -725,8 +824,10 @@ def main() -> None:
                                     )
                                     traceback.print_exc()
 
-                        attempt_results[gender_label] = result
-                        pair_valid = pair_valid and bool(result["valid"])
+                        if result["valid"]:
+                            successful_results[gender_label] = result
+                        attempt_results[gender_label] = successful_results.get(gender_label, result)
+                        pair_valid = pair_valid and bool(attempt_results[gender_label]["valid"])
 
                     final_results = attempt_results
                     if pair_valid:
@@ -747,6 +848,7 @@ def main() -> None:
                     result = final_results[gender_label]
                     dialog = result["dialog"]
                     selected_event = result["selected_event"] or {}
+                    shown_options = result["shown_options"] or []
                     protocol_ok = bool(result["protocol_ok"])
                     terminal_without_options = bool(result["terminal_without_options"])
                     error = str(result["error"] or "")
@@ -792,6 +894,9 @@ def main() -> None:
                             "seed": str(seed),
                             "effective_seed": str(result["effective_seed"]),
                             "attempt_used": str(result["attempt_used"]),
+                            "requested_max_turns": str(requested_max_turns),
+                            "effective_max_turns": str(max_turns),
+                            "retained_listener_region": str(result.get("retained_listener_region", "")),
                             "status": status,
                             "error": error or protocol_error,
                             "protocol_ok": str(bool(protocol_ok)),
@@ -802,9 +907,11 @@ def main() -> None:
                             "events_json_path": str(result["out_events_json"]),
                             "memory_json_path": str(result["out_memory_json"]),
                             "selected_options_path": str(result["out_selected_json"]),
+                            "rag_audit_path": str(result["out_rag_audit_jsonl"]),
                             "selected_option_number": str(selected_event.get("option_number", "")) if isinstance(selected_event, dict) else "",
                             "selected_option": str(selected_event.get("selected_option", "")) if isinstance(selected_event, dict) else "",
                             "selected_option_source_turn": str(selected_event.get("source_turn", "")) if isinstance(selected_event, dict) else "",
+                            "shown_options_count": str(len(shown_options)),
                             "gender_policy": "hidden_counselor_listener_gender_no_visible_student_gender_cue_by_default",
                             "riasec_policy": "inferred_by_counselor_listener_no_source_riasec_injection",
                         }

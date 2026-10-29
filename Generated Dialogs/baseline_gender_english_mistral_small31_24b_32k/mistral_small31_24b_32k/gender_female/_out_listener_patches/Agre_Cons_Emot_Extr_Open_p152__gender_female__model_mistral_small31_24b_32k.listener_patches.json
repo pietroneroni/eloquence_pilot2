@@ -1,0 +1,53 @@
+[
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "economics_business",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        0,
+        2,
+        2,
+        2,
+        0
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]

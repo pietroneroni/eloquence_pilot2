@@ -29,32 +29,6 @@ def _ascii_norm(s: str) -> str:
     return re.sub(r"\s+", " ", t).strip()
 
 
-def _norm_macro(s: str) -> str:
-    x = _ascii_norm(s)
-    aliases = {
-        "north": "nord",
-        "northern italy": "nord",
-        "nord": "nord",
-        "nord italia": "nord",
-        "italia del nord": "nord",
-        "center": "centro",
-        "centre": "centro",
-        "central italy": "centro",
-        "centro": "centro",
-        "centro italia": "centro",
-        "italia centrale": "centro",
-        "south": "sud",
-        "southern italy": "sud",
-        "sud": "sud",
-        "sud italia": "sud",
-        "italia del sud": "sud",
-        "islands": "isole",
-        "the italian islands": "isole",
-        "italian islands": "isole",
-        "isole": "isole",
-        "isole italiane": "isole",
-    }
-    return aliases.get(x, x)
 
 
 def _normalize_language(lang: str | None) -> str:
@@ -77,51 +51,21 @@ def _default_rag_dir(project_root: Path, lang: str) -> Path:
     lang = _normalize_language(lang)
     preferred = project_root / DEFAULT_DATASET_DIRS[lang]
 
-    # Backward compatibility with old layout.
-    if lang == "eng" and not preferred.exists():
-        legacy = project_root / "RAG_University"
-        if legacy.exists():
-            return legacy
-
     return preferred
-
-
-def _keyword_in_text(text: str, keyword: str) -> bool:
-    t = _ascii_norm(text)
-    k = _ascii_norm(keyword)
-    if not t or not k:
-        return False
-    if " " in k:
-        return bool(re.search(r"(?<![a-z0-9])" + re.escape(k) + r"(?![a-z0-9])", t))
-    toks = set(t.split())
-    variants = {k}
-    if k.endswith("y") and len(k) > 2:
-        variants.add(k[:-1] + "ies")
-    else:
-        variants.add(k + "s")
-        variants.add(k + "es")
-    return any(v in toks for v in variants)
-
-
-def _university_allowed(university: str, allowed: list[str] | None) -> bool:
-    if not allowed:
-        return True
-    u = _norm(university)
-    for a in allowed:
-        aa = _norm(a)
-        if aa and (u == aa or u in aa or aa in u):
-            return True
-    return False
 
 
 def _metadata_from_row(row: dict[str, Any]) -> dict[str, Any]:
     raw_meta = row.get("metadata") or row.get("meta") or "{}"
     if isinstance(raw_meta, dict):
-        return raw_meta
-    try:
-        return json.loads(raw_meta)
-    except Exception:
+        meta = dict(raw_meta)
+    else:
+        try:
+            meta = json.loads(raw_meta)
+        except Exception:
+            return {}
+    if not isinstance(meta, dict):
         return {}
+    return meta
 
 
 class LanceDBUniversityRetriever:
@@ -145,201 +89,119 @@ class LanceDBUniversityRetriever:
         self.db = lancedb.connect(lancedb_dir)
         self.table = self.db.open_table(table_name)
         self.model = SentenceTransformer(embed_model)
-        self._all_rows_cache: list[dict[str, Any]] | None = None
+        self._course_evidence_cache: dict[tuple[str, str], dict[str, Any]] = {}
 
-    def _all_rows(self) -> list[dict[str, Any]]:
-        if self._all_rows_cache is not None:
-            return self._all_rows_cache
-        try:
-            rows = self.table.to_list()
-        except Exception:
-            try:
-                rows = self.table.to_pandas().to_dict("records")
-            except Exception:
-                rows = []
-        self._all_rows_cache = list(rows or [])
-        return self._all_rows_cache
-
-    def keyword_search(
-        self,
-        *,
-        keywords: list[str],
-        top_k: int = 20,
-        preferred_region: str | None = None,
-        strict_region: bool = False,
-        preferred_macroarea: str | None = None,
-        strict_macroarea: bool = False,
-        allowed_universities: list[str] | None = None,
-    ) -> list[dict[str, Any]]:
-        terms = [str(k).strip() for k in (keywords or []) if str(k).strip()]
-        if not terms:
-            return []
-
-        pref_region = _ascii_norm(preferred_region) if preferred_region else ""
-        pref_macro = _norm_macro(preferred_macroarea) if preferred_macroarea else ""
-        scored: list[dict[str, Any]] = []
-
-        for rank_index, row in enumerate(self._all_rows()):
-            meta = _metadata_from_row(row)
+    def _course_evidence(self, meta: dict[str, Any]) -> dict[str, Any]:
+        """Read declarations on the same course, never infer its city from the university."""
+        university = str(meta.get("UNIVERSITY") or "").strip()
+        code = str(meta.get("COURSE_CODE") or "").strip()
+        course = str(meta.get("COURSE") or "").strip()
+        key = (_norm(university), _norm(code or course))
+        if key in self._course_evidence_cache:
+            return self._course_evidence_cache[key]
+        column, value = ("course_code", code) if code else ("course", course)
+        escaped = value.replace("'", "''")
+        rows = self.table.search().where(f"{column} = '{escaped}'").select(["metadata", "text"]).limit(self.table.count_rows()).to_list()
+        declarations: dict[str, str] = {}
+        degree_classes: set[str] = set()
+        cities: set[str] = set()
+        sources: set[str] = set()
+        for row in rows:
+            other = _metadata_from_row(row)
+            if _norm(str(other.get("UNIVERSITY") or "")) != _norm(university):
+                continue
             text = str(row.get("text") or "")
-            university_name = str(meta.get("UNIVERSITY", ""))
-            course_name = str(meta.get("COURSE", ""))
-            course_code = str(meta.get("COURSE_CODE", ""))
-            section_name = str(meta.get("SECTION", ""))
-            hit_region = _ascii_norm(str(meta.get("REGION", "")))
-            hit_macro = _norm_macro(str(meta.get("MACROAREA", "")))
-
-            if strict_region and pref_region and hit_region != pref_region:
-                continue
-            if strict_macroarea and pref_macro and hit_macro != pref_macro:
-                continue
-            if not _university_allowed(university_name, allowed_universities):
-                continue
-
-            title_blob = " ".join([course_name, course_code])
-            full_blob = " ".join([university_name, course_name, course_code, section_name, text])
-
-            title_hits = sum(1 for term in terms if _keyword_in_text(title_blob, term))
-            full_hits = sum(1 for term in terms if _keyword_in_text(full_blob, term))
-            if full_hits <= 0:
-                continue
-
-            score = title_hits * 3.0 + full_hits * 1.0
-            if pref_region and hit_region == pref_region:
-                score += 0.8
-            if pref_macro and hit_macro == pref_macro:
-                score += 0.5
-
-            scored.append({
-                "score": score,
-                "base_score": score,
-                "text": text,
-                "meta": meta,
-                "id": row.get("id"),
-                "rank_index": rank_index,
-            })
-
-        scored.sort(key=lambda x: (x["score"], -int(x.get("rank_index", 0))), reverse=True)
-
-        deduped: list[dict[str, Any]] = []
-        seen_courses = set()
-        for h in scored:
-            meta = h.get("meta") or {}
-            university_key = _norm(str(meta.get("UNIVERSITY") or ""))
-            course_key = _norm(str(meta.get("COURSE_CODE") or meta.get("COURSE") or ""))
-            key = f"{university_key}|{course_key}" if course_key else _norm(str(h.get("text") or "")[:120])
-            if key in seen_courses:
-                continue
-            seen_courses.add(key)
-            deduped.append(h)
-            if len(deduped) >= top_k:
-                break
-        return deduped
+            declared = next((str(other[k]).strip() for k in ("DEGREE_TYPE", "TIPO", "TYPE") if other.get(k)), "")
+            if not declared:
+                title = str(other.get("COURSE") or "").strip()
+                title_rx = r"\s+".join(re.escape(word) for word in title.split())
+                match = re.search(
+                    rf"(?im)^\s*{title_rx}[ \t]+"
+                    r"((?:Corso di )?Laurea(?: Magistrale(?: a ciclo unico)?| Triennale)?"
+                    r"|Bachelor(?:'s)? degree|Master(?:'s)? degree|Dottorato|PhD)\b", text,
+                ) if title else None
+                if not match and code:
+                    # Catalogue titles can include curriculum/language suffixes absent from the heading.
+                    match = re.search(
+                        rf"(?im)^\s*\[{re.escape(code)}\][^\n]*?\s+"
+                        r"((?:Corso di )?Laurea(?: Magistrale(?: a ciclo unico)?| Triennale)?"
+                        r"|Corso di Dottorato|Corso di Perfezionamento|Corso di Alta Formazione"
+                        r"|Master universitario di (?:Primo|Secondo) Livello)\b", text,
+                    )
+                if not match:
+                    match = re.search(
+                        r"(?im)^\s*((?:Corso di )?Laurea(?: Magistrale(?: a ciclo unico)?| Triennale)?"
+                        r"|Corso di Dottorato|Master universitario di (?:Primo|Secondo) Livello"
+                        r"|Corso di Perfezionamento|Corso di Alta Formazione)\b",
+                        text,
+                    )
+                declared = match.group(1) if match else ""
+            for match in re.finditer(
+                r"(?im)^\s*Classe(?: di laurea)?\s*:?\s*(L(?:M|MG)?\s*[-/–‑]\s*(?:SNT\s*)?\d+)\b", text,
+            ):
+                degree_classes.add("Classe di laurea: " + match.group(1))
+            if declared:
+                declarations[re.sub(r"^corso di\s+", "", _norm(declared))] = declared
+            for name in ("CITY", "CITTA", "CITTÀ", "CAMPUS_CITY", "CITIES"):
+                if isinstance(other.get(name), str) and other[name].strip():
+                    cities.add(other[name].strip())
+                elif isinstance(other.get(name), list):
+                    cities.update(str(value).strip() for value in other[name] if str(value).strip())
+            for match in re.finditer(r"(?im)^\s*(?:sede didattica|sede del corso|teaching location|campus city)\s*:\s*([^\n]+)", text):
+                cities.add(match.group(1).strip())
+            for match in re.finditer(r"(?im)^\s*Sede\s*:\s*([^\n]+)", text):
+                cities.add(match.group(1).strip())
+            # Structured inline catalogue field, not an incidental city or the university name.
+            for match in re.finditer(r"\bSede\s+([^\n]+?)\s+Dipartimento\b", text):
+                cities.add(match.group(1).strip())
+            if other.get("URL"):
+                sources.add(str(other["URL"]))
+        if not declarations:
+            declarations = {_norm(value): value for value in degree_classes}
+        evidence = {
+            "TYPE": next(iter(declarations.values())) if len(declarations) == 1 else "",
+            "TYPE_STATUS": "declared" if len(declarations) == 1 else "conflicting" if declarations else "unknown",
+            "CITIES": sorted(cities), "SOURCES": sorted(sources),
+        }
+        self._course_evidence_cache[key] = evidence
+        return evidence
 
     def search(
-        self,
-        query: str,
-        *,
-        top_k: int = 5,
-        university: str | None = None,
-        course_contains: str | None = None,
+        self, query: str, *, top_k: int = 12,
+        region: str | None = None, macroarea: str | None = None,
         section_contains: str | None = None,
-        preferred_region: str | None = None,
-        strict_region: bool = False,
-        preferred_macroarea: str | None = None,
-        strict_macroarea: bool = False,
-        dedupe_by_course: bool = True,
     ) -> list[dict[str, Any]]:
-        q = (query or "").strip()
-        if not q:
+        """Semantic retrieval with prefilters, without geographic bonuses or title heuristics."""
+        if not query.strip():
             return []
-
-        query_vec = self.model.encode(
-            [f"query: {q}"],
-            normalize_embeddings=True,
-        )
-        query_vec = np.asarray(query_vec[0], dtype="float32")
-
-        fetch_k = max(top_k * 30, 100)
-        rows = self.table.search(query_vec, vector_column_name="vector").limit(fetch_k).to_list()
-
-        uni_f = _norm(university) if university else ""
-        course_f = _norm(course_contains) if course_contains else ""
-        section_f = _norm(section_contains) if section_contains else ""
-        pref_region = _ascii_norm(preferred_region) if preferred_region else ""
-        pref_macro = _norm_macro(preferred_macroarea) if preferred_macroarea else ""
-
-        hits: list[dict[str, Any]] = []
-
-        for rank_index, row in enumerate(rows):
+        vector = self.model.encode([f"query: {query.strip()}"], normalize_embeddings=True)
+        vector = np.asarray(vector[0], dtype="float32")
+        clauses = []
+        for column, value in (("region", region), ("macroarea", macroarea)):
+            if value:
+                escaped = value.replace("'", "''")
+                clauses.append(f"{column} = '{escaped}'")
+        if section_contains:
+            escaped = section_contains.replace("'", "''")
+            clauses.append(f"section LIKE '%{escaped}%'")
+        search = self.table.search(vector, vector_column_name="vector")
+        if clauses:
+            search = search.where(" AND ".join(clauses), prefilter=True)
+        # Bound chunks read; the caller applies the single eligible-candidate cap.
+        rows = search.limit(max(top_k * 30, 100)).to_list()
+        courses: dict[tuple[str, str], dict[str, Any]] = {}
+        for row in rows:
             meta = _metadata_from_row(row)
-            text = row.get("text") or ""
-
-            university_name = _norm(str(meta.get("UNIVERSITY", "")))
-            course_name = _norm(str(meta.get("COURSE", "")))
-            course_code = _norm(str(meta.get("COURSE_CODE", "")))
-            section_name = _norm(str(meta.get("SECTION", "")))
-            hit_region = _ascii_norm(str(meta.get("REGION", "")))
-            hit_macro = _norm_macro(str(meta.get("MACROAREA", "")))
-
-            if uni_f and uni_f not in university_name:
+            university = str(meta.get("UNIVERSITY") or "").strip()
+            course = str(meta.get("COURSE") or "").strip()
+            key = (_norm(university), _norm(str(meta.get("COURSE_CODE") or course)))
+            if not university or not course:
+                print('[RAG][reject] ' + json.dumps({"version":"courses_v3", "id":row.get("id"), "reason":"missing_course_identity"}, ensure_ascii=False))
                 continue
-
-            if course_f and course_f not in course_name and course_f not in course_code:
+            if key in courses:
                 continue
-
-            if section_f and section_f not in section_name:
-                continue
-
-            if strict_region and pref_region and hit_region != pref_region:
-                continue
-
-            if strict_macroarea and pref_macro and hit_macro != pref_macro:
-                continue
-
-            distance = float(row.get("_distance", 0.0))
-            base_score = -distance
-
-            bonus = 0.0
-            if pref_region and hit_region == pref_region:
-                bonus += 0.20
-            if pref_macro and hit_macro == pref_macro:
-                bonus += 0.10
-
-            hits.append({
-                "score": base_score + bonus,
-                "base_score": base_score,
-                "text": text,
-                "meta": meta,
-                "id": row.get("id"),
-                "rank_index": rank_index,
-            })
-
-        hits.sort(key=lambda x: x["score"], reverse=True)
-
-        if not dedupe_by_course:
-            return hits[:top_k]
-
-        deduped = []
-        seen_courses = set()
-
-        for h in hits:
-            meta = h.get("meta") or {}
-            university_key = _norm(str(meta.get("UNIVERSITY") or ""))
-            course_key = _norm(str(meta.get("COURSE_CODE") or meta.get("COURSE") or ""))
-
-            if course_key:
-                course_key = f"{university_key}|{course_key}"
-            else:
-                course_key = _norm(str(h.get("text") or "")[:120])
-
-            if course_key in seen_courses:
-                continue
-
-            seen_courses.add(course_key)
-            deduped.append(h)
-
-            if len(deduped) >= top_k:
-                break
-
-        return deduped
+            meta.update(self._course_evidence(meta))
+            body = re.sub(r"(?m)^[A-Z_À]+:[^\n]*\n?", "", str(row.get("text") or "")).strip()
+            courses[key] = {"key":key, "score":-float(row.get("_distance", 0)),
+                            "meta":meta, "text":body, "id":row.get("id")}
+        return list(courses.values())

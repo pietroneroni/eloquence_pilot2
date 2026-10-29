@@ -1,0 +1,282 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p10.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12345
+[LANG] dialog=French rag=eng
+[RAG][audit] {"description_section": "General Description", "event": "request", "macroarea": "nord", "preferred_zone": "north", "query": "bachelor degree program in computer science / engineering technology / physical sciences", "query_candidates": ["bachelor degree program in computer science", "high school bachelor degree program in computer science", "computer science", "high school computer science", "engineering", "bachelor degree program in engineering", "high school engineering", "physics", "bachelor degree program in physics", "high school physics", "informatica", "bachelor degree program in informatica", "high school informatica", "ingegneria", "bachelor degree program in ingegneria", "high school ingegneria", "fisica", "bachelor degree program in fisica", "high school fisica", "software", "bachelor degree program in software", "high school software", "technology", "bachelor degree program in technology", "high school technology", "chemistry", "bachelor degree program in chemistry", "high school chemistry", "data systems", "bachelor degree program in data systems", "high school data systems", "tecnologia", "bachelor degree program in tecnologia", "high school tecnologia", "chimica", "bachelor degree program in chimica", "high school chimica", "high school", "bachelor degree program in computer science / engineering technology / physical sciences"], "region": null, "target_options": 3, "version": "courses_v3"}
+
+
+[RAG][audit] {"cities": [], "course": "[0514G] COMPUTER SCIENCE", "course_code": "0514G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00397__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.23078419268131256, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10114", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0517H] COMPUTER SCIENCE", "course_code": "0517H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00238__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.2730080187320709, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10117", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50539#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50539?schemaid=8571", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50540#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50540?schemaid=8570", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti?annoOrdinamento=2011"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0339G] Computer, Communications, and Electronics Engineering", "course_code": "0339G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00391__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.29906225204467773, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10712", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458?schemaid=8538", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459?schemaid=8535", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460?schemaid=8536", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461?schemaid=8537", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti?annoOrdinamento=2019"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0521H] QUANTITATIVE AND COMPUTATIONAL BIOLOGY", "course_code": "0521H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00207__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.30497199296951294, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10616", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10616/insegnamenti/50527", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10616/insegnamenti/50527?schemaid=8618"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0625H] DATA SCIENCE", "course_code": "0625H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00239__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3079250454902649, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10760", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50369#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50369?schemaid=8039", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50370#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50370?schemaid=8040", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti?annoOrdinamento=2024"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0704G] INTERFACES AND COMMUNICATION TECHNOLOGIES", "course_code": "0704G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00382__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.31163328886032104, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10112", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10112/insegnamenti/50445", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10112/insegnamenti/50445?schemaid=8236"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[INT - ISMP] ENGINEERING OF MEDICAL SYSTEMS FOR THE PERSON", "course_code": "INT - ISMP", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00390__c005", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3147372305393219, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10799"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS", "course_code": "0342H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00243__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3177947402000427, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10738", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530?schemaid=8564", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531?schemaid=8562", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532?schemaid=8561", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533?schemaid=8563", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti?annoOrdinamento=2020"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0522H] DATA SCIENCE", "course_code": "0522H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00240__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.32684388756752014, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10692"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0207H] GLOBAL LAW MAKING", "course_code": "0207H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00254__c004", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.32687249779701233, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10763", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10763/insegnamenti/50421", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10763/insegnamenti/50421?schemaid=8113"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0620G] INTERNATIONAL STUDIES", "course_code": "0620G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00364__c004", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.33552393317222595, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10565", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50383#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50383?schemaid=8055", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50384#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50384?schemaid=8056", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti?annoOrdinamento=2015"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0346H] INFORMATION ENGINEERING", "course_code": "0346H", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00029__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.34328675270080566, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10756", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50521#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50521?schemaid=8569", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50522#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50522?schemaid=8568", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50523#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50523?schemaid=8567", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50524#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50524?schemaid=8566", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti/50524?schemaid=8661", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10756/insegnamenti?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE", "course_code": "0347H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00241__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.34427303075790405, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10761", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417?schemaid=8611", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418?schemaid=8614", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti?annoOrdinamento=2024"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0611G] SOCIOLOGY", "course_code": "0611G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00366__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.35080620646476746, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10137", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378?schemaid=8052", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379?schemaid=8053", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380?schemaid=8051", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381?schemaid=8054", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti?annoOrdinamento=2023"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0708H] COGNITIVE SCIENCE - COGNITIVE SCIENCE", "course_code": "0708H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00086__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.350895494222641, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10168", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50513?schemaid=8322", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50514?schemaid=8323", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50515?schemaid=8324"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0327G] INDUSTRIAL ENGINEERING", "course_code": "0327G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00393__c007", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3516038656234741, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10131", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428?schemaid=8540", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429?schemaid=8541", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430?schemaid=8539", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti?annoOrdinamento=2020"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0117G] ECONOMICS AND MANAGEMENT", "course_code": "0117G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00401__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3543417453765869, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10129", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50490#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50490?schemaid=8275", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50491#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50491?schemaid=8273", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti?annoOrdinamento=2011"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0705G] SCIENCES AND TECHNIQUES OF COGNITIVE PSYCHOLOGY", "course_code": "0705G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00380__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3543577790260315, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10123", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438?schemaid=8225"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0709H] HUMAN-COMPUTER INTERACTION - HUMAN-MACHINE INTERACTION", "course_code": "0709H", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00154__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3578115403652191, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10559", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559/insegnamenti/50456", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559/insegnamenti/50456?schemaid=8241"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0336F] CIVIL ENGINEERING-ARCHITECTURE", "course_code": "0336F", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00008__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3579588234424591, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10175", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10175/insegnamenti/50350", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10175/insegnamenti/50350?schemaid=8565"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1001S] MEDICINE AND SURGERY", "course_code": "1001S", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00006__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.35816672444343567, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10739", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739/insegnamenti/50517", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739/insegnamenti/50517?schemaid=8628"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0123H] MANAGEMENT", "course_code": "0123H", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00128__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.35866913199424744, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10185", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50496#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50496?schemaid=8282", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50497#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50497?schemaid=8281", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50498#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/50498?schemaid=8279", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti?annoOrdinamento=2011"], "type": "Master's degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0515G] MATHEMATICS", "course_code": "0515G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00384__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.35880380868911743, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10115", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10115/insegnamenti/50519", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10115/insegnamenti/50519?schemaid=8542"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0805H] SECURITY, INTELLIGENCE AND STRATEGIC STUDIES", "course_code": "0805H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00196__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.35914209485054016, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10713", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10713/insegnamenti/50394", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10713/insegnamenti/50394?schemaid=8079"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0520H] CELLULAR AND MOLECULAR BIOTECHNOLOGY", "course_code": "0520H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00209__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.35969778895378113, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10232", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti/50432?schemaid=8554", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti/50433?schemaid=8555", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti/50434?schemaid=8556"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0513G] PHYSICS", "course_code": "0513G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00386__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3608277142047882, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10113", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10113/insegnamenti/50444", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10113/insegnamenti/50444?schemaid=8543"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0115G] BUSINESS ADMINISTRATION AND LAW", "course_code": "0115G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00405__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.36173245310783386, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10126", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482?schemaid=8270", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483?schemaid=8268", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti?annoOrdinamento=2011", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677464"], "type": "BACHELOR'S DEGREE", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[INT - TPAL] TECHNIQUES OF PREVENTION IN THE ENVIRONMENT AND WORKPLACES", "course_code": "INT - TPAL", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00374__c004", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3624592125415802, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10800"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0622G] SOCIAL SERVICE", "course_code": "0622G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00368__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3672735393047333, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10624", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10624/insegnamenti/50385", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10624/insegnamenti/50385?schemaid=8233"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0331H] CIVIL ENGINEERING", "course_code": "0331H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00236__c005", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.36997413635253906, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10149", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50352#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50352?schemaid=8549", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50353#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50353?schemaid=8548", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50354#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50354?schemaid=8545", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50355#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50355?schemaid=8547", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0120H] INNOVATION MANAGEMENT - MANAGEMENT OF INNOVATION", "course_code": "0120H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00252__c003", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3713590204715729, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10176", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10176/insegnamenti/50493", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10176/insegnamenti/50493?schemaid=8277"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0519H] MATHEMATICS", "course_code": "0519H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00219__c002", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.37143534421920776, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10170", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50440?schemaid=8582", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50441?schemaid=8583", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50442?schemaid=8585", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50443?schemaid=8584"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0127H] BEHAVIOURAL AND APPLIED ECONOMICS - BEHAVIORAL AND APPLIED ECONOMICS", "course_code": "0127H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00261__c000", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3715381324291229, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10718", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/50502", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/50502?schemaid=8286", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677465"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0344H] MECHATRONICS ENGINEERING", "course_code": "0344H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00225__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.37276938557624817, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10752", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50478#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50478?schemaid=8607", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50479#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50479?schemaid=8608", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50480#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti/50480?schemaid=8606", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10752/insegnamenti?annoOrdinamento=2021"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0426H] HISTORICAL SCIENCES", "course_code": "0426H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00180__c001", "macroarea": "nord", "query": "bachelor degree program in computer science", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.37294691801071167, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10233", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10233/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10233/insegnamenti/50411?schemaid=8107", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10233/insegnamenti/50412?schemaid=8109", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10233/insegnamenti/50413?schemaid=8108", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10233/insegnamenti/50414?schemaid=8174"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"event": "scope_complete", "macroarea": "nord", "pool_limit": 32, "queries": 39, "raw_blocks": 32, "region": null, "scope": "zone_north_vector_desc", "section_contains": "General Description", "version": "courses_v3"}
+[RAG][audit] {"candidates": ["University of Trento | [0339G] Computer, Communications, and Electronics Engineering", "University of Trento | [0704G] INTERFACES AND COMMUNICATION TECHNOLOGIES", "University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0611G] SOCIOLOGY", "University of Trento | [0327G] INDUSTRIAL ENGINEERING", "University of Trento | [0117G] ECONOMICS AND MANAGEMENT"], "event": "scope_result", "matched_zone": "north", "merged_blocks": 32, "raw_blocks": 32, "scope": "zone_north_vector_desc", "target_options": 3, "version": "courses_v3"}
+[RAG][audit] {"aligned_blocks": 6, "candidates": ["University of Trento | [0339G] Computer, Communications, and Electronics Engineering", "University of Trento | [0704G] INTERFACES AND COMMUNICATION TECHNOLOGIES", "University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0611G] SOCIOLOGY", "University of Trento | [0327G] INDUSTRIAL ENGINEERING", "University of Trento | [0117G] ECONOMICS AND MANAGEMENT"], "context_characters": 4000, "event": "candidate_pool", "query": "bachelor degree program in computer science / engineering technology / physical sciences", "scope": "zone_north_vector_desc", "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 6, "candidates": ["University of Trento | [0339G] Computer, Communications, and Electronics Engineering", "University of Trento | [0704G] INTERFACES AND COMMUNICATION TECHNOLOGIES", "University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0611G] SOCIOLOGY", "University of Trento | [0327G] INDUSTRIAL ENGINEERING", "University of Trento | [0117G] ECONOMICS AND MANAGEMENT"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Trento | [0339G] Computer, Communications, and Electronics Engineering", "University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0327G] INDUSTRIAL ENGINEERING"], "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 3, "candidates": ["University of Trento | [0339G] Computer, Communications, and Electronics Engineering", "University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0327G] INDUSTRIAL ENGINEERING"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Trento | [0339G] Computer, Communications, and Electronics Engineering", "University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0327G] INDUSTRIAL ENGINEERING"], "version": "courses_v3"}
+
+[dialog_id] 25bf6e46-4794-462b-8d22-ea3bba279335
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12345
+--- Dialogue Begins ---
+[Student] Bonjour, je suis un étudiant qui habite dans le nord de l'Italie. J'ai terminé mes études secondaires et je cherche des conseils pour choisir un programme universitaire. J'aime comprendre comment les choses fonctionnent et j'apprécie les sujets logiques. Je pense que cela pourrait m'aider à prendre une décision éclairée sur ma future carrière.
+[Counselor[mistral_small31_24b_32k]] Bonjour ! J'aide les étudiants à choisir un cursus universitaire en fonction de leur parcours, de leurs intérêts, de leurs aptitudes et de leurs contraintes. Qu'étudiez-vous actuellement, ou quelle est votre formation la plus récente ?
+[Student] J'ai terminé mes études secondaires.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Quelles matières ou quels domaines universitaires vous intéressent le plus ?
+[Student] Je suis attiré par les matières logiques et analytiques. J'aime comprendre comment les choses fonctionnent, donc je pense que des domaines comme les mathématiques, la physique ou l'ingénierie pourraient m'intéresser.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Lorsque vous pensez à l'université, qu'aimeriez-vous approfondir ou apprendre à faire ?
+[Student] Je voudrais approfondir des sujets qui me permettent d'analyser des problèmes et de comprendre des systèmes complexes. J'aime aussi l'idée d'aider les autres, donc peut-être enseigner ou travailler dans un domaine où je peux collaborer avec des gens.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Avez-vous une région ou une grande zone d'Italie préférée, ou êtes-vous flexible quant au lieu ?
+[Student] Je suis flexible quant au lieu. J'habite dans le nord de l'Italie, mais je suis ouvert à explorer différentes régions pour mes études universitaires.
+[Counselor[mistral_small31_24b_32k]] Je vais maintenant vous poser 8 courtes questions sur l'attrait que différentes activités exercent sur vous. Vous n'avez pas à prouver que vous êtes compétent : je m'intéresse surtout au plaisir que vous auriez à les pratiquer. Vous pouvez répondre brièvement en indiquant si cela vous plaît beaucoup, assez, peu, pas du tout, ou si cela dépend. Dans quelle mesure les activités pratiques et manuelles, comme construire, réparer ou travailler avec des outils et des objets concrets, vous attirent-elles ?
+[Student] Cela me plaît assez.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous comprendre le fonctionnement des choses, des systèmes ou des phénomènes ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous rechercher des informations, analyser des problèmes et raisonner de manière logique ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous exprimer des idées ou des émotions par des formes créatives comme l'écriture, l'art, la musique ou le design ?
+[Student] Cela dépend.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous expérimenter et créer quelque chose de nouveau à partir d'idées ouvertes ?
+[Student] Cela me plaît assez.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous travailler étroitement avec d'autres personnes dans un rôle d'aide, de soutien ou d'écoute ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous proposer des idées, prendre des initiatives et organiser des projets ou des activités ?
+[Student] Cela me plaît assez.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous maintenir les activités ordonnées, planifiées et sous contrôle ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Merci, j'ai maintenant les informations nécessaires pour comparer les options.
+[Student] D'accord.
+[Counselor[mistral_small31_24b_32k]] Je vous suggère ces options : 1. University of Trento | [0339G] Computer, Communications, and Electronics Engineering 2. University of Trento | [0620G] INTERNATIONAL STUDIES 3. University of Trento | [0327G] INDUSTRIAL ENGINEERING Choisissez une option en indiquant son numéro.
+[Student] Je choisis l'option 1. Pensez-vous que je pourrais suivre un cursus technique exigeant ?
+[Counselor[mistral_small31_24b_32k]] Oui, vous avez des compétences analytiques et logiques qui sont essentielles pour réussir dans un programme technique comme [0339G] Computer, Communications, and Electronics Engineering. Ce programme est conçu pour fournir une compréhension approfondie des systèmes, des méthodologies et des technologies du domaine de l'information. Lorsque vous êtes prêt, choisissez une option en indiquant son numéro.
+[Student] Me conseilleriez-vous de me concentrer sur un cursus technique ou sur un cursus orienté vers les sciences humaines ?
+[Counselor[mistral_small31_24b_32k]] Votre intérêt pour l'analyse des problèmes et la compréhension des systèmes complexes, ainsi que vos compétences en logique et en mathématiques, vous rendraient bien adapté à un programme technique. Je vous recommande donc de vous concentrer sur [0339G] Computer, Communications, and Electronics Engineering.
+[Student] Pourquoi pensez-vous que ce choix me conviendrait ?
+[Counselor[mistral_small31_24b_32k]] Votre intérêt pour l'analyse des problèmes et la compréhension des systèmes complexes, ainsi que vos compétences en logique et en mathématiques, vous rendraient bien adapté à [0339G] Computer, Communications, and Electronics Engineering. Ce programme est conçu pour fournir une compréhension approfondie des systèmes, des méthodologies, et des technologies du domaine de l'information.
+[Student] Pensez-vous que je serais à l'aise pour diriger un projet de groupe ?
+[Counselor[mistral_small31_24b_32k]] Non, vous avez exprimé une préférence pour des activités ordonnées et planifiées, mais vous n'avez pas mentionné un fort intérêt pour la prise d'initiatives ou la direction de projets.
+[Student] Me conseilleriez-vous d'assumer dès maintenant un rôle de leadership ou de commencer par des tâches de soutien ?
+[Counselor[mistral_small31_24b_32k]] commencer par des tâches de soutien
+[Student] Pourquoi pensez-vous qu'une option me conviendrait mieux ?
+[Counselor[mistral_small31_24b_32k]] Votre intérêt pour l'analyse des problèmes et la compréhension des systèmes complexes, ainsi que vos compétences en logique et en mathématiques, vous rendraient bien adapté à [0339G] Computer, Communications, and Electronics Engineering. Ce programme est conçu pour fournir une compréhension approfondie des systèmes, des méthodologies, et des technologies du domaine de l'information.
+[Student] Pensez-vous que mes études antérieures m'ont suffisamment préparé aux cours de niveau universitaire ?
+[Counselor[mistral_small31_24b_32k]] Oui, vos études secondaires devraient vous avoir fourni une base solide en mathématiques et en sciences, ce qui est essentiel pour réussir dans [0339G] Computer, Communications, and Electronics Engineering.
+[Student] Me conseilleriez-vous de suivre immédiatement des cours avancés ou de commencer par des modules d'introduction ?
+[Counselor[mistral_small31_24b_32k]] commencer par des modules d'introduction
+[Student] Pourquoi pensez-vous que cette approche correspond à ma préparation ?
+[Counselor[mistral_small31_24b_32k]] Votre intérêt pour les matières logiques et analytiques ainsi que votre capacité à comprendre des systèmes complexes vous préparent bien au programme [0339G] Computer, Communications, and Electronics Engineering. Ce programme met l'accent sur la compréhension approfondie des systèmes, des méthodologies et des technologies du domaine de l'information, ce qui correspond parfaitement à vos compétences et intérêts.
+[Student] Merci pour votre aide, au revoir.
+[Counselor[mistral_small31_24b_32k]] Récapitulatif: Vous avez un fort intérêt pour les matières logiques et analytiques, ainsi qu'une capacité à comprendre des systèmes complexes. Cela correspond bien au programme [0339G] Computer, Communications, and Electronics Engineering. RIASEC: SIC Prochaines étapes: 1. consulter le programme officiel et les conditions d'admission 2. vérifier les coûts, le lieu, les déplacements ou le logement 3. préparer les documents, le portfolio ou revoir les prérequis Au revoir: Bonne chance dans vos études universitaires !
+[Student] Au revoir
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology",
+        "physical_sciences"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        0,
+        1,
+        2,
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "physical_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "engineering_technology",
+          "physical_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          0,
+          1,
+          2,
+          1,
+          2
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      },
+      "selection": {
+        "option_number": 1
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "engineering_technology",
+        "physical_sciences"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Social",
+        "Investigative",
+        "Conventional"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0339G] Computer, Communications, and Electronics Engineering",
+  "shown_options": [
+    "University of Trento | [0339G] Computer, Communications, and Electronics Engineering",
+    "University of Trento | [0620G] INTERNATIONAL STUDIES",
+    "University of Trento | [0327G] INDUSTRIAL ENGINEERING"
+  ],
+  "source_turn": 16
+}
+[RUN_VALIDATION] protocol_ok=True options_shown=3 selected_option=True terminal_without_options=False error=none

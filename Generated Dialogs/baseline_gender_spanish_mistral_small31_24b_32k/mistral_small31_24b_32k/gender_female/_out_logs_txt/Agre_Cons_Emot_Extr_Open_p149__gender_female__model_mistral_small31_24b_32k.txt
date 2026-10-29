@@ -1,0 +1,526 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p149.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12353
+[LANG] dialog=Spanish rag=eng
+[RAG][audit] {"description_section": "General Description", "event": "request", "macroarea": "isole", "preferred_zone": "islands", "query": "bachelor degree program in social sciences / engineering technology", "query_candidates": ["bachelor degree program in social sciences", "high school bachelor degree program in social sciences", "social sciences", "high school social sciences", "engineering", "bachelor degree program in engineering", "high school engineering", "scienze sociali", "bachelor degree program in scienze sociali", "high school scienze sociali", "ingegneria", "bachelor degree program in ingegneria", "high school ingegneria", "sociology", "bachelor degree program in sociology", "high school sociology", "technology", "bachelor degree program in technology", "high school technology", "sociologia", "bachelor degree program in sociologia", "high school sociologia", "tecnologia", "bachelor degree program in tecnologia", "high school tecnologia", "high school", "bachelor degree program in social sciences / engineering technology"], "region": null, "target_options": 3, "version": "courses_v3"}
+
+
+[RAG][audit] {"cities": [], "course": "[1182] SOCIAL SERVICE AND SOCIAL POLICIES", "course_code": "1182", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00238__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.2815796732902527, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10041", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10041/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1465] SOCIAL SERVICE SCIENCES", "course_code": "1465", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00614__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.30350321531295776, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10059", "https://unime.coursecatalogue.cineca.it/corsi/2024/10059/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10059/insegnamenti/9999?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024/10059/insegnamenti/9999?schemaid=12195", "https://unime.coursecatalogue.cineca.it/corsi/2024/10059?annoOrdinamento=2022"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1475] SOCIAL SERVICE, SOCIAL POLICIES AND SOCIOLOGICAL STUDIES AND SOCIAL RESEARCH", "course_code": "1475", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00093__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.30609452724456787, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10064", "https://unime.coursecatalogue.cineca.it/corsi/2024/10064/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10064/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10064/insegnamenti/9999?schemaid=12301", "https://unime.coursecatalogue.cineca.it/corsi/2024/10064/insegnamenti/9999?schemaid=12302", "https://unime.coursecatalogue.cineca.it/corsi/2024/10064/insegnamenti?annoOrdinamento=2013", "https://unime.coursecatalogue.cineca.it/corsi/2024/10064?annoOrdinamento=2013"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "course_code": "A073", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00456__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.32548102736473083, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10759", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999?annoOrdinamento=2018", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759?annoOrdinamento=2018", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759?annoOrdinamento=2023"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A120] POLITICAL SCIENCES", "course_code": "A120", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00264__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.32774344086647034, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10826", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti?annoOrdinamento=2019"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A108] PUBLIC COMMUNICATION AND INFORMATION PROFESSIONS Multimedia Communication and Journalism", "course_code": "A108", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00307__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3322265148162842, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10801", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti?annoOrdinamento=2020"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1171] Political Sciences, Administration and Services", "course_code": "1171", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00660__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.33612722158432007, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10507", "https://unime.coursecatalogue.cineca.it/corsi/2024/10507/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10507/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10507/insegnamenti/1?schemaid=12192", "https://unime.coursecatalogue.cineca.it/corsi/2024/10507/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10507/insegnamenti/2?schemaid=12193", "https://unime.coursecatalogue.cineca.it/corsi/2024/10507/insegnamenti?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10507?annoOrdinamento=2020"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": ["MESSINA"], "course": "[4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE", "course_code": "4092", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00989__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.33976781368255615, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10525", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525/insegnamenti/1?schemaid=12226", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525/insegnamenti/2?schemaid=12227", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525/insegnamenti/9999?schemaid=12228", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525/insegnamenti?annoOrdinamento=2021", "https://unime.coursecatalogue.cineca.it/corsi/2024/10525?annoOrdinamento=2021"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A122] POLITICAL AND LEGAL SCIENCES FOR ADMINISTRATION", "course_code": "A122", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00082__c001", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.34737780690193176, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10846", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10846/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10846/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10846/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10846/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10846/insegnamenti?annoOrdinamento=2022"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A043] BUSINESS ECONOMICS", "course_code": "A043", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00093__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3498730957508087, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10720", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10720/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10720/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10720/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10720/insegnamenti/3", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10720/insegnamenti/4", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10720/insegnamenti/5", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10720/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10720/insegnamenti?annoOrdinamento=2020"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A074] HISTORICAL AND PHILOSOPHICAL SCIENCES", "course_code": "A074", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00111__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3499778211116791, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10758", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti?annoOrdinamento=2016"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A145] URBANISM. ENVIRONMENTAL PROJECT OF THE CITY AND TERRITORY", "course_code": "A145", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00410__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3513272702693939, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10901", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10901/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10901/insegnamenti/9999?annoOrdinamento=2022", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10901/insegnamenti/9999?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10901?annoOrdinamento=2022", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10901?annoOrdinamento=2023"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[DR186] SCIENZE AGRARIE", "course_code": "DR186", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00003__c001", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.35247334837913513, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10904", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10904?annoOrdinamento=2022", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10904?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10904?annoOrdinamento=2024", "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1671618382840"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": ["MESSINA"], "course": "[DT209] POLITICAL SCIENCES", "course_code": "DT209", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00618__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3529483675956726, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10583", "https://unime.coursecatalogue.cineca.it/corsi/2024/10583?annoOrdinamento=2024"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1226] PLANNING AND POLICIES FOR THE CITY, ENVIRONMENT, AND LANDSCAPE", "course_code": "1226", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00227__c001", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.35363098978996277, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10150", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/9999?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150?annoOrdinamento=2022", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1165] POLITICAL SCIENCE AND INTERNATIONAL RELATIONS English Italian", "course_code": "1165", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00637__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3552773892879486, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10224", "https://unime.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/1?schemaid=12190", "https://unime.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/2?schemaid=12191", "https://unime.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10224?annoOrdinamento=2020"], "type": "", "type_status": "unknown", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1193] BIOLOGICAL SCIENCES", "course_code": "1193", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00511__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.35546284914016724, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10276", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276/insegnamenti/9999"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A075] NURSING AND MIDWIFERY SCIENCES", "course_code": "A075", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00141__c001", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3556532859802246, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10762", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10762/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A042] FOREIGN LANGUAGES AND LITERATURES FOR CULTURAL MEDIATION AND TERRITORIAL VALORIZATION", "course_code": "A042", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00113__c002", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.35575437545776367, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10721", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721?annoOrdinamento=2016", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A040] JURIDICAL SERVICES SCIENCES", "course_code": "A040", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00387__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.35777097940444946, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10718", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti?annoOrdinamento=2019"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A077] SECURITY AND INTERNATIONAL COOPERATION", "course_code": "A077", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00261__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3591728210449219, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10757", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10757/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10757/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10757/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10757/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10757/insegnamenti?annoOrdinamento=2018"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1173] AGRICULTURAL AND ANIMAL SCIENCE", "course_code": "1173", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00402__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3597029149532318, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10473", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10473/insegnamenti/9999"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "course_code": "2448", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00217__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3601396679878235, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10448", "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999?schemaid=12262", "https://unime.coursecatalogue.cineca.it/corsi/2024/10448?annoOrdinamento=2023"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1446] Public Administration Sciences", "course_code": "1446", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00625__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.36096739768981934, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10228", "https://unime.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=12197", "https://unime.coursecatalogue.cineca.it/corsi/2024/10228?annoOrdinamento=2020"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1199] CHEMISTRY AND PHARMACEUTICAL TECHNOLOGY", "course_code": "1199", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00030__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.36222267150878906, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10302", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10302/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1670320551177"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "course_code": "2445", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00107__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.36255866289138794, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10007", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/1?schemaid=12296", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/2?schemaid=12297", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007?annoOrdinamento=2023"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[4025] HISTORICAL SCIENCES: SOCIETY, CULTURES AND INSTITUTIONS OF EUROPE", "course_code": "4025", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b01117__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.36324936151504517, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10026", "https://unime.coursecatalogue.cineca.it/corsi/2024/10026/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10026/insegnamenti/9999?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10026/insegnamenti/9999?schemaid=12218", "https://unime.coursecatalogue.cineca.it/corsi/2024/10026?annoOrdinamento=2020"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A158] PHARMACEUTICAL CHEMISTRY AND TECHNOLOGY", "course_code": "A158", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00029__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.363989919424057, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10923", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10923/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2457] TOURISM, CULTURE AND BUSINESS SCIENCES", "course_code": "2457", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00140__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3643340766429901, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10510", "https://unime.coursecatalogue.cineca.it/corsi/2024/10510/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10510/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10510/insegnamenti/1?schemaid=12298", "https://unime.coursecatalogue.cineca.it/corsi/2024/10510/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10510/insegnamenti/2?schemaid=12299", "https://unime.coursecatalogue.cineca.it/corsi/2024/10510/insegnamenti?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10510?annoOrdinamento=2020"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1212] ARCHITECTURE AND DESIGN SCIENCES", "course_code": "1212", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00433__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3645991384983063, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10402", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2021", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2024", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2021", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2024"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1360] WORK CONSULTANT AND LEGAL SERVICES SCIENCES Bachelor's Degree Program CRIMINOLOGY AND PRIVATE INVESTIGATION SCIENCES", "course_code": "1360", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00693__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.36487340927124023, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10286", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/1?schemaid=12208", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/2?schemaid=12209", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/3#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/3?schemaid=12210", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/4#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/4?schemaid=12211", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/9999?schemaid=12212", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti?annoOrdinamento=2024", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286?annoOrdinamento=2024", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_GIUR"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1191] BIOTECHNOLOGY", "course_code": "1191", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00547__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.36677616834640503, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10320", "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1670320551176"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A097] ECONOMY AND MANAGEMENT ECONOMY", "course_code": "A097", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00287__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.36714085936546326, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10780", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10780/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10780/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10780/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10780/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10780/insegnamenti?annoOrdinamento=2017"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1176] VITICULTURAL, ENOLOGICAL, AND FOOD TECHNOLOGIES VITICULTURE AND ENOLOGY", "course_code": "1176", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00277__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.36835968494415283, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10152", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti?annoOrdinamento=2018"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[DT117] POLITICAL SCIENCES", "course_code": "DT117", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00650__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3707321584224701, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10490", "https://unime.coursecatalogue.cineca.it/corsi/2024/10490?annoOrdinamento=2021"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A116] TOURISM PLANNING, MANAGEMENT AND PROMOTION OF CULTURAL AND ENVIRONMENTAL ITINERARIES", "course_code": "A116", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00353__c001", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3711608648300171, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10829", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10829/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10829/insegnamenti/9999?annoOrdinamento=2020", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10829/insegnamenti/9999?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10829?annoOrdinamento=2020", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10829?annoOrdinamento=2023"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[MP020] EXPERT IN SOCIAL INTERVENTION FOR MINORS AND MAFIA Master of the First Level", "course_code": "MP020", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00125__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3726453185081482, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10461", "https://unime.coursecatalogue.cineca.it/corsi/2024/10461?annoOrdinamento=2018"], "type": "", "type_status": "unknown", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A156] STRATEGIC AND LEGAL SCIENCES OF DEFENSE AND SECURITY", "course_code": "A156", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00390__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.37290671467781067, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10921", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10921/insegnamenti/9999"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A138] INNOVATION MANAGEMENT FOR SUSTAINABLE TOURISM", "course_code": "A138", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00134__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3733450770378113, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10874", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10874/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2460] PEDAGOGICAL SCIENCES", "course_code": "2460", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00034__c000", "macroarea": "isole", "query": "bachelor degree program in social sciences", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.37347158789634705, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10009", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/1?schemaid=12303", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/2?schemaid=12304", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti?annoOrdinamento=2011", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009?annoOrdinamento=2011"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"event": "scope_complete", "macroarea": "isole", "pool_limit": 32, "queries": 27, "raw_blocks": 32, "region": null, "scope": "zone_islands_vector_desc", "section_contains": "General Description", "version": "courses_v3"}
+[RAG][audit] {"candidates": ["University of Messina | [1465] SOCIAL SERVICE SCIENCES", "University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Sassari | [A120] POLITICAL SCIENCES", "University of Messina | [1171] Political Sciences, Administration and Services", "University of Messina | [4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE", "University of Sassari | [A145] URBANISM. ENVIRONMENTAL PROJECT OF THE CITY AND TERRITORY"], "event": "scope_result", "matched_zone": "islands", "merged_blocks": 32, "raw_blocks": 32, "scope": "zone_islands_vector_desc", "target_options": 3, "version": "courses_v3"}
+[RAG][audit] {"aligned_blocks": 6, "candidates": ["University of Messina | [1465] SOCIAL SERVICE SCIENCES", "University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Sassari | [A120] POLITICAL SCIENCES", "University of Messina | [1171] Political Sciences, Administration and Services", "University of Messina | [4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE", "University of Sassari | [A145] URBANISM. ENVIRONMENTAL PROJECT OF THE CITY AND TERRITORY"], "context_characters": 1558, "event": "candidate_pool", "query": "bachelor degree program in social sciences / engineering technology", "scope": "zone_islands_vector_desc", "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 6, "candidates": ["University of Messina | [1465] SOCIAL SERVICE SCIENCES", "University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Sassari | [A120] POLITICAL SCIENCES", "University of Messina | [1171] Political Sciences, Administration and Services", "University of Messina | [4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE", "University of Sassari | [A145] URBANISM. ENVIRONMENTAL PROJECT OF THE CITY AND TERRITORY"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE"], "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 2, "candidates": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE"], "version": "courses_v3"}
+
+[dialog_id] d5b9a36c-8e3f-4263-8958-225e26741482
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12353
+--- Dialogue Begins ---
+[Student] ¡Hola! Soy estudiante y vivo en las islas italianas. Acabo de terminar la secundaria y estoy buscando orientación para elegir un programa universitario. Me gustaría saber más sobre las diferentes opciones disponibles y cómo puedo tomar una decisión informada.
+[Counselor[mistral_small31_24b_32k]] ¡Hola! Ayudo a los estudiantes a elegir estudios universitarios según su formación, intereses, aptitudes y restricciones. ¿Qué estás estudiando ahora o cuál ha sido tu formación más reciente?
+[Student] Acabo de terminar la secundaria.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. ¿Qué asignaturas o ámbitos universitarios te interesan más?
+[Student] Me gustan las asignaturas que involucran entender cómo funcionan las cosas, analizar problemas y temas lógicos. También me gusta trabajar con personas, ayudarles y enseñarles.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. Cuando piensas en la universidad, ¿qué te gustaría profundizar o aprender a hacer?
+[Student] Me gustaría aprender a liderar proyectos, proponer ideas y organizar equipos. También me interesa entender mejor cómo funcionan las cosas y analizar problemas desde una perspectiva lógica.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. ¿Tienes alguna región o macroárea de Italia preferida, o eres flexible respecto a la ubicación?
+[Student] Soy bastante flexible con la ubicación. Vivo en las islas italianas, pero estoy abierto a explorar diferentes regiones para mis estudios universitarios.
+[Counselor[mistral_small31_24b_32k]] Ahora te haré 8 preguntas breves sobre cuánto te atraen distintas actividades. No tienes que demostrar que se te dan bien: me interesa sobre todo cuánto disfrutarías haciéndolas. Puedes responder brevemente, indicando si te gustan mucho, bastante, poco, nada o si depende. ¿Cuánto te atraen las actividades prácticas y manuales, como construir, reparar o trabajar con herramientas y objetos concretos?
+[Student] Me atraen poco.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta comprender cómo funcionan las cosas, los sistemas o los fenómenos?
+[Student] Me atraen mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta buscar información, analizar problemas y razonar de forma lógica?
+[Student] Me atraen mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta expresar ideas o emociones mediante formas creativas como la escritura, el arte, la música o el diseño?
+[Student] Me atrae bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta experimentar y crear algo nuevo a partir de ideas abiertas?
+[Student] Me atrae bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta trabajar estrechamente con otras personas en una función de ayuda, apoyo o escucha?
+[Student] Me atrae mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta proponer ideas, tomar la iniciativa y organizar proyectos o actividades?
+[Student] Me atraen mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta mantener las actividades ordenadas, planificadas y bajo control?
+[Student] Me atraen mucho.
+[Counselor[mistral_small31_24b_32k]] Gracias, ahora tengo la información necesaria para comparar las opciones.
+[Student] De acuerdo.
+[Counselor[mistral_small31_24b_32k]] Te sugiero estas opciones: 1. University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES 2. University of Messina | [4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE Elige una opción indicando el número.
+[Student] Elijo la opción 1. ¿Crees que podría afrontar un curso técnico exigente?
+[Counselor[mistral_small31_24b_32k]] Sí, parece que podrías manejarlo bien. El [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES de la University of Sassari se alinea con tu interés en entender cómo funcionan las cosas y analizar problemas desde una perspectiva lógica.
+[Student] ¿Me recomendarías centrarme en un programa técnico o en uno orientado a las humanidades?
+[Counselor[mistral_small31_24b_32k]] un programa orientado a las humanidades
+[Student] ¿Por qué crees que esa elección sería adecuada para mí?
+[Counselor[mistral_small31_24b_32k]] Esa elección es adecuada porque el [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES de la University of Sassari se alinea con tu interés en entender cómo funcionan las cosas y analizar problemas desde una perspectiva lógica. Además, te permitirá desarrollar habilidades para trabajar con personas, ayudarles y enseñarles.
+[Student] ¿Crees que me sentiría cómodo/a dirigiendo un proyecto de grupo?
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        -1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "social_sciences",
+          "engineering_technology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      },
+      "selection": {
+        "option_number": 1
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences",
+        "engineering_technology"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Social",
+        "Conventional",
+        "Investigative"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 5
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES",
+  "shown_options": [
+    "University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES",
+    "University of Messina | [4092] INFORMATION SCIENCES: JOURNALISTIC TECHNIQUES AND SOCIAL MEDIA Bachelor's Degree Course PDS - COMUNE"
+  ],
+  "source_turn": 16
+}
+[RUN_VALIDATION] protocol_ok=False options_shown=2 selected_option=True terminal_without_options=False error=missing_fixed_followup_questions=5
+[RETRY_PAIR] persona=Agre_Cons_Emot_Extr_Open_p149.json attempt=2/3 seed=12354 gender=female
+[RAG][audit] {"event": "retry_context", "retained_listener_region": "islands", "version": "courses_v3"}
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p149.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12354
+[LANG] dialog=Spanish rag=eng
+[RETRY_CONTEXT] retained_listener_region=islands
+[RAG][audit] {"description_section": "General Description", "event": "request", "macroarea": "isole", "preferred_zone": "islands", "query": "bachelor degree program in psychology / social sciences", "query_candidates": ["bachelor degree program in psychology", "high school bachelor degree program in psychology", "psychology", "high school psychology", "social sciences", "bachelor degree program in social sciences", "high school social sciences", "psicologia", "bachelor degree program in psicologia", "high school psicologia", "scienze sociali", "bachelor degree program in scienze sociali", "high school scienze sociali", "clinical psychology", "bachelor degree program in clinical psychology", "high school clinical psychology", "sociology", "bachelor degree program in sociology", "high school sociology", "psicologia clinica", "bachelor degree program in psicologia clinica", "high school psicologia clinica", "sociologia", "bachelor degree program in sociologia", "high school sociologia", "high school", "bachelor degree program in psychology / social sciences"], "region": null, "target_options": 3, "version": "courses_v3"}
+
+
+[RAG][audit] {"cities": [], "course": "[A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "course_code": "A073", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00456__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.307595819234848, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10759", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999?annoOrdinamento=2018", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759?annoOrdinamento=2018", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759?annoOrdinamento=2023"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "course_code": "2445", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00107__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.31349050998687744, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10007", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/1?schemaid=12296", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/2?schemaid=12297", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10007?annoOrdinamento=2023"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "course_code": "2448", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00217__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.31804072856903076, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10448", "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999?schemaid=12262", "https://unime.coursecatalogue.cineca.it/corsi/2024/10448?annoOrdinamento=2023"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2480] PSYCHOLOGY AND COGNITIVE NEUROSCIENCE", "course_code": "2480", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00099__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3278821110725403, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10451", "https://unime.coursecatalogue.cineca.it/corsi/2024/10451/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10451/insegnamenti/9999?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10451/insegnamenti/9999?schemaid=12309", "https://unime.coursecatalogue.cineca.it/corsi/2024/10451?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2473] COGNITIVE SCIENCE AND THEORY OF COMMUNICATION", "course_code": "2473", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00048__c002", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.33715566992759705, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10526", "https://unime.coursecatalogue.cineca.it/corsi/2024/10526/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10526/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10526/insegnamenti/9999?schemaid=12307", "https://unime.coursecatalogue.cineca.it/corsi/2024/10526/insegnamenti/9999?schemaid=12308", "https://unime.coursecatalogue.cineca.it/corsi/2024/10526/insegnamenti?annoOrdinamento=2021", "https://unime.coursecatalogue.cineca.it/corsi/2024/10526?annoOrdinamento=2021"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[3310] PHYSIOTHERAPY (ENABLING THE PROFESSION OF PHYSIOTHERAPIST)", "course_code": "3310", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00219__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3449992537498474, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/9999?annoOrdinamento=2011", "https://unime.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/9999?schemaid=12265", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_MED"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[4036] CONTEMPORARY PHILOSOPHY", "course_code": "4036", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b01015__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3470299541950226, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10020/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10020/insegnamenti/9999?annoOrdinamento=2019", "https://unime.coursecatalogue.cineca.it/corsi/2024/10020/insegnamenti/9999?schemaid=12220", "https://unime.coursecatalogue.cineca.it/corsi/2024/10020?annoOrdinamento=2019"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2449] CLINICAL AND HEALTH PSYCHOLOGY ACROSS THE LIFESPAN (Eligible for the Psychologist Profession)", "course_code": "2449", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00149__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3480139374732971, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10611/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10611/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10611/insegnamenti/1?schemaid=12263", "https://unime.coursecatalogue.cineca.it/corsi/2024/10611/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10611/insegnamenti/2?schemaid=12264", "https://unime.coursecatalogue.cineca.it/corsi/2024/10611/insegnamenti?annoOrdinamento=2023"], "type": "Corso di Laurea Magistrale", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[MS050] EXPERT IN PSYCHOPATHOLOGY AND REHABILITATION TECHNIQUES IN HEALTHCARE SETTINGS Master of the Second Level", "course_code": "MS050", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00288__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.35300523042678833, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10608", "https://unime.coursecatalogue.cineca.it/corsi/2024/10608?annoOrdinamento=2023"], "type": "", "type_status": "unknown", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[MP047] CHILD AND ADOLESCENT PSYCHIATRY First Level Master", "course_code": "MP047", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b01301__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.356587290763855, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10669", "https://unime.coursecatalogue.cineca.it/corsi/2024/10669?annoOrdinamento=2024"], "type": "", "type_status": "unknown", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[MS046] NEUROPSYCHOLOGY AND NEURORREHABILITATION Second Level Master", "course_code": "MS046", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00179__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3609274923801422, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10571", "https://unime.coursecatalogue.cineca.it/corsi/2024/10571?annoOrdinamento=2022"], "type": "", "type_status": "unknown", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1222] PHYSIOTHERAPY (ENABLING THE HEALTH PROFESSION OF PHYSIOTHERAPIST)", "course_code": "1222", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00540__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3614930808544159, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10200", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10200/insegnamenti/9999"], "type": "Bachelor's Degree Program", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A074] HISTORICAL AND PHILOSOPHICAL SCIENCES", "course_code": "A074", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00111__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3718830943107605, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10758", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti?annoOrdinamento=2016"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1199] CHEMISTRY AND PHARMACEUTICAL TECHNOLOGY", "course_code": "1199", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00030__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3754359483718872, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10302", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10302/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1670320551177"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A030] LOGOPEDIA (ELIGIBLE FOR THE HEALTHCARE PROFESSION OF SPEECH THERAPIST)", "course_code": "A030", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00520__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.377667099237442, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10687", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10687/insegnamenti/9999"], "type": "", "type_status": "unknown", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A158] PHARMACEUTICAL CHEMISTRY AND TECHNOLOGY", "course_code": "A158", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00029__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3795839548110962, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10923", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10923/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": ["MESSINA"], "course": "[2458] DISCIPLINES OF THE ARTS, MUSIC AND PERFORMANCE", "course_code": "2458", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00115__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.38362371921539307, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10511", "https://unime.coursecatalogue.cineca.it/corsi/2024/10511/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10511/insegnamenti/9999?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10511/insegnamenti/9999?schemaid=12300", "https://unime.coursecatalogue.cineca.it/corsi/2024/10511?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_SDF"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": ["MESSINA Altre sedi PRIOLO"], "course": "[1350] Law", "course_code": "1350", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00671__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.38535141944885254, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/9", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/1?schemaid=12201", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/2?schemaid=12202", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/3#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/3?schemaid=12203", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/4#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/4?schemaid=12204", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/5#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/5?schemaid=12206", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/6#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/6?schemaid=12207", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/9999?schemaid=12205", "https://unime.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti?annoOrdinamento=2024", "https://unime.coursecatalogue.cineca.it/corsi/2024/9?annoOrdinamento=2024"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1200] PHARMACY", "course_code": "1200", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00063__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.38626471161842346, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10410", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10410/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[3470] PEDiatric NURSING (ENABLING THE PROFESSIONAL QUALIFICATION IN PEDiatric NURSE)", "course_code": "3470", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b01321__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.38697177171707153, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/9999?annoOrdinamento=2013", "https://unime.coursecatalogue.cineca.it/corsi/2024/10185/insegnamenti/9999?schemaid=12349", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_PED"], "type": "COURSE", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[DT207] COGNITIVE SCIENCES", "course_code": "DT207", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00123__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.38819584250450134, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10581", "https://unime.coursecatalogue.cineca.it/corsi/2024/10581?annoOrdinamento=2024"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1182] SOCIAL SERVICE AND SOCIAL POLICIES", "course_code": "1182", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00238__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.38860395550727844, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10041", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10041/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1218] LETTERS PHILOSOPHICAL", "course_code": "1218", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00303__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3892579972743988, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10324", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/3", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/4", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti?annoOrdinamento=2014"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[7026] PHARMACEUTICAL CHEMISTRY AND TECHNOLOGY", "course_code": "7026", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00515__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.39070895314216614, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10601", "https://unime.coursecatalogue.cineca.it/corsi/2024/10601/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10601/insegnamenti/9999?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10601/insegnamenti/9999?schemaid=12271", "https://unime.coursecatalogue.cineca.it/corsi/2024/10601?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1226] PLANNING AND POLICIES FOR THE CITY, ENVIRONMENT, AND LANDSCAPE", "course_code": "1226", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00227__c006", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.39492595195770264, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10150", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/9999?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150?annoOrdinamento=2022", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A075] NURSING AND MIDWIFERY SCIENCES", "course_code": "A075", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00141__c001", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3951129913330078, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10762", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10762/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[MP020] EXPERT IN SOCIAL INTERVENTION FOR MINORS AND MAFIA First Level Master", "course_code": "MP020", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00082__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.39672860503196716, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10461", "https://unime.coursecatalogue.cineca.it/corsi/2024/10461?annoOrdinamento=2018"], "type": "", "type_status": "unknown", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[3035] GASTRONOMIC SCIENCES Bachelor's Degree Course STATUTORY PLAN KNOWN", "course_code": "3035", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00222__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.39746493101119995, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10160", "https://unime.coursecatalogue.cineca.it/corsi/2024/10160/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10160/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10160/insegnamenti/1?schemaid=12251", "https://unime.coursecatalogue.cineca.it/corsi/2024/10160/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10160/insegnamenti/2?schemaid=12252", "https://unime.coursecatalogue.cineca.it/corsi/2024/10160/insegnamenti?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024/10160?annoOrdinamento=2022"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A040] JURIDICAL SERVICES SCIENCES", "course_code": "A040", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00387__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3983354866504669, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10718", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti?annoOrdinamento=2019"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1195] CHEMISTRY", "course_code": "1195", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00493__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3984311819076538, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10120", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10120/insegnamenti/9999"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1191] BIOTECHNOLOGY warning_amber_outline", "course_code": "1191", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00548__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3988303244113922, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10320", "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1670320551176"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2460] PEDAGOGICAL SCIENCES", "course_code": "2460", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00034__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.399029016494751, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10009", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/1?schemaid=12303", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/2?schemaid=12304", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti?annoOrdinamento=2011", "https://unime.coursecatalogue.cineca.it/corsi/2024/10009?annoOrdinamento=2011"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[7016] PHARMACY", "course_code": "7016", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00505__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3997396230697632, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10602", "https://unime.coursecatalogue.cineca.it/corsi/2024/10602/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10602/insegnamenti/9999?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10602/insegnamenti/9999?schemaid=12270", "https://unime.coursecatalogue.cineca.it/corsi/2024/10602?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A157] PHARMACY", "course_code": "A157", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00027__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.40094438195228577, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10922", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10922/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1465] SOCIAL SERVICE SCIENCES", "course_code": "1465", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00614__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.4014575779438019, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10059", "https://unime.coursecatalogue.cineca.it/corsi/2024/10059/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10059/insegnamenti/9999?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024/10059/insegnamenti/9999?schemaid=12195", "https://unime.coursecatalogue.cineca.it/corsi/2024/10059?annoOrdinamento=2022"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1212] ARCHITECTURE AND DESIGN SCIENCES", "course_code": "1212", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00433__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.40186262130737305, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10402", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2021", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2024", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2021", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2024"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1360] WORK CONSULTANT AND LEGAL SERVICES SCIENCES Bachelor's Degree Program CRIMINOLOGY AND PRIVATE INVESTIGATION SCIENCES", "course_code": "1360", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00693__c000", "macroarea": "isole", "query": "bachelor degree program in psychology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.4021432101726532, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10286", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/1?schemaid=12208", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/2?schemaid=12209", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/3#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/3?schemaid=12210", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/4#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/4?schemaid=12211", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti/9999?schemaid=12212", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286/insegnamenti?annoOrdinamento=2024", "https://unime.coursecatalogue.cineca.it/corsi/2024/10286?annoOrdinamento=2024", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_GIUR"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"event": "scope_complete", "macroarea": "isole", "pool_limit": 32, "queries": 27, "raw_blocks": 32, "region": null, "scope": "zone_islands_vector_desc", "section_contains": "General Description", "version": "courses_v3"}
+[RAG][audit] {"candidates": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [MS050] EXPERT IN PSYCHOPATHOLOGY AND REHABILITATION TECHNIQUES IN HEALTHCARE SETTINGS Master of the Second Level", "University of Sassari | [1222] PHYSIOTHERAPY (ENABLING THE HEALTH PROFESSION OF PHYSIOTHERAPIST)", "University of Sassari | [A030] LOGOPEDIA (ELIGIBLE FOR THE HEALTHCARE PROFESSION OF SPEECH THERAPIST)"], "event": "scope_result", "matched_zone": "islands", "merged_blocks": 32, "raw_blocks": 32, "scope": "zone_islands_vector_desc", "target_options": 3, "version": "courses_v3"}
+[RAG][audit] {"aligned_blocks": 6, "candidates": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [MS050] EXPERT IN PSYCHOPATHOLOGY AND REHABILITATION TECHNIQUES IN HEALTHCARE SETTINGS Master of the Second Level", "University of Sassari | [1222] PHYSIOTHERAPY (ENABLING THE HEALTH PROFESSION OF PHYSIOTHERAPIST)", "University of Sassari | [A030] LOGOPEDIA (ELIGIBLE FOR THE HEALTHCARE PROFESSION OF SPEECH THERAPIST)"], "context_characters": 1931, "event": "candidate_pool", "query": "bachelor degree program in psychology / social sciences", "scope": "zone_islands_vector_desc", "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 6, "candidates": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [MS050] EXPERT IN PSYCHOPATHOLOGY AND REHABILITATION TECHNIQUES IN HEALTHCARE SETTINGS Master of the Second Level", "University of Sassari | [1222] PHYSIOTHERAPY (ENABLING THE HEALTH PROFESSION OF PHYSIOTHERAPIST)", "University of Sassari | [A030] LOGOPEDIA (ELIGIBLE FOR THE HEALTHCARE PROFESSION OF SPEECH THERAPIST)"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES"], "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 3, "candidates": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES", "University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES"], "version": "courses_v3"}
+
+[dialog_id] 242f3b86-2505-4ac7-b6fc-20df8c81f11a
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12354
+--- Dialogue Begins ---
+[Student] ¡Hola! Vivo en las islas italianas y terminé la secundaria. Estoy buscando orientación para elegir un programa universitario. Me gustaría estudiar algo que me permita ayudar a la gente y entender cómo funcionan las cosas. ¿Podrías ayudarme?
+[Counselor[mistral_small31_24b_32k]] ¡Hola! Ayudo a los estudiantes a elegir estudios universitarios según su formación, intereses, aptitudes y restricciones. ¿Qué estás estudiando ahora o cuál ha sido tu formación más reciente?
+[Student] Terminé la secundaria. Me gustaría estudiar algo que me permita ayudar a la gente y entender cómo funcionan las cosas.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. ¿Qué asignaturas o ámbitos universitarios te interesan más?
+[Student] Me gustan las materias que me permiten entender cómo funcionan las cosas y analizar problemas. También disfruto de las materias que me permiten trabajar con personas.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. Cuando piensas en la universidad, ¿qué te gustaría profundizar o aprender a hacer?
+[Student] Me gustaría aprender a organizar proyectos y liderar equipos. También quiero entender mejor cómo funcionan las cosas y analizar problemas desde diferentes perspectivas.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. ¿Tienes alguna región o macroárea de Italia preferida, o eres flexible respecto a la ubicación?
+[Student] Soy flexible con la ubicación. Vivo en las islas italianas pero no tengo una preferencia específica por ninguna región o macroárea para estudiar.
+[Counselor[mistral_small31_24b_32k]] Ahora te haré 8 preguntas breves sobre cuánto te atraen distintas actividades. No tienes que demostrar que se te dan bien: me interesa sobre todo cuánto disfrutarías haciéndolas. Puedes responder brevemente, indicando si te gustan mucho, bastante, poco, nada o si depende. ¿Cuánto te atraen las actividades prácticas y manuales, como construir, reparar o trabajar con herramientas y objetos concretos?
+[Student] Me atraen poco.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta comprender cómo funcionan las cosas, los sistemas o los fenómenos?
+[Student] Me gusta mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta buscar información, analizar problemas y razonar de forma lógica?
+[Student] Me gusta mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta expresar ideas o emociones mediante formas creativas como la escritura, el arte, la música o el diseño?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta experimentar y crear algo nuevo a partir de ideas abiertas?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta trabajar estrechamente con otras personas en una función de ayuda, apoyo o escucha?
+[Student] Me gusta mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta proponer ideas, tomar la iniciativa y organizar proyectos o actividades?
+[Student] Me gusta mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta mantener las actividades ordenadas, planificadas y bajo control?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] Gracias, ahora tengo la información necesaria para comparar las opciones.
+[Student] De acuerdo.
+[Counselor[mistral_small31_24b_32k]] Te sugiero estas opciones: 1. University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES 2. University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES 3. University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES Elige una opción indicando el número.
+[Student] Elijo la opción 1. ¿Crees que podría afrontar un curso técnico exigente?
+[Counselor[mistral_small31_24b_32k]] Sí, podrías afrontarlo bien. La opción [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES de la University of Sassari es adecuada para ti porque te gusta entender cómo funcionan las cosas y analizar problemas desde diferentes perspectivas.
+[Student] ¿Me recomendarías centrarme en un programa técnico o en uno orientado a las humanidades?
+[Counselor[mistral_small31_24b_32k]] centrarte en un programa técnico
+[Student] ¿Por qué crees que esa elección sería adecuada para mí?
+[Counselor[mistral_small31_24b_32k]] La opción [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES de la University of Sassari es adecuada para ti porque te gusta entender cómo funcionan las cosas y analizar problemas desde diferentes perspectivas. Además, este programa te permitirá desarrollar habilidades en psicología que te ayudarán a trabajar con personas y organizar proyectos, lo cual coincide con tus intereses y aptitudes.
+[Student] ¿Crees que me sentiría cómodo/a dirigiendo un proyecto de grupo?
+[Counselor[mistral_small31_24b_32k]] Sí, podrías sentirte cómoda. La opción 1 - University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES te permitirá desarrollar habilidades en psicología que te ayudarán a trabajar con personas y organizar proyectos, lo cual coincide con tus intereses y aptitudes.
+[Student] ¿Me sugerirías asumir ahora un papel de liderazgo o centrarme primero en tareas de apoyo?
+[Counselor[mistral_small31_24b_32k]] asumir ahora un papel de liderazgo
+[Student] ¿Por qué crees que una opción es más adecuada para mí?
+[Counselor[mistral_small31_24b_32k]] La opción 1 - University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES es más adecuada para ti porque te gusta entender cómo funcionan las cosas y analizar problemas desde diferentes perspectivas. Además, este programa te permitirá desarrollar habilidades en psicología que te ayudarán a trabajar con personas y organizar proyectos, lo cual coincide con tus intereses y aptitudes. La opción 2 - University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES es más generalista. La opción 3 - University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES se centra en la psicología clínica y preventiva, lo cual puede ser interesante si te atrae trabajar directamente con personas en contextos de salud mental.
+[Student] ¿Crees que mis estudios anteriores me han preparado adecuadamente para cursos de nivel universitario?
+[Counselor[mistral_small31_24b_32k]] Sí, tus estudios previos te han preparado bien. La opción 1 - University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES es un programa de licenciatura que se adapta a tu formación en secundaria y tus intereses en psicología y ciencias sociales.
+[Student] ¿Me sugerirías empezar de inmediato con cursos avanzados o comenzar con módulos introductorios?
+[Counselor[mistral_small31_24b_32k]] empezar con módulos introductorios
+[Student] ¿Por qué crees que ese enfoque se ajusta a mi preparación?
+[Counselor[mistral_small31_24b_32k]] Ese enfoque se ajusta bien a tu preparación porque el programa 1 - University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES es un curso de licenciatura que se adapta a tu formación en secundaria y tus intereses en psicología y ciencias sociales. Además, te permitirá desarrollar habilidades en psicología que te ayudarán a trabajar con personas y organizar proyectos, lo cual coincide con tus intereses y aptitudes.
+[Student] Gracias por tu ayuda, adiós.
+[Counselor[mistral_small31_24b_32k]] Resumen: Has terminado la secundaria y te gustaría estudiar algo que te permita ayudar a la gente y entender cómo funcionan las cosas. La opción [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES de la University of Sassari se ajusta bien a tus intereses en psicología y ciencias sociales. RIASEC: SIE Próximos pasos: 1. revisar el plan oficial del curso y los requisitos de acceso 2. comprobar costes, ubicación, desplazamientos o alojamiento 3. preparar documentos, portafolio o revisar los prerrequisitos Despedida: ¡Adiós! ¡Buena suerte con tus estudios!
+[Student] Adiós
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "social_sciences"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        -1,
+        2,
+        2,
+        1,
+        1,
+        2,
+        2,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "social_sciences"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          1,
+          1,
+          2,
+          2,
+          1
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      },
+      "selection": {
+        "option_number": 1
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "social_sciences"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Social",
+        "Investigative",
+        "Enterprising"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES",
+  "shown_options": [
+    "University of Sassari | [A073] PSYCHOLOGICAL SCIENCES AND TECHNIQUES OF COGNITIVE PROCESSES",
+    "University of Messina | [2445] PSYCHOLOGICAL SCIENCES AND TECHNIQUES",
+    "University of Messina | [2448] CLINICAL AND PREVENTIVE PSYCHOLOGICAL SCIENCES AND TECHNIQUES"
+  ],
+  "source_turn": 16
+}
+[RUN_VALIDATION] protocol_ok=True options_shown=3 selected_option=True terminal_without_options=False error=none

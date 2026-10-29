@@ -13,6 +13,7 @@ from Build_rag_index import (
     read_text,
     iter_blocks,
     parse_block,
+    enrich_course_metadata,
     should_keep_block,
     normalize_stem,
     normalize_university_name,
@@ -84,6 +85,7 @@ def build_lancedb_index(
 
         for bi, block in enumerate(iter_blocks(text)):
             meta, content = parse_block(block)
+            enrich_course_metadata(meta, content)
             meta["LANGUAGE"] = lang
 
             if "UNIVERSITY" in meta:

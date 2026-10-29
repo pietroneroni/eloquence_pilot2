@@ -1,0 +1,58 @@
+[
+  {
+    "explicit": {
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "computer_science"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "region": "center"
+    },
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        0
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]

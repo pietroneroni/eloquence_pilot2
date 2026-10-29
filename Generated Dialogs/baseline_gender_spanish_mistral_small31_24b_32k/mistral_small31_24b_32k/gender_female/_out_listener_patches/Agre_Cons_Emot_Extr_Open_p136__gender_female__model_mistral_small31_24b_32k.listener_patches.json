@@ -1,0 +1,53 @@
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "engineering_technology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        -1,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]

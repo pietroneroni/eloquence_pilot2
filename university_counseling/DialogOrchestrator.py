@@ -48,24 +48,6 @@ def _safe_turn_text(turn) -> str:
     return ""
 
 
-_OPT_RX = re.compile(
-    r"\b(?:option|opzione|opción)\s*([1-3])\b|\b([1-3])\b",
-    re.I,
-)
-_OPT_WORD_RX = re.compile(
-    r"\b(?:la|il|the|le|l')?\s*(prima|primo|seconda|secondo|terza|terzo|first|second|third|primera|primero|segunda|segundo|tercera|tercero|première|premier|deuxième|seconde|troisième)"
-    r"\s*(?:opzione|option|opción)?\b",
-    re.I,
-)
-_OPT_WORD_TO_DIGIT = {
-    "prima": "1", "primo": "1", "first": "1",
-    "seconda": "2", "secondo": "2", "second": "2",
-    "terza": "3", "terzo": "3", "third": "3",
-    "primera": "1", "primero": "1", "première": "1", "premier": "1",
-    "segunda": "2", "segundo": "2", "deuxième": "2", "seconde": "2",
-    "tercera": "3", "tercero": "3", "troisième": "3",
-}
-
 _NAME_PLACEHOLDER_RX = re.compile(
     r"(?i)\b(?:mi\s+chiamo|my\s+name\s+is)\s*[_\-.]{3,}\s*[,;:.!?-]*\s*"
 )
@@ -159,24 +141,7 @@ def enforce_student_script_or_fallback(text: str) -> str:
         return expected
 
     if mode == "choose_and_q1":
-        m = _OPT_RX.search(t)
-        n = (m.group(1) or m.group(2)) if m else None
-        if not n:
-            word_match = _OPT_WORD_RX.search(t)
-            if word_match:
-                n = _OPT_WORD_TO_DIGIT.get(word_match.group(1).casefold())
-        if not n:
-            raise ValueError(
-                "Student output did not contain a numbered or ordinal option; "
-                "refusing silent option-1 fallback."
-            )
-        choice_line = _t(
-            f"I will choose option {n}.",
-            f"Scelgo l'opzione {n}.",
-            f"Elijo la opción {n}.",
-            f"Je choisis l'option {n}.",
-        )
-        return f"{choice_line}\n{expected}".strip()
+        return t
 
     return t
 

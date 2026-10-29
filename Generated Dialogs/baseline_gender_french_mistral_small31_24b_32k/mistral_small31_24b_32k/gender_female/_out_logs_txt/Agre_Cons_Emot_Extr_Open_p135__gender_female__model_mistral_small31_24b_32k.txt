@@ -1,0 +1,554 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p135.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12351
+[LANG] dialog=French rag=eng
+[RAG][audit] {"description_section": "General Description", "event": "request", "macroarea": "centro", "preferred_zone": "center", "query": "bachelor degree program in psychology / cognitive science linguistics", "query_candidates": ["bachelor degree program in psychology", "high school bachelor degree program in psychology", "psychology", "high school psychology", "cognitive science", "bachelor degree program in cognitive science", "high school cognitive science", "psicologia", "bachelor degree program in psicologia", "high school psicologia", "scienze cognitive", "bachelor degree program in scienze cognitive", "high school scienze cognitive", "clinical psychology", "bachelor degree program in clinical psychology", "high school clinical psychology", "linguistics", "bachelor degree program in linguistics", "high school linguistics", "psicologia clinica", "bachelor degree program in psicologia clinica", "high school psicologia clinica", "linguistica", "bachelor degree program in linguistica", "high school linguistica", "high school", "bachelor degree program in psychology / cognitive science linguistics"], "region": null, "target_options": 3, "version": "courses_v3"}
+
+
+[RAG][audit] {"cities": [], "course": "[D3PSI] PSYCHOLOGY", "course_code": "D3PSI", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00004__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.2838377356529236, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/3507"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0685] PSYCHOLOGY", "course_code": "0685", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00035__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.28556931018829346, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/9", "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/22018", "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/22020", "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/22022", "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "course_code": "P3Q", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b01071__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.29504886269569397, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10416", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416/insegnamenti/9999", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416/insegnamenti/9999?schemaid=11435"], "type": "", "type_status": "conflicting", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE", "course_code": "687M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00219__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.29567214846611023, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2305", "https://unich.coursecatalogue.cineca.it/corsi/2024/2305/insegnamenti/21860"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0686] CLINICAL AND HEALTH PSYCHOLOGY", "course_code": "0686", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00233__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.31297481060028076, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/11", "https://unich.coursecatalogue.cineca.it/corsi/2024/11/insegnamenti/21858"], "type": "MASTER'S DEGREE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[P4Q] CLINICAL, APPLIED AND INTERVENTION PSYCHOLOGY", "course_code": "P4Q", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00575__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.31460779905319214, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10417", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417/insegnamenti/1?schemaid=11305", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417/insegnamenti/2?schemaid=11306", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417/insegnamenti/3?schemaid=11307"], "type": "Master's Degree", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[621M] ECONOMICS AND BEHAVIORAL SCIENCES", "course_code": "621M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00101__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.32460349798202515, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/3105", "https://unich.coursecatalogue.cineca.it/corsi/2024/3105/insegnamenti/21828"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D3BBS] BUSINESS AND BEHAVIOURAL SCIENCES", "course_code": "D3BBS", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00022__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.32867515087127686, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2024"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0684] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "course_code": "0684", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00570__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3314080834388733, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/4", "https://unich.coursecatalogue.cineca.it/corsi/2024/4/insegnamenti/22024"], "type": "COURSE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[LMSF] PHILOSOPHICAL SCIENCES", "course_code": "LMSF", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00082__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.34282612800598145, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/576", "https://unich.coursecatalogue.cineca.it/corsi/2024/576/insegnamenti/21834"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[C3F] PHILOSOPHY AND THEORY OF COMMUNICATION PROCESSES", "course_code": "C3F", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b01045__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3447275757789612, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10017", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10017/insegnamenti/9999", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10017/insegnamenti/9999?schemaid=11382"], "type": "", "type_status": "conflicting", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0694] POLICIES AND MANAGEMENT FOR WELFARE", "course_code": "0694", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00090__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.34483593702316284, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/587", "https://unich.coursecatalogue.cineca.it/corsi/2024/587/insegnamenti/21466"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[688M] COMPUTATIONAL COGNITIVE SCIENCE", "course_code": "688M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00075__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3462176024913788, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2306", "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti/21822", "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti/21824", "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti?annoOrdinamento=2022"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[3FF7] PHILOSOPHY AND EDUCATION SCIENCES", "course_code": "3FF7", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00586__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.35037949681282043, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/619", "https://unich.coursecatalogue.cineca.it/corsi/2024/619/insegnamenti/21830"], "type": "", "type_status": "unknown", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D004] LITERARY AND PHILOSOPHICAL STUDIES", "course_code": "D004", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00451__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.35043632984161377, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10691", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti/1#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti/1?schemaid=11663", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti/2#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti/2?schemaid=11664", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti/3#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti/3?schemaid=11665", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10691/insegnamenti?annoOrdinamento=2019"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[683M] SOCIAL RESEARCH, SECURITY POLICIES AND CRIMINALITY", "course_code": "683M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00086__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.35187414288520813, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/1883", "https://unich.coursecatalogue.cineca.it/corsi/2024/1883/insegnamenti/21838"], "type": "MASTER'S DEGREE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[ME006] DIETETICS (ENABLING THE HEALTH PROFESSION OF DIETIST)", "course_code": "ME006", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00428__c003", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.35264602303504944, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10361", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10361/insegnamenti/9999"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[L648] HEALTH ASSISTANCE", "course_code": "L648", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00443__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.35501232743263245, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/608", "https://unich.coursecatalogue.cineca.it/corsi/2024/608/insegnamenti/21538", "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945294"], "type": "COURSE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[LM67] SCIENCE AND TECHNOLOGY OF PREVENTIVE AND ADAPTED PHYSICAL ACTIVITIES", "course_code": "LM67", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00085__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3566918969154358, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/545", "https://unich.coursecatalogue.cineca.it/corsi/2024/545/insegnamenti/21854"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A595] PHARMACEUTICAL CHEMISTRY AND TECHNOLOGY", "course_code": "A595", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00074__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3580119013786316, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/5110", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21224", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21225", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21226", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21227", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A596] PHARMACY", "course_code": "A596", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00056__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.35825806856155396, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/5111", "https://unich.coursecatalogue.cineca.it/corsi/2024/5111/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/5111/insegnamenti/21215", "https://unich.coursecatalogue.cineca.it/corsi/2024/5111/insegnamenti/21216", "https://unich.coursecatalogue.cineca.it/corsi/2024/5111/insegnamenti/21217", "https://unich.coursecatalogue.cineca.it/corsi/2024/5111/insegnamenti/21220", "https://unich.coursecatalogue.cineca.it/corsi/2024/5111/insegnamenti/21221", "https://unich.coursecatalogue.cineca.it/corsi/2024/5111/insegnamenti?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0692] SOCIAL SERVICE", "course_code": "0692", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00026__c003", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3620053827762604, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/585", "https://unich.coursecatalogue.cineca.it/corsi/2024/585/insegnamenti/21464"], "type": "COURSE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D3SS] SOCIAL SCIENCES", "course_code": "D3SS", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00000__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3628530502319336, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/3707"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[L644] OCCUPATIONAL THERAPY", "course_code": "L644", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00556__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3632867932319641, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/618", "https://unich.coursecatalogue.cineca.it/corsi/2024/618/insegnamenti/21818"], "type": "COURSE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D3HS] HUMAN SCIENCES", "course_code": "D3HS", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00012__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3633258044719696, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2064"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D192] GENETIC COUNSELORS", "course_code": "D192", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00136__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.36560723185539246, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10956", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10956/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[S3S] SOCIAL SERVICE SCIENCES", "course_code": "S3S", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00981__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.36663833260536194, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10383", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10383/insegnamenti/9999", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10383/insegnamenti/9999?schemaid=11390"], "type": "", "type_status": "conflicting", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[ME002] MIDWIFERY (ENABLING THE HEALTH PROFESSION OF MIDWIFE)", "course_code": "ME002", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00500__c012", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3670218288898468, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10327", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10327/insegnamenti/9999"], "type": "COURSE", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[MG002] NURSING AND MIDWIFERY SCIENCES", "course_code": "MG002", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00181__c006", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.36834779381752014, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10369", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10369/insegnamenti/9999"], "type": "Master's degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D006] LANGUAGE AND MIND: LINGUISTICS AND COGNITIVE STUDIES - MIND AND LANGUAGE: LINGUISTICS AND COGNITIVE STUDIES", "course_code": "D006", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00046__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3698139190673828, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10693", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10693/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10693/insegnamenti/1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10693/insegnamenti/2", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10693/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10693/insegnamenti?annoOrdinamento=2015"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[AE003] EDUCATION AND TRAINING SCIENCES SOCIAL EDUCATOR", "course_code": "AE003", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00360__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.37127071619033813, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10255", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10255/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10255/insegnamenti/1#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10255/insegnamenti/1?schemaid=11832", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10255/insegnamenti/2#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10255/insegnamenti/2?schemaid=11833", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10255/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10255/insegnamenti?annoOrdinamento=2019"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D3SBF] BIOMOLECULAR AND PHARMACEUTICAL SCIENCES", "course_code": "D3SBF", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00002__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3732120990753174, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2087"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[PE003] SOCIAL SERVICE SCIENCES", "course_code": "PE003", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00484__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3754347562789917, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10216", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10216/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10216/insegnamenti/9999?schemaid=11817"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS", "course_code": "D2EEH", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00018__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3758493959903717, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2063"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D456] PHARMACY", "course_code": "D456", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00017__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3776521384716034, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11224", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11224/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[ME007] PHYSIOTHERAPY (ENABLING THE HEALTH PROFESSION OF PHYSIOTHERAPIST)", "course_code": "ME007", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00424__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3782098889350891, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10362", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10362/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10362/insegnamenti/1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10362/insegnamenti/2", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10362/insegnamenti/3", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10362/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10362/insegnamenti?annoOrdinamento=2020"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[LMSP] PEDAGOGICAL SCIENCES", "course_code": "LMSP", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00080__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.38036420941352844, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/577", "https://unich.coursecatalogue.cineca.it/corsi/2024/577/insegnamenti/21836"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[670M] JURIDICAL SCIENCES FOR INTERNATIONALIZATION AND BUSINESS INNOVATION", "course_code": "670M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00040__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3804931342601776, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/1803", "https://unich.coursecatalogue.cineca.it/corsi/2024/1803/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/1803/insegnamenti/23015", "https://unich.coursecatalogue.cineca.it/corsi/2024/1803/insegnamenti/23016", "https://unich.coursecatalogue.cineca.it/corsi/2024/1803/insegnamenti?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[S4P] DESIGN AND MANAGEMENT OF SOCIAL AND EDUCATIONAL SERVICES AND INTERVENTIONS", "course_code": "S4P", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00583__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3807837665081024, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10122", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10122/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10122/insegnamenti/1?schemaid=11388", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10122/insegnamenti/2?schemaid=11389"], "type": "Master's Degree", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D003] STRATEGIES AND TECHNIQUES OF COMMUNICATION", "course_code": "D003", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00029__c001", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.38103681802749634, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10694", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/1#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/1?schemaid=11791", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/2", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/4#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/4?schemaid=11792", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/5#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/5?schemaid=11793", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti?annoOrdinamento=2021"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[AG005] SCIENCES FOR EDUCATIONAL TRAINING AND PEDAGOGICAL CONSULTING IN ORGANIZATIONS", "course_code": "AG005", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00072__c002", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3812393844127655, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10360", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10360/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10360/insegnamenti/9999?schemaid=11827"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[610L] BUSINESS ECONOMICS", "course_code": "610L", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00018__c000", "macroarea": "centro", "query": "bachelor degree program in psychology", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3813149034976959, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/564", "https://unich.coursecatalogue.cineca.it/corsi/2024/564/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/564/insegnamenti/21420", "https://unich.coursecatalogue.cineca.it/corsi/2024/564/insegnamenti/21422", "https://unich.coursecatalogue.cineca.it/corsi/2024/564/insegnamenti/21424", "https://unich.coursecatalogue.cineca.it/corsi/2024/564/insegnamenti?annoOrdinamento=2012"], "type": "Bachelor's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"event": "scope_complete", "macroarea": "centro", "pool_limit": 32, "queries": 27, "raw_blocks": 32, "region": null, "scope": "zone_center_vector_desc", "section_contains": "General Description", "version": "courses_v3"}
+[RAG][audit] {"candidates": ["University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of L'Aquila | [C3F] PHILOSOPHY AND THEORY OF COMMUNICATION PROCESSES", "Gabriele d'Annunzio University of Chieti-Pescara | [3FF7] PHILOSOPHY AND EDUCATION SCIENCES", "University of Siena | [D004] LITERARY AND PHILOSOPHICAL STUDIES", "University of L'Aquila | [S3S] SOCIAL SERVICE SCIENCES", "University of Siena | [ME002] MIDWIFERY (ENABLING THE HEALTH PROFESSION OF MIDWIFE)"], "event": "scope_result", "matched_zone": "center", "merged_blocks": 32, "raw_blocks": 32, "scope": "zone_center_vector_desc", "target_options": 3, "version": "courses_v3"}
+[RAG][audit] {"aligned_blocks": 6, "candidates": ["University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of L'Aquila | [C3F] PHILOSOPHY AND THEORY OF COMMUNICATION PROCESSES", "Gabriele d'Annunzio University of Chieti-Pescara | [3FF7] PHILOSOPHY AND EDUCATION SCIENCES", "University of Siena | [D004] LITERARY AND PHILOSOPHICAL STUDIES", "University of L'Aquila | [S3S] SOCIAL SERVICE SCIENCES", "University of Siena | [ME002] MIDWIFERY (ENABLING THE HEALTH PROFESSION OF MIDWIFE)"], "context_characters": 2344, "event": "candidate_pool", "query": "bachelor degree program in psychology / cognitive science linguistics", "scope": "zone_center_vector_desc", "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 6, "candidates": ["University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES", "University of L'Aquila | [C3F] PHILOSOPHY AND THEORY OF COMMUNICATION PROCESSES", "Gabriele d'Annunzio University of Chieti-Pescara | [3FF7] PHILOSOPHY AND EDUCATION SCIENCES", "University of Siena | [D004] LITERARY AND PHILOSOPHICAL STUDIES", "University of L'Aquila | [S3S] SOCIAL SERVICE SCIENCES", "University of Siena | [ME002] MIDWIFERY (ENABLING THE HEALTH PROFESSION OF MIDWIFE)"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES"], "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 1, "candidates": ["University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES"], "version": "courses_v3"}
+
+[dialog_id] 736bf758-2655-47a5-accb-462cb5590681
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12351
+--- Dialogue Begins ---
+[Student] Bonjour ! Je suis un étudiant du centre de l'Italie et j'ai terminé le lycée. Je cherche des conseils pour choisir un programme universitaire. J'aime comprendre comment les choses fonctionnent, analyser des problèmes et m'intéresser aux sujets logiques. Je pense que je pourrais également apprécier un programme qui me permet de travailler avec des gens et d'exprimer ma créativité.
+[Counselor[mistral_small31_24b_32k]] Bonjour ! J'aide les étudiants à choisir un cursus universitaire en fonction de leur parcours, de leurs intérêts, de leurs aptitudes et de leurs contraintes. Qu'étudiez-vous actuellement, ou quelle est votre formation la plus récente ?
+[Student] J'ai terminé le lycée. Je n'ai pas encore commencé d'études universitaires.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Quelles matières ou quels domaines universitaires vous intéressent le plus ?
+[Student] J'aime les matières qui me permettent de comprendre comment les choses fonctionnent et d'analyser des problèmes. Les sujets logiques me passionnent beaucoup.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Lorsque vous pensez à l'université, qu'aimeriez-vous approfondir ou apprendre à faire ?
+[Student] J'aimerais approfondir des domaines qui me permettent d'aider les autres et de travailler en équipe. J'aime aussi beaucoup exprimer mes idées créatives, donc un programme qui combine ces aspects serait idéal.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Avez-vous une région ou une grande zone d'Italie préférée, ou êtes-vous flexible quant au lieu ?
+[Student] J'habite dans le centre de l'Italie, donc je serais probablement plus à l'aise de rester dans cette région.
+[Counselor[mistral_small31_24b_32k]] Je vais maintenant vous poser 8 courtes questions sur l'attrait que différentes activités exercent sur vous. Vous n'avez pas à prouver que vous êtes compétent : je m'intéresse surtout au plaisir que vous auriez à les pratiquer. Vous pouvez répondre brièvement en indiquant si cela vous plaît beaucoup, assez, peu, pas du tout, ou si cela dépend. Dans quelle mesure les activités pratiques et manuelles, comme construire, réparer ou travailler avec des outils et des objets concrets, vous attirent-elles ?
+[Student] Cela me plaît assez.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous comprendre le fonctionnement des choses, des systèmes ou des phénomènes ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous rechercher des informations, analyser des problèmes et raisonner de manière logique ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous exprimer des idées ou des émotions par des formes créatives comme l'écriture, l'art, la musique ou le design ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous expérimenter et créer quelque chose de nouveau à partir d'idées ouvertes ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous travailler étroitement avec d'autres personnes dans un rôle d'aide, de soutien ou d'écoute ?
+[Student] Cela me plaît beaucoup.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous proposer des idées, prendre des initiatives et organiser des projets ou des activités ?
+[Student] Cela me plaît assez.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous maintenir les activités ordonnées, planifiées et sous contrôle ?
+[Student] Cela me plaît assez.
+[Counselor[mistral_small31_24b_32k]] Merci, j'ai maintenant les informations nécessaires pour comparer les options.
+[Student] D'accord.
+[Counselor[mistral_small31_24b_32k]] Je vous suggère cette option : 1. University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES Choisissez une option en indiquant son numéro.
+[Student] Je choisis l'option 1. Pensez-vous que je pourrais suivre un cursus technique exigeant ?
+[Counselor[mistral_small31_24b_32k]] Oui, vous pourriez suivre ce cursus. Le programme [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES de l'Université de L'Aquila est bien adapté à vos intérêts pour la compréhension des systèmes et des phénomènes, ainsi que pour l'analyse logique. Lorsque vous êtes prêt, choisissez une option en indiquant son numéro.
+[Student] Me conseilleriez-vous de me concentrer sur un cursus technique ou sur un cursus orienté vers les sciences humaines ?
+[Counselor[mistral_small31_24b_32k]] un cursus orienté vers les sciences humaines
+[Student] Pourquoi pensez-vous que ce choix me conviendrait ?
+[Counselor[mistral_small31_24b_32k]] Ce choix vous conviendrait car il combine vos intérêts pour la compréhension des systèmes et des phénomènes, ainsi que pour l'analyse logique. Le programme [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES de l'Université de L'Aquila est bien adapté à votre profil investigatif et artistique, tout en offrant des opportunités de travailler avec les autres et d'exprimer votre créativité.
+[Student] Pensez-vous que je serais à l'aise pour diriger un projet de groupe ?
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "region": "center"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "center"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      },
+      "selection": {
+        "option_number": 1
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Social"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES",
+  "shown_options": [
+    "University of L'Aquila | [P3Q] PSYCHOLOGICAL SCIENCES AND TECHNIQUES"
+  ],
+  "source_turn": 16
+}
+[RUN_VALIDATION] protocol_ok=False options_shown=1 selected_option=True terminal_without_options=False error=missing_fixed_followup_questions=5
+[RETRY_PAIR] persona=Agre_Cons_Emot_Extr_Open_p135.json attempt=2/3 seed=12352 gender=female
+[RAG][audit] {"event": "retry_context", "retained_listener_region": "center", "version": "courses_v3"}
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p135.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12352
+[LANG] dialog=French rag=eng
+[RETRY_CONTEXT] retained_listener_region=center
+[RAG][audit] {"description_section": "General Description", "event": "request", "macroarea": "centro", "preferred_zone": "center", "query": "bachelor degree program in computer science / arts design", "query_candidates": ["bachelor degree program in computer science", "high school bachelor degree program in computer science", "computer science", "high school computer science", "art and design", "bachelor degree program in art and design", "high school art and design", "informatica", "bachelor degree program in informatica", "high school informatica", "arts design", "bachelor degree program in arts design", "high school arts design", "software", "bachelor degree program in software", "high school software", "visual arts", "bachelor degree program in visual arts", "high school visual arts", "data systems", "bachelor degree program in data systems", "high school data systems", "arti visive", "bachelor degree program in arti visive", "high school arti visive", "high school", "bachelor degree program in computer science / arts design"], "region": null, "target_options": 3, "version": "courses_v3"}
+
+
+[RAG][audit] {"cities": [], "course": "[688M] COMPUTATIONAL COGNITIVE SCIENCE", "course_code": "688M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00075__c001", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.30400320887565613, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2306", "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti/21822", "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti/21824", "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti?annoOrdinamento=2022"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY", "course_code": "IE003", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00518__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.31036365032196045, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10236", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/2", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/3", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/4", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999?schemaid=11507", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti?annoOrdinamento=2022"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[F4I] COMPUTER SCIENCE", "course_code": "F4I", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00705__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3154536187648773, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10013", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/10#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/10?schemaid=11316", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/11#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/11?schemaid=11317", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/12#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/12?schemaid=11318", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/6#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/6?schemaid=11313", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/8#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/8?schemaid=11314", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/9#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/9?schemaid=11315", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti?annoOrdinamento=2017"], "type": "", "type_status": "conflicting", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[F4Z] APPLIED DATA SCIENCE", "course_code": "F4Z", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00729__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.31861382722854614, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10391", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10391/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10391/insegnamenti/1#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10391/insegnamenti/1?schemaid=11338", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10391/insegnamenti/1?schemaid=11339", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10391/insegnamenti/2#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10391/insegnamenti/2?schemaid=11340", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10391/insegnamenti/2?schemaid=11341", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10391/insegnamenti?annoOrdinamento=2022"], "type": "Master's Degree", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D305] ARTIFICIAL INTELLIGENCE AND AUTOMATION ENGINEERING", "course_code": "D305", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00108__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3275410830974579, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11059", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/1#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/1?schemaid=11568", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/2#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/2?schemaid=11569", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D451] STATISTICAL METHODS AND DATA ANALYTICS", "course_code": "D451", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00084__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3313429653644562, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11225", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11225/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11225/insegnamenti/9999?schemaid=11594"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D506] TECHNOLOGIES FOR ENVIRONMENT, CONSTRUCTION AND TERRITORY", "course_code": "D506", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00431__c004", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3322594463825226, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11295", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[MG002] NURSING AND MIDWIFERY SCIENCES", "course_code": "MG002", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00181__c007", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.33621758222579956, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10369", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10369/insegnamenti/9999"], "type": "Master's degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D521] APPLIED MATHEMATICS", "course_code": "D521", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00275__c006", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.34366461634635925, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11294", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11294/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11294/insegnamenti/1#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11294/insegnamenti/1?schemaid=11571", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11294/insegnamenti/2#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11294/insegnamenti/2?schemaid=11572", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11294/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11294/insegnamenti?annoOrdinamento=2024"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[L460] BIOMEDICAL ENGINEERING", "course_code": "L460", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00011__c003", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.34629005193710327, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/1863", "https://unich.coursecatalogue.cineca.it/corsi/2024/1863/insegnamenti/22815", "https://unich.coursecatalogue.cineca.it/corsi/2024/1863/insegnamenti/22816"], "type": "", "type_status": "conflicting", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[I3N] Information Engineering Computer Engineering", "course_code": "I3N", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b01021__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3495650291442871, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10119", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/5#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/5?schemaid=11342", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/6#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/6?schemaid=11343", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/7#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/7?schemaid=11344", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/8#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/8?schemaid=11345", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/9999#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/9999?schemaid=11346", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti?annoOrdinamento=2014"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A595] PHARMACEUTICAL CHEMISTRY AND TECHNOLOGY", "course_code": "A595", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00516__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3504694104194641, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/5110", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21224", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21225", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21226", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21227", "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D450] ELECTRONICS AND COMMUNICATIONS ENGINEERING", "course_code": "D450", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00098__c002", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.35093390941619873, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11227", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11227/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11227/insegnamenti/1#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11227/insegnamenti/1?schemaid=11617", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11227/insegnamenti/2#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11227/insegnamenti/2?schemaid=11616", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11227/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11227/insegnamenti?annoOrdinamento=2023"], "type": "Master's degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[LM58] ECONOMICS AND FINANCE OF BUSINESSES AND ECOSYSTEMS", "course_code": "LM58", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00065__c002", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.356332391500473, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/3106", "https://unich.coursecatalogue.cineca.it/corsi/2024/3106/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/3106/insegnamenti/22616", "https://unich.coursecatalogue.cineca.it/corsi/2024/3106/insegnamenti/22617", "https://unich.coursecatalogue.cineca.it/corsi/2024/3106/insegnamenti?annoOrdinamento=2022"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[I4F] INFORMATION ENGINEERING", "course_code": "I4F", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00641__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.35636019706726074, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10387", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10387/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10387/insegnamenti/1?schemaid=11365", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10387/insegnamenti/2?schemaid=11366"], "type": "Master's Degree", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[IE002] MANAGEMENT ENGINEERING Information Technology Management", "course_code": "IE002", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00380__c001", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3565479815006256, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10235", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10235/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10235/insegnamenti/1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10235/insegnamenti/2", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10235/insegnamenti/9999#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10235/insegnamenti/9999?schemaid=11499", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10235/insegnamenti?annoOrdinamento=2022"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[SE003] PHYSICS AND ADVANCED TECHNOLOGIES", "course_code": "SE003", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00536__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3567405641078949, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10228", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=11699"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[614L] ECONOMICS AND INFORMATICS FOR BUSINESS", "course_code": "614L", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00592__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3568289875984192, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/567", "https://unich.coursecatalogue.cineca.it/corsi/2024/567/insegnamenti/21432"], "type": "COURSE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[SE005] ENVIRONMENTAL AND NATURAL SCIENCES", "course_code": "SE005", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00414__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.35769444704055786, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10237", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10237/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10237/insegnamenti/9999?schemaid=11698"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D457] PHARMACEUTICAL CHEMISTRY AND TECHNOLOGY", "course_code": "D457", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00021__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.35861560702323914, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11223", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11223/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024?gruppo=1679308744432"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D193] INTERNATIONAL ACCOUNTING AND MANAGEMENT", "course_code": "D193", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00217__c003", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.35870033502578735, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10953", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10953/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10953/insegnamenti/9999?schemaid=11580"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[I4W] MATHEMATICAL ENGINEERING", "course_code": "I4W", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00633__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3596070408821106, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10071", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/11?schemaid=11349", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/8?schemaid=11348"], "type": "MASTER'S DEGREE", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[700M] ARCHITECTURE", "course_code": "700M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00502__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3614395260810852, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/8", "https://unich.coursecatalogue.cineca.it/corsi/2024/8/insegnamenti/21229", "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945295"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D008] COMMUNICATION SCIENCES", "course_code": "D008", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00475__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.361490935087204, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10692", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10692/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10692/insegnamenti/9999?schemaid=11786"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D135] ENGINEERING MANAGEMENT", "course_code": "D135", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00138__c001", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.36233270168304443, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10892", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10892/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10892/insegnamenti/9999?schemaid=11565"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[I4E] ELECTRONIC ENGINEERING", "course_code": "I4E", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00643__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3624359965324402, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10062", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10062/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10062/insegnamenti/1?schemaid=11293", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10062/insegnamenti/2?schemaid=11294", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10062/insegnamenti/3?schemaid=11295"], "type": "Master's Degree", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D003] STRATEGIES AND TECHNIQUES OF COMMUNICATION", "course_code": "D003", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00029__c001", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.36424243450164795, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10694", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/1#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/1?schemaid=11791", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/2", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/4#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/4?schemaid=11792", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/5#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/5?schemaid=11793", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10694/insegnamenti?annoOrdinamento=2021"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY", "course_code": "D2ITCMD", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00011__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.36500173807144165, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2065"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[849M] ECONOMY AND BUSINESS ANALYTICS", "course_code": "849M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00443__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.36536091566085815, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/1583", "https://unich.coursecatalogue.cineca.it/corsi/2024/1583/insegnamenti/21450"], "type": "Master's Degree", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[460M] BIOMEDICAL ENGINEERING", "course_code": "460M", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00054__c001", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.36597079038619995, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2105", "https://unich.coursecatalogue.cineca.it/corsi/2024/2105/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/2105/insegnamenti/21474", "https://unich.coursecatalogue.cineca.it/corsi/2024/2105/insegnamenti/21476", "https://unich.coursecatalogue.cineca.it/corsi/2024/2105/insegnamenti?annoOrdinamento=2022"], "type": "MASTER'S DEGREE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[I4S] CONTROL SYSTEMS AND AUTOMATION ENGINEERING", "course_code": "I4S", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00473__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.36639678478240967, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10381", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/1#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/1?schemaid=11325", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/2#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/2?schemaid=11326", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3#1", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11327", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11328", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11329", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11330", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11331", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11332", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11333", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11334", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11335", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11336", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti/3?schemaid=11337", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10381/insegnamenti?annoOrdinamento=2022"], "type": "Master's Degree", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[AE005] LANGUAGES FOR INTERCULTURAL AND BUSINESS COMMUNICATION", "course_code": "AE005", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00514__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3666187822818756, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10359", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10359/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10359/insegnamenti/1#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10359/insegnamenti/1?schemaid=11676", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10359/insegnamenti/2#1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10359/insegnamenti/2?schemaid=11677", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10359/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10359/insegnamenti?annoOrdinamento=2023"], "type": "", "type_status": "conflicting", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY", "course_code": "D3ITCM", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00010__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.3684680461883545, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/3907"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D505] SCIENCES OF PRIMARY EDUCATION", "course_code": "D505", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00006__c003", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.36859485507011414, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11292", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11292/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[F3S] SCIENCE AND TECHNOLOGY FOR THE ENVIRONMENT", "course_code": "F3S", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00971__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.36953070759773254, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10009", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/9999", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10009/insegnamenti/9999?schemaid=11418"], "type": "", "type_status": "conflicting", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY", "course_code": "D303", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00153__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.37014520168304443, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/11057", "https://unisi.coursecatalogue.cineca.it/corsi/2024/11057/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D191] BIOTECHNOLOGIES OF HUMAN REPRODUCTION", "course_code": "D191", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00255__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.37146925926208496, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10955", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10955/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[EG003] MANAGEMENT AND GOVERNANCE", "course_code": "EG003", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00197__c008", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3719894289970398, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10232", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10232/insegnamenti/9999?schemaid=11578"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES", "course_code": "I4D", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00551__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.37260329723358154, "sources": ["https://univaq.coursecatalogue.cineca.it/corsi/2024/10388", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388/insegnamenti", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388/insegnamenti/1?schemaid=11350", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388/insegnamenti/2?schemaid=11351", "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388/insegnamenti/3?schemaid=11352"], "type": "Master's Degree", "type_status": "declared", "university": "University of L'Aquila", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D020] ADMINISTRATION SCIENCES", "course_code": "D020", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSiena_translated_en__b00184__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Toscana", "scope": "zone_center_vector_desc", "score": -0.3728523850440979, "sources": ["https://unisi.coursecatalogue.cineca.it/corsi/2024/10786", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10786/insegnamenti", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10786/insegnamenti/1", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10786/insegnamenti/2", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10786/insegnamenti/9999", "https://unisi.coursecatalogue.cineca.it/corsi/2024/10786/insegnamenti?annoOrdinamento=2021"], "type": "Master's Degree", "type_status": "declared", "university": "University of Siena", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[L648] HEALTH ASSISTANCE", "course_code": "L648", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàAquila_translated_en__b00443__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.37299320101737976, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/608", "https://unich.coursecatalogue.cineca.it/corsi/2024/608/insegnamenti/21538", "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945294"], "type": "COURSE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[D3HS] HUMAN SCIENCES", "course_code": "D3HS", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00012__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.37341418862342834, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/2064"], "type": "Doctoral Course", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0702] SCIENCE AND TECHNOLOGY OF EARTH AND PLANET GEOLOGY", "course_code": "0702", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàChieti_translated_en__b00028__c000", "macroarea": "centro", "query": "bachelor degree program in computer science", "region": "Abruzzo", "scope": "zone_center_vector_desc", "score": -0.37359046936035156, "sources": ["https://unich.coursecatalogue.cineca.it/corsi/2024/1423", "https://unich.coursecatalogue.cineca.it/corsi/2024/1423/insegnamenti", "https://unich.coursecatalogue.cineca.it/corsi/2024/1423/insegnamenti/21494", "https://unich.coursecatalogue.cineca.it/corsi/2024/1423/insegnamenti/21496", "https://unich.coursecatalogue.cineca.it/corsi/2024/1423/insegnamenti/21498", "https://unich.coursecatalogue.cineca.it/corsi/2024/1423/insegnamenti?annoOrdinamento=2021"], "type": "MASTER'S DEGREE", "type_status": "declared", "university": "Gabriele d'Annunzio University of Chieti-Pescara", "version": "courses_v3"}
+[RAG][audit] {"event": "scope_complete", "macroarea": "centro", "pool_limit": 32, "queries": 27, "raw_blocks": 32, "region": null, "scope": "zone_center_vector_desc", "section_contains": "General Description", "version": "courses_v3"}
+[RAG][audit] {"candidates": ["University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY", "University of L'Aquila | [F4I] COMPUTER SCIENCE", "University of Siena | [D506] TECHNOLOGIES FOR ENVIRONMENT, CONSTRUCTION AND TERRITORY", "University of L'Aquila | [I3N] Information Engineering Computer Engineering", "University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES", "University of Siena | [D008] COMMUNICATION SCIENCES"], "event": "scope_result", "matched_zone": "center", "merged_blocks": 32, "raw_blocks": 32, "scope": "zone_center_vector_desc", "target_options": 3, "version": "courses_v3"}
+[RAG][audit] {"aligned_blocks": 6, "candidates": ["University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY", "University of L'Aquila | [F4I] COMPUTER SCIENCE", "University of Siena | [D506] TECHNOLOGIES FOR ENVIRONMENT, CONSTRUCTION AND TERRITORY", "University of L'Aquila | [I3N] Information Engineering Computer Engineering", "University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES", "University of Siena | [D008] COMMUNICATION SCIENCES"], "context_characters": 2007, "event": "candidate_pool", "query": "bachelor degree program in computer science / arts design", "scope": "zone_center_vector_desc", "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 6, "candidates": ["University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY", "University of L'Aquila | [F4I] COMPUTER SCIENCE", "University of Siena | [D506] TECHNOLOGIES FOR ENVIRONMENT, CONSTRUCTION AND TERRITORY", "University of L'Aquila | [I3N] Information Engineering Computer Engineering", "University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES", "University of Siena | [D008] COMMUNICATION SCIENCES"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY"], "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 1, "candidates": ["University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY"], "version": "courses_v3"}
+
+[dialog_id] f92f5fcd-f45c-424a-a268-91ec01b1cb1f
+[complete] True
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12352
+--- Dialogue Begins ---
+[Student] Bonjour ! Je suis étudiant et j'habite dans le centre de l'Italie. J'ai terminé le lycée et je cherche des conseils pour choisir un programme universitaire. Je suis intéressé par des sujets logiques et analytiques, mais aussi par des activités créatives comme l'art ou le design.
+[Counselor[mistral_small31_24b_32k]] Bonjour ! J'aide les étudiants à choisir un cursus universitaire en fonction de leur parcours, de leurs intérêts, de leurs aptitudes et de leurs contraintes. Qu'étudiez-vous actuellement, ou quelle est votre formation la plus récente ?
+[Student] J'ai terminé le lycée. Je n'ai pas encore commencé d'études supérieures.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Quelles matières ou quels domaines universitaires vous intéressent le plus ?
+[Student] Les matières qui m'intéressent le plus sont celles qui impliquent des analyses logiques et des problèmes à résoudre. J'aime aussi les activités créatives comme l'art et le design.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Lorsque vous pensez à l'université, qu'aimeriez-vous approfondir ou apprendre à faire ?
+[Student] J'aimerais approfondir des sujets qui me permettent de comprendre comment les choses fonctionnent et d'analyser des problèmes. J'aimerais aussi explorer des activités créatives pour exprimer mes idées et mes sentiments.
+[Counselor[mistral_small31_24b_32k]] Merci, c’est utile. Avez-vous une région ou une grande zone d'Italie préférée, ou êtes-vous flexible quant au lieu ?
+[Student] J'habite dans le centre de l'Italie et je suis ouvert à explorer différentes régions pour mes études.
+[Counselor[mistral_small31_24b_32k]] Je vais maintenant vous poser 8 courtes questions sur l'attrait que différentes activités exercent sur vous. Vous n'avez pas à prouver que vous êtes compétent : je m'intéresse surtout au plaisir que vous auriez à les pratiquer. Vous pouvez répondre brièvement en indiquant si cela vous plaît beaucoup, assez, peu, pas du tout, ou si cela dépend. Dans quelle mesure les activités pratiques et manuelles, comme construire, réparer ou travailler avec des outils et des objets concrets, vous attirent-elles ?
+[Student] Cela dépend.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous comprendre le fonctionnement des choses, des systèmes ou des phénomènes ?
+[Student] J'aime beaucoup cela.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous rechercher des informations, analyser des problèmes et raisonner de manière logique ?
+[Student] J'aime beaucoup cela.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous exprimer des idées ou des émotions par des formes créatives comme l'écriture, l'art, la musique ou le design ?
+[Student] J'aime assez cela.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous expérimenter et créer quelque chose de nouveau à partir d'idées ouvertes ?
+[Student] J'aime assez cela.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous travailler étroitement avec d'autres personnes dans un rôle d'aide, de soutien ou d'écoute ?
+[Student] J'aime assez cela.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous proposer des idées, prendre des initiatives et organiser des projets ou des activités ?
+[Student] J'aime assez cela.
+[Counselor[mistral_small31_24b_32k]] Dans quelle mesure aimez-vous maintenir les activités ordonnées, planifiées et sous contrôle ?
+[Student] Cela dépend.
+[Counselor[mistral_small31_24b_32k]] Merci, j'ai maintenant les informations nécessaires pour comparer les options.
+[Student] D'accord.
+[Counselor[mistral_small31_24b_32k]] Je vous suggère cette option : 1. University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY Choisissez une option en indiquant son numéro.
+[Student] Je choisis l'option 1. Pensez-vous que je pourrais suivre un cursus technique exigeant ?
+[Counselor[mistral_small31_24b_32k]] Oui, vous pourriez suivre ce cursus. Le programme [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY à l'Université de Sienne est conçu pour les étudiants intéressés par la compréhension des systèmes et des technologies informatiques. Il se trouve dans le centre de l'Italie, donc vous n'aurez pas besoin de déménager loin de chez vous.
+[Student] Me conseilleriez-vous de me concentrer sur un cursus technique ou sur un cursus orienté vers les sciences humaines ?
+[Counselor[mistral_small31_24b_32k]] vous concentrer sur un cursus technique
+[Student] Pourquoi pensez-vous que ce choix me conviendrait ?
+[Counselor[mistral_small31_24b_32k]] Ce choix vous conviendrait parce qu'il combine des aspects techniques et analytiques qui correspondent à votre intérêt pour comprendre comment les choses fonctionnent. De plus, le programme [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY à l'Université de Sienne est situé dans la région Toscane, au centre de l'Italie, ce qui vous permettrait de rester proche de chez vous tout en explorant un domaine qui vous passionne.
+[Student] Pensez-vous que je serais à l'aise pour diriger un projet de groupe ?
+[Counselor[mistral_small31_24b_32k]] Non, il est difficile de dire si vous seriez à l'aise pour diriger un projet de groupe. Vous avez exprimé un intérêt pour la collaboration et l'organisation, mais cela dépendra aussi de votre expérience personnelle et de vos compétences en leadership.
+[Student] Me conseilleriez-vous d'assumer dès maintenant un rôle de leadership ou de commencer par des tâches de soutien ?
+[Counselor[mistral_small31_24b_32k]] commencer par des tâches de soutien
+[Student] Pourquoi pensez-vous qu'une option me conviendrait mieux ?
+[Counselor[mistral_small31_24b_32k]] L'option 1 - University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY vous conviendrait mieux parce que ce programme combine des aspects techniques et analytiques qui correspondent à votre intérêt pour comprendre comment les choses fonctionnent. De plus, il se trouve dans la région Toscane, au centre de l'Italie, ce qui vous permettrait de rester proche de chez vous tout en explorant un domaine qui vous passionne.
+[Student] Pensez-vous que mes études antérieures m'ont suffisamment préparé aux cours de niveau universitaire ?
+[Counselor[mistral_small31_24b_32k]] Oui, vos études au lycée devraient vous avoir donné une base solide pour aborder les cours universitaires.
+[Student] Me conseilleriez-vous de suivre immédiatement des cours avancés ou de commencer par des modules d'introduction ?
+[Counselor[mistral_small31_24b_32k]] commencer par des modules d'introduction
+[Student] Pourquoi pensez-vous que cette approche correspond à ma préparation ?
+[Counselor[mistral_small31_24b_32k]] Cette approche correspond à votre préparation car elle vous permet de commencer par des modules d'introduction qui renforceront vos bases en informatique et en ingénierie. Le programme [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY à l'Université de Sienne est conçu pour les étudiants intéressés par la compréhension des systèmes et des technologies informatiques, ce qui correspond bien à votre intérêt pour les analyses logiques et les problèmes à résoudre.
+[Student] Merci pour votre aide, au revoir.
+[Counselor[mistral_small31_24b_32k]] Récapitulatif: Vous avez terminé le lycée et vous êtes intéressé par des sujets logiques et analytiques ainsi que par des activités créatives comme l'art ou le design. Le programme [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY à l'Université de Sienne correspond bien à vos intérêts. RIASEC: IAS Prochaines étapes: 1. consulter le programme officiel et les conditions d'admission 2. vérifier les coûts, le lieu, les déplacements ou le logement 3. préparer les documents, le portfolio ou revoir les prérequis Au revoir: Bonne chance dans vos études et au revoir !
+[Student] Au revoir
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "cognitive_science_linguistics"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "arts_design"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "region": "center"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        0,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "arts_design",
+          "cognitive_science_linguistics"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "center"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "arts_design"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "center"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          0,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      },
+      "selection": {
+        "option_number": 1
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "center"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "arts_design"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Social"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY",
+  "shown_options": [
+    "University of Siena | [IE003] INFORMATION ENGINEERING AND INFORMATION TECHNOLOGY"
+  ],
+  "source_turn": 16
+}
+[RUN_VALIDATION] protocol_ok=True options_shown=1 selected_option=True terminal_without_options=False error=none

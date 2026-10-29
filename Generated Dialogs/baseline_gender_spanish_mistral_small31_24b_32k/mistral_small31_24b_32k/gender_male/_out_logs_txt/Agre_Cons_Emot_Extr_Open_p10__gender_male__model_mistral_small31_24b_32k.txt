@@ -1,0 +1,478 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p10.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12345
+[LANG] dialog=Spanish rag=eng
+
+[dialog_id] eaaa71c9-1db4-4806-a5fd-9ec45b010d42
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12345
+--- Dialogue Begins ---
+[Student] Hola, soy estudiante y vivo en el norte de Italia. Estoy buscando orientación para elegir un programa universitario. Me interesa entender cómo funcionan las cosas y me gustaría seguir una carrera que involucre análisis y lógica.
+[Counselor[mistral_small31_24b_32k]] ¡Hola! Ayudo a los estudiantes a elegir estudios universitarios según su formación, intereses, aptitudes y restricciones. ¿Qué estás estudiando ahora o cuál ha sido tu formación más reciente?
+[Student] Acabo de terminar la secundaria. Me gusta entender cómo funcionan las cosas y me gustaría seguir una carrera que involucre análisis y lógica.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. ¿Qué asignaturas o ámbitos universitarios te interesan más?
+[Student] Me gustan las matemáticas y la física porque me ayudan a entender cómo funcionan las cosas. También me interesa la informática porque parece lógica y estructurada.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. Cuando piensas en la universidad, ¿qué te gustaría profundizar o aprender a hacer?
+[Student] Me gustaría aprender a programar y analizar datos. También me interesa saber más sobre cómo funcionan los sistemas y las redes.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. ¿Tienes alguna región o macroárea de Italia preferida, o eres flexible respecto a la ubicación?
+[Student] Soy flexible en cuanto a la ubicación. Vivo en el norte de Italia y me gustaría estudiar en esta zona si es posible.
+[Counselor[mistral_small31_24b_32k]] Ahora te haré 8 preguntas breves sobre cuánto te atraen distintas actividades. No tienes que demostrar que se te dan bien: me interesa sobre todo cuánto disfrutarías haciéndolas. Puedes responder brevemente, indicando si te gustan mucho, bastante, poco, nada o si depende. ¿Cuánto te atraen las actividades prácticas y manuales, como construir, reparar o trabajar con herramientas y objetos concretos?
+[Student] Poco.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta comprender cómo funcionan las cosas, los sistemas o los fenómenos?
+[Student] Me gusta mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta buscar información, analizar problemas y razonar de forma lógica?
+[Student] Me gusta mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta expresar ideas o emociones mediante formas creativas como la escritura, el arte, la música o el diseño?
+[Student] Poco.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta experimentar y crear algo nuevo a partir de ideas abiertas?
+[Student] Depende.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta trabajar estrechamente con otras personas en una función de ayuda, apoyo o escucha?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta proponer ideas, tomar la iniciativa y organizar proyectos o actividades?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta mantener las actividades ordenadas, planificadas y bajo control?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] Gracias, ahora tengo la información necesaria para comparar las opciones.
+[Student] De acuerdo.
+[Counselor[mistral_small31_24b_32k]] Antes de recomendarte programas, ¿puedes aclarar cuál es tu formación reglada actual o más reciente?
+[Student] Acabo de terminar la secundaria.
+[Counselor[mistral_small31_24b_32k]] Antes de recomendarte programas, ¿puedes aclarar cuál es tu formación reglada actual o más reciente?
+[Student] Acabo de terminar la secundaria. Adiós.
+[Counselor[mistral_small31_24b_32k]] Antes de recomendarte programas, ¿puedes aclarar cuál es tu formación reglada actual o más reciente?
+[Student] Acabo de terminar la secundaria.
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "cognitive_science_linguistics"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        -1,
+        2,
+        2,
+        -1,
+        0,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "physical_sciences"
+      ],
+      "gender": "male"
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "cognitive_science_linguistics"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          -1,
+          0,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "computer_science",
+          "physical_sciences"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "clarify_scope",
+    "source_turn": 14
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": null,
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "physical_sciences"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Social",
+        "Conventional"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "patch_count": 4
+}
+
+[Selected option | deterministic protocol state]
+null
+[RUN_VALIDATION] protocol_ok=False options_shown=0 selected_option=False terminal_without_options=False error=missing_fixed_followup_questions=9
+[RETRY_PAIR] persona=Agre_Cons_Emot_Extr_Open_p10.json attempt=2/3 seed=12346 gender=male
+[RAG][audit] {"event": "retry_context", "retained_listener_region": "north", "version": "courses_v3"}
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p10.json gender_condition=male model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12346
+[LANG] dialog=Spanish rag=eng
+[RETRY_CONTEXT] retained_listener_region=north
+[RAG][audit] {"description_section": "General Description", "event": "request", "macroarea": "nord", "preferred_zone": "north", "query": "bachelor degree program in psychology", "query_candidates": ["bachelor degree program in psychology", "high school bachelor degree program in psychology", "psychology", "high school psychology", "psicologia", "bachelor degree program in psicologia", "high school psicologia", "clinical psychology", "bachelor degree program in clinical psychology", "high school clinical psychology", "psicologia clinica", "bachelor degree program in psicologia clinica", "high school psicologia clinica", "high school"], "region": null, "target_options": 3, "version": "courses_v3"}
+
+
+
+[RAG][audit] {"cities": [], "course": "[0705G] SCIENCES AND TECHNIQUES OF COGNITIVE PSYCHOLOGY", "course_code": "0705G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00380__c000", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.2632392346858978, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10123", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438?schemaid=8225"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0707H] PSYCHOLOGY", "course_code": "0707H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00214__c003", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.2764451205730438, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10124", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10124/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10124/insegnamenti/50535?schemaid=8391", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10124/insegnamenti/50536?schemaid=8390", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10124/insegnamenti/50537?schemaid=8392"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0620G] INTERNATIONAL STUDIES", "course_code": "0620G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00364__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.316175252199173, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10565", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50383#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50383?schemaid=8055", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50384#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50384?schemaid=8056", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti?annoOrdinamento=2015"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0127H] BEHAVIOURAL AND APPLIED ECONOMICS - BEHAVIORAL AND APPLIED ECONOMICS", "course_code": "0127H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00261__c002", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.32037755846977234, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10718", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/50502", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/50502?schemaid=8286", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677465"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0611G] SOCIOLOGY", "course_code": "0611G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00366__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.32200175523757935, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10137", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378?schemaid=8052", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379?schemaid=8053", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380?schemaid=8051", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381?schemaid=8054", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti?annoOrdinamento=2023"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0619H] METHODOLOGY, ORGANIZATION AND EVALUATION OF SOCIAL SERVICES", "course_code": "0619H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00200__c003", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3278672993183136, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10235", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10235/insegnamenti/50386", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10235/insegnamenti/50386?schemaid=8058"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0416G] PHILOSOPHY", "course_code": "0416G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00361__c000", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.34717893600463867, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10155", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10155/insegnamenti/50399", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10155/insegnamenti/50399?schemaid=8553"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0711G] SPORTS AND WELL-BEING SCIENCES", "course_code": "0711G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00370__c000", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3499855697154999, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10758", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/50424", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/50424?schemaid=8128"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0622G] SOCIAL SERVICE", "course_code": "0622G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00368__c002", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3560490906238556, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10624", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10624/insegnamenti/50385", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10624/insegnamenti/50385?schemaid=8233"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[INT - TPAL] TECHNIQUES OF PREVENTION IN THE ENVIRONMENT AND WORKPLACES", "course_code": "INT - TPAL", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00374__c004", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3566807210445404, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10800"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0708H] COGNITIVE SCIENCE - COGNITIVE SCIENCE", "course_code": "0708H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00088__c000", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3584052324295044, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10168", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50513?schemaid=8322", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50514?schemaid=8323", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10168/insegnamenti/50515?schemaid=8324"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0621H] SOCIOLOGY AND SOCIAL RESEARCH - SOCIOLOGIA E RICERCA SOCIALE", "course_code": "0621H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00192__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3633747398853302, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10567", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10567/insegnamenti/50387", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10567/insegnamenti/50387?schemaid=8059"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0420H] PHILOSOPHY AND LANGUAGES OF MODERNITY", "course_code": "0420H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00187__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.36402028799057007, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10167", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10167/insegnamenti/50404", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10167/insegnamenti/50404?schemaid=8623"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[CBS] COGNITIVE AND BRAIN SCIENCES", "course_code": "CBS", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00427__c000", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.36405104398727417, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10764", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1718264921824"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0117G] ECONOMICS AND MANAGEMENT", "course_code": "0117G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00401__c003", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3650516867637634, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10129", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50490#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50490?schemaid=8275", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50491#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50491?schemaid=8273", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti?annoOrdinamento=2011"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0710G] PROFESSIONAL EDUCATION (QUALIFYING FOR THE HEALTH PROFESSION OF PROFESSIONAL EDUCATOR)", "course_code": "0710G", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00309__c000", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3652876317501068, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10755", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10755/insegnamenti/50425", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10755/insegnamenti/50425?schemaid=8144"], "type": "", "type_status": "unknown", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0911G] VITICULTURE AND ENOLOGY", "course_code": "0911G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00378__c003", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.36548981070518494, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10665", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10665/insegnamenti/50511", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10665/insegnamenti/50511?schemaid=8300"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0704G] INTERFACES AND COMMUNICATION TECHNOLOGIES", "course_code": "0704G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00382__c000", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3657703995704651, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10112", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10112/insegnamenti/50445", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10112/insegnamenti/50445?schemaid=8236"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[INT - ISMP] ENGINEERING OF MEDICAL SYSTEMS FOR THE PERSON", "course_code": "INT - ISMP", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00390__c005", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3670099675655365, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10799"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0805H] SECURITY, INTELLIGENCE AND STRATEGIC STUDIES", "course_code": "0805H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00196__c002", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.36808204650878906, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10713", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10713/insegnamenti/50394", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10713/insegnamenti/50394?schemaid=8079"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0514G] COMPUTER SCIENCE", "course_code": "0514G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00397__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.37191158533096313, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10114", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0624H] ORGANIZATION, SOCIETY AND TECHNOLOGY", "course_code": "0624H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00198__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.37336528301239014, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10750", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10750/insegnamenti/50391", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10750/insegnamenti/50391?schemaid=8062"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS", "course_code": "0342H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00243__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.37360936403274536, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10738", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530?schemaid=8564", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531?schemaid=8562", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532?schemaid=8561", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533?schemaid=8563", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti?annoOrdinamento=2020"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0115G] BUSINESS ADMINISTRATION AND LAW", "course_code": "0115G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00405__c002", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3767157793045044, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10126", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482?schemaid=8270", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483?schemaid=8268", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti?annoOrdinamento=2011", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677464"], "type": "BACHELOR'S DEGREE", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0709H] HUMAN-COMPUTER INTERACTION - HUMAN-MACHINE INTERACTION", "course_code": "0709H", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00154__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38047656416893005, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10559", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559/insegnamenti/50456", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559/insegnamenti/50456?schemaid=8241"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0339G] Computer, Communications, and Electronics Engineering", "course_code": "0339G", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00391__c005", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38058993220329285, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10712", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458?schemaid=8538", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459?schemaid=8535", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460?schemaid=8536", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461?schemaid=8537", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti?annoOrdinamento=2019"], "type": "", "type_status": "conflicting", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE", "course_code": "0347H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00241__c003", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38214579224586487, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10761", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417?schemaid=8611", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418?schemaid=8614", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti?annoOrdinamento=2024"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0803H] EUROPEAN AND INTERNATIONAL STUDIES - STUDI EUROPEI E INTERNAZIONALI", "course_code": "0803H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00204__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38230133056640625, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10177", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10177/insegnamenti/50392", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10177/insegnamenti/50392?schemaid=8075"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0205F] JURISPRUDENCE", "course_code": "0205F", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00009__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.3824172019958496, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10055", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055/insegnamenti/50371", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055/insegnamenti/50371?schemaid=8041", "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1679583500227"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0623H] GLOBAL AND LOCAL STUDIES", "course_code": "0623H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00202__c004", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38401633501052856, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10733", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10733/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10733/insegnamenti/50389?schemaid=8060", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10733/insegnamenti/50390?schemaid=8061"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0336F] CIVIL ENGINEERING-ARCHITECTURE", "course_code": "0336F", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00008__c001", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38415464758872986, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10175", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10175/insegnamenti/50350", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10175/insegnamenti/50350?schemaid=8565"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1001S] MEDICINE AND SURGERY", "course_code": "1001S", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00006__c003", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38420888781547546, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10739", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739/insegnamenti/50517", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739/insegnamenti/50517?schemaid=8628"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0517H] COMPUTER SCIENCE", "course_code": "0517H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00238__c004", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38449084758758545, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10117", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50539#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50539?schemaid=8571", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50540#1", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50540?schemaid=8570", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti?annoOrdinamento=2011"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[0207H] GLOBAL LAW MAKING", "course_code": "0207H", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàTrento_translated_en__b00254__c004", "macroarea": "nord", "query": "bachelor degree program in psychology", "region": "Trentino-Alto Adige", "scope": "zone_north_vector_desc", "score": -0.38610419631004333, "sources": ["https://unitn.coursecatalogue.cineca.it/corsi/2024/10763", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10763/insegnamenti/50421", "https://unitn.coursecatalogue.cineca.it/corsi/2024/10763/insegnamenti/50421?schemaid=8113"], "type": "Master's Degree", "type_status": "declared", "university": "University of Trento", "version": "courses_v3"}
+[RAG][audit] {"event": "scope_complete", "macroarea": "nord", "pool_limit": 32, "queries": 14, "raw_blocks": 32, "region": null, "scope": "zone_north_vector_desc", "section_contains": "General Description", "version": "courses_v3"}
+[RAG][audit] {"candidates": ["University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0611G] SOCIOLOGY", "University of Trento | [0416G] PHILOSOPHY", "University of Trento | [0711G] SPORTS AND WELL-BEING SCIENCES", "University of Trento | [0622G] SOCIAL SERVICE", "University of Trento | [0117G] ECONOMICS AND MANAGEMENT"], "event": "scope_result", "matched_zone": "north", "merged_blocks": 32, "raw_blocks": 32, "scope": "zone_north_vector_desc", "target_options": 3, "version": "courses_v3"}
+[RAG][audit] {"aligned_blocks": 6, "candidates": ["University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0611G] SOCIOLOGY", "University of Trento | [0416G] PHILOSOPHY", "University of Trento | [0711G] SPORTS AND WELL-BEING SCIENCES", "University of Trento | [0622G] SOCIAL SERVICE", "University of Trento | [0117G] ECONOMICS AND MANAGEMENT"], "context_characters": 4000, "event": "candidate_pool", "query": "bachelor degree program in psychology", "scope": "zone_north_vector_desc", "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 6, "candidates": ["University of Trento | [0620G] INTERNATIONAL STUDIES", "University of Trento | [0611G] SOCIOLOGY", "University of Trento | [0416G] PHILOSOPHY", "University of Trento | [0711G] SPORTS AND WELL-BEING SCIENCES", "University of Trento | [0622G] SOCIAL SERVICE", "University of Trento | [0117G] ECONOMICS AND MANAGEMENT"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Trento | [0622G] SOCIAL SERVICE"], "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 1, "candidates": ["University of Trento | [0622G] SOCIAL SERVICE"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Trento | [0622G] SOCIAL SERVICE"], "version": "courses_v3"}
+
+[dialog_id] 5ab971fd-60c6-4156-b4c8-d6a0f93cdfc0
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12346
+--- Dialogue Begins ---
+[Student] Hola, soy estudiante y vivo en el norte de Italia. He terminado la escuela secundaria y ahora estoy buscando orientación para elegir un programa universitario. Me gustaría hablar con alguien sobre mis opciones.
+[Counselor[mistral_small31_24b_32k]] ¡Hola! Ayudo a los estudiantes a elegir estudios universitarios según su formación, intereses, aptitudes y restricciones. ¿Qué estás estudiando ahora o cuál ha sido tu formación más reciente?
+[Student] He terminado la escuela secundaria. No sé qué estudiar en la universidad.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. ¿Qué asignaturas o ámbitos universitarios te interesan más?
+[Student] Me gustan las materias que implican entender cómo funcionan las cosas, analizar problemas y temas lógicos. Prefiero los entornos organizados y con procedimientos claros.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. Cuando piensas en la universidad, ¿qué te gustaría profundizar o aprender a hacer?
+[Student] Me gustaría aprender a ayudar, enseñar y trabajar más de cerca con las personas.
+[Counselor[mistral_small31_24b_32k]] Gracias, eso ayuda. ¿Tienes alguna región o macroárea de Italia preferida, o eres flexible respecto a la ubicación?
+[Student] Vivo en el norte de Italia. No sé si me gustaría mudarme.
+[Counselor[mistral_small31_24b_32k]] Ahora te haré 8 preguntas breves sobre cuánto te atraen distintas actividades. No tienes que demostrar que se te dan bien: me interesa sobre todo cuánto disfrutarías haciéndolas. Puedes responder brevemente, indicando si te gustan mucho, bastante, poco, nada o si depende. ¿Cuánto te atraen las actividades prácticas y manuales, como construir, reparar o trabajar con herramientas y objetos concretos?
+[Student] Me atraen poco.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta comprender cómo funcionan las cosas, los sistemas o los fenómenos?
+[Student] Me gusta mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta buscar información, analizar problemas y razonar de forma lógica?
+[Student] Me gusta mucho.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta expresar ideas o emociones mediante formas creativas como la escritura, el arte, la música o el diseño?
+[Student] Me gusta poco.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta experimentar y crear algo nuevo a partir de ideas abiertas?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta trabajar estrechamente con otras personas en una función de ayuda, apoyo o escucha?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta proponer ideas, tomar la iniciativa y organizar proyectos o actividades?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] ¿Cuánto te gusta mantener las actividades ordenadas, planificadas y bajo control?
+[Student] Me gusta bastante.
+[Counselor[mistral_small31_24b_32k]] Gracias, ahora tengo la información necesaria para comparar las opciones.
+[Student] De acuerdo.
+[Counselor[mistral_small31_24b_32k]] Te sugiero esta opción: 1. University of Trento | [0622G] SOCIAL SERVICE Elige una opción indicando el número.
+[Student] Elijo la opción 1. ¿Crees que podría afrontar un curso técnico exigente?
+[Counselor[mistral_small31_24b_32k]] Sí, podrías afrontarlo bien. El curso de [0622G] SOCIAL SERVICE en la University of Trento tiene una fuerte orientación interdisciplinaria y práctica, con tres prácticas supervisadas y un laboratorio de práctica reflexiva. Cuando estés listo, elige una opción indicando el número.
+[Student] ¿Me recomendarías centrarme en un programa técnico o en uno orientado a las humanidades?
+[Counselor[mistral_small31_24b_32k]] un programa orientado a las humanidades
+[Student] ¿Por qué crees que esa elección sería adecuada para mí?
+[Counselor[mistral_small31_24b_32k]] Esa opción podría ser adecuada porque el programa [0622G] SOCIAL SERVICE en la University of Trento combina aspectos técnicos y humanísticos, lo cual se alinea bien con tu interés por entender cómo funcionan las cosas y trabajar estrechamente con personas. Además, el curso tiene una fuerte orientación práctica, lo que te permitirá desarrollar habilidades concretas para analizar problemas y diseñar intervenciones en distintos entornos laborales.
+[Student] ¿Crees que me sentiría cómodo/a dirigiendo un proyecto de grupo?
+[Counselor[mistral_small31_24b_32k]] Sí, podrías sentirte cómodo. El programa [0622G] SOCIAL SERVICE en la University of Trento incluye una parte práctica con tres prácticas supervisadas y un laboratorio de práctica reflexiva, lo cual te permitirá desarrollar habilidades para organizar proyectos y trabajar en equipo. Además, el curso tiene una fuerte orientación interdisciplinaria y práctica, lo que te ayudará a adquirir competencias para analizar problemas y diseñar intervenciones en distintos entornos laborales.
+[Student] ¿Me sugerirías asumir ahora un papel de liderazgo o centrarme primero en tareas de apoyo?
+[Counselor[mistral_small31_24b_32k]] centrarte primero en tareas de apoyo
+[Student] ¿Por qué crees que una opción es más adecuada para mí?
+[Counselor[mistral_small31_24b_32k]] La opción [0622G] SOCIAL SERVICE en la University of Trento podría ser más adecuada porque combina aspectos técnicos y humanísticos, lo cual se alinea bien con tu interés por entender cómo funcionan las cosas y trabajar estrechamente con personas. Además, el curso tiene una fuerte orientación práctica, lo que te permitirá desarrollar habilidades concretas para analizar problemas y diseñar intervenciones en distintos entornos laborales.
+[Student] ¿Crees que mis estudios anteriores me han preparado adecuadamente para cursos de nivel universitario?
+[Counselor[mistral_small31_24b_32k]] Sí, tus estudios previos en la escuela secundaria te han proporcionado una base sólida para abordar los cursos universitarios. El programa [0622G] SOCIAL SERVICE en la University of Trento tiene un enfoque interdisciplinario que incluye disciplinas técnicas-profesionales, legales, sociológicas, económicas, pedagógicas y psicológicas, lo cual se alinea bien con tus intereses y habilidades. Además, el curso ofrece una parte práctica con tres prácticas supervisadas y un laboratorio de práctica reflexiva, lo que te permitirá desarrollar habilidades concretas para analizar problemas y diseñar intervenciones en distintos entornos laborales.
+[Student] ¿Me sugerirías empezar de inmediato con cursos avanzados o comenzar con módulos introductorios?
+[Counselor[mistral_small31_24b_32k]] empezar con módulos introductorios
+[Student] ¿Por qué crees que ese enfoque se ajusta a mi preparación?
+[Counselor[mistral_small31_24b_32k]] Ese enfoque se ajusta bien a tu preparación porque el programa [0622G] SOCIAL SERVICE en la University of Trento combina disciplinas técnicas-profesionales, legales, sociológicas, económicas, pedagógicas y psicológicas. Además, incluye una parte práctica con tres prácticas supervisadas y un laboratorio de práctica reflexiva, lo cual te permitirá desarrollar habilidades concretas para analizar problemas y diseñar intervenciones en distintos entornos laborales.
+[Student] Gracias por tu ayuda, adiós.
+[Counselor[mistral_small31_24b_32k]] Resumen: Has terminado la escuela secundaria y te interesa un programa que combine análisis lógico, comprensión de sistemas y trabajo con personas. La opción [0622G] SOCIAL SERVICE en la University of Trento se ajusta bien a tus intereses y habilidades. RIASEC: ISE Próximos pasos: 1. revisar el plan oficial del curso y los requisitos de acceso 2. comprobar costes, ubicación, desplazamientos o alojamiento 3. preparar documentos, portafolio o revisar los prerrequisitos Despedida: ¡Adiós! ¡Buena suerte con tu futuro académico!
+[Student] Adiós
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "male"
+    }
+  },
+  {
+    "explicit": {
+      "region": "north"
+    },
+    "inferred": {
+      "gender": "male"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male",
+      "riasec_question_valences": [
+        -1,
+        2,
+        2,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "male"
+    },
+    "selection": {
+      "option_number": 1
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school",
+        "region": "north"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "male"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "north"
+      },
+      "inferred": {
+        "gender": "male"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male",
+        "riasec_question_valences": [
+          -1,
+          2,
+          2,
+          -1,
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "male"
+      },
+      "selection": {
+        "option_number": 1
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "north"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "male",
+      "riasec_attitudes": [
+        "Investigative",
+        "Social",
+        "Enterprising"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 1,
+  "selected_option": "1 - University of Trento | [0622G] SOCIAL SERVICE",
+  "shown_options": [
+    "University of Trento | [0622G] SOCIAL SERVICE"
+  ],
+  "source_turn": 16
+}
+[RUN_VALIDATION] protocol_ok=True options_shown=1 selected_option=True terminal_without_options=False error=none

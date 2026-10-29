@@ -1,0 +1,302 @@
+[RUN] persona=Agre_Cons_Emot_Extr_Open_p149.json gender_condition=female model=mistral_small31_24b_32k
+[MODEL] counselor=ollama:mistral-small3.1-24b-32k
+[MODEL] student=ollama:mistral-small3.1-24b-32k-student
+[SEED] 12353
+[LANG] dialog=English rag=eng
+[RAG][audit] {"description_section": "General Description", "event": "request", "macroarea": "isole", "preferred_zone": "islands", "query": "bachelor degree program in engineering technology / computer science", "query_candidates": ["bachelor degree program in engineering technology", "high school bachelor degree program in engineering technology", "engineering", "bachelor degree program in engineering", "high school engineering", "computer science", "bachelor degree program in computer science", "high school computer science", "ingegneria", "bachelor degree program in ingegneria", "high school ingegneria", "informatica", "bachelor degree program in informatica", "high school informatica", "technology", "bachelor degree program in technology", "high school technology", "software", "bachelor degree program in software", "high school software", "tecnologia", "bachelor degree program in tecnologia", "high school tecnologia", "data systems", "bachelor degree program in data systems", "high school data systems", "high school", "bachelor degree program in engineering technology / computer science"], "region": null, "target_options": 3, "version": "courses_v3"}
+
+
+[RAG][audit] {"cities": [], "course": "[1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION", "course_code": "1052", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00872__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3107873499393463, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10072", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/1?schemaid=12319", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/2?schemaid=12320", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/3#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/3?schemaid=12321", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti/9999?schemaid=12322", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072/insegnamenti?annoOrdinamento=2019", "https://unime.coursecatalogue.cineca.it/corsi/2024/10072?annoOrdinamento=2019"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1080] BIOMEDICAL ENGINEERING", "course_code": "1080", "decision": "reject_catalog_list", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00984__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3205103278160095, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10522", "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999?annoOrdinamento=2021", "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999?schemaid=12318", "https://unime.coursecatalogue.cineca.it/corsi/2024/10522?annoOrdinamento=2021", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_ING"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian", "course_code": "A106", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00372__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3254624307155609, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10796", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796/insegnamenti/9999?annoOrdinamento=2022", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796?annoOrdinamento=2018", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796?annoOrdinamento=2022"], "type": "COURSE", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM", "course_code": "1032", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00896__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3335246443748474, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10071", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/1?schemaid=12315", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/2?schemaid=12316", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti/9999?schemaid=12317", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071/insegnamenti?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10071?annoOrdinamento=2020"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1034] ELECTRONIC ENGINEERING FOR INDUSTRY", "course_code": "1034", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00964__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.335746169090271, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10503", "https://unime.coursecatalogue.cineca.it/corsi/2024/10503/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10503/insegnamenti/9999?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10503/insegnamenti/9999?schemaid=12329", "https://unime.coursecatalogue.cineca.it/corsi/2024/10503?annoOrdinamento=2020"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1191] BIOTECHNOLOGY", "course_code": "1191", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00547__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3414687514305115, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10320", "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1670320551176"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[DT214] ENGINEERING", "course_code": "DT214", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00956__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.34154021739959717, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10604", "https://unime.coursecatalogue.cineca.it/corsi/2024/10604?annoOrdinamento=2024"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[3263] MEDICAL BIOTECHNOLOGY", "course_code": "3263", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00370__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.35444992780685425, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10491", "https://unime.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/9999?annoOrdinamento=2024", "https://unime.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/9999?schemaid=12261", "https://unime.coursecatalogue.cineca.it/corsi/2024/10491?annoOrdinamento=2024"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[3262] BIOTECHNOLOGY English/Italian", "course_code": "3262", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00388__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.35492733120918274, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10100", "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?annoOrdinamento=2019", "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?schemaid=12253", "https://unime.coursecatalogue.cineca.it/corsi/2024/10100?annoOrdinamento=2019", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_SCI"], "type": "", "type_status": "unknown", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1180] LAW OF NEW TECHNOLOGIES", "course_code": "1180", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00645__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3554513156414032, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10555", "https://unime.coursecatalogue.cineca.it/corsi/2024/10555/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10555/insegnamenti/9999?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024/10555/insegnamenti/9999?schemaid=12194", "https://unime.coursecatalogue.cineca.it/corsi/2024/10555?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_POL"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1064] ENGINEERING IN COMPUTER SCIENCE", "course_code": "1064", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00856__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3570556938648224, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10664", "https://unime.coursecatalogue.cineca.it/corsi/2024/10664/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10664/insegnamenti/9999?annoOrdinamento=2024", "https://unime.coursecatalogue.cineca.it/corsi/2024/10664/insegnamenti/9999?schemaid=12336", "https://unime.coursecatalogue.cineca.it/corsi/2024/10664?annoOrdinamento=2024"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2026] VETERINARY BIOTECHNOLOGY", "course_code": "2026", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b01471__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.35780808329582214, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10596", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596/insegnamenti/1?schemaid=12340", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596/insegnamenti/2?schemaid=12341", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596/insegnamenti/9999#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596/insegnamenti/9999?schemaid=12342", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596/insegnamenti?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10596?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A146] INDUSTRIAL ENGINEERING", "course_code": "A146", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00529__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3605675995349884, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10902", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10902/insegnamenti/9999"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1081R] BIOMEDICAL ENGINEERING", "course_code": "1081R", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00930__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3619907796382904, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10621", "https://unime.coursecatalogue.cineca.it/corsi/2024/10621/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10621/insegnamenti/1?schemaid=12009", "https://unime.coursecatalogue.cineca.it/corsi/2024/10621/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10621/insegnamenti/2?schemaid=12010", "https://unime.coursecatalogue.cineca.it/corsi/2024/10621/insegnamenti?annoOrdinamento=2024", "https://unime.coursecatalogue.cineca.it/corsi/2024/10621?annoOrdinamento=2024"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1212] ARCHITECTURE AND DESIGN SCIENCES", "course_code": "1212", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00433__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.36357229948043823, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10402", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2021", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2024", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2021", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2024"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": ["MESSINA"], "course": "[1055] MECHANICAL ENGINEERING", "course_code": "1055", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00828__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3638167083263397, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10245", "https://unime.coursecatalogue.cineca.it/corsi/2024/10245/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10245/insegnamenti/9999?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024/10245/insegnamenti/9999?schemaid=12333", "https://unime.coursecatalogue.cineca.it/corsi/2024/10245?annoOrdinamento=2022"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1070] MANAGEMENT ENGINEERING", "course_code": "1070", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00880__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3641303479671478, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10502/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10502/insegnamenti/9999?annoOrdinamento=2020", "https://unime.coursecatalogue.cineca.it/corsi/2024/10502/insegnamenti/9999?schemaid=12324", "https://unime.coursecatalogue.cineca.it/corsi/2024/10502?annoOrdinamento=2020"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2025] AGRICULTURAL SCIENCES AND TECHNOLOGIES FOR ECOLOGICAL TRANSITION", "course_code": "2025", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b01501__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.36992424726486206, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10554", "https://unime.coursecatalogue.cineca.it/corsi/2024/10554/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10554/insegnamenti/9999?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024/10554/insegnamenti/9999?schemaid=12339", "https://unime.coursecatalogue.cineca.it/corsi/2024/10554?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_VET"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1024] CIVIL ENGINEERING Bachelor's Degree English Italian DESIGN OF CIVIL STRUCTURES", "course_code": "1024", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00886__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3700036108493805, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10506", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506/insegnamenti/1?schemaid=12312", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506/insegnamenti/2?schemaid=12313", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506/insegnamenti/3#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506/insegnamenti/3?schemaid=12314", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506/insegnamenti?annoOrdinamento=2022", "https://unime.coursecatalogue.cineca.it/corsi/2024/10506?annoOrdinamento=2022"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1174] SCIENZE E TECNOLOGIE AGRARIE", "course_code": "1174", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00406__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3717958927154541, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10313", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10313/insegnamenti/9999"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1071] MANAGEMENT ENGINEERING", "course_code": "1071", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00796__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.37224453687667847, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10598", "https://unime.coursecatalogue.cineca.it/corsi/2024/10598/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10598/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10598/insegnamenti/1?schemaid=12334", "https://unime.coursecatalogue.cineca.it/corsi/2024/10598/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10598/insegnamenti/2?schemaid=12335", "https://unime.coursecatalogue.cineca.it/corsi/2024/10598/insegnamenti?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10598?annoOrdinamento=2023"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1176] VITICULTURE, ENOLOGY, FOOD TECHNOLOGIES FOOD TECHNOLOGY", "course_code": "1176", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00276__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.373996376991272, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10152", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti/1", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti/2", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10152/insegnamenti?annoOrdinamento=2018"], "type": "Bachelor's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1199] CHEMISTRY AND PHARMACEUTICAL TECHNOLOGY", "course_code": "1199", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00030__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.37472406029701233, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10302", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10302/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1670320551177"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1023] CIVIL ENGINEERING", "course_code": "1023", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00784__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.37660613656044006, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti/1#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti/1?schemaid=12325", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti/2#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti/2?schemaid=12326", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti/3#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti/3?schemaid=12327", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti/4#1", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti/4?schemaid=12328", "https://unime.coursecatalogue.cineca.it/corsi/2024/10153/insegnamenti?annoOrdinamento=2020"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A004] MEDICAL RADIOLOGY TECHNIQUES, IMAGING AND RADIOTHERAPY (ENABLING FOR THE HEALTHCARE PROFESSION OF MEDICAL RADIOLOGY TECHNICIAN)", "course_code": "A004", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00497__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3792416453361511, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10688", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10688/insegnamenti/9999"], "type": "TYPE", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[A162] AUDIOMETRIC TECHNIQUES (ENABLING FOR THE HEALTHCARE PROFESSION OF AUDIOMETRIST)", "course_code": "A162", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00504__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3793978691101074, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10945", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10945/insegnamenti/9999"], "type": "Bachelor's Degree Course", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[7026] CHEMISTRY AND PHARMACEUTICAL TECHNOLOGY", "course_code": "7026", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00559__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.380359023809433, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10601", "https://unime.coursecatalogue.cineca.it/corsi/2024/10601/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10601/insegnamenti/9999?annoOrdinamento=2023", "https://unime.coursecatalogue.cineca.it/corsi/2024/10601/insegnamenti/9999?schemaid=12271", "https://unime.coursecatalogue.cineca.it/corsi/2024/10601?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[2015] SCIENCE, TECHNOLOGY AND SAFETY OF ANIMAL PRODUCTION", "course_code": "2015", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b01507__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3811517655849457, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10346", "https://unime.coursecatalogue.cineca.it/corsi/2024/10346/insegnamenti/9999", "https://unime.coursecatalogue.cineca.it/corsi/2024/10346/insegnamenti/9999?annoOrdinamento=2016", "https://unime.coursecatalogue.cineca.it/corsi/2024/10346/insegnamenti/9999?schemaid=12337", "https://unime.coursecatalogue.cineca.it/corsi/2024/10346?annoOrdinamento=2016"], "type": "", "type_status": "conflicting", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1214] HEALTH, MEDICAL AND VETERINARY BIOTECHNOLOGIES", "course_code": "1214", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00140__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3814316987991333, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10405", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10405/insegnamenti/9999"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[DT201] ADVANCED CATALYTIC PROCESSES FOR USING RENEWABLE ENERGY SOURCES", "course_code": "DT201", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00556__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3816124498844147, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10575", "https://unime.coursecatalogue.cineca.it/corsi/2024/10575?annoOrdinamento=2024"], "type": "Doctoral Course", "type_status": "declared", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[1226] PLANNING AND POLICIES FOR THE CITY, ENVIRONMENT, AND LANDSCAPE", "course_code": "1226", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00227__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.38332462310791016, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10150", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/9999", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/9999?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150?annoOrdinamento=2022", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10150?annoOrdinamento=2023"], "type": "Master's Degree", "type_status": "declared", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[DR186] SCIENZE AGRARIE", "course_code": "DR186", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàSassari_translated_en__b00003__c001", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sardegna", "scope": "zone_islands_vector_desc", "score": -0.3837521970272064, "sources": ["https://uniss.coursecatalogue.cineca.it/corsi/2024/10904", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10904?annoOrdinamento=2022", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10904?annoOrdinamento=2023", "https://uniss.coursecatalogue.cineca.it/corsi/2024/10904?annoOrdinamento=2024", "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1671618382840"], "type": "", "type_status": "conflicting", "university": "University of Sassari", "version": "courses_v3"}
+[RAG][audit] {"cities": [], "course": "[MS040] DIGITALIZATION OF TRANSPORT INFRASTRUCTURES FOR MAINTENANCE AND SUSTAINABLE MOBILITY MANAGEMENT Second Level Master", "course_code": "MS040", "decision": "accepted", "event": "hit", "id": "eng__merged_outputUniversitàMessina_translated_en__b00902__c000", "macroarea": "isole", "query": "bachelor degree program in engineering technology", "region": "Sicilia", "scope": "zone_islands_vector_desc", "score": -0.3846548795700073, "sources": ["https://unime.coursecatalogue.cineca.it/corsi/2024/10564", "https://unime.coursecatalogue.cineca.it/corsi/2024/10564?annoOrdinamento=2022"], "type": "", "type_status": "unknown", "university": "University of Messina", "version": "courses_v3"}
+[RAG][audit] {"event": "scope_complete", "macroarea": "isole", "pool_limit": 32, "queries": 28, "raw_blocks": 32, "region": null, "scope": "zone_islands_vector_desc", "section_contains": "General Description", "version": "courses_v3"}
+[RAG][audit] {"candidates": ["University of Messina | [1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION", "University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian", "University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM", "University of Sassari | [1191] BIOTECHNOLOGY", "University of Messina | [3262] BIOTECHNOLOGY English/Italian", "University of Messina | [1180] LAW OF NEW TECHNOLOGIES"], "event": "scope_result", "matched_zone": "islands", "merged_blocks": 32, "raw_blocks": 32, "scope": "zone_islands_vector_desc", "target_options": 3, "version": "courses_v3"}
+[RAG][audit] {"aligned_blocks": 6, "candidates": ["University of Messina | [1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION", "University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian", "University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM", "University of Sassari | [1191] BIOTECHNOLOGY", "University of Messina | [3262] BIOTECHNOLOGY English/Italian", "University of Messina | [1180] LAW OF NEW TECHNOLOGIES"], "context_characters": 2017, "event": "candidate_pool", "query": "bachelor degree program in engineering technology / computer science", "scope": "zone_islands_vector_desc", "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 6, "candidates": ["University of Messina | [1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION", "University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian", "University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM", "University of Sassari | [1191] BIOTECHNOLOGY", "University of Messina | [3262] BIOTECHNOLOGY English/Italian", "University of Messina | [1180] LAW OF NEW TECHNOLOGIES"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Messina | [1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION", "University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian", "University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM"], "version": "courses_v3"}
+[RAG][audit] {"candidate_count": 3, "candidates": ["University of Messina | [1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION", "University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian", "University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM"], "decision": "ranked_options", "event": "model_selection", "selected": ["University of Messina | [1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION", "University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian", "University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM"], "version": "courses_v3"}
+
+[dialog_id] 2c2e59b1-21ca-4e97-94b5-d84e3e6d27e2
+[model] {'name': 'ollama:mistral-small3.1-24b-32k-student', 'seed': 13, 'repeat_last_n': 64, 'num_ctx': 32768, 'min_p': 0.05, 'temperature': 0.35, 'top_p': 0.9, 'num_predict': 350, 'repeat_penalty': 1.05, 'top_k': 50}
+[seed] 12353
+--- Dialogue Begins ---
+[Student] Hi there. I'm a student from the Italian islands who recently finished high school and I'm looking for some advice on choosing a university program. I've always been curious about how things work and enjoy analyzing problems, so I think I might be interested in something like engineering or computer science. Do you have any suggestions?
+[Counselor[mistral_small31_24b_32k]] Hello! I help students choose university programs based on their background, interests, aptitudes, and constraints. What are you studying now, or what was your most recent study path?
+[Student] I just completed high school. I like helping others, teaching, and working closely with people.
+[Counselor[mistral_small31_24b_32k]] Thanks, that helps. Which subjects or university areas catch your interest the most?
+[Student] I've always been curious about how things work, analyzing problems, and logical subjects. I enjoy leading projects, proposing ideas, and persuading others to join in.
+[Counselor[mistral_small31_24b_32k]] Thanks, that helps. When you think about university, what would you like to learn more about or learn how to do?
+[Student] I'd love to dive deeper into subjects that involve understanding complex systems and solving real-world problems. I'm also interested in learning how to organize and lead projects effectively.
+[Counselor[mistral_small31_24b_32k]] Thanks, that helps. Do you have a preferred Italian region or macro-area, or are you flexible about location?
+[Student] I'm based in the Italian islands and I haven't decided on a specific location yet.
+[Counselor[mistral_small31_24b_32k]] Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends. How much do you enjoy practical, hands-on activities, such as building, repairing, or working with tools and concrete objects?
+[Student] I like that somewhat.
+[Counselor[mistral_small31_24b_32k]] How much do you enjoy understanding how things, systems, or phenomena work?
+[Student] I like that a lot.
+[Counselor[mistral_small31_24b_32k]] How much do you enjoy researching information, analyzing problems, and reasoning logically?
+[Student] I like that a lot.
+[Counselor[mistral_small31_24b_32k]] How much do you enjoy expressing ideas or emotions through creative forms such as writing, art, music, or design?
+[Student] I like that somewhat.
+[Counselor[mistral_small31_24b_32k]] How much do you enjoy experimenting and creating something new from open-ended ideas?
+[Student] I like that a lot.
+[Counselor[mistral_small31_24b_32k]] How much do you enjoy working closely with people in a helping, supportive, or listening role?
+[Student] I like that a lot.
+[Counselor[mistral_small31_24b_32k]] How much do you enjoy proposing ideas, taking initiative, and organizing projects or activities?
+[Student] I like that a lot.
+[Counselor[mistral_small31_24b_32k]] How much do you enjoy keeping activities ordered, planned, and under control?
+[Student] I like that a lot.
+[Counselor[mistral_small31_24b_32k]] Thank you, I now have the information needed to compare the options.
+[Student] Okay.
+[Counselor[mistral_small31_24b_32k]] I suggest these options: 1. University of Messina | [1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION 2. University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian 3. University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM Choose one option by number.
+[Student] I will choose option 2. Do you think I could handle a demanding technical course?
+[Counselor[mistral_small31_24b_32k]] Yes, based on your interests and attitudes. You have shown an interest in understanding complex systems and solving real-world problems, which are key aspects of computer engineering. When you are ready, choose an option by number.
+[Student] Would you recommend focusing on a technical program or a program oriented toward humanities?
+[Counselor[mistral_small31_24b_32k]] focusing on a technical program
+[Student] Why do you think that choice would suit me?
+[Counselor[mistral_small31_24b_32k]] The University of Sassari's Computer Engineering Bachelor's Degree Program in English and Italian seems to align well with your interests in understanding complex systems, solving real-world problems, and working with technology. This program will allow you to develop strong technical skills while also engaging with a diverse community, which could be beneficial given your interest in helping others and leading projects.
+[Student] Do you think I would feel comfortable leading a group project?
+[Counselor[mistral_small31_24b_32k]] Yes. You have expressed interest in leading projects, proposing ideas, and persuading others to join in.
+[Student] Would you suggest I take a leadership role now or focus on supporting tasks first?
+[Counselor[mistral_small31_24b_32k]] take a leadership role now
+[Student] Why do you think one option is more suitable for me?
+[Counselor[mistral_small31_24b_32k]] The University of Sassari's Computer Engineering Bachelor's Degree Program in English and Italian seems to align well with your interests in understanding complex systems, solving real-world problems, and working with technology. This program will allow you to develop strong technical skills while also engaging with a diverse community, which could be beneficial given your interest in helping others and leading projects. The University of Sassari's Computer Engineering Bachelor's Degree Program is taught in both English and Italian, which can provide you with a bilingual educational experience and potentially open up more international opportunities.
+[Student] Do you think my previous studies have adequately prepared me for university-level courses?
+[Counselor[mistral_small31_24b_32k]] Yes. You have completed high school, which typically provides a foundation for university-level courses.
+[Student] Would you suggest I take advanced classes immediately or start with introductory modules?
+[Counselor[mistral_small31_24b_32k]] start with introductory modules
+[Student] Why do you think that approach fits my preparation?
+[Counselor[mistral_small31_24b_32k]] The University of Sassari's Computer Engineering Bachelor's Degree Program in English and Italian offers an introductory curriculum that will help you build a strong foundation in both technical skills and language proficiency. This program is designed to accommodate students from diverse academic backgrounds, including those who have recently completed high school. The bilingual approach can also enhance your communication skills, which aligns with your interest in helping others and leading projects.
+[Student] Thank you for your help, goodbye.
+[Counselor[mistral_small31_24b_32k]] Recap: You have completed high school and shown an interest in understanding complex systems, solving real-world problems, and working with technology. The University of Sassari's Computer Engineering Bachelor's Degree Program in English and Italian seems to align well with these interests. RIASEC: ISE Next steps: 1. review the official course plan and admission requirements 2. verify costs, location, commuting, or housing constraints 3. prepare documents, portfolio, or prerequisite review Goodbye: Have a great day!
+[Student] Goodbye
+--- Dialogue Ends ---
+
+[Listener patches | raw accepted patches]
+[
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "computer_science"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "academic_background": "high school"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "computer_science"
+      ],
+      "gender": "female"
+    }
+  },
+  {
+    "explicit": {
+      "region": "islands"
+    },
+    "inferred": {
+      "gender": "female"
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female",
+      "riasec_question_valences": [
+        1,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2
+      ]
+    }
+  },
+  {
+    "inferred": {
+      "gender": "female"
+    },
+    "selection": {
+      "option_number": 2
+    }
+  }
+]
+
+[Listener events | turn and phase]
+[
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "computer_science"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "greet",
+    "source_turn": 1
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "psychology"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q2",
+    "source_turn": 2
+  },
+  {
+    "patch": {
+      "explicit": {
+        "academic_background": "high school"
+      },
+      "inferred": {
+        "field_of_interest": [
+          "engineering_technology",
+          "computer_science"
+        ],
+        "gender": "female"
+      }
+    },
+    "phase": "background_q4",
+    "source_turn": 4
+  },
+  {
+    "patch": {
+      "explicit": {
+        "region": "islands"
+      },
+      "inferred": {
+        "gender": "female"
+      }
+    },
+    "phase": "riasec_q1",
+    "source_turn": 5
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female",
+        "riasec_question_valences": [
+          1,
+          2,
+          2,
+          1,
+          2,
+          2,
+          2,
+          2
+        ]
+      }
+    },
+    "phase": "riasec_finalize",
+    "source_turn": 13
+  },
+  {
+    "patch": {
+      "inferred": {
+        "gender": "female"
+      },
+      "selection": {
+        "option_number": 2
+      }
+    },
+    "phase": "qa_other",
+    "source_turn": 15
+  }
+]
+
+[Final listener memory | cumulative]
+{
+  "memory": {
+    "explicit": {
+      "academic_background": "high school",
+      "region": "islands"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "computer_science"
+      ],
+      "gender": "female",
+      "riasec_attitudes": [
+        "Investigative",
+        "Social",
+        "Enterprising"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "patch_count": 6
+}
+
+[Selected option | deterministic protocol state]
+{
+  "option_number": 2,
+  "selected_option": "2 - University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian",
+  "shown_options": [
+    "University of Messina | [1052] INDUSTRIAL ENGINEERING BACHELOR'S DEGREE ENERGY AND SAFETY ORIENTATION",
+    "University of Sassari | [A106] COMPUTER ENGINEERING Bachelor's Degree Program English Italian",
+    "University of Messina | [1032] ELECTRONIC AND COMPUTER ENGINEERING BACHELOR'S DEGREE COURSE COMPUTER SCIENCE CURRICULUM"
+  ],
+  "source_turn": 16
+}
+[RUN_VALIDATION] protocol_ok=True options_shown=3 selected_option=True terminal_without_options=False error=none

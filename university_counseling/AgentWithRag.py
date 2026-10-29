@@ -6,12 +6,15 @@ import os
 import re
 import unicodedata
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple, TypedDict
 
 from sdialog.orchestrators import BaseOrchestrator
 
 from university_counseling.clean_options import clean_and_dedup_options
 from collections import defaultdict
+
+_ADVICE_NO_MATCH_TOKEN = "[[ASK_FOR_CLARIFICATION]]"
 
 from university_counseling.social_practice import (
     default_university_counseling_practice,
@@ -301,6 +304,15 @@ FIELD_OF_INTEREST_RULES = (
         "- Omit the field if no label is clearly supported; never invent labels.\n"
 )
 
+REGION_EXTRACTION_RULES = (
+    "Rules for explicit.region:\n"
+    "- Search the student's current message and earlier background messages in the conversation.\n"
+    "- Treat a stated home macro-area or Italian region as a usable study-location preference unless the student explicitly says location is irrelevant.\n"
+    "- A positive preference remains valid when the student is also open or flexible about alternatives.\n"
+    "- Do not store locations mentioned only as excluded, rejected, or negated.\n"
+    "- Store macro-areas as: north, center, south, islands. Otherwise use the canonical Italian region name.\n"
+)
+
 REGION_TO_RAG_MACROAREA = {
     "north": "Nord",
     "center": "Centro",
@@ -392,8 +404,10 @@ def _region_slot_to_rag_region(value: Optional[str]) -> Optional[str]:
 
 
 def _region_slot_to_rag_macroarea(value: Optional[str]) -> Optional[str]:
+    """Return the canonical stored value used by the LanceDB macroarea column."""
     zone = _region_slot_to_zone(value)
-    return REGION_TO_RAG_MACROAREA.get(zone) if zone else None
+    macroarea = REGION_TO_RAG_MACROAREA.get(zone) if zone else None
+    return macroarea.lower() if macroarea else None
 
 
 CHOICE_REPLY_OPTIONS = {
@@ -419,17 +433,6 @@ CHOICE_REPLY_OPTIONS = {
     },
 }
 
-_OPT_RX = re.compile(r"\b(?:option|opzione|opción)\s*(?:n(?:um(?:ero)?)?\.?\s*)?([1-3])\b", re.I)
-_SELECTION_INTENT_RX = re.compile(
-    r"\b("
-    r"scelgo|prendo|preferisco|opto|"
-    r"i\s+choose|i\s+pick|i\s+select|i\s+prefer|"
-    r"elijo|escojo|prefiero|selecciono|je\s+choisis|je\s+préfère|je\s+selectionne|je\s+sélectionne"
-    r")\b",
-    re.IGNORECASE,
-)
-_DIGIT_RX = re.compile(r"\b([1-3])\b")
-
 _FLOW_YES_RX = re.compile(
     r"\b(yes|yeah|yep|sure|definitely|absolutely|sì|si|sí|certo|assolutamente|oui|bien sûr|claro)\b",
     re.I,
@@ -445,56 +448,6 @@ _FLOW_INSUFFICIENT_RX = re.compile(
     r"información insuficiente|no hay suficiente información|informations insuffisantes|pas assez d'informations)\b",
     re.I,
 )
-_NUM_WORD_TO_DIGIT = {
-    "uno": 1,
-    "una": 1,
-    "primo": 1,
-    "prima": 1,
-    "one": 1,
-    "first": 1,
-    "due": 2,
-    "secondo": 2,
-    "seconda": 2,
-    "two": 2,
-    "second": 2,
-    "tre": 3,
-    "terzo": 3,
-    "terza": 3,
-    "three": 3,
-    "third": 3,
-    "primera": 1,
-    "primero": 1,
-    "un": 1,
-    "première": 1,
-    "premier": 1,
-    "dos": 2,
-    "segunda": 2,
-    "segundo": 2,
-    "deux": 2,
-    "deuxième": 2,
-    "seconde": 2,
-    "tres": 3,
-    "tercera": 3,
-    "tercero": 3,
-    "trois": 3,
-    "troisième": 3,
-}
-_NUM_WORD_RX = re.compile(
-    rf"\b({'|'.join(sorted(map(re.escape, _NUM_WORD_TO_DIGIT), key=len, reverse=True))})\b",
-    re.IGNORECASE,
-)
-
-_SINGLE_OPTION_ACCEPT_RX = re.compile(
-    r"\b("
-    r"ok|okay|va bene|va benissimo|confermo|procedi|andiamo avanti|"
-    r"scelgo questa|scelgo questo|questa|questo|la prima|il primo|prima|"
-    r"this one|choose this|i choose this|confirm|esta|este|elijo esta|elijo este|"
-    r"celle-ci|celui-ci|je choisis celle-ci|je choisis celui-ci|confirmer"
-    r")\b",
-    re.IGNORECASE,
-)
-
-
 def _exact_background_questions_enabled() -> bool:
     return os.getenv("SDIALOG_EXACT_BACKGROUND_QUESTIONS", "1").strip().lower() in {"1", "true", "yes", "on"}
 
@@ -539,43 +492,6 @@ def _background_reply_looks_valid(body: str, expected: str) -> bool:
     clean = re.sub(r"\s+", " ", body or "").strip()
     return bool(clean and clean.count("?") == 1 and not _ENTITY_RX.search(clean))
 
-
-def _extract_selected_option_number(text: str) -> Optional[int]:
-    raw = text or ""
-    clean = re.sub(r"\s+", " ", raw).strip()
-    if not clean:
-        return None
-    
-    has_selection_intent = bool(_SELECTION_INTENT_RX.search(clean))
-    is_short_reply = len(clean) <= 24 and "?" not in clean
-
-    option_mentions = [
-        int(match.group(1))
-        for match in _OPT_RX.finditer(clean)
-    ]
-
-    if option_mentions:
-        distinct_mentions = set(option_mentions)
-
-        # Una comparazione fra più opzioni non è una selezione.
-        if len(distinct_mentions) != 1:
-            return None
-
-        if has_selection_intent or is_short_reply:
-            return option_mentions[0]
-
-        return None
-
-
-    m = _DIGIT_RX.search(clean)
-    if m and (has_selection_intent or is_short_reply):
-        return int(m.group(1))
-
-    m = _NUM_WORD_RX.search(clean)
-    if m and (has_selection_intent or is_short_reply):
-        return _NUM_WORD_TO_DIGIT.get(m.group(1).casefold())
-
-    return None
 
 _RIASEC_ALLOWED_LABELS = {
     "realistic": "Realistic",
@@ -867,6 +783,24 @@ def _contains_any_keyword(text: str, keywords: Sequence[str]) -> bool:
 def _dprint(enabled: bool, msg: str) -> None:
     if enabled:
         print(msg)
+
+
+def _rag_audit(event: str, **payload: Any) -> None:
+    """Emit retriever evidence to the run log and, when configured, to JSONL."""
+    record = {"version": "courses_v3", "event": event, **payload}
+    line = "[RAG][audit] " + json.dumps(record, ensure_ascii=False, sort_keys=True, default=str)
+    print(line, flush=True)
+
+    audit_path = os.getenv("SDIALOG_RAG_AUDIT_PATH", "").strip()
+    if not audit_path:
+        return
+    try:
+        path = Path(audit_path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with path.open("a", encoding="utf-8") as audit_file:
+            audit_file.write(json.dumps(record, ensure_ascii=False, sort_keys=True, default=str) + "\n")
+    except OSError as exc:
+        print(f"[RAG][audit] unable_to_write path={audit_path!r} error={exc!r}", flush=True)
 
 
 
@@ -1200,6 +1134,13 @@ def _infer_program_level(text: str) -> Optional[str]:
     if any(k in low for k in [
         "laurea magistrale",
         "corso di laurea magistrale",
+        "master di primo livello",
+        "master di secondo livello",
+        "master universitario",
+        "first level master",
+        "second level master",
+        "first-level master",
+        "second-level master",
         "master degree",
         "master's degree",
         "msc",
@@ -1385,29 +1326,19 @@ def _canonicalize_selected_option_value(value: str, shown_options: Optional[Sequ
 
 
 def _validate_advice_answer(answer: str, allowed_options: Sequence[str]) -> Optional[str]:
+    """Render only model-selected options, after grounding them in the RAG pool."""
     allowed = [str(x).strip() for x in allowed_options if str(x).strip()]
     if not allowed:
         return None
 
-    target = max(
+    maximum = max(
         1,
         min(int(os.getenv("SDIALOG_FINAL_TOP_N", "3")), 3, len(allowed)),
     )
-    chosen = _extract_advice_options_from_answer(answer, allowed)
-    chosen_keys = {_normalize(x) for x in chosen}
+    chosen = _extract_advice_options_from_answer(answer, allowed)[:maximum]
+    if not chosen:
+        return None
 
-    # Preserve the model's valid order, but always expose the configured number
-    # of grounded options. Missing entries are filled deterministically from the
-    # original candidate order.
-    for option in allowed:
-        if _normalize(option) in chosen_keys:
-            continue
-        chosen.append(option)
-        chosen_keys.add(_normalize(option))
-        if len(chosen) >= target:
-            break
-
-    chosen = chosen[:target]
     final_line = _advice_final_line()
     return "\n".join([_advice_intro_line(len(chosen))] + [f"{i + 1}. {opt}" for i, opt in enumerate(chosen)] + [final_line])
 
@@ -1615,10 +1546,9 @@ def _extract_ctx_options(
             _dprint(debug, f"[DEBUG][extract] reject=parse university={university!r} course={course!r}")
             continue
 
-        disable_domain_filter = os.getenv("SDIALOG_DISABLE_DOMAIN_FILTER", "0").lower() in {"1", "true", "yes"}
-        if (not disable_domain_filter) and _course_domain_mismatch(course, field_of_interest):
-            _dprint(debug, f"[DEBUG][extract] reject=domain course={course}")
-            continue
+        # Course identity and declared level are verified here. Domain fit is
+        # deliberately left to the model, which receives the grounded cards and
+        # the complete student profile in the ADVICE phase.
 
         level = _infer_program_level(f"{tipo}\n{block}")
 
@@ -1956,6 +1886,7 @@ _ADVICE_OPTIONS_SHOWN: List[str] = []
 LISTENER_PATCH_SCHEMA = {
     "explicit": {"academic_background", "region"},
     "inferred": {"field_of_interest", "riasec_question_valences", "riasec_attitudes"},
+    "selection": {"option_number"},
 }
 
 
@@ -1990,8 +1921,8 @@ def record_selected_option_event(
 ) -> None:
     """Record the student's selected option outside listener memory.
 
-    This is deterministic protocol state: once the counselor has shown numbered
-    options and the student chooses option N, no LLM inference is needed.
+    The listener model extracts an explicit numbered choice; the orchestrator
+    then records the corresponding shown option as protocol state.
     """
     global _SELECTED_OPTION_EVENT
 
@@ -2012,6 +1943,11 @@ def record_selected_option_event(
 
 def get_selected_option_event() -> Optional[Dict[str, Any]]:
     return copy.deepcopy(_SELECTED_OPTION_EVENT) if isinstance(_SELECTED_OPTION_EVENT, dict) else None
+
+
+def get_advice_options_shown() -> List[str]:
+    """Return the current verified options without exposing mutable state."""
+    return [str(option).strip() for option in _LAST_RAG_STATE.advice_options if str(option).strip()]
 
 
 def record_verified_listener_patch_event(
@@ -2043,11 +1979,7 @@ def record_verified_listener_patch_event(
 
 
 def _sanitize_listener_patch_for_current_phase(data: Dict[str, Any]) -> Dict[str, Any]:
-    """Drop fields that do not belong in listener memory.
-
-    selected_option is deliberately excluded from listener memory because it is
-    deterministic protocol state, not an LLM inference.
-    """
+    """Keep supported listener-memory fields and model-extracted selection state."""
     if not isinstance(data, dict):
         return {}
 
@@ -2073,15 +2005,17 @@ def _sanitize_listener_patch_for_current_phase(data: Dict[str, Any]) -> Dict[str
         }
         if clean_inf:
             out["inferred"] = clean_inf
+
+    selection = raw.get("selection")
+    if isinstance(selection, dict):
+        option_number = selection.get("option_number")
+        if isinstance(option_number, int) and not isinstance(option_number, bool):
+            out["selection"] = {"option_number": option_number}
     return out
 
 
 def _canonicalize_listener_patch_with_shown_options(data: Dict[str, Any]) -> Dict[str, Any]:
-    """Compatibility wrapper: sanitize listener patches.
-
-    The listener no longer owns selected_option, so there is no option
-    canonicalization here.
-    """
+    """Compatibility wrapper: sanitize listener patches."""
     return _sanitize_listener_patch_for_current_phase(data)
 
 
@@ -2136,6 +2070,7 @@ class _RAGState:
     expected_selection_number: Optional[int] = None
     advice_intro_singular: str = ""
     advice_intro_plural: str = ""
+    model_declined_options: bool = False
 
 
 _LAST_RAG_STATE = _RAGState()
@@ -2153,12 +2088,14 @@ def update_last_rag_state(
     expected_selection_number: Optional[int] = None,
     advice_intro_singular: Optional[str] = None,
     advice_intro_plural: Optional[str] = None,
+    model_declined_options: bool = False,
 ) -> None:
     _LAST_RAG_STATE.ctx = ctx or ""
     _LAST_RAG_STATE.query = query or ""
     _LAST_RAG_STATE.phase = (phase or "").strip().lower()
     _LAST_RAG_STATE.expected_verbatim = (expected_verbatim or "").strip()
     _LAST_RAG_STATE.advice_fallback = bool(advice_fallback)
+    _LAST_RAG_STATE.model_declined_options = bool(model_declined_options)
     _LAST_RAG_STATE.expected_selection_number = expected_selection_number
     if advice_intro_singular is not None:
         _LAST_RAG_STATE.advice_intro_singular = str(advice_intro_singular or "").strip()
@@ -2656,19 +2593,45 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
 
     if phase == "advice":
         allowed = list(_LAST_RAG_STATE.advice_options or [])
+        chosen = _extract_advice_options_from_answer(ans, allowed)
         validated = _validate_advice_answer(ans, allowed)
 
         if validated:
+            _rag_audit(
+                "model_selection",
+                decision="ranked_options",
+                candidate_count=len(allowed),
+                candidates=allowed,
+                selected=chosen,
+            )
             out = validated
+            _set_last_advice_options_shown(out, allowed)
         else:
-            fallback = allowed[: min(3, len(allowed))]
-            if fallback:
-                out = "\n".join(
-                    [_advice_intro_line(len(fallback))] + [f"{i + 1}. {opt}" for i, opt in enumerate(fallback)] + [_advice_final_line()]
-                )
-            else:
-                out = ans
-        _set_last_advice_options_shown(out, allowed)
+            reason = "explicit_no_match" if _ADVICE_NO_MATCH_TOKEN in ans else "no_grounded_selection"
+            message = _t(
+                "Before I recommend a program, could you clarify which constraint you would relax first: exact field, degree level, or study area?",
+                "Prima di consigliarti un corso, puoi chiarire quale vincolo saresti disposto/a ad allentare per primo: ambito preciso, livello del titolo o area geografica?",
+                "Antes de recomendarte un programa, ¿podrías aclarar qué restricción flexibilizarías primero: campo exacto, nivel del título o zona de estudio?",
+                "Avant de vous recommander un cursus, pourriez-vous préciser quelle contrainte vous accepteriez d’assouplir en premier : domaine exact, niveau du diplôme ou zone d’études ?",
+            )
+            _rag_audit(
+                "model_selection",
+                decision="clarify_scope",
+                reason=reason,
+                candidate_count=len(allowed),
+                candidates=allowed,
+                selected=[],
+            )
+            update_last_rag_state(
+                ctx,
+                query=_LAST_RAG_STATE.query,
+                phase="clarify_scope",
+                expected_verbatim=message,
+                advice_fallback=True,
+                advice_options=[],
+                model_declined_options=True,
+            )
+            out = message
         if patch_block:
             out = f"{out}\n{patch_block}"
         return out
@@ -2779,6 +2742,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             final_top_n: int = 3,
             dialog_language: str = "English",
             practice: Optional[Dict[str, Any]] = None,
+            initial_listener_region: Optional[str] = None,
     ) -> None:
         self.lang = _lang_code(dialog_language)
         self.practice = practice or default_university_counseling_practice()
@@ -2857,8 +2821,14 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._advice_intro_singular = _practice_advice_intro(self.practice, dialog_language=dialog_language, plural=False)
         self._advice_intro_plural = _practice_advice_intro(self.practice, dialog_language=dialog_language, plural=True)
 
+        self._initial_listener_region = _normalize_region_value(initial_listener_region)
         self._slots = StudentSlots()
         self._listener_memory = _empty_listener_memory()
+        if self._initial_listener_region:
+            self._listener_memory = apply_listener_patch(
+                self._listener_memory,
+                {"explicit": {"region": self._initial_listener_region}},
+            )
 
         self._flow_stage = "greet"
         self._bg_i = 0
@@ -2880,6 +2850,9 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         self._selected_option_committed_this_turn = False
         self.candidate_pool_size = int(candidate_pool_size)
         self.final_top_n = int(final_top_n)
+        self._sync_slots_from_listener_memory()
+        if self._initial_listener_region:
+            _rag_audit("retry_context", retained_listener_region=self._initial_listener_region)
 
         if self.lang == "it":
             self._CHOICE_CONNECTOR = re.compile(r"\s+(?:or|oppure|o|vs\.?|versus)\s+", re.I)
@@ -2911,6 +2884,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
     def reset(self) -> None:
         self._slots = StudentSlots()
         self._listener_memory = _empty_listener_memory()
+        if self._initial_listener_region:
+            self._listener_memory = apply_listener_patch(
+                self._listener_memory,
+                {"explicit": {"region": self._initial_listener_region}},
+            )
+        self._sync_slots_from_listener_memory()
 
         self._flow_stage = "greet"
         self._bg_i = 0
@@ -2969,7 +2948,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
     def _background_slot_patch_request(self, evidence: str) -> str:
         return self._listener_patch_request(
-            targets="- explicit.academic_background\n- inferred.field_of_interest\n",
+            targets="- explicit.academic_background\n- explicit.region\n- inferred.field_of_interest\n",
             rules=(
                 "Rules for explicit.academic_background:\n"
                 "- If the student states any current or completed formal education, you MUST include academic_background.\n"
@@ -2986,10 +2965,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "- Do not omit academic_background when formal education is explicitly present.\n"
                 "- If no formal education is explicitly stated, omit academic_background.\n"
                 "\n"
+                + REGION_EXTRACTION_RULES
+                + "\n"
                 + FIELD_OF_INTEREST_RULES
             ),
             schema_example=(
-                '<LISTENER_PATCH>{"explicit":{"academic_background":"<short education summary>"},'
+                '<LISTENER_PATCH>{"explicit":{"academic_background":"<short education summary>","region":"north"},'
                 '"inferred":{"field_of_interest":["<field_of_interest label 1>","<field_of_interest label 2>"]}}</LISTENER_PATCH>'
             ),
             evidence=evidence,
@@ -3041,6 +3022,45 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         shown = [str(x).strip() for x in (_LAST_RAG_STATE.advice_options or []) if str(x).strip()]
         return shown or list(self._last_options or [])
 
+    def _selection_patch_request(self, evidence: str) -> str:
+        shown_options = self._displayed_advice_options()
+        option_lines = "\n".join(f"{i}. {option}" for i, option in enumerate(shown_options, start=1))
+        return self._listener_patch_request(
+            targets="- selection.option_number\n",
+            rules=(
+                "- Infer a selection only when the student explicitly chooses one displayed numbered option.\n"
+                "- The same message may contain a choice and a follow-up question; preserve the explicit choice.\n"
+                "- Return the selected displayed number as an integer, for example 2 for 'I choose option 2' or 'Scelgo l'opzione 2'.\n"
+                "- Do not infer a choice from a comparison, a hypothetical mention, or the follow-up question alone.\n"
+                "- If no unambiguous choice is present, omit selection.option_number.\n"
+            ),
+            schema_example='<LISTENER_PATCH>{"selection":{"option_number":2}}</LISTENER_PATCH>',
+            evidence=f"STUDENT_MESSAGE:\n{evidence}\n\nOPTIONS_SHOWN:\n{option_lines}",
+        )
+
+    def _commit_model_selected_option(self, selection: Any) -> None:
+        if not self._advice_given or not isinstance(selection, dict):
+            return
+
+        option_number = selection.get("option_number")
+        if not isinstance(option_number, int) or isinstance(option_number, bool):
+            return
+
+        shown_options = self._displayed_advice_options()
+        if not 1 <= option_number <= len(shown_options):
+            return
+
+        selected = f"{option_number} - {shown_options[option_number - 1]}"
+        self._pending_selection_number = option_number
+        self._last_options = list(shown_options)
+        self._slots.selected_option = selected
+        self._selected_option_committed_this_turn = True
+        record_selected_option_event(
+            option_number=option_number,
+            selected_option=selected,
+            shown_options=shown_options,
+        )
+
     def _selected_option_value(self) -> Optional[str]:
         shown_options = self._displayed_advice_options()
         selected_value = self._slots.selected_option
@@ -3072,34 +3092,6 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         return ""
 
-    def _commit_selected_option_number(self, n: int) -> Optional[str]:
-        """Commit the student's explicit numbered option choice to runtime state.
-
-        selected_option is not stored in listener memory. It is deterministic
-        protocol state saved separately and written at the end of the dialog.
-        """
-        shown_options = self._displayed_advice_options()
-        if not shown_options or not (1 <= int(n) <= len(shown_options)):
-            return None
-
-        selected = f"{int(n)} - {shown_options[int(n) - 1]}"
-
-        self._pending_selection_number = int(n)
-        self._last_options = list(shown_options)
-        self._slots.selected_option = selected
-        self._selected_option_committed_this_turn = True
-
-        record_selected_option_event(
-            option_number=int(n),
-            selected_option=selected,
-            shown_options=shown_options,
-            source_turn=self._student_turn_count,
-        )
-
-        return selected
-
-
-
     def _update_slots_from_student(self, student_utt: str) -> None:
         self._selected_option_committed_this_turn = False
 
@@ -3108,23 +3100,13 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             if not isinstance(p, dict):
                 break
             self._listener_memory = apply_listener_patch(self._listener_memory, p)
+            self._commit_model_selected_option(p.get("selection"))
 
         ab = self._listener_memory.get("explicit", {}).get("academic_background")
         if isinstance(ab, str) and ab.strip():
             lvl = infer_intended_level_from_academic_background(ab)
             if lvl:
                 self._slots.intended_level = lvl
-
-        # Selection detection is deterministic protocol-state handling.
-        # It is intentionally separate from listener memory.
-        option_number = _extract_selected_option_number(student_utt)
-
-        if option_number and self._advice_given:
-            self._commit_selected_option_number(option_number)
-        elif self._advice_given:
-            shown = self._displayed_advice_options()
-            if len(shown) == 1 and _SINGLE_OPTION_ACCEPT_RX.search(student_utt or ""):
-                self._commit_selected_option_number(1)
 
         self._sync_slots_from_listener_memory()
         record_debug_snapshot(self._listener_memory, self._slots.summary())
@@ -3418,102 +3400,97 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             self,
             queries: List[str],
             *,
-            allowed_universities: Optional[Sequence[str]] = None,
+            scope_name: str,
             section_contains: Optional[str],
-            use_preferred_macroarea: bool = True,
-            strict_macroarea: bool = False,
+            region: Optional[str] = None,
+            macroarea: Optional[str] = None,
     ) -> List[str]:
-        allowed_universities = _flatten_to_strings(allowed_universities)
-
+        """Collect course-level semantic hits using only LanceDB structured filters."""
         seen_option_keys = set()
         seen_text_keys = set()
         merged: List[str] = []
-
         retrieval_pool_limit = max(self.candidate_pool_size * 2, self.top_k * 2, 32)
+        top_k = min(retrieval_pool_limit * 2, 40)
 
         for q in queries:
-            kwargs: Dict[str, Any] = {
-                "top_k": min(retrieval_pool_limit * 2, 40),
-            }
-
-            if section_contains:
-                kwargs["section_contains"] = section_contains
-            preferred_region = getattr(self._slots, "preferred_region", None) or _region_slot_to_rag_region(self._slots.region)
-            preferred_macroarea = _region_slot_to_rag_macroarea(self._slots.region)
-
-            if preferred_region:
-                kwargs["preferred_region"] = preferred_region
-                if strict_macroarea:
-                    kwargs["strict_region"] = True
-
-            if use_preferred_macroarea and preferred_macroarea:
-                kwargs["preferred_macroarea"] = preferred_macroarea
-                if strict_macroarea:
-                    kwargs["strict_macroarea"] = True
             try:
-                hits = self.retriever.search(q, **kwargs) or []
-            except TypeError:
-                # Backward compatibility with retrievers that do not implement strict_macroarea.
-                kwargs.pop("strict_region", None)
-                kwargs.pop("preferred_region", None)
-                kwargs.pop("strict_macroarea", None)
-                hits = self.retriever.search(q, **kwargs) or []
+                hits = self.retriever.search(
+                    q,
+                    top_k=top_k,
+                    region=region,
+                    macroarea=macroarea,
+                    section_contains=section_contains,
+                ) or []
+            except Exception as exc:
+                _rag_audit(
+                    "search_error", scope=scope_name, query=q, region=region,
+                    macroarea=macroarea, section_contains=section_contains, error=repr(exc),
+                )
+                continue
 
             for h in hits:
                 if not isinstance(h, dict):
+                    _rag_audit("hit", scope=scope_name, query=q, decision="reject_non_mapping")
                     continue
 
-                txt = (h.get("text") or "").strip()
+                meta = h.get("meta") if isinstance(h.get("meta"), dict) else {}
+                evidence = {
+                    "scope": scope_name,
+                    "query": q,
+                    "id": h.get("id"),
+                    "score": h.get("score"),
+                    "university": meta.get("UNIVERSITY"),
+                    "course": meta.get("COURSE"),
+                    "course_code": meta.get("COURSE_CODE"),
+                    "region": meta.get("REGION"),
+                    "macroarea": meta.get("MACROAREA"),
+                    "type": meta.get("TYPE"),
+                    "type_status": meta.get("TYPE_STATUS"),
+                    "cities": meta.get("CITIES", []),
+                    "sources": meta.get("SOURCES", []),
+                }
+                txt = str(h.get("text") or "").strip()
                 if not txt:
+                    _rag_audit("hit", decision="reject_empty_text", **evidence)
                     continue
-
                 if _looks_like_catalog_list(txt):
+                    _rag_audit("hit", decision="reject_catalog_list", **evidence)
                     continue
 
                 block = _hit_to_program_block(h)
                 if not block:
+                    _rag_audit("hit", decision="reject_unusable_block", **evidence)
                     continue
-
                 university, course, _ = _parse_program_block(block)
-
                 if not university or not course:
-                    _dprint(
-                        self.debug,
-                        f"[DEBUG][retrieval_scope] reject=no structured university/course "
-                        f"meta={(h.get('meta') or {})}"
-                    )
-                    continue
-
-                if allowed_universities and not _university_matches_allowed(university, allowed_universities):
+                    _rag_audit("hit", decision="reject_missing_course_identity", **evidence)
                     continue
 
                 option_key = _option_key(f"{university} | {course}")
                 if option_key:
                     if option_key in seen_option_keys:
+                        _rag_audit("hit", decision="reject_duplicate_course", **evidence)
                         continue
                     seen_option_keys.add(option_key)
                 else:
                     text_key = _normalize(block[:300])
                     if text_key in seen_text_keys:
+                        _rag_audit("hit", decision="reject_duplicate_text", **evidence)
                         continue
                     seen_text_keys.add(text_key)
 
                 merged.append(block)
-
+                _rag_audit("hit", decision="accepted", **evidence)
                 if len(merged) >= retrieval_pool_limit:
                     break
-
             if len(merged) >= retrieval_pool_limit:
                 break
 
-        _dprint(
-            self.debug,
-            f"[DEBUG][retrieval_scope] queries={len(queries)} "
-            f"raw_blocks={len(merged)} "
-            f"pool_limit={retrieval_pool_limit} "
-            f"capped={len(merged) >= retrieval_pool_limit}"
+        _rag_audit(
+            "scope_complete", scope=scope_name, queries=len(queries), raw_blocks=len(merged),
+            pool_limit=retrieval_pool_limit, region=region, macroarea=macroarea,
+            section_contains=section_contains,
         )
-
         return merged
 
     def _keyword_terms_for_current_profile(self, query: str = "") -> List[str]:
@@ -3694,6 +3671,11 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             u, c, _ = _parse_program_block(blk)
             _dprint(self.debug, f"[DEBUG][aligned_ctx_block_{i}] {u} | {c}")
 
+        _rag_audit(
+            "candidate_pool", query=query, scope=retrieval.scope_name,
+            candidates=candidate_pool, aligned_blocks=len(retrieval.raw_blocks),
+            context_characters=len(retrieval.short_ctx or ""),
+        )
         return retrieval, candidate_pool
 
     def _merge_raw_blocks_preserving_order(
@@ -3721,9 +3703,20 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         return merged
 
     def _retrieve_best_scope(self, query: str) -> RetrievalScopeResult:
+        """Retrieve semantic, course-deduplicated evidence; keyword fallback is disabled."""
         queries = self._build_query_candidates(query)
         preferred_zone = _region_slot_to_zone(self._slots.region)
+        preferred_region = getattr(self._slots, "preferred_region", None) or _region_slot_to_rag_region(self._slots.region)
+        preferred_macroarea = _region_slot_to_rag_macroarea(self._slots.region)
         target_options = min(max(1, self.min_options_target), max(1, self.candidate_pool_size))
+        rag_lang = os.getenv("SDIALOG_RAG_LANG", "eng").strip().lower()
+        description_section = "Descrizione generale" if rag_lang == "ita" else "General Description"
+
+        _rag_audit(
+            "request", query=query, query_candidates=queries, preferred_zone=preferred_zone,
+            region=preferred_region, macroarea=preferred_macroarea,
+            target_options=target_options, description_section=description_section,
+        )
 
         merged_blocks: List[str] = []
         best_result: Optional[RetrievalScopeResult] = None
@@ -3737,92 +3730,50 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         def absorb(scope_name: str, blocks: List[str], matched_zone: Optional[str]) -> Optional[RetrievalScopeResult]:
             nonlocal merged_blocks, best_result
             if not blocks:
+                _rag_audit("scope_result", scope=scope_name, raw_blocks=0, candidates=[])
                 return best_result
             merged_blocks = self._merge_raw_blocks_preserving_order(merged_blocks, blocks)
             result = eval_result(scope_name, merged_blocks, matched_zone)
             if result.options:
                 best_result = result
-            _dprint(self.debug, f"[DEBUG][scope_absorb] {scope_name}: blocks={len(blocks)} merged={len(merged_blocks)} options={len(result.options)} target={target_options}")
+            _rag_audit(
+                "scope_result", scope=scope_name, raw_blocks=len(blocks),
+                merged_blocks=len(merged_blocks), candidates=result.options,
+                target_options=target_options, matched_zone=matched_zone,
+            )
             return best_result
 
         def enough() -> bool:
             return bool(best_result and len(best_result.options) >= target_options)
 
-        if preferred_zone:
-            preferred_universities = ZONE_TO_UNIVERSITIES.get(preferred_zone, [])
-
-            # Preferred macro/region, vector search. Do not stop at the first
-            # single hit: accumulate complementary retrieval strategies until
-            # we have enough plausible options or exhaust the preferred scope.
+        if preferred_region or preferred_macroarea:
+            local_filter = {"region": preferred_region, "macroarea": None} if preferred_region else {"region": None, "macroarea": preferred_macroarea}
+            local_name = f"zone_{preferred_zone or 'preferred'}"
             absorb(
-                f"zone_{preferred_zone}_vector_desc",
+                local_name + "_vector_desc",
                 self._run_retrieval_scope(
-                    queries,
-                    allowed_universities=None,
-                    section_contains="Descrizione generale",
-                    use_preferred_macroarea=True,
-                    strict_macroarea=True,
+                    queries, scope_name=local_name + "_vector_desc",
+                    section_contains=description_section, **local_filter,
                 ),
                 preferred_zone,
             )
             if not enough():
                 absorb(
-                    f"zone_{preferred_zone}_vector_all",
+                    local_name + "_vector_all",
                     self._run_retrieval_scope(
-                        queries,
-                        allowed_universities=None,
-                        section_contains=None,
-                        use_preferred_macroarea=True,
-                        strict_macroarea=True,
+                        queries, scope_name=local_name + "_vector_all",
+                        section_contains=None, **local_filter,
                     ),
                     preferred_zone,
                 )
-            if not enough():
-                absorb(
-                    f"zone_{preferred_zone}_keyword",
-                    self._run_keyword_retrieval_scope(
-                        query,
-                        allowed_universities=preferred_universities,
-                        strict_macroarea=True,
-                    ),
-                    preferred_zone,
-                )
-            if not enough():
-                absorb(
-                    f"zone_{preferred_zone}_aliases_desc",
-                    self._run_retrieval_scope(
-                        queries,
-                        allowed_universities=preferred_universities,
-                        section_contains="Descrizione generale",
-                        use_preferred_macroarea=False,
-                    ),
-                    preferred_zone,
-                )
-            if not enough():
-                absorb(
-                    f"zone_{preferred_zone}_aliases_all",
-                    self._run_retrieval_scope(
-                        queries,
-                        allowed_universities=preferred_universities,
-                        section_contains=None,
-                        use_preferred_macroarea=False,
-                    ),
-                    preferred_zone,
-                )
-
             if enough():
                 return best_result  # type: ignore[return-value]
 
-        # National fallback. Keep preferred area as soft scoring metadata, but
-        # clearly mark the result as a fallback if the exact/preferred scope was
-        # insufficient.
         absorb(
             "italy_fallback_vector_desc",
             self._run_retrieval_scope(
-                queries,
-                allowed_universities=None,
-                section_contains="Descrizione generale",
-                use_preferred_macroarea=True,
+                queries, scope_name="italy_fallback_vector_desc",
+                section_contains=description_section,
             ),
             None,
         )
@@ -3830,20 +3781,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             absorb(
                 "italy_fallback_vector_all",
                 self._run_retrieval_scope(
-                    queries,
-                    allowed_universities=None,
-                    section_contains=None,
-                    use_preferred_macroarea=True,
-                ),
-                None,
-            )
-        if not enough():
-            absorb(
-                "italy_keyword_fallback",
-                self._run_keyword_retrieval_scope(
-                    query,
-                    allowed_universities=None,
-                    strict_macroarea=False,
+                    queries, scope_name="italy_fallback_vector_all", section_contains=None,
                 ),
                 None,
             )
@@ -4032,13 +3970,15 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
         if preselection:
             output_rules += (
-                "The student has not selected an option. Do not imply a selection.\n"
-                f"End exactly with: {reminder}\n"
+                "If CURRENT_QUESTION contains an unambiguous explicit selection of a displayed option, treat that option as selected, answer the follow-up question, and do not include a selection reminder.\n"
+                "Otherwise, do not imply a selection and end exactly with: "
+                f"{reminder}\n"
             )
         else:
             output_rules += "Do not add a closing or invite unrelated follow-up questions.\n"
 
-        return core + output_rules
+        selection_patch = self._selection_patch_request(question) if preselection else ""
+        return core + output_rules + selection_patch
 
 
     def _build_advice_fallback(self) -> Tuple[str, str, bool]:
@@ -4114,6 +4054,21 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             self._student_turn_count += 1
             set_listener_patch_source_turn(self._student_turn_count)
             self._update_slots_from_student(student_utt)
+
+        if self._advice_given and _LAST_RAG_STATE.model_declined_options:
+            # The model found no candidate it can responsibly rank.  The student
+            # is answering the visible clarification question, so retrieve again
+            # rather than treating this turn as pre-selection Q&A.
+            _rag_audit(
+                "model_selection_retry",
+                query=_LAST_RAG_STATE.query,
+                retained_candidate_count=len(self._last_options),
+            )
+            self._advice_given = False
+            self._flow_stage = "advice"
+            self._last_options = []
+            self._last_ctx = ""
+            self._last_raw_blocks = []
 
         if (
             student_utt
@@ -4293,12 +4248,14 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             update_last_rag_state("", phase="greet", expected_verbatim=q)
 
             patch = self._listener_patch_request(
-                targets="- inferred.field_of_interest",
+                targets="- explicit.region\n- inferred.field_of_interest",
                 rules=(
-                    FIELD_OF_INTEREST_RULES
+                    REGION_EXTRACTION_RULES
+                    + "\n"
+                    + FIELD_OF_INTEREST_RULES
                 ),
                 schema_example=(
-                     '<LISTENER_PATCH>{"inferred":{"field_of_interest":["arts_design"]}}</LISTENER_PATCH>'
+                     '<LISTENER_PATCH>{"explicit":{"region":"north"},"inferred":{"field_of_interest":["arts_design"]}}</LISTENER_PATCH>'
                 ),
                 evidence=f"STUDENT_MESSAGE:\n{student_utt}",
             )
@@ -4364,24 +4321,14 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 if self._riasec_i == 1:
                     bg_patch = self._listener_patch_request(
                     targets="- explicit.region",
-                    rules=(
-                        "Rules for explicit.region:\n"
-                        "- Use only the latest student answer.\n"
-                        "- Store a region only when the student positively identifies it "
-                        "as a preferred or required study area.\n"
-                        "- A positive preference remains valid when the student is also open "
-                        "or flexible about alternatives.\n"
-                        "- Do not store locations mentioned only as excluded, rejected, "
-                        "negated, or contextual information.\n"
-                        "- Omit the field only when the latest answer contains no positive "
-                        "geographic preference that explicit.region can represent accurately.\n"
-                        "- Store macro-areas as: north, center, south, islands. "
-                        "Otherwise use the canonical Italian region name.\n"
-                    ),
+                    rules=REGION_EXTRACTION_RULES,
                     schema_example=(
                         '<LISTENER_PATCH>{"explicit":{"region":"north"}}</LISTENER_PATCH>'
                     ),
-                    evidence=f"STUDENT_LATEST_MESSAGE:\n{student_utt}",
+                    evidence=(
+                        "Use the current message and the earlier background conversation.\n"
+                        f"STUDENT_LATEST_MESSAGE:\n{student_utt}"
+                    ),
                 )
                 return (
                     "PHASE: GATHER APTITUDES (RIASEC)\n"
@@ -4604,12 +4551,13 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             + "RANKING RULES:\n"
             + "1. Exclude candidates incompatible with intended_level.\n"
             + "2. Prefer exact preferred_region, then the stated macro-area.\n"
-            + "3. Follow field_of_interest order.\n"
+            + "3. Select a candidate only when its title and verified facts genuinely fit the declared field_of_interest. Do not let RIASEC alone override an explicit field; for example, do not select health or herbal programs for an engineering profile without direct supporting evidence.\n"
             + "4. Use RIASEC only as a weak tie-breaker when available.\n"
-            + "5. Use original candidate order as the final tie-breaker.\n"
+            + "5. Use original candidate order only as the final tie-breaker.\n"
             + "Do not invent facts or rewrite candidate identifiers.\n"
             + "OUTPUT:\n"
-            + f"Return exactly {final_top_n} option(s) when available.\n"
+            + f"Return from 1 to {final_top_n} option(s): select only those you judge suitable; do not fill the list with weaker candidates.\n"
+            + f"If no candidate is suitable enough, output exactly {_ADVICE_NO_MATCH_TOKEN} and nothing else.\n"
             + f"Use exactly this intro for one option: {_advice_intro_line(1)}\n"
             + f"Use exactly this intro for multiple options: {_advice_intro_line(2)}\n"
             + output_template

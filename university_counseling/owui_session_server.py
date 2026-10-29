@@ -961,7 +961,7 @@ def build_session_counselor(session: CounselorSession) -> Agent:
         retriever=get_shared_retriever(session.rag_lang),
         required_slots=("academic_background", "field_of_interest", "region"),
         top_k=int(os.getenv("SDIALOG_COUNSELOR_TOP_K", "6")),
-        candidate_pool_size=int(os.getenv("SDIALOG_CANDIDATE_POOL_SIZE", "4")),
+        candidate_pool_size=int(os.getenv("SDIALOG_CANDIDATE_POOL_SIZE", "6")),
         min_options_target=int(os.getenv("SDIALOG_MIN_OPTIONS_TARGET", "3")),
         final_top_n=int(os.getenv("SDIALOG_FINAL_TOP_N", "3")),
         max_ctx_chars=int(os.getenv("SDIALOG_MAX_CTX_CHARS", "2200")),
