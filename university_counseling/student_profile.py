@@ -27,6 +27,18 @@ JSON_REGION_TO_BIO_PHRASE = {
         "South": "Sud Italia",
         "Islands": "isole italiane",
     },
+    "es": {
+        "North": "el norte de Italia",
+        "Center": "el centro de Italia",
+        "South": "el sur de Italia",
+        "Islands": "las islas italianas",
+    },
+    "fr": {
+        "North": "le nord de l'Italie",
+        "Center": "le centre de l'Italie",
+        "South": "le sud de l'Italie",
+        "Islands": "les îles italiennes",
+    },
 }
 
 GENDER_ALIASES = {
@@ -104,7 +116,14 @@ _BACHELOR_EDU_RX = re.compile(
 )
 
 def _lang_name(dialog_language: str = "English") -> str:
-    return "Italian" if (dialog_language or "").strip().lower().startswith("it") else "English"
+    value = (dialog_language or "").strip().lower()
+    if value.startswith(("it", "ital")):
+        return "Italian"
+    if value.startswith(("es", "spa", "spagn")):
+        return "Spanish"
+    if value.startswith(("fr", "fre", "fra")):
+        return "French"
+    return "English"
 
 def _clean_json_region(value: Any) -> str:
     s = str(value or "").strip().title()
@@ -112,8 +131,11 @@ def _clean_json_region(value: Any) -> str:
 
 
 def _region_bio_phrase(region: str, dialog_language: str = "English") -> str:
-    lang = "it" if _lang_name(dialog_language) == "Italian" else "en"
-    return JSON_REGION_TO_BIO_PHRASE[lang].get(region, "Italia" if lang == "it" else "Italy")
+    lang = {"Italian": "it", "Spanish": "es", "French": "fr"}.get(
+        _lang_name(dialog_language), "en"
+    )
+    country = {"it": "Italia", "es": "Italia", "fr": "Italie", "en": "Italy"}[lang]
+    return JSON_REGION_TO_BIO_PHRASE[lang].get(region, country)
 
 
 def _det_choice(seed: str, options: List[str]) -> str:
@@ -134,11 +156,12 @@ def normalize_background_geography(
         return t
 
     display_region = _region_bio_phrase(region, dialog_language)
-    location = (
-        f"- Posizione: vivo in {display_region}."
-        if _lang_name(dialog_language) == "Italian"
-        else f"- Location: I am based in {display_region}."
-    )
+    location = {
+        "Italian": f"- Posizione: vivo in {display_region}.",
+        "Spanish": f"- Ubicación: vivo en {display_region}.",
+        "French": f"- Localisation : j'habite dans {display_region}.",
+        "English": f"- Location: I am based in {display_region}.",
+    }[_lang_name(dialog_language)]
     return f"{t}\n{location}" if t else location
 
 

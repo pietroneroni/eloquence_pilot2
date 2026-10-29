@@ -8,7 +8,9 @@
       "agent1_norms": [
         "Unless the current PHASE defines an exact output format, be conversational and concise (about 2-6 sentences).",
         "Unless the current PHASE forbids questions or defines an exact output format, ask at most ONE question.",
-        "When recommending universities/programs, use exact items from CANDIDATE OPTIONS/OPTIONS and use RAG_CONTEXT/GROUNDING_CONTEXT only for factual details."
+        "When recommending universities/programs, only name items that appear in RAG_CONTEXT/OPTIONS.",
+        "For yes/no questions about suitability, feasibility, readiness, or risk: start with 'Yes' or 'No', then add at most one short supporting sentence or caveat.",
+        "If choice between two options: choose one of the two options clearly."
       ],
       "student_prompt_addendum": [
         "Do NOT invent facts about yourself.",
@@ -29,6 +31,18 @@
               "Quali materie o ambiti universitari ti attirano di più?",
               "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
               "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?"
+            ],
+            "es": [
+              "¿Qué estás estudiando ahora o cuál ha sido tu formación más reciente?",
+              "¿Qué asignaturas o ámbitos universitarios te interesan más?",
+              "Cuando piensas en la universidad, ¿qué te gustaría profundizar o aprender a hacer?",
+              "¿Tienes alguna región o macroárea de Italia preferida, o eres flexible respecto a la ubicación?"
+            ],
+            "fr": [
+              "Qu'étudiez-vous actuellement, ou quelle est votre formation la plus récente ?",
+              "Quelles matières ou quels domaines universitaires vous intéressent le plus ?",
+              "Lorsque vous pensez à l'université, qu'aimeriez-vous approfondir ou apprendre à faire ?",
+              "Avez-vous une région ou une grande zone d'Italie préférée, ou êtes-vous flexible quant au lieu ?"
             ]
           },
           "riasec_questions": {
@@ -51,15 +65,39 @@
               "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
               "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
               "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?"
+            ],
+            "es": [
+              "¿Cuánto te atraen las actividades prácticas y manuales, como construir, reparar o trabajar con herramientas y objetos concretos?",
+              "¿Cuánto te gusta comprender cómo funcionan las cosas, los sistemas o los fenómenos?",
+              "¿Cuánto te gusta buscar información, analizar problemas y razonar de forma lógica?",
+              "¿Cuánto te gusta expresar ideas o emociones mediante formas creativas como la escritura, el arte, la música o el diseño?",
+              "¿Cuánto te gusta experimentar y crear algo nuevo a partir de ideas abiertas?",
+              "¿Cuánto te gusta trabajar estrechamente con otras personas en una función de ayuda, apoyo o escucha?",
+              "¿Cuánto te gusta proponer ideas, tomar la iniciativa y organizar proyectos o actividades?",
+              "¿Cuánto te gusta mantener las actividades ordenadas, planificadas y bajo control?"
+            ],
+            "fr": [
+              "Dans quelle mesure les activités pratiques et manuelles, comme construire, réparer ou travailler avec des outils et des objets concrets, vous attirent-elles ?",
+              "Dans quelle mesure aimez-vous comprendre le fonctionnement des choses, des systèmes ou des phénomènes ?",
+              "Dans quelle mesure aimez-vous rechercher des informations, analyser des problèmes et raisonner de manière logique ?",
+              "Dans quelle mesure aimez-vous exprimer des idées ou des émotions par des formes créatives comme l'écriture, l'art, la musique ou le design ?",
+              "Dans quelle mesure aimez-vous expérimenter et créer quelque chose de nouveau à partir d'idées ouvertes ?",
+              "Dans quelle mesure aimez-vous travailler étroitement avec d'autres personnes dans un rôle d'aide, de soutien ou d'écoute ?",
+              "Dans quelle mesure aimez-vous proposer des idées, prendre des initiatives et organiser des projets ou des activités ?",
+              "Dans quelle mesure aimez-vous maintenir les activités ordonnées, planifiées et sous contrôle ?"
             ]
           },
           "background_question_instruction": {
             "en": "Use the canonical background question as the meaning target, but ask it in a fresh natural wording. Keep all required information and ask only one question.",
-            "it": "Usa la domanda canonica di background come obiettivo semantico, ma formulala con parole naturali e non identiche. Mantieni tutte le informazioni richieste e fai una sola domanda."
+            "it": "Usa la domanda canonica di background come obiettivo semantico, ma formulala con parole naturali e non identiche. Mantieni tutte le informazioni richieste e fai una sola domanda.",
+            "es": "Usa la pregunta canónica de contexto como objetivo semántico, pero formúlala con palabras naturales y diferentes. Conserva toda la información necesaria y haz una sola pregunta.",
+            "fr": "Utilisez la question canonique de contexte comme cible sémantique, mais reformulez-la naturellement. Conservez toutes les informations requises et ne posez qu'une seule question."
           },
           "riasec_intro": {
             "en": "Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends.",
-            "it": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende."
+            "it": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende.",
+            "es": "Ahora te haré 8 preguntas breves sobre cuánto te atraen distintas actividades. No tienes que demostrar que se te dan bien: me interesa sobre todo cuánto disfrutarías haciéndolas. Puedes responder brevemente, indicando si te gustan mucho, bastante, poco, nada o si depende.",
+            "fr": "Je vais maintenant vous poser 8 courtes questions sur l'attrait que différentes activités exercent sur vous. Vous n'avez pas à prouver que vous êtes compétent : je m'intéresse surtout au plaisir que vous auriez à les pratiquer. Vous pouvez répondre brièvement en indiquant si cela vous plaît beaucoup, assez, peu, pas du tout, ou si cela dépend."
           },
           "advice_intro": {
             "en": {
@@ -69,6 +107,14 @@
             "it": {
               "singular": "Ti suggerisco questa opzione:",
               "plural": "Ti suggerisco queste opzioni:"
+            },
+            "es": {
+              "singular": "Te sugiero esta opción:",
+              "plural": "Te sugiero estas opciones:"
+            },
+            "fr": {
+              "singular": "Je vous suggère cette option :",
+              "plural": "Je vous suggère ces options :"
             }
           }
         },
@@ -95,6 +141,28 @@
               "Pensi che i miei studi precedenti mi abbiano preparato adeguatamente ai corsi universitari?",
               "Mi suggeriresti di iniziare subito con corsi avanzati oppure di partire da moduli introduttivi?",
               "Perché pensi che questo approccio sia adatto alla mia preparazione?"
+            ],
+            "es": [
+              "¿Crees que podría afrontar un curso técnico exigente?",
+              "¿Me recomendarías centrarme en un programa técnico o en uno orientado a las humanidades?",
+              "¿Por qué crees que esa elección sería adecuada para mí?",
+              "¿Crees que me sentiría cómodo/a dirigiendo un proyecto de grupo?",
+              "¿Me sugerirías asumir ahora un papel de liderazgo o centrarme primero en tareas de apoyo?",
+              "¿Por qué crees que una opción es más adecuada para mí?",
+              "¿Crees que mis estudios anteriores me han preparado adecuadamente para cursos de nivel universitario?",
+              "¿Me sugerirías empezar de inmediato con cursos avanzados o comenzar con módulos introductorios?",
+              "¿Por qué crees que ese enfoque se ajusta a mi preparación?"
+            ],
+            "fr": [
+              "Pensez-vous que je pourrais suivre un cursus technique exigeant ?",
+              "Me conseilleriez-vous de me concentrer sur un cursus technique ou sur un cursus orienté vers les sciences humaines ?",
+              "Pourquoi pensez-vous que ce choix me conviendrait ?",
+              "Pensez-vous que je serais à l'aise pour diriger un projet de groupe ?",
+              "Me conseilleriez-vous d'assumer dès maintenant un rôle de leadership ou de commencer par des tâches de soutien ?",
+              "Pourquoi pensez-vous qu'une option me conviendrait mieux ?",
+              "Pensez-vous que mes études antérieures m'ont suffisamment préparé aux cours de niveau universitaire ?",
+              "Me conseilleriez-vous de suivre immédiatement des cours avancés ou de commencer par des modules d'introduction ?",
+              "Pourquoi pensez-vous que cette approche correspond à ma préparation ?"
             ]
           }
         }

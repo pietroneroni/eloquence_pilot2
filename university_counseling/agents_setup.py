@@ -50,15 +50,29 @@ def _build_expert_response_details(practice: dict, dialog_language: str = "Engli
 
 
 def _lang_code(dialog_language: str = "English") -> str:
-    return "it" if (dialog_language or "").strip().lower().startswith("it") else "en"
+    value = (dialog_language or "").strip().lower()
+    if value.startswith(("it", "ital")):
+        return "it"
+    if value.startswith(("es", "spa", "spagn")):
+        return "es"
+    if value.startswith(("fr", "fre", "fra")):
+        return "fr"
+    return "en"
 
 
 def _lang_name(dialog_language: str = "English") -> str:
-    return "Italian" if _lang_code(dialog_language) == "it" else "English"
+    return {"it": "Italian", "es": "Spanish", "fr": "French", "en": "English"}[
+        _lang_code(dialog_language)
+    ]
 
 
 def _yes_no_tokens(dialog_language: str = "English") -> tuple[str, str]:
-    return ("Sì", "No") if _lang_code(dialog_language) == "it" else ("Yes", "No")
+    return {
+        "it": ("Sì", "No"),
+        "es": ("Sí", "No"),
+        "fr": ("Oui", "Non"),
+        "en": ("Yes", "No"),
+    }[_lang_code(dialog_language)]
 
 
 # =============================================================================
@@ -67,7 +81,7 @@ def _yes_no_tokens(dialog_language: str = "English") -> tuple[str, str]:
 _THINK_BLOCK_RE = re.compile(r"<think>.*?</think>\s*", flags=re.DOTALL | re.IGNORECASE)
 _STRAY_THINK_RE = re.compile(r"</?think>\s*", flags=re.IGNORECASE)
 _VISIBLE_FINAL_START_RE = re.compile(
-     r"(?im)^(yes|no|sì|si|thank you|grazie|recap:|[1-3]\.\s+|focusing on |a program oriented |take a leadership |focus on supporting |take advanced |start with |your |based on |goodbye|<LISTENER_PATCH>)"
+     r"(?im)^(yes|no|non|sì|si|sí|oui|thank you|grazie|gracias|merci|recap:|resumen:|récapitulatif:|[1-3]\.\s+|focusing on |a program oriented |take a leadership |focus on supporting |take advanced |start with |your |based on |goodbye|adiós|au revoir|<LISTENER_PATCH>)"
 )
 
 _URL_RE = re.compile(r"(?i)\b(?:https?://|www\.)\S+")

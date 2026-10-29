@@ -407,30 +407,42 @@ CHOICE_REPLY_OPTIONS = {
         4: ("assumere già ora un ruolo di leadership", "concentrarti prima su compiti di supporto"),
         7: ("iniziare subito con corsi avanzati", "partire da moduli introduttivi"),
     },
+    "es": {
+        1: ("centrarte en un programa técnico", "un programa orientado a las humanidades"),
+        4: ("asumir ahora un papel de liderazgo", "centrarte primero en tareas de apoyo"),
+        7: ("empezar de inmediato con cursos avanzados", "empezar con módulos introductorios"),
+    },
+    "fr": {
+        1: ("vous concentrer sur un cursus technique", "un cursus orienté vers les sciences humaines"),
+        4: ("assumer dès maintenant un rôle de leadership", "commencer par des tâches de soutien"),
+        7: ("suivre immédiatement des cours avancés", "commencer par des modules d'introduction"),
+    },
 }
 
-_OPT_RX = re.compile(r"\b(?:option|opzione)\s*(?:n(?:um(?:ero)?)?\.?\s*)?([1-3])\b", re.I)
+_OPT_RX = re.compile(r"\b(?:option|opzione|opción)\s*(?:n(?:um(?:ero)?)?\.?\s*)?([1-3])\b", re.I)
 _SELECTION_INTENT_RX = re.compile(
     r"\b("
     r"scelgo|prendo|preferisco|opto|"
-    r"i\s+choose|i\s+pick|i\s+select|i\s+prefer"
+    r"i\s+choose|i\s+pick|i\s+select|i\s+prefer|"
+    r"elijo|escojo|prefiero|selecciono|je\s+choisis|je\s+préfère|je\s+selectionne|je\s+sélectionne"
     r")\b",
     re.IGNORECASE,
 )
 _DIGIT_RX = re.compile(r"\b([1-3])\b")
 
 _FLOW_YES_RX = re.compile(
-    r"\b(yes|yeah|yep|sure|definitely|absolutely|sì|si|certo|assolutamente)\b",
+    r"\b(yes|yeah|yep|sure|definitely|absolutely|sì|si|sí|certo|assolutamente|oui|bien sûr|claro)\b",
     re.I,
 )
 
 _FLOW_NO_RX = re.compile(
-    r"\b(no|nope|not really|don't|do not|cannot|can't|never|assolutamente no|direi di no)\b",
+    r"\b(no|non|nope|not really|don't|do not|cannot|can't|never|assolutamente no|direi di no|para nada|pas du tout)\b",
     re.I,
 )
 _FLOW_INSUFFICIENT_RX = re.compile(
     r"\b(informazioni (?:sono )?insufficienti|insufficient information|not enough information|"
-    r"non ho informazioni sufficienti|non ci sono informazioni sufficienti)\b",
+    r"non ho informazioni sufficienti|non ci sono informazioni sufficienti|"
+    r"información insuficiente|no hay suficiente información|informations insuffisantes|pas assez d'informations)\b",
     re.I,
 )
 _NUM_WORD_TO_DIGIT = {
@@ -450,6 +462,22 @@ _NUM_WORD_TO_DIGIT = {
     "terza": 3,
     "three": 3,
     "third": 3,
+    "primera": 1,
+    "primero": 1,
+    "un": 1,
+    "première": 1,
+    "premier": 1,
+    "dos": 2,
+    "segunda": 2,
+    "segundo": 2,
+    "deux": 2,
+    "deuxième": 2,
+    "seconde": 2,
+    "tres": 3,
+    "tercera": 3,
+    "tercero": 3,
+    "trois": 3,
+    "troisième": 3,
 }
 _NUM_WORD_RX = re.compile(
     rf"\b({'|'.join(sorted(map(re.escape, _NUM_WORD_TO_DIGIT), key=len, reverse=True))})\b",
@@ -460,7 +488,8 @@ _SINGLE_OPTION_ACCEPT_RX = re.compile(
     r"\b("
     r"ok|okay|va bene|va benissimo|confermo|procedi|andiamo avanti|"
     r"scelgo questa|scelgo questo|questa|questo|la prima|il primo|prima|"
-    r"this one|choose this|i choose this|confirm"
+    r"this one|choose this|i choose this|confirm|esta|este|elijo esta|elijo este|"
+    r"celle-ci|celui-ci|je choisis celle-ci|je choisis celui-ci|confirmer"
     r")\b",
     re.IGNORECASE,
 )
@@ -484,7 +513,8 @@ _ENTITY_RX = re.compile(
 _CLOSE_RX = re.compile(
     r"\b("
     r"thanks|thank you|bye|good luck|take care|goodbye|"
-    r"grazie|grazie mille|ok grazie|ciao|arrivederci|a presto|buona giornata|buona serata"
+    r"grazie|grazie mille|ok grazie|ciao|arrivederci|a presto|buona giornata|buona serata|"
+    r"gracias|adiós|adios|hasta luego|merci|au revoir|à bientôt"
     r")\b",
     re.I,
 )
@@ -492,7 +522,9 @@ _CLARIFICATION_REQUEST_RX = re.compile(
     r"\b("
     r"non\s+ho\s+capito|non\s+capisco|non\s+mi\s+(?:e|e'|\S{1,3})\s+chiaro|"
     r"puoi\s+ripetere|puoi\s+spiegare|cosa\s+intendi|"
-    r"i\s+do\s+not\s+understand|i\s+don't\s+understand|what\s+do\s+you\s+mean|can\s+you\s+repeat"
+    r"i\s+do\s+not\s+understand|i\s+don't\s+understand|what\s+do\s+you\s+mean|can\s+you\s+repeat|"
+    r"no\s+entiendo|qué\s+quieres\s+decir|puedes\s+repetir|"
+    r"je\s+ne\s+comprends\s+pas|que\s+voulez-vous\s+dire|pouvez-vous\s+répéter"
     r")\b",
     re.I,
 )
@@ -672,7 +704,14 @@ _REQ_RXES: List[Tuple[re.Pattern, List[str]]] = [
 ]
 
 def _lang_code(dialog_language: str = "English") -> str:
-    return "it" if (dialog_language or "").strip().lower().startswith("it") else "en"
+    value = (dialog_language or "").strip().lower()
+    if value.startswith(("it", "ital")):
+        return "it"
+    if value.startswith(("es", "spa", "spagn")):
+        return "es"
+    if value.startswith(("fr", "fre", "fra")):
+        return "fr"
+    return "en"
 
 _DIALOG_LANGUAGE = "en"
 
@@ -680,8 +719,8 @@ def set_dialog_language(dialog_language: str = "English") -> None:
     global _DIALOG_LANGUAGE
     _DIALOG_LANGUAGE = _lang_code(dialog_language)
 
-def _t(en: str, it: str) -> str:
-    return it if _DIALOG_LANGUAGE == "it" else en
+def _t(en: str, it: str, es: Optional[str] = None, fr: Optional[str] = None) -> str:
+    return {"it": it, "es": es or en, "fr": fr or en}.get(_DIALOG_LANGUAGE, en)
 
 def _require_practice_list(
     practice: Dict[str, Any],
@@ -1221,13 +1260,24 @@ def _looks_like_catalog_list(text: str) -> bool:
 
 
 def _advice_final_line() -> str:
-    return "Scegli un'opzione indicando il numero." if _DIALOG_LANGUAGE == "it" else "Choose one option by number."
+    return _t(
+        "Choose one option by number.",
+        "Scegli un'opzione indicando il numero.",
+        "Elige una opción indicando el número.",
+        "Choisissez une option en indiquant son numéro.",
+    )
 
 
 def _advice_intro_line(option_count: int) -> str:
     if option_count == 1:
-        return _LAST_RAG_STATE.advice_intro_singular or _t("I suggest this option:", "Ti suggerisco questa opzione:")
-    return _LAST_RAG_STATE.advice_intro_plural or _t("I suggest these options:", "Ti suggerisco queste opzioni:")
+        return _LAST_RAG_STATE.advice_intro_singular or _t(
+            "I suggest this option:", "Ti suggerisco questa opzione:",
+            "Te sugiero esta opción:", "Je vous suggère cette option :"
+        )
+    return _LAST_RAG_STATE.advice_intro_plural or _t(
+        "I suggest these options:", "Ti suggerisco queste opzioni:",
+        "Te sugiero estas opciones:", "Je vous suggère ces options :"
+    )
 
 
 def _extract_numbered_advice_lines(answer: str) -> List[Tuple[int, str]]:
@@ -1238,12 +1288,12 @@ def _extract_numbered_advice_lines(answer: str) -> List[Tuple[int, str]]:
 
     out: List[Tuple[int, str]] = []
     pattern = re.compile(
-        r"(?:^|\s)([1-3])\.\s+(.+?)(?=(?:\s+[1-3]\.\s+)|(?:\s+Choose one option by number\.?$)|(?:\s+Scegli un'opzione indicando il numero\.?$)|$)",
+        r"(?:^|\s)([1-3])\.\s+(.+?)(?=(?:\s+[1-3]\.\s+)|(?:\s+Choose one option by number\.?$)|(?:\s+Scegli un'opzione indicando il numero\.?$)|(?:\s+Elige una opción indicando el número\.?$)|(?:\s+Choisissez une option en indiquant son numéro\.?$)|$)",
         re.IGNORECASE | re.DOTALL,
     )
     for m in pattern.finditer(text):
         item = re.sub(r"\s+", " ", m.group(2)).strip()
-        item = re.sub(r"\s*(?:Choose one option by number|Scegli un'opzione indicando il numero)\.?\s*$", "", item, flags=re.I).strip()
+        item = re.sub(r"\s*(?:Choose one option by number|Scegli un'opzione indicando il numero|Elige una opción indicando el número|Choisissez une option en indiquant son numéro)\.?\s*$", "", item, flags=re.I).strip()
         if item:
             out.append((int(m.group(1)), item))
     return out
@@ -2172,19 +2222,24 @@ def _normalize_wrapup_answer(ans: str) -> str:
 
     recap = ""
     code = "UNK"
-    goodbye = "Best of luck with your studies!" if _DIALOG_LANGUAGE != "it" else "In bocca al lupo per il tuo percorso!"
+    goodbye = _t(
+        "Best of luck with your studies!",
+        "In bocca al lupo per il tuo percorso!",
+        "¡Mucha suerte con tus estudios!",
+        "Bonne continuation dans vos études !",
+    )
 
     for line in body.splitlines():
         s = line.strip()
         if not s:
             continue
-        if s.lower().startswith(("recap:", "riepilogo:")):
+        if s.lower().startswith(("recap:", "riepilogo:", "resumen:", "récapitulatif:")):
             recap = s.split(":", 1)[1].strip()
         elif s.lower().startswith("riasec:"):
             maybe = s.split(":", 1)[1].strip().split()[0].strip(" .;,")
             if maybe:
                 code = maybe
-        elif s.lower().startswith(("goodbye:", "saluto:")):
+        elif s.lower().startswith(("goodbye:", "saluto:", "despedida:", "au revoir :", "au revoir:")):
             maybe = s.split(":", 1)[1].strip()
             if maybe:
                 goodbye = maybe
@@ -2192,59 +2247,44 @@ def _normalize_wrapup_answer(ans: str) -> str:
     if not recap:
         selected = get_selected_option_event()
         if selected:
-            recap = (
-                "You chose a grounded option based on your background, preferences, constraints, and RIASEC profile."
-                if _DIALOG_LANGUAGE != "it"
-                else "Hai scelto un'opzione grounded in base a background, preferenze, vincoli e profilo RIASEC."
+            recap = _t(
+                "You chose a grounded option based on your background, preferences, constraints, and RIASEC profile.",
+                "Hai scelto un'opzione grounded in base a background, preferenze, vincoli e profilo RIASEC.",
+                "Has elegido una opción fundamentada en tu formación, preferencias, restricciones y perfil RIASEC.",
+                "Vous avez choisi une option fondée sur votre parcours, vos préférences, vos contraintes et votre profil RIASEC.",
             )
         else:
-            recap = (
-                "No option was confirmed; the discussion clarified your background, preferences, and constraints."
-                if _DIALOG_LANGUAGE != "it"
-                else "Non è stata confermata alcuna opzione; il confronto ha chiarito background, preferenze e vincoli."
+            recap = _t(
+                "No option was confirmed; the discussion clarified your background, preferences, and constraints.",
+                "Non è stata confermata alcuna opzione; il confronto ha chiarito background, preferenze e vincoli.",
+                "No se confirmó ninguna opción; la conversación aclaró tu formación, preferencias y restricciones.",
+                "Aucune option n'a été confirmée ; l'échange a clarifié votre parcours, vos préférences et vos contraintes.",
             )
 
-    if _DIALOG_LANGUAGE == "it":
-        steps = [
-            "1. rivedere il piano ufficiale del corso e i requisiti di accesso",
-            "2. verificare costi, sede, pendolarismo o vincoli abitativi",
-            "3. preparare documenti, portfolio o revisione dei prerequisiti",
-        ]
-    else:
-        steps = [
-            "1. review the official course plan and admission requirements",
-            "2. verify costs, location, commuting, or housing constraints",
-            "3. prepare documents, portfolio, or prerequisite review",
-        ]
-
-    if _DIALOG_LANGUAGE == "it":
-        return "\n".join([
-            f"Riepilogo: {recap}",
-            f"RIASEC: {code}",
-            "Prossimi passi:",
-            *steps,
-            f"Saluto: {goodbye}",
-        ])
+    steps = {
+        "it": ["1. rivedere il piano ufficiale del corso e i requisiti di accesso", "2. verificare costi, sede, pendolarismo o vincoli abitativi", "3. preparare documenti, portfolio o revisione dei prerequisiti"],
+        "es": ["1. revisar el plan oficial del curso y los requisitos de acceso", "2. comprobar costes, ubicación, desplazamientos o alojamiento", "3. preparar documentos, portafolio o revisar los prerrequisitos"],
+        "fr": ["1. consulter le programme officiel et les conditions d'admission", "2. vérifier les coûts, le lieu, les déplacements ou le logement", "3. préparer les documents, le portfolio ou revoir les prérequis"],
+        "en": ["1. review the official course plan and admission requirements", "2. verify costs, location, commuting, or housing constraints", "3. prepare documents, portfolio, or prerequisite review"],
+    }[_DIALOG_LANGUAGE]
+    labels = {
+        "it": ("Riepilogo", "Prossimi passi", "Saluto"),
+        "es": ("Resumen", "Próximos pasos", "Despedida"),
+        "fr": ("Récapitulatif", "Prochaines étapes", "Au revoir"),
+        "en": ("Recap", "Next steps", "Goodbye"),
+    }[_DIALOG_LANGUAGE]
     return "\n".join([
-        f"Recap: {recap}",
-        f"RIASEC: {code}",
-        "Next steps:",
-        *steps,
-        f"Goodbye: {goodbye}",
+        f"{labels[0]}: {recap}", f"RIASEC: {code}", f"{labels[1]}:",
+        *steps, f"{labels[2]}: {goodbye}",
     ])
 
 
 def _done_no_options_message() -> str:
-    if _DIALOG_LANGUAGE == "it":
-        return (
-            "Non ho trovato opzioni verificabili sufficientemente adatte nell'insieme universitario corrente. "
-            "Prossimi passi suggeriti: allarga leggermente il campo target; mantieni il campo esatto e ripeti la ricerca quando saranno disponibili più università; rivedi vincoli e priorità. "
-            "Arrivederci."
-        )
-    return (
-        "I could not find sufficiently suitable options supported by the current university information. "
-        "Suggested next steps: broaden the target field slightly; keep the field exact and search again when more universities are available; review constraints and priorities. "
-        "Goodbye."
+    return _t(
+        "I could not find sufficiently suitable options supported by the current university information. Suggested next steps: broaden the target field slightly; keep the field exact and search again when more universities are available; review constraints and priorities. Goodbye.",
+        "Non ho trovato opzioni verificabili sufficientemente adatte nell'insieme universitario corrente. Prossimi passi suggeriti: allarga leggermente il campo target; mantieni il campo esatto e ripeti la ricerca quando saranno disponibili più università; rivedi vincoli e priorità. Arrivederci.",
+        "No he encontrado opciones verificables suficientemente adecuadas en el conjunto actual de universidades. Próximos pasos sugeridos: amplía ligeramente el ámbito; mantén el ámbito exacto y repite la búsqueda cuando haya más universidades disponibles; revisa las restricciones y prioridades. Adiós.",
+        "Je n'ai pas trouvé d'options vérifiables suffisamment adaptées dans l'ensemble actuel d'universités. Prochaines étapes suggérées : élargissez légèrement le domaine ; conservez le domaine exact et relancez la recherche lorsque davantage d'universités seront disponibles ; réexaminez les contraintes et priorités. Au revoir.",
     )
 
 
@@ -2252,7 +2292,9 @@ _QA_CLOSING_RX = re.compile(
     r"\b("
     r"goodbye|bye|good luck|best of luck|take care|have a great day|have a good day|"
     r"see you soon|if you have any questions|further assistance|don't hesitate|do not hesitate|"
-    r"arrivederci|ciao|in bocca al lupo|buona fortuna|a presto"
+    r"arrivederci|ciao|in bocca al lupo|buona fortuna|a presto|"
+    r"adiós|adios|hasta luego|buena suerte|si tienes alguna pregunta|"
+    r"au revoir|à bientôt|bonne chance|si vous avez des questions"
     r")\b",
     re.IGNORECASE,
 )
@@ -2423,6 +2465,8 @@ def enforce_grounding_or_fallback(answer: str) -> str:
         note = _t(
             "That specific detail is not available in the verified course information.",
             "Quel dettaglio specifico non è disponibile nelle informazioni verificate sul corso.",
+            "Ese detalle concreto no está disponible en la información verificada del curso.",
+            "Ce détail précis n'est pas disponible dans les informations vérifiées sur le cursus.",
         )
         if _normalize(note) not in _normalize(ans):
             ans = f"{ans} {note}".strip()
@@ -2438,7 +2482,10 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
     ctx = _LAST_RAG_STATE.ctx or ""
     advice_fallback = bool(getattr(_LAST_RAG_STATE, "advice_fallback", False))
 
-    yes_tok, no_tok = ("Sì", "No") if _DIALOG_LANGUAGE == "it" else ("Yes", "No")
+    yes_tok, no_tok = {
+        "it": ("Sì", "No"), "es": ("Sí", "No"),
+        "fr": ("Oui", "Non"), "en": ("Yes", "No"),
+    }[_DIALOG_LANGUAGE]
     patch_block = _extract_listener_patch_block(ans)
 
     if phase == "qa_selected" and expected:
@@ -2458,7 +2505,7 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
         body_clean = re.sub(r"\s+", " ", body).strip()
 
         # Reference resolution takes precedence over the binary format.
-        if "?" in body_clean and not re.match(r"(?i)^\s*(yes|sì|si|no)\b", body_clean):
+        if "?" in body_clean and not re.match(r"(?i)^\s*(yes|sì|si|sí|oui|no|non)\b", body_clean):
             question = next(
                 (sent for sent in _split_sentences_conservatively(body_clean) if "?" in sent),
                 body_clean,
@@ -2470,18 +2517,19 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
 
 
         if _FLOW_INSUFFICIENT_RX.search(body_clean):
-            out = (
-                "No, al momento non emergono elementi concreti per confermarlo."
-                if _DIALOG_LANGUAGE == "it"
-                else "No, the available evidence does not currently support it."
+            out = _t(
+                "No, the available evidence does not currently support it.",
+                "No, al momento non emergono elementi concreti per confermarlo.",
+                "No, la información disponible no permite confirmarlo por ahora.",
+                "Non, les éléments disponibles ne permettent pas de le confirmer pour le moment.",
             )
             return (out + ("\n" + patch_block if patch_block else "")).strip()
 
-        if re.match(r"(?i)^\s*(yes|sì|si)\b", body_clean):
+        if re.match(r"(?i)^\s*(yes|sì|si|sí|oui)\b", body_clean):
 
             out_prefix = yes_tok
 
-        elif re.match(r"(?i)^\s*no\b", body_clean):
+        elif re.match(r"(?i)^\s*(no|non)\b", body_clean):
 
             out_prefix = no_tok
 
@@ -2509,9 +2557,9 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
 
 
 
-        if re.match(r"(?i)^\s*(yes|sì|si|no)\b", body_clean):
+        if re.match(r"(?i)^\s*(yes|sì|si|sí|oui|no|non)\b", body_clean):
 
-            out = re.sub(r"(?i)^\s*(yes|sì|si|no)\b", out_prefix, body_clean, count=1).strip()
+            out = re.sub(r"(?i)^\s*(yes|sì|si|sí|oui|no|non)\b", out_prefix, body_clean, count=1).strip()
 
         else:
 
@@ -2543,6 +2591,8 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
             body = _t(
                 "I cannot support a reliable answer from the available information.",
                 "Non posso formulare una risposta affidabile con le informazioni disponibili.",
+                "No puedo dar una respuesta fiable con la información disponible.",
+                "Je ne peux pas fournir une réponse fiable avec les informations disponibles.",
             )
         return (body + ("\n" + patch_block if patch_block else "")).strip()
 
@@ -2572,7 +2622,9 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
         out = (
             _t(
                 "Hello! I help students choose university programs based on their background, interests, aptitudes, and constraints.",
-                "Ciao! Aiuto gli studenti a scegliere un percorso universitario in base al loro background, ai loro interessi, alle attitudini e ai vincoli."
+                "Ciao! Aiuto gli studenti a scegliere un percorso universitario in base al loro background, ai loro interessi, alle attitudini e ai vincoli.",
+                "¡Hola! Ayudo a los estudiantes a elegir estudios universitarios según su formación, intereses, aptitudes y restricciones.",
+                "Bonjour ! J'aide les étudiants à choisir un cursus universitaire en fonction de leur parcours, de leurs intérêts, de leurs aptitudes et de leurs contraintes."
             )
             + "\n"
             + expected
@@ -2586,7 +2638,7 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
             body = _LISTENER_PATCH_BLOCK_RX.sub("", ans).strip()
             if _background_reply_looks_valid(body, expected):
                 return (body + ("\n" + patch_block if patch_block else "")).strip()
-        out = f"{_t('Thanks, that helps.', 'Grazie, è molto utile.')}\n{expected}".strip()
+        out = f"{_t('Thanks, that helps.', 'Grazie, è molto utile.', 'Gracias, eso ayuda.', 'Merci, c’est utile.')}\n{expected}".strip()
         if patch_block:
             out = f"{out}\n{patch_block}"
         return out
@@ -2594,7 +2646,9 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
     if phase == "advice" and advice_fallback:
         out = expected or _t(
             "Could you clarify one point before I recommend programs: what matters most to you right now—degree level or exact field?",
-            "Potresti chiarire un punto prima che ti consigli dei corsi: che cosa conta di più per te in questo momento tra livello del titolo o ambito preciso?"
+            "Potresti chiarire un punto prima che ti consigli dei corsi: che cosa conta di più per te in questo momento tra livello del titolo o ambito preciso?",
+            "Antes de recomendarte programas, ¿podrías aclarar qué te importa más ahora: el nivel de la titulación o el ámbito exacto?",
+            "Avant de vous recommander des cursus, pourriez-vous préciser ce qui compte le plus pour vous actuellement : le niveau du diplôme ou le domaine exact ?"
         )
         if patch_block:
             out = f"{out}\n{patch_block}"
@@ -2628,7 +2682,9 @@ def enforce_flow_format_or_fallback(answer: str) -> str:
     if phase == "clarify_scope":
         out = expected or _t(
             "I could not find grounded options yet. Could you clarify one point so I can narrow the search better?",
-            "Non ho ancora trovato opzioni grounded. Potresti chiarire un punto così posso restringere meglio la ricerca?"
+            "Non ho ancora trovato opzioni grounded. Potresti chiarire un punto così posso restringere meglio la ricerca?",
+            "Todavía no he encontrado opciones fundamentadas. ¿Podrías aclarar un punto para que pueda acotar mejor la búsqueda?",
+            "Je n'ai pas encore trouvé d'options suffisamment étayées. Pourriez-vous préciser un point afin que je puisse mieux cibler la recherche ?"
         )
         if patch_block:
             out = f"{out}\n{patch_block}"
@@ -2835,6 +2891,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             self._AUX_YN_RX = re.compile(
                 r"^\s*(is|are|am|do|does|did|can|could|would|should|will|have|has|pensi|credi|ritieni|consigli|suggerisci|potrei|mi troverei)\b",
                 re.I)
+        elif self.lang == "es":
+            self._CHOICE_CONNECTOR = re.compile(r"\s+(?:o|u|vs\.?|versus)\s+", re.I)
+            self._WH_RX = re.compile(r"\b(por qué|cómo|qué|cuál|dónde|cuándo)\b", re.I)
+            self._REQ_RX = re.compile(r"\b(puedes|podrías|por favor|aclarar|explicar|decirme)\b", re.I)
+            self._AUX_YN_RX = re.compile(r"^\s*(es|son|puedo|podría|debería|crees|piensas|recomendarías|sugerirías)\b", re.I)
+        elif self.lang == "fr":
+            self._CHOICE_CONNECTOR = re.compile(r"\s+(?:ou|vs\.?|versus)\s+", re.I)
+            self._WH_RX = re.compile(r"\b(pourquoi|comment|quel|quelle|quels|quelles|où|quand)\b", re.I)
+            self._REQ_RX = re.compile(r"\b(pouvez-vous|pourriez-vous|veuillez|préciser|expliquer|dire)\b", re.I)
+            self._AUX_YN_RX = re.compile(r"^\s*(est-ce|pensez-vous|croyez-vous|me conseilleriez-vous|pourrais-je|devrais-je)\b", re.I)
         else:
             self._CHOICE_CONNECTOR = re.compile(r"\s+(?:or|vs\.?|versus)\s+", re.I)
             self._WH_RX = re.compile(r"\b(why|how|what|which|where|when)\b", re.I)
@@ -2960,10 +3026,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
 
 
     def _selection_ack_message(self, selected_option: Optional[str]) -> str:
-        selected = (selected_option or _t("the selected option", "l'opzione selezionata")).strip()
-        if _DIALOG_LANGUAGE == "it":
-            return f"Perfetto, ho registrato la tua scelta: {selected}."
-        return f"Perfect, I have recorded your choice: {selected}."
+        selected = (selected_option or _t(
+            "the selected option", "l'opzione selezionata",
+            "la opción seleccionada", "l'option sélectionnée"
+        )).strip()
+        return _t(
+            f"Perfect, I have recorded your choice: {selected}.",
+            f"Perfetto, ho registrato la tua scelta: {selected}.",
+            f"Perfecto, he registrado tu elección: {selected}.",
+            f"Parfait, j'ai enregistré votre choix : {selected}.",
+        )
 
     def _displayed_advice_options(self) -> List[str]:
         shown = [str(x).strip() for x in (_LAST_RAG_STATE.advice_options or []) if str(x).strip()]
@@ -3097,6 +3169,24 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "Q7 = proporre idee, prendere iniziativa, organizzare progetti o attività\n"
                 "Q8 = ordine, pianificazione, struttura, controllo, organizzazione amministrativa\n"
             )
+        elif self.lang == "es":
+            calibration = (
+                "Calibration:\n"
+                "- 'me encanta', 'me gusta mucho' -> normalmente 2; 'me gusta', 'bastante' -> 1.\n"
+                "- 'depende', 'a veces', 'quizá', 'no lo sé' -> 0.\n"
+                "- 'no mucho', 'preferiría no hacerlo' -> -1; 'no me gusta', 'nada', 'lo odio' -> -2.\n"
+                "- Evalúa el gusto por la actividad, no la capacidad; ante ambivalencia, elige el valor más cercano a 0.\n"
+            )
+            question_focus = "Question focus: use the exact meaning of each Spanish question Q1-Q8 in the evidence below.\n"
+        elif self.lang == "fr":
+            calibration = (
+                "Calibration:\n"
+                "- 'j'adore', 'j'aime beaucoup' -> généralement 2 ; 'j'aime', 'assez' -> 1.\n"
+                "- 'cela dépend', 'parfois', 'peut-être', 'je ne sais pas' -> 0.\n"
+                "- 'pas beaucoup', 'je préférerais éviter' -> -1 ; 'je n'aime pas', 'pas du tout', 'je déteste' -> -2.\n"
+                "- Évaluez l'attrait pour l'activité, pas la capacité ; en cas d'ambivalence, choisissez la valeur la plus proche de 0.\n"
+            )
+            question_focus = "Question focus: use the exact meaning of each French question Q1-Q8 in the evidence below.\n"
         else:
             calibration = (
                 "Calibration:\n"
@@ -3893,10 +3983,12 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
         preselection: bool = False,
     ) -> str:
         """Build a single concise prompt for pre- and post-selection Q&A."""
-        language = "Italian" if self.lang == "it" else "English"
+        language = {"it": "Italian", "es": "Spanish", "fr": "French", "en": "English"}[self.lang]
         reminder = _t(
             "When you are ready, choose an option by number.",
             "Quando sei pronto, scegli un'opzione indicando il numero.",
+            "Cuando estés listo, elige una opción indicando el número.",
+            "Lorsque vous êtes prêt, choisissez une option en indiquant son numéro.",
         )
 
         core = (
@@ -3924,7 +4016,7 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 f"Return exactly one of these strings and nothing else: {choices[0]!r} OR {choices[1]!r}.\n"
             )
         elif mode == "yesno":
-            yes_no = "Sì or No" if self.lang == "it" else "Yes or No"
+            yes_no = {"it": "Sì or No", "es": "Sí or No", "fr": "Oui or Non", "en": "Yes or No"}[self.lang]
             output_rules = (
                 "OUTPUT:\n"
                 f"Start exactly with {yes_no}. Add at most one short supporting sentence.\n"
@@ -3961,6 +4053,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                 "nell'insieme attuale di università. Chiarisci solo un punto: preferisci "
                 "allargare leggermente verso aree affini, oppure mantenere il campo esatto "
                 "e dare priorità ai vincoli attuali?"
+            ),
+            (
+                "No he encontrado opciones fundamentadas que encajen suficientemente con tu perfil "
+                "en el conjunto actual de universidades. Aclara solo un punto: ¿prefieres ampliar "
+                "ligeramente hacia ámbitos afines o mantener el ámbito exacto y priorizar tus restricciones actuales?"
+            ),
+            (
+                "Je n'ai pas trouvé, dans l'ensemble actuel d'universités, d'options suffisamment étayées "
+                "et adaptées à votre profil. Précisez un seul point : préférez-vous élargir légèrement "
+                "la recherche à des domaines proches ou conserver le domaine exact et privilégier vos contraintes actuelles ?"
             ),
         )
         return message, "", False
@@ -4298,6 +4400,8 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
             acknowledgement = _t(
                 "Thank you, I now have the information needed to compare the options.",
                 "Grazie, ora ho le informazioni necessarie per confrontare le opzioni.",
+                "Gracias, ahora tengo la información necesaria para comparar las opciones.",
+                "Merci, j'ai maintenant les informations nécessaires pour comparer les options.",
             )
 
             update_last_rag_state(
@@ -4337,12 +4441,16 @@ class UniversityCounselorFlowOrchestrator(BaseOrchestrator):
                     return _t(
                         "I cannot safely recommend a degree level without verified formal education. Goodbye.",
                         "Non posso consigliare in modo affidabile un livello di laurea senza un percorso formale verificato. Arrivederci.",
+                        "No puedo recomendar de forma fiable un nivel de titulación sin estudios formales verificados. Adiós.",
+                        "Je ne peux pas recommander de manière fiable un niveau de diplôme sans parcours scolaire vérifié. Au revoir.",
                     )
             else:
                 self._academic_bg_clarification_count += 1
                 message = _t(
                     "Before I recommend programs, could you clarify your current or most recent formal education?",
-                    "Prima di consigliarti dei corsi, puoi chiarire qual è il tuo percorso di istruzione formale attuale o più recente?"
+                    "Prima di consigliarti dei corsi, puoi chiarire qual è il tuo percorso di istruzione formale attuale o più recente?",
+                    "Antes de recomendarte programas, ¿puedes aclarar cuál es tu formación reglada actual o más reciente?",
+                    "Avant de vous recommander des cursus, pouvez-vous préciser votre formation scolaire actuelle ou la plus récente ?"
                 )
 
                 update_last_rag_state(

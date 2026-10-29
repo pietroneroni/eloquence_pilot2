@@ -11,6 +11,8 @@ from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from typing import Any
 
+import sdialog
+
 from sdialog.agents import Agent
 from sdialog.personas import Persona
 
@@ -151,8 +153,21 @@ def _normalize_gender_condition(value: str) -> str:
     return aliases[raw]
 
 
+def _lang_code(dialog_language: str = "English") -> str:
+    value = (dialog_language or "").strip().lower()
+    if value.startswith(("it", "ital")):
+        return "it"
+    if value.startswith(("es", "spa", "spagn")):
+        return "es"
+    if value.startswith(("fr", "fre", "fra")):
+        return "fr"
+    return "en"
+
+
 def _lang_name(dialog_language: str = "English") -> str:
-    return "Italian" if (dialog_language or "").strip().lower().startswith("it") else "English"
+    return {"it": "Italian", "es": "Spanish", "fr": "French", "en": "English"}[
+        _lang_code(dialog_language)
+    ]
 
 
 def _rag_lang(dialog_language: str = "English") -> str:
@@ -247,16 +262,21 @@ def _dialog_protocol_status(
     if missing:
         return False, f"missing_fixed_followup_questions={len(missing)}"
 
-    if dialog_language.lower().startswith("it"):
-        thank_ok = "grazie" in text.lower() and ("arrivederci" in text.lower() or "ciao" in text.lower())
-    else:
-        thank_ok = "thank you" in text.lower() and "goodbye" in text.lower()
+    closing_tokens = {
+        "it": (("grazie",), ("arrivederci", "ciao")),
+        "es": (("gracias",), ("adiós", "adios")),
+        "fr": (("merci",), ("au revoir",)),
+        "en": (("thank you",), ("goodbye",)),
+    }
+    thanks, goodbyes = closing_tokens[_lang_code(dialog_language)]
+    low = text.lower()
+    thank_ok = any(token in low for token in thanks) and any(token in low for token in goodbyes)
     if not thank_ok:
         return False, "missing_student_thank_you_goodbye"
 
     recap_rx = re.compile(
     r"(?im)^\[(?:EXPERT|Counselor[^\n]*)\]\s*"
-    r"(?:Recap|Riepilogo)\s*:")
+    r"(?:Recap|Riepilogo|Resumen|Récapitulatif)\s*:")
     if not recap_rx.search(text):
         return False, "missing_counselor_wrapup_recap"
 
@@ -484,6 +504,7 @@ def _run_one_dialog(
 
 
 def main() -> None:
+    sdialog.config.llm_params(repeat_last_n=64, num_ctx=32768)
     project_root = Path(__file__).resolve().parents[1]
     dialog_language = os.getenv("SDIALOG_DIALOG_LANGUAGE", "Italian")
     social_practice_name = os.getenv("SDIALOG_SOCIAL_PRACTICE_NAME", "university_counseling")

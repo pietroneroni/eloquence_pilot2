@@ -13,11 +13,20 @@ DEFAULT_PRACTICES_FILE = (
 )
 
 def _lang_name(dialog_language: str = "English") -> str:
-    return "Italian" if (dialog_language or "").strip().lower().startswith("it") else "English"
+    return {"it": "Italian", "es": "Spanish", "fr": "French", "en": "English"}[
+        _lang_code(dialog_language)
+    ]
 
 
 def _lang_code(dialog_language: str = "English") -> str:
-    return "it" if (dialog_language or "").strip().lower().startswith("it") else "en"
+    value = (dialog_language or "").strip().lower()
+    if value.startswith(("it", "ital")):
+        return "it"
+    if value.startswith(("es", "spa", "spagn")):
+        return "es"
+    if value.startswith(("fr", "fre", "fra")):
+        return "fr"
+    return "en"
 
 
 def _load_social_practices(path: Optional[str] = None) -> Dict[str, Any]:

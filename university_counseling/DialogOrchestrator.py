@@ -13,7 +13,14 @@ from .social_practice import (
 from .AgentWithRag import get_last_rag_phase
 
 def _lang_code(dialog_language: str = "English") -> str:
-    return "it" if (dialog_language or "").strip().lower().startswith("it") else "en"
+    value = (dialog_language or "").strip().lower()
+    if value.startswith(("it", "ital")):
+        return "it"
+    if value.startswith(("es", "spa", "spagn")):
+        return "es"
+    if value.startswith(("fr", "fre", "fra")):
+        return "fr"
+    return "en"
 
 _DIALOG_LANGUAGE = "en"
 
@@ -21,8 +28,8 @@ def set_dialog_language(dialog_language: str = "English") -> None:
     global _DIALOG_LANGUAGE
     _DIALOG_LANGUAGE = _lang_code(dialog_language)
 
-def _t(en: str, it: str) -> str:
-    return it if _DIALOG_LANGUAGE == "it" else en
+def _t(en: str, it: str, es: Optional[str] = None, fr: Optional[str] = None) -> str:
+    return {"it": it, "es": es or en, "fr": fr or en}.get(_DIALOG_LANGUAGE, en)
 
 def _safe_turn_text(turn) -> str:
     if turn is None:
@@ -42,18 +49,21 @@ def _safe_turn_text(turn) -> str:
 
 
 _OPT_RX = re.compile(
-    r"\b(?:option|opzione)\s*([1-3])\b|\b([1-3])\b",
+    r"\b(?:option|opzione|opción)\s*([1-3])\b|\b([1-3])\b",
     re.I,
 )
 _OPT_WORD_RX = re.compile(
-    r"\b(?:la|il|the)?\s*(prima|primo|seconda|secondo|terza|terzo|first|second|third)"
-    r"\s*(?:opzione|option)?\b",
+    r"\b(?:la|il|the|le|l')?\s*(prima|primo|seconda|secondo|terza|terzo|first|second|third|primera|primero|segunda|segundo|tercera|tercero|première|premier|deuxième|seconde|troisième)"
+    r"\s*(?:opzione|option|opción)?\b",
     re.I,
 )
 _OPT_WORD_TO_DIGIT = {
     "prima": "1", "primo": "1", "first": "1",
     "seconda": "2", "secondo": "2", "second": "2",
     "terza": "3", "terzo": "3", "third": "3",
+    "primera": "1", "primero": "1", "première": "1", "premier": "1",
+    "segunda": "2", "segundo": "2", "deuxième": "2", "seconde": "2",
+    "tercera": "3", "tercero": "3", "troisième": "3",
 }
 
 _NAME_PLACEHOLDER_RX = re.compile(
@@ -82,7 +92,7 @@ def clear_student_script_state() -> None:
 def _strip_questions_from_text(text: str, max_sentences: int = 2) -> str:
     t = re.sub(r"\s+", " ", (text or "").strip())
     if not t:
-        return "I understand."
+        return _t("I understand.", "Ho capito.", "Entiendo.", "Je comprends.")
 
     raw_parts = re.split(r"(?<=[.!?])\s+", t)
     kept: List[str] = []
@@ -102,7 +112,7 @@ def _strip_questions_from_text(text: str, max_sentences: int = 2) -> str:
         cleaned = t.replace("?", "").strip()
         cleaned = re.sub(r"\s+", " ", cleaned)
         if not cleaned:
-            return "I understand."
+            return _t("I understand.", "Ho capito.", "Entiendo.", "Je comprends.")
         if cleaned[-1] not in ".!":
             cleaned += "."
         return cleaned
@@ -127,14 +137,16 @@ def enforce_student_script_or_fallback(text: str) -> str:
         return re.sub(r"\s{2,}", " ", t).strip()
 
     if mode == "goodbye_only":
-        return _t("Goodbye", "Arrivederci")
+        return _t("Goodbye", "Arrivederci", "Adiós", "Au revoir")
     if mode == "ack_only":
-        return _t("Okay.", "Va bene.")
+        return _t("Okay.", "Va bene.", "De acuerdo.", "D'accord.")
 
     if mode == "thank_goodbye":
         return  _t(
             "Thank you for your help, goodbye.",
-            "Grazie per il tuo aiuto, arrivederci."
+            "Grazie per il tuo aiuto, arrivederci.",
+            "Gracias por tu ayuda, adiós.",
+            "Merci pour votre aide, au revoir.",
         )
 
     if mode == "answer_only_no_question":
@@ -160,7 +172,9 @@ def enforce_student_script_or_fallback(text: str) -> str:
             )
         choice_line = _t(
             f"I will choose option {n}.",
-            f"Scelgo l'opzione {n}."
+            f"Scelgo l'opzione {n}.",
+            f"Elijo la opción {n}.",
+            f"Je choisis l'option {n}.",
         )
         return f"{choice_line}\n{expected}".strip()
 
@@ -255,6 +269,20 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
 
             self._GOODBYE_RX = re.compile(r"\b(arrivederci|ciao)\b", re.IGNORECASE)
 
+        elif self.lang == "es":
+            self._OPTIONS_RX = re.compile(
+                r"(?:\bqué opción quieres elegir\b|^\s*(?:Opción\s*1\b|1[\.\)]\s+)|\bElige\s+1\b)",
+                re.IGNORECASE | re.MULTILINE,
+            )
+            self._ADVICE_FALLBACK_RX = re.compile(r"aclarar un punto|qué restricción", re.IGNORECASE)
+            self._GOODBYE_RX = re.compile(r"\b(adiós|adios|hasta luego)\b", re.IGNORECASE)
+        elif self.lang == "fr":
+            self._OPTIONS_RX = re.compile(
+                r"(?:\bquelle option voulez-vous choisir\b|^\s*(?:Option\s*1\b|1[\.\)]\s+)|\bChoisissez\s+1\b)",
+                re.IGNORECASE | re.MULTILINE,
+            )
+            self._ADVICE_FALLBACK_RX = re.compile(r"préciser un point|quelle contrainte", re.IGNORECASE)
+            self._GOODBYE_RX = re.compile(r"\b(au revoir|à bientôt)\b", re.IGNORECASE)
         else:
             self._OPTIONS_RX = re.compile(
                 r"(?:\bwhich option do you want to pursue\b|^\s*(?:Option\s*1\b|1[\.\)]\s+)|\bChoose\s+1\b)",
@@ -297,7 +325,9 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
         return any(q.lower() in low for q in questions)
 
     def instruct(self, dialog, utterance):
-        lang_phrase = "in Italian" if self.lang == "it" else "in English"
+        lang_phrase = {
+            "it": "in Italian", "es": "in Spanish", "fr": "in French", "en": "in English"
+        }[self.lang]
         turns = getattr(dialog, "turns", None) or []
         last_counselor = self._get_last_counselor_text(dialog, utterance)
 
@@ -356,7 +386,10 @@ class StudentFixedFollowupOrchestrator(BaseOrchestrator):
             self._options_seen = True
             self._q_idx = 0
             set_student_script_state("choose_and_q1", self.QUESTIONS[0])
-            choice_template = _t("I will choose option N.", "Scelgo l'opzione N.")
+            choice_template = _t(
+                "I will choose option N.", "Scelgo l'opzione N.",
+                "Elijo la opción N.", "Je choisis l'option N."
+            )
             return (
                 "STUDENT SCRIPT (HIGH PRIORITY):\n"
                 "- The counselor has presented grounded numbered options.\n"
