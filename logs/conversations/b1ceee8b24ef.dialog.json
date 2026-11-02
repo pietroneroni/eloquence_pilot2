@@ -1,0 +1,511 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-24T11:14:05",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "ITT in elettronica",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Enterprising",
+        "Realistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ITT in elettronica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ITT in elettronica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology",
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ITT in elettronica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ITT in elettronica",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            2,
+            -1,
+            1,
+            -1,
+            2,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33460] BIOTECNOLOGIE FARMACEUTICHE",
+      "Sapienza Università di Roma | [33456] BIOTECNOLOGIE",
+      "Sapienza Università di Roma | [33599] BIOTECNOLOGIE E GENOMICA PER L'INDUSTRIA E L'AMBIENTE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33460] BIOTECNOLOGIE FARMACEUTICHE\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie Farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33460\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33460] BIOTECNOLOGIE FARMACEUTICHE",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33460] BIOTECNOLOGIE FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33460",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/study-plan"
+        ],
+        "text": "Biotecnologie Farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33460\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33463] COMUNICAZIONE SCIENTIFICA BIOMEDICA LM-59\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Comunicazione Scientifica Biomedica LM-59\nAnno accademico: 2026-2027\nCodice corso: 33463\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33463] COMUNICAZIONE SCIENTIFICA BIOMEDICA LM-59",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [33463] COMUNICAZIONE SCIENTIFICA BIOMEDICA LM-59",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33463",
+          "https://corsidilaurea.uniroma1.it/it/course/33463/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33463/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33463/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33463/study-plan"
+        ],
+        "text": "Comunicazione Scientifica Biomedica LM-59\nAnno accademico: 2026-2027\nCodice corso: 33463\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of L'Aquila\",\"course\":\"[B4D] BIOTECNOLOGIE MEDICHE E FARMACEUTICHE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [B4D] BIOTECNOLOGIE MEDICHE E FARMACEUTICHE Laurea Magistrale Inglese Italiano FARMACEUTICO",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[B4D] BIOTECNOLOGIE MEDICHE E FARMACEUTICHE",
+          "id": "S1C2",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C2",
+        "option": "University of L'Aquila | [B4D] BIOTECNOLOGIE MEDICHE E FARMACEUTICHE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386/insegnamenti/1#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386/insegnamenti/1?schemaid=11309",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386/insegnamenti/2#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386/insegnamenti/2?schemaid=11310",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386/insegnamenti/3#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386/insegnamenti/3?schemaid=11311",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10386/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[B4D] BIOTECNOLOGIE MEDICHE E FARMACEUTICHE Laurea Magistrale Inglese Italiano FARMACEUTICO"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Siena\",\"course\":\"[D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: e\n[2015987] TRAINING COURSE ON HEALTH AND SAFETY AT WORK – HIGH RISK – UNDER ART. 37 OF ITALIAN LEGISLATIVE DECREE 81/08\nPeriodo fittizio - corso Sicurezza SPP\n[2016796] MOLECULAR BIOLOGY OF CANCER\n6 CFU\n48 ore Primo Semestre\n[2017979] DATA ANALYSIS AND VISUALIZATION IN BIOCHEMISTRY\n6 CFU\n36 ore Pri",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY",
+          "id": "S1C4",
+          "region": "Toscana",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C4",
+        "option": "University of Siena | [D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11057",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11057/insegnamenti/9999"
+        ],
+        "text": "e\n[2015987] TRAINING COURSE ON HEALTH AND SAFETY AT WORK – HIGH RISK – UNDER ART. 37 OF ITALIAN LEGISLATIVE DECREE 81/08\nPeriodo fittizio - corso Sicurezza SPP\n[2016796] MOLECULAR BIOLOGY OF CANCER\n6 CFU\n48 ore Primo Semestre\n[2017979] DATA ANALYSIS AND VISUALIZATION IN BIOCHEMISTRY\n6 CFU\n36 ore Primo Semestre"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33456] BIOTECNOLOGIE\",\"type\":\"Classe di laurea: L-2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie\nAnno accademico: 2026-2027\nCodice corso: 33456\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33456] BIOTECNOLOGIE",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-2",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33456] BIOTECNOLOGIE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33456",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/study-plan"
+        ],
+        "text": "Biotecnologie\nAnno accademico: 2026-2027\nCodice corso: 33456\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[A595] CHIMICA E TECNOLOGIA FARMACEUTICHE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 100)\"]}\nEXCERPT: [A595] CHIMICA E TECNOLOGIA FARMACEUTICHE Laurea Magistrale Ciclo Unico 5 anni BIOTECNOLOGICO-FARMACEUTICO-INNOVATIVO cambia",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 100)"
+          ],
+          "course": "[A595] CHIMICA E TECNOLOGIA FARMACEUTICHE",
+          "id": "S1C6",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C6",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [A595] CHIMICA E TECNOLOGIA FARMACEUTICHE",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/5110",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21224",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21225",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21226",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti/21227",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/5110/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[A595] CHIMICA E TECNOLOGIA FARMACEUTICHE Laurea Magistrale Ciclo Unico 5 anni BIOTECNOLOGICO-FARMACEUTICO-INNOVATIVO cambia"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33459] BIOCHEMISTRY – BIOCHIMICA\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biochemistry – Biochimica\nAnno accademico: 2026-2027\nCodice corso: 33459\nClasse di laurea: LM-9\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33459] BIOCHEMISTRY – BIOCHIMICA",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33459] BIOCHEMISTRY – BIOCHIMICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33459",
+          "https://corsidilaurea.uniroma1.it/it/course/33459/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33459/study-plan"
+        ],
+        "text": "Biochemistry – Biochimica\nAnno accademico: 2026-2027\nCodice corso: 33459\nClasse di laurea: LM-9\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ENG"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE Inglese\n[D3HS] HUMAN ",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S1C8",
+          "region": "Abruzzo",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C8",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE Inglese\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY Inglese\n[D3KINE] KINESIOLOGY Inglese\n[D3LLCC] LINGUE, LETTERATURE E CULTURE IN CONTATTO\n[D3MT] MEDICINA TRASLAZIONALE Inglese Italiano\n[D3NI] NEUROSCIENZE E IMAGING Inglese\n[D3OMIT] ONCOLOGIA MOLECOLARE E IMMUNOLOGIA DEI TUMORI Inglese\n[D3PSI] PSICOLOGIA Inglese\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT Inglese\n[D3SBF] SCIENZE BIOMOLECOLARI E FARMACEUTICHE Inglese\n[D3SGST] SCIENZE GIURIDICHE PER LA SOSTENIBILITÀ, LA TRANSIZIONE ECOLOGICA E L’INNOVAZIONE Inglese\n[D3SS] SOCIAL SCIENCES Tedesco Inglese Francese"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33599] BIOTECNOLOGIE E GENOMICA PER L'INDUSTRIA E L'AMBIENTE\",\"type\":\"Classe di laurea: LM-8\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie e Genomica per l'industria e l'ambiente\nAnno accademico: 2026-2027\nCodice corso: 33599\nClasse di laurea: LM-8\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33599] BIOTECNOLOGIE E GENOMICA PER L'INDUSTRIA E L'AMBIENTE",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-8",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33599] BIOTECNOLOGIE E GENOMICA PER L'INDUSTRIA E L'AMBIENTE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33599",
+          "https://corsidilaurea.uniroma1.it/it/course/33599/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33599/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33599/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33599/study-plan"
+        ],
+        "text": "Biotecnologie e Genomica per l'industria e l'ambiente\nAnno accademico: 2026-2027\nCodice corso: 33599\nClasse di laurea: LM-8\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "life_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Ti piacerebbe saperne di più su uno di questi corsi?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C5",
+        "S1C9"
+      ],
+      "recap": "Ti interessano biologia e chimica, quindi ti propongo alcuni corsi di biotecnologie e biochimica."
+    },
+    "ctx_chars": 4477,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33460] BIOTECNOLOGIE FARMACEUTICHE\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie Farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33460\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA\n\n{\"id\":\"S1C2\",\"university\":\"University of L'Aquila\",\"course\":\"[B4D] BIOTECNOLOGIE MEDICHE E FARMACEUTICHE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [B4D] BIOTECNOLOGIE MEDICHE E FARMACEUTICHE Laurea Magistrale Inglese Italiano FARMACEUTICO\n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Scie\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "biotechnology biochemistry",
+    "rendered_reply": "Ti interessano biologia e chimica, quindi ti propongo alcuni corsi di biotecnologie e biochimica.\n\nLe informazioni disponibili per questa ricerca non contengono opzioni con sede documentata a Roma; questo non significa che non ne esistano. I corsi mostrati sono alternative in altre sedi.\n\nTi suggerisco queste opzioni:\n1. Sapienza Università di Roma | [33460] BIOTECNOLOGIE FARMACEUTICHE\n2. Sapienza Università di Roma | [33456] BIOTECNOLOGIE\n3. Sapienza Università di Roma | [33599] BIOTECNOLOGIE E GENOMICA PER L'INDUSTRIA E L'AMBIENTE\n\nTi piacerebbe saperne di più su uno di questi corsi?",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "biotechnology biochemistry"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      1,
+      2,
+      2,
+      -1,
+      1,
+      -1,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "b1ceee8b24ef",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "sono appena usacito da un itt di elettronica, ma sono molto indeciso su cosa fare dopo perché non mi è piaciuto molto",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi hai appena concluso un ITT in elettronica. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "biotecnologie",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi le biotecnologie ti interessano. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "biologia e chimica",
+      "role": "user"
+    },
+    {
+      "content": "Quindi, ti interessano biologia e chimica. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma",
+      "role": "user"
+    },
+    {
+      "content": "Quindi, preferisci studiare a Roma. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "anche questo molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "in genere lavoro da solo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "lavoro solo così",
+      "role": "user"
+    },
+    {
+      "content": "Ti interessano biologia e chimica, quindi ti propongo alcuni corsi di biotecnologie e biochimica. Le informazioni disponibili per questa ricerca non contengono opzioni con sede documentata a Roma; questo non significa che non ne esistano. I corsi mostrati sono alternative in altre sedi. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33460] BIOTECNOLOGIE FARMACEUTICHE 2. Sapienza Università di Roma | [33456] BIOTECNOLOGIE 3. Sapienza Università di Roma | [33599] BIOTECNOLOGIE E GENOMICA PER L'INDUSTRIA E L'AMBIENTE Ti piacerebbe saperne di più su uno di questi corsi?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-24T11:17:43"
+}

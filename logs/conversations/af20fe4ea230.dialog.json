@@ -1,0 +1,534 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T12:22:55",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "sono al 5 anno di superiori e studio informstica",
+      "region": "Abruzzo"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "riasec_attitudes": [
+        "Conventional",
+        "Realistic",
+        "Investigative"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "sono al 5 anno di superiori e studio informstica",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "sono al 5 anno di superiori e studio informstica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "sono al 5 anno di superiori e studio informstica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "sono al 5 anno di superiori e studio informstica",
+          "region": "Abruzzo"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            1,
+            -1,
+            0,
+            -1,
+            1,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": "Abruzzo",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of L'Aquila | [I3N] INGEGNERIA DELL'INFORMAZIONE",
+      "University of Trento | [0514G] INFORMATICA",
+      "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of L'Aquila\",\"course\":\"[I3N] INGEGNERIA DELL'INFORMAZIONE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [I3N] INGEGNERIA DELL'INFORMAZIONE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[I3N] INGEGNERIA DELL'INFORMAZIONE",
+          "id": "S1C1",
+          "region": "Abruzzo",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C1",
+        "option": "University of L'Aquila | [I3N] INGEGNERIA DELL'INFORMAZIONE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/5#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/5?schemaid=11342",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/6#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/6?schemaid=11343",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/7#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/7?schemaid=11344",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/8#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/8?schemaid=11345",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/9999#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/9999?schemaid=11346",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti?annoOrdinamento=2014"
+        ],
+        "text": "[I3N] INGEGNERIA DELL'INFORMAZIONE Corso di Laurea"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Trento\",\"course\":\"[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)\"]}\nEXCERPT: 6145] FUNDAMENTALS OF COMMUNICATIONS\n12 CFU\n96 ore\n[146146] FUNDAMENTALS OF ELECTRONICS\n12 CFU\n96 ore\n[146142] PHYSICS 2\n6 CFU\n48 ore\n[146314] PROCESSING SYSTEMS\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146125] ADVANCED PROGRAMMING\n6 CFU\n48 ore\n[145996] EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS\n6 CFU\n48 ore\n[146130] FUNDAMENTALS OF ",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)"
+          ],
+          "course": "[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+          "id": "S1C10",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C10",
+        "option": "University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458?schemaid=8538",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459?schemaid=8535",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460?schemaid=8536",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461?schemaid=8537",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "6145] FUNDAMENTALS OF COMMUNICATIONS\n12 CFU\n96 ore\n[146146] FUNDAMENTALS OF ELECTRONICS\n12 CFU\n96 ore\n[146142] PHYSICS 2\n6 CFU\n48 ore\n[146314] PROCESSING SYSTEMS\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146125] ADVANCED PROGRAMMING\n6 CFU\n48 ore\n[145996] EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS\n6 CFU\n48 ore\n[146130] FUNDAMENTALS OF ROBOTICS\n12 CFU\n96 ore\n[146147] OPERATING SYSTEMS\n12 CFU\n96 ore\n[146148] SOFTWARE ENGINEERING\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146135] DIGITAL SIGNAL CODING\n6 CFU\n48 ore\n[146069] NEXT GENERATION NETWORKS\n6 CFU\n48 ore\n[146311] REMOTE SENSING SYSTEMS AND IMAGE ANALYSIS\n6 CFU\n48 ore\n[146134] VISION AND RECOGNITION\n6 CFU\n48 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146138] ADVANCED LOGIC DESIGN\n6 CFU\n48 ore\n[146163] BASICS OF OPTOELECTRONICS\n6 CFU\n48 ore\n[146150] DIGITAL ELECTRONIC CIRCUITS\n6 CFU\n48 ore\n[146198] HIGH-FREQUENCY CIRCUITS FOR SYSTEMS-ON-CHIP\n6 CFU\n48 ore\n[146209] INTRODUCTION TO PARALLEL COMPUTING\n6 CFU\n48 ore\n[146304] LABORATORY OF SYSTEMS ON CHIP\n6 CFU\n48 ore\n3° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[145993] DATABASES\n6 CFU\n48 ore\n[146070] PROVA FINALE\n6 CFU\n[146071] TIROCINI FORMATIVI E DI ORIENTAMENTO\n9 CFU"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi naturali ed artificiali), identificare i pr",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)"
+          ],
+          "course": "[0514G] INFORMATICA",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0514G] INFORMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"
+        ],
+        "text": "tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi naturali ed artificiali), identificare i processi cruciali in maniera sistematica, proporre modelli e soluzioni realizzabili tramite software e sistemi informatici. La mentalità, data l'enfasi su strumenti e metodi scientifici di tipo universale, è naturalmente predisposta per inserirsi rapidamente in contesti di lavoro diversi, adattandosi alla rapida innovazione che caratterizza il settore. Il corso di laurea prevede un insieme comune di corsi in cui vengono fornite le competenze di base in matematica e informatica. Successivamente, si distinguono due possibili percorsi:\n- il percorso Scienze e Tecnologie Informatiche, con due orientamenti, uno a carattere metodologico, indicato per coloro che intendano proseguire gli studi con una Laurea Magistrale in Scienze e Tecnologie Informatiche ed un orientamento professionalizzante, indicato per coloro che intendano terminare gli studi al termi ne del Corso di Laurea in Informatica."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[L460] INGEGNERIA BIOMEDICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: FU Lingua/Prova Finale (L-9)\n[TO0025] A SCELTA DELLO STUDENTE\n12 CFU\n120 ore A scelta dello studente (L-9)\n[TO0045] C.I.\nBIOINGEGNERIA INDUSTRIALE ED INGEGNERIA CLINICA\n12 CFU\n120 ore Caratterizzante (L-9)\n[TO0048] BIOMECCANICA COMPUTAZIONALE\n6 CFU\n60 ore Caratterizzante (L-9)\nNON OBBL",
+        "facts": {
+          "cities": [],
+          "course": "[L460] INGEGNERIA BIOMEDICA",
+          "id": "S1C3",
+          "region": "Abruzzo",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C3",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [L460] INGEGNERIA BIOMEDICA",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/1863",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/1863/insegnamenti/22815",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/1863/insegnamenti/22816"
+        ],
+        "text": "FU Lingua/Prova Finale (L-9)\n[TO0025] A SCELTA DELLO STUDENTE\n12 CFU\n120 ore A scelta dello studente (L-9)\n[TO0045] C.I.\nBIOINGEGNERIA INDUSTRIALE ED INGEGNERIA CLINICA\n12 CFU\n120 ore Caratterizzante (L-9)\n[TO0048] BIOMECCANICA COMPUTAZIONALE\n6 CFU\n60 ore Caratterizzante (L-9)\nNON OBBLIGATORI\n[TO0032] TECNOLOGIE DI SCANSIONE E DI STAMPA 3D\n6 CFU\n60 ore A scelta dello studente (L-9)\n[TO0050] ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING\n6 CFU\n60 ore A scelta dello studente (L-9)\n[TO0051] RETI E SISTEMI IOT\n6 CFU\n60 ore A scelta dello studente (L-9)\n[TO0052] NEUROFISIOLOGIA\n6 CFU\n60 ore A scelta dello studente (L-9)\n[TO0053] COMPUTATIONAL MODELING OF BRAIN AND COGNITION\n8 CFU\n80 ore A scelta dello studente (L-9)\n[TO0054] NEUROIMAGING DATA ANALYSIS\n6 CFU\n60 ore A scelta dello studente (L-9)\n[TO0055] METODI E STRUMENTI IN NEUROSCIENZE COGNITIVE\n6 CFU\n60 ore A scelta dello studente (L-9)"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of L'Aquila\",\"course\":\"[B3B] BIOTECNOLOGIE\",\"type\":\"Classe di laurea: L-2\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: contenuto principale LAUREE\n[M3I] ECONOMIA E AMMINISTRAZIONE DELLE IMPRESE\n[C3F] FILOSOFIA E TEORIA DEI PROCESSI COMUNICATIVI\n[F3F] FISICA\n[D3F] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA)\n[D3I] IGIENE DENTALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI IGIENIS",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[B3B] BIOTECNOLOGIE",
+          "id": "S1C4",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L-2",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C4",
+        "option": "University of L'Aquila | [B3B] BIOTECNOLOGIE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051/insegnamenti/9999",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051/insegnamenti/9999?schemaid=11308",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024?gruppo=1563186862224"
+        ],
+        "text": "contenuto principale LAUREE\n[M3I] ECONOMIA E AMMINISTRAZIONE DELLE IMPRESE\n[C3F] FILOSOFIA E TEORIA DEI PROCESSI COMUNICATIVI\n[F3F] FISICA\n[D3F] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA)\n[D3I] IGIENE DENTALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI IGIENISTA DENTALE)\n[D3U] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE)\n[F3I] INFORMATICA\n[I3B] INGEGNERIA CIVILE\n[I3N] INGEGNERIA DELL'INFORMAZIONE\n[I3D] INGEGNERIA INDUSTRIALE\n[C3D] LETTERE\n[D3G] LOGOPEDIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI LOGOPEDISTA)\n[F3M] MATEMATICA\n[C3M] MEDIAZIONE LINGUISTICA E CULTURALE\n[M3G] OPERATORE GIURIDICO D'IMPRESA\n[D3O] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI ORTOTTISTA ED ASSISTENTE DI OFTALMOLOGIA)\n[D3S] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O)\n[F3B] SCIENZE BIOLOGICHE\n[S3S] SCIENZE DEL SERVIZIO SOCIALE\n[S3F] SCIENZE DELL'EDUCAZIONE E DELLA FORMAZIONE\n[P3Q] SCIENZE E TECNICHE PSICOLOGICHE\n[F3D] SCIENZE E TECNOLOGIE CHIMICHE E DEI MATERIALI\n[F3S] SCIENZE E TECNOLOGIE PER L'AMBIENTE\n[E3M] SCIENZE MOTORIE E SPORTIVE\n[D3P] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA)\n[D3A] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO)\n[I3S] TECNICHE DELLA PROTEZIONE CIVILE E SICUREZZA DEL TERRITORIO\n[D3L] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[D3R] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n[D3N] TERAPIA DELLA NEURO E PSICOMOTRICITÀ DELL'ETÀ EVOLUTIVA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TERAPISTA DELLA NEURO E PSICOMOTRICITÀ DELL'ETÀ EVOLUTIVA)"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Università degli Studi di Verona\"]}\nEXCERPT: ee in ingegneria, a cui segue una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione.\nSuccessivamente, il Corso di Studi si articola in percorsi in cui lo studente, a propria scelta, acquisirà una formazione specifica ed approfondita in uno degli ambi",
+        "facts": {
+          "cities": [
+            "Università degli Studi di Verona"
+          ],
+          "course": "[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10799"
+        ],
+        "text": "ee in ingegneria, a cui segue una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione.\nSuccessivamente, il Corso di Studi si articola in percorsi in cui lo studente, a propria scelta, acquisirà una formazione specifica ed approfondita in uno degli ambiti caratterizzanti l'ingegneria dell'informazione, quali l'ingegneria informatica, l'ingegneria delle telecomunicazioni o l'ingegneria elettronica. Al fine di permettere allo studente di acquisire e di integrare in modo armonico e bilanciato le diverse conoscenze richieste, l'offerta didattica è articolata in:\n1) una formazione di base in cui vengono trattati sia gli aspetti metodologici-operativi della matematica, sia le conoscenze fondamentali e gli aspetti metodologici delle scienze di base di interesse per le tecnologie dell'informazione;\n2) una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione, in cui vengono acquisiti i contenuti fondamentali delle discipline che qualificano l'area dell'informazione (elettronica, informatica e telecomunicazioni) e la conoscenza delle relative metodologie."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'info",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33502",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/study-plan"
+        ],
+        "text": "Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14824"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[L648] ASSISTENZA SANITARIA\",\"type\":\"Classe di laurea: L/SNT4\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 40)\"]}\nEXCERPT: contenuto principale Corso di Laurea\n[OBC7] BENI CULTURALI\n[707T] DESIGN\n[L601] DIETISTICA\n[614L] ECONOMIA E INFORMATICA PER L'IMPRESA\n[610L] ECONOMIA AZIENDALE\n[613L] ECONOMIA E COMMERCIO\n[L018] ECONOMIA E MANAGEMENT\n[618N] ECONOMIA, IMPRESE E MERCATI FINANZIARI\n[3FF7] FILOSOFIA E SCI",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 40)"
+          ],
+          "course": "[L648] ASSISTENZA SANITARIA",
+          "id": "S1C7",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L/SNT4",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C7",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [L648] ASSISTENZA SANITARIA",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/608",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/608/insegnamenti/21538",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945294"
+        ],
+        "text": "contenuto principale Corso di Laurea\n[OBC7] BENI CULTURALI\n[707T] DESIGN\n[L601] DIETISTICA\n[614L] ECONOMIA E INFORMATICA PER L'IMPRESA\n[610L] ECONOMIA AZIENDALE\n[613L] ECONOMIA E COMMERCIO\n[L018] ECONOMIA E MANAGEMENT\n[618N] ECONOMIA, IMPRESE E MERCATI FINANZIARI\n[3FF7] FILOSOFIA E SCIENZE DELL'EDUCAZIONE\n[L602] FISIOTERAPIA\n[L654] IGIENE DENTALE\n[L603] INFERMIERISTICA\n[L460] INGEGNERIA BIOMEDICA\n[801T] INGEGNERIA DELLE COSTRUZIONI\n[L270] LETTERE\n[0658] LINGUE E LETTERATURE STRANIERE\n[L610] LOGOPEDIA\n[0659] MEDIAZIONE LINGUISTICA E COMUNICAZIONE INTERCULTURALE\n[L641] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA\n[L604] OSTETRICIA\n[600P] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO\n[910T] SCIENZE DELL'HABITAT SOSTENIBILE\n[L022] SCIENZE DELLE ATTIVITÀ MOTORIE E SPORTIVE\n[0684] SCIENZE E TECNICHE PSICOLOGICHE\n[0700] SCIENZE GEOLOGICHE\n[639L] SERVIZI GIURIDICI PER L'IMPRESA\n[0692] SERVIZIO SOCIALE\n[695N] SOCIOLOGIA E CRIMINOLOGIA\n[L637] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO\n[L640] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE\n[L605] TECNICHE DI LABORATORIO BIOMEDICO\n[L606] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA\n[L500] TECNOLOGIE ECO-SOSTENIBILI E TOSSICOLOGIA AMBIENTALE\n[L644] TERAPIA OCCUPAZIONALE"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Siena\",\"course\":\"[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE",
+          "id": "S1C8",
+          "region": "Toscana",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C8",
+        "option": "University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/3",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/4",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999?schemaid=11507",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[614L] ECONOMIA E INFORMATICA PER L'IMPRESA\",\"type\":\"Classe di laurea: L-33\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: CORSO GENERICO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[000131L] MICROECONOMIA\n9 CFU\n72 ore Base (L-33)\nSecondo Semestre\n[000230L] IDONEITA' INGLESE TECNICO-SCIENTIFICO\n6 CFU\n48 ore Lingua/Prova Finale (L-33)\nSecondo Semestre\n[000270L] FONDAMENTI DI INFORMATICA\n6 CFU\n48 ore Affine/Integrativa (L-33)\nSecondo Semestre, Primo Sem",
+        "facts": {
+          "cities": [],
+          "course": "[614L] ECONOMIA E INFORMATICA PER L'IMPRESA",
+          "id": "S1C9",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L-33",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C9",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [614L] ECONOMIA E INFORMATICA PER L'IMPRESA",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/567",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/567/insegnamenti/21432"
+        ],
+        "text": "CORSO GENERICO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[000131L] MICROECONOMIA\n9 CFU\n72 ore Base (L-33)\nSecondo Semestre\n[000230L] IDONEITA' INGLESE TECNICO-SCIENTIFICO\n6 CFU\n48 ore Lingua/Prova Finale (L-33)\nSecondo Semestre\n[000270L] FONDAMENTI DI INFORMATICA\n6 CFU\n48 ore Affine/Integrativa (L-33)\nSecondo Semestre, Primo Semestre\n[000367L] INTERNET E RETI\n6 CFU\n48 ore Affine/Integrativa (L-33)\nSecondo Semestre\n[00040L] ECONOMIA AZIENDALE\n9 CFU\n72 ore Base (L-33)\nPrimo Semestre\n[000451L] DIRITTO PRIVATO E DI INTERNET\n9 CFU\n72 ore Base (L-33)\nSecondo Semestre\n[00075L] MATEMATICA GENERALE\n9 CFU\n72 ore Base (L-33)\nPrimo Semestre\n[000981L] PROGRAMMAZIONE E ALGORITMI 1\n\n6 CFU\n48 ore Affine/Integrativa (L-33)\nPrimo Semestre\n[000982L] LABORATORIO DI PROGRAMMAZIONE I\n3 CFU\n24 ore Altro (L-33)\nPrimo Semestre NON OBBLIGATORI\n[LEZ0] POLITICHE, OBIETTIVI E VETTORI DI SOSTENIBILITA’\n\n6 CFU\n36 ore A scelta dello studente (L-33)\nPrimo Semestre\n2° ANNO OBBLIGATORI\n[000132L] MACROECONOMIA\n9 CFU\n72 ore Caratterizzante (L-33)\n[000298L] PROGRAMMAZIONE E ALGORITMI 2"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "computer_science"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": "Abruzzo",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Per il corso di laurea in [I3N] INGEGNERIA DELL'INFORMAZIONE presso l'Università degli Studi dell'Aquila, gli esami variano ogni anno accademico e possono includere materie come matematica, fisica, programmazione, reti di calcolatori, sistemi operativi, e algoritmi. Ti consiglio di consultare il piano di studi ufficiale dell'università per avere un elenco dettagliato e aggiornato degli esami previsti. Se hai altre domande specifiche sugli esami o sul corso, fammi sapere!"
+    },
+    "ctx_chars": 1350,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of L'Aquila\",\"course\":\"[I3N] INGEGNERIA DELL'INFORMAZIONE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [I3N] INGEGNERIA DELL'INFORMAZIONE Corso di Laurea\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi naturali ed artificiali), identificare i pr\n\n{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – I\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "informatica",
+    "rendered_reply": "Per il corso di laurea in [I3N] INGEGNERIA DELL'INFORMAZIONE presso l'Università degli Studi dell'Aquila, gli esami variano ogni anno accademico e possono includere materie come matematica, fisica, programmazione, reti di calcolatori, sistemi operativi, e algoritmi. Ti consiglio di consultare il piano di studi ufficiale dell'università per avere un elenco dettagliato e aggiornato degli esami previsti. Se hai altre domande specifiche sugli esami o sul corso, fammi sapere!",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": "Abruzzo",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      1,
+      2,
+      1,
+      -1,
+      0,
+      -1,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "af20fe4ea230",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao, che università dovrei scegliere?",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Cominciamo con alcune domande per capire meglio le tue preferenze e i tuoi obiettivi. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "sono al 5 anno di superiori e studio informstica",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "qualcosa che mi permetta di rimanere nell’ambito informatico, come programmazione, IA e automi",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, mi hai dato un'idea più chiara delle tue preferenze. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "probabilmente la sfera che riguarda la programmazione",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, mi hai dato un'idea più chiara delle tue preferenze. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "io sono abruzzese, quindi abruzzo e regioni vicine",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, ho capito che preferisci studiare in Abruzzo o nelle regioni vicine. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza, ma non è la priorità",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi interessa abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "non è il mio punto forte",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "non è tra le priorità m è un ambito interessante",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto, è il mio metodo di lavoro preferito",
+      "role": "user"
+    },
+    {
+      "content": "Ti consiglio di considerare corsi di laurea in informatica, che ti permetteranno di approfondire la tua passione per la programmazione e l'intelligenza artificiale. Ti suggerisco queste opzioni: 1. University of L'Aquila | [I3N] INGEGNERIA DELL'INFORMAZIONE 2. University of Trento | [0514G] INFORMATICA 3. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE Hai altre preferenze o domande specifiche sui corsi che ti ho suggerito?",
+      "role": "assistant"
+    },
+    {
+      "content": "quali sono i corsi di l’aquila?",
+      "role": "user"
+    },
+    {
+      "content": "L'Università degli Studi dell'Aquila offre il corso di laurea in [I3N] INGEGNERIA DELL'INFORMAZIONE. Questo corso è incentrato su programmazione, intelligenza artificiale e automi, e si svolge a L'Aquila.",
+      "role": "assistant"
+    },
+    {
+      "content": "quali esami dovrei sostenere?",
+      "role": "user"
+    },
+    {
+      "content": "Per il corso di laurea in [I3N] INGEGNERIA DELL'INFORMAZIONE presso l'Università degli Studi dell'Aquila, gli esami variano ogni anno accademico e possono includere materie come matematica, fisica, programmazione, reti di calcolatori, sistemi operativi, e algoritmi. Ti consiglio di consultare il piano di studi ufficiale dell'università per avere un elenco dettagliato e aggiornato degli esami previsti. Se hai altre domande specifiche sugli esami o sul corso, fammi sapere!",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T12:28:58"
+}

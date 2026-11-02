@@ -1,0 +1,524 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T12:55:59",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo del made in italy",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design"
+      ],
+      "riasec_attitudes": [
+        "Conventional",
+        "Enterprising",
+        "Artistic"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo del made in italy",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo del made in italy",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo del made in italy",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo del made in italy",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -2,
+            -1,
+            1,
+            1,
+            -1,
+            -1,
+            1,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33524] SCIENZE DELLA MODA E DEL COSTUME",
+      "University of Sassari | [A144] DESIGN",
+      "Sapienza Università di Roma | [33426] DESIGN"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33524] SCIENZE DELLA MODA E DEL COSTUME\",\"type\":\"Classe di laurea: L-3\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze della moda e del costume\nAnno accademico: 2026-2027\nCodice corso: 33524\nClasse di laurea: L-3\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33524] SCIENZE DELLA MODA E DEL COSTUME",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-3",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33524] SCIENZE DELLA MODA E DEL COSTUME",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33524",
+          "https://corsidilaurea.uniroma1.it/it/course/33524/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33524/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33524/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33524/study-plan"
+        ],
+        "text": "Scienze della moda e del costume\nAnno accademico: 2026-2027\nCodice corso: 33524\nClasse di laurea: L-3\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Salerno\",\"course\":\"[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO CORSO DI LAUREA\nDISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO",
+          "id": "S1C10",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C10",
+        "option": "University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500471",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500471/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500471/insegnamenti/9999?schemaid=17186"
+        ],
+        "text": "[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO CORSO DI LAUREA\nDISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Sassari\",\"course\":\"[A144] DESIGN\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[A144] DESIGN",
+          "id": "S1C2",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C2",
+        "option": "University of Sassari | [A144] DESIGN",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2024"
+        ],
+        "text": "ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Messina\",\"course\":\"[1290] ECONOMIA AZIENDALE\",\"type\":\"Classe di laurea: L-18\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: contenuto principale Economia Triennale\n[1296] ECONOMIA, BANCA E FINANZA\n[1295] MANAGEMENT D'IMPRESA Inglese Italiano Magistrale\n[1298] CONSULENZA E GESTIONE DI IMPRESA InterateneoInglese Italiano\n[1288R] DIGITAL TRASFORMATION E INNOVATION MANAGEMENT Inglese Italiano\n[1287R] METODI Q",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[1290] ECONOMIA AZIENDALE",
+          "id": "S1C3",
+          "region": "Sicilia",
+          "type": "Classe di laurea: L-18",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C3",
+        "option": "University of Messina | [1290] ECONOMIA AZIENDALE",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10080",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10080/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10080/insegnamenti/9999?annoOrdinamento=2017",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10080/insegnamenti/9999?schemaid=12232",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10080?annoOrdinamento=2017",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_ES"
+        ],
+        "text": "contenuto principale Economia Triennale\n[1296] ECONOMIA, BANCA E FINANZA\n[1295] MANAGEMENT D'IMPRESA Inglese Italiano Magistrale\n[1298] CONSULENZA E GESTIONE DI IMPRESA InterateneoInglese Italiano\n[1288R] DIGITAL TRASFORMATION E INNOVATION MANAGEMENT Inglese Italiano\n[1287R] METODI QUANTITATIVI PER L'ECONOMIA E LA FINANZA Inglese Italiano Master di Primo Livello\n[MP001] ECONOMIA BANCARIA E FINANZIARIA\n[MP034] FOOD, QUALITY AND INTERNATIONAL MANAGEMENT Inglese Dottorati\n[DT204] ECONOMICS, MANAGEMENT AND STATISTICS Inglese"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33426] DESIGN\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33426] DESIGN",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33426] DESIGN",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33426",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/study-plan"
+        ],
+        "text": "Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 25805"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[0711G] SCIENZE MOTORIE, SPORT E BENESSERE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84 (Utenza sostenibile: 80)\"]}\nEXCERPT: ti nella gestione di programmi mirati alla prevenzione di dismorfismi posturali e patologie correlate alla sedentarietà.\nPer formare laureati/e con queste caratteristiche, il Corso di Studi si organizza intorno ai seguenti obiettivi formativi specifici: fornire una comprensione appro",
+        "facts": {
+          "cities": [
+            "Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84 (Utenza sostenibile: 80)"
+          ],
+          "course": "[0711G] SCIENZE MOTORIE, SPORT E BENESSERE",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [0711G] SCIENZE MOTORIE, SPORT E BENESSERE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10758",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/50424",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10758/insegnamenti/50424?schemaid=8128"
+        ],
+        "text": "ti nella gestione di programmi mirati alla prevenzione di dismorfismi posturali e patologie correlate alla sedentarietà.\nPer formare laureati/e con queste caratteristiche, il Corso di Studi si organizza intorno ai seguenti obiettivi formativi specifici: fornire una comprensione approfondita delle basi biologiche e biomeccaniche del movimento e dell'adattamento all'esercizio fisico, considerando anche variazioni legate a tipo, durata e intensità dell'esercizio, nonché all'età e al genere del praticante; consentire l'apprendimento di tecniche motorie preventive, compensative, adattative e sportive, con un'enfasi particolare sulla trasmissione corretta di queste abilità considerando le specificità di genere, età e condizione fisica del praticante, e con competenze anche riguardo alla progettazione di strategie di recupero di difetti di andatura o postura; fornire una approfondita comprensione delle metodologie di misurazione e valutazione dell'esercizio fisico, in un'ottica sia individuale sia di gruppo; fornire competenze relative alle tecniche e agli strumenti per il potenziamento muscolare."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Salerno\",\"course\":\"[03128] SCIENZE DEI BENI CULTURALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03128] SCIENZE DEI BENI CULTURALI",
+          "id": "S1C6",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C6",
+        "option": "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000?schemaid=17229",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001?schemaid=17231",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002?schemaid=17230",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti?annoOrdinamento=2017"
+        ],
+        "text": "[03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Trento\",\"course\":\"[0117G] ECONOMIA E MANAGEMENT\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 235)\"]}\nEXCERPT: rima parte dedicata ai fondamenti delle discipline economiche e manageriali, con approfondimenti teorici e metodologici.\nIn particolare saranno approfonditi i saperi di base dell'economia e del management, con interrelazioni tra i due ambiti, particolarmente per quanto attiene ai mercati, a",
+        "facts": {
+          "cities": [
+            "Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 235)"
+          ],
+          "course": "[0117G] ECONOMIA E MANAGEMENT",
+          "id": "S1C7",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C7",
+        "option": "University of Trento | [0117G] ECONOMIA E MANAGEMENT",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50490#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50490?schemaid=8275",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50491#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti/50491?schemaid=8273",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10129/insegnamenti?annoOrdinamento=2011"
+        ],
+        "text": "rima parte dedicata ai fondamenti delle discipline economiche e manageriali, con approfondimenti teorici e metodologici.\nIn particolare saranno approfonditi i saperi di base dell'economia e del management, con interrelazioni tra i due ambiti, particolarmente per quanto attiene ai mercati, al comportamento del consumatore, alla concorrenza. In questo ambito di formazione di base saranno affrontati i temi tipici della regolazione e della formazione delle norme che ne sono alla base. Inoltre si darà spazio anche a insegnamenti con valenza formativa generale, come la storia economica. Nella seconda parte del percorso gli studenti approfondiranno alcuni ambiti di teoria tipici degli spazi di interesse comuni dell'economia e del management, ponendo attenzione al tema della decisione economica. Tale tema sarà approfondito sia sul piano analitico che degli aspetti comportamentali il cui studio entra attualmente nel bagaglio fondamentale di chi si occupa di decisioni economiche, sia a livello aggregato che a livello di impresa. Ciò in linea con gli orientamenti prevalenti della Facoltà orientati ai behavioral studies. Infine, gli studenti avranno la possibilità di orientare la loro formazione scegliendo tra un ventaglio di corsi di approfondimento tematici nei vari ambiti di studio affrontati precedentemente."
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[L648] ASSISTENZA SANITARIA\",\"type\":\"Classe di laurea: L/SNT4\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 40)\"]}\nEXCERPT: contenuto principale Corso di Laurea\n[OBC7] BENI CULTURALI\n[707T] DESIGN\n[L601] DIETISTICA\n[614L] ECONOMIA E INFORMATICA PER L'IMPRESA\n[610L] ECONOMIA AZIENDALE\n[613L] ECONOMIA E COMMERCIO\n[L018] ECONOMIA E MANAGEMENT\n[618N] ECONOMIA, IMPRESE E MERCATI FINANZIARI\n[3FF7] FILOSOFIA E SCIENZE ",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 40)"
+          ],
+          "course": "[L648] ASSISTENZA SANITARIA",
+          "id": "S1C8",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L/SNT4",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C8",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [L648] ASSISTENZA SANITARIA",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/608",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/608/insegnamenti/21538",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945294"
+        ],
+        "text": "contenuto principale Corso di Laurea\n[OBC7] BENI CULTURALI\n[707T] DESIGN\n[L601] DIETISTICA\n[614L] ECONOMIA E INFORMATICA PER L'IMPRESA\n[610L] ECONOMIA AZIENDALE\n[613L] ECONOMIA E COMMERCIO\n[L018] ECONOMIA E MANAGEMENT\n[618N] ECONOMIA, IMPRESE E MERCATI FINANZIARI\n[3FF7] FILOSOFIA E SCIENZE DELL'EDUCAZIONE\n[L602] FISIOTERAPIA\n[L654] IGIENE DENTALE\n[L603] INFERMIERISTICA\n[L460] INGEGNERIA BIOMEDICA\n[801T] INGEGNERIA DELLE COSTRUZIONI\n[L270] LETTERE\n[0658] LINGUE E LETTERATURE STRANIERE\n[L610] LOGOPEDIA\n[0659] MEDIAZIONE LINGUISTICA E COMUNICAZIONE INTERCULTURALE\n[L641] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA\n[L604] OSTETRICIA\n[600P] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO\n[910T] SCIENZE DELL'HABITAT SOSTENIBILE\n[L022] SCIENZE DELLE ATTIVITÀ MOTORIE E SPORTIVE\n[0684] SCIENZE E TECNICHE PSICOLOGICHE\n[0700] SCIENZE GEOLOGICHE\n[639L] SERVIZI GIURIDICI PER L'IMPRESA\n[0692] SERVIZIO SOCIALE\n[695N] SOCIOLOGIA E CRIMINOLOGIA\n[L637] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO\n[L640] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE\n[L605] TECNICHE DI LABORATORIO BIOMEDICO\n[L606] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA\n[L500] TECNOLOGIE ECO-SOSTENIBILI E TOSSICOLOGIA AMBIENTALE\n[L644] TERAPIA OCCUPAZIONALE"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[L270] LETTERE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 202)\"]}\nEXCERPT: [L270] LETTERE Laurea LINGUAGGI DELLA MUSICA, DELLO SPETTACOLO E DEI MEDIA cambia\nLETTERE CLASSICHE LETTERE MODERNE STORIA LINGUAGGI DELLA MUSICA, DELLO SPETTACOLO E DEI MEDIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 202)"
+          ],
+          "course": "[L270] LETTERE",
+          "id": "S1C9",
+          "region": "Abruzzo",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C9",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [L270] LETTERE",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/62",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/62/insegnamenti",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/62/insegnamenti/21522",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/62/insegnamenti/21524",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/62/insegnamenti/21526",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/62/insegnamenti/21528",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/62/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "[L270] LETTERE Laurea LINGUAGGI DELLA MUSICA, DELLO SPETTACOLO E DEI MEDIA cambia\nLETTERE CLASSICHE LETTERE MODERNE STORIA LINGUAGGI DELLA MUSICA, DELLO SPETTACOLO E DEI MEDIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "arts_design"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "moda"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Per un percorso ITS, ti suggerisco di considerare il corso di [A144] DESIGN all'Università di Sassari. Questo corso offre una formazione pratica e orientata al design, che potrebbe essere molto adatta alle tue inclinazioni per l'organizzazione e la creatività. Inoltre, l'Università di Sassari è nota per la sua qualità didattica e per le opportunità di stage e tirocinio che offre agli studenti."
+    },
+    "ctx_chars": 1299,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33524] SCIENZE DELLA MODA E DEL COSTUME\",\"type\":\"Classe di laurea: L-3\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze della moda e del costume\nAnno accademico: 2026-2027\nCodice corso: 33524\nClasse di laurea: L-3\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA\n\n{\"id\":\"S1C2\",\"university\":\"University of Sassari\",\"course\":\"[A144] DESIGN\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n\n{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33426] DESIGN\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDu\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "moda",
+    "rendered_reply": "Per un percorso ITS, ti suggerisco di considerare il corso di [A144] DESIGN all'Università di Sassari. Questo corso offre una formazione pratica e orientata al design, che potrebbe essere molto adatta alle tue inclinazioni per l'organizzazione e la creatività. Inoltre, l'Università di Sassari è nota per la sua qualità didattica e per le opportunità di stage e tirocinio che offre agli studenti.",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "moda"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      -2,
+      -1,
+      1,
+      1,
+      -1,
+      -1,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "eb8357d8a5b6",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao! vorrei aiutare un mio studente nella scelta dell’università, puoi aiutarmi?",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente virtuale per l'orientamento universitario. Posso aiutarti a trovare le informazioni necessarie per scegliere l'università più adatta al tuo studente. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "liceo del made in italy",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace la moda",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, la moda è un campo molto interessante. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piacerebbe lavorare nel settore della moda, in particolare nell’allestimento di sfilate e nella logistica, o comunque nell’organizzazione, ma non sono sicura che una laurea faccia per me. Forse preferirei un percorso più breve",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi ti interessa molto il settore della moda, in particolare l'organizzazione di eventi e la logistica. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "sede flessibile",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei flessibile sulla sede. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "no",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Ti piacciono molto le attività organizzate e pianificate, e ti piace esprimere idee in forme creative. Ti piacciono anche le attività che prevedono di proporre idee e organizzare progetti. Ti piacciono poco le attività pratiche e manuali, e non ti piace molto lavorare a stretto contatto con le persone. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33524] SCIENZE DELLA MODA E DEL COSTUME 2. University of Sassari | [A144] DESIGN 3. Sapienza Università di Roma | [33426] DESIGN",
+      "role": "assistant"
+    },
+    {
+      "content": "se volessi fare un ITS cosa mi suggeriresti?",
+      "role": "user"
+    },
+    {
+      "content": "Per un percorso ITS, ti suggerisco di considerare il corso di [A144] DESIGN all'Università di Sassari. Questo corso offre una formazione pratica e orientata al design, che potrebbe essere molto adatta alle tue inclinazioni per l'organizzazione e la creatività. Inoltre, l'Università di Sassari è nota per la sua qualità didattica e per le opportunità di stage e tirocinio che offre agli studenti.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T12:58:54"
+}

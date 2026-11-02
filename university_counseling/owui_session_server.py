@@ -128,6 +128,9 @@ os.environ.setdefault("OPENAI_API_KEY", OPENAI_API_KEY)
 ENABLE_AGENT_THINKING = os.getenv("SDIALOG_AGENT_THINK", "0").strip().lower() in {
     "1", "true", "yes", "on"
 }
+COUNSELOR_TEMPERATURE = float(
+    os.getenv("SDIALOG_COUNSELOR_TEMPERATURE", "0.15")
+)
 
 # Keep a default SDialog model configured for code paths that rely on the global
 # default. Each Agent below still receives its explicit per-session model.
@@ -161,6 +164,13 @@ def _dialog_log_path() -> Path:
     label = OWUI_PROCESS_MODEL.lower() if OWUI_PROCESS_MODEL else "both"
     return _log_dir() / f"dialog_{label}_{PORT}.jsonl"
 
+def _conversation_dir() -> Path:
+    return Path(
+        os.getenv(
+            "OWUI_CONVERSATION_DIR",
+            str(_log_dir() / "conversations"),
+        )
+    )
 
 @dataclass(frozen=True)
 class ModelConfig:
@@ -374,9 +384,6 @@ def _default_lancedb_dir(rag_lang: str) -> Path:
     return _get_project_root() / dataset_dir / "Embeddings" / "lancedb"
 
 
-def _default_embeddings_dir(rag_lang: str) -> Path:
-    dataset_dir = "RAG_University_Ita" if rag_lang == "ita" else "RAG_University_Eng"
-    return _get_project_root() / dataset_dir / "Embeddings"
 
 
 def _path_points_to_other_bundled_rag(path_value: str, rag_lang: str) -> bool:
@@ -440,18 +447,7 @@ def get_shared_retriever(rag_lang: str) -> TimedRetriever:
                 )
             )
         else:
-            from RAG_Scripts.rag_retriever import RAGRetriever  # type: ignore
-
-            base = _default_embeddings_dir(rag_lang)
-            faiss_path = _env_for_lang("SDIALOG_RAG_FAISS", rag_lang) or str(base / "rag.index.faiss")
-            chunks_path = _env_for_lang("SDIALOG_RAG_CHUNKS", rag_lang) or str(base / "rag.chunks.jsonl")
-            retriever = TimedRetriever(
-                RAGRetriever(
-                    lang=rag_lang,
-                    faiss_path=faiss_path,
-                    chunks_path=chunks_path,
-                )
-            )
+            raise ValueError("courses_v2 requires SDIALOG_RAG_BACKEND=lancedb")
 
         _SHARED_RETRIEVERS[cache_key] = retriever
         return retriever
@@ -540,7 +536,14 @@ def _restore_rag_globals(snapshot: RagGlobalsSnapshot) -> None:
 
 def _make_session_postprocess(session: CounselorSession):
     def _postprocess(text: str) -> str:
-        visible = sanitize_expert_output(text)
+        try:
+            visible = sanitize_expert_output(text)
+        except rag_state.TurnControlError:
+            logger.warning(
+                "Rejected model response: session=%s phase=%s raw=%r",
+                session.session_id, rag_state.get_last_rag_phase(), text,
+            )
+            raise
 
         patches = rag_state.get_listener_patches()
         new_patches = patches[session.patch_count:]
@@ -638,6 +641,7 @@ BSC_MAX_SYSTEM_CHARS = int(os.getenv("BSC_MAX_SYSTEM_CHARS", "2500"))
 BSC_MAX_MESSAGE_CHARS = int(os.getenv("BSC_MAX_MESSAGE_CHARS", "1800"))
 BSC_MAX_LAST_USER_CHARS = int(os.getenv("BSC_MAX_LAST_USER_CHARS", "2400"))
 BSC_MAX_LISTENER_TASK_CHARS = int(os.getenv("BSC_MAX_LISTENER_TASK_CHARS", "3200"))
+TURN_CONTROL_MAX_RETRIES = max(0, int(os.getenv("SDIALOG_TURN_CONTROL_MAX_RETRIES", "1")))
 BSC_TRIM_LOG_ALWAYS = os.getenv("BSC_TRIM_LOG_ALWAYS", "0").strip().lower() in {
     "1", "true", "yes", "on"
 }
@@ -654,6 +658,8 @@ def _is_listener_task_text(text: str) -> bool:
         "hidden listener task" in low
         or "listener_patch" in low
         or "<listener_patch>" in low
+        or "<turn_control>" in low
+        or "<student_profile>" in low
         or "append exactly one" in low and "json block" in low
     )
 
@@ -720,6 +726,18 @@ def _budget_guard_lc_messages(messages: Any) -> Any:
     """
     if not BSC_CONTEXT_BUDGET_GUARD or not isinstance(messages, list):
         return messages
+    # Remove empty assistant messages without tool calls.
+    messages = [
+        msg for msg in messages
+        if not (
+            _lc_message_role(msg) == "assistant"
+            and not _lc_message_content(msg).strip()
+            and not (
+                msg.get("tool_calls") if isinstance(msg, dict)
+                else getattr(msg, "tool_calls", None)
+            )
+        )
+    ]
 
     before_count = len(messages)
     before_tokens = _lc_total_approx_tokens(messages)
@@ -793,8 +811,17 @@ def _budget_guard_lc_messages(messages: Any) -> Any:
             latest_user_index = i
             break
 
+    latest_task_index = next(
+        (i for i in range(len(ordered_rest) - 1, -1, -1)
+         if ordered_rest[i][2] and ordered_rest[i][0] != "assistant"),
+        None,
+    )
     for i, (role, content, is_listener, original) in enumerate(ordered_rest):
-        if is_listener:
+        if i == latest_task_index:
+            # The current schema, calibration and evidence must remain intact.
+            # Reclaim their budget from older messages below instead.
+            pass
+        elif is_listener:
             content = _truncate_listener_task(content, BSC_MAX_LISTENER_TASK_CHARS)
         elif role == "user" and i == latest_user_index:
             content = _truncate_middle(content, BSC_MAX_LAST_USER_CHARS)
@@ -805,8 +832,13 @@ def _budget_guard_lc_messages(messages: Any) -> Any:
 
     # Convert back to LangChain messages.
     out = [_make_lc_message(role, content) for role, content, _, _ in compact if content.strip()]
+    current_task = next(
+        (msg for msg in reversed(out)
+         if _lc_message_role(msg) != "assistant" and _is_listener_task_text(_lc_message_content(msg))),
+        None,
+    )
 
-    # If still too large, drop oldest non-system, non-listener, non-latest-user messages.
+    # Drop older messages, including obsolete tasks, before the current task.
     def _is_latest_user_idx(idx: int, msgs: List[Any]) -> bool:
         if _lc_message_role(msgs[idx]) != "user":
             return False
@@ -820,7 +852,7 @@ def _budget_guard_lc_messages(messages: Any) -> Any:
         for idx, msg in enumerate(out):
             if _lc_message_role(msg) == "system":
                 continue
-            if _is_listener_task_text(_lc_message_content(msg)):
+            if msg is current_task:
                 continue
             if _is_latest_user_idx(idx, out):
                 continue
@@ -832,6 +864,11 @@ def _budget_guard_lc_messages(messages: Any) -> Any:
         out.pop(remove_idx)
 
     after_tokens = _lc_total_approx_tokens(out)
+    if after_tokens > BSC_MAX_INPUT_TOKENS:
+        raise ValueError(
+            "Current task and required messages exceed the context budget "
+            f"({after_tokens} > {BSC_MAX_INPUT_TOKENS}); refusing to truncate its schema or evidence"
+        )
 
     if BSC_TRIM_LOG_ALWAYS or before_count != len(out) or before_tokens > BSC_MAX_INPUT_TOKENS:
         logger.info(
@@ -908,19 +945,48 @@ def _strict_system_first_messages(messages: Any) -> Any:
 
 
 def _patch_agent_strict_system_first(agent: Any) -> Any:
-    if not STRICT_SYSTEM_FIRST and not BSC_CONTEXT_BUDGET_GUARD:
-        return agent
-
     original = getattr(agent, "_get_llm_response", None)
     if not callable(original):
         return agent
+    postprocess = getattr(agent, "_postprocess_fn", None)
+    # SDialog normally post-processes after _get_llm_response returns. Run the
+    # validator inside this retry boundary so TurnControlError can be retried.
+    if callable(postprocess):
+        agent._postprocess_fn = None
 
     def _wrapped_get_llm_response(messages: Any, *args: Any, **kwargs: Any) -> Any:
         if STRICT_SYSTEM_FIRST:
             messages = _strict_system_first_messages(messages)
-        if BSC_CONTEXT_BUDGET_GUARD:
-            messages = _budget_guard_lc_messages(messages)
-        return original(messages, *args, **kwargs)
+        for attempt in range(TURN_CONTROL_MAX_RETRIES + 1):
+            request_messages = _budget_guard_lc_messages(messages) if BSC_CONTEXT_BUDGET_GUARD else messages
+            try:
+                response, response_events = original(request_messages, *args, **kwargs)
+                if callable(postprocess):
+                    response.content = postprocess(response.content)
+                return response, response_events
+            except rag_state.TurnControlError as exc:
+                logger.warning(
+                    "Invalid model control: phase=%s attempt=%d/%d error=%s",
+                    rag_state.get_last_rag_phase(), attempt + 1, TURN_CONTROL_MAX_RETRIES + 1, exc,
+                )
+                if attempt == TURN_CONTROL_MAX_RETRIES:
+                    raise
+                # Retry generation only: the orchestrator and listener state have
+                # not committed this response. Do not append another user turn.
+                messages = list(messages)
+                feedback = (
+                    "\n\n[Output validation feedback]\n"
+                    f"The previous response was rejected: {exc}.\n"
+                    "Generate the complete response again using the current PHASE, "
+                    "its JSON schema and the original evidence. Do not invent missing "
+                    "preferences or rescale invalid scores; apply the supplied rules."
+                )
+                for i in range(len(messages) - 1, -1, -1):
+                    if _lc_message_role(messages[i]) == "user":
+                        messages[i] = _make_lc_message("user", _lc_message_content(messages[i]) + feedback)
+                        break
+                else:
+                    messages.append(_make_lc_message("user", feedback))
 
     setattr(agent, "_get_llm_response", _wrapped_get_llm_response)
     return agent
@@ -937,10 +1003,10 @@ def build_session_counselor(session: CounselorSession) -> Agent:
 
     counselor_persona = Persona(
         name="University Counselor",
-        age="middle-aged",
-        gender="unspecified",
+        age="",
+        gender="",
         role=practice.get("agent1_role", "UniversityCounselor"),
-        background="Works at the university counseling office in Italy.",
+        background="An artificial intelligence assistant providing university guidance in Italy, not a human counselor.",
         personality="",
         circumstances=f"Social practice: {practice.get('sp_name', 'University Counseling')}",
         rules="; ".join(practice.get("agent1_norms", []) or []),
@@ -954,19 +1020,17 @@ def build_session_counselor(session: CounselorSession) -> Agent:
         response_details=_build_expert_response_details(practice, session.dialog_language),
         think=ENABLE_AGENT_THINKING,
         postprocess_fn=_make_session_postprocess(session),
+        temperature=COUNSELOR_TEMPERATURE,
     )
     counselor_agent = _patch_agent_strict_system_first(counselor_agent)
 
     counselor_agent = counselor_agent | UniversityCounselorFlowOrchestrator(
         retriever=get_shared_retriever(session.rag_lang),
-        required_slots=("academic_background", "field_of_interest", "region"),
         top_k=int(os.getenv("SDIALOG_COUNSELOR_TOP_K", "6")),
-        candidate_pool_size=int(os.getenv("SDIALOG_CANDIDATE_POOL_SIZE", "4")),
-        min_options_target=int(os.getenv("SDIALOG_MIN_OPTIONS_TARGET", "3")),
+        candidate_pool_size=int(os.getenv("SDIALOG_CANDIDATE_POOL_SIZE", "6")),
         final_top_n=int(os.getenv("SDIALOG_FINAL_TOP_N", "3")),
         max_ctx_chars=int(os.getenv("SDIALOG_MAX_CTX_CHARS", "2200")),
-        history_turns=int(os.getenv("SDIALOG_HISTORY_TURNS", "1")),
-        debug=os.getenv("SDIALOG_DEBUG", "0").lower() in {"1", "true", "yes"},
+        debug=os.getenv("SDIALOG_DEBUG", "1").lower() in {"1", "true", "yes"},
         dialog_language=session.dialog_language,
         practice=practice,
     )
@@ -1096,6 +1160,30 @@ def run_counselor_turn(session: CounselorSession, user_text: str) -> str:
             try:
                 events = session.agent(user_text, return_events=True)
                 content = _extract_content_from_events(events)
+
+                if rag_state.get_last_rag_phase() == "qa_route":
+                    events = session.agent(
+                        rag_state.INTERNAL_QA_CONTINUE_TOKEN,
+                        return_events=True,
+                    )
+                    content = _extract_content_from_events(events)
+
+                if rag_state.get_last_rag_phase() in {"profile_update", "search_refresh"}:
+                    events = session.agent(
+                        rag_state.INTERNAL_PROFILE_REFRESH_TOKEN,
+                        return_events=True,
+                    )
+                    content = _extract_content_from_events(events)
+                # La prima chiamata calcola e salva il profilo RIASEC.
+                # Il relativo messaggio non viene mostrato all'utente.
+                if rag_state.get_last_rag_phase() == "riasec_finalize":
+                    events = session.agent(
+                        rag_state.INTERNAL_RIASEC_CONTINUE_TOKEN,
+                        return_events=True,
+                    )
+                    advice_content = _extract_content_from_events(events)
+                    if advice_content.strip():
+                        content = advice_content
             finally:
                 session.rag_globals = _snapshot_rag_globals()
         return content
@@ -1132,6 +1220,41 @@ def _json_safe(value: Any) -> Any:
         return _json_safe(vars(value))
     return str(value)
 
+def _write_conversation_snapshot(session: CounselorSession) -> None:
+    try:
+        output_dir = _conversation_dir()
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        payload = {
+            "session_id": session.session_id,
+            "session_key": session.session_key,
+            "model_id": session.model_id,
+            "backend_model": session.counselor_model,
+            "dialog_language": session.dialog_language,
+            "created_at": datetime.fromtimestamp(session.created_at).isoformat(timespec="seconds"),
+            "updated_at": datetime.now().isoformat(timespec="seconds"),
+            "turns": [
+                {"role": role, "content": content}
+                for role, content in session.transcript
+            ],
+            "listener_memory": _json_safe(session.listener_mem),
+            "listener_patch_events": _json_safe(session.rag_globals.listener_patch_events),
+            "selected_option_event": _json_safe(session.rag_globals.selected_option_event),
+            "rag_state": _rag_state_log_summary(session.rag_globals),
+        }
+
+        path = output_dir / f"{session.session_id}.dialog.json"
+        temporary_path = path.with_suffix(".tmp")
+        temporary_path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True),
+            encoding="utf-8",
+        )
+        temporary_path.replace(path)
+    except Exception:
+        logger.exception(
+            "Could not save conversation snapshot for session %s",
+            session.session_id,
+        )
 
 def _rag_state_log_summary(snapshot: RagGlobalsSnapshot) -> Dict[str, Any]:
     state = snapshot.last_rag_state
@@ -1345,6 +1468,7 @@ def chat_completions(request: ChatCompletionRequest, raw_request: Request):
             assistant_text=assistant_text,
             stream=bool(request.stream),
         )
+        _write_conversation_snapshot(session)
     except Exception as exc:
         logger.exception("Error while processing session %s", session.session_id)
         raise HTTPException(status_code=500, detail=str(exc)) from exc
@@ -1389,6 +1513,8 @@ def main() -> None:
     logger.info("Process model mode: %s", OWUI_PROCESS_MODEL)
     logger.info("OpenAI-compatible backend base: %s", SELECTED_OPENAI_API_BASE)
     logger.info("Agent thinking enabled: %s", ENABLE_AGENT_THINKING)
+    logger.info("Counselor temperature: %s", COUNSELOR_TEMPERATURE)
+    logger.info("Turn-control validation retries: %s", TURN_CONTROL_MAX_RETRIES)
     logger.info("Context budget guard enabled: %s", BSC_CONTEXT_BUDGET_GUARD)
     logger.info(
         "Context budget: max_model_len=%s max_input_tokens=%s max_chat_messages=%s listener_task_chars=%s",

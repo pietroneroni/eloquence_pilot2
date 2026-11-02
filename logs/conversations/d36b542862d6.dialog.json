@@ -1,0 +1,540 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T13:11:14",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "medicina",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "health_technology"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Social",
+        "Conventional"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "medicina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "medicina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "medicina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "medicina",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            2,
+            2,
+            -1,
+            -1,
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    },
+    {
+      "patch": {
+        "explicit": {
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "profile_update",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": true,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [28614] NURSING - INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+      "Sapienza Università di Roma | [30016] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+      "Sapienza Università di Roma | [30013] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA ASL ROMA 3 - OSTIA"
+    ],
+    "candidates": {
+      "S2C1": {
+        "block": "{\"id\":\"S2C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[28614] NURSING - INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA\",\"type\":\"Classe di laurea: L/SNT1\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Nursing - Infermieristica (abilitante alla professione sanitaria di Infermiere) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 28614\nClasse di laurea: L/SNT1\nModalità di accesso: Prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[28614] NURSING - INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+          "id": "S2C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT1",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C1",
+        "option": "Sapienza Università di Roma | [28614] NURSING - INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/28614",
+          "https://corsidilaurea.uniroma1.it/it/course/28614/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/28614/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/28614/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/28614/study-plan"
+        ],
+        "text": "Nursing - Infermieristica (abilitante alla professione sanitaria di Infermiere) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 28614\nClasse di laurea: L/SNT1\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S2C10": {
+        "block": "{\"id\":\"S2C10\",\"university\":\"University of L'Aquila\",\"course\":\"[B3B] BIOTECNOLOGIE\",\"type\":\"Classe di laurea: L-2\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: contenuto principale LAUREE\n[M3I] ECONOMIA E AMMINISTRAZIONE DELLE IMPRESE\n[C3F] FILOSOFIA E TEORIA DEI PROCESSI COMUNICATIVI\n[F3F] FISICA\n[D3F] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA)\n[D3I] IGIENE DENTALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI IGIENISTA DENTALE)\n[D3U] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE)\n[F3I] INFORMATICA\n[I3B] INGEGNERIA CIVILE\n[I3N] INGEGNERIA DELL'INFORMAZIONE\n[I3D] INGEGNERIA INDUSTRIALE\n[C3D] LETTERE\n[D3G] LOGOPEDIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI LOGOPEDISTA)\n[F3M] MATEMATICA\n[C3M] MEDIAZIONE LINGUISTICA E CULTURALE\n[M3G] OPERATORE GIURIDICO D'I",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[B3B] BIOTECNOLOGIE",
+          "id": "S2C10",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L-2",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S2C10",
+        "option": "University of L'Aquila | [B3B] BIOTECNOLOGIE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051/insegnamenti/9999",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051/insegnamenti/9999?schemaid=11308",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024?gruppo=1563186862224"
+        ],
+        "text": "contenuto principale LAUREE\n[M3I] ECONOMIA E AMMINISTRAZIONE DELLE IMPRESE\n[C3F] FILOSOFIA E TEORIA DEI PROCESSI COMUNICATIVI\n[F3F] FISICA\n[D3F] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA)\n[D3I] IGIENE DENTALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI IGIENISTA DENTALE)\n[D3U] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE)\n[F3I] INFORMATICA\n[I3B] INGEGNERIA CIVILE\n[I3N] INGEGNERIA DELL'INFORMAZIONE\n[I3D] INGEGNERIA INDUSTRIALE\n[C3D] LETTERE\n[D3G] LOGOPEDIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI LOGOPEDISTA)\n[F3M] MATEMATICA\n[C3M] MEDIAZIONE LINGUISTICA E CULTURALE\n[M3G] OPERATORE GIURIDICO D'IMPRESA\n[D3O] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI ORTOTTISTA ED ASSISTENTE DI OFTALMOLOGIA)\n[D3S] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O)\n[F3B] SCIENZE BIOLOGICHE\n[S3S] SCIENZE DEL SERVIZIO SOCIALE\n[S3F] SCIENZE DELL'EDUCAZIONE E DELLA FORMAZIONE\n[P3Q] SCIENZE E TECNICHE PSICOLOGICHE\n[F3D] SCIENZE E TECNOLOGIE CHIMICHE E DEI MATERIALI\n[F3S] SCIENZE E TECNOLOGIE PER L'AMBIENTE\n[E3M] SCIENZE MOTORIE E SPORTIVE\n[D3P] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA)\n[D3A] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO)\n[I3S] TECNICHE DELLA PROTEZIONE CIVILE E SICUREZZA DEL TERRITORIO\n[D3L] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[D3R] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n[D3N] TERAPIA DELLA NEURO E PSICOMOTRICITÀ DELL'ETÀ EVOLUTIVA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TERAPISTA DELLA NEURO E PSICOMOTRICITÀ DELL'ETÀ EVOLUTIVA)"
+      },
+      "S2C2": {
+        "block": "{\"id\":\"S2C2\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[M645] SCIENZE INFERMIERISTICHE E OSTETRICHE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 54)\"]}\nEXCERPT: [M645] SCIENZE INFERMIERISTICHE E OSTETRICHE Laurea Magistrale",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 54)"
+          ],
+          "course": "[M645] SCIENZE INFERMIERISTICHE E OSTETRICHE",
+          "id": "S2C2",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S2C2",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [M645] SCIENZE INFERMIERISTICHE E OSTETRICHE",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/614",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/614/insegnamenti/21622"
+        ],
+        "text": "[M645] SCIENZE INFERMIERISTICHE E OSTETRICHE Laurea Magistrale"
+      },
+      "S2C3": {
+        "block": "{\"id\":\"S2C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33461] BIOTECNOLOGIE MEDICHE\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie mediche\nAnno accademico: 2026-2027\nCodice corso: 33461\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33461] BIOTECNOLOGIE MEDICHE",
+          "id": "S2C3",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C3",
+        "option": "Sapienza Università di Roma | [33461] BIOTECNOLOGIE MEDICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33461",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/study-plan"
+        ],
+        "text": "Biotecnologie mediche\nAnno accademico: 2026-2027\nCodice corso: 33461\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      },
+      "S2C4": {
+        "block": "{\"id\":\"S2C4\",\"university\":\"University of Messina\",\"course\":\"[3262] BIOTECNOLOGIE Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO LEGALI E GIURIDICI\n[MS041] NEURORADIOLOGIA INTERVE",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[3262] BIOTECNOLOGIE Inglese Italiano",
+          "id": "S2C4",
+          "region": "Sicilia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S2C4",
+        "option": "University of Messina | [3262] BIOTECNOLOGIE Inglese Italiano",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?annoOrdinamento=2019",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?schemaid=12253",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100?annoOrdinamento=2019",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_SCI"
+        ],
+        "text": "ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO LEGALI E GIURIDICI\n[MS041] NEURORADIOLOGIA INTERVENTISTICA VASCOLARE 2.0\n[MS057] NEURORADIOLOGIA INTERVENTISTICA VASCOLARE 3.0\n[MS051] ORTODONZIA CLINICA\n[MS030] ORTOGNATODONZIA DIGITALE\n[MS055] PREVENZIONE E CONTROLLO DELLE MALATTIE CRONICO-DEGENERATIVE Dottorati\n[DT202] BIOINGEGNERIA APPLICATA ALLE SCIENZE MEDICHE\n[DT212] TRANSLATIONAL MOLECULAR MEDICINE AND SURGERY Inglese"
+      },
+      "S2C5": {
+        "block": "{\"id\":\"S2C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[30016] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA\",\"type\":\"Classe di laurea: L/SNT1\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ostetricia (abilitante alla professione sanitaria di Ostetrica/o) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 30016\nClasse di laurea: L/SNT1\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[30016] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+          "id": "S2C5",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT1",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C5",
+        "option": "Sapienza Università di Roma | [30016] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/30016",
+          "https://corsidilaurea.uniroma1.it/it/course/30016/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/30016/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/30016/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/30016/study-plan"
+        ],
+        "text": "Ostetricia (abilitante alla professione sanitaria di Ostetrica/o) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 30016\nClasse di laurea: L/SNT1\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S2C6": {
+        "block": "{\"id\":\"S2C6\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[460M] INGEGNERIA BIOMEDICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: [460M] INGEGNERIA BIOMEDICA Laurea Magistrale TELEMEDICINA, VIRTUAL HOSPITAL, PROSTETICA AVANZATA E ROBOTICA MEDICA cambia",
+        "facts": {
+          "cities": [],
+          "course": "[460M] INGEGNERIA BIOMEDICA",
+          "id": "S2C6",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S2C6",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [460M] INGEGNERIA BIOMEDICA",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2105",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2105/insegnamenti",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2105/insegnamenti/21474",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2105/insegnamenti/21476",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2105/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[460M] INGEGNERIA BIOMEDICA Laurea Magistrale TELEMEDICINA, VIRTUAL HOSPITAL, PROSTETICA AVANZATA E ROBOTICA MEDICA cambia"
+      },
+      "S2C7": {
+        "block": "{\"id\":\"S2C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33460] BIOTECNOLOGIE FARMACEUTICHE\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie Farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33460\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33460] BIOTECNOLOGIE FARMACEUTICHE",
+          "id": "S2C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C7",
+        "option": "Sapienza Università di Roma | [33460] BIOTECNOLOGIE FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33460",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/study-plan"
+        ],
+        "text": "Biotecnologie Farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33460\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      },
+      "S2C8": {
+        "block": "{\"id\":\"S2C8\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE In",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S2C8",
+          "region": "Abruzzo",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S2C8",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE Inglese\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY Inglese\n[D3KINE] KINESIOLOGY Inglese\n[D3LLCC] LINGUE, LETTERATURE E CULTURE IN CONTATTO\n[D3MT] MEDICINA TRASLAZIONALE Inglese Italiano\n[D3NI] NEUROSCIENZE E IMAGING Inglese\n[D3OMIT] ONCOLOGIA MOLECOLARE E IMMUNOLOGIA DEI TUMORI Inglese\n[D3PSI] PSICOLOGIA Inglese\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT Inglese\n[D3SBF] SCIENZE BIOMOLECOLARI E FARMACEUTICHE Inglese\n[D3SGST] SCIENZE GIURIDICHE PER LA SOSTENIBILITÀ, LA TRANSIZIONE ECOLOGICA E L’INNOVAZIONE Inglese\n[D3SS] SOCIAL SCIENCES Tedesco Inglese Francese"
+      },
+      "S2C9": {
+        "block": "{\"id\":\"S2C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[30013] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA ASL ROMA 3 - OSTIA\",\"type\":\"Classe di laurea: L/SNT1\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Infermieristica (abilitante alla professione sanitaria di Infermiere) - Roma ASL Roma 3 - Ostia\nAnno accademico: 2026-2027\nCodice corso: 30013\nClasse di laurea: L/SNT1\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[30013] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA ASL ROMA 3 - OSTIA",
+          "id": "S2C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT1",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C9",
+        "option": "Sapienza Università di Roma | [30013] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA ASL ROMA 3 - OSTIA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/30013",
+          "https://corsidilaurea.uniroma1.it/it/course/30013/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/30013/study-plan"
+        ],
+        "text": "Infermieristica (abilitante alla professione sanitaria di Infermiere) - Roma ASL Roma 3 - Ostia\nAnno accademico: 2026-2027\nCodice corso: 30013\nClasse di laurea: L/SNT1\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "health_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "clinica"
+    },
+    "control": {
+      "followup_question": "Ti piacerebbe saperne di più su questi corsi?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S2C1",
+        "S2C5",
+        "S2C9"
+      ],
+      "recap": "Hai espresso interesse per l'anestesia. Ti ho suggerito dei corsi che potrebbero aiutarti a raggiungere i tuoi obiettivi, considerando anche le tue preferenze per attività pratiche, logiche e di supporto alle persone."
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S2C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[28614] NURSING - INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA\",\"type\":\"Classe di laurea: L/SNT1\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Nursing - Infermieristica (abilitante alla professione sanitaria di Infermiere) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 28614\nClasse di laurea: L/SNT1\nModalità di accesso: Prova di ammissione\nLingua: ENG\n\n{\"id\":\"S2C2\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[M645] SCIENZE INFERMIERISTICHE E OSTETRICHE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 54)\"]}\nEXCERPT: [M645] SCIENZE INFERMIERISTICHE E OSTETRICHE Laurea Magistrale\n\n{\"id\":\"S2C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33461] BIOTECNOLOGIE MEDICHE\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie mediche\nAnno accademico: 2026-2027\nCodice corso: 3346\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {
+      "field_of_interest": [
+        "health_technology"
+      ],
+      "intent": "profile_update",
+      "location_changed": false,
+      "retrieval": {
+        "location": {
+          "city": "Roma",
+          "region": "Lazio",
+          "requirement": "",
+          "strict": false
+        },
+        "query": "anestesia"
+      },
+      "temporary": false
+    },
+    "query": "anestesia",
+    "rendered_reply": "Hai espresso interesse per l'anestesia. Ti ho suggerito dei corsi che potrebbero aiutarti a raggiungere i tuoi obiettivi, considerando anche le tue preferenze per attività pratiche, logiche e di supporto alle persone.\n\nLe informazioni disponibili per questa ricerca non contengono opzioni con sede documentata a Roma; questo non significa che non ne esistano. I corsi mostrati sono alternative in altre sedi.\n\nTi suggerisco queste opzioni:\n1. Sapienza Università di Roma | [28614] NURSING - INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA\n2. Sapienza Università di Roma | [30016] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA\n3. Sapienza Università di Roma | [30013] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA ASL ROMA 3 - OSTIA\n\nTi piacerebbe saperne di più su questi corsi?",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "anestesia"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      2,
+      2,
+      2,
+      -1,
+      -1,
+      2,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "d36b542862d6",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "io sono uno studentre al terzo ano di medicina",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "la clinica rispetto la ricerca",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso i tuoi interessi. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piacerebbe diventare un bravo medico di urgenza",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, Roma è una scelta eccellente. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "anche questo mi piace molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "io sono sempre contento di utilizzare la logica per risolvere problemi",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "non tantissimo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "io amo comandare",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "io sono unA PERSONA molto metodica e oredinata",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per la clinica e per diventare un bravo medico di urgenza. Ti ho suggerito dei corsi che potrebbero aiutarti a raggiungere i tuoi obiettivi, considerando anche le tue preferenze per attività pratiche, logiche e di supporto alle persone. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33573] APPLIED DYNAMIC AND CLINICAL PSYCHOLOGY - PSICOLOGIA DINAMICA E CLINICA APPLICATA 2. Sapienza Università di Roma | [33581] PSICOPATOLOGIA DINAMICA E RELAZIONE CLINICA NELL'ETÀ EVOLUTIVA E NELL'ADULTO Ti piacerebbe saperne di più su questi corsi?",
+      "role": "assistant"
+    },
+    {
+      "content": "io vorrei fare l’anestesistA",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per l'anestesia. Ti ho suggerito dei corsi che potrebbero aiutarti a raggiungere i tuoi obiettivi, considerando anche le tue preferenze per attività pratiche, logiche e di supporto alle persone. Le informazioni disponibili per questa ricerca non contengono opzioni con sede documentata a Roma; questo non significa che non ne esistano. I corsi mostrati sono alternative in altre sedi. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [28614] NURSING - INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA 2. Sapienza Università di Roma | [30016] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA 3. Sapienza Università di Roma | [30013] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE) - ROMA ASL ROMA 3 - OSTIA Ti piacerebbe saperne di più su questi corsi?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T13:15:07"
+}

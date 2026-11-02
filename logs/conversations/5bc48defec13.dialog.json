@@ -1,0 +1,575 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T10:16:07",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo di scienze applicate",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Artistic",
+        "Investigative"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo di scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo di scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo di scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo di scienze applicate",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            1,
+            0,
+            1,
+            2,
+            0,
+            -1,
+            0
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+      "Sapienza Università di Roma | [33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI",
+      "Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI\",\"type\":\"Classe di laurea: L-42\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-42",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33537",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/study-plan"
+        ],
+        "text": "Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Siena\",\"course\":\"[D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE Corso di Laurea STORIA DELL'ARTE\n\nARCHEOLOGIA PERCORSO COMUNE SPETTACOLO STORIA DELL'ARTE STORIA E DOCUMENTAZIONE Anno di corso\n1° ANNO\n- A.A. 2024/2025\nALTRE ATTIVITÀ\n1° ANNO ORARIO LEZIONI OBBLIGATORI\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE",
+          "id": "S1C10",
+          "region": "Toscana",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C10",
+        "option": "University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE STORIA DELL'ARTE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/1#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/1?schemaid=11651",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/2#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/2?schemaid=11652",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/3#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/3?schemaid=11653",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/4#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/4?schemaid=11654",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti?annoOrdinamento=2021"
+        ],
+        "text": "[D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE Corso di Laurea STORIA DELL'ARTE\n\nARCHEOLOGIA PERCORSO COMUNE SPETTACOLO STORIA DELL'ARTE STORIA E DOCUMENTAZIONE Anno di corso\n1° ANNO\n- A.A. 2024/2025\nALTRE ATTIVITÀ\n1° ANNO ORARIO LEZIONI OBBLIGATORI\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33528] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE\",\"type\":\"Classe di laurea: L-10\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Classics - Civiltà e Letterature Classiche\nAnno accademico: 2026-2027\nCodice corso: 33528\nClasse di laurea: L-10",
+        "facts": {
+          "cities": [],
+          "course": "[33528] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE",
+          "id": "S1C2",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-10",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C2",
+        "option": "Sapienza Università di Roma | [33528] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33528",
+          "https://corsidilaurea.uniroma1.it/it/course/33528/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33528/study-plan"
+        ],
+        "text": "Classics - Civiltà e Letterature Classiche\nAnno accademico: 2026-2027\nCodice corso: 33528\nClasse di laurea: L-10"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[03128] SCIENZE DEI BENI CULTURALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03128] SCIENZE DEI BENI CULTURALI",
+          "id": "S1C3",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C3",
+        "option": "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000?schemaid=17229",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001?schemaid=17231",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002?schemaid=17230",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti?annoOrdinamento=2017"
+        ],
+        "text": "[03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33529] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE\",\"type\":\"Classe di laurea: L-10\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Classics - Civiltà e Letterature Classiche\nAnno accademico: 2026-2027\nCodice corso: 33529\nClasse di laurea: L-10\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33529] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-10",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33529] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33529",
+          "https://corsidilaurea.uniroma1.it/it/course/33529/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33529/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33529/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33529/study-plan"
+        ],
+        "text": "Classics - Civiltà e Letterature Classiche\nAnno accademico: 2026-2027\nCodice corso: 33529\nClasse di laurea: L-10\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Messina\",\"course\":\"[4072] BENI ARCHEOLOGICI: TERRITORIO, INSEDIAMENTI, CULTURA MATERIALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"NOTO\"]}\nEXCERPT: contenuto principale Civiltà antiche e moderne Triennale\n[4035] FILOSOFIA\n[4015] LETTERE\n[4045] LINGUE, LETTERATURE STRANIERE E TECNICHE DELLA MEDIAZIONE LINGUISTICA\n[4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA Magistrale\n[4028] CIVILTÀ LETTERARIA DELL'ITALIA MEDIEVALE E MODERNA\n[4036] FILOSOFIA CONTEMPORANEA I",
+        "facts": {
+          "cities": [
+            "NOTO"
+          ],
+          "course": "[4072] BENI ARCHEOLOGICI: TERRITORIO, INSEDIAMENTI, CULTURA MATERIALE",
+          "id": "S1C5",
+          "region": "Sicilia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C5",
+        "option": "University of Messina | [4072] BENI ARCHEOLOGICI: TERRITORIO, INSEDIAMENTI, CULTURA MATERIALE",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523/insegnamenti/9999?annoOrdinamento=2021",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523/insegnamenti/9999?schemaid=12269",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523?annoOrdinamento=2021",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_UM"
+        ],
+        "text": "contenuto principale Civiltà antiche e moderne Triennale\n[4035] FILOSOFIA\n[4015] LETTERE\n[4045] LINGUE, LETTERATURE STRANIERE E TECNICHE DELLA MEDIAZIONE LINGUISTICA\n[4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA Magistrale\n[4028] CIVILTÀ LETTERARIA DELL'ITALIA MEDIEVALE E MODERNA\n[4036] FILOSOFIA CONTEMPORANEA Interateneo\n[4047] LINGUE MODERNE: LETTERATURE E TRADUZIONE Interateneo\n[4097] METODI E LINGUAGGI DEL GIORNALISMO\n[4025] SCIENZE STORICHE: SOCIETÀ, CULTURE E ISTITUZIONI D'EUROPA\n[4057] TRADIZIONE CLASSICA E ARCHEOLOGIA DEL MEDITERRANEO Master di Primo Livello\n[MP033] ESPERTO DELLA COMUNICAZIONE DIGITALE NELLA P.A. E NELL'IMPRESA Dottorati\n[DT210] SCIENZE UMANISTICHE"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecnologie per la Conservazione e il Restauro dei Beni Culturali\nAnno accademico: 2026-2027\nCodice corso: 33594\nClasse di laurea: L-43\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: BIOLOGIA AMBIENTALE\nSede: Ro",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33594",
+          "https://corsidilaurea.uniroma1.it/it/course/33594/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33594/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33594/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33594/study-plan"
+        ],
+        "text": "Tecnologie per la Conservazione e il Restauro dei Beni Culturali\nAnno accademico: 2026-2027\nCodice corso: 33594\nClasse di laurea: L-43\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: BIOLOGIA AMBIENTALE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14619"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33526\nClasse di laurea: L-5\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Lettere e Filosofia, Ingegneria dell'informazione, informatica e statistica\nDipartimento: FILOSOFIA\nSede: Roma\n",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33526",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/study-plan"
+        ],
+        "text": "Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33526\nClasse di laurea: L-5\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Lettere e Filosofia, Ingegneria dell'informazione, informatica e statistica\nDipartimento: FILOSOFIA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14621"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Foggia\",\"course\":\"[1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1069] PATRIMONIO E TURISMO CULTURALE Corso di Laurea BENI ARTISTICI E DEMOETNOANTROPOLOGICI",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI",
+          "id": "S1C8",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C8",
+        "option": "University of Foggia | [1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/3#1",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/3?schemaid=2781",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/4#1",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/4?schemaid=2782",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[1069] PATRIMONIO E TURISMO CULTURALE Corso di Laurea BENI ARTISTICI E DEMOETNOANTROPOLOGICI"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33522] STUDI STORICO-ARTISTICI\",\"type\":\"Classe di laurea: L-1\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Studi storico-artistici\nAnno accademico: 2026-2027\nCodice corso: 33522\nClasse di laurea: L-1\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33522] STUDI STORICO-ARTISTICI",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-1",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33522] STUDI STORICO-ARTISTICI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33522",
+          "https://corsidilaurea.uniroma1.it/it/course/33522/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33522/study-plan"
+        ],
+        "text": "Studi storico-artistici\nAnno accademico: 2026-2027\nCodice corso: 33522\nClasse di laurea: L-1\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "humanities"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "humanities"
+    },
+    "control": {
+      "intent": "acknowledgement",
+      "reply": "Grazie a te! Sono felice di averti aiutato. Se hai altre domande o hai bisogno di ulteriori chiarimenti, non esitare a chiedere."
+    },
+    "ctx_chars": 4546,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI\",\"type\":\"Classe di laurea: L-42\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG\n\n{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33528] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE\",\"type\":\"Classe di laurea: L-10\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Classics - Civiltà e Letterature Classiche\nAnno accademico: 2026-2027\nCodice corso: 33528\nClasse di laurea: L-10\n\n{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[03128] SCIENZE DEI BENI CULTURALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBL\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_ack",
+    "profile_update": {},
+    "query": "humanities",
+    "rendered_reply": "Grazie a te! Sono felice di averti aiutato. Se hai altre domande o hai bisogno di ulteriori chiarimenti, non esitare a chiedere.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "humanities"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      2,
+      1,
+      0,
+      1,
+      2,
+      0,
+      -1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "5bc48defec13",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi che fa per te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "sto per concludere il liceo di scienze applicate spero",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi stai per concludere il liceo di scienze applicate. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "in realta mi interessano le materie umanistiche ma mi interessa molto la ricerca",
+      "role": "user"
+    },
+    {
+      "content": "Interessante, quindi ti piacciono le materie umanistiche e la ricerca. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei imparare poter seguire entrambe le passioni nonostante gli ambiti discordanti",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, ma mi chiedevo: hai già frequentato o stai frequentando qualche corso universitario?",
+      "role": "assistant"
+    },
+    {
+      "content": "no",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi ti interessano le materie umanistiche e la ricerca. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "qualsiasi a roma",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei flessibile sulla sede universitaria. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "0",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "mediamente",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "0",
+      "role": "user"
+    },
+    {
+      "content": "Ti piacciono le materie umanistiche e la ricerca. Ti ho proposto tre corsi di laurea che potrebbero interessarti, tra cui due a Roma. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI 2. Sapienza Università di Roma | [33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI 3. Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "cos è studi umanistici globali",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Global Humanities - Studi umanistici globali è un percorso che si concentra su un approccio globale alle discipline umanistiche. Questo corso è offerto in lingua inglese e prevede una prova di ingresso per la verifica delle conoscenze. Non posso confermare la sede, ma è documentato a Roma.",
+      "role": "assistant"
+    },
+    {
+      "content": "nel pratico cosa studio",
+      "role": "user"
+    },
+    {
+      "content": "Nel corso di laurea in Global Humanities - Studi umanistici globali, studierai discipline umanistiche da una prospettiva globale. Questo include l'analisi di testi, culture e contesti storici da diverse parti del mondo. Il corso è offerto in lingua inglese e prevede una prova di ingresso per la verifica delle conoscenze.",
+      "role": "assistant"
+    },
+    {
+      "content": "ah bene però faccio schifo in inglese",
+      "role": "user"
+    },
+    {
+      "content": "Non preoccuparti, ci sono altre opzioni che potrebbero interessarti. Ad esempio, il corso di laurea in Tecnologie per la Conservazione e il Restauro dei Beni Culturali o Filosofia e Intelligenza Artificiale sono entrambi offerti in italiano.",
+      "role": "assistant"
+    },
+    {
+      "content": "filosofia e inteliggenza artificiale in che consiste",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Filosofia e Intelligenza Artificiale è un percorso interdisciplinare che combina studi filosofici con conoscenze tecniche sull'intelligenza artificiale. Questo corso ti permetterà di esplorare le implicazioni etiche, sociali e filosofiche delle tecnologie emergenti, come l'intelligenza artificiale, mentre acquisisci competenze tecniche in questo campo. Il corso è di durata triennale e prevede una prova di ingresso per la verifica delle conoscenze.",
+      "role": "assistant"
+    },
+    {
+      "content": "e gli sbocchi lavorativi quali sono",
+      "role": "user"
+    },
+    {
+      "content": "Gli sbocchi lavorativi per il corso di laurea in Filosofia e Intelligenza Artificiale sono vari e interdisciplinari. Potresti lavorare in settori come la ricerca filosofica, l'analisi etica delle tecnologie, la consulenza per aziende tecnologiche, o in ruoli che richiedono competenze sia filosofiche che tecniche. Inoltre, potresti trovare opportunità in ambiti come l'insegnamento, la comunicazione scientifica, o la gestione di progetti di innovazione tecnologica.",
+      "role": "assistant"
+    },
+    {
+      "content": "grazie fratello sei stato davvero un mastro",
+      "role": "user"
+    },
+    {
+      "content": "Grazie a te! Sono felice di averti aiutato. Se hai altre domande o hai bisogno di ulteriori chiarimenti, non esitare a chiedere.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T10:24:28"
+}

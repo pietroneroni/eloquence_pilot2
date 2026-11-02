@@ -1,0 +1,146 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T12:39:51",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "3 superiore informatica con specializzazione intelligenza artificiale",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "3 superiore informatica con specializzazione intelligenza artificiale",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "3 superiore informatica con specializzazione intelligenza artificiale",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "",
+    "advice_intro_singular": "",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [],
+    "candidates": {},
+    "choice_options": [],
+    "confirmed_fields": [],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "intent": "background_valid",
+      "patch": {
+        "explicit": {
+          "academic_background": "3 superiore informatica con specializzazione intelligenza artificiale"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "reply": "Perfetto, grazie per aver condiviso i tuoi interessi.",
+      "retrieval": {
+        "location": {
+          "city": null,
+          "region": null,
+          "requirement": "",
+          "strict": false
+        },
+        "query": "informatica"
+      }
+    },
+    "ctx_chars": 0,
+    "ctx_preview": "",
+    "current_question": "Quali materie o ambiti universitari ti attirano di più?",
+    "expected_verbatim": "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+    "final_top_n": 3,
+    "phase": "background_answer_valid",
+    "profile_update": {},
+    "query": "",
+    "rendered_reply": "Perfetto, grazie per aver condiviso i tuoi interessi.\nPensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "background_validate",
+    "valences_before": []
+  },
+  "selected_option_event": null,
+  "session_id": "a8a2193835c7",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Mi scuso, ma non ho capito. Sto chiedendo quale scuola, corso o laurea stai frequentando o hai concluso da poco. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "al momento sto facendo la 3 superiore informatica con specializzazione intelligenza artificiale",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, grazie per aver condiviso la tua situazione attuale. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "coding e informatica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, grazie per aver condiviso i tuoi interessi. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T12:41:29"
+}

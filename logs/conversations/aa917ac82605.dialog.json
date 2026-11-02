@@ -1,0 +1,521 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T13:26:42",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico indirizzo scienze applicate",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "physical_sciences"
+      ],
+      "riasec_attitudes": [
+        "Social",
+        "Conventional",
+        "Enterprising"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico indirizzo scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico indirizzo scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico indirizzo scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico indirizzo scienze applicate",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            -1,
+            1,
+            1,
+            0,
+            2,
+            1,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+      "Sapienza Università di Roma | [33588] FISICA",
+      "Sapienza Università di Roma | [33587] SCIENZE CHIMICHE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di ac",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33587] SCIENZE CHIMICHE\",\"type\":\"Classe di laurea: L-27\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze Chimiche\nAnno accademico: 2026-2027\nCodice corso: 33587\nClasse di laurea: L-27\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33587] SCIENZE CHIMICHE",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-27",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [33587] SCIENZE CHIMICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33587",
+          "https://corsidilaurea.uniroma1.it/it/course/33587/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33587/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33587/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33587/study-plan"
+        ],
+        "text": "Scienze Chimiche\nAnno accademico: 2026-2027\nCodice corso: 33587\nClasse di laurea: L-27\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: ",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C2",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C2",
+        "option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33502",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/study-plan"
+        ],
+        "text": "Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14824"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: [0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)"
+          ],
+          "course": "[0514G] INFORMATICA",
+          "id": "S1C3",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C3",
+        "option": "University of Trento | [0514G] INFORMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"
+        ],
+        "text": "[0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[146055] CALCULUS 1\n\n12 CFU\n108 ore Primo Semestre\n[145992] COMPUTER ARCHITECTURES\n6 CFU\n48 ore Secondo Semestre\n[146140] COMPUTER PROGRAMMING 1\n\n12 CFU\n96 ore Primo Semestre\n[146062] COMPUTER PROGRAMMING 2\n\n6 CFU\n48 ore Secondo Semestre\n[146168] FUNCTIONAL PROGRAMMING\n6 CFU\n48 ore Secondo Semestre\n[146056] GEOMETRY AND LINEAR ALGEBRA\n6 CFU\n56 ore Primo Semestre\n[146289] MATHEMATICS FOR INFORMATICS\n6 CFU\n48 ore Secondo Semestre\n[146060] PROBABILITY\n6 CFU\n48 ore Secondo Semestre SCEGLIERE 1 INSEGNAMENTO TRA I SEGUENTI (3 CFU)\nMaggiori informazioni\n[145326] INGLESE LIVELLO C1\n\n3 CFU\n50 ore Attività a durata annuale\n[140189] PROVA DI CONOSCENZA LINGUA ITALIANA (A1)"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33588] FISICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Fisica\nAnno accademico: 2026-2027\nCodice corso: 33588\nClasse di laurea: L-30\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: FISICA\nSede:",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33588] FISICA",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33588] FISICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33588",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/study-plan"
+        ],
+        "text": "Fisica\nAnno accademico: 2026-2027\nCodice corso: 33588\nClasse di laurea: L-30\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: FISICA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14619"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Messina\",\"course\":\"[9214] FISICA\",\"type\":\"Classe di laurea: L-30\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: contenuto principale Scienze matematiche e informatiche, scienze fisiche e scienze della terra Triennale\n[9215] INFORMATICA Inglese Italiano\n[9218] MATEMATICA Magistrale\n[9237] DATA SCIENCE Inglese\n[9233] GEOPHYSICAL SCIENCES FOR SEISMIC RISK Inglese\n[9223] MATEMATI",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[9214] FISICA",
+          "id": "S1C5",
+          "region": "Sicilia",
+          "type": "Classe di laurea: L-30",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C5",
+        "option": "University of Messina | [9214] FISICA",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999?annoOrdinamento=2020",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999?schemaid=12236",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046?annoOrdinamento=2020",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_MAT"
+        ],
+        "text": "contenuto principale Scienze matematiche e informatiche, scienze fisiche e scienze della terra Triennale\n[9215] INFORMATICA Inglese Italiano\n[9218] MATEMATICA Magistrale\n[9237] DATA SCIENCE Inglese\n[9233] GEOPHYSICAL SCIENCES FOR SEISMIC RISK Inglese\n[9223] MATEMATICA\n[9232] PHYSICS Inglese Italiano Master di Secondo Livello\n[MS044] SICUREZZA SISMICA E SVILUPPO URBANO SOSTENIBILE Dottorati\n[DT205] FISICA Inglese Italiano\n[DT122] MATEMATICA E SCIENZE COMPUTAZIONALI Inglese Italiano"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33475] INGEGNERIA CHIMICA\",\"type\":\"Classe di laurea: L-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria Chimica\nAnno accademico: 2026-2027\nCodice corso: 33475\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33475] INGEGNERIA CHIMICA",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33475] INGEGNERIA CHIMICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33475",
+          "https://corsidilaurea.uniroma1.it/it/course/33475/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33475/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33475/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33475/study-plan"
+        ],
+        "text": "Ingegneria Chimica\nAnno accademico: 2026-2027\nCodice corso: 33475\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: ile, le nozioni sul calcolo differenziale e integrale e i metodi elementari per la soluzione di equazioni differenziali.\nL'insegnamento di Fondamenti di Fisica si propone di introdurre i concetti di base riguardanti le grandezze fisiche, la loro misura, la meccanica del punto materiale, dei corpi",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S1C7",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C7",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "ile, le nozioni sul calcolo differenziale e integrale e i metodi elementari per la soluzione di equazioni differenziali.\nL'insegnamento di Fondamenti di Fisica si propone di introdurre i concetti di base riguardanti le grandezze fisiche, la loro misura, la meccanica del punto materiale, dei corpi rigidi, dei fluidi e la termodinamica. L'insegnamento di Chimica dei Materiali fornirà nozioni di chimica generale inorganica ed organica, struttura dell'atomo e tavola periodica, legami chimici, stati di aggregazione della materia (solido, liquido, gassoso), equilibri acido-base, elettrochimica e materiali per le tecnologie innovative. Nel percorso formativo, gli studenti acquisiscono, inoltre, i concetti fondamentali dell'informatica e della sua applicazione pratica attraverso l'uso di fogli di calcolo per risolvere problemi reali e compiere analisi dati, creazione grafici e rappresentazioni visive volte a facilitare la comunicazione e l'interpretazione dei risultati. A questi insegnamenti si aggiunge la conoscenza e la comprensione, in forma scritta e orale, della lingua inglese a livello QCER B1 o superiore, con riferimento anche ai lessici disciplinari."
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29981] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA A - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Classe di laurea: L/SNT2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea A - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29981\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[29981] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA A - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT2",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [29981] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA A - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29981",
+          "https://corsidilaurea.uniroma1.it/it/course/29981/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/29981/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29981/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29981/study-plan"
+        ],
+        "text": "Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea A - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29981\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Siena\",\"course\":\"[SE003] FISICA E TECNOLOGIE AVANZATE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: 5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n[2016768] MECCANICA STATISTICA\n6 CFU\n60 ore Second",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[SE003] FISICA E TECNOLOGIE AVANZATE",
+          "id": "S1C9",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C9",
+        "option": "University of Siena | [SE003] FISICA E TECNOLOGIE AVANZATE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=11699"
+        ],
+        "text": "5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n[2016768] MECCANICA STATISTICA\n6 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1\n\n3 CFU"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "computer_science",
+      "physical_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica chimica"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "La laurea in Scienze Chimiche ti apre diverse opportunità lavorative. Puoi lavorare in laboratori di ricerca, sia nel settore pubblico che privato, occupandoti di analisi chimiche, sviluppo di nuovi materiali o prodotti chimici. Un'altra possibilità è lavorare nell'industria farmaceutica, dove potresti essere coinvolto nella sintesi e nella sperimentazione di nuovi farmaci. Inoltre, ci sono opportunità nel settore ambientale, dove potresti occuparti di monitoraggio e gestione della qualità dell'acqua e dell'aria. Le prospettive lavorative sono varie e dipendono molto dal tuo interesse specifico all'interno del campo chimico."
+    },
+    "ctx_chars": 1328,
+    "ctx_preview": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: \n\n{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33588] FISICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Fisica\nAnno accademico: 2026-2027\nCodice corso: 33588\nClasse di laurea: L-30\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: FISICA\nSede:\n\n{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33587] SCIENZE CHIMICHE\",\"type\":\"Classe di laurea: L-27\",\"type_status\":\"declared\",\"\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "informatica chimica",
+    "rendered_reply": "La laurea in Scienze Chimiche ti apre diverse opportunità lavorative. Puoi lavorare in laboratori di ricerca, sia nel settore pubblico che privato, occupandoti di analisi chimiche, sviluppo di nuovi materiali o prodotti chimici. Un'altra possibilità è lavorare nell'industria farmaceutica, dove potresti essere coinvolto nella sintesi e nella sperimentazione di nuovi farmaci. Inoltre, ci sono opportunità nel settore ambientale, dove potresti occuparti di monitoraggio e gestione della qualità dell'acqua e dell'aria. Le prospettive lavorative sono varie e dipendono molto dal tuo interesse specifico all'interno del campo chimico.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica chimica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      1,
+      -1,
+      1,
+      1,
+      0,
+      2,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "aa917ac82605",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Ciao! Sono Lidia",
+      "role": "user"
+    },
+    {
+      "content": "Ciao Lidia, benvenuta! Sono un'assistente virtuale qui per aiutarti a trovare il percorso universitario più adatto a te. Cominciamo! Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Sono in quinto superiore, frequento il liceo scientifico indirizzo scienze applicate",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "Mi attirano molto l’informatica e la chimica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, Lidia. Informatica e chimica sono campi molto interessanti. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "E’ proprio questo il punto: ancora non ne sono sicura.",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, Lidia. È normale avere dubbi. Ti aiuterò a esplorare le tue opzioni. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "A Roma, preferibilmente alla Sapienza",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, Lidia. Ti piace l'idea di studiare a Roma, preferibilmente alla Sapienza. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "Abbastanza, da piccola mi piacevano molto i LEGO",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "Dipende dall’ambito, ma in generale non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "Molto/Abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "Abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "Poco/Abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "Molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "Abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "Molto",
+      "role": "user"
+    },
+    {
+      "content": "Ti piacciono molto l'informatica e la chimica, e ti piace lavorare con le persone e avere attività ordinate. Ti propongo alcuni corsi che potrebbero interessarti. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE 2. Sapienza Università di Roma | [33588] FISICA 3. Sapienza Università di Roma | [33587] SCIENZE CHIMICHE Hai altre domande su questi corsi?",
+      "role": "assistant"
+    },
+    {
+      "content": "Quali sono le prospettive lavorative se mi iscrivo a Scienze Chimiche?",
+      "role": "user"
+    },
+    {
+      "content": "La laurea in Scienze Chimiche ti apre diverse opportunità lavorative. Puoi lavorare in laboratori di ricerca, sia nel settore pubblico che privato, occupandoti di analisi chimiche, sviluppo di nuovi materiali o prodotti chimici. Un'altra possibilità è lavorare nell'industria farmaceutica, dove potresti essere coinvolto nella sintesi e nella sperimentazione di nuovi farmaci. Inoltre, ci sono opportunità nel settore ambientale, dove potresti occuparti di monitoraggio e gestione della qualità dell'acqua e dell'aria. Le prospettive lavorative sono varie e dipendono molto dal tuo interesse specifico all'interno del campo chimico.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T13:33:11"
+}

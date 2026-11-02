@@ -1,0 +1,547 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T10:41:42",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "riasec_attitudes": [
+        "Social",
+        "Enterprising",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo majorana latina",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo majorana latina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            2,
+            -1,
+            0,
+            2,
+            2,
+            1,
+            0
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33570] PSICOLOGIA E SALUTE",
+      "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+      "Sapienza Università di Roma | [33569] PSICOLOGIA E PROCESSI SOCIALI"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of L'Aquila\",\"course\":\"[P3Q] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [P3Q] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[P3Q] SCIENZE E TECNICHE PSICOLOGICHE",
+          "id": "S1C1",
+          "region": "Abruzzo",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C1",
+        "option": "University of L'Aquila | [P3Q] SCIENZE E TECNICHE PSICOLOGICHE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416/insegnamenti/9999",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416/insegnamenti/9999?schemaid=11435"
+        ],
+        "text": "[P3Q] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33569] PSICOLOGIA E PROCESSI SOCIALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Psicologia e processi sociali\nAnno accademico: 2026-2027\nCodice corso: 33569\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA\nSede: Roma\nLingua: Italiano\nPercorso di studio internazionale: Doppio titolo: italo-colombiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05429",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33569] PSICOLOGIA E PROCESSI SOCIALI",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [33569] PSICOLOGIA E PROCESSI SOCIALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33569",
+          "https://corsidilaurea.uniroma1.it/it/course/33569/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33569/study-plan"
+        ],
+        "text": "Psicologia e processi sociali\nAnno accademico: 2026-2027\nCodice corso: 33569\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA\nSede: Roma\nLingua: Italiano\nPercorso di studio internazionale: Doppio titolo: italo-colombiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05429"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Foggia\",\"course\":\"[1807] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1807] SCIENZE E TECNICHE PSICOLOGICHE",
+          "id": "S1C2",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C2",
+        "option": "University of Foggia | [1807] SCIENZE E TECNICHE PSICOLOGICHE",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535/insegnamenti/9999",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535/insegnamenti/9999?schemaid=2791"
+        ],
+        "text": "[1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84\"]}\nEXCERPT: ambito della psicologia cognitiva, dei suoi metodi e procedure di indagine scientifica e delle potenzialità applicative.\n- avere acquisito adeguate competenze e strumenti per la comunicazione e la gestione dell'informazione e un’adeguata abilità nell’utilizzo della lingua inglese;\n- avere acquisito adeguate abilità nell'utiliz",
+        "facts": {
+          "cities": [
+            "Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84"
+          ],
+          "course": "[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+          "id": "S1C3",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C3",
+        "option": "University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438?schemaid=8225"
+        ],
+        "text": "ambito della psicologia cognitiva, dei suoi metodi e procedure di indagine scientifica e delle potenzialità applicative.\n- avere acquisito adeguate competenze e strumenti per la comunicazione e la gestione dell'informazione e un’adeguata abilità nell’utilizzo della lingua inglese;\n- avere acquisito adeguate abilità nell'utilizzo, in forma scritta e orale, di almeno una lingua dell'Unione Europea, oltre l'italiano, nell'ambito specifico di competenza e per lo scambio di informazioni generali. I laureati della classe potranno svolgere attività professionali in strutture pubbliche e private, nelle istituzioni educative, nelle imprese e nelle organizzazioni del terzo settore. I laureati della classe, sotto la supervisione di un laureato magistrale in psicologia, potranno svolgere attività in ambiti quali i servizi diretti alla persona, ai gruppi, alle organizzazioni e alle comunità e per l'assistenza e la promozione della salute. Tali attività riguardano gli ambiti della valutazione psicometrica, psicosociali e dello sviluppo, nonché gli ambiti della gestione delle risorse umane nelle diverse età della vita."
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Messina\",\"course\":\"[2445] SCIENZE E TECNICHE PSICOLOGICHE PIANO STATUTARIO Sede Noto\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA Altre sedi NOTO\"]}\nEXCERPT: [2445] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea PIANO STATUTARIO Sede Noto",
+        "facts": {
+          "cities": [
+            "MESSINA Altre sedi NOTO"
+          ],
+          "course": "[2445] SCIENZE E TECNICHE PSICOLOGICHE PIANO STATUTARIO Sede Noto",
+          "id": "S1C4",
+          "region": "Sicilia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C4",
+        "option": "University of Messina | [2445] SCIENZE E TECNICHE PSICOLOGICHE PIANO STATUTARIO Sede Noto",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10007",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/1#1",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/1?schemaid=12296",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/2#1",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti/2?schemaid=12297",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10007/insegnamenti?annoOrdinamento=2023",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10007?annoOrdinamento=2023"
+        ],
+        "text": "[2445] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea PIANO STATUTARIO Sede Noto"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[0684] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Classe di laurea: L-24\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 611)\"]}\nEXCERPT: 330] FONDAMENTI DI NEUROPSICOFARMACOLOGIA\n5 CFU\n40 ore Affine/Integrativa (L-24)\n[PSI0334] PSICOLOGIA DELLA PERSONALITA'\n5 CFU\n40 ore Affine/Integrativa (L-24)\n[PSI0335] TECNICHE DEI TEST PSICOLOGICI\n5 CFU\n40 ore Affine/Integrativa (L-24)\n[PSI0336] SVILUPPO TIPICO E ATIPICO NEL CONTESTO FAMILIARE E SCOLASTICO\n6 CFU\n48 ore A scelta dello studente (L-24)",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 611)"
+          ],
+          "course": "[0684] SCIENZE E TECNICHE PSICOLOGICHE",
+          "id": "S1C5",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L-24",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C5",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [0684] SCIENZE E TECNICHE PSICOLOGICHE",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/4",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/4/insegnamenti/22024"
+        ],
+        "text": "330] FONDAMENTI DI NEUROPSICOFARMACOLOGIA\n5 CFU\n40 ore Affine/Integrativa (L-24)\n[PSI0334] PSICOLOGIA DELLA PERSONALITA'\n5 CFU\n40 ore Affine/Integrativa (L-24)\n[PSI0335] TECNICHE DEI TEST PSICOLOGICI\n5 CFU\n40 ore Affine/Integrativa (L-24)\n[PSI0336] SVILUPPO TIPICO E ATIPICO NEL CONTESTO FAMILIARE E SCOLASTICO\n6 CFU\n48 ore A scelta dello studente (L-24)"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33570] PSICOLOGIA E SALUTE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Psicologia e Salute\nAnno accademico: 2026-2027\nCodice corso: 33570\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: Psicologia Dinamica, Clinica e Salute\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05429",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33570] PSICOLOGIA E SALUTE",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33570] PSICOLOGIA E SALUTE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33570",
+          "https://corsidilaurea.uniroma1.it/it/course/33570/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33570/study-plan"
+        ],
+        "text": "Psicologia e Salute\nAnno accademico: 2026-2027\nCodice corso: 33570\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: Psicologia Dinamica, Clinica e Salute\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05429"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Sassari\",\"course\":\"[A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI",
+          "id": "S1C7",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C7",
+        "option": "University of Sassari | [A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999?annoOrdinamento=2018",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999?annoOrdinamento=2023",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759?annoOrdinamento=2018",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759?annoOrdinamento=2023"
+        ],
+        "text": "[A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA DEI PROCESSI DI SVILUPPO E SOCIALIZZAZIONE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Prevalentemente a distanza\nCodice prova: 05429",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33571",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/study-plan"
+        ],
+        "text": "Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA DEI PROCESSI DI SVILUPPO E SOCIALIZZAZIONE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Prevalentemente a distanza\nCodice prova: 05429"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Messina\",\"course\":\"[2448] SCIENZE E TECNICHE PSICOLOGICHE CLINICHE E PREVENTIVE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: [2448] SCIENZE E TECNICHE PSICOLOGICHE CLINICHE E PREVENTIVE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[2448] SCIENZE E TECNICHE PSICOLOGICHE CLINICHE E PREVENTIVE",
+          "id": "S1C9",
+          "region": "Sicilia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C9",
+        "option": "University of Messina | [2448] SCIENZE E TECNICHE PSICOLOGICHE CLINICHE E PREVENTIVE",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10448",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999?annoOrdinamento=2023",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10448/insegnamenti/9999?schemaid=12262",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10448?annoOrdinamento=2023"
+        ],
+        "text": "[2448] SCIENZE E TECNICHE PSICOLOGICHE CLINICHE E PREVENTIVE Corso di Laurea"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "psychology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Hai altre preferenze o domande su questi corsi?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C6",
+        "S1C8",
+        "S1C10"
+      ],
+      "recap": "Hai espresso interesse per psicologia e legge. Ti piacciono molto attività che coinvolgono il supporto alle persone e la creazione di nuove idee. Ti piace anche capire come funzionano le cose e sperimentare. Ti propongo alcuni corsi di laurea in psicologia che potrebbero interessarti."
+    },
+    "ctx_chars": 4512,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of L'Aquila\",\"course\":\"[P3Q] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [P3Q] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea\n\n{\"id\":\"S1C2\",\"university\":\"University of Foggia\",\"course\":\"[1807] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea\n\n{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84\"]}\nEXCERPT: ambito della psicologia cognitiva, dei suoi metodi e procedure di indagine scientifica e delle potenzialità applicative.\n- avere acquisito adeguate competenze e strumenti per la comunicazione e la gestione dell'informazione e un’adeguata abilità nell’utilizzo della lingua inglese;\n- avere acquisito adeguate abilità nell'ut\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "psicologia",
+    "rendered_reply": "Hai espresso interesse per psicologia e legge. Ti piacciono molto attività che coinvolgono il supporto alle persone e la creazione di nuove idee. Ti piace anche capire come funzionano le cose e sperimentare. Ti propongo alcuni corsi di laurea in psicologia che potrebbero interessarti.\n\nTi suggerisco queste opzioni:\n1. Sapienza Università di Roma | [33570] PSICOLOGIA E SALUTE\n2. Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\n3. Sapienza Università di Roma | [33569] PSICOLOGIA E PROCESSI SOCIALI\n\nHai altre preferenze o domande su questi corsi?",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "psicologia"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      -1,
+      2,
+      -1,
+      0,
+      2,
+      2,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "b9985966d764",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "liceo majorana latina",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "psicologia e magistato",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, psicologia e magistrato sono ambiti molto interessanti. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "psicologia e legge",
+      "role": "user"
+    },
+    {
+      "content": "psicologia",
+      "role": "assistant"
+    },
+    {
+      "content": "vai",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "liceo majorana latina",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "psicologia",
+      "role": "user"
+    },
+    {
+      "content": "Psicologia è un campo molto interessante. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "psicologia e legge",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, psicologia e legge sono due ambiti molto interessanti. Ma prima di continuare, mi puoi dire che scuola hai frequentato o stai frequentando?",
+      "role": "assistant"
+    },
+    {
+      "content": "liceo scienze applicate",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai frequentato il liceo scientifico. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai frequentato il liceo scientifico. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "diciamo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "moltissimo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "un po",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per psicologia e legge. Ti piacciono molto attività che coinvolgono il supporto alle persone e la creazione di nuove idee. Ti piace anche capire come funzionano le cose e sperimentare. Ti propongo alcuni corsi di laurea in psicologia che potrebbero interessarti. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33570] PSICOLOGIA E SALUTE 2. Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA 3. Sapienza Università di Roma | [33569] PSICOLOGIA E PROCESSI SOCIALI Hai altre preferenze o domande su questi corsi?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T10:43:25"
+}

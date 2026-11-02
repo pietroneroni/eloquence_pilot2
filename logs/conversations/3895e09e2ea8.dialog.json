@@ -1,0 +1,572 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-28T13:30:31",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo artistico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "cultural_heritage"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Artistic",
+        "Social"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo artistico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo artistico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design",
+            "cultural_heritage"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo artistico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design",
+            "cultural_heritage"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo artistico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design",
+            "cultural_heritage"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            2,
+            -1,
+            2,
+            2,
+            2,
+            2,
+            -1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Foggia | [1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI",
+      "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+      "University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE SPETTACOLO"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Foggia\",\"course\":\"[1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1069] PATRIMONIO E TURISMO CULTURALE Corso di Laurea BENI ARTISTICI E DEMOETNOANTROPOLOGICI",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI",
+          "id": "S1C1",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C1",
+        "option": "University of Foggia | [1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/3#1",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/3?schemaid=2781",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/4#1",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/4?schemaid=2782",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[1069] PATRIMONIO E TURISMO CULTURALE Corso di Laurea BENI ARTISTICI E DEMOETNOANTROPOLOGICI"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Sassari\",\"course\":\"[1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: [1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO",
+          "id": "S1C10",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C10",
+        "option": "University of Sassari | [1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2021",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2021",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2024"
+        ],
+        "text": "[1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Sassari\",\"course\":\"[A144] DESIGN\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[A144] DESIGN",
+          "id": "S1C2",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C2",
+        "option": "University of Sassari | [A144] DESIGN",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2024"
+        ],
+        "text": "ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[03128] SCIENZE DEI BENI CULTURALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03128] SCIENZE DEI BENI CULTURALI",
+          "id": "S1C3",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C3",
+        "option": "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000?schemaid=17229",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001?schemaid=17231",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002?schemaid=17230",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti?annoOrdinamento=2017"
+        ],
+        "text": "[03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33426] DESIGN\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Conven",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33426] DESIGN",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33426] DESIGN",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33426",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/study-plan"
+        ],
+        "text": "Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 25805"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Siena\",\"course\":\"[D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE SPETTACOLO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE Corso di Laurea SPETTACOLO\n\nARCHEOLOGIA PERCORSO COMUNE SPETTACOLO STORIA DELL'ARTE STORIA E DOCUMENTAZIONE Anno di corso\n1° ANNO\n- A.A. 2024/2025\nALTRE ATTIVITÀ\n1° ANNO ORARIO LEZIONI OBBLIGATORI\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE SPETTACOLO",
+          "id": "S1C5",
+          "region": "Toscana",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C5",
+        "option": "University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE SPETTACOLO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/1#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/1?schemaid=11651",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/2#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/2?schemaid=11652",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/3#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/3?schemaid=11653",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/4#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/4?schemaid=11654",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10697/insegnamenti?annoOrdinamento=2021"
+        ],
+        "text": "[D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE Corso di Laurea SPETTACOLO\n\nARCHEOLOGIA PERCORSO COMUNE SPETTACOLO STORIA DELL'ARTE STORIA E DOCUMENTAZIONE Anno di corso\n1° ANNO\n- A.A. 2024/2025\nALTRE ATTIVITÀ\n1° ANNO ORARIO LEZIONI OBBLIGATORI\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0417G] BENI CULTURALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Palazzo Prodi - via Tommaso Gar, 14\"]}\nEXCERPT: ECNICA DELLA CATALOGAZIONE DEL PATRIMONIO CULTURALE\n6 CFU\n30 ore\n[130286] TIROCINIO O ULTERIORI ATTIVITÀ FORMATIVE (ART.\n10, COMMA 5, LETTERA D)",
+        "facts": {
+          "cities": [
+            "Polo di città - Palazzo Prodi - via Tommaso Gar, 14"
+          ],
+          "course": "[0417G] BENI CULTURALI",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0417G] BENI CULTURALI",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10156",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10156/insegnamenti/50422",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10156/insegnamenti/50422?schemaid=8114"
+        ],
+        "text": "ECNICA DELLA CATALOGAZIONE DEL PATRIMONIO CULTURALE\n6 CFU\n30 ore\n[130286] TIROCINIO O ULTERIORI ATTIVITÀ FORMATIVE (ART.\n10, COMMA 5, LETTERA D)"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[OBC7] BENI CULTURALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 66)\"]}\nEXCERPT: e Altro (L-1)\nSecondo Semestre\n[OBC121] LABORATORIO SULLE PROFESSIONI DEL PATRIMONIO CULTURALE: STRATEGIE E OPPORTUNITA'\n3 CFU\n24 ore Altro (L-1)\nSecondo Semestre\n[MM387] GEOGRAFIA\n9 CFU\n63 ore Base (L-1)\nSecondo Semestre\n[PS149] ANTROPOLOGIA CULTURALE\n9 CFU\n63 ore Base (L-1)\nPrimo Semestre\n[LEZ0] POLITICHE, OBIETTIVI E VETTORI DI SOSTENIBILITA’",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 66)"
+          ],
+          "course": "[OBC7] BENI CULTURALI",
+          "id": "S1C7",
+          "region": "Abruzzo",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C7",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [OBC7] BENI CULTURALI",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/63",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/63/insegnamenti/21514",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/63/insegnamenti/21516"
+        ],
+        "text": "e Altro (L-1)\nSecondo Semestre\n[OBC121] LABORATORIO SULLE PROFESSIONI DEL PATRIMONIO CULTURALE: STRATEGIE E OPPORTUNITA'\n3 CFU\n24 ore Altro (L-1)\nSecondo Semestre\n[MM387] GEOGRAFIA\n9 CFU\n63 ore Base (L-1)\nSecondo Semestre\n[PS149] ANTROPOLOGIA CULTURALE\n9 CFU\n63 ore Base (L-1)\nPrimo Semestre\n[LEZ0] POLITICHE, OBIETTIVI E VETTORI DI SOSTENIBILITA’"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[L648] ASSISTENZA SANITARIA\",\"type\":\"Classe di laurea: L/SNT4\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 40)\"]}\nEXCERPT: contenuto principale Corso di Laurea\n[OBC7] BENI CULTURALI\n[707T] DESIGN\n[L601] DIETISTICA\n[614L] ECONOMIA E INFORMATICA PER L'IMPRESA\n[610L] ECONOMIA AZIENDALE\n[613L] ECONOMIA E COMMERCIO\n[L018] ECONOMIA E MANAGEMENT\n[618N] ECONOMIA, IMPRESE E MERCATI FINANZIARI\n[3FF7] FILOSOFIA E SCIENZE DELL'EDUCAZIONE\n[L602] FISIOTERAPIA\n[L654] IGIENE DENTALE\n[L",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 40)"
+          ],
+          "course": "[L648] ASSISTENZA SANITARIA",
+          "id": "S1C8",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L/SNT4",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C8",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [L648] ASSISTENZA SANITARIA",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/608",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/608/insegnamenti/21538",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945294"
+        ],
+        "text": "contenuto principale Corso di Laurea\n[OBC7] BENI CULTURALI\n[707T] DESIGN\n[L601] DIETISTICA\n[614L] ECONOMIA E INFORMATICA PER L'IMPRESA\n[610L] ECONOMIA AZIENDALE\n[613L] ECONOMIA E COMMERCIO\n[L018] ECONOMIA E MANAGEMENT\n[618N] ECONOMIA, IMPRESE E MERCATI FINANZIARI\n[3FF7] FILOSOFIA E SCIENZE DELL'EDUCAZIONE\n[L602] FISIOTERAPIA\n[L654] IGIENE DENTALE\n[L603] INFERMIERISTICA\n[L460] INGEGNERIA BIOMEDICA\n[801T] INGEGNERIA DELLE COSTRUZIONI\n[L270] LETTERE\n[0658] LINGUE E LETTERATURE STRANIERE\n[L610] LOGOPEDIA\n[0659] MEDIAZIONE LINGUISTICA E COMUNICAZIONE INTERCULTURALE\n[L641] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA\n[L604] OSTETRICIA\n[600P] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO\n[910T] SCIENZE DELL'HABITAT SOSTENIBILE\n[L022] SCIENZE DELLE ATTIVITÀ MOTORIE E SPORTIVE\n[0684] SCIENZE E TECNICHE PSICOLOGICHE\n[0700] SCIENZE GEOLOGICHE\n[639L] SERVIZI GIURIDICI PER L'IMPRESA\n[0692] SERVIZIO SOCIALE\n[695N] SOCIOLOGIA E CRIMINOLOGIA\n[L637] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO\n[L640] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE\n[L605] TECNICHE DI LABORATORIO BIOMEDICO\n[L606] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA\n[L500] TECNOLOGIE ECO-SOSTENIBILI E TOSSICOLOGIA AMBIENTALE\n[L644] TERAPIA OCCUPAZIONALE"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Salerno\",\"course\":\"[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO CORSO DI LAUREA\nDISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO",
+          "id": "S1C9",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C9",
+        "option": "University of Salerno | [43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500471",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500471/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500471/insegnamenti/9999?schemaid=17186"
+        ],
+        "text": "[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO CORSO DI LAUREA\nDISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "arts_design",
+      "cultural_heritage"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "arts design cultural heritage"
+    },
+    "control": {
+      "intent": "end_conversation",
+      "reply": "Arrivederci! Se hai bisogno di ulteriori informazioni in futuro, non esitare a contattarmi. Buona fortuna per il tuo futuro!"
+    },
+    "ctx_chars": 4618,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Foggia\",\"course\":\"[1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1069] PATRIMONIO E TURISMO CULTURALE Corso di Laurea BENI ARTISTICI E DEMOETNOANTROPOLOGICI\n\n{\"id\":\"S1C2\",\"university\":\"University of Sassari\",\"course\":\"[A144] DESIGN\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n\n{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[03128] SCIENZE DEI BENI CULTURALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_end",
+    "profile_update": {},
+    "query": "arts design cultural heritage",
+    "rendered_reply": "Arrivederci! Se hai bisogno di ulteriori informazioni in futuro, non esitare a contattarmi. Buona fortuna per il tuo futuro!",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "arts design cultural heritage"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      2,
+      2,
+      -1,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 2,
+    "selected_option": "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+    "shown_options": [
+      "University of Foggia | [1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI",
+      "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+      "University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE SPETTACOLO"
+    ],
+    "source_turn": 14
+  },
+  "session_id": "3895e09e2ea8",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un'assistente virtuale per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "arrivo dal liceo artistico, ho 18 anni, non so bene cosa fare del mio futuro, ho in mente tanti progetti ma poi non so bene su cosa puntare, mi potresti aiutare ?",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi hai appena finito il liceo artistico. È un buon punto di partenza! Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace molto studiare le arti e le culture antiche come quelle egiziane e sumere",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! Le arti e le culture antiche sono affascinanti. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "quelle che ho scritto prima",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano le arti e le culture antiche. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "qualsiasi sede, ho uno zio americano molto ricco, mi mantiene lui",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei flessibile sulla sede. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto, adoro usare le mani",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto, mi piace capire",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Ti piace molto creare e lavorare con le mani, esprimere idee in forme creative, sperimentare e proporre nuove idee. Ti piace anche lavorare con le persone e organizzare progetti. Ti piace meno ragionare in modo logico e avere attività molto pianificate. Ti interessa molto studiare le arti e le culture antiche, come quelle egiziane e sumere. Ti suggerisco queste opzioni: 1. University of Foggia | [1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI 2. University of Salerno | [03128] SCIENZE DEI BENI CULTURALI 3. University of Siena | [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE SPETTACOLO Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "2",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: University of Salerno | [03128] SCIENZE DEI BENI CULTURALI.",
+      "role": "assistant"
+    },
+    {
+      "content": "di queste 3 però spiegami meglio le differenze, pro e contro",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in [1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI dell'Università di Foggia si concentra sulla gestione e valorizzazione del patrimonio culturale, con un focus particolare su beni artistici e demoetnoantropologici. Questo corso potrebbe essere interessante se sei appassionato di arte e cultura popolare, e vuoi lavorare nel settore del turismo culturale. Il corso è situato a Foggia, in Puglia. Il corso di laurea in [03128] SCIENZE DEI BENI CULTURALI dell'Università di Salerno offre tre curricula: archivistico-bibliotecario, archeologico e storia dell'arte. Questo corso è ideale se sei interessato a lavorare in musei, archivi o biblioteche, o se vuoi approfondire la tua conoscenza in uno di questi settori specifici. Il corso è situato a Fisciano, in Campania. Infine, il corso di laurea in [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE SPETTACOLO dell'Università di Siena si concentra sulla storia dell'arte e dello spettacolo. Questo corso è perfetto se sei appassionato di storia dell'arte e vuoi lavorare nel settore dello spettacolo o della gestione del patrimonio culturale. Il corso è situato a Siena, in Toscana. Tutte e tre le opzioni offrono un approccio interdisciplinare, ma si differenziano per il focus specifico e la sede.",
+      "role": "assistant"
+    },
+    {
+      "content": "e le culture antiche ?",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in [03128] SCIENZE DEI BENI CULTURALI dell'Università di Salerno offre tre curricula: archivistico-bibliotecario, archeologico e storia dell'arte. Questo corso è ideale se sei interessato a lavorare in musei, archivi o biblioteche, o se vuoi approfondire la tua conoscenza in uno di questi settori specifici. Il curriculum archeologico potrebbe essere particolarmente rilevante per chi è interessato alle culture antiche, come quelle egiziane e sumere. Il corso è situato a Fisciano, in Campania. Il corso di laurea in [1069] PATRIMONIO E TURISMO CULTURALE BENI ARTISTICI E DEMOETNOANTROPOLOGICI dell'Università di Foggia si concentra sulla gestione e valorizzazione del patrimonio culturale, con un focus particolare su beni artistici e demoetnoantropologici. Questo corso potrebbe essere interessante se sei appassionato di arte e cultura popolare, e vuoi lavorare nel settore del turismo culturale. Il corso è situato a Foggia, in Puglia. Infine, il corso di laurea in [D002] SCIENZE STORICHE E DEL PATRIMONIO CULTURALE SPETTACOLO dell'Università di Siena si concentra sulla storia dell'arte e dello spettacolo, con un percorso comune in archeologia. Questo corso è perfetto se sei appassionato di storia dell'arte e vuoi lavorare nel settore dello spettacolo o della gestione del patrimonio culturale. Il corso è situato a Siena, in Toscana. Tutte e tre le opzioni offrono un approccio interdisciplinare, ma si differenziano per il focus specifico e la sede.",
+      "role": "assistant"
+    },
+    {
+      "content": "Grazie, non ho altre domande. A presto",
+      "role": "user"
+    },
+    {
+      "content": "Arrivederci! Se hai bisogno di ulteriori informazioni in futuro, non esitare a contattarmi. Buona fortuna per il tuo futuro!",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-28T13:39:59"
+}

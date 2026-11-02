@@ -1,0 +1,488 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T09:45:34",
+  "dialog_language": "English",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "gymnasium",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences"
+      ],
+      "riasec_attitudes": [
+        "Conventional",
+        "Investigative",
+        "Artistic"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "gymnasium",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "gymnasium",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "gymnasium",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "gymnasium",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            2,
+            1,
+            1,
+            0,
+            0,
+            0,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ENG:latest",
+  "rag_state": {
+    "advice_intro_plural": "I suggest these options:",
+    "advice_intro_singular": "I suggest this option:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES",
+      "University of Siena | [D129] GEOSCIENCES GENERAL COURSE",
+      "University of Siena | [SE002] CHEMICAL SCIENCES"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Siena\",\"course\":\"[SE003] PHYSICS AND ADVANCED TECHNOLOGIES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [SE003] PHYSICS AND ADVANCED TECHNOLOGIES Bachelor's Degree Course\n\nGENERAL COURSE Year of course\n1° ANNO\n- A.A. 2024/2025\nOTHER ACTIVITIES\n1° ANNO MANDATORY LECTURE SCHEDULE\n[2013643] LINEAR ALGEBRA AND GEOMETRY\n9 CFU\n106 hours First Semester\n[2018163] CALCULUS 1\n\n9 CFU\n90 hours First Semester\n",
+        "facts": {
+          "cities": [],
+          "course": "[SE003] PHYSICS AND ADVANCED TECHNOLOGIES",
+          "id": "S1C1",
+          "region": "Toscana",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Siena"
+        },
+        "id": "S1C1",
+        "option": "University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=11699"
+        ],
+        "text": "[SE003] PHYSICS AND ADVANCED TECHNOLOGIES Bachelor's Degree Course\n\nGENERAL COURSE Year of course\n1° ANNO\n- A.A. 2024/2025\nOTHER ACTIVITIES\n1° ANNO MANDATORY LECTURE SCHEDULE\n[2013643] LINEAR ALGEBRA AND GEOMETRY\n9 CFU\n106 hours First Semester\n[2018163] CALCULUS 1\n\n9 CFU\n90 hours First Semester\n[2018164] CALCULUS 2\n\n6 CFU\n70 hours Second Semester\n[100838] CHEMISTRY\n6 CFU\n48 hours First Semester\n[108615] COMPLEMENTARY PHYSICS 1\n\n12 CFU\n120 hours Second Semester\n[108944] PHYSICS 1\n\n6 CFU\n56 hours First Semester\n[2017485] PHYSICS LABORATORY 1 WITH PROGRAMMING ELEMENTS\n12 CFU\n128 hours Annual Cycle\nSAFETY TRAINING COURSE\n[2012739] SAFETY TRAINING COURSE IN HEALTH AND SAFETY AT WORKPLACES - HIGH RISK - PURSUANT TO ARTICLE 37 OF DECRETO LEGISLATIVO 81/08"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Doctoral Course\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES English\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] PROJECT CULTURE: CREATIVITY, HERITAGE, ENVIRONMENT English\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS English\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S1C10",
+          "region": "Abruzzo",
+          "type": "Doctoral Course",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C10",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES English\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] PROJECT CULTURE: CREATIVITY, HERITAGE, ENVIRONMENT English\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS English\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES English\n[D3GS] GEOSCIENCES English\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY English\n[D3KINE] KINESIOLOGY English\n[D3LLCC] LANGUAGES, LITERATURES AND CULTURES IN CONTACT\n[D3MT] TRANSLATIONAL MEDICINE English Italian\n[D3NI] NEUROSCIENCES AND IMAGING English\n[D3OMIT] MOLECULAR ONCOLOGY AND TUMOR IMMUNOLOGY English\n[D3PSI] PSYCHOLOGY English\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT English\n[D3SBF] BIOMOLECULAR AND PHARMACEUTICAL SCIENCES English\n[D3SGST] LEGAL SCIENCES FOR SUSTAINABILITY, ECOLOGICAL TRANSITION AND INNOVATION English\n[D3SS] SOCIAL SCIENCES German English French"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0518H] PHYSICS\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0518H] PHYSICS Master's Degree English\nCOURSE INFORMATION SAVE PDF\nstandard Academic year\n1st YEAR\n- A.Y. 2024/2025\n2nd YEAR\n- A.Y.",
+        "facts": {
+          "cities": [],
+          "course": "[0518H] PHYSICS",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0518H] PHYSICS",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169/insegnamenti/50528",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169/insegnamenti/50528?schemaid=8621"
+        ],
+        "text": "[0518H] PHYSICS Master's Degree English\nCOURSE INFORMATION SAVE PDF\nstandard Academic year\n1st YEAR\n- A.Y. 2024/2025\n2nd YEAR\n- A.Y."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[10122] PHYSIOTHERAPY (ENABLING FOR THE HEALTH PROFESSION OF PHYSIOTHERAPIST)\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: DEGREE PROGRAMME\nPHYSIOTHERAPY Year of study\n1st YEAR\n- A.A. 2024/2025\n2nd YEAR\n- A.A. 2025/2026\n3rd YEAR\n- A.A.",
+        "facts": {
+          "cities": [],
+          "course": "[10122] PHYSIOTHERAPY (ENABLING FOR THE HEALTH PROFESSION OF PHYSIOTHERAPIST)",
+          "id": "S1C3",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "University of Salerno"
+        },
+        "id": "S1C3",
+        "option": "University of Salerno | [10122] PHYSIOTHERAPY (ENABLING FOR THE HEALTH PROFESSION OF PHYSIOTHERAPIST)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500332",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500332/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500332/insegnamenti/9999?schemaid=17261"
+        ],
+        "text": "DEGREE PROGRAMME\nPHYSIOTHERAPY Year of study\n1st YEAR\n- A.A. 2024/2025\n2nd YEAR\n- A.A. 2025/2026\n3rd YEAR\n- A.A."
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Salerno\",\"course\":\"[05704] NEW METHODOLOGIES FOR TEACHING MODERN PHYSICS SECOND LEVEL MASTER\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: ademic Board Chair CANIO NOCE Course Director CANIO NOCE Characteristics and Other Info Specific Educational Objectives.\nTHE MASTER IS DESIGNED TO TRAIN TRAINERS AND AIMS TO PROVIDE A POST-DEGREE TITLE TO SECONDARY SCHOOL TEACHERS OF FIRST AND SECOND DEGREE, WITH THE INTENTION OF ENRICHING THEIR PROFESSIONAL PROFILE WITH SPECIFIC COMPETENCIES F",
+        "facts": {
+          "cities": [],
+          "course": "[05704] NEW METHODOLOGIES FOR TEACHING MODERN PHYSICS SECOND LEVEL MASTER",
+          "id": "S1C4",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "University of Salerno"
+        },
+        "id": "S1C4",
+        "option": "University of Salerno | [05704] NEW METHODOLOGIES FOR TEACHING MODERN PHYSICS SECOND LEVEL MASTER",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500538"
+        ],
+        "text": "ademic Board Chair CANIO NOCE Course Director CANIO NOCE Characteristics and Other Info Specific Educational Objectives.\nTHE MASTER IS DESIGNED TO TRAIN TRAINERS AND AIMS TO PROVIDE A POST-DEGREE TITLE TO SECONDARY SCHOOL TEACHERS OF FIRST AND SECOND DEGREE, WITH THE INTENTION OF ENRICHING THEIR PROFESSIONAL PROFILE WITH SPECIFIC COMPETENCIES FOR THE TEACHING OF MODERN PHYSICS, BOTH FROM A CONCEPTUAL AND LABORATORY PERSPECTIVE. IT ALSO AIMS TO OFFER HIGH SPECIALIZATION IN THE FIELD OF INNOVATION IN MODERN PHYSICS TEACHING, ALSO THROUGH THE USE OF DIGITAL TOOLS."
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Sassari\",\"course\":\"[1193] BIOLOGICAL SCIENCES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Sardegna\",\"cities\":[]}\nEXCERPT: [1193] BIOLOGICAL SCIENCES Bachelor's Degree\nINFORMATION ON OFFERED COURSES (ITA)\n\nCOMMON PATH\n[A004265] INTRODUCTION TO GENERAL CHEMISTRY AND ORGANIC CHEMISTRY (OFA)\n\n20 hours Teaching type: [OPZ] - Optional\n[A004266] MATHEMATICS (OFA)\n\n20 hours Teaching type: [OPZ] - Optional\n[A004267] PHYSICS (COURSE 0 - OFA)",
+        "facts": {
+          "cities": [],
+          "course": "[1193] BIOLOGICAL SCIENCES",
+          "id": "S1C5",
+          "region": "Sardegna",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Sassari"
+        },
+        "id": "S1C5",
+        "option": "University of Sassari | [1193] BIOLOGICAL SCIENCES",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276/insegnamenti/9999"
+        ],
+        "text": "[1193] BIOLOGICAL SCIENCES Bachelor's Degree\nINFORMATION ON OFFERED COURSES (ITA)\n\nCOMMON PATH\n[A004265] INTRODUCTION TO GENERAL CHEMISTRY AND ORGANIC CHEMISTRY (OFA)\n\n20 hours Teaching type: [OPZ] - Optional\n[A004266] MATHEMATICS (OFA)\n\n20 hours Teaching type: [OPZ] - Optional\n[A004267] PHYSICS (COURSE 0 - OFA)"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Siena\",\"course\":\"[D129] GEOSCIENCES GENERAL COURSE\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [D129] GEOSCIENCES General Course of Study GENERAL COURSE\n\nGENERAL COURSE GEOLOGY AND GEOLOGICAL TECHNOLOGIES GEOLOGY AND TERRITORY Course year\n1° YEAR\n- A.Y. 2024/2025\nOTHER ACTIVITIES\n1° YEAR MANDATORY LECTURE SCHEDULE\n[2000976] OTHER USEFUL KNOWLEDGE FOR WORKFORCE INTEGRATION\n1 CFU\n[100838] CHEMISTRY\n9 CFU\n84 hours First Semester\n[101884] PHYSICS\n9",
+        "facts": {
+          "cities": [],
+          "course": "[D129] GEOSCIENCES GENERAL COURSE",
+          "id": "S1C6",
+          "region": "Toscana",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Siena"
+        },
+        "id": "S1C6",
+        "option": "University of Siena | [D129] GEOSCIENCES GENERAL COURSE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti/9999#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti/9999?schemaid=11700",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti?annoOrdinamento=2021"
+        ],
+        "text": "[D129] GEOSCIENCES General Course of Study GENERAL COURSE\n\nGENERAL COURSE GEOLOGY AND GEOLOGICAL TECHNOLOGIES GEOLOGY AND TERRITORY Course year\n1° YEAR\n- A.Y. 2024/2025\nOTHER ACTIVITIES\n1° YEAR MANDATORY LECTURE SCHEDULE\n[2000976] OTHER USEFUL KNOWLEDGE FOR WORKFORCE INTEGRATION\n1 CFU\n[100838] CHEMISTRY\n9 CFU\n84 hours First Semester\n[101884] PHYSICS\n9 CFU\n72 hours Second Semester\n[102074] GEOLOGY\n6 CFU\n56 hours First Semester\n[2018161] SEDIMENTARY GEOLOGY\n6 CFU\n56 hours First Semester\n[L99990] ENGLISH LANGUAGE PROFICIENCY - LEVEL B1\n\n3 CFU\n[103018] MATHEMATICS\n9 CFU\n80 hours First Semester\n[103192] MINERALOGY\n6 CFU\n64 hours Second Semester\n[103333] PALEONTOLOGY\n9 CFU\n64 hours Second Semester ENTRY TEST\n[2016670] ENTRY TEST\nSAFETY TRAINING COURSE\n[2012739] SAFETY TRAINING COURSE IN HEALTH AND SAFETY IN WORKPLACES - HIGH RISK - PURSUANT TO ARTICLE 37 OF D.LGS. 81/08"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Salerno\",\"course\":\"[05223] CHIMICA\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: t, enjoyment through diverse materials, and adult encouragement. Must avoid adding new info - just distill what's given.\nWord count is critical here. I'll aim for 80-90 words to be safe. Let me structure it: start with core benefits (language/concentration/creativity), mention fun aspect with variety, end with call to action for caregivers.\n\nWait, sho",
+        "facts": {
+          "cities": [],
+          "course": "[05223] CHIMICA",
+          "id": "S1C7",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C7",
+        "option": "University of Salerno | [05223] CHIMICA",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti/10000?schemaid=16694",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti/10001?schemaid=16695",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti?annoOrdinamento=2016"
+        ],
+        "text": "t, enjoyment through diverse materials, and adult encouragement. Must avoid adding new info - just distill what's given.\nWord count is critical here. I'll aim for 80-90 words to be safe. Let me structure it: start with core benefits (language/concentration/creativity), mention fun aspect with variety, end with call to action for caregivers.\n\nWait, should I specify \"parents and teachers\" or just say \"caregivers\"? The text says both, so I'll keep it precise. Also must not say \"studies show\" since text doesn't cite sources - just state facts as presented.\n\n*checks draft* \"Enhances language skills, concentration, and creativity\" covers first three points. \"Enjoyable when exposed to diverse books\" captures the fun aspect. \"Regular encouragement from parents/teachers supports holistic development\" ties it together without exceeding word limit.\n\n*counts words* 78 words - perfect. No fluff, all key elements from text. User seems to need this for educational purpose, maybe a teacher preparing materials? Keeping it professional but simple matches their likely need.\n\nDouble-checking: no markdown, pure English, under 100 words. Nailed it.\n</thinking>"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Siena\",\"course\":\"[SE002] CHEMICAL SCIENCES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [SE002] CHEMICAL SCIENCES Bachelor's Degree Course\n\nStudy Plan Academic Year\n1° YEAR\n- Academic Year 2024/2025\nOTHER ACTIVITIES\n1° YEAR MANDATORY LECTURE SCHEDULE\n[2000988] ANALYTICAL CHEMISTRY 1 WITH LABORATORY\n9 CFU\n96 hours Second Semester\n[2014490] GENERAL AND INORGANIC CHEMISTRY WITH STOICHIOMETRY\n12 CFU\n120 hours First Semester\n[108613] ORGANIC C",
+        "facts": {
+          "cities": [],
+          "course": "[SE002] CHEMICAL SCIENCES",
+          "id": "S1C8",
+          "region": "Toscana",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Siena"
+        },
+        "id": "S1C8",
+        "option": "University of Siena | [SE002] CHEMICAL SCIENCES",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225/insegnamenti/9999?schemaid=11629"
+        ],
+        "text": "[SE002] CHEMICAL SCIENCES Bachelor's Degree Course\n\nStudy Plan Academic Year\n1° YEAR\n- Academic Year 2024/2025\nOTHER ACTIVITIES\n1° YEAR MANDATORY LECTURE SCHEDULE\n[2000988] ANALYTICAL CHEMISTRY 1 WITH LABORATORY\n9 CFU\n96 hours Second Semester\n[2014490] GENERAL AND INORGANIC CHEMISTRY WITH STOICHIOMETRY\n12 CFU\n120 hours First Semester\n[108613] ORGANIC CHEMISTRY 1\n\n6 CFU\n54 hours Second Semester\n[108944] PHYSICS 1\n\n6 CFU\n48 hours First Semester\n[108945] PHYSICS 2\n\n6 CFU\n48 hours Second Semester\n[2016199] FUNDAMENTALS OF INFORMATICS\n6 CFU\n60 hours First Semester\n[2000983] ENGLISH (B2/2)\n\n3 CFU\n24 hours\n[108630] MATHEMATICS 1\n\n6 CFU\n48 hours First Semester\n[2016200] MATHEMATICS 2\n\n6 CFU\n48 hours Second Semester COURSE WORK SAFETY\n[2012739] TRAINING COURSE ON HEALTH AND SAFETY IN THE WORKPLACE - HIGH RISK - PURSUANT TO ARTICLE 37 OF LEGISLATIVE DECREES 81/08\n\nFictitious period - Safety Course SPP SELF-ASSESSMENT TEST\n[2016670] ACCESS TEST\nOTHER ACTIVITIES\n[2019006] GOOD VIBRATIONS: LANGUAGE COINCIDENCES BETWEEN CHEMISTRY AND MUSIC\n1 CFU\n16 hours First Semester\n[100851] BIOLOGICAL CHEMISTRY\n6 CFU\n48 hours Second Semester\n[2000607] FINAL EXAM\n13 CFU\n[2000994] PHYSICAL CHEMISTRY 2"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Salerno\",\"course\":\"[10125] MEDICAL RADIOLOGY, IMAGING AND RADIOTHERAPY TECHNIQUES (ENABLING FOR THE HEALTH PROFESSION OF MEDICAL RADIOLOGY TECHNICIAN)\",\"type\":\"CORSO DI LAUREA\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: Word count is tight so every term must pull weight: \"correlates with\" becomes \"linked to\", \"moderate use\" stays precise.\nWait, must check if \"digital literacy education\" is the exact term - yes, the text says that. No need to expand. Also confirming adolescents = teens for brevity.\n\n*Counting words in my head*: \"This study examines social media's effec",
+        "facts": {
+          "cities": [],
+          "course": "[10125] MEDICAL RADIOLOGY, IMAGING AND RADIOTHERAPY TECHNIQUES (ENABLING FOR THE HEALTH PROFESSION OF MEDICAL RADIOLOGY TECHNICIAN)",
+          "id": "S1C9",
+          "region": "Campania",
+          "type": "CORSO DI LAUREA",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C9",
+        "option": "University of Salerno | [10125] MEDICAL RADIOLOGY, IMAGING AND RADIOTHERAPY TECHNIQUES (ENABLING FOR THE HEALTH PROFESSION OF MEDICAL RADIOLOGY TECHNICIAN)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388/insegnamenti/9999?schemaid=17247"
+        ],
+        "text": "Word count is tight so every term must pull weight: \"correlates with\" becomes \"linked to\", \"moderate use\" stays precise.\nWait, must check if \"digital literacy education\" is the exact term - yes, the text says that. No need to expand. Also confirming adolescents = teens for brevity.\n\n*Counting words in my head*: \"This study examines social media's effect on adolescent mental health... excessive use linked to higher anxiety/depression, while moderate use supports social connection and self-expression. Researchers advocate for balanced engagement and digital literacy education to mitigate risks.\" That's 40 words - well under limit.\n\n*Double-checking*: Did I miss any key element? No, covered correlation, dual effects, recommendations. Avoided adding external knowledge (like \"FOMO\" which wasn't in text). Strictly text-based.\n\n*Final polish*: Changed \"examines\" to \"investigates\" to match text's verb, but kept \"linked\" for conciseness. Made sure \"social connection\" implies the support mentioned. Nailed it under 100 words.\n</thinking>"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "physical_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Would you like more details about any of these courses?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C6",
+        "S1C8"
+      ],
+      "recap": "You are interested in physics and problem-solving, and you enjoy understanding how things work and keeping activities ordered. Based on your preferences, I suggest exploring the following courses."
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Siena\",\"course\":\"[SE003] PHYSICS AND ADVANCED TECHNOLOGIES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [SE003] PHYSICS AND ADVANCED TECHNOLOGIES Bachelor's Degree Course\n\nGENERAL COURSE Year of course\n1° ANNO\n- A.A. 2024/2025\nOTHER ACTIVITIES\n1° ANNO MANDATORY LECTURE SCHEDULE\n[2013643] LINEAR ALGEBRA AND GEOMETRY\n9 CFU\n106 hours First Semester\n[2018163] CALCULUS 1\n\n9 CFU\n90 hours First Semester\n\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0518H] PHYSICS\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0518H] PHYSICS Master's Degree English\nCOURSE INFORMATION SAVE PDF\nstandard Academic year\n1st YEAR\n- A.Y. 2024/2025\n2nd YEAR\n- A.Y.\n\n{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[10122] PHYSIOTHERAPY (ENABLING FOR THE HEALTH PROFESSION OF PHYSIOTHERAPIST)\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: DEGREE PROGRAMME\nPHYSIOTHERAPY Year of study\n1st YEAR\n- A.A. 2024/2025\n2nd YEAR\n- A.A. 2025/2026\n3rd\n[...log text clipped...]",
+    "current_question": "How much do you enjoy keeping activities ordered, planned, and under control?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "physics",
+    "rendered_reply": "You are interested in physics and problem-solving, and you enjoy understanding how things work and keeping activities ordered. Based on your preferences, I suggest exploring the following courses.\n\nI suggest these options:\n1. University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES\n2. University of Siena | [D129] GEOSCIENCES GENERAL COURSE\n3. University of Siena | [SE002] CHEMICAL SCIENCES\n\nWould you like more details about any of these courses?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "physics"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      -1,
+      2,
+      1,
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "a9b9fa4f9b0d",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Ciao",
+      "role": "user"
+    },
+    {
+      "content": "Hello! I'm an AI assistant here to help you with university guidance in Italy. Let's start by discussing your background. What are you studying now, or what was your most recent study path?",
+      "role": "assistant"
+    },
+    {
+      "content": "I just finished gymnasium and I am thinking about my career path",
+      "role": "user"
+    },
+    {
+      "content": "Great, so you've completed gymnasium. Let's explore your options for the next step. Which subjects or university areas catch your interest the most?",
+      "role": "assistant"
+    },
+    {
+      "content": "I loved math and pyhsics",
+      "role": "user"
+    },
+    {
+      "content": "When you think about university, what would you like to learn more about or learn how to do?",
+      "role": "assistant"
+    },
+    {
+      "content": "Not sure, I like problem solving, so maybe some problem solving in the real world",
+      "role": "user"
+    },
+    {
+      "content": "That's a great start. Let's explore how you can apply your interest in problem-solving to university studies. Do you have a preferred Italian region or macro-area, or are you flexible about location?",
+      "role": "assistant"
+    },
+    {
+      "content": "Flexible",
+      "role": "user"
+    },
+    {
+      "content": "Great, so you're open to studying anywhere in Italy. Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends. How much do you enjoy practical, hands-on activities, such as building, repairing, or working with tools and concrete objects?",
+      "role": "assistant"
+    },
+    {
+      "content": "Not a lot, i do not have much experience with tools around the house",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy understanding how things, systems, or phenomena work?",
+      "role": "assistant"
+    },
+    {
+      "content": "A lot",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy researching information, analyzing problems, and reasoning logically?",
+      "role": "assistant"
+    },
+    {
+      "content": "research can get tiersome if I go on the wrong path, but the other 2, i like to do a lot",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy expressing ideas or emotions through creative forms such as writing, art, music, or design?",
+      "role": "assistant"
+    },
+    {
+      "content": "I like to play music, but I do not write music",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy experimenting and creating something new from open-ended ideas?",
+      "role": "assistant"
+    },
+    {
+      "content": "I am fine with it",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy working closely with people in a helping, supportive, or listening role?",
+      "role": "assistant"
+    },
+    {
+      "content": "Hmm, i am fine with it, not a huge fan of being a conculer or something like that",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy proposing ideas, taking initiative, and organizing projects or activities?",
+      "role": "assistant"
+    },
+    {
+      "content": "If i am good in a subject, i like to do it, otherwise i prefer to follow",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy keeping activities ordered, planned, and under control?",
+      "role": "assistant"
+    },
+    {
+      "content": "Very",
+      "role": "user"
+    },
+    {
+      "content": "You are interested in physics and problem-solving, and you enjoy understanding how things work and keeping activities ordered. Based on your preferences, I suggest exploring the following courses. I suggest these options: 1. University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES 2. University of Siena | [D129] GEOSCIENCES GENERAL COURSE 3. University of Siena | [SE002] CHEMICAL SCIENCES Would you like more details about any of these courses?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T09:49:53"
+}

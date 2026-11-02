@@ -1,0 +1,543 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T15:31:26",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo classico linguistico; laurea in traduzione e interpretariato",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design",
+        "environmental_science"
+      ],
+      "riasec_attitudes": [
+        "Conventional",
+        "Enterprising",
+        "Artistic"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo classico linguistico; laurea in traduzione e interpretariato",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo classico linguistico; laurea in traduzione e interpretariato",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design",
+            "environmental_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo classico linguistico; laurea in traduzione e interpretariato",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design",
+            "environmental_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo classico linguistico; laurea in traduzione e interpretariato",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design",
+            "environmental_science"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            -1,
+            2,
+            2,
+            1,
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI",
+      "Sapienza Università di Roma | [33631] PROGETTAZIONE SOCIALE PER LA SOSTENIBILITÀ, L’INNOVAZIONE E L’INCLUSIONE DI GENERE",
+      "Sapienza Università di Roma | [33426] DESIGN"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Sociologia per la sostenibilità e analisi dei processi globali\nAnno accademico: 2026-2027\nCodice corso: 33632\nClasse di laurea: LM-88\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Scien",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33632",
+          "https://corsidilaurea.uniroma1.it/it/course/33632/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33632/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33632/study-plan"
+        ],
+        "text": "Sociologia per la sostenibilità e analisi dei processi globali\nAnno accademico: 2026-2027\nCodice corso: 33632\nClasse di laurea: LM-88\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Scienze Politiche, Sociologia, Comunicazione\nDipartimento: SCIENZE SOCIALI ED ECONOMICHE\nSede: Roma\nLingua: Italiano, Inglese\nPercorso di studio internazionale: Doppio titolo: italo-kosovaro\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 33632"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Sassari\",\"course\":\"[1235] ARCHITETTURA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: [1235] ARCHITETTURA Corso di Laurea Magistrale Interateneo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[A003056] PROGETTO NEI CONTESTI STORICO-CULTURALI (LABORATORIO DI PROGETTO E RESTAURO)",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[1235] ARCHITETTURA",
+          "id": "S1C10",
+          "region": "Sardegna",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C10",
+        "option": "University of Sassari | [1235] ARCHITETTURA",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427/insegnamenti/9999?annoOrdinamento=2021",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427?annoOrdinamento=2021",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427?annoOrdinamento=2024"
+        ],
+        "text": "[1235] ARCHITETTURA Corso di Laurea Magistrale Interateneo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[A003056] PROGETTO NEI CONTESTI STORICO-CULTURALI (LABORATORIO DI PROGETTO E RESTAURO)"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0126H] MANAGEMENT DELLA SOSTENIBILITÀ E DEL TURISMO\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Economia - via Inama, 5\"]}\nEXCERPT: oziazione di accordi e gestione dei conflitti riferibili al settore turistico e alla gestione sostenibile dell’ambiente.\nLe principali aree di apprendimento sono relative a: gestione dell’impresa turistica e di servizi, gestione dei sistemi e delle destinazioni turistiche, ma",
+        "facts": {
+          "cities": [
+            "Polo di città - Economia - via Inama, 5"
+          ],
+          "course": "[0126H] MANAGEMENT DELLA SOSTENIBILITÀ E DEL TURISMO",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0126H] MANAGEMENT DELLA SOSTENIBILITÀ E DEL TURISMO",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10557",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10557/insegnamenti/50501",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10557/insegnamenti/50501?schemaid=8285"
+        ],
+        "text": "oziazione di accordi e gestione dei conflitti riferibili al settore turistico e alla gestione sostenibile dell’ambiente.\nLe principali aree di apprendimento sono relative a: gestione dell’impresa turistica e di servizi, gestione dei sistemi e delle destinazioni turistiche, marketing turistico e territoriale, sistemi di gestione e certificazione della qualità e dell’ambiente, storia economica del turismo, economia dell’ambiente e tecniche per valutazione dei beni ambientali, tecniche quantitative per l’analisi dei dati, modelli decisionali alla base delle scelte di consumo e per l’analisi del comportamento dei consumatori/turisti. Il tirocinio prevede, di norma, un periodo presso un'azienda o un’organizzazione, sotto la guida di un tutor aziendale e di un tutor accademico. La tesi di laurea costituisce un importante momento di approfondimento, anche teorico-concettuale, di tematiche tipiche del management della sostenibilità e del turismo, ed è corredato, di norma, da una parte empirica."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION\",\"type\":\"Classe di laurea: LM-12\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Design, Comunicazione Visiva e Multimediale - Design, Multimedia and Visual Communication\nAnno accademico: 2026-2027\nCodice corso: 33432\nClasse di laurea: LM-12\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ITA, ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-12",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33432",
+          "https://corsidilaurea.uniroma1.it/it/course/33432/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33432/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33432/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33432/study-plan"
+        ],
+        "text": "Design, Comunicazione Visiva e Multimediale - Design, Multimedia and Visual Communication\nAnno accademico: 2026-2027\nCodice corso: 33432\nClasse di laurea: LM-12\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ITA, ENG"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Sassari\",\"course\":\"[A144] DESIGN\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[A144] DESIGN",
+          "id": "S1C4",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C4",
+        "option": "University of Sassari | [A144] DESIGN",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2024"
+        ],
+        "text": "ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33589] SCIENZE AMBIENTALI\",\"type\":\"Classe di laurea: L-32\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze Ambientali\nAnno accademico: 2026-2027\nCodice corso: 33589\nClasse di laurea: L-32\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33589] SCIENZE AMBIENTALI",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-32",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33589] SCIENZE AMBIENTALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33589",
+          "https://corsidilaurea.uniroma1.it/it/course/33589/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33589/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33589/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33589/study-plan"
+        ],
+        "text": "Scienze Ambientali\nAnno accademico: 2026-2027\nCodice corso: 33589\nClasse di laurea: L-32\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Siena\",\"course\":\"[SG006] ECOTOSSICOLOGIA E SOSTENIBILITÀ AMBIENTALE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [SG006] ECOTOSSICOLOGIA E SOSTENIBILITÀ AMBIENTALE Corso di Laurea Magistrale",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[SG006] ECOTOSSICOLOGIA E SOSTENIBILITÀ AMBIENTALE",
+          "id": "S1C6",
+          "region": "Toscana",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C6",
+        "option": "University of Siena | [SG006] ECOTOSSICOLOGIA E SOSTENIBILITÀ AMBIENTALE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10266",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10266/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10266/insegnamenti/9999?schemaid=11701"
+        ],
+        "text": "[SG006] ECOTOSSICOLOGIA E SOSTENIBILITÀ AMBIENTALE Corso di Laurea Magistrale"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33631] PROGETTAZIONE SOCIALE PER LA SOSTENIBILITÀ, L’INNOVAZIONE E L’INCLUSIONE DI GENERE\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Progettazione Sociale per la sostenibilità, l’innovazione e l’inclusione di genere\nAnno accademico: 2026-2027\nCodice corso: 33631\nClasse di laurea: LM-88\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Scienze Politiche, Sociologia, Comunicazione\nDipartimento: COMUNICA",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33631] PROGETTAZIONE SOCIALE PER LA SOSTENIBILITÀ, L’INNOVAZIONE E L’INCLUSIONE DI GENERE",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33631] PROGETTAZIONE SOCIALE PER LA SOSTENIBILITÀ, L’INNOVAZIONE E L’INCLUSIONE DI GENERE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33631",
+          "https://corsidilaurea.uniroma1.it/it/course/33631/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33631/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33631/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33631/study-plan"
+        ],
+        "text": "Progettazione Sociale per la sostenibilità, l’innovazione e l’inclusione di genere\nAnno accademico: 2026-2027\nCodice corso: 33631\nClasse di laurea: LM-88\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Scienze Politiche, Sociologia, Comunicazione\nDipartimento: COMUNICAZIONE E RICERCA SOCIALE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 33631"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 80)\"]}\nEXCERPT: e giuridiche, nonché comprendere le implicazioni dell'uso delle tecnologie e l'impatto delle proprie scelte progettuali.\nInoltre, sulla base dell’orientamento formativo scelto, potranno ampliare le loro competenze interdisciplinari raggiungendo uno dei seguenti obiettivi oltre a quelli elencati precedentemente:\n1) approfondire ulteriormente le loro conosce",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 80)"
+          ],
+          "course": "[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS",
+          "id": "S1C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C8",
+        "option": "University of Trento | [0342H] ARTIFICIAL INTELLIGENCE SYSTEMS",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530?schemaid=8564",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531?schemaid=8562",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532?schemaid=8561",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533?schemaid=8563",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "e giuridiche, nonché comprendere le implicazioni dell'uso delle tecnologie e l'impatto delle proprie scelte progettuali.\nInoltre, sulla base dell’orientamento formativo scelto, potranno ampliare le loro competenze interdisciplinari raggiungendo uno dei seguenti obiettivi oltre a quelli elencati precedentemente:\n1) approfondire ulteriormente le loro conoscenze teoriche e metodologiche al fine di conseguire un elevato grado di specializzazione nell’ambito della progettazione dei sistemi basati sull’intelligenza artificiale;\n2) acquisire conoscenze avanzate nelle varie discipline dell’ingegneria dell’informazione per varie applicazioni industriali, ambientali e biomedicali;\n3) proporre strategie per la messa sul mercato di prodotti, processi ed organizzazioni basati sull’intelligenza artificiale e competitivi in termini di efficienza, produttività e di sostenibilità;\n4) integrare gli approcci computazionali, comportamentali e le tecnologie di neuroimmagine per una migliore comprensione dell'agire umano e per fornire ispirazioni per lo sviluppo di nuovi sistemi intelligenti. DESCRIZIONE DEL PERCORSO FORMATIVO Il percorso formativo della laurea magistrale in Artificial Intelligence Systems è erogato interamente in lingua inglese."
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33426] DESIGN\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 25805",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33426] DESIGN",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33426] DESIGN",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33426",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/study-plan"
+        ],
+        "text": "Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 25805"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "arts_design",
+      "environmental_science"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "AI moda sostenibilità"
+    },
+    "control": {
+      "intent": "selection",
+      "option_number": 1
+    },
+    "ctx_chars": 4825,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Sociologia per la sostenibilità e analisi dei processi globali\nAnno accademico: 2026-2027\nCodice corso: 33632\nClasse di laurea: LM-88\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Scien\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0126H] MANAGEMENT DELLA SOSTENIBILITÀ E DEL TURISMO\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Economia - via Inama, 5\"]}\nEXCERPT: oziazione di accordi e gestione dei conflitti riferibili al settore turistico e alla gestione sostenibile dell’ambiente.\nLe principali aree di apprendimento sono relative a: gestione dell’impresa turistica e di servizi, gestione dei sistemi e delle destinazioni turistiche, ma\n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[334\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_selected",
+    "profile_update": {},
+    "query": "AI moda sostenibilità",
+    "rendered_reply": "Hai scelto: Sapienza Università di Roma | [33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "AI moda sostenibilità"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      2,
+      -1,
+      2,
+      2,
+      1,
+      1,
+      2
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 1,
+    "selected_option": "Sapienza Università di Roma | [33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI",
+    "shown_options": [
+      "Sapienza Università di Roma | [33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI",
+      "Sapienza Università di Roma | [33631] PROGETTAZIONE SOCIALE PER LA SOSTENIBILITÀ, L’INNOVAZIONE E L’INCLUSIONE DI GENERE",
+      "Sapienza Università di Roma | [33426] DESIGN"
+    ],
+    "source_turn": 15
+  },
+  "session_id": "f1e186301122",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "liceo classico linguistico; laurea in traduzione e interpretariato",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "AI, moda, sostenibilità",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "ho già fatto l’università. Puoi aiutarmi a capire qual è il percorso lavorativo adatto a me?",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi hai già completato la tua laurea in traduzione e interpretariato. Ora possiamo concentrarci su come trovare il percorso lavorativo più adatto a te. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "Roma",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato a Roma. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "non troppo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "sì",
+      "role": "user"
+    },
+    {
+      "content": "Questo significa che ti piace inventare e progettare, oppure esplorare nuove idee e metodi?",
+      "role": "assistant"
+    },
+    {
+      "content": "sì",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "moltissimo",
+      "role": "user"
+    },
+    {
+      "content": "Hai già una laurea in traduzione e interpretariato e sei interessato a AI, moda e sostenibilità. Ti piace molto esprimere idee in forme creative, analizzare problemi e proporre nuove iniziative. Ti piace anche avere attività ordinate e pianificate. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI 2. Sapienza Università di Roma | [33631] PROGETTAZIONE SOCIALE PER LA SOSTENIBILITÀ, L’INNOVAZIONE E L’INCLUSIONE DI GENERE 3. Sapienza Università di Roma | [33426] DESIGN Quale di questi percorsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "la prima",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: Sapienza Università di Roma | [33632] SOCIOLOGIA PER LA SOSTENIBILITÀ E ANALISI DEI PROCESSI GLOBALI.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T15:34:09"
+}

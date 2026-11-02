@@ -1,0 +1,579 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T09:44:55",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Investigative",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 7
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 8
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 18
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Trento | [0515G] MATEMATICA",
+      "Sapienza Università di Roma | [33592] MATEMATICA",
+      "Sapienza Università di Roma | [33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Trento\",\"course\":\"[0515G] MATEMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 110)\"]}\nEXCERPT: er e di dottorato in tutte le aree scientifiche per le quali la matematica è un utile strumento concettuale e operativo.\nIl percorso formativo mira all'acquisizione di una solida conoscenza sia teorica che operativa dei metodi e contenuti del sapere matematico e di alcuni metodi e co",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 110)"
+          ],
+          "course": "[0515G] MATEMATICA",
+          "id": "S1C1",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C1",
+        "option": "University of Trento | [0515G] MATEMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10115",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10115/insegnamenti/50519",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10115/insegnamenti/50519?schemaid=8542"
+        ],
+        "text": "er e di dottorato in tutte le aree scientifiche per le quali la matematica è un utile strumento concettuale e operativo.\nIl percorso formativo mira all'acquisizione di una solida conoscenza sia teorica che operativa dei metodi e contenuti del sapere matematico e di alcuni metodi e contenuti in alcune aree complementari che sono fonte di problemi matematici e si prestano alle applicazioni della matematica. Tali conoscenze mettono fra l'altro il laureato in grado di continuare lo studio in un Corso di Laurea Magistrale nella classe di Matematica ed eventualmente anche in aree scientifiche complementari. L'ordinamento potrà prevedere curricula che mirino a consolidare le conoscenze nei vari settori della matematica, e altri curricula che approfondiscano la conoscenza del linguaggio, dei problemi, dei metodi e delle tecniche di base di un'area scientifica complementare, e l'approfondimento di specifiche conoscenze nella matematica applicata ad essa. Conoscenze richieste per l´accesso Sono ammessi al corso di laurea gli studenti in possesso di un diploma di scuola secondaria superiore o di altro titolo di studio conseguito all'estero riconosciuto idoneo."
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Siena\",\"course\":\"[SE002] SCIENZE CHIMICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [SE002] SCIENZE CHIMICHE Corso di Laurea\n\nPiano di Studio Anno di corso\n1° ANNO\n- A.A. 2024/2025\nALTRE ATTIVITÀ\n1° ANNO ORARIO LEZIONI OBBLIGATORI\n[2000988] CHIMICA ANALITICA 1 CON LABORATORIO\n9 CFU\n96 ore Secondo Semestre\n[2014490] CHIMICA GENERALE ED INORGANICA CON STECHIOMETRIA\n12 CFU\n120 ore Primo ",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[SE002] SCIENZE CHIMICHE",
+          "id": "S1C10",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C10",
+        "option": "University of Siena | [SE002] SCIENZE CHIMICHE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225/insegnamenti/9999?schemaid=11629"
+        ],
+        "text": "[SE002] SCIENZE CHIMICHE Corso di Laurea\n\nPiano di Studio Anno di corso\n1° ANNO\n- A.A. 2024/2025\nALTRE ATTIVITÀ\n1° ANNO ORARIO LEZIONI OBBLIGATORI\n[2000988] CHIMICA ANALITICA 1 CON LABORATORIO\n9 CFU\n96 ore Secondo Semestre\n[2014490] CHIMICA GENERALE ED INORGANICA CON STECHIOMETRIA\n12 CFU\n120 ore Primo Semestre\n[108613] CHIMICA ORGANICA 1\n\n6 CFU\n54 ore Secondo Semestre\n[108944] FISICA 1\n\n6 CFU\n48 ore Primo Semestre\n[108945] FISICA 2\n\n6 CFU\n48 ore Secondo Semestre\n[2016199] FONDAMENTI DI INFORMATICA\n6 CFU\n60 ore Primo Semestre\n[2000983] INGLESE (B2/2)\n\n3 CFU\n24 ore\n[108630] MATEMATICA 1\n\n6 CFU\n48 ore Primo Semestre\n[2016200] MATEMATICA 2\n\n6 CFU\n48 ore Secondo Semestre CORSO SICUREZZA SUL LAVORO\n[2012739] CORSO DI FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\n\nPeriodo fittizio - corso Sicurezza SPP TEST DI AUTOVALUTAZIONE\n[2016670] TEST DI ACCESSO\nALTRE ATTIVITÀ\n[2019006] GOOD VIBRATIONS: COINCIDENZE DI LINGUAGGIO TRA CHIMICA E MUSICA\n1 CFU\n16 ore Primo Semestre\n[100851] CHIMICA BIOLOGICA\n6 CFU\n48 ore Secondo Semestre\n[2000607] PROVA FINALE\n13 CFU\n[2000994] CHIMICA FISICA 2"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Messina\",\"course\":\"[9214] FISICA\",\"type\":\"Classe di laurea: L-30\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: contenuto principale Scienze matematiche e informatiche, scienze fisiche e scienze della terra Triennale\n[9215] INFORMATICA Inglese Italiano\n[9218] MATEMATICA Magistrale\n[9237] DATA SCIENCE Inglese\n[9233] GEOPHYSICAL SCIENCES FOR SEISMIC RISK Inglese\n[9223] MATEMATICA\n[9232] PHYSICS I",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[9214] FISICA",
+          "id": "S1C2",
+          "region": "Sicilia",
+          "type": "Classe di laurea: L-30",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C2",
+        "option": "University of Messina | [9214] FISICA",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999?annoOrdinamento=2020",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999?schemaid=12236",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046?annoOrdinamento=2020",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_MAT"
+        ],
+        "text": "contenuto principale Scienze matematiche e informatiche, scienze fisiche e scienze della terra Triennale\n[9215] INFORMATICA Inglese Italiano\n[9218] MATEMATICA Magistrale\n[9237] DATA SCIENCE Inglese\n[9233] GEOPHYSICAL SCIENCES FOR SEISMIC RISK Inglese\n[9223] MATEMATICA\n[9232] PHYSICS Inglese Italiano Master di Secondo Livello\n[MS044] SICUREZZA SISMICA E SVILUPPO URBANO SOSTENIBILE Dottorati\n[DT205] FISICA Inglese Italiano\n[DT122] MATEMATICA E SCIENZE COMPUTAZIONALI Inglese Italiano"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33592] MATEMATICA\",\"type\":\"Classe di laurea: L-35\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Matematica\nAnno accademico: 2026-2027\nCodice corso: 33592\nClasse di laurea: L-35\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33592] MATEMATICA",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-35",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33592] MATEMATICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33592",
+          "https://corsidilaurea.uniroma1.it/it/course/33592/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33592/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33592/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33592/study-plan"
+        ],
+        "text": "Matematica\nAnno accademico: 2026-2027\nCodice corso: 33592\nClasse di laurea: L-35\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Siena\",\"course\":\"[SE003] FISICA E TECNOLOGIE AVANZATE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: 5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n[2016768] MECCANICA STATISTICA\n6",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[SE003] FISICA E TECNOLOGIE AVANZATE",
+          "id": "S1C4",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C4",
+        "option": "University of Siena | [SE003] FISICA E TECNOLOGIE AVANZATE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=11699"
+        ],
+        "text": "5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n[2016768] MECCANICA STATISTICA\n6 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1\n\n3 CFU"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Università degli Studi di Verona\"]}\nEXCERPT: scuola secondaria superiore conseguito in Italia o di altro titolo di studio conseguito all'estero riconosciuto idoneo.\nPer l'accesso al Corso di Laurea in Ingegneria Informatica, delle Comunicazioni ed Elettronica sono inoltre richieste ai candidati le seguenti conoscenze:\nConoscenze essenziali\n- Con",
+        "facts": {
+          "cities": [
+            "Università degli Studi di Verona"
+          ],
+          "course": "[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10799"
+        ],
+        "text": "scuola secondaria superiore conseguito in Italia o di altro titolo di studio conseguito all'estero riconosciuto idoneo.\nPer l'accesso al Corso di Laurea in Ingegneria Informatica, delle Comunicazioni ed Elettronica sono inoltre richieste ai candidati le seguenti conoscenze:\nConoscenze essenziali\n- Conoscenza della lingua italiana\n- Conoscenza adeguata della lingua inglese. Conoscenze scientifiche di base Matematica\n- Aritmetica e algebra: proprietà e operazioni sui numeri (interi, razionali, reali); valore assoluto; potenze e radici; logaritmi ed esponenziali; calcolo letterale; polinomi (operazioni, decomposizione in fattori); equazioni e disequazioni algebriche di primo e secondo grado; sistemi di equazioni di primo grado. - Geometria: segmenti ed angoli (loro misura e proprietà); rette e piani; luoghi geometrici notevoli; proprietà delle principali figure geometriche piane; proprietà delle principali figure geometriche solide. - Geometria analitica e funzioni: coordinate cartesiane; concetto di funzione; equazioni di rette e di semplici luoghi geometrici; grafici e proprietà delle funzioni elementari. - Trigonometria: grafici e proprietà delle funzioni trigonometriche; principali formule trigonometriche (addizione, sottrazione, duplicazione, bisezione); relazioni fra elementi di un triangolo."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Salerno\",\"course\":\"[02121] ECONOMIA AZIENDALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: TE\n[10121] INFERMIERISTICA (ABILITANTE ALLA PROF. SANIT. DI INFERMIERE)\n[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT.\nDI OSTETRICA/O)\n[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMA",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[02121] ECONOMIA AZIENDALE",
+          "id": "S1C6",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C6",
+        "option": "University of Salerno | [02121] ECONOMIA AZIENDALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10001?schemaid=16917",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10002?schemaid=16916",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10003#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10003?schemaid=16915",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti?annoOrdinamento=2016",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562230878857"
+        ],
+        "text": "TE\n[10121] INFERMIERISTICA (ABILITANTE ALLA PROF. SANIT. DI INFERMIERE)\n[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT.\nDI OSTETRICA/O)\n[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n[07121] TECNICHE ERBORISTICHE Scienze della Formazione\n[44124] SCIENZE DELL'EDUCAZIONE\n[44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA Scienze\n[05124] CHIMICA\n[05126] FISICA\n[05121] INFORMATICA\n[05123] MATEMATICA\n[05127] SCIENZE AMBIENTALI\n[05128] SCIENZE BIOLOGICHE\n[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ Sociologica\n[03129] SCIENZE DEL SERVIZIO SOCIALE\n[03122] SCIENZE DELLA COMUNICAZIONE\n[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI\n[03123] SOCIOLOGIA Ingegneria\n[06122] INGEGNERIA CHIMICA\n[06121] INGEGNERIA CIVILE\n[06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO\n[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE\n[06124] INGEGNERIA ELETTRONICA\n[06126] INGEGNERIA GESTIONALE\n[06127] INGEGNERIA INFORMATICA\n[06123] INGEGNERIA MECCANICA\n[06129] TECNICHE PER L'EDILIZIA E IL TERRITORIO Umanistica\n[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO\n[03125] FILOSOFIA\n[03126] LETTERE\n[43122] LINGUE E CULTURE STRANIERE\n[03128] SCIENZE DEI BENI CULTURALI"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Trento\",\"course\":\"[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)\"]}\nEXCERPT: scuola secondaria superiore conseguito in Italia o di altro titolo di studio conseguito all'estero riconosciuto idoneo.\nPer l'accesso al Corso di Laurea in Ingegneria Informatica, delle Comunicazioni ed Elettronica sono inoltre richieste ai candidati le seguenti conoscenze:\nConoscenze essenziali\n- Con",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)"
+          ],
+          "course": "[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+          "id": "S1C7",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C7",
+        "option": "University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458?schemaid=8538",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459?schemaid=8535",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460?schemaid=8536",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461?schemaid=8537",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "scuola secondaria superiore conseguito in Italia o di altro titolo di studio conseguito all'estero riconosciuto idoneo.\nPer l'accesso al Corso di Laurea in Ingegneria Informatica, delle Comunicazioni ed Elettronica sono inoltre richieste ai candidati le seguenti conoscenze:\nConoscenze essenziali\n- Conoscenza della lingua italiana\n- Conoscenza adeguata della lingua inglese. Conoscenze scientifiche di base Matematica\n- Aritmetica e algebra: proprietà e operazioni sui numeri (interi, razionali, reali); valore assoluto; potenze e radici; logaritmi ed esponenziali; calcolo letterale; polinomi (operazioni, decomposizione in fattori); equazioni e disequazioni algebriche di primo e secondo grado; sistemi di equazioni di primo grado. - Geometria: segmenti ed angoli (loro misura e proprietà); rette e piani; luoghi geometrici notevoli; proprietà delle principali figure geometriche piane; proprietà delle principali figure geometriche solide. - Geometria analitica e funzioni: coordinate cartesiane; concetto di funzione; equazioni di rette e di semplici luoghi geometrici; grafici e proprietà delle funzioni elementari. - Trigonometria: grafici e proprietà delle funzioni trigonometriche; principali formule trigonometriche (addizione, sottrazione, duplicazione, bisezione); relazioni fra elementi di un triangolo."
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33588] FISICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Fisica\nAnno accademico: 2026-2027\nCodice corso: 33588\nClasse di laurea: L-30\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: FISICA\nSede: Roma\nLingua: Italiano\nModalità di e",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33588] FISICA",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [33588] FISICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33588",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/study-plan"
+        ],
+        "text": "Fisica\nAnno accademico: 2026-2027\nCodice corso: 33588\nClasse di laurea: L-30\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: FISICA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14619"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze matematiche per l’intelligenza artificiale\nAnno accademico: 2026-2027\nCodice corso: 33593\nClasse di laurea: L-35\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali, Ingegneria dell'in",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33593",
+          "https://corsidilaurea.uniroma1.it/it/course/33593/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33593/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33593/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33593/study-plan"
+        ],
+        "text": "Scienze matematiche per l’intelligenza artificiale\nAnno accademico: 2026-2027\nCodice corso: 33593\nClasse di laurea: L-35\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali, Ingegneria dell'informazione, informatica e statistica\nDipartimento: MATEMATICA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14619"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "physical_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "matematica"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Il corso di laurea in Scienze Matematiche per l’Intelligenza Artificiale presso la Sapienza Università di Roma è un corso di laurea triennale. La modalità di accesso prevede una prova in ingresso per la verifica delle conoscenze. Il corso è offerto dalla Facoltà di Scienze Matematiche, Fisiche e Naturali e Ingegneria dell'Informazione. La sede del corso è a Roma. Non ho informazioni specifiche sui costi o sulle date di iscrizione."
+    },
+    "ctx_chars": 1394,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Trento\",\"course\":\"[0515G] MATEMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 110)\"]}\nEXCERPT: er e di dottorato in tutte le aree scientifiche per le quali la matematica è un utile strumento concettuale e operativo.\nIl percorso formativo mira all'acquisizione di una solida conoscenza sia teorica che operativa dei metodi e contenuti del sapere matematico e di alcuni metodi e co\n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33592] MATEMATICA\",\"type\":\"Classe di laurea: L-35\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Matematica\nAnno accademico: 2026-2027\nCodice corso: 33592\nClasse di laurea: L-35\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA\n\n{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze matematiche per l’int\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "matematica",
+    "rendered_reply": "Il corso di laurea in Scienze Matematiche per l’Intelligenza Artificiale presso la Sapienza Università di Roma è un corso di laurea triennale. La modalità di accesso prevede una prova in ingresso per la verifica delle conoscenze. Il corso è offerto dalla Facoltà di Scienze Matematiche, Fisiche e Naturali e Ingegneria dell'Informazione. La sede del corso è a Roma. Non ho informazioni specifiche sui costi o sulle date di iscrizione.",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "matematica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 3,
+    "selected_option": "Sapienza Università di Roma | [33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE",
+    "shown_options": [
+      "University of Trento | [0515G] MATEMATICA",
+      "Sapienza Università di Roma | [33592] MATEMATICA",
+      "Sapienza Università di Roma | [33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE"
+    ],
+    "source_turn": 19
+  },
+  "session_id": "eae9ed256c11",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "CIAO",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi che fa per te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "scientifico",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai completato o stai frequentando un liceo scientifico. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "sperimentazioni tecnologie ai proiezioni",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! Mi parli di proiezioni e tecnologie, ma non ho ancora capito quali materie o ambiti universitari ti attirano di più. Potresti dirmi quali materie ti piacciono di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "matematica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato alla matematica. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "approfondire un sistema di creazione indipendente applicato alle video proiezioni",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! Mi parli di proiezioni e tecnologie, ma non ho ancora capito quali materie o ambiti universitari ti attirano di più. Potresti dirmi quali materie ti piacciono di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "tutte",
+      "role": "user"
+    },
+    {
+      "content": "Mi parli di proiezioni e tecnologie, ma non ho ancora capito quali materie o ambiti universitari ti attirano di più. Potresti dirmi quali materie ti piacciono di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "partiamo solo dalla matematica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato alla matematica. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "flessibile",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei flessibile riguardo alla sede universitaria. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "qb",
+      "role": "user"
+    },
+    {
+      "content": "Questo significa aiutare le persone, come fare il volontario, lavorare in un negozio o in un ufficio, o fare un lavoro di supporto. Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "7",
+      "role": "user"
+    },
+    {
+      "content": "Questo significa proporre idee, prendere iniziativa e organizzare progetti o attività. Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per la matematica e hai un profilo Realistico, Investigativo e Artistico. Ti piace molto capire come funzionano le cose e fare attività pratiche e manuali. Ti piace anche esprimere idee in forme creative e sperimentare con nuove idee. Ti suggerisco queste opzioni: 1. University of Trento | [0515G] MATEMATICA 2. Sapienza Università di Roma | [33592] MATEMATICA 3. Sapienza Università di Roma | [33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE Quale di queste opzioni ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "3",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: Sapienza Università di Roma | [33593] SCIENZE MATEMATICHE PER L’INTELLIGENZA ARTIFICIALE.",
+      "role": "assistant"
+    },
+    {
+      "content": "dammi tutte le informazioni disponibili riguardo la struttura e i corsi",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Scienze Matematiche per l’Intelligenza Artificiale presso la Sapienza Università di Roma è un corso di laurea triennale. La modalità di accesso prevede una prova in ingresso per la verifica delle conoscenze. Il corso è offerto dalla Facoltà di Scienze Matematiche, Fisiche e Naturali e Ingegneria dell'Informazione. La sede del corso è a Roma. Non ho informazioni specifiche sui costi o sulle date di iscrizione.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T09:51:37"
+}

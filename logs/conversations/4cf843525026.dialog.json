@@ -1,0 +1,576 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T10:02:36",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "itis elettrotecnica",
+      "region": "Basilicata"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "environmental_engineering"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Social",
+        "Artistic"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "itis elettrotecnica",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "itis elettrotecnica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "itis elettrotecnica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "environmental_engineering"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "itis elettrotecnica",
+          "region": "Basilicata"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "environmental_engineering"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 7
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            1,
+            -2,
+            0,
+            -2,
+            0,
+            -2,
+            -2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 16
+    },
+    {
+      "patch": {
+        "explicit": {
+          "region": "Basilicata"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "environmental_engineering"
+          ]
+        }
+      },
+      "phase": "profile_update",
+      "source_turn": 18
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": true,
+    "advice_location_policy": {
+      "city": "Potenza",
+      "region": "Basilicata",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Trento | [0337H] INGEGNERIA ENERGETICA",
+      "University of Salerno | [06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO"
+    ],
+    "candidates": {
+      "S2C1": {
+        "block": "{\"id\":\"S2C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34096] SUSTAINABLE TRANSPORTATION AND ELECTRIC POWER SYSTEMS - TRASPORTI SOSTENIBILI E SISTEMI ELETTRICI DI POTENZA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Sustainable Transportation and Electric Power Systems - Trasporti sostenibili e sistemi elettrici di potenza\nAnno accademico: 2026-2027\nCodice corso: 34096\nClasse di laurea: LM-28\nTipologia di corso: Laurea magistrale\nDurata: 2 anni",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[34096] SUSTAINABLE TRANSPORTATION AND ELECTRIC POWER SYSTEMS - TRASPORTI SOSTENIBILI E SISTEMI ELETTRICI DI POTENZA",
+          "id": "S2C1",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C1",
+        "option": "Sapienza Università di Roma | [34096] SUSTAINABLE TRANSPORTATION AND ELECTRIC POWER SYSTEMS - TRASPORTI SOSTENIBILI E SISTEMI ELETTRICI DI POTENZA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/34096",
+          "https://corsidilaurea.uniroma1.it/it/course/34096/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/34096/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/34096/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/34096/study-plan"
+        ],
+        "text": "Sustainable Transportation and Electric Power Systems - Trasporti sostenibili e sistemi elettrici di potenza\nAnno accademico: 2026-2027\nCodice corso: 34096\nClasse di laurea: LM-28\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: N/D\nFacoltà: Ingegneria civile e industriale\nDipartimento: INGEGNERIA ELETTRICA ED ENERGETICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 34096"
+      },
+      "S2C10": {
+        "block": "{\"id\":\"S2C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33472] INGEGNERIA DELL'AMBIENTE PER LO SVILUPPO SOSTENIBILE - ENVIRONMENTAL ENGINEERING FOR SUSTAINABLE DEVELOPMENT (SEDE DI LATINA)\",\"type\":\"Classe di laurea: L-7\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria dell'Ambiente per lo Sviluppo Sostenibile - Environmental Engineering for Sustainable Development (sede di Latina)\nAnno accademico: 2026-2027\nCodice corso: 33472\nClasse di laurea: L-7\nModalità di accesso: Prova in ingresso per la",
+        "facts": {
+          "cities": [],
+          "course": "[33472] INGEGNERIA DELL'AMBIENTE PER LO SVILUPPO SOSTENIBILE - ENVIRONMENTAL ENGINEERING FOR SUSTAINABLE DEVELOPMENT (SEDE DI LATINA)",
+          "id": "S2C10",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-7",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C10",
+        "option": "Sapienza Università di Roma | [33472] INGEGNERIA DELL'AMBIENTE PER LO SVILUPPO SOSTENIBILE - ENVIRONMENTAL ENGINEERING FOR SUSTAINABLE DEVELOPMENT (SEDE DI LATINA)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33472",
+          "https://corsidilaurea.uniroma1.it/it/course/33472/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33472/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33472/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33472/study-plan"
+        ],
+        "text": "Ingegneria dell'Ambiente per lo Sviluppo Sostenibile - Environmental Engineering for Sustainable Development (sede di Latina)\nAnno accademico: 2026-2027\nCodice corso: 33472\nClasse di laurea: L-7\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA, ENG"
+      },
+      "S2C2": {
+        "block": "{\"id\":\"S2C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33495] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO - ENVIRONMENTAL ENGINEERING\",\"type\":\"Classe di laurea: LM-35\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria per l'Ambiente e il Territorio - Environmental Engineering\nAnno accademico: 2026-2027\nCodice corso: 33495\nClasse di laurea: LM-35\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33495] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO - ENVIRONMENTAL ENGINEERING",
+          "id": "S2C2",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-35",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C2",
+        "option": "Sapienza Università di Roma | [33495] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO - ENVIRONMENTAL ENGINEERING",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33495",
+          "https://corsidilaurea.uniroma1.it/it/course/33495/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33495/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33495/study-plan"
+        ],
+        "text": "Ingegneria per l'Ambiente e il Territorio - Environmental Engineering\nAnno accademico: 2026-2027\nCodice corso: 33495\nClasse di laurea: LM-35\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG"
+      },
+      "S2C3": {
+        "block": "{\"id\":\"S2C3\",\"university\":\"University of Trento\",\"course\":\"[0337H] INGEGNERIA ENERGETICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)\"]}\nEXCERPT: [0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Renewable and innovative technologies for energy supply\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficienc",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)"
+          ],
+          "course": "[0337H] INGEGNERIA ENERGETICA",
+          "id": "S2C3",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S2C3",
+        "option": "University of Trento | [0337H] INGEGNERIA ENERGETICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362?schemaid=8534",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363?schemaid=8531",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Renewable and innovative technologies for energy supply\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S2C4": {
+        "block": "{\"id\":\"S2C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33473] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO\",\"type\":\"Classe di laurea: L-7\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria per l'Ambiente e il Territorio\nAnno accademico: 2026-2027\nCodice corso: 33473\nClasse di laurea: L-7\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33473] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO",
+          "id": "S2C4",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-7",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C4",
+        "option": "Sapienza Università di Roma | [33473] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33473",
+          "https://corsidilaurea.uniroma1.it/it/course/33473/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33473/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33473/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33473/study-plan"
+        ],
+        "text": "Ingegneria per l'Ambiente e il Territorio\nAnno accademico: 2026-2027\nCodice corso: 33473\nClasse di laurea: L-7\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S2C5": {
+        "block": "{\"id\":\"S2C5\",\"university\":\"University of Messina\",\"course\":\"[DT201] ADVANCED CATALYTIC PROCESSES FOR USING RENEWABLE ENERGY SOURCES\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: [DT201] ADVANCED CATALYTIC PROCESSES FOR USING RENEWABLE ENERGY SOURCES Corso di Dottorato (D.M.226/2021)\n\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2024\nStato Aperto Lingua Italiano Tipolog",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[DT201] ADVANCED CATALYTIC PROCESSES FOR USING RENEWABLE ENERGY SOURCES",
+          "id": "S2C5",
+          "region": "Sicilia",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S2C5",
+        "option": "University of Messina | [DT201] ADVANCED CATALYTIC PROCESSES FOR USING RENEWABLE ENERGY SOURCES",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10575",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10575?annoOrdinamento=2024"
+        ],
+        "text": "[DT201] ADVANCED CATALYTIC PROCESSES FOR USING RENEWABLE ENERGY SOURCES Corso di Dottorato (D.M.226/2021)\n\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2024\nStato Aperto Lingua Italiano Tipologia Dottorati Normativa D.M. 226/2021\nCorso Interateneo No Accesso Programmato Sede MESSINA Dipartimento SCIENZE CHIMICHE, BIOLOGICHE, FARMACEUTICHE E AMBIENTALI Sito web https://advanced-catalytic-processes.phd.unime.it  Requisiti di accesso Titoli opzionali (a scelta fra i seguenti)\n[ LAUREA V.O. + TITOLO SCUOLA SUPERIORE ]\nLaurea\n,\nTitolo di Scuola Superiore\n[ LAUREA SPECIALISTICA + TITOLO SCUOLA SUPERIORE ]\nLaurea Specialistica\n,\nTitolo di Scuola Superiore\n[ LAUREA MAGISTRALE + TITOLO SCUOLA SUPERIORE ]\nLaurea Magistrale\n,\nTitolo di Scuola Superiore\n[ MASTER'S DEGREE ]\nTitolo straniero"
+      },
+      "S2C6": {
+        "block": "{\"id\":\"S2C6\",\"university\":\"University of Trento\",\"course\":\"[0332H] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 36)\"]}\nEXCERPT: [0332H] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO Laurea Magistrale Inglese Italiano Qualità ambientale e tecnologie di risanamento\nINFO INSEGNAMENTI SALVA PDF\nRisorse idriche e protezione del territorio Qualità ambientale e tecnologie di ",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 36)"
+          ],
+          "course": "[0332H] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO",
+          "id": "S2C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S2C6",
+        "option": "University of Trento | [0332H] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50357#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50357?schemaid=8559",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50358#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50358?schemaid=8560",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50359#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50359?schemaid=8550",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50360#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti/50360?schemaid=8551",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10150/insegnamenti?annoOrdinamento=2021"
+        ],
+        "text": "[0332H] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO Laurea Magistrale Inglese Italiano Qualità ambientale e tecnologie di risanamento\nINFO INSEGNAMENTI SALVA PDF\nRisorse idriche e protezione del territorio Qualità ambientale e tecnologie di risanamento Modelling and Simulation Environmental Sustainability and International Cooperation Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S2C7": {
+        "block": "{\"id\":\"S2C7\",\"university\":\"University of Salerno\",\"course\":\"[06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n1 anni Ordinamento\n2022\nStato Aperto Lingua Italiano Tipologia Ma",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO",
+          "id": "S2C7",
+          "region": "Campania",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S2C7",
+        "option": "University of Salerno | [06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500661"
+        ],
+        "text": "[06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n1 anni Ordinamento\n2022\nStato Aperto Lingua Italiano Tipologia Master Normativa D.M. 270/2004\nCorso Interateneo No Accesso Programmato Sede UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO Dipartimento DIPARTIMENTO DI INGEGNERIA INDUSTRIALE Verifica conoscenze richieste per l'accesso No Docenti del corso Visualizza lista Requisiti di accesso Titoli opzionali (a scelta fra i seguenti)\n[ LM-CONS ]\nLaurea Magistrale\n[ L1 ]\nLaurea\n[ LS ]\nLaurea Specialistica Ruoli Referente Corso di Studio VINCENZO GALDI Direttore della Scuola VINCENZO GALDI Direttore del Corso VINCENZO GALDI"
+      },
+      "S2C8": {
+        "block": "{\"id\":\"S2C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33489] ENVIRONMENTAL AND SUSTAINABLE BUILDING ENGINEERING - INGEGNERIA PER L'AMBIENTE E L'EDILIZIA SOSTENIBILE (SEDE DI RIETI)\",\"type\":\"Classe di laurea: LM-24\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Environmental and Sustainable Building Engineering - Ingegneria per l'Ambiente e l'Edilizia Sostenibile (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33489\nClasse di laurea: LM-24\nModalità di accesso: Verifica dei requisiti e del",
+        "facts": {
+          "cities": [],
+          "course": "[33489] ENVIRONMENTAL AND SUSTAINABLE BUILDING ENGINEERING - INGEGNERIA PER L'AMBIENTE E L'EDILIZIA SOSTENIBILE (SEDE DI RIETI)",
+          "id": "S2C8",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-24",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C8",
+        "option": "Sapienza Università di Roma | [33489] ENVIRONMENTAL AND SUSTAINABLE BUILDING ENGINEERING - INGEGNERIA PER L'AMBIENTE E L'EDILIZIA SOSTENIBILE (SEDE DI RIETI)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33489",
+          "https://corsidilaurea.uniroma1.it/it/course/33489/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33489/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33489/study-plan"
+        ],
+        "text": "Environmental and Sustainable Building Engineering - Ingegneria per l'Ambiente e l'Edilizia Sostenibile (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33489\nClasse di laurea: LM-24\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ENG"
+      },
+      "S2C9": {
+        "block": "{\"id\":\"S2C9\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: ito storico, contemporaneo e da prefigurare, nella loro individualità architettonica e integrazione nel contesto urbano.\n● l'insegnamento di Certificazione Energetica fornisce i fondamenti di energetica edilizia illustrando le metodologie e",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S2C9",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S2C9",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "ito storico, contemporaneo e da prefigurare, nella loro individualità architettonica e integrazione nel contesto urbano.\n● l'insegnamento di Certificazione Energetica fornisce i fondamenti di energetica edilizia illustrando le metodologie e le tecniche di progettazione e indagine, sia per nuova edificazione sia per ristrutturazione, e i metodi per la valutazione dei consumi energetici degli edifici.."
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "environmental_engineering"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": "Basilicata",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "sistemi di energia rinnovabile"
+    },
+    "control": {
+      "followup_question": "",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S2C3",
+        "S2C7"
+      ],
+      "recap": "Ti piace molto fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti. Ti piace anche capire come funzionano i fenomeni. Ti interessano i pannelli solari e i sistemi di energia rinnovabile."
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S2C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34096] SUSTAINABLE TRANSPORTATION AND ELECTRIC POWER SYSTEMS - TRASPORTI SOSTENIBILI E SISTEMI ELETTRICI DI POTENZA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Sustainable Transportation and Electric Power Systems - Trasporti sostenibili e sistemi elettrici di potenza\nAnno accademico: 2026-2027\nCodice corso: 34096\nClasse di laurea: LM-28\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\n\n{\"id\":\"S2C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33495] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO - ENVIRONMENTAL ENGINEERING\",\"type\":\"Classe di laurea: LM-35\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria per l'Ambiente e il Territorio - Environmental Engineering\nAnno accademico: 2026-2027\nCodice corso: 33495\nClasse di laurea: LM-35\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG\n\n{\"id\":\"S2C3\",\"university\":\"University of Trento\",\"course\":\"[0337H] INGEGNERIA ENERGETICA\",\"type\":\"Laurea Magistrale\",\"type_status\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {
+      "field_of_interest": [
+        "environmental_engineering"
+      ],
+      "intent": "profile_update",
+      "location_changed": true,
+      "retrieval": {
+        "location": {
+          "city": "Potenza",
+          "region": "Basilicata",
+          "requirement": "",
+          "strict": false
+        },
+        "query": "sistemi di energia rinnovabile"
+      },
+      "temporary": false
+    },
+    "query": "sistemi di energia rinnovabile",
+    "rendered_reply": "Ti piace molto fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti. Ti piace anche capire come funzionano i fenomeni. Ti interessano i pannelli solari e i sistemi di energia rinnovabile.\n\nLe opzioni non documentate a Potenza sono presentate come alternative, non come sedi necessariamente vicine.\n\nTi suggerisco queste opzioni:\n1. University of Trento | [0337H] INGEGNERIA ENERGETICA\n2. University of Salerno | [06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO",
+    "retrieval_request": {
+      "location": {
+        "city": "Potenza",
+        "region": "Basilicata",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "sistemi di energia rinnovabile"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      2,
+      1,
+      -2,
+      0,
+      -2,
+      0,
+      -2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "4cf843525026",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "itis elettrotecnica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai frequentato un istituto tecnico con indirizzo elettrotecnica. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "non voglio fare l’università",
+      "role": "user"
+    },
+    {
+      "content": "Capisco. Ti ho chiesto delle materie o degli ambiti universitari che ti attirano di più, ma mi hai parlato dei tuoi piani per il futuro. Potresti dirmi quali materie hai studiato o stai studiando attualmente?",
+      "role": "assistant"
+    },
+    {
+      "content": "ricreazione",
+      "role": "user"
+    },
+    {
+      "content": "Mi hai parlato dei tuoi piani per il futuro, ma non mi hai detto quali materie hai studiato o stai studiando attualmente. Potresti dirmi quali materie hai studiato o stai studiando attualmente?",
+      "role": "assistant"
+    },
+    {
+      "content": "eeducazione fisica",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi hai frequentato un istituto tecnico con indirizzo elettrotecnica. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "pannelli solari e sistemi di energia rinnovabile",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano i pannelli solari e i sistemi di energia rinnovabile. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "basilicata",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti piacerebbe studiare in Basilicata. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "fenomeni",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "niente-0",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "0",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "0",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "10",
+      "role": "user"
+    },
+    {
+      "content": "Questo significa che ti piace aiutare gli altri, dare supporto o ascoltare le persone?",
+      "role": "assistant"
+    },
+    {
+      "content": "0",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "0",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "0",
+      "role": "user"
+    },
+    {
+      "content": "Ti piace molto fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti. Ti piace anche capire come funzionano i fenomeni. Ti interessano i pannelli solari e i sistemi di energia rinnovabile. Ti suggerisco queste opzioni: 1. University of Trento | [0337H] INGEGNERIA ENERGETICA 2. University of Salerno | [06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO 3. University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+      "role": "assistant"
+    },
+    {
+      "content": "0 0",
+      "role": "user"
+    },
+    {
+      "content": "Le opzioni mostrate sono in Trentino-Alto Adige, Campania e Toscana. Non sono documentate in Basilicata. Se ti interessa un'altra area di studio, fammi sapere quale.",
+      "role": "assistant"
+    },
+    {
+      "content": "lo voglio a potenza",
+      "role": "user"
+    },
+    {
+      "content": "Ti piace molto fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti. Ti piace anche capire come funzionano i fenomeni. Ti interessano i pannelli solari e i sistemi di energia rinnovabile. Le opzioni non documentate a Potenza sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. University of Trento | [0337H] INGEGNERIA ENERGETICA 2. University of Salerno | [06708] DIGITALIZZAZIONE DEL SISTEMA ELETTRICO PER LA TRANSIZIONE ENERGETICA MASTER DI SECONDO LIVELLO",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T10:07:22"
+}

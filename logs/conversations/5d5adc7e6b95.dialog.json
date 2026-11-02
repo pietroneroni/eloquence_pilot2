@@ -1,0 +1,530 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T10:34:52",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "scuola superiore",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "health_technology"
+      ],
+      "riasec_attitudes": [
+        "Enterprising",
+        "Social",
+        "Investigative"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola superiore",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola superiore",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola superiore",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola superiore",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 8
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            1,
+            -1,
+            -1,
+            2,
+            1,
+            2,
+            -1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 17
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33464] SCIENZE E TECNICHE DELLE ATTIVITÀ MOTORIE A CURVATURA BIOMEDICA",
+      "University of Foggia | [1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE",
+      "University of Sassari | [A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33464] SCIENZE E TECNICHE DELLE ATTIVITÀ MOTORIE A CURVATURA BIOMEDICA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze e tecniche delle attività motorie a curvatura biomedica\nAnno accademico: 2026-2027\nCodice corso: 33464\nClasse di laurea: LM-67\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione per",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33464] SCIENZE E TECNICHE DELLE ATTIVITÀ MOTORIE A CURVATURA BIOMEDICA",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33464] SCIENZE E TECNICHE DELLE ATTIVITÀ MOTORIE A CURVATURA BIOMEDICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33464",
+          "https://corsidilaurea.uniroma1.it/it/course/33464/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33464/study-plan"
+        ],
+        "text": "Scienze e tecniche delle attività motorie a curvatura biomedica\nAnno accademico: 2026-2027\nCodice corso: 33464\nClasse di laurea: LM-67\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Farmacia e Medicina\nDipartimento: FISIOLOGIA E FARMACOLOGIA \"VITTORIO ERSPAMER\"\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 33464"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Salerno\",\"course\":\"[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\",\"type\":\"CORSO DI LAUREA\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA\"]}\nEXCERPT: CORSO DI LAUREA\n\nTECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[1012500009] APPARECCHIATURE 1",
+        "facts": {
+          "cities": [
+            "A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA"
+          ],
+          "course": "[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+          "id": "S1C10",
+          "region": "Campania",
+          "type": "CORSO DI LAUREA",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C10",
+        "option": "University of Salerno | [10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388/insegnamenti/9999?schemaid=17247"
+        ],
+        "text": "CORSO DI LAUREA\n\nTECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[1012500009] APPARECCHIATURE 1"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Messina\",\"course\":\"[3262] BIOTECNOLOGIE Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO ",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[3262] BIOTECNOLOGIE Inglese Italiano",
+          "id": "S1C2",
+          "region": "Sicilia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C2",
+        "option": "University of Messina | [3262] BIOTECNOLOGIE Inglese Italiano",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?annoOrdinamento=2019",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?schemaid=12253",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100?annoOrdinamento=2019",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_SCI"
+        ],
+        "text": "ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO LEGALI E GIURIDICI\n[MS041] NEURORADIOLOGIA INTERVENTISTICA VASCOLARE 2.0\n[MS057] NEURORADIOLOGIA INTERVENTISTICA VASCOLARE 3.0\n[MS051] ORTODONZIA CLINICA\n[MS030] ORTOGNATODONZIA DIGITALE\n[MS055] PREVENZIONE E CONTROLLO DELLE MALATTIE CRONICO-DEGENERATIVE Dottorati\n[DT202] BIOINGEGNERIA APPLICATA ALLE SCIENZE MEDICHE\n[DT212] TRANSLATIONAL MOLECULAR MEDICINE AND SURGERY Inglese"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Foggia\",\"course\":\"[1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE",
+          "id": "S1C3",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C3",
+        "option": "University of Foggia | [1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10020",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10020/insegnamenti/9999",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10020/insegnamenti/9999?schemaid=2873"
+        ],
+        "text": "[1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE Corso di Laurea"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S1C4",
+          "region": "Abruzzo",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C4",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE Inglese\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY Inglese\n[D3KINE] KINESIOLOGY Inglese\n[D3LLCC] LINGUE, LETTERATURE E CULTURE IN CONTATTO\n[D3MT] MEDICINA TRASLAZIONALE Inglese Italiano\n[D3NI] NEUROSCIENZE E IMAGING Inglese\n[D3OMIT] ONCOLOGIA MOLECOLARE E IMMUNOLOGIA DEI TUMORI Inglese\n[D3PSI] PSICOLOGIA Inglese\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT Inglese\n[D3SBF] SCIENZE BIOMOLECOLARI E FARMACEUTICHE Inglese\n[D3SGST] SCIENZE GIURIDICHE PER LA SOSTENIBILITÀ, LA TRANSIZIONE ECOLOGICA E L’INNOVAZIONE Inglese\n[D3SS] SOCIAL SCIENCES Tedesco Inglese Francese"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Sassari\",\"course\":\"[A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO",
+          "id": "S1C5",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C5",
+        "option": "University of Sassari | [A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10828",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10828/insegnamenti/9999"
+        ],
+        "text": "[A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)\"]}\nEXCERPT: contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[0327G] INGEGNERIA INDUSTRIALE\n[0",
+        "facts": {
+          "cities": [
+            "Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)"
+          ],
+          "course": "[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482?schemaid=8270",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483?schemaid=8268",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti?annoOrdinamento=2011",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677464"
+        ],
+        "text": "contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[0327G] INGEGNERIA INDUSTRIALE\n[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA Inglese Italiano\n[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA InterateneoInglese Italiano\n[0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO Matematica e Fisica\n[0513G] FISICA\n[0515G] MATEMATICA Psicologia e Neuroscienze\n[0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE\n[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Scienze e tecnologie agroalimentari\n[0911G] VITICOLTURA ED ENOLOGIA Scienze medico-sanitarie e biologiche\n[0710G] EDUCAZIONE PROFESSIONALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI EDUCATORE PROFESSIONALE)\n[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI\n[INT - TPAL] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO InterateneoTitolo congiunto\n[INT-TLB] TECNICHE DI LABORATORIO BIOMEDICO Interateneo\n[INT-TRMIR] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Interateneo Scienze motorie e del benessere\n[0711G] SCIENZE MOTORIE, SPORT E BENESSERE InterateneoTitolo congiunto Sociologia e Studi internazionali\n[0622G] SERVIZIO SOCIALE\n[0611G] SOCIOLOGIA\n[0620G] STUDI INTERNAZIONALI Studi umanistici e linguistici\n[0417G] BENI CULTURALI\n[0416G] FILOSOFIA\n[0427G] LINGUE MODERNE Tedesco Inglese Francese Italiano Spagnolo\n[0419G] STUDI STORICI E FILOLOGICO-LETTERARI"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Messina\",\"course\":\"[3025] SCIENZE MOTORIE, SPORT E SALUTE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: [3025] SCIENZE MOTORIE, SPORT E SALUTE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[3025] SCIENZE MOTORIE, SPORT E SALUTE",
+          "id": "S1C7",
+          "region": "Sicilia",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C7",
+        "option": "University of Messina | [3025] SCIENZE MOTORIE, SPORT E SALUTE",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10151",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10151/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10151/insegnamenti/9999?annoOrdinamento=2011",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10151/insegnamenti/9999?schemaid=12250",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10151?annoOrdinamento=2011"
+        ],
+        "text": "[3025] SCIENZE MOTORIE, SPORT E SALUTE Corso di Laurea"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Rovereto - Via Fortunato Zeni, 8 (Utenza sostenibile: 80)\"]}\nEXCERPT: CHANICS FOR HEALTHCARE APPLICATIONS\n12 CFU\n96 ore Primo Semestre\n[146252] INFORMATICS AND ELECTRONICS FOR HEALTHCARE 4.0\n12 CFU\n100 ore Secondo Semestre\n[146250] MEDICAL DEVICES QUALITY AND SAFETY\n9 CFU\n76 ore Primo Semestre\n[146249] SYSTEM PHYSIOLOGY AND INTEGRATED BIOLOGICAL PROCESSES\n6 CFU\n48 ore Primo Semestre Maggiori informazioni\n2° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[146255] ADDITIVE",
+        "facts": {
+          "cities": [
+            "Polo di collina - Rovereto - Via Fortunato Zeni, 8 (Utenza sostenibile: 80)"
+          ],
+          "course": "[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE",
+          "id": "S1C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C8",
+        "option": "University of Trento | [0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417?schemaid=8611",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418?schemaid=8614",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti?annoOrdinamento=2024"
+        ],
+        "text": "CHANICS FOR HEALTHCARE APPLICATIONS\n12 CFU\n96 ore Primo Semestre\n[146252] INFORMATICS AND ELECTRONICS FOR HEALTHCARE 4.0\n12 CFU\n100 ore Secondo Semestre\n[146250] MEDICAL DEVICES QUALITY AND SAFETY\n9 CFU\n76 ore Primo Semestre\n[146249] SYSTEM PHYSIOLOGY AND INTEGRATED BIOLOGICAL PROCESSES\n6 CFU\n48 ore Primo Semestre Maggiori informazioni\n2° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[146255] ADDITIVE TECHNOLOGIES FOR CUSTOMIZED METALLIC IMPLANTS\n6 CFU\n48 ore\n[146258] DIAGNOSTIC AND THERAPEUTIC TECHNOLOGIES FOR PERSONALIZED MEDICINE\n6 CFU\n52 ore\n[146265] FINAL PROJECT\n18 CFU\n[146259] LABORATORY DIAGNOSTICS FOR PRECISION MEDICINE\n6 CFU\n48 ore\n[146256] TECHNOLOGIES AND INNOVATION IN HEALTH: FOOD AND MEDICAL GRADE PRODUCTS\n6 CFU\n52 ore\n[146257] TRANSPORT PHENOMENA IN LIVING SYSTEMS\n6 CFU\n52 ore"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Foggia\",\"course\":\"[1604] SCIENZE E TECNICHE DELLE ATTIVITA' MOTORIE PREVENTIVE E ADATTATE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1604] SCIENZE E TECNICHE DELLE ATTIVITA' MOTORIE PREVENTIVE E ADATTATE Corso di Laurea Magistrale",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1604] SCIENZE E TECNICHE DELLE ATTIVITA' MOTORIE PREVENTIVE E ADATTATE",
+          "id": "S1C9",
+          "region": "Puglia",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C9",
+        "option": "University of Foggia | [1604] SCIENZE E TECNICHE DELLE ATTIVITA' MOTORIE PREVENTIVE E ADATTATE",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10116",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10116/insegnamenti/9999",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10116/insegnamenti/9999?schemaid=2858"
+        ],
+        "text": "[1604] SCIENZE E TECNICHE DELLE ATTIVITA' MOTORIE PREVENTIVE E ADATTATE Corso di Laurea Magistrale"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "health_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Quale di questi corsi ti sembra più interessante?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C3",
+        "S1C5"
+      ],
+      "recap": "Hai espresso interesse per le scienze motorie e il giornalismo, e hai un profilo Enterprising, Social e Investigative. Ti ho suggerito alcuni corsi di laurea che potrebbero interessarti, come le scienze motorie e sportive, che potrebbero aiutarti a lavorare nel calcio."
+    },
+    "ctx_chars": 4493,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33464] SCIENZE E TECNICHE DELLE ATTIVITÀ MOTORIE A CURVATURA BIOMEDICA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze e tecniche delle attività motorie a curvatura biomedica\nAnno accademico: 2026-2027\nCodice corso: 33464\nClasse di laurea: LM-67\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione per\n\n{\"id\":\"S1C2\",\"university\":\"University of Messina\",\"course\":\"[3262] BIOTECNOLOGIE Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO \n\n{\"id\":\"S1C3\",\"university\":\"University of Foggia\",\"course\":\"[1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\"\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "scienze motorie",
+    "rendered_reply": "Hai espresso interesse per le scienze motorie e il giornalismo, e hai un profilo Enterprising, Social e Investigative. Ti ho suggerito alcuni corsi di laurea che potrebbero interessarti, come le scienze motorie e sportive, che potrebbero aiutarti a lavorare nel calcio.\n\nTi suggerisco queste opzioni:\n1. Sapienza Università di Roma | [33464] SCIENZE E TECNICHE DELLE ATTIVITÀ MOTORIE A CURVATURA BIOMEDICA\n2. University of Foggia | [1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE\n3. University of Sassari | [A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO\n\nQuale di questi corsi ti sembra più interessante?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "scienze motorie"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      -1,
+      1,
+      -1,
+      -1,
+      2,
+      1,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "5d5adc7e6b95",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "scienze applicate",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso il tuo interesse per le scienze applicate. Per aiutarti meglio, ho bisogno di sapere quale percorso di studi hai seguito o stai seguendo attualmente. Per esempio, hai completato o stai frequentando una scuola superiore, un corso di laurea o un altro tipo di formazione?",
+      "role": "assistant"
+    },
+    {
+      "content": "sono al quarto anno di superiore e vorrei lavorare nel calcio",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "scienze motorie",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato alle scienze motorie. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "giornalismo o in generale lo sport",
+      "role": "user"
+    },
+    {
+      "content": "Mi hai parlato di scienze motorie, ma non ho capito ancora quale percorso di studi hai seguito o stai seguendo. Per esempio, hai completato o stai frequentando una scuola superiore, un corso di laurea o un altro tipo di formazione?",
+      "role": "assistant"
+    },
+    {
+      "content": "sono al quarto anno di superiori allo scienze applicate",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "flessibilità massima",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "il giusto",
+      "role": "user"
+    },
+    {
+      "content": "Mi riferisco a cercare informazioni, analizzare problemi e ragionare in modo logico. Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "un po",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "un po",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per le scienze motorie e il giornalismo, e hai un profilo Enterprising, Social e Investigative. Ti ho suggerito alcuni corsi di laurea che potrebbero interessarti, come le scienze motorie e sportive, che potrebbero aiutarti a lavorare nel calcio. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33464] SCIENZE E TECNICHE DELLE ATTIVITÀ MOTORIE A CURVATURA BIOMEDICA 2. University of Foggia | [1610] SCIENZE DELLE ATTIVITA' MOTORIE E SPORTIVE 3. University of Sassari | [A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T10:39:09"
+}

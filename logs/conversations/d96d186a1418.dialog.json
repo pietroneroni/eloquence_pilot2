@@ -1,0 +1,208 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T10:13:01",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "scuola superiore",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola superiore",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola superiore",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola superiore",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola superiore",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "",
+    "advice_intro_singular": "",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [],
+    "candidates": {},
+    "choice_options": [],
+    "confirmed_fields": [],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "intent": "riasec_valid",
+      "valence": 1
+    },
+    "ctx_chars": 0,
+    "ctx_preview": "",
+    "current_question": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+    "expected_verbatim": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+    "final_top_n": 3,
+    "phase": "riasec_answer_valid",
+    "profile_update": {},
+    "query": "",
+    "rendered_reply": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "elettronica impianti fotovoltaici"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "riasec_validate",
+    "valences_before": [
+      1,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "d96d186a1418",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "come corso io faccio eletronica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, mi hai parlato del tuo interesse per l'elettronica. Ora, però, vorrei sapere qual è il tuo percorso scolastico attuale o concluso: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "scuola superiore",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "elettronica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, mi hai parlato del tuo interesse per l'elettronica. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "gli impianti fotovoltaic",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, mi hai parlato del tuo interesse per gli impianti fotovoltaici. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "dove vado io e abbastanza buono",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, mi hai parlato del tuo interesse per gli impianti fotovoltaici. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "riparare",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "sistemi",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "analizzare i problemi",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T10:17:18"
+}

@@ -1,0 +1,519 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T14:10:43",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "computer_science"
+      ],
+      "riasec_attitudes": [
+        "Social",
+        "Conventional",
+        "Enterprising"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology",
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology",
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology",
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            0,
+            2,
+            -1,
+            -1,
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+      "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+      "Sapienza Università di Roma | [29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medi",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33571",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/study-plan"
+        ],
+        "text": "Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA DEI PROCESSI DI SVILUPPO E SOCIALIZZAZIONE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Prevalentemente a distanza\nCodice prova: 05429"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34185] SCIENZE PSICOLOGICHE (SEDE DI RIETI)\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Rieti\"]}\nEXCERPT: Scienze Psicologiche (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 34185\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA DEI PROCESSI DI SVILUPPO E SOCIALIZZAZIONE\nSede: Rieti\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05429",
+        "facts": {
+          "cities": [
+            "Rieti"
+          ],
+          "course": "[34185] SCIENZE PSICOLOGICHE (SEDE DI RIETI)",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [34185] SCIENZE PSICOLOGICHE (SEDE DI RIETI)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/34185",
+          "https://corsidilaurea.uniroma1.it/it/course/34185/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/34185/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/34185/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/34185/study-plan"
+        ],
+        "text": "Scienze Psicologiche (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 34185\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA DEI PROCESSI DI SVILUPPO E SOCIALIZZAZIONE\nSede: Rieti\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05429"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi natu",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)"
+          ],
+          "course": "[0514G] INFORMATICA",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0514G] INFORMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"
+        ],
+        "text": "tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi naturali ed artificiali), identificare i processi cruciali in maniera sistematica, proporre modelli e soluzioni realizzabili tramite software e sistemi informatici. La mentalità, data l'enfasi su strumenti e metodi scientifici di tipo universale, è naturalmente predisposta per inserirsi rapidamente in contesti di lavoro diversi, adattandosi alla rapida innovazione che caratterizza il settore. Il corso di laurea prevede un insieme comune di corsi in cui vengono fornite le competenze di base in matematica e informatica. Successivamente, si distinguono due possibili percorsi:\n- il percorso Scienze e Tecnologie Informatiche, con due orientamenti, uno a carattere metodologico, indicato per coloro che intendano proseguire gli studi con una Laurea Magistrale in Scienze e Tecnologie Informatiche ed un orientamento professionalizzante, indicato per coloro che intendano terminare gli studi al termi ne del Corso di Laurea in Informatica."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Foggia\",\"course\":\"[1807] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1807] SCIENZE E TECNICHE PSICOLOGICHE",
+          "id": "S1C3",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C3",
+        "option": "University of Foggia | [1807] SCIENZE E TECNICHE PSICOLOGICHE",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535/insegnamenti/9999",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535/insegnamenti/9999?schemaid=2791"
+        ],
+        "text": "[1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegner",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33502",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/study-plan"
+        ],
+        "text": "Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14824"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33526\nClasse di laurea: L-5\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Lettere e Filosofia, Ingegneria dell'informaz",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33526",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/study-plan"
+        ],
+        "text": "Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33526\nClasse di laurea: L-5\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Lettere e Filosofia, Ingegneria dell'informazione, informatica e statistica\nDipartimento: FILOSOFIA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14621"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84\"]}\nEXCERPT: [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Laurea\nINFO INSEGNAMENTI Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2015\nStato Aperto Crediti\n180 CFU Tipologia Corsi di laurea triennale Categoria Psicologia e Neuroscienze Normat",
+        "facts": {
+          "cities": [
+            "Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84"
+          ],
+          "course": "[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438?schemaid=8225"
+        ],
+        "text": "[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Laurea\nINFO INSEGNAMENTI Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2015\nStato Aperto Crediti\n180 CFU Tipologia Corsi di laurea triennale Categoria Psicologia e Neuroscienze Normativa Riforma 270/04\nClasse di laurea L-24 - Classe delle lauree in Scienze e tecniche psicologiche Corso Interateneo No Accesso Programmato (230 Posti)\nSede Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84\nDipartimento Dipartimento di Psicologia e Scienze Cognitive Verifica conoscenze richieste per l'accesso No Programma, testi e obiettivi Obiettivi formativi specifici del corso e descrizione del percorso formativo Il corso di laurea in Scienze e Tecniche di Psicologia Cognitiva vuole fornire una solida base metodologica per gli studenti che intendono proseguire nella laurea magistrale di Psicologia o nel master di Cognitive Science. I laureati nei corsi di laurea della classe devono:\n- avere acquisito le conoscenze di base e caratterizzanti nell’ambito della psicologia cognitiva, dei suoi metodi e procedure di indagine scientifica e delle potenzialità applicative."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecnica della riabilitazione psichiatrica (abilitante alla professione sanitaria di Tecnico della riabilitazione psichiatrica) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29987\nClasse di laurea: L/SNT2\nTipologia di corso: Laurea\nDurata: 3 an",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29987",
+          "https://corsidilaurea.uniroma1.it/it/course/29987/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29987/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29987/study-plan"
+        ],
+        "text": "Tecnica della riabilitazione psichiatrica (abilitante alla professione sanitaria di Tecnico della riabilitazione psichiatrica) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29987\nClasse di laurea: L/SNT2\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Odontoiatria, Farmacia e Medicina\nDipartimento: NEUROSCIENZE UMANE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05418"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of L'Aquila\",\"course\":\"[P3Q] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [P3Q] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[P3Q] SCIENZE E TECNICHE PSICOLOGICHE",
+          "id": "S1C8",
+          "region": "Abruzzo",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C8",
+        "option": "University of L'Aquila | [P3Q] SCIENZE E TECNICHE PSICOLOGICHE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416/insegnamenti/9999",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416/insegnamenti/9999?schemaid=11435"
+        ],
+        "text": "[P3Q] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "psychology",
+      "computer_science"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Quale di questi corsi ti sembra più interessante?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C4",
+        "S1C7"
+      ],
+      "recap": "Ti interessano sia psicologia che informatica, con una preferenza per la psicologia ma con un indirizzo informatico. Ti piace molto lavorare a stretto contatto con le persone, proporre idee e organizzare progetti, e avere attività ordinate e pianificate."
+    },
+    "ctx_chars": 4920,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medi\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi natu\n\n{\"id\":\"S1C3\",\"university\":\"University of Foggia\",\"course\":\"[1807] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_statu\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "psicologia informatica",
+    "rendered_reply": "Ti interessano sia psicologia che informatica, con una preferenza per la psicologia ma con un indirizzo informatico. Ti piace molto lavorare a stretto contatto con le persone, proporre idee e organizzare progetti, e avere attività ordinate e pianificate.\n\nTi suggerisco queste opzioni:\n1. Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\n2. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\n3. Sapienza Università di Roma | [29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I\n\nQuale di questi corsi ti sembra più interessante?",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "psicologia informatica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      -1,
+      0,
+      2,
+      -1,
+      -1,
+      2,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "f0b1d877df69",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Sono una studentessa al quinto anno di liceo scientifico e volevo prendere psicologia ma mi piace anche molto l’informatica",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Sono una studentessa al quinto anno di liceo scientifico e volevo prendere psicologia ma mi piace anche molto l’informatica",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "psicologia e informatica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano sia psicologia che informatica. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "più psicologia ma con un indirizzo informatico",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano sia psicologia che informatica. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi Roma è la tua prima scelta. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "parzialmente interessata, mi interessa di più la psicologia delle persone",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "si, molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "moltissimo!",
+      "role": "user"
+    },
+    {
+      "content": "Ti interessano sia psicologia che informatica, con una preferenza per la psicologia ma con un indirizzo informatico. Ti piace molto lavorare a stretto contatto con le persone, proporre idee e organizzare progetti, e avere attività ordinate e pianificate. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA 2. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE 3. Sapienza Università di Roma | [29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T14:16:42"
+}

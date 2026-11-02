@@ -1,0 +1,508 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T09:15:39",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "4 superiore scienze applicate",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities",
+        "life_sciences"
+      ],
+      "riasec_attitudes": [
+        "Conventional",
+        "Investigative",
+        "Realistic"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "4 superiore scienze applicate",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "4 superiore scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities",
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "4 superiore scienze applicate",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "4 superiore scienze applicate",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities",
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            1,
+            2,
+            -1,
+            -1,
+            0,
+            1,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 15
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33590] SCIENZE NATURALI",
+      "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+      "Sapienza Università di Roma | [33456] BIOTECNOLOGIE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33590] SCIENZE NATURALI\",\"type\":\"Classe di laurea: L-32\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze Naturali\nAnno accademico: 2026-2027\nCodice corso: 33590\nClasse di laurea: L-32\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33590] SCIENZE NATURALI",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-32",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33590] SCIENZE NATURALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33590",
+          "https://corsidilaurea.uniroma1.it/it/course/33590/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33590/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33590/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33590/study-plan"
+        ],
+        "text": "Scienze Naturali\nAnno accademico: 2026-2027\nCodice corso: 33590\nClasse di laurea: L-32\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[L605] TECNICHE DI LABORATORIO BIOMEDICO\",\"type\":\"Classe di laurea: L/SNT3\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 25)\"]}\nEXCERPT: CORSO GENERICO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[TLB11B1] SCIENZE PROPEDEUTICHE\n8 CFU\n80 ore Base, Caratterizzante (L/SNT3)\nPrimo Semestre\n[TLB11B2] SCIENZE BIOMEDICHE 1\n\n4 CFU\n40 ore Base (L/SNT3)\nPrimo Semestre\n[TLB11B3] SCIENZE BIOMEDICHE 2\n\n6 CFU\n60 ore Base (L/SNT3)\nPrimo Semestre\n[TLB11E1] LINGUA INGLESE ED INGLESE SCIENTIFICO\n6 CFU\n60 ore Lingua/Prova Finale (L/SNT3)\nPrimo Semestre\n[TLB11L1] LABORATORI PROFESSIONALI\n1 CFU\n25 ore Altro (L/SNT3)\nPrimo Semestre\n[TLB12A55] SCIENZE BIOMEDICHE 4\n\n7 CFU\n70 ore Base (L/SNT3)\nSecondo Semestre\n[TLB12AA66] SCIENZE BIOMEDICHE 3",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 25)"
+          ],
+          "course": "[L605] TECNICHE DI LABORATORIO BIOMEDICO",
+          "id": "S1C10",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L/SNT3",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C10",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [L605] TECNICHE DI LABORATORIO BIOMEDICO",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/612",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/612/insegnamenti/21856"
+        ],
+        "text": "CORSO GENERICO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[TLB11B1] SCIENZE PROPEDEUTICHE\n8 CFU\n80 ore Base, Caratterizzante (L/SNT3)\nPrimo Semestre\n[TLB11B2] SCIENZE BIOMEDICHE 1\n\n4 CFU\n40 ore Base (L/SNT3)\nPrimo Semestre\n[TLB11B3] SCIENZE BIOMEDICHE 2\n\n6 CFU\n60 ore Base (L/SNT3)\nPrimo Semestre\n[TLB11E1] LINGUA INGLESE ED INGLESE SCIENTIFICO\n6 CFU\n60 ore Lingua/Prova Finale (L/SNT3)\nPrimo Semestre\n[TLB11L1] LABORATORI PROFESSIONALI\n1 CFU\n25 ore Altro (L/SNT3)\nPrimo Semestre\n[TLB12A55] SCIENZE BIOMEDICHE 4\n\n7 CFU\n70 ore Base (L/SNT3)\nSecondo Semestre\n[TLB12AA66] SCIENZE BIOMEDICHE 3"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AN",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S1C2",
+          "region": "Abruzzo",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C2",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE Inglese\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY Inglese\n[D3KINE] KINESIOLOGY Inglese\n[D3LLCC] LINGUE, LETTERATURE E CULTURE IN CONTATTO\n[D3MT] MEDICINA TRASLAZIONALE Inglese Italiano\n[D3NI] NEUROSCIENZE E IMAGING Inglese\n[D3OMIT] ONCOLOGIA MOLECOLARE E IMMUNOLOGIA DEI TUMORI Inglese\n[D3PSI] PSICOLOGIA Inglese\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT Inglese\n[D3SBF] SCIENZE BIOMOLECOLARI E FARMACEUTICHE Inglese\n[D3SGST] SCIENZE GIURIDICHE PER LA SOSTENIBILITÀ, LA TRANSIZIONE ECOLOGICA E L’INNOVAZIONE Inglese\n[D3SS] SOCIAL SCIENCES Tedesco Inglese Francese"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI\",\"type\":\"Classe di laurea: L-42\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-42",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33537",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/study-plan"
+        ],
+        "text": "Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLing",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Siena\",\"course\":\"[D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: e\n[2015987] TRAINING COURSE ON HEALTH AND SAFETY AT WORK – HIGH RISK – UNDER ART. 37 OF ITALIAN LEGISLATIVE DECREE 81/08\nPeriodo fittizio - corso Sicurezza SPP\n[2016796] MOLECULAR BIOLOGY OF CANCER\n6 CFU\n48 ore Primo Semestre\n[2017979] DATA ANALYSIS AND VISUALIZATION IN BIOCHEMISTRY\n6 CFU\n36 ore",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY",
+          "id": "S1C5",
+          "region": "Toscana",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C5",
+        "option": "University of Siena | [D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11057",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11057/insegnamenti/9999"
+        ],
+        "text": "e\n[2015987] TRAINING COURSE ON HEALTH AND SAFETY AT WORK – HIGH RISK – UNDER ART. 37 OF ITALIAN LEGISLATIVE DECREE 81/08\nPeriodo fittizio - corso Sicurezza SPP\n[2016796] MOLECULAR BIOLOGY OF CANCER\n6 CFU\n48 ore Primo Semestre\n[2017979] DATA ANALYSIS AND VISUALIZATION IN BIOCHEMISTRY\n6 CFU\n36 ore Primo Semestre"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33456] BIOTECNOLOGIE\",\"type\":\"Classe di laurea: L-2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie\nAnno accademico: 2026-2027\nCodice corso: 33456\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33456] BIOTECNOLOGIE",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-2",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33456] BIOTECNOLOGIE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33456",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/study-plan"
+        ],
+        "text": "Biotecnologie\nAnno accademico: 2026-2027\nCodice corso: 33456\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33528] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE\",\"type\":\"Classe di laurea: L-10\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Classics - Civiltà e Letterature Classiche\nAnno accademico: 2026-2027\nCodice corso: 33528\nClasse di laurea: L-10",
+        "facts": {
+          "cities": [],
+          "course": "[33528] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-10",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33528] CLASSICS - CIVILTÀ E LETTERATURE CLASSICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33528",
+          "https://corsidilaurea.uniroma1.it/it/course/33528/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33528/study-plan"
+        ],
+        "text": "Classics - Civiltà e Letterature Classiche\nAnno accademico: 2026-2027\nCodice corso: 33528\nClasse di laurea: L-10"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33459] BIOCHEMISTRY – BIOCHIMICA\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biochemistry – Biochimica\nAnno accademico: 2026-2027\nCodice corso: 33459\nClasse di laurea: LM-9\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33459] BIOCHEMISTRY – BIOCHIMICA",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [33459] BIOCHEMISTRY – BIOCHIMICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33459",
+          "https://corsidilaurea.uniroma1.it/it/course/33459/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33459/study-plan"
+        ],
+        "text": "Biochemistry – Biochimica\nAnno accademico: 2026-2027\nCodice corso: 33459\nClasse di laurea: LM-9\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ENG"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33595] SCIENZE NATURALI\",\"type\":\"Classe di laurea: L-32\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze Naturali\nAnno accademico: 2026-2027\nCodice corso: 33595\nClasse di laurea: L-32\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33595] SCIENZE NATURALI",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-32",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33595] SCIENZE NATURALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33595",
+          "https://corsidilaurea.uniroma1.it/it/course/33595/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33595/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33595/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33595/study-plan"
+        ],
+        "text": "Scienze Naturali\nAnno accademico: 2026-2027\nCodice corso: 33595\nClasse di laurea: L-32\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "humanities",
+      "life_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "italiano scienze"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Ti ho suggerito questi corsi perché si adattano ai tuoi interessi per le scienze e le discipline umanistiche, e perché ti piacerebbe diventare medico. Inoltre, ti piace molto ragionare in modo logico e avere attività ordinate, pianificate e sotto controllo. Questi corsi offrono un buon equilibrio tra queste caratteristiche. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine."
+    },
+    "ctx_chars": 1329,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33590] SCIENZE NATURALI\",\"type\":\"Classe di laurea: L-32\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze Naturali\nAnno accademico: 2026-2027\nCodice corso: 33590\nClasse di laurea: L-32\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA\n\n{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLing\n\n{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33456] BIOTECNOLOGIE\",\"type\":\"Classe di lau\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "italiano scienze",
+    "rendered_reply": "Ti ho suggerito questi corsi perché si adattano ai tuoi interessi per le scienze e le discipline umanistiche, e perché ti piacerebbe diventare medico. Inoltre, ti piace molto ragionare in modo logico e avere attività ordinate, pianificate e sotto controllo. Questi corsi offrono un buon equilibrio tra queste caratteristiche. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "italiano scienze"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      1,
+      1,
+      2,
+      -1,
+      -1,
+      0,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "39b44348f2ea",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "sto frequentando il 4 superiore scienze applicate",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "italiano, scienze",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano italiano e scienze. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piacerebbe diventare un medico",
+      "role": "user"
+    },
+    {
+      "content": "Mi sembra che tu abbia parlato di diventare medico, ma non ho capito ancora che cosa hai studiato o stai studiando. Potresti dirmi che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "4 superiore",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti piacerebbe studiare a Roma. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "mh",
+      "role": "user"
+    },
+    {
+      "content": "Questo significa che ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte? Ad esempio, inventare e progettare, o sviluppare nuove idee e metodi.",
+      "role": "assistant"
+    },
+    {
+      "content": "non tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "diciamo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Ti interessano le scienze e le discipline umanistiche, e ti piacerebbe diventare medico. Ti piace molto ragionare in modo logico e avere attività ordinate, pianificate e sotto controllo. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33590] SCIENZE NATURALI 2. Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE 3. Sapienza Università di Roma | [33456] BIOTECNOLOGIE",
+      "role": "assistant"
+    },
+    {
+      "content": "perche mi hai consigliaTO QUESTE UNIVERISTA",
+      "role": "user"
+    },
+    {
+      "content": "Ti ho suggerito questi corsi perché si adattano ai tuoi interessi per le scienze e le discipline umanistiche, e perché ti piacerebbe diventare medico. Inoltre, ti piace molto ragionare in modo logico e avere attività ordinate, pianificate e sotto controllo. Questi corsi offrono un buon equilibrio tra queste caratteristiche. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T09:20:04"
+}

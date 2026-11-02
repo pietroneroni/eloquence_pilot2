@@ -1,0 +1,646 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-26T15:59:38",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico tecnologico con indirizzo chimico",
+      "region": "Campania"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities"
+      ],
+      "riasec_attitudes": [
+        "Social",
+        "Conventional",
+        "Realistic"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico tecnologico con indirizzo chimico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico tecnologico con indirizzo chimico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico tecnologico con indirizzo chimico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico tecnologico con indirizzo chimico",
+          "region": "Campania"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 7
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            -1,
+            -1,
+            -1,
+            2,
+            -1,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 15
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": true,
+    "advice_location_policy": {
+      "city": null,
+      "region": "Campania",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Salerno | [03123] SOCIOLOGIA",
+      "University of Salerno | [03129] SCIENZE DEL SERVIZIO SOCIALE",
+      "University of Salerno | [03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS)"
+    ],
+    "candidates": {
+      "S4C1": {
+        "block": "{\"id\":\"S4C1\",\"university\":\"University of Salerno\",\"course\":\"[03123] SOCIOLOGIA\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03123] SOCIOLOGIA CORSO DI LAUREA\n\nLAVORO, TERRITORIO E SOCIETA'\nWELFARE E TERZO SETTORE",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03123] SOCIOLOGIA",
+          "id": "S4C1",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S4C1",
+        "option": "University of Salerno | [03123] SOCIOLOGIA",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti/10002?schemaid=16899",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti/10003#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti/10003?schemaid=16900",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "[03123] SOCIOLOGIA CORSO DI LAUREA\n\nLAVORO, TERRITORIO E SOCIETA'\nWELFARE E TERZO SETTORE"
+      },
+      "S4C10": {
+        "block": "{\"id\":\"S4C10\",\"university\":\"University of Salerno\",\"course\":\"[03727] MANAGEMENT DEL WELFARE TERRITORIALE MASTER DI PRIMO LIVELLO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03727] MANAGEMENT DEL WELFARE TERRITORIALE MASTER DI PRIMO LIVELLO\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n1 anni Ordinamento\n2018\nStato Aperto Lingua Italiano Tipologia Master Normativa D.M. 270/2004\nCorso Interateneo No Accesso Libero Sede UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO Dipartimento DIPARTIMENTO DI STUDI POLITICI E SOCIALI Sito web HTTP://WEB.UNISA.IT/DIDATTICA/MASTER/MASTER Verifica conoscenze richieste per l'accesso No Docenti del corso Visualizza lista Requisiti di accesso Titoli obbligatori\n[ TSS ]\nTitolo di Scuola Superiore Titoli opzionali (a scelta ",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03727] MANAGEMENT DEL WELFARE TERRITORIALE MASTER DI PRIMO LIVELLO",
+          "id": "S4C10",
+          "region": "Campania",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S4C10",
+        "option": "University of Salerno | [03727] MANAGEMENT DEL WELFARE TERRITORIALE MASTER DI PRIMO LIVELLO",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500537"
+        ],
+        "text": "[03727] MANAGEMENT DEL WELFARE TERRITORIALE MASTER DI PRIMO LIVELLO\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n1 anni Ordinamento\n2018\nStato Aperto Lingua Italiano Tipologia Master Normativa D.M. 270/2004\nCorso Interateneo No Accesso Libero Sede UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO Dipartimento DIPARTIMENTO DI STUDI POLITICI E SOCIALI Sito web HTTP://WEB.UNISA.IT/DIDATTICA/MASTER/MASTER Verifica conoscenze richieste per l'accesso No Docenti del corso Visualizza lista Requisiti di accesso Titoli obbligatori\n[ TSS ]\nTitolo di Scuola Superiore Titoli opzionali (a scelta fra i seguenti)\n[ L1+TSS ]\nLaurea\n[ LS+TSS ]\nLaurea Specialistica\n[ LM+TSS ]\nLaurea Magistrale\n[ L2+TSS ]\nLaurea di Primo Livello Ruoli Referente Corso di Studio ROSSELLA TRAPANESE Direttore della Scuola ROSSELLA TRAPANESE Direttore del Corso ROSSELLA TRAPANESE Caratteristiche e Altre Info Obiettivi formativi specifici.\n-"
+      },
+      "S4C2": {
+        "block": "{\"id\":\"S4C2\",\"university\":\"University of Sassari\",\"course\":\"[A079] SERVIZIO SOCIALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A079] SERVIZIO SOCIALE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A079] SERVIZIO SOCIALE",
+          "id": "S4C2",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S4C2",
+        "option": "University of Sassari | [A079] SERVIZIO SOCIALE",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10760",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/9999"
+        ],
+        "text": "[A079] SERVIZIO SOCIALE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)"
+      },
+      "S4C3": {
+        "block": "{\"id\":\"S4C3\",\"university\":\"University of Salerno\",\"course\":\"[03129] SCIENZE DEL SERVIZIO SOCIALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03129] SCIENZE DEL SERVIZIO SOCIALE CORSO DI LAUREA",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03129] SCIENZE DEL SERVIZIO SOCIALE",
+          "id": "S4C3",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S4C3",
+        "option": "University of Salerno | [03129] SCIENZE DEL SERVIZIO SOCIALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500644",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500644/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500644/insegnamenti/9999?schemaid=17224"
+        ],
+        "text": "[03129] SCIENZE DEL SERVIZIO SOCIALE CORSO DI LAUREA"
+      },
+      "S4C4": {
+        "block": "{\"id\":\"S4C4\",\"university\":\"University of Siena\",\"course\":\"[D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: U\n60 ore Primo Semestre\n[2001566] MACROECONOMICS (BASIC)\n\n8 CFU\n60 ore Secondo Semestre\n[2001570] MICROECONOMICS (BASIC)\n8 CFU\n60 ore Primo Semestre\n[2012239] MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2012240] INTERNATIONAL AND EUROPEAN TRADE LAW\n6 CFU\n45 ore Secondo Semestre\n[2015936] ENGLISH FOR ECONOMICS AND MANAGEMENT\n3 CFU\n45 ore Primo Semestre\n[2015",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+          "id": "S4C4",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S4C4",
+        "option": "University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/1#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/1?schemaid=11605",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/2#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/2?schemaid=11606",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/3#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/3?schemaid=11607",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti?annoOrdinamento=2021"
+        ],
+        "text": "U\n60 ore Primo Semestre\n[2001566] MACROECONOMICS (BASIC)\n\n8 CFU\n60 ore Secondo Semestre\n[2001570] MICROECONOMICS (BASIC)\n8 CFU\n60 ore Primo Semestre\n[2012239] MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2012240] INTERNATIONAL AND EUROPEAN TRADE LAW\n6 CFU\n45 ore Secondo Semestre\n[2015936] ENGLISH FOR ECONOMICS AND MANAGEMENT\n3 CFU\n45 ore Primo Semestre\n[2015938] CORPORATE SOCIAL RESPONSIBILITY\n8 CFU\n60 ore Primo Semestre\n[2015940] ECONOMICS OF INNOVATION AND DIGITAL MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2015947] DATA ANALYSIS FOR SOCIAL SCIENTISTS\n8 CFU\n60 ore Secondo Semestre\n[2015949] METHODS FOR SOCIAL SCIENCE ANALYSIS\n8 CFU\n60 ore Primo Semestre\n[2015951] BEHAVIOUR AND EXPERIMENTS IN SOCIAL SCIENCES\n8 CFU\n60 ore Primo Semestre\n[2015952] GLOBALIZATION AND INEQUALITY\n8 CFU\n60 ore Secondo Semestre\n[2015956] LAW AND ECONOMICS\n8 CFU\n60 ore Secondo Semestre\n[2016240] REMAINING FREE CREDITS\n4 CFU\n30 ore\n[2016655] LINGUA ITALIANA\n2 CFU\n15 ore Primo Semestre\n[2017769] LINGUA ITALIANA\n2 CFU\n15 ore"
+      },
+      "S4C5": {
+        "block": "{\"id\":\"S4C5\",\"university\":\"University of Trento\",\"course\":\"[0611G] SOCIOLOGIA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Sociologia - via Verdi, 26\"]}\nEXCERPT: [0611G] SOCIOLOGIA Laurea\nINFO INSEGNAMENTI Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2023\nStato Aperto Crediti\n180 CFU Tipologia Corsi di laurea triennale Categoria Sociologia e Studi internazionali Normativa Riforma 270/04\nClasse di laurea L-40 - Classe delle lauree in Sociologia Corso Interateneo No Accesso P",
+        "facts": {
+          "cities": [
+            "Polo di città - Sociologia - via Verdi, 26"
+          ],
+          "course": "[0611G] SOCIOLOGIA",
+          "id": "S4C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S4C5",
+        "option": "University of Trento | [0611G] SOCIOLOGIA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378?schemaid=8052",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379?schemaid=8053",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380?schemaid=8051",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381?schemaid=8054",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0611G] SOCIOLOGIA Laurea\nINFO INSEGNAMENTI Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2023\nStato Aperto Crediti\n180 CFU Tipologia Corsi di laurea triennale Categoria Sociologia e Studi internazionali Normativa Riforma 270/04\nClasse di laurea L-40 - Classe delle lauree in Sociologia Corso Interateneo No Accesso Programmato (150 Posti)\nSede Polo di città - Sociologia - via Verdi, 26\nDipartimento Dipartimento di Sociologia e Ricerca Sociale Verifica conoscenze richieste per l'accesso No Programma, testi e obiettivi Obiettivi formativi specifici del corso e descrizione del percorso formativo Il corso di laurea in Sociologia fornisce agli studenti e alle studentesse gli strumenti necessari, in termini di capacità e comprensione, per svolgere in contesti professionali pubblici e privati quelle funzioni di analisi, coordinamento e gestione, progettazione, comunicazione, organizzazione e valutazione che costituiscono le destinazioni occupazionali naturali per il profilo professionale in uscita dal CdS."
+      },
+      "S4C6": {
+        "block": "{\"id\":\"S4C6\",\"university\":\"University of Salerno\",\"course\":\"[03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS)\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: LITÀ DEI SERVIZI, OFFRENDO ADEGUATE RISPOSTE ALLE DOMANDE DEI CITTADINI E PER SOSTENERE IL BENESSERE DEI PROFESSIONISTI.\nA PARTIRE DA CIÒ, IL CORSO MIRERÀ ALL’INDIVIDUAZIONE DI PERCORSI DI SUPERVISIONE VOLTI A CONSOLIDARE LE COMPETENZE POSSEDUTE E ACQUISIRNE DI NUOVE; POTENZIARE LE SKILLS, LE ABILITÀ, LE ATTITUDINI E LE CARATTERISTICHE PERSONALI DEGLI ASS",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS)",
+          "id": "S4C6",
+          "region": "Campania",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S4C6",
+        "option": "University of Salerno | [03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500820"
+        ],
+        "text": "LITÀ DEI SERVIZI, OFFRENDO ADEGUATE RISPOSTE ALLE DOMANDE DEI CITTADINI E PER SOSTENERE IL BENESSERE DEI PROFESSIONISTI.\nA PARTIRE DA CIÒ, IL CORSO MIRERÀ ALL’INDIVIDUAZIONE DI PERCORSI DI SUPERVISIONE VOLTI A CONSOLIDARE LE COMPETENZE POSSEDUTE E ACQUISIRNE DI NUOVE; POTENZIARE LE SKILLS, LE ABILITÀ, LE ATTITUDINI E LE CARATTERISTICHE PERSONALI DEGLI ASSISTENTI SOCIALI E DEGLI OPERATORI SOCIALI DI AMBITO; FAVORIRE LA CRESCITA DI UNA MAGGIORE CONSAPEVOLEZZA CIRCA I RISCHI E LE OPPORTUNITÀ E I MODI PER AFFRONTARLI NEL LAVORO PROFESSIONALE;\nSVILUPPARE UNA MAGGIORE CAPACITÀ DA PARTE DEGLI ASSISTENTI SOCIALI DI AGIRE ATTRAVERSO AZIONI COORDINATE E INTEGRATE CON GLI ALTRI ATTORI DEL CONTESTO ORGANIZZATIVO E SOCIALE IN CUI OPERANO;\nFORNIRE STRUMENTI E TECNOLOGIE PER IMPLEMENTARE TALI CORSI DI AZIONE; AUMENTARE LA LORO CAPACITÀ DI RIFLESSIONE AL FINE DI CORREGGERE O INDIVIDUARE PERCORSI MAGGIORMENTE ADEGUATI E PRATICABILI RISPETTO AI BISOGNI DELL’UTENZA. Q"
+      },
+      "S4C7": {
+        "block": "{\"id\":\"S4C7\",\"university\":\"University of Salerno\",\"course\":\"[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI CORSO DI LAUREA COMUNE",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI",
+          "id": "S4C7",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S4C7",
+        "option": "University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10000?schemaid=17279",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10002?schemaid=17278",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10004#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10004?schemaid=17290",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/9999#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/9999?schemaid=17276",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI CORSO DI LAUREA COMUNE"
+      },
+      "S4C8": {
+        "block": "{\"id\":\"S4C8\",\"university\":\"University of Siena\",\"course\":\"[PE003] SCIENZE DEL SERVIZIO SOCIALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: 017411] SALUTE, STILI DI VITA E LAVORO SOCIALE\n9 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV.\nB1",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[PE003] SCIENZE DEL SERVIZIO SOCIALE",
+          "id": "S4C8",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S4C8",
+        "option": "University of Siena | [PE003] SCIENZE DEL SERVIZIO SOCIALE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10216",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10216/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10216/insegnamenti/9999?schemaid=11817"
+        ],
+        "text": "017411] SALUTE, STILI DI VITA E LAVORO SOCIALE\n9 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV.\nB1"
+      },
+      "S4C9": {
+        "block": "{\"id\":\"S4C9\",\"university\":\"University of Salerno\",\"course\":\"[02121] ECONOMIA AZIENDALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: TE\n[10121] INFERMIERISTICA (ABILITANTE ALLA PROF. SANIT. DI INFERMIERE)\n[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT.\nDI OSTETRICA/O)\n[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n[07121] TECNICHE ERBORISTICHE Scienze della Formazione\n[44124] SCIENZE DELL'EDUCAZIONE\n[44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA Scienze\n[05124] CHIMICA\n[05126] FISICA\n[05121] INF",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[02121] ECONOMIA AZIENDALE",
+          "id": "S4C9",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S4C9",
+        "option": "University of Salerno | [02121] ECONOMIA AZIENDALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10001?schemaid=16917",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10002?schemaid=16916",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10003#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10003?schemaid=16915",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti?annoOrdinamento=2016",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562230878857"
+        ],
+        "text": "TE\n[10121] INFERMIERISTICA (ABILITANTE ALLA PROF. SANIT. DI INFERMIERE)\n[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT.\nDI OSTETRICA/O)\n[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n[07121] TECNICHE ERBORISTICHE Scienze della Formazione\n[44124] SCIENZE DELL'EDUCAZIONE\n[44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA Scienze\n[05124] CHIMICA\n[05126] FISICA\n[05121] INFORMATICA\n[05123] MATEMATICA\n[05127] SCIENZE AMBIENTALI\n[05128] SCIENZE BIOLOGICHE\n[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ Sociologica\n[03129] SCIENZE DEL SERVIZIO SOCIALE\n[03122] SCIENZE DELLA COMUNICAZIONE\n[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI\n[03123] SOCIOLOGIA Ingegneria\n[06122] INGEGNERIA CHIMICA\n[06121] INGEGNERIA CIVILE\n[06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO\n[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE\n[06124] INGEGNERIA ELETTRONICA\n[06126] INGEGNERIA GESTIONALE\n[06127] INGEGNERIA INFORMATICA\n[06123] INGEGNERIA MECCANICA\n[06129] TECNICHE PER L'EDILIZIA E IL TERRITORIO Umanistica\n[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO\n[03125] FILOSOFIA\n[03126] LETTERE\n[43122] LINGUE E CULTURE STRANIERE\n[03128] SCIENZE DEI BENI CULTURALI"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "humanities"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Napoli",
+        "region": "Campania",
+        "requirement": "",
+        "strict": true
+      },
+      "query": "umanistiche"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Per capire se il corso di laurea in Supervisione per il Servizio Sociale (SUPISS) è adatto a te, puoi considerare alcuni aspetti chiave. Questo corso è focalizzato sulla qualità dei servizi, offrendo risposte adeguate alle domande dei cittadini e sostenendo il benessere dei professionisti. Se ti piace lavorare a stretto contatto con le persone e hai una predisposizione per attività ordinate e pianificate, questo corso potrebbe essere molto adatto a te. Inoltre, il corso mira a consolidare e acquisire nuove competenze, potenziando le tue skills, abilità, attitudini e caratteristiche personali. Se sei interessata a lavorare direttamente con le persone in un ruolo di aiuto e supporto, questo corso potrebbe essere una scelta eccellente."
+    },
+    "ctx_chars": 1203,
+    "ctx_preview": "{\"id\":\"S4C1\",\"university\":\"University of Salerno\",\"course\":\"[03123] SOCIOLOGIA\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03123] SOCIOLOGIA CORSO DI LAUREA\n\nLAVORO, TERRITORIO E SOCIETA'\nWELFARE E TERZO SETTORE\n\n{\"id\":\"S4C3\",\"university\":\"University of Salerno\",\"course\":\"[03129] SCIENZE DEL SERVIZIO SOCIALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03129] SCIENZE DEL SERVIZIO SOCIALE CORSO DI LAUREA\n\n{\"id\":\"S4C6\",\"university\":\"University of Salerno\",\"course\":\"[03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS)\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: LITÀ DEI SERVIZI, OFFRENDO ADEGUATE RISPOSTE ALLE DOMANDE DEI CITTADINI E PER SOSTENERE IL BENESSERE DEI PROFESSIONISTI.\nA PARTIRE DA CIÒ, IL CORSO MIRERÀ ALL’INDIVIDUAZIONE DI PERCORSI DI SUPERVISIONE VOLTI A CONSOLIDARE LE COMPETENZE POSSEDUTE E ACQUISIRNE DI NUOVE; POTEN\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {
+      "field_of_interest": [
+        "social_sciences"
+      ],
+      "intent": "profile_update",
+      "location_changed": false,
+      "retrieval": {
+        "location": {
+          "city": null,
+          "region": "Campania",
+          "requirement": "",
+          "strict": false
+        },
+        "query": "sociale"
+      },
+      "temporary": true
+    },
+    "query": "sociale",
+    "rendered_reply": "Per capire se il corso di laurea in Supervisione per il Servizio Sociale (SUPISS) è adatto a te, puoi considerare alcuni aspetti chiave. Questo corso è focalizzato sulla qualità dei servizi, offrendo risposte adeguate alle domande dei cittadini e sostenendo il benessere dei professionisti. Se ti piace lavorare a stretto contatto con le persone e hai una predisposizione per attività ordinate e pianificate, questo corso potrebbe essere molto adatto a te. Inoltre, il corso mira a consolidare e acquisire nuove competenze, potenziando le tue skills, abilità, attitudini e caratteristiche personali. Se sei interessata a lavorare direttamente con le persone in un ruolo di aiuto e supporto, questo corso potrebbe essere una scelta eccellente.",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": "Campania",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "sociale"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      1,
+      2,
+      -1,
+      -1,
+      -1,
+      2,
+      -1
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 3,
+    "selected_option": "University of Salerno | [03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS)",
+    "shown_options": [
+      "University of Salerno | [03123] SOCIOLOGIA",
+      "University of Salerno | [03129] SCIENZE DEL SERVIZIO SOCIALE",
+      "University of Salerno | [03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS)"
+    ],
+    "source_turn": 22
+  },
+  "session_id": "62159e91a897",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Avrei bisogno di aiuto per decidere a quale facoltà iscrivermi all’università",
+      "role": "user"
+    },
+    {
+      "content": "Buongiorno! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a scegliere la facoltà più adatta a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Sto all’ultimo anno delle superiori, frequento l’ITIS indirizzo chimico",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi stai completando il liceo scientifico tecnologico con indirizzo chimico. Ora, vorrei sapere se hai già qualche interesse specifico o sogno professionale in mente. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "Non è un liceo, è un istituto tecnico",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi stai completando l'istituto tecnico con indirizzo chimico. Ora, vorrei sapere se hai già qualche interesse specifico o sogno professionale in mente. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "Credo che non sono portata per le materie scientifiche, quindi vorrei orientarmi su quelle umanistiche",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi sei interessata alle materie umanistiche. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "Non so..",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi sei interessata alle materie umanistiche. Pensa a cosa ti piacerebbe studiare o fare in futuro, anche se non hai ancora deciso. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "Non lo so, mi piace stare con le persone",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi ti piace stare con le persone. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "Napoli, non posso spostarmi fuori",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "Abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "Molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "moltissimo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "moltissimo",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per le materie umanistiche e ti piace molto lavorare con le persone. Ti piace anche avere attività ordinate e pianificate. Le informazioni disponibili per questa ricerca non contengono opzioni universitarie con sede verificata a Napoli; questo non significa che non ne esistano. Vuoi che allarghi la ricerca alle sedi alternative documentate, dando priorità a quelle più vicine?",
+      "role": "assistant"
+    },
+    {
+      "content": "si grazie",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per le materie umanistiche e ti piace molto lavorare con le persone. Ti piace anche avere attività ordinate e pianificate. Ti suggerisco queste opzioni: 1. University of Salerno | [02121] ECONOMIA AZIENDALE 2. University of Salerno | [03128] SCIENZE DEI BENI CULTURALI 3. University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI Quale di queste opzioni ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "l’ultima magari",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI.",
+      "role": "assistant"
+    },
+    {
+      "content": "Però non sono sicura, mi piace stare a contatto tu per tu con le persone",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Scienze Politiche e delle Relazioni Internazionali ti permetterà di lavorare a stretto contatto con le persone, ma in un contesto più istituzionale e politico. Se invece preferisci un contatto più diretto e personale, potresti considerare un percorso nel settore sanitario o sociale. Ti suggerisco di esplorare le opzioni di laurea in Infermieristica o Ostetricia, che ti permetteranno di lavorare direttamente con le persone in un ruolo di supporto e assistenza. Se ti interessa, posso fornirti maggiori dettagli su questi corsi.",
+      "role": "assistant"
+    },
+    {
+      "content": "Il sangue mi fa schifo ahah",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Scienze Politiche e delle Relazioni Internazionali ti permetterà di lavorare a stretto contatto con le persone, ma in un contesto più istituzionale e politico. Se invece preferisci un contatto più diretto e personale, potresti considerare un percorso nel settore sociale. Ti suggerisco di esplorare le opzioni di laurea in Scienze dell'Educazione e della Formazione, che ti permetteranno di lavorare direttamente con le persone in un ruolo di supporto e assistenza. Se ti interessa, posso fornirti maggiori dettagli su questi corsi.",
+      "role": "assistant"
+    },
+    {
+      "content": "Non vorrei lavorare con i bambini",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Scienze Politiche e delle Relazioni Internazionali ti permetterà di lavorare a stretto contatto con le persone, ma in un contesto più istituzionale e politico. Se invece preferisci un contatto più diretto e personale, potresti considerare un percorso nel settore sociale. Ti suggerisco di esplorare le opzioni di laurea in Scienze dei Beni Culturali, che ti permetteranno di lavorare direttamente con le persone in un ruolo di supporto e assistenza. Se ti interessa, posso fornirti maggiori dettagli su questi corsi.",
+      "role": "assistant"
+    },
+    {
+      "content": "Magari qualcosa più nel sociale?",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per le materie umanistiche e ti piace molto lavorare con le persone. Ti piace anche avere attività ordinate e pianificate. Ti suggerisco queste opzioni: 1. University of Salerno | [03123] SOCIOLOGIA 2. University of Salerno | [03129] SCIENZE DEL SERVIZIO SOCIALE 3. University of Salerno | [03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS) Quale di queste opzioni ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "Potrebbero, si",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: University of Salerno | [03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS).",
+      "role": "assistant"
+    },
+    {
+      "content": "Non ho scelto ancora, vorrei capire meglio se sono portata",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Supervisione per il Servizio Sociale (SUPISS) è focalizzato sulla qualità dei servizi, offrendo risposte adeguate alle domande dei cittadini e sostenendo il benessere dei professionisti. Questo corso mira a consolidare le competenze già possedute e ad acquisirne di nuove, potenziando le skills, le abilità, le attitudini e le caratteristiche personali degli assistenti sociali. Se ti piace lavorare a stretto contatto con le persone e hai una predisposizione per attività ordinate e pianificate, questo corso potrebbe essere molto adatto a te. Se invece preferisci un approccio più teorico e analitico, potresti considerare il corso di laurea in Sociologia, che si concentra sullo studio del lavoro, del territorio e della società, con un focus sul welfare e il terzo settore. Se invece preferisci un approccio più pratico e operativo, potresti considerare il corso di laurea in Scienze del Servizio Sociale, che ti prepara a lavorare direttamente con le persone in vari contesti sociali.",
+      "role": "assistant"
+    },
+    {
+      "content": "Che sbocchi offre lavorativamente?",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Supervisione per il Servizio Sociale (SUPISS) ti prepara a lavorare in vari contesti sociali, offrendo risposte adeguate alle domande dei cittadini e sostenendo il benessere dei professionisti. Questo corso ti permette di consolidare e acquisire nuove competenze, potenziando le tue skills, abilità, attitudini e caratteristiche personali. Gli sbocchi lavorativi includono ruoli di supervisione e supporto all'interno di servizi sociali, organizzazioni non profit e enti pubblici. Se sei interessata a lavorare direttamente con le persone in un ruolo di aiuto e supporto, questo corso potrebbe essere molto adatto a te.",
+      "role": "assistant"
+    },
+    {
+      "content": "Come faccio a capire se è adatto a me?",
+      "role": "user"
+    },
+    {
+      "content": "Per capire se il corso di laurea in Supervisione per il Servizio Sociale (SUPISS) è adatto a te, puoi considerare alcuni aspetti chiave. Questo corso è focalizzato sulla qualità dei servizi, offrendo risposte adeguate alle domande dei cittadini e sostenendo il benessere dei professionisti. Se ti piace lavorare a stretto contatto con le persone e hai una predisposizione per attività ordinate e pianificate, questo corso potrebbe essere molto adatto a te. Inoltre, il corso mira a consolidare e acquisire nuove competenze, potenziando le tue skills, abilità, attitudini e caratteristiche personali. Se sei interessata a lavorare direttamente con le persone in un ruolo di aiuto e supporto, questo corso potrebbe essere una scelta eccellente.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-26T16:06:23"
+}

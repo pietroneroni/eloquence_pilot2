@@ -1,0 +1,568 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-27T11:23:46",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "Liceo Socio psico pedagogico (scienze umane)",
+      "region": "Campania"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science",
+        "physical_sciences"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Conventional",
+        "Investigative"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Liceo Socio psico pedagogico (scienze umane)",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Liceo Socio psico pedagogico (scienze umane)",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Liceo Socio psico pedagogico (scienze umane)",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Liceo Socio psico pedagogico (scienze umane)",
+          "region": "Campania"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            2,
+            1,
+            -1,
+            2,
+            -1,
+            1,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": "Campania",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Salerno | [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE",
+      "University of Trento | [0514G] INFORMATICA",
+      "University of Salerno | [06127] INGEGNERIA INFORMATICA"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE CORSO DI LAUREA\n\nSTANDARD - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[0612800001] ANALISI MATEMATICA 1",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE",
+          "id": "S1C1",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C1",
+        "option": "University of Salerno | [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500639",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500639/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500639/insegnamenti/9999?schemaid=17126"
+        ],
+        "text": "[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE CORSO DI LAUREA\n\nSTANDARD - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[0612800001] ANALISI MATEMATICA 1"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Siena\",\"course\":\"[SE003] FISICA E TECNOLOGIE AVANZATE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: 5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n[2016768] MECCANICA STATISTICA\n6 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1\n\n3 CFU",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[SE003] FISICA E TECNOLOGIE AVANZATE",
+          "id": "S1C10",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C10",
+        "option": "University of Siena | [SE003] FISICA E TECNOLOGIE AVANZATE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=11699"
+        ],
+        "text": "5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n[2016768] MECCANICA STATISTICA\n6 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1\n\n3 CFU"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi naturali ed artif",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)"
+          ],
+          "course": "[0514G] INFORMATICA",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0514G] INFORMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"
+        ],
+        "text": "tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi naturali ed artificiali), identificare i processi cruciali in maniera sistematica, proporre modelli e soluzioni realizzabili tramite software e sistemi informatici. La mentalità, data l'enfasi su strumenti e metodi scientifici di tipo universale, è naturalmente predisposta per inserirsi rapidamente in contesti di lavoro diversi, adattandosi alla rapida innovazione che caratterizza il settore. Il corso di laurea prevede un insieme comune di corsi in cui vengono fornite le competenze di base in matematica e informatica. Successivamente, si distinguono due possibili percorsi:\n- il percorso Scienze e Tecnologie Informatiche, con due orientamenti, uno a carattere metodologico, indicato per coloro che intendano proseguire gli studi con una Laurea Magistrale in Scienze e Tecnologie Informatiche ed un orientamento professionalizzante, indicato per coloro che intendano terminare gli studi al termi ne del Corso di Laurea in Informatica."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[06127] INGEGNERIA INFORMATICA\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [06127] INGEGNERIA INFORMATICA CORSO DI LAUREA SOFTWARE - COORTE 2024\n\nNETWORKS - COORTE 2024\nSOFTWARE - COORTE 2024\nSYSTEMS - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[0612700112] ",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[06127] INGEGNERIA INFORMATICA",
+          "id": "S1C3",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C3",
+        "option": "University of Salerno | [06127] INGEGNERIA INFORMATICA",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10000?schemaid=17153",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10001?schemaid=17154",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10002?schemaid=17152",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[06127] INGEGNERIA INFORMATICA CORSO DI LAUREA SOFTWARE - COORTE 2024\n\nNETWORKS - COORTE 2024\nSOFTWARE - COORTE 2024\nSYSTEMS - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[0612700112] ANALISI MATEMATICA 1\n\n9 CFU\n72 ore BASE (L-8)\nPRIMO SEMESTRE\n[0612700135] ANALISI MATEMATICA 2\n\n6 CFU\n48 ore BASE (L-8)\nSECONDO SEMESTRE\n[0612700011] CALCOLATORI ELETTRONICI\n9 CFU\n72 ore CARATTERIZZANTE (L-8)\nSECONDO SEMESTRE\n[0612700104] FISICA 1\n\n6 CFU\n48 ore BASE (L-8)\nPRIMO SEMESTRE\n[0612700105] FISICA 2"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Salerno\",\"course\":\"[02121] ECONOMIA AZIENDALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: TE\n[10121] INFERMIERISTICA (ABILITANTE ALLA PROF. SANIT. DI INFERMIERE)\n[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT.\nDI OSTETRICA/O)\n[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[10125",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[02121] ECONOMIA AZIENDALE",
+          "id": "S1C4",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C4",
+        "option": "University of Salerno | [02121] ECONOMIA AZIENDALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10001?schemaid=16917",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10002?schemaid=16916",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10003#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10003?schemaid=16915",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti?annoOrdinamento=2016",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562230878857"
+        ],
+        "text": "TE\n[10121] INFERMIERISTICA (ABILITANTE ALLA PROF. SANIT. DI INFERMIERE)\n[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT.\nDI OSTETRICA/O)\n[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n[07121] TECNICHE ERBORISTICHE Scienze della Formazione\n[44124] SCIENZE DELL'EDUCAZIONE\n[44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA Scienze\n[05124] CHIMICA\n[05126] FISICA\n[05121] INFORMATICA\n[05123] MATEMATICA\n[05127] SCIENZE AMBIENTALI\n[05128] SCIENZE BIOLOGICHE\n[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ Sociologica\n[03129] SCIENZE DEL SERVIZIO SOCIALE\n[03122] SCIENZE DELLA COMUNICAZIONE\n[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI\n[03123] SOCIOLOGIA Ingegneria\n[06122] INGEGNERIA CHIMICA\n[06121] INGEGNERIA CIVILE\n[06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO\n[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE\n[06124] INGEGNERIA ELETTRONICA\n[06126] INGEGNERIA GESTIONALE\n[06127] INGEGNERIA INFORMATICA\n[06123] INGEGNERIA MECCANICA\n[06129] TECNICHE PER L'EDILIZIA E IL TERRITORIO Umanistica\n[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO\n[03125] FILOSOFIA\n[03126] LETTERE\n[43122] LINGUE E CULTURE STRANIERE\n[03128] SCIENZE DEI BENI CULTURALI"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Messina\",\"course\":\"[9214] FISICA\",\"type\":\"Classe di laurea: L-30\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: contenuto principale Scienze matematiche e informatiche, scienze fisiche e scienze della terra Triennale\n[9215] INFORMATICA Inglese Italiano\n[9218] MATEMATICA Magistrale\n[9237] DATA SCIENCE Inglese\n[9233] GEOPHYSICAL SCIENCES FOR SEISMIC RISK Inglese\n[9223] MAT",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[9214] FISICA",
+          "id": "S1C5",
+          "region": "Sicilia",
+          "type": "Classe di laurea: L-30",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C5",
+        "option": "University of Messina | [9214] FISICA",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999?annoOrdinamento=2020",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999?schemaid=12236",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046?annoOrdinamento=2020",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_MAT"
+        ],
+        "text": "contenuto principale Scienze matematiche e informatiche, scienze fisiche e scienze della terra Triennale\n[9215] INFORMATICA Inglese Italiano\n[9218] MATEMATICA Magistrale\n[9237] DATA SCIENCE Inglese\n[9233] GEOPHYSICAL SCIENCES FOR SEISMIC RISK Inglese\n[9223] MATEMATICA\n[9232] PHYSICS Inglese Italiano Master di Secondo Livello\n[MS044] SICUREZZA SISMICA E SVILUPPO URBANO SOSTENIBILE Dottorati\n[DT205] FISICA Inglese Italiano\n[DT122] MATEMATICA E SCIENZE COMPUTAZIONALI Inglese Italiano"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Università degli Studi di Verona\"]}\nEXCERPT: ee in ingegneria, a cui segue una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione.\nSuccessivamente, il Corso di Studi si articola in percorsi in cui lo studente, a propria scelta, acquisirà una formazione specifica ed appro",
+        "facts": {
+          "cities": [
+            "Università degli Studi di Verona"
+          ],
+          "course": "[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10799"
+        ],
+        "text": "ee in ingegneria, a cui segue una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione.\nSuccessivamente, il Corso di Studi si articola in percorsi in cui lo studente, a propria scelta, acquisirà una formazione specifica ed approfondita in uno degli ambiti caratterizzanti l'ingegneria dell'informazione, quali l'ingegneria informatica, l'ingegneria delle telecomunicazioni o l'ingegneria elettronica. Al fine di permettere allo studente di acquisire e di integrare in modo armonico e bilanciato le diverse conoscenze richieste, l'offerta didattica è articolata in:\n1) una formazione di base in cui vengono trattati sia gli aspetti metodologici-operativi della matematica, sia le conoscenze fondamentali e gli aspetti metodologici delle scienze di base di interesse per le tecnologie dell'informazione;\n2) una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione, in cui vengono acquisiti i contenuti fondamentali delle discipline che qualificano l'area dell'informazione (elettronica, informatica e telecomunicazioni) e la conoscenza delle relative metodologie."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Salerno\",\"course\":\"[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ CORSO DI LAUREA",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ",
+          "id": "S1C7",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C7",
+        "option": "University of Salerno | [05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500637",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500637/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500637/insegnamenti/9999?schemaid=17189"
+        ],
+        "text": "[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ CORSO DI LAUREA"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipa",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33502",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/study-plan"
+        ],
+        "text": "Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14824"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Salerno\",\"course\":\"[44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA CORSO DI LAUREA\nIMMATRICOLATI 2024 - PIANO DI STUDIO COMPLETO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA",
+          "id": "S1C9",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C9",
+        "option": "University of Salerno | [44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500386",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500386/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500386/insegnamenti/9999?schemaid=16728"
+        ],
+        "text": "[44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA CORSO DI LAUREA\nIMMATRICOLATI 2024 - PIANO DI STUDIO COMPLETO Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "computer_science",
+      "physical_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": "Campania",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica"
+    },
+    "control": {
+      "intent": "end_conversation",
+      "reply": "Arrivederci!"
+    },
+    "ctx_chars": 4955,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE CORSO DI LAUREA\n\nSTANDARD - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[0612800001] ANALISI MATEMATICA 1\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: tamente al mondo del lavoro che per successivi approfondimenti nei corsi di laurea magistrale, di master e di dottorato.\nIl laureato in Informatica è un professionista con la capacità di analizzare sistemi complessi (aziende, servizi, sistemi naturali ed artif\n\n{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[06127] INGEGNERIA INFORMATICA\",\"type\":\"Corso\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_end",
+    "profile_update": {},
+    "query": "informatica",
+    "rendered_reply": "Arrivederci!",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": "Campania",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      2,
+      2,
+      1,
+      -1,
+      2,
+      -1,
+      1
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 3,
+    "selected_option": "University of Salerno | [06127] INGEGNERIA INFORMATICA",
+    "shown_options": [
+      "University of Salerno | [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE",
+      "University of Trento | [0514G] INFORMATICA",
+      "University of Salerno | [06127] INGEGNERIA INFORMATICA"
+    ],
+    "source_turn": 15
+  },
+  "session_id": "95821a0db016",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Vorrei iscrivermi all’università ma non so che percorso di studio seguire",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un'assistente AI per l'orientamento universitario. Posso aiutarti a esplorare diverse opzioni di studio e trovare il percorso che meglio si adatta ai tuoi interessi e obiettivi. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Arrivo dal Liceo Socio psico pedagogico (scienze umane)",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, grazie per aver condiviso la tua formazione. Ora possiamo esplorare meglio le tue opzioni universitarie. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi attirano come materia l’informatica e ambito universitario scientifico",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso i tuoi interessi. Ora possiamo esplorare meglio le tue opzioni universitarie. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "Mi piacerebbe approfondire l’informatica i suoi usi in diversi ambiti , imparare come utilizzarla per sicurezza in ambito informatico e come usare l’AI per farlo, come usarla ad esempio per costruire una server funzionante etc",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, hai un interesse chiaro per l'informatica e l'intelligenza artificiale. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei rimanere nel sud italia campania se posssibile e ci sono buone università",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, possiamo esplorare le opzioni disponibili in Campania. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Hai un forte interesse per l'informatica e per la sua applicazione in vari ambiti, come la sicurezza informatica e l'intelligenza artificiale. Ti piace molto capire come funzionano i sistemi e sperimentare nuove idee. Ti suggerisco queste opzioni: 1. University of Salerno | [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE 2. University of Trento | [0514G] INFORMATICA 3. University of Salerno | [06127] INGEGNERIA INFORMATICA Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "University of Salerno | [06127] INGEGNERIA INFORMATICA",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: University of Salerno | [06127] INGEGNERIA INFORMATICA.",
+      "role": "assistant"
+    },
+    {
+      "content": "Si la 3.",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: University of Salerno | [06127] INGEGNERIA INFORMATICA.",
+      "role": "assistant"
+    },
+    {
+      "content": "Pensi che, vivendo al sud, sia più adatto un percorso internazionale o nazionale?",
+      "role": "user"
+    },
+    {
+      "content": "Vivendo al sud, un percorso nazionale come quello offerto dall'Università di Salerno potrebbe essere più adatto, poiché ti permette di rimanere nella tua regione e di avere un supporto più diretto e accessibile. Inoltre, l'Università di Salerno offre corsi di laurea in informatica che sono ben strutturati e riconosciuti. Tuttavia, se sei interessato a un'esperienza internazionale, potresti considerare di partecipare a programmi di scambio o stage all'estero durante il tuo percorso di studi.",
+      "role": "assistant"
+    },
+    {
+      "content": "Perché si pensa che le donne non siano portate per i corsi STEM?",
+      "role": "user"
+    },
+    {
+      "content": "La percezione che le donne non siano portate per i corsi STEM è spesso il risultato di stereotipi di genere radicati nella società. Questi stereotipi possono influenzare le aspettative e le opportunità educative fin dalla giovane età, portando a una minore partecipazione femminile in questi campi. Tuttavia, è importante riconoscere che le capacità e gli interessi non sono determinati dal genere, e molte donne hanno dimostrato grande successo e contributo significativo in ambiti STEM. Le donne possono eccellere in questi campi tanto quanto gli uomini, e promuovere l'inclusione e l'uguaglianza di genere è fondamentale per sfruttare al meglio il potenziale di tutti gli individui.",
+      "role": "assistant"
+    },
+    {
+      "content": "Grazie, non ho altre domande. A presto",
+      "role": "user"
+    },
+    {
+      "content": "Arrivederci!",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-27T11:31:18"
+}

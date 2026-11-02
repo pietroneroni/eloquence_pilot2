@@ -1,0 +1,146 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T10:39:21",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo majorana latina",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo majorana latina",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo majorana latina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "",
+    "advice_intro_singular": "",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [],
+    "candidates": {},
+    "choice_options": [],
+    "confirmed_fields": [],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "intent": "background_valid",
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo majorana latina"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology"
+          ]
+        }
+      },
+      "reply": "Perfetto, psicologia e magistrato sono ambiti molto interessanti.",
+      "retrieval": {
+        "location": {
+          "city": null,
+          "region": null,
+          "requirement": "",
+          "strict": false
+        },
+        "query": "psicologia"
+      }
+    },
+    "ctx_chars": 0,
+    "ctx_preview": "",
+    "current_question": "Quali materie o ambiti universitari ti attirano di più?",
+    "expected_verbatim": "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+    "final_top_n": 3,
+    "phase": "background_answer_valid",
+    "profile_update": {},
+    "query": "",
+    "rendered_reply": "Perfetto, psicologia e magistrato sono ambiti molto interessanti.\nPensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "psicologia"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "background_validate",
+    "valences_before": []
+  },
+  "selected_option_event": null,
+  "session_id": "00cf4fe0dacd",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "liceo majorana latina",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "psicologia e magistato",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, psicologia e magistrato sono ambiti molto interessanti. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T10:40:11"
+}

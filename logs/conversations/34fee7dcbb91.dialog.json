@@ -1,0 +1,539 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T15:33:28",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "ITIS",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Investigative",
+        "Conventional"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ITIS",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ITIS",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ITIS",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ITIS",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            1,
+            1,
+            -2,
+            -2,
+            -2,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+      "Sapienza Università di Roma | [33503] INFORMATICA"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissio",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33502",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/study-plan"
+        ],
+        "text": "Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14824"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Trento\",\"course\":\"[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)\"]}\nEXCERPT: 6145] FUNDAMENTALS OF COMMUNICATIONS\n12 CFU\n96 ore\n[146146] FUNDAMENTALS OF ELECTRONICS\n12 CFU\n96 ore\n[146142] PHYSICS 2\n6 CFU\n48 ore\n[146314] PROCESSING SYSTEMS\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146125] ADVANCED PROGRAMMING\n6 CFU\n48 ore\n[145996] EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS\n6 CFU\n48 or",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)"
+          ],
+          "course": "[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+          "id": "S1C10",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C10",
+        "option": "University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458?schemaid=8538",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459?schemaid=8535",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460?schemaid=8536",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461?schemaid=8537",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "6145] FUNDAMENTALS OF COMMUNICATIONS\n12 CFU\n96 ore\n[146146] FUNDAMENTALS OF ELECTRONICS\n12 CFU\n96 ore\n[146142] PHYSICS 2\n6 CFU\n48 ore\n[146314] PROCESSING SYSTEMS\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146125] ADVANCED PROGRAMMING\n6 CFU\n48 ore\n[145996] EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS\n6 CFU\n48 ore\n[146130] FUNDAMENTALS OF ROBOTICS\n12 CFU\n96 ore\n[146147] OPERATING SYSTEMS\n12 CFU\n96 ore\n[146148] SOFTWARE ENGINEERING\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146135] DIGITAL SIGNAL CODING\n6 CFU\n48 ore\n[146069] NEXT GENERATION NETWORKS\n6 CFU\n48 ore\n[146311] REMOTE SENSING SYSTEMS AND IMAGE ANALYSIS\n6 CFU\n48 ore\n[146134] VISION AND RECOGNITION\n6 CFU\n48 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146138] ADVANCED LOGIC DESIGN\n6 CFU\n48 ore\n[146163] BASICS OF OPTOELECTRONICS\n6 CFU\n48 ore\n[146150] DIGITAL ELECTRONIC CIRCUITS\n6 CFU\n48 ore\n[146198] HIGH-FREQUENCY CIRCUITS FOR SYSTEMS-ON-CHIP\n6 CFU\n48 ore\n[146209] INTRODUCTION TO PARALLEL COMPUTING\n6 CFU\n48 ore\n[146304] LABORATORY OF SYSTEMS ON CHIP\n6 CFU\n48 ore\n3° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[145993] DATABASES\n6 CFU\n48 ore\n[146070] PROVA FINALE\n6 CFU\n[146071] TIROCINI FORMATIVI E DI ORIENTAMENTO\n9 CFU"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI INFORMATICI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea SISTEMI INFORMATICI\n\nELETTRONICA PERCORSO GENERICO IE003 2024\nSISTEMI E AUTOMAZIONE SISTEMI INFORMATICI TELECOMUNICAZIONI Anno di corso ALTRE ATTIVITÀ ALTRE ATTIVITÀ\n[103879D] SISTEMI INF",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI INFORMATICI",
+          "id": "S1C2",
+          "region": "Toscana",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C2",
+        "option": "University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI INFORMATICI",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/3",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/4",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999?schemaid=11507",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea SISTEMI INFORMATICI\n\nELETTRONICA PERCORSO GENERICO IE003 2024\nSISTEMI E AUTOMAZIONE SISTEMI INFORMATICI TELECOMUNICAZIONI Anno di corso ALTRE ATTIVITÀ ALTRE ATTIVITÀ\n[103879D] SISTEMI INFORMATIVI\n12 CFU\n120 ore Secondo Semestre\n[103881D] SISTEMI OPERATIVI\n6 CFU\n60 ore Primo Semestre\n[108151D] ARCHITETTURA DEI CALCOLATORI\n6 CFU\n60 ore Primo Semestre\n[2016850] CONTROLLI AUTOMATICI\n6 CFU\n60 ore Primo Semestre"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: [0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE ",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)"
+          ],
+          "course": "[0514G] INFORMATICA",
+          "id": "S1C3",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C3",
+        "option": "University of Trento | [0514G] INFORMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"
+        ],
+        "text": "[0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[146055] CALCULUS 1\n\n12 CFU\n108 ore Primo Semestre\n[145992] COMPUTER ARCHITECTURES\n6 CFU\n48 ore Secondo Semestre\n[146140] COMPUTER PROGRAMMING 1\n\n12 CFU\n96 ore Primo Semestre\n[146062] COMPUTER PROGRAMMING 2\n\n6 CFU\n48 ore Secondo Semestre\n[146168] FUNCTIONAL PROGRAMMING\n6 CFU\n48 ore Secondo Semestre\n[146056] GEOMETRY AND LINEAR ALGEBRA\n6 CFU\n56 ore Primo Semestre\n[146289] MATHEMATICS FOR INFORMATICS\n6 CFU\n48 ore Secondo Semestre\n[146060] PROBABILITY\n6 CFU\n48 ore Secondo Semestre SCEGLIERE 1 INSEGNAMENTO TRA I SEGUENTI (3 CFU)\nMaggiori informazioni\n[145326] INGLESE LIVELLO C1\n\n3 CFU\n50 ore Attività a durata annuale\n[140189] PROVA DI CONOSCENZA LINGUA ITALIANA (A1)"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33504] INFORMATICA - EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\",\"type\":\"Classe di laurea: L-31\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Informatica - erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33504\nClasse di laurea: L-31\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33504] INFORMATICA - EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-31",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33504] INFORMATICA - EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33504",
+          "https://corsidilaurea.uniroma1.it/it/course/33504/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33504/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33504/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33504/study-plan"
+        ],
+        "text": "Informatica - erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33504\nClasse di laurea: L-31\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Università degli Studi di Verona\"]}\nEXCERPT: celto dallo studente, di competenze specifiche nell'ambito delle telecomunicazioni, dell'elettronica e dell'informatica.\nQueste figure professionali rispondono alle esigenze del mercato del lavoro, che spesso non richiede una specializzazione limitata a un sing",
+        "facts": {
+          "cities": [
+            "Università degli Studi di Verona"
+          ],
+          "course": "[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10799"
+        ],
+        "text": "celto dallo studente, di competenze specifiche nell'ambito delle telecomunicazioni, dell'elettronica e dell'informatica.\nQueste figure professionali rispondono alle esigenze del mercato del lavoro, che spesso non richiede una specializzazione limitata a un singolo settore, ma piuttosto una comprensione non superficiale dei sistemi, delle metodologie e delle tecnologie dell'intera area dell'informazione, oltre alla capacità di cogliere le relazioni fra le varie discipline e di trattare professionalmente problemi interdisciplinari."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità d",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33503] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Informatica\nAnno accademico: 2026-2027\nCodice corso: 33503\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: ",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33503] INFORMATICA",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33503] INFORMATICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33503",
+          "https://corsidilaurea.uniroma1.it/it/course/33503/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33503/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33503/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33503/study-plan"
+        ],
+        "text": "Informatica\nAnno accademico: 2026-2027\nCodice corso: 33503\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14617"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Sassari\",\"course\":\"[A106] INGEGNERIA INFORMATICA Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: profitto. Il Regolamento Didattico del corso di studio specifica nel dettaglio le modalità di attribuzione di tali CFU.\nIl Regolamento Didattico prevede, altresì, l’attribuzione di obblighi formativi aggiuntivi, da soddisfare nel primo anno di corso, nel caso i",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A106] INGEGNERIA INFORMATICA Inglese Italiano",
+          "id": "S1C8",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C8",
+        "option": "University of Sassari | [A106] INGEGNERIA INFORMATICA Inglese Italiano",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796/insegnamenti/9999?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796?annoOrdinamento=2018",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10796?annoOrdinamento=2022"
+        ],
+        "text": "profitto. Il Regolamento Didattico del corso di studio specifica nel dettaglio le modalità di attribuzione di tali CFU.\nIl Regolamento Didattico prevede, altresì, l’attribuzione di obblighi formativi aggiuntivi, da soddisfare nel primo anno di corso, nel caso in cui la verifica delle conoscenze richieste per l’accesso non sia positiva. Sbocchi occupazionali e professionali previsti per i laureati. Ingegnere informatico junior I principali sbocchi occupazionali previsti fanno riferimento alle seguenti realtà:\n- industrie dell'informatica, operanti nello sviluppo hardware e software,\n- industrie dell'automazione,\n- industrie operanti nel settore delle telecomunicazioni. - Imprese elettroniche, elettromeccaniche, di progettazione e produzione di componenti e sistemi. - Industrie del settore agroalimentare, industrie manifatturiere. - Pubblica amministrazione."
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33455] BIOINFORMATICS - BIOINFORMATICA\",\"type\":\"Classe di laurea: L-2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Bioinformatics - Bioinformatica\nAnno accademico: 2026-2027\nCodice corso: 33455\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33455] BIOINFORMATICS - BIOINFORMATICA",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-2",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33455] BIOINFORMATICS - BIOINFORMATICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33455",
+          "https://corsidilaurea.uniroma1.it/it/course/33455/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33455/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33455/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33455/study-plan"
+        ],
+        "text": "Bioinformatics - Bioinformatica\nAnno accademico: 2026-2027\nCodice corso: 33455\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "computer_science"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica sistemistica"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Non posso rispondere a questa domanda. Posso aiutarti a trovare il corso di laurea più adatto a te."
+    },
+    "ctx_chars": 955,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissio\n\n{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33503] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Informatica\nAnno accademico: 2026-2027\nCodice corso: 33503\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: ",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "informatica sistemistica",
+    "rendered_reply": "Non posso rispondere a questa domanda. Posso aiutarti a trovare il corso di laurea più adatto a te.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "informatica sistemistica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      1,
+      2,
+      1,
+      1,
+      -2,
+      -2,
+      -2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "34fee7dcbb91",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Devo scegliere un corso di laurea, fammi domande per aiutarmi",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il corso di laurea più adatto a te. Iniziamo! Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Arrivo da un ITIS",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "Informatica, nell’ambito più sistemistico",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato all'informatica con un focus più sistemistico. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "Reti, OS, scripting",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato all'informatica con un focus più sistemistico. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "Roma, possibilmente collegato facilmente a Montesacro",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi preferisci studiare a Roma, possibilmente vicino a Montesacro. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "Abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "Molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "Dipende",
+      "role": "user"
+    },
+    {
+      "content": "Quindi, ti piace cercare informazioni, analizzare problemi e ragionare in modo logico quando è necessario, ma non sempre?",
+      "role": "assistant"
+    },
+    {
+      "content": "Esatto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "Abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "Per niente",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "Per niente",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "Per niente",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "Abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Hai un profilo Realistico, Investigativo e Convenzionale. Ti piace capire come funzionano le cose e hai un buon interesse per l'informatica sistemistica, in particolare reti, sistemi operativi e scripting. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE 2. Sapienza Università di Roma | [33503] INFORMATICA",
+      "role": "assistant"
+    },
+    {
+      "content": "Per quale partito devo votare il prossimo anno?",
+      "role": "user"
+    },
+    {
+      "content": "Non posso aiutarti a scegliere per quale partito votare. Posso aiutarti a trovare il corso di laurea più adatto a te.",
+      "role": "assistant"
+    },
+    {
+      "content": "Qual è il corso di laurea che insegna a rispettare maggiormente la costituzione?",
+      "role": "user"
+    },
+    {
+      "content": "Non posso rispondere a questa domanda. Posso aiutarti a trovare il corso di laurea più adatto a te.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T15:39:42"
+}

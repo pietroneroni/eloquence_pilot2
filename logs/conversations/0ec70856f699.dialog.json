@@ -1,0 +1,557 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T12:46:27",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico cambridge",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences",
+        "economics_business"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Realistic",
+        "Artistic"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico cambridge",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico cambridge",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences",
+            "economics_business"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico cambridge",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences",
+            "economics_business"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico cambridge",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences",
+            "economics_business"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            2,
+            1,
+            1,
+            -1,
+            0,
+            0
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [34177] ECONOMIA E FINANZA",
+      "Sapienza Università di Roma | [34175] ECONOMIA AZIENDALE E MANAGEMENT",
+      "Sapienza Università di Roma | [33505] STATISTICA, ECONOMIA E SCIENZE SOCIALI"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34177] ECONOMIA E FINANZA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Economia e finanza\nAnno accademico: 2026-2027\nCodice corso: 34177\nClasse di laurea: L-33\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Economia\nDipartimento: ECONOMIA E DIRITTO\nSede: Roma\nLingua: Ita",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[34177] ECONOMIA E FINANZA",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [34177] ECONOMIA E FINANZA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/34177",
+          "https://corsidilaurea.uniroma1.it/it/course/34177/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/34177/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/34177/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/34177/study-plan"
+        ],
+        "text": "Economia e finanza\nAnno accademico: 2026-2027\nCodice corso: 34177\nClasse di laurea: L-33\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Economia\nDipartimento: ECONOMIA E DIRITTO\nSede: Roma\nLingua: Italiano, Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14613"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Foggia\",\"course\":\"[1366] ECONOMIA AZIENDALE AMMINISTRAZIONE DELLE AZIENDE/MANAGEMENT\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1366] ECONOMIA AZIENDALE Corso di Laurea AMMINISTRAZIONE DELLE AZIENDE/MANAGEMENT",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1366] ECONOMIA AZIENDALE AMMINISTRAZIONE DELLE AZIENDE/MANAGEMENT",
+          "id": "S1C10",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C10",
+        "option": "University of Foggia | [1366] ECONOMIA AZIENDALE AMMINISTRAZIONE DELLE AZIENDE/MANAGEMENT",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10043",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10043/insegnamenti",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10043/insegnamenti/1#1",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10043/insegnamenti/1?schemaid=2810",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10043/insegnamenti/2#1",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10043/insegnamenti/2?schemaid=2811",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10043/insegnamenti?annoOrdinamento=2016"
+        ],
+        "text": "[1366] ECONOMIA AZIENDALE Corso di Laurea AMMINISTRAZIONE DELLE AZIENDE/MANAGEMENT"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prov",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C2",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C2",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34175] ECONOMIA AZIENDALE E MANAGEMENT\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Economia aziendale e Management\nAnno accademico: 2026-2027\nCodice corso: 34175\nClasse di laurea: L-18\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Economia\nDipartimento: MANAGEMENT\nSede: Roma\nLingua:",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[34175] ECONOMIA AZIENDALE E MANAGEMENT",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [34175] ECONOMIA AZIENDALE E MANAGEMENT",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/34175",
+          "https://corsidilaurea.uniroma1.it/it/course/34175/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/34175/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/34175/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/34175/study-plan"
+        ],
+        "text": "Economia aziendale e Management\nAnno accademico: 2026-2027\nCodice corso: 34175\nClasse di laurea: L-18\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Economia\nDipartimento: MANAGEMENT\nSede: Roma\nLingua: Italiano, Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14613"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Siena\",\"course\":\"[EE001] ECONOMIA E COMMERCIO Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena Altre sedi Arezzo\"]}\nEXCERPT: [EE001] ECONOMIA E COMMERCIO Corso di Laurea Inglese Italiano\n\nEGA EMA",
+        "facts": {
+          "cities": [
+            "Siena Altre sedi Arezzo"
+          ],
+          "course": "[EE001] ECONOMIA E COMMERCIO Inglese Italiano",
+          "id": "S1C4",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C4",
+        "option": "University of Siena | [EE001] ECONOMIA E COMMERCIO Inglese Italiano",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10218",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10218/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10218/insegnamenti/1#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10218/insegnamenti/1?schemaid=11582",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10218/insegnamenti/2#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10218/insegnamenti/2?schemaid=11583",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10218/insegnamenti?annoOrdinamento=2017"
+        ],
+        "text": "[EE001] ECONOMIA E COMMERCIO Corso di Laurea Inglese Italiano\n\nEGA EMA"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33505] STATISTICA, ECONOMIA E SCIENZE SOCIALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Statistica, Economia e Scienze Sociali\nAnno accademico: 2026-2027\nCodice corso: 33505\nClasse di laurea: L-41\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: SCIENZE ST",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33505] STATISTICA, ECONOMIA E SCIENZE SOCIALI",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33505] STATISTICA, ECONOMIA E SCIENZE SOCIALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33505",
+          "https://corsidilaurea.uniroma1.it/it/course/33505/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33505/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33505/study-plan"
+        ],
+        "text": "Statistica, Economia e Scienze Sociali\nAnno accademico: 2026-2027\nCodice corso: 33505\nClasse di laurea: L-41\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: SCIENZE STATISTICHE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14618"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Siena\",\"course\":\"[EE004] SCIENZE ECONOMICHE E BANCARIE Inglese Italiano curriculum statistica e analisi dei dati\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: do Semestre\n[2000368] CREDITI LIBERI SECONDO ANNO\n4 CFU\n60 ore\n[2000753] MATEMATICA GENERALE (ESERCITAZIONI DI SOSTEGNO)\n50 ore Primo Semestre\n[2000976] ALTRE CONOSCENZE UTILI PER L'INSERIMENTO NEL MONDO DEL LAVORO\n1 CFU\n60 ore\n[2012200] MERCATI FINANZIARI\n8 CFU\n60 ore Primo Semestre\n[2012235] CONTABILITA' E B",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[EE004] SCIENZE ECONOMICHE E BANCARIE Inglese Italiano curriculum statistica e analisi dei dati",
+          "id": "S1C6",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C6",
+        "option": "University of Siena | [EE004] SCIENZE ECONOMICHE E BANCARIE Inglese Italiano curriculum statistica e analisi dei dati",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/1#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/1?schemaid=11597",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/2#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/2?schemaid=11598",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/3#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti/3?schemaid=11596",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10224/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "do Semestre\n[2000368] CREDITI LIBERI SECONDO ANNO\n4 CFU\n60 ore\n[2000753] MATEMATICA GENERALE (ESERCITAZIONI DI SOSTEGNO)\n50 ore Primo Semestre\n[2000976] ALTRE CONOSCENZE UTILI PER L'INSERIMENTO NEL MONDO DEL LAVORO\n1 CFU\n60 ore\n[2012200] MERCATI FINANZIARI\n8 CFU\n60 ore Primo Semestre\n[2012235] CONTABILITA' E BILANCIO\n8 CFU\n60 ore Primo Semestre\n[2014720] CORSO DI RECUPERO DI MATEMATICA GENERALE\n30 ore Ciclo Annuale Unico\n[2015349] POLITICA E FINANZA AMBIENTALE\n8 CFU\n60 ore Primo Semestre\n[2015351] INFERENZA STATISTICA E PRINCIPI DI SIMULAZIONE\n8 CFU\n60 ore Secondo Semestre\n[2015354] ANALISI DI DATI DEMOGRAFICI\n8 CFU\n60 ore Primo Semestre"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33586] SCIENZE BIOLOGICHE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze Biologiche\nAnno accademico: 2026-2027\nCodice corso: 33586\nClasse di laurea: L-13\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: BIOLOGIA E BIOTECNOLOGIE \"CHARLES DARWIN\"\nSede: Roma\nLingua: Italiano\nModali",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33586] SCIENZE BIOLOGICHE",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33586] SCIENZE BIOLOGICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33586",
+          "https://corsidilaurea.uniroma1.it/it/course/33586/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33586/study-plan"
+        ],
+        "text": "Scienze Biologiche\nAnno accademico: 2026-2027\nCodice corso: 33586\nClasse di laurea: L-13\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: BIOLOGIA E BIOTECNOLOGIE \"CHARLES DARWIN\"\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 33586"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Sassari\",\"course\":\"[1193] SCIENZE BIOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [1193] SCIENZE BIOLOGICHE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[A004265] INTRODUZIONE ALLA CHIMICA GENERALE E ALLA CHIMICA ORGANICA (OFA)\n\n20 ore Tipo insegnamento: [OPZ] - Opzionale\n[A004266] MATEMATICA (OFA)\n\n20 ore Tipo insegnamento: [OPZ] - Opzionale\n[A004267] FISICA (CORSO 0 - O",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[1193] SCIENZE BIOLOGICHE",
+          "id": "S1C8",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C8",
+        "option": "University of Sassari | [1193] SCIENZE BIOLOGICHE",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276/insegnamenti/9999"
+        ],
+        "text": "[1193] SCIENZE BIOLOGICHE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[A004265] INTRODUZIONE ALLA CHIMICA GENERALE E ALLA CHIMICA ORGANICA (OFA)\n\n20 ore Tipo insegnamento: [OPZ] - Opzionale\n[A004266] MATEMATICA (OFA)\n\n20 ore Tipo insegnamento: [OPZ] - Opzionale\n[A004267] FISICA (CORSO 0 - OFA)"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33617] RELAZIONI ECONOMICHE E FINANZIARIE INTERNAZIONALI\",\"type\":\"Classe di laurea: L-33\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Relazioni Economiche e Finanziarie Internazionali\nAnno accademico: 2026-2027\nCodice corso: 33617\nClasse di laurea: L-33\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33617] RELAZIONI ECONOMICHE E FINANZIARIE INTERNAZIONALI",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-33",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33617] RELAZIONI ECONOMICHE E FINANZIARIE INTERNAZIONALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33617",
+          "https://corsidilaurea.uniroma1.it/it/course/33617/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33617/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33617/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33617/study-plan"
+        ],
+        "text": "Relazioni Economiche e Finanziarie Internazionali\nAnno accademico: 2026-2027\nCodice corso: 33617\nClasse di laurea: L-33\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "life_sciences",
+      "economics_business"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "scienza, finanza, economia"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Se mi fossi basato solo sulle risposte brevi alle 8 domande, senza il contesto iniziale di economia, avrei scelto corsi che valorizzano la tua curiosità per come funzionano le cose e la tua capacità di ragionare in modo logico. Avrei suggerito corsi che ti permettano di esplorare e creare nuove idee, come quelli che combinano scienza e tecnologia. Ad esempio, corsi di ingegneria o informatica potrebbero essere interessanti per te. Tuttavia, non ho informazioni dettagliate su questi corsi specifici."
+    },
+    "ctx_chars": 1441,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34177] ECONOMIA E FINANZA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Economia e finanza\nAnno accademico: 2026-2027\nCodice corso: 34177\nClasse di laurea: L-33\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Economia\nDipartimento: ECONOMIA E DIRITTO\nSede: Roma\nLingua: Ita\n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34175] ECONOMIA AZIENDALE E MANAGEMENT\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Economia aziendale e Management\nAnno accademico: 2026-2027\nCodice corso: 34175\nClasse di laurea: L-18\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Economia\nDipartimento: MANAGEMENT\nSede: Roma\nLingua:\n\n{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33505] STATISTICA, ECONOMIA E SCIENZE SOCIALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "scienza, finanza, economia",
+    "rendered_reply": "Se mi fossi basato solo sulle risposte brevi alle 8 domande, senza il contesto iniziale di economia, avrei scelto corsi che valorizzano la tua curiosità per come funzionano le cose e la tua capacità di ragionare in modo logico. Avrei suggerito corsi che ti permettano di esplorare e creare nuove idee, come quelli che combinano scienza e tecnologia. Ad esempio, corsi di ingegneria o informatica potrebbero essere interessanti per te. Tuttavia, non ho informazioni dettagliate su questi corsi specifici.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "scienza, finanza, economia"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      1,
+      2,
+      2,
+      1,
+      1,
+      -1,
+      0
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "0ec70856f699",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "aiutami a trovare un corso di università, sto i quinto liceo",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il corso di laurea più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ho fatto il liceo scientifico cambridge",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "non so bene ancora, mi piace abbastanza la scienza e la finanza, ma non so se mi piacerebbe dedicarmi esclusivamente a questi",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, è normale avere più interessi. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "penso l’economia",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "preferirei roma, ma non so se studiare all’estero",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, Roma è una scelta interessante. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "dipende",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "dipende",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per l'economia e la finanza, e hai un background in liceo scientifico Cambridge. Ti piace molto capire come funzionano le cose e ragionare in modo logico. Ti piace anche esprimere idee in forme creative e sperimentare nuove cose. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [34177] ECONOMIA E FINANZA 2. Sapienza Università di Roma | [34175] ECONOMIA AZIENDALE E MANAGEMENT 3. Sapienza Università di Roma | [33505] STATISTICA, ECONOMIA E SCIENZE SOCIALI Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "un base a cosa hai scelto l’ateneo?",
+      "role": "user"
+    },
+    {
+      "content": "Ho scelto Sapienza Università di Roma perché è una delle principali università italiane e offre corsi di laurea di alto livello in economia e finanza. Inoltre, è situata a Roma, che è una città con molte opportunità culturali e professionali. I corsi proposti sono ben strutturati e coprono vari aspetti dell'economia e della finanza, offrendo una formazione completa e preparatoria per il mondo del lavoro.",
+      "role": "assistant"
+    },
+    {
+      "content": "su cosa ti sei basato per “l’alto livello”, dei ranking?",
+      "role": "user"
+    },
+    {
+      "content": "Non mi sono basato su ranking specifici, ma su informazioni generali sulla qualità dell'insegnamento e sulla reputazione dell'università. Sapienza Università di Roma è una delle principali università italiane e offre corsi di laurea di alto livello in economia e finanza. Inoltre, è situata a Roma, che è una città con molte opportunità culturali e professionali. I corsi proposti sono ben strutturati e coprono vari aspetti dell'economia e della finanza, offrendo una formazione completa e preparatoria per il mondo del lavoro.",
+      "role": "assistant"
+    },
+    {
+      "content": "che altre università conosci e avresti potuto proporre",
+      "role": "user"
+    },
+    {
+      "content": "Altre università che offrono corsi di laurea in economia e finanza a Roma includono l'Università degli Studi di Roma Tor Vergata e l'Università degli Studi Roma Tre. Entrambe queste università sono ben rispettate e offrono programmi di alta qualità in questi settori. Tuttavia, non ho informazioni dettagliate sui corsi specifici offerti da queste università.",
+      "role": "assistant"
+    },
+    {
+      "content": "hai informazioni specifiche solo per la sapienza?",
+      "role": "user"
+    },
+    {
+      "content": "Ho informazioni dettagliate solo per i corsi di laurea offerti dalla Sapienza Università di Roma. Le altre università di Roma, come l'Università degli Studi di Roma Tor Vergata e l'Università degli Studi Roma Tre, offrono corsi simili, ma non ho informazioni specifiche sui dettagli dei loro programmi.",
+      "role": "assistant"
+    },
+    {
+      "content": "se ti fossi basato solo sulle risposte brevi alle 8 domande, senza il contesto iniziale di economia, che avresti scelto?",
+      "role": "user"
+    },
+    {
+      "content": "Se mi fossi basato solo sulle risposte brevi alle 8 domande, senza il contesto iniziale di economia, avrei scelto corsi che valorizzano la tua curiosità per come funzionano le cose e la tua capacità di ragionare in modo logico. Avrei suggerito corsi che ti permettano di esplorare e creare nuove idee, come quelli che combinano scienza e tecnologia. Ad esempio, corsi di ingegneria o informatica potrebbero essere interessanti per te. Tuttavia, non ho informazioni dettagliate su questi corsi specifici.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T12:53:50"
+}

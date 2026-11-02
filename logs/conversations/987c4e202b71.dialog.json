@@ -1,0 +1,559 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T11:07:09",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "istituto tecnico per geometri, laurea triennale L7 in ingegneria civile",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "riasec_attitudes": [
+        "Conventional",
+        "Enterprising",
+        "Investigative"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "istituto tecnico per geometri, laurea triennale L7 in ingegneria civile",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "istituto tecnico per geometri, laurea triennale L7 in ingegneria civile",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "istituto tecnico per geometri, laurea triennale L7 in ingegneria civile",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "istituto tecnico per geometri, laurea triennale L7 in ingegneria civile",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            -1,
+            0,
+            -2,
+            0,
+            -1,
+            0,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE",
+      "Sapienza Università di Roma | [33434] GESTIONE DEL PROGETTO E DELLA COSTRUZIONE",
+      "Sapienza Università di Roma | [30023] TECNICHE ORTOPEDICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO ORTOPEDICO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Professioni tecniche per l'edilizia e il territorio – corso professionalizzante\nAnno accademico: 2026-2027\nCodice corso: 34179\nClasse di laurea: L-P01\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architet",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/34179",
+          "https://corsidilaurea.uniroma1.it/it/course/34179/study-plan"
+        ],
+        "text": "Professioni tecniche per l'edilizia e il territorio – corso professionalizzante\nAnno accademico: 2026-2027\nCodice corso: 34179\nClasse di laurea: L-P01\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura, Ingegneria civile e industriale\nDipartimento: INGEGNERIA CIVILE, EDILE E AMBIENTALE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 34179"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Trento\",\"course\":\"[0325G] INGEGNERIA CIVILE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 100)\"]}\nEXCERPT: ano in grado di acquisire, anche autonomamente, ulteriori competenze specifiche in campi applicativi del settore civile.\nAl termine del percorso di studi il/la laureato/a avrà acquisito;\n- una formazione di base, con una solida preparazione nelle aree della matematica, fisica, chimica, informatica e programmazione, meccanica, t",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 100)"
+          ],
+          "course": "[0325G] INGEGNERIA CIVILE",
+          "id": "S1C10",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C10",
+        "option": "University of Trento | [0325G] INGEGNERIA CIVILE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10127",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10127/insegnamenti/50348",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10127/insegnamenti/50348?schemaid=8526"
+        ],
+        "text": "ano in grado di acquisire, anche autonomamente, ulteriori competenze specifiche in campi applicativi del settore civile.\nAl termine del percorso di studi il/la laureato/a avrà acquisito;\n- una formazione di base, con una solida preparazione nelle aree della matematica, fisica, chimica, informatica e programmazione, meccanica, termodinamica, meccanica dei solidi, meccanica dei fluidi;\n- una solida preparazione nel campo delle discipline ingegneristiche del settore civile;\n- le nozioni di base riguardanti metodi e strumenti di progettazione anche automatica di opere ingegneristiche convenzionali,\n- conoscenze e tecniche operative in alcuni settori specifici dell’Ingegneria civile, quali l’Architettura tecnica, la Topografia, la Tecnica delle costruzioni, la Geotecnica, le Infrastrutture viarie. Il/la laureato/a sarà in grado di svolgere, fin da subito e in autonomia, alcune semplici mansioni che sono richieste nel mondo professionale. La preparazione acquisita agevolerà inoltre la scelta del futuro orientamento degli studi magistrali per coloro che intraprenderanno tale percorso."
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: orma scritta e orale, della lingua inglese a livello QCER B1 o superiore, con riferimento anche ai lessici disciplinari.\nFormazione Interdisciplinare Tecnico-Professionale Gli insegnamenti dell'area interdisciplinare tecnico-professionale includono:\n● ",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S1C2",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C2",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "orma scritta e orale, della lingua inglese a livello QCER B1 o superiore, con riferimento anche ai lessici disciplinari.\nFormazione Interdisciplinare Tecnico-Professionale Gli insegnamenti dell'area interdisciplinare tecnico-professionale includono:\n● discipline di disegno e di rappresentazione digitale, in cui lo studente approfondirà le tecniche e gli strumenti di rappresentazione sia tradizionali che di moderna concezione. In particolare, lo studente acquisirà conoscenza delle tecniche di rappresentazione delle opere edili e del territorio, attraverso il rilievo, il disegno e la modellazione tridimensionale;\n● discipline di legislazione tecnica per le opere pubbliche e private che permetteranno allo studente di acquisire nozioni di diritto e delle procedure per gestire l'iter amministrativo necessario per la redazione di pratiche edilizie. Edilizia Gli insegnamenti dell'area di apprendimento Edilizia mirano a far acquisire allo studente conoscenze teoriche e pratiche necessarie per lo svolgimento dell'attività professionale."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria delle Nanotecnologie - Nanotechnology Engineering\nAnno accademico: 2026-2027\nCodice corso: 33496\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33496",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/study-plan"
+        ],
+        "text": "Ingegneria delle Nanotecnologie - Nanotechnology Engineering\nAnno accademico: 2026-2027\nCodice corso: 33496\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0337H] INGEGNERIA ENERGETICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)\"]}\nEXCERPT: [0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Technologies for energy efficiency\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANN",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)"
+          ],
+          "course": "[0337H] INGEGNERIA ENERGETICA",
+          "id": "S1C4",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C4",
+        "option": "University of Trento | [0337H] INGEGNERIA ENERGETICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362?schemaid=8534",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363?schemaid=8531",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Technologies for energy efficiency\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33434] GESTIONE DEL PROGETTO E DELLA COSTRUZIONE\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Gestione del progetto e della costruzione\nAnno accademico: 2026-2027\nCodice corso: 33434\nClasse di laurea: LM-24\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Architett",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33434] GESTIONE DEL PROGETTO E DELLA COSTRUZIONE",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33434] GESTIONE DEL PROGETTO E DELLA COSTRUZIONE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33434",
+          "https://corsidilaurea.uniroma1.it/it/course/33434/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33434/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33434/study-plan"
+        ],
+        "text": "Gestione del progetto e della costruzione\nAnno accademico: 2026-2027\nCodice corso: 33434\nClasse di laurea: LM-24\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Architettura, Ingegneria civile e industriale\nDipartimento: INGEGNERIA STRUTTURALE E GEOTECNICA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 33434"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0331H] INGEGNERIA CIVILE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 30)\"]}\nEXCERPT: ergetico, il comfort abitativo e l'innovazione degli impianti tecnici/tecnologici nelle opere civili nuove ed esistenti.\nTutti i profili saranno caratterizzati da competenze digitali specifiche, congruenti con la professionalità richieste dalla Rivoluzione In",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 30)"
+          ],
+          "course": "[0331H] INGEGNERIA CIVILE",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0331H] INGEGNERIA CIVILE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50352#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50352?schemaid=8549",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50353#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50353?schemaid=8548",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50354#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50354?schemaid=8545",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50355#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/50355?schemaid=8547",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "ergetico, il comfort abitativo e l'innovazione degli impianti tecnici/tecnologici nelle opere civili nuove ed esistenti.\nTutti i profili saranno caratterizzati da competenze digitali specifiche, congruenti con la professionalità richieste dalla Rivoluzione Industriale 4.0 nel settore delle costruzioni. Queste competenze comprendono: sistemi e metodi per il monitoraggio, gestione e controllo di strutture e infrastrutture civili con specifiche competenze nelle nuove tecnologie digitali (infrastrutture per comunicazioni wireless, monitoraggio wireless distribuito e non-invasivo, tecniche di inversione dati, ottimizzazione e intelligenza artificiale, metodi numerici, sistemi di supporto alla decisione). I temi dell'etica e della deontologia professionale sono specificamente trattati da professionisti del settore, nell'ambito di uno specifico accordo che il Dipartimento di Ingegneria Civile Ambientale e Meccanica ha con gli Ordini professionali degli Ingegneri attraverso dei seminari proposti all’interno di specifiche attività didattiche. Il cds offrirà le condizioni adeguate a creare un contesto nel quale gli studenti possano essere coinvolti in attività progettuali e creare momenti di confronto, discussione e riflessione."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)\",\"type\":\"Classe di laurea: L-23\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-23",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33481",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/study-plan"
+        ],
+        "text": "Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[0327G] INGEGNERIA INDUSTRIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9\"]}\nEXCERPT: [0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9"
+          ],
+          "course": "[0327G] INGEGNERIA INDUSTRIALE",
+          "id": "S1C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C8",
+        "option": "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428?schemaid=8540",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429?schemaid=8541",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430?schemaid=8539",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[30023] TECNICHE ORTOPEDICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO ORTOPEDICO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecniche ortopediche (abilitante alla professione sanitaria di Tecnico ortopedico) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 30023\nClasse di laurea: L/SNT3\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: SCIENZ",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[30023] TECNICHE ORTOPEDICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO ORTOPEDICO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [30023] TECNICHE ORTOPEDICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO ORTOPEDICO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/30023",
+          "https://corsidilaurea.uniroma1.it/it/course/30023/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/30023/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/30023/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/30023/study-plan"
+        ],
+        "text": "Tecniche ortopediche (abilitante alla professione sanitaria di Tecnico ortopedico) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 30023\nClasse di laurea: L/SNT3\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: SCIENZE MEDICO-CHIRURGICHE E DI MEDICINA TRASLAZIONALE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05418"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "engineering_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "progettazione tecnica"
+    },
+    "control": {
+      "intent": "end_conversation",
+      "reply": "Arrivederci! Se hai altre domande in futuro, non esitare a tornare. STOP"
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Professioni tecniche per l'edilizia e il territorio – corso professionalizzante\nAnno accademico: 2026-2027\nCodice corso: 34179\nClasse di laurea: L-P01\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architet\n\n{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: orma scritta e orale, della lingua inglese a livello QCER B1 o superiore, con riferimento anche ai lessici disciplinari.\nFormazione Interdisciplinare Tecnico-Professionale Gli insegnamenti dell'area interdisciplinare tecnico-professionale includono:\n● \n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_end",
+    "profile_update": {},
+    "query": "progettazione tecnica",
+    "rendered_reply": "Arrivederci! Se hai altre domande in futuro, non esitare a tornare. STOP",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "progettazione tecnica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      -1,
+      -1,
+      0,
+      -2,
+      0,
+      -1,
+      0
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "987c4e202b71",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Ciao",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi che fa per te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ho fatto l’istutito tecnic per geometri e conseguito la aluerììrea triennale l7 in ingergenria civile",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "Che mi attira è un parolone",
+      "role": "user"
+    },
+    {
+      "content": "Capisco. Ti chiedo di nuovo: quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "Allora in realtà non mi attira niente in particolare",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi non hai ancora un'area specifica in mente. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "probabilmente la parte pratica della progettazione tecnica, quindi l’utilizzo di pporgrammi specifici per preparare gli elaborati da prsentare ad esempio al genio civile",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi ti interessa la parte pratica della progettazione tecnica e l'uso di programmi specifici. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei studiare a roma, dove sono residente",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "relativamente poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "medio",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "per niente",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "dipende dall’argomento",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "dipende dal tipo di attività",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Hai un interesse per la progettazione tecnica e l'uso di programmi specifici. Ti propongo alcuni corsi che potrebbero interessarti, basati su queste preferenze. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE 2. Sapienza Università di Roma | [33434] GESTIONE DEL PROGETTO E DELLA COSTRUZIONE 3. Sapienza Università di Roma | [30023] TECNICHE ORTOPEDICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO ORTOPEDICO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA Hai altre preferenze o domande su questi corsi?",
+      "role": "assistant"
+    },
+    {
+      "content": "scusas, ma che cosa c’entra l’ultima opzione",
+      "role": "user"
+    },
+    {
+      "content": "L'ultima opzione, Tecniche ortopediche, è stata proposta per errore. Non è pertinente ai tuoi interessi. Ti suggerisco di considerare le altre due opzioni: Professioni tecniche per l'edilizia e il territorio e Gestione del progetto e della costruzione. Entrambi i corsi sono più in linea con la tua preferenza per la progettazione tecnica e l'uso di programmi specifici.",
+      "role": "assistant"
+    },
+    {
+      "content": "quanto durano i corsi?",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Professioni tecniche per l'edilizia e il territorio dura 3 anni, mentre il corso di laurea magistrale in Gestione del progetto e della costruzione dura 2 anni.",
+      "role": "assistant"
+    },
+    {
+      "content": "posso partecipare direttamente alla magistrale se ho la triennale conseguita pù di 4 anni fa?",
+      "role": "user"
+    },
+    {
+      "content": "Per accedere direttamente alla laurea magistrale in Gestione del progetto e della costruzione, è necessario verificare i requisiti specifici del corso. La laurea triennale in ingegneria civile potrebbe essere sufficiente, ma è importante controllare se ci sono ulteriori requisiti o esami di ammissione. Se hai conseguito la laurea triennale più di 4 anni fa, potrebbe essere necessario sostenere una verifica dei requisiti e della preparazione personale. Ti consiglio di consultare il sito ufficiale della Sapienza Università di Roma per informazioni dettagliate sulle modalità di accesso.",
+      "role": "assistant"
+    },
+    {
+      "content": "quindi c’è un test di ammissione",
+      "role": "user"
+    },
+    {
+      "content": "Per il corso di laurea in Professioni tecniche per l'edilizia e il territorio è prevista una prova di ammissione. Per il corso di laurea magistrale in Gestione del progetto e della costruzione, invece, è richiesta una verifica dei requisiti e della preparazione personale. Non è disponibile la specifica modalità di accesso per il corso di laurea in Tecniche ortopediche.",
+      "role": "assistant"
+    },
+    {
+      "content": "ok penso che non farò nulla",
+      "role": "user"
+    },
+    {
+      "content": "Arrivederci! Se hai altre domande in futuro, non esitare a tornare. (bye bye!)",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T11:14:54"
+}

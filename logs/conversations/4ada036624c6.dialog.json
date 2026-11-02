@@ -1,0 +1,514 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T10:27:27",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "architettura",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design"
+      ],
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "architettura",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "architettura",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "architettura",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "architettura",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 7
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33430] ARCHITETTURA (RESTAURO) - ARCHITECTURE (CONSERVATION)",
+      "Sapienza Università di Roma | [33426] DESIGN",
+      "Sapienza Università di Roma | [33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33425] ARCHITETTURA\",\"type\":\"Classe di laurea: LM-4\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Architettura\nAnno accademico: 2026-2027\nCodice corso: 33425\nClasse di laurea: LM-4 c.u.\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33425] ARCHITETTURA",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-4",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33425] ARCHITETTURA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33425",
+          "https://corsidilaurea.uniroma1.it/it/course/33425/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33425/study-plan"
+        ],
+        "text": "Architettura\nAnno accademico: 2026-2027\nCodice corso: 33425\nClasse di laurea: LM-4 c.u.\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33433] PRODUCT AND SERVICE DESIGN\",\"type\":\"Classe di laurea: LM-12\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Product and Service Design\nAnno accademico: 2026-2027\nCodice corso: 33433\nClasse di laurea: LM-12\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33433] PRODUCT AND SERVICE DESIGN",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-12",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [33433] PRODUCT AND SERVICE DESIGN",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33433",
+          "https://corsidilaurea.uniroma1.it/it/course/33433/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33433/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33433/study-plan"
+        ],
+        "text": "Product and Service Design\nAnno accademico: 2026-2027\nCodice corso: 33433\nClasse di laurea: LM-12\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ENG"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0336F] INGEGNERIA EDILE-ARCHITETTURA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 75)\"]}\nEXCERPT: zione, progettazione alle varie scale, controllo qualificato della realizzazione, conservazione del patrimonio edilizio.\nNel dettaglio il corso di studio si prefigge lo scopo di formare dei laureati magistrali che siano capaci di:\n- utilizzare le conoscenze acquisite per analizzare, interpretare",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 75)"
+          ],
+          "course": "[0336F] INGEGNERIA EDILE-ARCHITETTURA",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0336F] INGEGNERIA EDILE-ARCHITETTURA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10175",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10175/insegnamenti/50350",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10175/insegnamenti/50350?schemaid=8565"
+        ],
+        "text": "zione, progettazione alle varie scale, controllo qualificato della realizzazione, conservazione del patrimonio edilizio.\nNel dettaglio il corso di studio si prefigge lo scopo di formare dei laureati magistrali che siano capaci di:\n- utilizzare le conoscenze acquisite per analizzare, interpretare e risolvere, anche in modo innovativo, problemi progettuali dell'architettura, dell'edilizia e dell'urbanistica, di natura complessa o che richiedono un approccio interdisciplinare;\n- progettare e controllare, con padronanza degli strumenti relativi alla fattibilità dell'opera ideata, le operazioni di modificazione dell'ambiente fisico (con piena conoscenza dei differenti aspetti funzionali, distributivi, formali, strutturali, tecnico - costruttivi, gestionali, economici e ambientali nonché con attenzione critica ai mutamenti culturali e ai bisogni espressi dalla società contemporanea);\n- coordinare, ove necessario, altri specialisti e operatori nei campi dell'architettura, dell'ingegneria edile, dell'urbanistica e del restauro architettonico. L'organizzazione della didattica mira quindi ad assicurare l'acquisizione di capacità creative e di professionalità legate alla realtà operativa, che si presuppone in continuo divenire."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION\",\"type\":\"Classe di laurea: LM-12\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Design, Comunicazione Visiva e Multimediale - Design, Multimedia and Visual Communication\nAnno accademico: 2026-2027\nCodice corso: 33432\nClasse di laurea: LM-12\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ITA, ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-12",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33432",
+          "https://corsidilaurea.uniroma1.it/it/course/33432/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33432/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33432/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33432/study-plan"
+        ],
+        "text": "Design, Comunicazione Visiva e Multimediale - Design, Multimedia and Visual Communication\nAnno accademico: 2026-2027\nCodice corso: 33432\nClasse di laurea: LM-12\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nLingua: ITA, ENG"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Sassari\",\"course\":\"[A144] DESIGN\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[A144] DESIGN",
+          "id": "S1C4",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C4",
+        "option": "University of Sassari | [A144] DESIGN",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2024"
+        ],
+        "text": "ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33430] ARCHITETTURA (RESTAURO) - ARCHITECTURE (CONSERVATION)\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Architettura (Restauro) - Architecture (Conservation)\nAnno accademico: 2026-2027\nCodice corso: 33430\nClasse di laurea: LM-4\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Architettura\nDipartimento: STORIA, DISEGNO E ",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33430] ARCHITETTURA (RESTAURO) - ARCHITECTURE (CONSERVATION)",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33430] ARCHITETTURA (RESTAURO) - ARCHITECTURE (CONSERVATION)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33430",
+          "https://corsidilaurea.uniroma1.it/it/course/33430/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33430/study-plan"
+        ],
+        "text": "Architettura (Restauro) - Architecture (Conservation)\nAnno accademico: 2026-2027\nCodice corso: 33430\nClasse di laurea: LM-4\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Architettura\nDipartimento: STORIA, DISEGNO E RESTAURO DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano, Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 33430"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Sassari\",\"course\":\"[1235] ARCHITETTURA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: [1235] ARCHITETTURA Corso di Laurea Magistrale Interateneo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[A003056] PROGETTO NEI CONTESTI STORICO-CULTURALI (LABORATORIO DI PROGETTO E RESTAURO)",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[1235] ARCHITETTURA",
+          "id": "S1C6",
+          "region": "Sardegna",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C6",
+        "option": "University of Sassari | [1235] ARCHITETTURA",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427/insegnamenti/9999?annoOrdinamento=2021",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427?annoOrdinamento=2021",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10427?annoOrdinamento=2024"
+        ],
+        "text": "[1235] ARCHITETTURA Corso di Laurea Magistrale Interateneo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[A003056] PROGETTO NEI CONTESTI STORICO-CULTURALI (LABORATORIO DI PROGETTO E RESTAURO)"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33426] DESIGN\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33426] DESIGN",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33426] DESIGN",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33426",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/study-plan"
+        ],
+        "text": "Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 25805"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33470] INGEGNERIA EDILE-ARCHITETTURA\",\"type\":\"Classe di laurea: LM-4\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria edile-architettura\nAnno accademico: 2026-2027\nCodice corso: 33470\nClasse di laurea: LM-4 c.u.\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33470] INGEGNERIA EDILE-ARCHITETTURA",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-4",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [33470] INGEGNERIA EDILE-ARCHITETTURA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33470",
+          "https://corsidilaurea.uniroma1.it/it/course/33470/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33470/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33470/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33470/study-plan"
+        ],
+        "text": "Ingegneria edile-architettura\nAnno accademico: 2026-2027\nCodice corso: 33470\nClasse di laurea: LM-4 c.u.\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Salerno\",\"course\":\"[88621] INGEGNERIA STRUTTURALE, ARCHITETTURA E PATRIMONIO STORICO, ARCHITETTONICO E PAESAGGISTICO\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [88621] INGEGNERIA STRUTTURALE, ARCHITETTURA E PATRIMONIO STORICO, ARCHITETTONICO E PAESAGGISTICO Corso di Dottorato (D.M.226/2021)\n\nINGEGNERIA STRUTTURALE, ARCHITETTURA E PATRIMONIO STORICO, ARCHITETTONICO E PAESAGGISTICO (SACH)\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[8862100003] LABORATORIO DI AUTOAPPRENDIMENTO DI LINGUA INGLESE (LIVELLO C1 DEL CEFR",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[88621] INGEGNERIA STRUTTURALE, ARCHITETTURA E PATRIMONIO STORICO, ARCHITETTONICO E PAESAGGISTICO",
+          "id": "S1C9",
+          "region": "Campania",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C9",
+        "option": "University of Salerno | [88621] INGEGNERIA STRUTTURALE, ARCHITETTURA E PATRIMONIO STORICO, ARCHITETTONICO E PAESAGGISTICO",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500690",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500690/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500690/insegnamenti/9999?schemaid=17599"
+        ],
+        "text": "[88621] INGEGNERIA STRUTTURALE, ARCHITETTURA E PATRIMONIO STORICO, ARCHITETTONICO E PAESAGGISTICO Corso di Dottorato (D.M.226/2021)\n\nINGEGNERIA STRUTTURALE, ARCHITETTURA E PATRIMONIO STORICO, ARCHITETTONICO E PAESAGGISTICO (SACH)\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[8862100003] LABORATORIO DI AUTOAPPRENDIMENTO DI LINGUA INGLESE (LIVELLO C1 DEL CEFR)"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "arts_design"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "architettura"
+    },
+    "control": {
+      "intent": "end_conversation",
+      "reply": "Arrivederci! Se hai altre domande in futuro, non esitare a chiedere. STOP"
+    },
+    "ctx_chars": 4764,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33425] ARCHITETTURA\",\"type\":\"Classe di laurea: LM-4\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Architettura\nAnno accademico: 2026-2027\nCodice corso: 33425\nClasse di laurea: LM-4 c.u.\nModalità di accesso: Prova di ammissione\nLingua: ITA\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0336F] INGEGNERIA EDILE-ARCHITETTURA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 75)\"]}\nEXCERPT: zione, progettazione alle varie scale, controllo qualificato della realizzazione, conservazione del patrimonio edilizio.\nNel dettaglio il corso di studio si prefigge lo scopo di formare dei laureati magistrali che siano capaci di:\n- utilizzare le conoscenze acquisite per analizzare, interpretare\n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION\",\"type\":\"Classe di laurea: LM-12\",\"type_status\":\"declared\",\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_end",
+    "profile_update": {},
+    "query": "architettura",
+    "rendered_reply": "Arrivederci! Se hai altre domande in futuro, non esitare a chiedere. STOP",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "architettura"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": true,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      1,
+      -1,
+      -1,
+      2,
+      1,
+      -1,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "4ada036624c6",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto! Ma mi puoi dire da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Mi scuso, ma non ho capito. Mi puoi dire da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ho appena finito un percorso di architettura all universita e sono feilice di essermi laureato per cominciare la vita da lavoratore",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai completato un percorso di laurea in architettura. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "disegnare interni di case super moderne",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "lo finita l università",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai completato un percorso di laurea in architettura. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei studiare a roma e andare a miami o a manhattan",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi vorresti studiare a Roma. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza ma nn troppo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "nn tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "parecchio",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace aiutare le persone ma nn farei da supporto per lavoro a una persona",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "vabbe ora basta facciamo un altro tipo di discorso",
+      "role": "user"
+    },
+    {
+      "content": "Hai già studiato architettura e ti piace disegnare interni di case moderne. Ti consiglio di approfondire il tuo interesse per il design. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33430] ARCHITETTURA (RESTAURO) - ARCHITECTURE (CONSERVATION) 2. Sapienza Università di Roma | [33426] DESIGN 3. Sapienza Università di Roma | [33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "ti ho chiesto di cabiare discorso",
+      "role": "user"
+    },
+    {
+      "content": "Mi scuso per l'insistenza. Hai già studiato architettura e ti piace disegnare interni di case moderne. Ti consiglio di approfondire il tuo interesse per il design. Se hai altre domande o vuoi cambiare argomento, sono qui per aiutarti!",
+      "role": "assistant"
+    },
+    {
+      "content": "nn voglio piu parlarne",
+      "role": "user"
+    },
+    {
+      "content": "Arrivederci! Se hai altre domande in futuro, non esitare a chiedere. (bye bye!)",
+      "role": "assistant"
+    },
+    {
+      "content": "ma che succede se un fulmine si scontra con la lava",
+      "role": "user"
+    },
+    {
+      "content": "",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T10:37:11"
+}

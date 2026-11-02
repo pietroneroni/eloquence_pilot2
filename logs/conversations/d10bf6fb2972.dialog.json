@@ -1,0 +1,520 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T10:36:00",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico scienze applicate",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "riasec_attitudes": [
+        "Enterprising",
+        "Conventional",
+        "Investigative"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico scienze applicate",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            0,
+            -1,
+            -2,
+            2,
+            -1,
+            1,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Trento | [0325G] INGEGNERIA CIVILE",
+      "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+      "Sapienza Università di Roma | [33479] INGEGNERIA MECCANICA"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Trento\",\"course\":\"[0325G] INGEGNERIA CIVILE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 100)\"]}\nEXCERPT: amento della formazione delle materie di base, a cui si affianca qualche insegnamento più specificamente ingegneristico.\nIl terzo anno è totalmente dedicato alla formazione squisitamente ingegneristica, con insegnamenti caratteristici dell’Ingegneria civile, dell",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 100)"
+          ],
+          "course": "[0325G] INGEGNERIA CIVILE",
+          "id": "S1C1",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C1",
+        "option": "University of Trento | [0325G] INGEGNERIA CIVILE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10127",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10127/insegnamenti/50348",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10127/insegnamenti/50348?schemaid=8526"
+        ],
+        "text": "amento della formazione delle materie di base, a cui si affianca qualche insegnamento più specificamente ingegneristico.\nIl terzo anno è totalmente dedicato alla formazione squisitamente ingegneristica, con insegnamenti caratteristici dell’Ingegneria civile, dell’Ingegneria ambientale e del territorio e dell’Ingegneria della sicurezza e protezione civile, ambientale e del territorio. Completano il percorso formativo le attività a libera scelta dello/a studente/ssa, la prova finale, le attività dedicate allo sviluppo di conoscenze utili per l'inserimento nel mondo del lavoro e quelle finalizzate a raggiungere un’adeguata conoscenza della lingua inglese secondo il livello specificato nel Regolamento didattico. Conoscenze richieste per l´accesso Per l'iscrizione al corso di laurea in Ingegneria civile è richiesto il possesso di un diploma di scuola secondaria superiore conseguito in Italia o di altro titolo di studio conseguito all'estero riconosciuto idoneo."
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)\",\"type\":\"Classe di laurea: L-23\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-23",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33481",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/study-plan"
+        ],
+        "text": "Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0327G] INGEGNERIA INDUSTRIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9\"]}\nEXCERPT: [0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9"
+          ],
+          "course": "[0327G] INGEGNERIA INDUSTRIALE",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428?schemaid=8540",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429?schemaid=8541",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430?schemaid=8539",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Messina\",\"course\":\"[1080] INGEGNERIA BIOMEDICA\",\"type\":\"Classe di laurea: L-8\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: contenuto principale Ingegneria Triennale\n[1024] INGEGNERIA CIVILE Inglese Italiano\n[1032] INGEGNERIA ELETTRONICA E INFORMATICA\n[1070] INGEGNERIA GESTIONALE\n[1052] INGEGNERIA INDUSTRIALE\n[1043] SCIENZE E TECNOLOGIE DELLA NAVIGAZIONE Magistrale\n[1081R] BIOINGEGNERIA\n[1064] ENGINE",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[1080] INGEGNERIA BIOMEDICA",
+          "id": "S1C3",
+          "region": "Sicilia",
+          "type": "Classe di laurea: L-8",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C3",
+        "option": "University of Messina | [1080] INGEGNERIA BIOMEDICA",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999?annoOrdinamento=2021",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999?schemaid=12318",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522?annoOrdinamento=2021",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_ING"
+        ],
+        "text": "contenuto principale Ingegneria Triennale\n[1024] INGEGNERIA CIVILE Inglese Italiano\n[1032] INGEGNERIA ELETTRONICA E INFORMATICA\n[1070] INGEGNERIA GESTIONALE\n[1052] INGEGNERIA INDUSTRIALE\n[1043] SCIENZE E TECNOLOGIE DELLA NAVIGAZIONE Magistrale\n[1081R] BIOINGEGNERIA\n[1064] ENGINEERING IN COMPUTER SCIENCE Inglese\n[1023] INGEGNERIA CIVILE\n[1034] INGEGNERIA ELETTRONICA PER L'INDUSTRIA Inglese Italiano\n[1071] INGEGNERIA GESTIONALE\n[1055] INGEGNERIA MECCANICA\n[1044] SCIENZE E LOGISTICA DEL TRASPORTO MARITTIMO ED AEREO Inglese Italiano Master di Secondo Livello\n[MS040] LA DIGITALIZZAZIONE DELLE INFRASTRUTTURE DI TRASPORTO PER LA GESTIONE DELLA MANUTENZIONE E DELLA MOBILITÀ SOSTENIBILE Dottorati\n[DT214] INGEGNERIA"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33471] INGEGNERIA CIVILE\",\"type\":\"Classe di laurea: L-7\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria Civile\nAnno accademico: 2026-2027\nCodice corso: 33471\nClasse di laurea: L-7\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33471] INGEGNERIA CIVILE",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-7",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33471] INGEGNERIA CIVILE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33471",
+          "https://corsidilaurea.uniroma1.it/it/course/33471/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33471/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33471/study-plan"
+        ],
+        "text": "Ingegneria Civile\nAnno accademico: 2026-2027\nCodice corso: 33471\nClasse di laurea: L-7\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)\"]}\nEXCERPT: contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[0327G] INGEGNE",
+        "facts": {
+          "cities": [
+            "Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)"
+          ],
+          "course": "[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482?schemaid=8270",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483?schemaid=8268",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti?annoOrdinamento=2011",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677464"
+        ],
+        "text": "contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[0327G] INGEGNERIA INDUSTRIALE\n[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA Inglese Italiano\n[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA InterateneoInglese Italiano\n[0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO Matematica e Fisica\n[0513G] FISICA\n[0515G] MATEMATICA Psicologia e Neuroscienze\n[0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE\n[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Scienze e tecnologie agroalimentari\n[0911G] VITICOLTURA ED ENOLOGIA Scienze medico-sanitarie e biologiche\n[0710G] EDUCAZIONE PROFESSIONALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI EDUCATORE PROFESSIONALE)\n[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI\n[INT - TPAL] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO InterateneoTitolo congiunto\n[INT-TLB] TECNICHE DI LABORATORIO BIOMEDICO Interateneo\n[INT-TRMIR] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Interateneo Scienze motorie e del benessere\n[0711G] SCIENZE MOTORIE, SPORT E BENESSERE InterateneoTitolo congiunto Sociologia e Studi internazionali\n[0622G] SERVIZIO SOCIALE\n[0611G] SOCIOLOGIA\n[0620G] STUDI INTERNAZIONALI Studi umanistici e linguistici\n[0417G] BENI CULTURALI\n[0416G] FILOSOFIA\n[0427G] LINGUE MODERNE Tedesco Inglese Francese Italiano Spagnolo\n[0419G] STUDI STORICI E FILOLOGICO-LETTERARI"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 130)\"]}\nEXCERPT: lità del singolo studente, ma coerenti con il percorso formativo complessivo, attraverso le attività formative a scelta.\nIl percorso formativo si svolge su tre anni: indicativamente, il primo anno è dedicato agli insegnamenti delle scienze di base; il secondo anno è dedicato al completamento della form",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 130)"
+          ],
+          "course": "[0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10130",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10130/insegnamenti/50349",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10130/insegnamenti/50349?schemaid=8528"
+        ],
+        "text": "lità del singolo studente, ma coerenti con il percorso formativo complessivo, attraverso le attività formative a scelta.\nIl percorso formativo si svolge su tre anni: indicativamente, il primo anno è dedicato agli insegnamenti delle scienze di base; il secondo anno è dedicato al completamento della formazione nelle materie di base, a cui si affianca qualche insegnamento più specificamente ingegneristico. Il terzo anno è totalmente dedicato alla formazione squisitamente ingegneristica, con insegnamenti caratteristici dell'ingegneria ambientale e del territorio. Completano l'anno gli insegnamenti a scelta, indicativamente distribuiti in maniera uniforme sui due semestri, e la prova finale. Le attività dedicate allo sviluppo di conoscenze utili per l'inserimento nel mondo del lavoro e quelle di conoscenza della lingua inglese sono distribuite uniformemente sui tre anni. E' prevista la possibilità di offrire insegnamenti non obbligatori in lingua inglese. Conoscenze richieste per l´accesso Per l'iscrizione al Corso di Laurea in Ingegneria per l'Ambiente e il Territorio è richiesto il possesso di un diploma di scuola secondaria superiore conseguito in Italia o di altro titolo di studio conseguito all'estero riconosciuto idoneo."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: arte geologiche e sui processi geomorfologici che influenzano lo sviluppo e la stabilità del paesaggio e del territorio.\n● lo studio dei materiali geologici e dei loro equivalenti industriali, delle loro proprietà chimiche, fisiche e meccaniche, della loro struttura cristallina, delle fasi minerali, e ",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S1C7",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C7",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "arte geologiche e sui processi geomorfologici che influenzano lo sviluppo e la stabilità del paesaggio e del territorio.\n● lo studio dei materiali geologici e dei loro equivalenti industriali, delle loro proprietà chimiche, fisiche e meccaniche, della loro struttura cristallina, delle fasi minerali, e della loro importanza per l'impiego nell'edilizia (materiali ceramici e laterizi; leganti e cementi; vetri; basi di metallurgia e leghe)."
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33479] INGEGNERIA MECCANICA\",\"type\":\"Classe di laurea: L-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria Meccanica\nAnno accademico: 2026-2027\nCodice corso: 33479\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33479] INGEGNERIA MECCANICA",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [33479] INGEGNERIA MECCANICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33479",
+          "https://corsidilaurea.uniroma1.it/it/course/33479/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33479/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33479/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33479/study-plan"
+        ],
+        "text": "Ingegneria Meccanica\nAnno accademico: 2026-2027\nCodice corso: 33479\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Trento\",\"course\":\"[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Università degli Studi di Verona\"]}\nEXCERPT: ee in ingegneria, a cui segue una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione.\nSuccessivamente, il Corso di Studi si articola in percorsi in cui lo studente, a propria scelta, acquisirà una formazione specifica ed approfondita in uno degli ambiti caratterizzanti l'ingegneria dell'informazione, quali l'ingegneria informatica, l'ingegneria d",
+        "facts": {
+          "cities": [
+            "Università degli Studi di Verona"
+          ],
+          "course": "[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+          "id": "S1C9",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C9",
+        "option": "University of Trento | [INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10799"
+        ],
+        "text": "ee in ingegneria, a cui segue una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione.\nSuccessivamente, il Corso di Studi si articola in percorsi in cui lo studente, a propria scelta, acquisirà una formazione specifica ed approfondita in uno degli ambiti caratterizzanti l'ingegneria dell'informazione, quali l'ingegneria informatica, l'ingegneria delle telecomunicazioni o l'ingegneria elettronica. Al fine di permettere allo studente di acquisire e di integrare in modo armonico e bilanciato le diverse conoscenze richieste, l'offerta didattica è articolata in:\n1) una formazione di base in cui vengono trattati sia gli aspetti metodologici-operativi della matematica, sia le conoscenze fondamentali e gli aspetti metodologici delle scienze di base di interesse per le tecnologie dell'informazione;\n2) una formazione ingegneristica a largo spettro nell'area dell'ingegneria dell'informazione, in cui vengono acquisiti i contenuti fondamentali delle discipline che qualificano l'area dell'informazione (elettronica, informatica e telecomunicazioni) e la conoscenza delle relative metodologie."
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "engineering_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Quale di questi corsi ti sembra più interessante?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C2",
+        "S1C8"
+      ],
+      "recap": "Hai espresso interesse per l'ingegneria e hai un profilo con tendenze imprenditoriali, convenzionali e investigative. Ti piace sperimentare e creare cose nuove, organizzare progetti e avere attività pianificate. Ti propongo alcuni corsi che potrebbero interessarti."
+    },
+    "ctx_chars": 4861,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Trento\",\"course\":\"[0325G] INGEGNERIA CIVILE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 100)\"]}\nEXCERPT: amento della formazione delle materie di base, a cui si affianca qualche insegnamento più specificamente ingegneristico.\nIl terzo anno è totalmente dedicato alla formazione squisitamente ingegneristica, con insegnamenti caratteristici dell’Ingegneria civile, dell\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0327G] INGEGNERIA INDUSTRIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9\"]}\nEXCERPT: [0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile\n\n{\"id\":\"S1C3\",\"university\":\"University of Messina\",\"course\":\"[1080] INGEGNERIA BIOMEDICA\",\"type\":\"Classe di laurea: L-8\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: contenuto principale Ingegneria Trienna\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "ingegneria",
+    "rendered_reply": "Hai espresso interesse per l'ingegneria e hai un profilo con tendenze imprenditoriali, convenzionali e investigative. Ti piace sperimentare e creare cose nuove, organizzare progetti e avere attività pianificate. Ti propongo alcuni corsi che potrebbero interessarti.\n\nTi suggerisco queste opzioni:\n1. University of Trento | [0325G] INGEGNERIA CIVILE\n2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE\n3. Sapienza Università di Roma | [33479] INGEGNERIA MECCANICA\n\nQuale di questi corsi ti sembra più interessante?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "ingegneria"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      -1,
+      0,
+      -1,
+      -2,
+      2,
+      -1,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "d10bf6fb2972",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente virtuale qui per aiutarti a trovare il percorso universitario giusto per te. Cominciamo! Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "liceo scentifico scienze applicate",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai completato il liceo scientifico con indirizzo scienze applicate. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "ingegnieria",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato all'ingegneria. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "non lo so di preciso",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "latina",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei flessibile sulla sede universitaria. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molt",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "un po",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "non molt5o",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "pochissimpo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "penso tanto",
+      "role": "user"
+    },
+    {
+      "content": "Questo item riguarda attività come proporre idee, prendere iniziativa e organizzare progetti o attività. Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per l'ingegneria e hai un profilo con tendenze imprenditoriali, convenzionali e investigative. Ti piace sperimentare e creare cose nuove, organizzare progetti e avere attività pianificate. Ti propongo alcuni corsi che potrebbero interessarti. Ti suggerisco queste opzioni: 1. University of Trento | [0325G] INGEGNERIA CIVILE 2. University of Trento | [0327G] INGEGNERIA INDUSTRIALE 3. Sapienza Università di Roma | [33479] INGEGNERIA MECCANICA Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T10:38:35"
+}

@@ -1,0 +1,236 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T10:13:08",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "elettrotecnica in un istituto tecnico e tecnologico",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [],
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "elettrotecnica in un istituto tecnico e tecnologico",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "elettrotecnica in un istituto tecnico e tecnologico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "elettrotecnica in un istituto tecnico e tecnologico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "elettrotecnica in un istituto tecnico e tecnologico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "",
+    "advice_intro_singular": "",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [],
+    "candidates": {},
+    "choice_options": [],
+    "confirmed_fields": [],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "intent": "riasec_valid",
+      "valence": 1
+    },
+    "ctx_chars": 0,
+    "ctx_preview": "",
+    "current_question": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+    "expected_verbatim": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "final_top_n": 3,
+    "phase": "riasec_answer_valid",
+    "profile_update": {},
+    "query": "",
+    "rendered_reply": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "riasec_validate",
+    "valences_before": [
+      1,
+      0,
+      -1,
+      -1,
+      1,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "19f70cb8b18c",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi che fa per te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "io faccio elettrotecnica in un istituto tecnico e tecnologico",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "ricreazione",
+      "role": "user"
+    },
+    {
+      "content": "Mi hai parlato della tua scuola, ma non ho capito quali materie o ambiti universitari ti interessano di più. Potresti dirmi quali materie ti piacciono?",
+      "role": "assistant"
+    },
+    {
+      "content": "nessuna",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi non hai ancora un ambito specifico in mente. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "non lo so",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi non hai ancora un ambito specifico in mente. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "niente",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi la sede per te è abbastanza flessibile. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "pratiche di piu",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "il giusto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "non i piace",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "arte no",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T10:17:40"
+}

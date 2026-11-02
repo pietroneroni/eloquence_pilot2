@@ -1,0 +1,676 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T10:38:02",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "medicina",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "health_technology"
+      ],
+      "riasec_attitudes": [
+        "Enterprising",
+        "Artistic",
+        "Conventional"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "medicina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "medicina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "medicina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "medicina",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            -1,
+            -1,
+            2,
+            1,
+            0,
+            2,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 15
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": true,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33559] MEDICINA E CHIRURGIA \"B\" - ROMA AZIENDA POLICLINICO UMBERTO I",
+      "Sapienza Università di Roma | [33452] MEDICINA E CHIRURGIA \"A\" - ROMA AZIENDA POLICLINICO UMBERTO I",
+      "Sapienza Università di Roma | [33454] MEDICINE AND SURGERY - MEDICINA E CHIRURGIA \"F\""
+    ],
+    "candidates": {
+      "S2C1": {
+        "block": "{\"id\":\"S2C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33559] MEDICINA E CHIRURGIA \\\"B\\\" - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Classe di laurea: LM-41\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Medicina e chirurgia \"B\" - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 33559\nClasse di laurea: LM-41\nModalità di accesso: Semestre filtro\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33559] MEDICINA E CHIRURGIA \"B\" - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S2C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-41",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C1",
+        "option": "Sapienza Università di Roma | [33559] MEDICINA E CHIRURGIA \"B\" - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33559",
+          "https://corsidilaurea.uniroma1.it/it/course/33559/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33559/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33559/study-plan"
+        ],
+        "text": "Medicina e chirurgia \"B\" - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 33559\nClasse di laurea: LM-41\nModalità di accesso: Semestre filtro\nLingua: ITA"
+      },
+      "S2C10": {
+        "block": "{\"id\":\"S2C10\",\"university\":\"University of Salerno\",\"course\":\"[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\",\"type\":\"CORSO DI LAUREA\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA\"]}\nEXCERPT: CORSO DI LAUREA\n\nTECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[1012500009] APPARECCHIATURE 1",
+        "facts": {
+          "cities": [
+            "A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA"
+          ],
+          "course": "[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+          "id": "S2C10",
+          "region": "Campania",
+          "type": "CORSO DI LAUREA",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S2C10",
+        "option": "University of Salerno | [10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388/insegnamenti/9999?schemaid=17247"
+        ],
+        "text": "CORSO DI LAUREA\n\nTECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[1012500009] APPARECCHIATURE 1"
+      },
+      "S2C2": {
+        "block": "{\"id\":\"S2C2\",\"university\":\"University of Messina\",\"course\":\"[3262] BIOTECNOLOGIE Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO LEG",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[3262] BIOTECNOLOGIE Inglese Italiano",
+          "id": "S2C2",
+          "region": "Sicilia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S2C2",
+        "option": "University of Messina | [3262] BIOTECNOLOGIE Inglese Italiano",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?annoOrdinamento=2019",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?schemaid=12253",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100?annoOrdinamento=2019",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_SCI"
+        ],
+        "text": "ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO LEGALI E GIURIDICI\n[MS041] NEURORADIOLOGIA INTERVENTISTICA VASCOLARE 2.0\n[MS057] NEURORADIOLOGIA INTERVENTISTICA VASCOLARE 3.0\n[MS051] ORTODONZIA CLINICA\n[MS030] ORTOGNATODONZIA DIGITALE\n[MS055] PREVENZIONE E CONTROLLO DELLE MALATTIE CRONICO-DEGENERATIVE Dottorati\n[DT202] BIOINGEGNERIA APPLICATA ALLE SCIENZE MEDICHE\n[DT212] TRANSLATIONAL MOLECULAR MEDICINE AND SURGERY Inglese"
+      },
+      "S2C3": {
+        "block": "{\"id\":\"S2C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33452] MEDICINA E CHIRURGIA \\\"A\\\" - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Classe di laurea: LM-41\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Medicina e chirurgia \"A\" - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 33452\nClasse di laurea: LM-41\nModalità di accesso: Semestre filtro\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33452] MEDICINA E CHIRURGIA \"A\" - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S2C3",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-41",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C3",
+        "option": "Sapienza Università di Roma | [33452] MEDICINA E CHIRURGIA \"A\" - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33452",
+          "https://corsidilaurea.uniroma1.it/it/course/33452/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33452/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33452/study-plan"
+        ],
+        "text": "Medicina e chirurgia \"A\" - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 33452\nClasse di laurea: LM-41\nModalità di accesso: Semestre filtro\nLingua: ITA"
+      },
+      "S2C4": {
+        "block": "{\"id\":\"S2C4\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] E",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S2C4",
+          "region": "Abruzzo",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S2C4",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE Inglese\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY Inglese\n[D3KINE] KINESIOLOGY Inglese\n[D3LLCC] LINGUE, LETTERATURE E CULTURE IN CONTATTO\n[D3MT] MEDICINA TRASLAZIONALE Inglese Italiano\n[D3NI] NEUROSCIENZE E IMAGING Inglese\n[D3OMIT] ONCOLOGIA MOLECOLARE E IMMUNOLOGIA DEI TUMORI Inglese\n[D3PSI] PSICOLOGIA Inglese\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT Inglese\n[D3SBF] SCIENZE BIOMOLECOLARI E FARMACEUTICHE Inglese\n[D3SGST] SCIENZE GIURIDICHE PER LA SOSTENIBILITÀ, LA TRANSIZIONE ECOLOGICA E L’INNOVAZIONE Inglese\n[D3SS] SOCIAL SCIENCES Tedesco Inglese Francese"
+      },
+      "S2C5": {
+        "block": "{\"id\":\"S2C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33454] MEDICINE AND SURGERY - MEDICINA E CHIRURGIA \\\"F\\\"\",\"type\":\"Classe di laurea: LM-41\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Medicine and surgery - Medicina e chirurgia \"F\"\nAnno accademico: 2026-2027\nCodice corso: 33454\nClasse di laurea: LM-41\nModalità di accesso: Prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33454] MEDICINE AND SURGERY - MEDICINA E CHIRURGIA \"F\"",
+          "id": "S2C5",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-41",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C5",
+        "option": "Sapienza Università di Roma | [33454] MEDICINE AND SURGERY - MEDICINA E CHIRURGIA \"F\"",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33454",
+          "https://corsidilaurea.uniroma1.it/it/course/33454/study-plan"
+        ],
+        "text": "Medicine and surgery - Medicina e chirurgia \"F\"\nAnno accademico: 2026-2027\nCodice corso: 33454\nClasse di laurea: LM-41\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S2C6": {
+        "block": "{\"id\":\"S2C6\",\"university\":\"University of Trento\",\"course\":\"[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)\"]}\nEXCERPT: contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[032",
+        "facts": {
+          "cities": [
+            "Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)"
+          ],
+          "course": "[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+          "id": "S2C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S2C6",
+        "option": "University of Trento | [0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482?schemaid=8270",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483?schemaid=8268",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti?annoOrdinamento=2011",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677464"
+        ],
+        "text": "contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[0327G] INGEGNERIA INDUSTRIALE\n[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA Inglese Italiano\n[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA InterateneoInglese Italiano\n[0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO Matematica e Fisica\n[0513G] FISICA\n[0515G] MATEMATICA Psicologia e Neuroscienze\n[0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE\n[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Scienze e tecnologie agroalimentari\n[0911G] VITICOLTURA ED ENOLOGIA Scienze medico-sanitarie e biologiche\n[0710G] EDUCAZIONE PROFESSIONALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI EDUCATORE PROFESSIONALE)\n[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI\n[INT - TPAL] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO InterateneoTitolo congiunto\n[INT-TLB] TECNICHE DI LABORATORIO BIOMEDICO Interateneo\n[INT-TRMIR] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Interateneo Scienze motorie e del benessere\n[0711G] SCIENZE MOTORIE, SPORT E BENESSERE InterateneoTitolo congiunto Sociologia e Studi internazionali\n[0622G] SERVIZIO SOCIALE\n[0611G] SOCIOLOGIA\n[0620G] STUDI INTERNAZIONALI Studi umanistici e linguistici\n[0417G] BENI CULTURALI\n[0416G] FILOSOFIA\n[0427G] LINGUE MODERNE Tedesco Inglese Francese Italiano Spagnolo\n[0419G] STUDI STORICI E FILOLOGICO-LETTERARI"
+      },
+      "S2C7": {
+        "block": "{\"id\":\"S2C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33561] MEDICINA E CHIRURGIA \\\"D\\\" - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Classe di laurea: LM-41\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Medicina e chirurgia \"D\" - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 33561\nClasse di laurea: LM-41\nModalità di accesso: Semestre filtro\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33561] MEDICINA E CHIRURGIA \"D\" - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S2C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-41",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S2C7",
+        "option": "Sapienza Università di Roma | [33561] MEDICINA E CHIRURGIA \"D\" - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33561",
+          "https://corsidilaurea.uniroma1.it/it/course/33561/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33561/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33561/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33561/study-plan"
+        ],
+        "text": "Medicina e chirurgia \"D\" - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 33561\nClasse di laurea: LM-41\nModalità di accesso: Semestre filtro\nLingua: ITA"
+      },
+      "S2C8": {
+        "block": "{\"id\":\"S2C8\",\"university\":\"University of Trento\",\"course\":\"[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Rovereto - Via Fortunato Zeni, 8 (Utenza sostenibile: 80)\"]}\nEXCERPT: CHANICS FOR HEALTHCARE APPLICATIONS\n12 CFU\n96 ore Primo Semestre\n[146252] INFORMATICS AND ELECTRONICS FOR HEALTHCARE 4.0\n12 CFU\n100 ore Secondo Semestre\n[146250] MEDICAL DEVICES QUALITY AND SAFETY\n9 CFU\n76 ore Primo Semestre\n[146249] SYSTEM PHYSIOLOGY AND INTEGRATED BIOLOGICAL PROCESSES\n6 CFU\n48 ore Primo Semestre Maggiori infor",
+        "facts": {
+          "cities": [
+            "Polo di collina - Rovereto - Via Fortunato Zeni, 8 (Utenza sostenibile: 80)"
+          ],
+          "course": "[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE",
+          "id": "S2C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S2C8",
+        "option": "University of Trento | [0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417?schemaid=8611",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418?schemaid=8614",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti?annoOrdinamento=2024"
+        ],
+        "text": "CHANICS FOR HEALTHCARE APPLICATIONS\n12 CFU\n96 ore Primo Semestre\n[146252] INFORMATICS AND ELECTRONICS FOR HEALTHCARE 4.0\n12 CFU\n100 ore Secondo Semestre\n[146250] MEDICAL DEVICES QUALITY AND SAFETY\n9 CFU\n76 ore Primo Semestre\n[146249] SYSTEM PHYSIOLOGY AND INTEGRATED BIOLOGICAL PROCESSES\n6 CFU\n48 ore Primo Semestre Maggiori informazioni\n2° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[146255] ADDITIVE TECHNOLOGIES FOR CUSTOMIZED METALLIC IMPLANTS\n6 CFU\n48 ore\n[146258] DIAGNOSTIC AND THERAPEUTIC TECHNOLOGIES FOR PERSONALIZED MEDICINE\n6 CFU\n52 ore\n[146265] FINAL PROJECT\n18 CFU\n[146259] LABORATORY DIAGNOSTICS FOR PRECISION MEDICINE\n6 CFU\n48 ore\n[146256] TECHNOLOGIES AND INNOVATION IN HEALTH: FOOD AND MEDICAL GRADE PRODUCTS\n6 CFU\n52 ore\n[146257] TRANSPORT PHENOMENA IN LIVING SYSTEMS\n6 CFU\n52 ore"
+      },
+      "S2C9": {
+        "block": "{\"id\":\"S2C9\",\"university\":\"University of Trento\",\"course\":\"[1001S] MEDICINA E CHIRURGIA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: nologie mediche 1: robotica, materiali, nanomedicina OT 3. Nell'ambito della medicina ricostruttiva e rigenerativa OT 4.\nNell'ambito delle tecnologie mediche 2: e-health, telemedicina, intelligenza OT 5. Nell'ambito della terapia genica e cellulare: editing del genoma, malattie OT 6. Nell'ambito della diagnostica avanzata per im",
+        "facts": {
+          "cities": [],
+          "course": "[1001S] MEDICINA E CHIRURGIA",
+          "id": "S2C9",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S2C9",
+        "option": "University of Trento | [1001S] MEDICINA E CHIRURGIA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739/insegnamenti/50517",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10739/insegnamenti/50517?schemaid=8628"
+        ],
+        "text": "nologie mediche 1: robotica, materiali, nanomedicina OT 3. Nell'ambito della medicina ricostruttiva e rigenerativa OT 4.\nNell'ambito delle tecnologie mediche 2: e-health, telemedicina, intelligenza OT 5. Nell'ambito della terapia genica e cellulare: editing del genoma, malattie OT 6. Nell'ambito della diagnostica avanzata per immagini OT 7. Nell'ambito della terapia radiante avanzata OT 8. Nell'ambito della promozione della salute, prevenzione, stili di vita e medicina di genere Profili metodologici Il metodo di insegnamento è basato su una solida base culturale e metodologica conseguita nello studio delle discipline pre-cliniche ed è in seguito prevalentemente centrato su approcci didattici mirati allo sviluppo della capacità di affrontare problemi (problem oriented learning). Una solida base di conoscenza clinica è inoltre assicurata allo studente attraverso l'organizzazione di tirocini certificati basati sulla didattica tutoriale, insieme con una forte comprensione del metodo medico scientifico e delle scienze umane."
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "health_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "medicina"
+    },
+    "control": {
+      "followup_question": "Se in futuro vorresti andare in America a curare le persone, ti consiglio di informarti sui requisiti per l'abilitazione all'esercizio della professione medica negli Stati Uniti. Vuoi sapere di più su questo argomento?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S2C1",
+        "S2C3",
+        "S2C5"
+      ],
+      "recap": "Hai espresso interesse per la medicina e per attività creative e organizzative. Ti propongo alcuni corsi di laurea che potrebbero interessarti."
+    },
+    "ctx_chars": 4884,
+    "ctx_preview": "{\"id\":\"S2C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33559] MEDICINA E CHIRURGIA \\\"B\\\" - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Classe di laurea: LM-41\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Medicina e chirurgia \"B\" - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 33559\nClasse di laurea: LM-41\nModalità di accesso: Semestre filtro\nLingua: ITA\n\n{\"id\":\"S2C2\",\"university\":\"University of Messina\",\"course\":\"[3262] BIOTECNOLOGIE Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO LEG\n\n{\"id\":\"S2C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33452] MEDICINA E CHIRURGIA \\\"A\\\" - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Classe di laurea: LM-41\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Medi\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {
+      "field_of_interest": [
+        "health_technology"
+      ],
+      "intent": "profile_update",
+      "location_changed": true,
+      "retrieval": {
+        "location": {
+          "city": null,
+          "region": null,
+          "requirement": "",
+          "strict": false
+        },
+        "query": "medicina"
+      },
+      "temporary": true
+    },
+    "query": "medicina",
+    "rendered_reply": "Hai espresso interesse per la medicina e per attività creative e organizzative. Ti propongo alcuni corsi di laurea che potrebbero interessarti.\n\nTi suggerisco queste opzioni:\n1. Sapienza Università di Roma | [33559] MEDICINA E CHIRURGIA \"B\" - ROMA AZIENDA POLICLINICO UMBERTO I\n2. Sapienza Università di Roma | [33452] MEDICINA E CHIRURGIA \"A\" - ROMA AZIENDA POLICLINICO UMBERTO I\n3. Sapienza Università di Roma | [33454] MEDICINE AND SURGERY - MEDICINA E CHIRURGIA \"F\"\n\nSe in futuro vorresti andare in America a curare le persone, ti consiglio di informarti sui requisiti per l'abilitazione all'esercizio della professione medica negli Stati Uniti. Vuoi sapere di più su questo argomento?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "medicina"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      1,
+      -1,
+      -1,
+      2,
+      1,
+      0,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "b705afe6582d",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto! Ma mi puoi dire da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Mi scuso, ma non ho capito. Mi puoi dire da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ho appena finito un percorso di architettura all universita e sono feilice di essermi laureato per cominciare la vita da lavoratore",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai completato un percorso di laurea in architettura. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "disegnare interni di case super moderne",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "lo finita l università",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai completato un percorso di laurea in architettura. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei studiare a roma e andare a miami o a manhattan",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi vorresti studiare a Roma. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza ma nn troppo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "nn tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "parecchio",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace aiutare le persone ma nn farei da supporto per lavoro a una persona",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "vabbe ora basta facciamo un altro tipo di discorso",
+      "role": "user"
+    },
+    {
+      "content": "Hai già studiato architettura e ti piace disegnare interni di case moderne. Ti consiglio di approfondire il tuo interesse per il design. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33430] ARCHITETTURA (RESTAURO) - ARCHITECTURE (CONSERVATION) 2. Sapienza Università di Roma | [33426] DESIGN 3. Sapienza Università di Roma | [33432] DESIGN, COMUNICAZIONE VISIVA E MULTIMEDIALE - DESIGN, MULTIMEDIA AND VISUAL COMMUNICATION Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "ti ho chiesto di cabiare discorso",
+      "role": "user"
+    },
+    {
+      "content": "Mi scuso per l'insistenza. Hai già studiato architettura e ti piace disegnare interni di case moderne. Ti consiglio di approfondire il tuo interesse per il design. Se hai altre domande o vuoi cambiare argomento, sono qui per aiutarti!",
+      "role": "assistant"
+    },
+    {
+      "content": "nn voglio piu parlarne",
+      "role": "user"
+    },
+    {
+      "content": "Arrivederci! Se hai altre domande in futuro, non esitare a chiedere. (bye bye!)",
+      "role": "assistant"
+    },
+    {
+      "content": "che squadra tifi",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "voglio diventare un medico",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, vuoi diventare un medico. Ora, però, mi serve sapere da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi sto laurendo in medicin",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "medicina complessa",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato a medicina. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "a curare le persone",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato a medicina. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "si a roma",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei che mi faresti delle domande da test da 3 anno di università",
+      "role": "user"
+    },
+    {
+      "content": "Mi dispiace, ma non posso aiutarti con i test di ammissione. Ora, però, mi serve sapere quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "tantissimo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "parecchio",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "diciamo un po",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "parecchio mi aiutano a semplificare le cose",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per la medicina e per attività creative e organizzative. Ti propongo alcuni corsi di laurea che potrebbero interessarti. Le informazioni disponibili per questa ricerca non contengono opzioni con sede documentata a Roma; questo non significa che non ne esistano. I corsi mostrati sono alternative in altre sedi. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33559] MEDICINA E CHIRURGIA \"B\" - ROMA AZIENDA POLICLINICO UMBERTO I 2. Sapienza Università di Roma | [33452] MEDICINA E CHIRURGIA \"A\" - ROMA AZIENDA POLICLINICO UMBERTO I 3. Sapienza Università di Roma | [33454] MEDICINE AND SURGERY - MEDICINA E CHIRURGIA \"F\" Hai altre preferenze o domande su questi corsi?",
+      "role": "assistant"
+    },
+    {
+      "content": "grazie millema se in futuro vorrei andare in america a curare le ersone",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per la medicina e per attività creative e organizzative. Ti propongo alcuni corsi di laurea che potrebbero interessarti. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33559] MEDICINA E CHIRURGIA \"B\" - ROMA AZIENDA POLICLINICO UMBERTO I 2. Sapienza Università di Roma | [33452] MEDICINA E CHIRURGIA \"A\" - ROMA AZIENDA POLICLINICO UMBERTO I 3. Sapienza Università di Roma | [33454] MEDICINE AND SURGERY - MEDICINA E CHIRURGIA \"F\" Se in futuro vorresti andare in America a curare le persone, ti consiglio di informarti sui requisiti per l'abilitazione all'esercizio della professione medica negli Stati Uniti. Vuoi sapere di più su questo argomento?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T10:43:46"
+}

@@ -1,0 +1,517 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T12:44:40",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "studente di 3 superiore, indirizzo informatica con specializzazione in intelligenza artificiale",
+      "region": "Toscana"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Enterprising",
+        "Conventional"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "studente di 3 superiore, indirizzo informatica con specializzazione in intelligenza artificiale",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "studente di 3 superiore, indirizzo informatica con specializzazione in intelligenza artificiale",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "studente di 3 superiore, indirizzo informatica con specializzazione in intelligenza artificiale",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "studente di 3 superiore, indirizzo informatica con specializzazione in intelligenza artificiale",
+          "region": "Toscana"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            0,
+            2,
+            2,
+            0,
+            2,
+            -1,
+            2,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": "Toscana",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI E AUTOMAZIONE",
+      "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Siena\",\"course\":\"[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI E AUTOMAZIONE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea SISTEMI E AUTOMAZIONE\n\nELETTRONICA PERCORSO GENERICO IE003 2024\nSISTEMI E AUTOMAZIONE SISTEMI INFORMATICI TELECOMUNICAZIONI Anno di corso ALTRE ATTIVITÀ ALTRE ATTIVITÀ\n[103664D]",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI E AUTOMAZIONE",
+          "id": "S1C1",
+          "region": "Toscana",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C1",
+        "option": "University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI E AUTOMAZIONE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/3",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/4",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999?schemaid=11507",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea SISTEMI E AUTOMAZIONE\n\nELETTRONICA PERCORSO GENERICO IE003 2024\nSISTEMI E AUTOMAZIONE SISTEMI INFORMATICI TELECOMUNICAZIONI Anno di corso ALTRE ATTIVITÀ ALTRE ATTIVITÀ\n[103664D] ROBOTICA\n6 CFU\n60 ore Secondo Semestre\n[108151D] ARCHITETTURA DEI CALCOLATORI\n6 CFU\n60 ore Primo Semestre\n[108739D] MISURE ELETTRONICHE\n6 CFU\n60 ore Secondo Semestre\n[2016816] SISTEMI DI CONTROLLO\n12 CFU\n120 ore Ciclo Annuale Unico"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Trento\",\"course\":\"[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)\"]}\nEXCERPT: 6145] FUNDAMENTALS OF COMMUNICATIONS\n12 CFU\n96 ore\n[146146] FUNDAMENTALS OF ELECTRONICS\n12 CFU\n96 ore\n[146142] PHYSICS 2\n6 CFU\n48 ore\n[146314] PROCESSING SYSTEMS\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL ",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)"
+          ],
+          "course": "[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+          "id": "S1C10",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C10",
+        "option": "University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458?schemaid=8538",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459?schemaid=8535",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460?schemaid=8536",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461?schemaid=8537",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "6145] FUNDAMENTALS OF COMMUNICATIONS\n12 CFU\n96 ore\n[146146] FUNDAMENTALS OF ELECTRONICS\n12 CFU\n96 ore\n[146142] PHYSICS 2\n6 CFU\n48 ore\n[146314] PROCESSING SYSTEMS\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146125] ADVANCED PROGRAMMING\n6 CFU\n48 ore\n[145996] EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS\n6 CFU\n48 ore\n[146130] FUNDAMENTALS OF ROBOTICS\n12 CFU\n96 ore\n[146147] OPERATING SYSTEMS\n12 CFU\n96 ore\n[146148] SOFTWARE ENGINEERING\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146135] DIGITAL SIGNAL CODING\n6 CFU\n48 ore\n[146069] NEXT GENERATION NETWORKS\n6 CFU\n48 ore\n[146311] REMOTE SENSING SYSTEMS AND IMAGE ANALYSIS\n6 CFU\n48 ore\n[146134] VISION AND RECOGNITION\n6 CFU\n48 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146138] ADVANCED LOGIC DESIGN\n6 CFU\n48 ore\n[146163] BASICS OF OPTOELECTRONICS\n6 CFU\n48 ore\n[146150] DIGITAL ELECTRONIC CIRCUITS\n6 CFU\n48 ore\n[146198] HIGH-FREQUENCY CIRCUITS FOR SYSTEMS-ON-CHIP\n6 CFU\n48 ore\n[146209] INTRODUCTION TO PARALLEL COMPUTING\n6 CFU\n48 ore\n[146304] LABORATORY OF SYSTEMS ON CHIP\n6 CFU\n48 ore\n3° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[145993] DATABASES\n6 CFU\n48 ore\n[146070] PROVA FINALE\n6 CFU\n[146071] TIROCINI FORMATIVI E DI ORIENTAMENTO\n9 CFU"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova d",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C2",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C2",
+        "option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33502",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/study-plan"
+        ],
+        "text": "Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14824"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: ile, le nozioni sul calcolo differenziale e integrale e i metodi elementari per la soluzione di equazioni differenziali.\nL'insegnamento di Fondamenti di Fisica si propone di introdurre i concetti di base riguardanti le grandezze fisiche, la lor",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S1C3",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C3",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "ile, le nozioni sul calcolo differenziale e integrale e i metodi elementari per la soluzione di equazioni differenziali.\nL'insegnamento di Fondamenti di Fisica si propone di introdurre i concetti di base riguardanti le grandezze fisiche, la loro misura, la meccanica del punto materiale, dei corpi rigidi, dei fluidi e la termodinamica. L'insegnamento di Chimica dei Materiali fornirà nozioni di chimica generale inorganica ed organica, struttura dell'atomo e tavola periodica, legami chimici, stati di aggregazione della materia (solido, liquido, gassoso), equilibri acido-base, elettrochimica e materiali per le tecnologie innovative. Nel percorso formativo, gli studenti acquisiscono, inoltre, i concetti fondamentali dell'informatica e della sua applicazione pratica attraverso l'uso di fogli di calcolo per risolvere problemi reali e compiere analisi dati, creazione grafici e rappresentazioni visive volte a facilitare la comunicazione e l'interpretazione dei risultati. A questi insegnamenti si aggiunge la conoscenza e la comprensione, in forma scritta e orale, della lingua inglese a livello QCER B1 o superiore, con riferimento anche ai lessici disciplinari."
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: [0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ ",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)"
+          ],
+          "course": "[0514G] INFORMATICA",
+          "id": "S1C4",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C4",
+        "option": "University of Trento | [0514G] INFORMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"
+        ],
+        "text": "[0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[146055] CALCULUS 1\n\n12 CFU\n108 ore Primo Semestre\n[145992] COMPUTER ARCHITECTURES\n6 CFU\n48 ore Secondo Semestre\n[146140] COMPUTER PROGRAMMING 1\n\n12 CFU\n96 ore Primo Semestre\n[146062] COMPUTER PROGRAMMING 2\n\n6 CFU\n48 ore Secondo Semestre\n[146168] FUNCTIONAL PROGRAMMING\n6 CFU\n48 ore Secondo Semestre\n[146056] GEOMETRY AND LINEAR ALGEBRA\n6 CFU\n56 ore Primo Semestre\n[146289] MATHEMATICS FOR INFORMATICS\n6 CFU\n48 ore Secondo Semestre\n[146060] PROBABILITY\n6 CFU\n48 ore Secondo Semestre SCEGLIERE 1 INSEGNAMENTO TRA I SEGUENTI (3 CFU)\nMaggiori informazioni\n[145326] INGLESE LIVELLO C1\n\n3 CFU\n50 ore Attività a durata annuale\n[140189] PROVA DI CONOSCENZA LINGUA ITALIANA (A1)"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Siena\",\"course\":\"[ME009] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI ORTOTTISTA ED ASSISTENTE DI OFTALMOLOGIA)\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\n16 ore Periodo fittizio - corso Sicurezza SPP\n[2017475] INGLESE SCIENTIFICO MOD. 1\n\n2 CFU\n20 ore\n[2017476] INGLESE SCIENTIF",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[ME009] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI ORTOTTISTA ED ASSISTENTE DI OFTALMOLOGIA)",
+          "id": "S1C5",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C5",
+        "option": "University of Siena | [ME009] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI ORTOTTISTA ED ASSISTENTE DI OFTALMOLOGIA)",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10364",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10364/insegnamenti/9999"
+        ],
+        "text": "FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\n16 ore Periodo fittizio - corso Sicurezza SPP\n[2017475] INGLESE SCIENTIFICO MOD. 1\n\n2 CFU\n20 ore\n[2017476] INGLESE SCIENTIFICO MOD. 2\n\n2 CFU\n20 ore"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33526\nClasse di laurea: L-5\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Lettere e Filos",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33526",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/study-plan"
+        ],
+        "text": "Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33526\nClasse di laurea: L-5\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Lettere e Filosofia, Ingegneria dell'informazione, informatica e statistica\nDipartimento: FILOSOFIA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14621"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Siena\",\"course\":\"[ME004] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO)\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\nPeriodo fittizio - corso Sicurezza SPP\n[2015806] LABORATORIO DI IGIENE OCCUPAZIONALE I\n2 CFU\n20 ore Primo Semestre\n[2015807]",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[ME004] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO)",
+          "id": "S1C7",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C7",
+        "option": "University of Siena | [ME004] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO)",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10329",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10329/insegnamenti/9999"
+        ],
+        "text": "FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\nPeriodo fittizio - corso Sicurezza SPP\n[2015806] LABORATORIO DI IGIENE OCCUPAZIONALE I\n2 CFU\n20 ore Primo Semestre\n[2015807] LABORATORIO DI IGIENE OCCUPAZIONALE II\n1 CFU\n10 ore Secondo Semestre\n[2017475] INGLESE SCIENTIFICO MOD. 1\n\n2 CFU\n20 ore\n[2017476] INGLESE SCIENTIFICO MOD. 2\n\n2 CFU\n20 ore"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Salerno\",\"course\":\"[02728] ETICA DEI SISTEMI DI INTELLIGENZA ARTIFICIALE (MACHINE ETHICS)\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: MASTER DI PRIMO LIVELLO\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n1 anni Ordinamento\n2024\nStato Aperto Lingua Italiano Tipologia Master Normativa D.M. 270/2004\nCorso Interateneo No Accesso Programmato Sede UNIVERSIT",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[02728] ETICA DEI SISTEMI DI INTELLIGENZA ARTIFICIALE (MACHINE ETHICS)",
+          "id": "S1C8",
+          "region": "Campania",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C8",
+        "option": "University of Salerno | [02728] ETICA DEI SISTEMI DI INTELLIGENZA ARTIFICIALE (MACHINE ETHICS)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500822"
+        ],
+        "text": "MASTER DI PRIMO LIVELLO\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n1 anni Ordinamento\n2024\nStato Aperto Lingua Italiano Tipologia Master Normativa D.M. 270/2004\nCorso Interateneo No Accesso Programmato Sede UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO Dipartimento DIPARTIMENTO DI SCIENZE AZIENDALI - MANAGEMENT & INNOVATION SYSTEMS Verifica conoscenze richieste per l'accesso No Docenti del corso Visualizza lista Requisiti di accesso Titoli opzionali (a scelta fra i seguenti)\n[ L2 ]\nLaurea di Primo Livello\n[ LS ]\nLaurea Specialistica\n[ LM ]\nLaurea Magistrale\n[ L1 ]\nLaurea Ruoli Referente Corso di Studio ROBERTO TAGLIAFERRI"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Siena\",\"course\":\"[SE003] FISICA E TECNOLOGIE AVANZATE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: 5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[SE003] FISICA E TECNOLOGIE AVANZATE",
+          "id": "S1C9",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C9",
+        "option": "University of Siena | [SE003] FISICA E TECNOLOGIE AVANZATE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=11699"
+        ],
+        "text": "5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n[2016768] MECCANICA STATISTICA\n6 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1\n\n3 CFU"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "computer_science"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Quale di questi corsi ti sembra più interessante?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C2"
+      ],
+      "recap": "Hai espresso interesse per l'informatica, in particolare per l'intelligenza artificiale e la sicurezza informatica. Ti ho suggerito due corsi di laurea in informatica che potrebbero interessarti, uno a Siena e uno a Roma."
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Siena\",\"course\":\"[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI E AUTOMAZIONE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea SISTEMI E AUTOMAZIONE\n\nELETTRONICA PERCORSO GENERICO IE003 2024\nSISTEMI E AUTOMAZIONE SISTEMI INFORMATICI TELECOMUNICAZIONI Anno di corso ALTRE ATTIVITÀ ALTRE ATTIVITÀ\n[103664D]\n\n{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova d\n\n{\"id\":\"S1C3\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di L\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "intelligenza artificiale sicurezza informatica",
+    "rendered_reply": "Hai espresso interesse per l'informatica, in particolare per l'intelligenza artificiale e la sicurezza informatica. Ti ho suggerito due corsi di laurea in informatica che potrebbero interessarti, uno a Siena e uno a Roma.\n\nTi suggerisco queste opzioni:\n1. University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI E AUTOMAZIONE\n2. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\n\nQuale di questi corsi ti sembra più interessante?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": "Toscana",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "intelligenza artificiale sicurezza informatica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      0,
+      2,
+      2,
+      0,
+      2,
+      -1,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "3f37b7aabacf",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao sono uno studente di 3 superiore e faccio come indirizzo informatica con specializzazione in intelligenza artificiale",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso universitario più adatto a te. Iniziamo! Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ciao sono uno studente di 3 superiore e faccio come indirizzo informatica con specializzazione in intelligenza artificiale",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "coding e informatica",
+      "role": "user"
+    },
+    {
+      "content": "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "sicurezza informatica",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "zona toscana",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "mediamente",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "mediamente",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "olto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per l'informatica, in particolare per l'intelligenza artificiale e la sicurezza informatica. Ti ho suggerito due corsi di laurea in informatica che potrebbero interessarti, uno a Siena e uno a Roma. Ti suggerisco queste opzioni: 1. University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE SISTEMI E AUTOMAZIONE 2. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T12:48:31"
+}

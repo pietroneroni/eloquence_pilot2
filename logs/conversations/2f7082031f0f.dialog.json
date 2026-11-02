@@ -1,0 +1,528 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T14:57:37",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology",
+        "physical_sciences"
+      ],
+      "riasec_attitudes": [
+        "Artistic",
+        "Social",
+        "Enterprising"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology",
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            1,
+            0
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+      "Sapienza Università di Roma | [33588] FISICA",
+      "Sapienza Università di Roma | [29999] TECNICHE DI NEUROFISIOPATOLOGIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI NEUROFISIOPATOLOGIA) - ROMA AZIENDA POLICLINICO UMBERTO I"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29873] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA I - REGIONE MOLISE–IRCCS NEUROMED POZZILLI\",\"type\":\"Classe di laurea: L/SNT2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea I - Regione Molise–IRCCS Neuromed Pozzilli\nAnno accademico: 2026-2027\nCodice corso: 29873\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingu",
+        "facts": {
+          "cities": [],
+          "course": "[29873] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA I - REGIONE MOLISE–IRCCS NEUROMED POZZILLI",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT2",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [29873] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA I - REGIONE MOLISE–IRCCS NEUROMED POZZILLI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29873",
+          "https://corsidilaurea.uniroma1.it/it/course/29873/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29873/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29873/study-plan"
+        ],
+        "text": "Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea I - Regione Molise–IRCCS Neuromed Pozzilli\nAnno accademico: 2026-2027\nCodice corso: 29873\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29981] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA A - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Classe di laurea: L/SNT2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea A - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29981\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[29981] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA A - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT2",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [29981] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA A - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29981",
+          "https://corsidilaurea.uniroma1.it/it/course/29981/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/29981/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29981/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29981/study-plan"
+        ],
+        "text": "Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea A - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29981\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicin",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+          "id": "S1C2",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C2",
+        "option": "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33571",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/study-plan"
+        ],
+        "text": "Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA DEI PROCESSI DI SVILUPPO E SOCIALIZZAZIONE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Prevalentemente a distanza\nCodice prova: 05429"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Foggia\",\"course\":\"[1807] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1807] SCIENZE E TECNICHE PSICOLOGICHE",
+          "id": "S1C3",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C3",
+        "option": "University of Foggia | [1807] SCIENZE E TECNICHE PSICOLOGICHE",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535/insegnamenti/9999",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535/insegnamenti/9999?schemaid=2791"
+        ],
+        "text": "[1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33588] FISICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Fisica\nAnno accademico: 2026-2027\nCodice corso: 33588\nClasse di laurea: L-30\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: FISICA\nSede: Roma\nLingua:",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33588] FISICA",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33588] FISICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33588",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33588/study-plan"
+        ],
+        "text": "Fisica\nAnno accademico: 2026-2027\nCodice corso: 33588\nClasse di laurea: L-30\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: FISICA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14619"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Messina\",\"course\":\"[9214] FISICA\",\"type\":\"Classe di laurea: L-30\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: contenuto principale Scienze matematiche e informatiche, scienze fisiche e scienze della terra Triennale\n[9215] INFORMATICA Inglese Italiano\n[9218] MATEMATICA Magistrale\n[9237] DATA SCIENCE Inglese\n[9233] GEOPHYSICAL SCIENCES FOR SEISMIC RISK Inglese\n[9223] MATEMATICA\n[9232] PHY",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[9214] FISICA",
+          "id": "S1C5",
+          "region": "Sicilia",
+          "type": "Classe di laurea: L-30",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C5",
+        "option": "University of Messina | [9214] FISICA",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999?annoOrdinamento=2020",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046/insegnamenti/9999?schemaid=12236",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10046?annoOrdinamento=2020",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_MAT"
+        ],
+        "text": "contenuto principale Scienze matematiche e informatiche, scienze fisiche e scienze della terra Triennale\n[9215] INFORMATICA Inglese Italiano\n[9218] MATEMATICA Magistrale\n[9237] DATA SCIENCE Inglese\n[9233] GEOPHYSICAL SCIENCES FOR SEISMIC RISK Inglese\n[9223] MATEMATICA\n[9232] PHYSICS Inglese Italiano Master di Secondo Livello\n[MS044] SICUREZZA SISMICA E SVILUPPO URBANO SOSTENIBILE Dottorati\n[DT205] FISICA Inglese Italiano\n[DT122] MATEMATICA E SCIENZE COMPUTAZIONALI Inglese Italiano"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29999] TECNICHE DI NEUROFISIOPATOLOGIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI NEUROFISIOPATOLOGIA) - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecniche di neurofisiopatologia (abilitante alla professione sanitaria di Tecnico di neurofisiopatologia) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29999\nClasse di laurea: L/SNT3\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: P",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[29999] TECNICHE DI NEUROFISIOPATOLOGIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI NEUROFISIOPATOLOGIA) - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [29999] TECNICHE DI NEUROFISIOPATOLOGIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI NEUROFISIOPATOLOGIA) - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29999",
+          "https://corsidilaurea.uniroma1.it/it/course/29999/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/29999/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29999/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29999/study-plan"
+        ],
+        "text": "Tecniche di neurofisiopatologia (abilitante alla professione sanitaria di Tecnico di neurofisiopatologia) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29999\nClasse di laurea: L/SNT3\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Odontoiatria, Farmacia e Medicina\nDipartimento: NEUROSCIENZE UMANE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05418"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Sassari\",\"course\":\"[A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[40001359] PSICOLOGIA DELLO SVILUPPO\n12 CFU\n60 ore Tipo insegnamento: [OBB] - Obbligatoria\n[40002359] PSICOLOGIA DINAMICA\n6 CFU\n30 ore Tipo insegnamento",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI",
+          "id": "S1C7",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C7",
+        "option": "University of Sassari | [A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999?annoOrdinamento=2018",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759/insegnamenti/9999?annoOrdinamento=2023",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759?annoOrdinamento=2018",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10759?annoOrdinamento=2023"
+        ],
+        "text": "[A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[40001359] PSICOLOGIA DELLO SVILUPPO\n12 CFU\n60 ore Tipo insegnamento: [OBB] - Obbligatoria\n[40002359] PSICOLOGIA DINAMICA\n6 CFU\n30 ore Tipo insegnamento: [OBB] - Obbligatoria\n[40004718] PSICOMETRIA\n9 CFU\n45 ore Tipo insegnamento: [OBB] - Obbligatoria\n[A001319] NEUROLOGIA CLINICA E NEUROPSICOLOGIA\n6 CFU\n30 ore Tipo insegnamento: [OBB] - Obbligatoria\n[A001763] NEUROSCIENZE DELL'ETA' EVOLUTIVA\n6 CFU\n30 ore Tipo insegnamento: [OBB] - Obbligatoria\n[A001936] PSICOLOGIA DI COMUNITA'\n\n6 CFU\n30 ore Tipo insegnamento: [OBB] - Obbligatoria\n[A001938] LINGUA E TRADUZIONE - LINGUA INGLESE 2"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecnica della riabilitazione psichiatrica (abilitante alla professione sanitaria di Tecnico della riabilitazione psichiatrica) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29987\nClasse di laurea: L/SNT2\nTipologia di corso: Laurea\nDurata: 3 anni\nM",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [29987] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA) - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29987",
+          "https://corsidilaurea.uniroma1.it/it/course/29987/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29987/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29987/study-plan"
+        ],
+        "text": "Tecnica della riabilitazione psichiatrica (abilitante alla professione sanitaria di Tecnico della riabilitazione psichiatrica) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29987\nClasse di laurea: L/SNT2\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Odontoiatria, Farmacia e Medicina\nDipartimento: NEUROSCIENZE UMANE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05418"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of L'Aquila\",\"course\":\"[P3Q] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [P3Q] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[P3Q] SCIENZE E TECNICHE PSICOLOGICHE",
+          "id": "S1C9",
+          "region": "Abruzzo",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C9",
+        "option": "University of L'Aquila | [P3Q] SCIENZE E TECNICHE PSICOLOGICHE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416/insegnamenti/9999",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10416/insegnamenti/9999?schemaid=11435"
+        ],
+        "text": "[P3Q] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "psychology",
+      "physical_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "neuroscienze psicologia fisica"
+    },
+    "control": {
+      "intent": "selection",
+      "option_number": 1
+    },
+    "ctx_chars": 4747,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29873] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA I - REGIONE MOLISE–IRCCS NEUROMED POZZILLI\",\"type\":\"Classe di laurea: L/SNT2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea I - Regione Molise–IRCCS Neuromed Pozzilli\nAnno accademico: 2026-2027\nCodice corso: 29873\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingu\n\n{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicin\n\n{\"id\":\"S1C3\",\"university\":\"University of Foggia\",\"course\":\"[1807] SCI\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_selected",
+    "profile_update": {},
+    "query": "neuroscienze psicologia fisica",
+    "rendered_reply": "Hai scelto: Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA.",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "neuroscienze psicologia fisica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      -1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 1,
+    "selected_option": "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+    "shown_options": [
+      "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+      "Sapienza Università di Roma | [33588] FISICA",
+      "Sapienza Università di Roma | [29999] TECNICHE DI NEUROFISIOPATOLOGIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI NEUROFISIOPATOLOGIA) - ROMA AZIENDA POLICLINICO UMBERTO I"
+    ],
+    "source_turn": 14
+  },
+  "session_id": "2f7082031f0f",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "sono una studentessa del liceo scientifico e sono in quinto anno. ancora non ho scelto l’università e non so come orientarmi. mi puoi aiutare",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare la strada giusta per il tuo futuro accademico. Iniziamo con alcune domande per capire meglio le tue preferenze e i tuoi obiettivi. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "sto facendo il liceo scientifico",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi interessa sia la psicologia, per studiare le neuroscienze che materie piu trattamente matematiche tipo fisica solo che non sono molto portata",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! La psicologia e le neuroscienze sono campi affascinanti, e la fisica è una materia fondamentale. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "una tra queste due",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "preferirei rimanere nel lazio ma ho anche la possibilitàò di spostarmi",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "non troppo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "tantissimo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "indiffereente",
+      "role": "user"
+    },
+    {
+      "content": "Ti piacerebbe esplorare corsi di laurea che combinano psicologia e neuroscienze, come Scienze e tecniche psicologiche, o che ti permettano di approfondire la fisica. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA 2. Sapienza Università di Roma | [33588] FISICA 3. Sapienza Università di Roma | [29999] TECNICHE DI NEUROFISIOPATOLOGIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI NEUROFISIOPATOLOGIA) - ROMA AZIENDA POLICLINICO UMBERTO I Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "l’ 1 o il 3",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T15:01:06"
+}

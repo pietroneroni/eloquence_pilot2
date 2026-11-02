@@ -1,0 +1,539 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-28T11:38:03",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "diploma tecnico commerciale",
+      "region": "Campania"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "health_technology"
+      ],
+      "riasec_attitudes": [
+        "Social",
+        "Conventional",
+        "Enterprising"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "diploma tecnico commerciale",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "diploma tecnico commerciale",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "diploma tecnico commerciale",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "diploma tecnico commerciale",
+          "region": "Campania"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "health_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            -1,
+            1,
+            -1,
+            -1,
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": "Campania",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Salerno | [10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+      "University of Salerno | [10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT. DI OSTETRICA/O)",
+      "University of Salerno | [10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\",\"type\":\"CORSO DI LAUREA\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA\"]}\nEXCERPT: CORSO DI LAUREA\n\nTECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[1012500009] APPARECCHIATURE 1",
+        "facts": {
+          "cities": [
+            "A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA"
+          ],
+          "course": "[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+          "id": "S1C1",
+          "region": "Campania",
+          "type": "CORSO DI LAUREA",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C1",
+        "option": "University of Salerno | [10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500388/insegnamenti/9999?schemaid=17247"
+        ],
+        "text": "CORSO DI LAUREA\n\nTECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[1012500009] APPARECCHIATURE 1"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Salerno\",\"course\":\"[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\",\"type\":\"CORSO DI LAUREA\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - BARONISSI\"]}\nEXCERPT: CORSO DI LAUREA\nINFO PERCORSO FORMATIVO E INSEGNAMENTI Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2024\nStato Aperto Crediti\n180 CFU Lingua Italiano Tipologia Triennali Normativa D.M. 270/2004\nClasse d",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - BARONISSI"
+          ],
+          "course": "[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)",
+          "id": "S1C10",
+          "region": "Campania",
+          "type": "CORSO DI LAUREA",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C10",
+        "option": "University of Salerno | [10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500699",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500699/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500699/insegnamenti/9999?schemaid=16664"
+        ],
+        "text": "CORSO DI LAUREA\nINFO PERCORSO FORMATIVO E INSEGNAMENTI Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2024\nStato Aperto Crediti\n180 CFU Lingua Italiano Tipologia Triennali Normativa D.M. 270/2004\nClasse di laurea L/SNT3 - Classe delle lauree in Professioni sanitarie tecniche Corso Interateneo No Accesso Programmato Sede UNIVERSITA' DEGLI STUDI DI SALERNO - BARONISSI Dipartimento DIPARTIMENTO DI MEDICINA, CHIRURGIA E ODONTOIATRIA \"SCUOLA MEDICA SALERNITANA\"\nVerifica conoscenze richieste per l'accesso No Docenti del corso Visualizza lista Requisiti di accesso Titoli opzionali (a scelta fra i seguenti)\n[ TSS ]\nTitolo di Scuola Superiore\n[ TS ]\nTitolo straniero Ruoli Presidente del Consiglio didattico VIVIANA IZZO"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Messina\",\"course\":\"[3262] BIOTECNOLOGIE Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NE",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[3262] BIOTECNOLOGIE Inglese Italiano",
+          "id": "S1C2",
+          "region": "Sicilia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C2",
+        "option": "University of Messina | [3262] BIOTECNOLOGIE Inglese Italiano",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?annoOrdinamento=2019",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100/insegnamenti/9999?schemaid=12253",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10100?annoOrdinamento=2019",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_SCI"
+        ],
+        "text": "ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NEI SUOI ASPETTI MEDICO LEGALI E GIURIDICI\n[MS041] NEURORADIOLOGIA INTERVENTISTICA VASCOLARE 2.0\n[MS057] NEURORADIOLOGIA INTERVENTISTICA VASCOLARE 3.0\n[MS051] ORTODONZIA CLINICA\n[MS030] ORTOGNATODONZIA DIGITALE\n[MS055] PREVENZIONE E CONTROLLO DELLE MALATTIE CRONICO-DEGENERATIVE Dottorati\n[DT202] BIOINGEGNERIA APPLICATA ALLE SCIENZE MEDICHE\n[DT212] TRANSLATIONAL MOLECULAR MEDICINE AND SURGERY Inglese"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[02121] ECONOMIA AZIENDALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: TE\n[10121] INFERMIERISTICA (ABILITANTE ALLA PROF. SANIT. DI INFERMIERE)\n[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT.\nDI OSTETRICA/O)\n[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LAB",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[02121] ECONOMIA AZIENDALE",
+          "id": "S1C3",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C3",
+        "option": "University of Salerno | [02121] ECONOMIA AZIENDALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10001?schemaid=16917",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10002?schemaid=16916",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10003#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti/10003?schemaid=16915",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500151/insegnamenti?annoOrdinamento=2016",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562230878857"
+        ],
+        "text": "TE\n[10121] INFERMIERISTICA (ABILITANTE ALLA PROF. SANIT. DI INFERMIERE)\n[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT.\nDI OSTETRICA/O)\n[10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n[07121] TECNICHE ERBORISTICHE Scienze della Formazione\n[44124] SCIENZE DELL'EDUCAZIONE\n[44125] SCIENZE DELLE ATTIVITA' MOTORIE, SPORTIVE E DELL'EDUCAZIONE PSICOMOTORIA Scienze\n[05124] CHIMICA\n[05126] FISICA\n[05121] INFORMATICA\n[05123] MATEMATICA\n[05127] SCIENZE AMBIENTALI\n[05128] SCIENZE BIOLOGICHE\n[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ Sociologica\n[03129] SCIENZE DEL SERVIZIO SOCIALE\n[03122] SCIENZE DELLA COMUNICAZIONE\n[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI\n[03123] SOCIOLOGIA Ingegneria\n[06122] INGEGNERIA CHIMICA\n[06121] INGEGNERIA CIVILE\n[06125] INGEGNERIA CIVILE PER L'AMBIENTE ED IL TERRITORIO\n[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE\n[06124] INGEGNERIA ELETTRONICA\n[06126] INGEGNERIA GESTIONALE\n[06127] INGEGNERIA INFORMATICA\n[06123] INGEGNERIA MECCANICA\n[06129] TECNICHE PER L'EDILIZIA E IL TERRITORIO Umanistica\n[43124] DISCIPLINE DELLE ARTI VISIVE, DELLA MUSICA E DELLO SPETTACOLO\n[03125] FILOSOFIA\n[03126] LETTERE\n[43122] LINGUE E CULTURE STRANIERE\n[03128] SCIENZE DEI BENI CULTURALI"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)\"]}\nEXCERPT: contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecn",
+        "facts": {
+          "cities": [
+            "Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)"
+          ],
+          "course": "[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+          "id": "S1C4",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C4",
+        "option": "University of Trento | [0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482?schemaid=8270",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483?schemaid=8268",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti?annoOrdinamento=2011",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677464"
+        ],
+        "text": "contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[0327G] INGEGNERIA INDUSTRIALE\n[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA Inglese Italiano\n[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA InterateneoInglese Italiano\n[0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO Matematica e Fisica\n[0513G] FISICA\n[0515G] MATEMATICA Psicologia e Neuroscienze\n[0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE\n[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Scienze e tecnologie agroalimentari\n[0911G] VITICOLTURA ED ENOLOGIA Scienze medico-sanitarie e biologiche\n[0710G] EDUCAZIONE PROFESSIONALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI EDUCATORE PROFESSIONALE)\n[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI\n[INT - TPAL] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO InterateneoTitolo congiunto\n[INT-TLB] TECNICHE DI LABORATORIO BIOMEDICO Interateneo\n[INT-TRMIR] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Interateneo Scienze motorie e del benessere\n[0711G] SCIENZE MOTORIE, SPORT E BENESSERE InterateneoTitolo congiunto Sociologia e Studi internazionali\n[0622G] SERVIZIO SOCIALE\n[0611G] SOCIOLOGIA\n[0620G] STUDI INTERNAZIONALI Studi umanistici e linguistici\n[0417G] BENI CULTURALI\n[0416G] FILOSOFIA\n[0427G] LINGUE MODERNE Tedesco Inglese Francese Italiano Spagnolo\n[0419G] STUDI STORICI E FILOLOGICO-LETTERARI"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Salerno\",\"course\":\"[02727] DATA SCIENCE E DIGITAL INNOVATION PER INSURANCE & FINANCIAL SERVICES\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: contenuto principale Master Economico-Statistica\n[02726] DIREZIONE DELLE AZIENDE E DELLE ORGANIZZAZIONI SANITARIE\n[02718] DIREZIONE DELLE AZIENDE E DELLE ORGANIZZAZIONI SANITARIE - EXPERIENCE LAB\n[02719] DIREZIONE DELLE AZIENDE E DELLE",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[02727] DATA SCIENCE E DIGITAL INNOVATION PER INSURANCE & FINANCIAL SERVICES",
+          "id": "S1C5",
+          "region": "Campania",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C5",
+        "option": "University of Salerno | [02727] DATA SCIENCE E DIGITAL INNOVATION PER INSURANCE & FINANCIAL SERVICES",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500696",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562231222576"
+        ],
+        "text": "contenuto principale Master Economico-Statistica\n[02726] DIREZIONE DELLE AZIENDE E DELLE ORGANIZZAZIONI SANITARIE\n[02718] DIREZIONE DELLE AZIENDE E DELLE ORGANIZZAZIONI SANITARIE - EXPERIENCE LAB\n[02719] DIREZIONE DELLE AZIENDE E DELLE ORGANIZZAZIONI SANITARIE - EXPERIENCE LAB (BIENNALE)\n[02714] ECONOMICS, FINANCE AND RISK MANAGEMENT\n[02723] ECONOMICS, FINANCE AND RISK MANAGEMENT\n[02724] ECONOMICS, FINANCE AND RISK MANAGEMENT - EXECUTIVE\n[02728] ETICA DEI SISTEMI DI INTELLIGENZA ARTIFICIALE (MACHINE ETHICS)\n[02725] MASTER IN ADVANCED ANALYTICS FOR INSURTECH Giuridica\n[01712] ANTICORRUZIONE, DATA PROTECTION E CYBERSECURITY Medica\n[10709] BIOSTATISTICA\n[07710] CONTROLLI MICROBIOLOGICI: QUALITA’ E SICUREZZA NEI PROCESSI DI PRODUZIONE\n[10710] ODONTOLOGIA FORENSE Scienze\n[05704] NUOVE METODOLOGIE PER L'INSEGNAMENTO DELLA FISICA MODERNA Sociologica\n[03727] MANAGEMENT DEL WELFARE TERRITORIALE\n[03730] SUPERVISIONE PER IL SERVIZIO SOCIALE (SUPISS)\n Ingegneria\n[06706] CINETURISMO 3.0 & DESTINATION MANAGEMENT."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Siena\",\"course\":\"[ME012] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\n16 ore Periodo fittizio - corso Sicurezza SPP\n[2016756] ALTRE 2 ANNO 1 SEM\n1 CFU\n10 ore",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[ME012] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+          "id": "S1C6",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C6",
+        "option": "University of Siena | [ME012] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10367",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10367/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10367/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10367/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10367/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10367/insegnamenti?annoOrdinamento=2011"
+        ],
+        "text": "FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\n16 ore Periodo fittizio - corso Sicurezza SPP\n[2016756] ALTRE 2 ANNO 1 SEM\n1 CFU\n10 ore"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Salerno\",\"course\":\"[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT. DI OSTETRICA/O)\",\"type\":\"CORSO DI LAUREA\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA\"]}\nEXCERPT: ito dal titolo. IL CORSO DI LAUREA È ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O Obiettivi formativi specifici.\nAL PRIMO ANNO COMPRENDERE I PROBLEMI DELLA DONNA NEL SUO CICLO BIOLOGICO SESSUALE E LE RISPOSTE DEI SERVIZI SANITARI E SO",
+        "facts": {
+          "cities": [
+            "A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA"
+          ],
+          "course": "[10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT. DI OSTETRICA/O)",
+          "id": "S1C7",
+          "region": "Campania",
+          "type": "CORSO DI LAUREA",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C7",
+        "option": "University of Salerno | [10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT. DI OSTETRICA/O)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500335",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500335/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500335/insegnamenti/9999?schemaid=17291"
+        ],
+        "text": "ito dal titolo. IL CORSO DI LAUREA È ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O Obiettivi formativi specifici.\nAL PRIMO ANNO COMPRENDERE I PROBLEMI DELLA DONNA NEL SUO CICLO BIOLOGICO SESSUALE E LE RISPOSTE DEI SERVIZI SANITARI E SOCIO ASSISTENZIALI AI PRINCIPALI BISOGNI DELLA DONNA , NEONATI, COPPIA E COLLETTIVITÀ . CONOSCENZE RELATIVE AL NURSING OSTETRICO, PARTE FONDAMENTALE E INTEGRANTE DELLA MIDWIFERY CARE . CONOSCERE E SAPER APPLICARE TECNICHE ASSISTENZIALI INFERMIERISTICHE APPRESE IN TERAPIA SECONDO I PRINCIPI DI BASE IN AMBITO OSTETRICO GINECOLOGICO E NEONATALE , APPLICARE LE CONOSCENZE RELATIVE AL NURSING OSTETRICO, PARTE FONDAMENTALE AL SECONDO ANNO ACQUISIZIONE DI COMPETENZE PRATICHE RIGUARDANTI LA PREVENZIONE PRIMARIA IN AMBITO GINECOLOGICO, TUTELA DELLA SALUTE RIPRODUTTIVA E SESSUALE, CAPACITÀ DI APPLICARE TECNICHE DI DIAGNOSI PRENATALE , ASSISTENZA AD ALMENO 25 NEONATI IN REGIME TIN E AD ALMENO 40 NEONATI SANI, GESTIONE IN AUTONOMIA DELLA GRAVIDANZA FISIOLOGICA, DEL PUERPERIO FISIOLOGICO E LA CAPACITÀ DI COMPRENDERE LO STRUMENTARIO CHIRURGICO."
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Salerno\",\"course\":\"[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE CORSO DI LAUREA\n\nSTANDARD - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[0612800001] ANALISI MATEMATICA",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE",
+          "id": "S1C8",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C8",
+        "option": "University of Salerno | [06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500639",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500639/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500639/insegnamenti/9999?schemaid=17126"
+        ],
+        "text": "[06128] INGEGNERIA DELL'INFORMAZIONE PER LA MEDICINA DIGITALE CORSO DI LAUREA\n\nSTANDARD - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[0612800001] ANALISI MATEMATICA 1"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of L'Aquila\",\"course\":\"[B3B] BIOTECNOLOGIE\",\"type\":\"Classe di laurea: L-2\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: contenuto principale LAUREE\n[M3I] ECONOMIA E AMMINISTRAZIONE DELLE IMPRESE\n[C3F] FILOSOFIA E TEORIA DEI PROCESSI COMUNICATIVI\n[F3F] FISICA\n[D3F] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA)\n[D3I] IGIENE DENTALE (ABILI",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[B3B] BIOTECNOLOGIE",
+          "id": "S1C9",
+          "region": "Abruzzo",
+          "type": "Classe di laurea: L-2",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C9",
+        "option": "University of L'Aquila | [B3B] BIOTECNOLOGIE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051/insegnamenti/9999",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10051/insegnamenti/9999?schemaid=11308",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024?gruppo=1563186862224"
+        ],
+        "text": "contenuto principale LAUREE\n[M3I] ECONOMIA E AMMINISTRAZIONE DELLE IMPRESE\n[C3F] FILOSOFIA E TEORIA DEI PROCESSI COMUNICATIVI\n[F3F] FISICA\n[D3F] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA)\n[D3I] IGIENE DENTALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI IGIENISTA DENTALE)\n[D3U] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE)\n[F3I] INFORMATICA\n[I3B] INGEGNERIA CIVILE\n[I3N] INGEGNERIA DELL'INFORMAZIONE\n[I3D] INGEGNERIA INDUSTRIALE\n[C3D] LETTERE\n[D3G] LOGOPEDIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI LOGOPEDISTA)\n[F3M] MATEMATICA\n[C3M] MEDIAZIONE LINGUISTICA E CULTURALE\n[M3G] OPERATORE GIURIDICO D'IMPRESA\n[D3O] ORTOTTICA ED ASSISTENZA OFTALMOLOGICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI ORTOTTISTA ED ASSISTENTE DI OFTALMOLOGIA)\n[D3S] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O)\n[F3B] SCIENZE BIOLOGICHE\n[S3S] SCIENZE DEL SERVIZIO SOCIALE\n[S3F] SCIENZE DELL'EDUCAZIONE E DELLA FORMAZIONE\n[P3Q] SCIENZE E TECNICHE PSICOLOGICHE\n[F3D] SCIENZE E TECNOLOGIE CHIMICHE E DEI MATERIALI\n[F3S] SCIENZE E TECNOLOGIE PER L'AMBIENTE\n[E3M] SCIENZE MOTORIE E SPORTIVE\n[D3P] TECNICA DELLA RIABILITAZIONE PSICHIATRICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA RIABILITAZIONE PSICHIATRICA)\n[D3A] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO)\n[I3S] TECNICHE DELLA PROTEZIONE CIVILE E SICUREZZA DEL TERRITORIO\n[D3L] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[D3R] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n[D3N] TERAPIA DELLA NEURO E PSICOMOTRICITÀ DELL'ETÀ EVOLUTIVA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TERAPISTA DELLA NEURO E PSICOMOTRICITÀ DELL'ETÀ EVOLUTIVA)"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "health_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": "Campania",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "medicina"
+    },
+    "control": {
+      "intent": "end_conversation",
+      "reply": "Arrivederci! Se hai altre domande in futuro, non esitare a contattarmi. Buona fortuna per il tuo percorso universitario!"
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\",\"type\":\"CORSO DI LAUREA\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"A.O.U. S.GIOVANNI DI DIO E RUGGI D'ARAGONA\"]}\nEXCERPT: CORSO DI LAUREA\n\nTECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[1012500009] APPARECCHIATURE 1\n\n{\"id\":\"S1C2\",\"university\":\"University of Messina\",\"course\":\"[3262] BIOTECNOLOGIE Inglese Italiano\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: ABILITATIVE NEI CONTESTI SANITARI\n[MS031] HAPPINESS AT WORK\n[MS038] L'EVOLUZIONE DELLA TERAPIA ENDODONTICO-CONSERVATIVA.\nLE TECNICHE DIGITALI E MICROSCOPICHE, I LASER, I NUOVI MATERIALI\n[MS056] MEDICINA LEGALE: IL DANNO ALLA PERSONA NE\n\n{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[02121] ECONOMIA AZIENDALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"dec\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_end",
+    "profile_update": {},
+    "query": "medicina",
+    "rendered_reply": "Arrivederci! Se hai altre domande in futuro, non esitare a contattarmi. Buona fortuna per il tuo percorso universitario!",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": "Campania",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "medicina"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      2,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "96a4b9fa4252",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "CIAO HO UN DIPLOMA TECNICO E VORREI FARE IL MEDICO SECONDO TE POTREI AVERE DIFFICOLTà DURANTE IL PERCORSO?",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Posso aiutarti a esplorare le tue opzioni per diventare medico. Iniziamo! Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "VENGO DA UN ISTITUTO TECNICO COMMERCIALE",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "L’AMBITO MEDICO?",
+      "role": "user"
+    },
+    {
+      "content": "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "VORREI DIVENTARE MEDICO CHIRURGO",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "VORREI RIMANERE IN CAMPANIA",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "POCO",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "POCO",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "ABBASTANZA",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "POCO",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "POCO",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "MOLTO",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "MOLTO",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "MOLTO",
+      "role": "user"
+    },
+    {
+      "content": "Hai un forte interesse per le attività sociali e di supporto alle persone, e ti piace organizzare progetti e avere attività pianificate. Potresti trovare molto soddisfacente un percorso che ti permetta di lavorare a stretto contatto con le persone, offrendo supporto e assistenza. Ti suggerisco queste opzioni: 1. University of Salerno | [10125] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA) 2. University of Salerno | [10124] OSTETRICIA (ABILITANTE ALLA PROF. SANIT. DI OSTETRICA/O) 3. University of Salerno | [10126] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO) Hai già pensato a come finanziare i tuoi studi?",
+      "role": "assistant"
+    },
+    {
+      "content": "NO HAI UN’IDEA?",
+      "role": "user"
+    },
+    {
+      "content": "Per finanziare i tuoi studi, potresti considerare diverse opzioni. Una delle più comuni è richiedere una borsa di studio. In Italia, ci sono vari programmi di borse di studio offerti sia a livello nazionale che regionale. Ad esempio, la Regione Campania offre borse di studio per studenti meritevoli. Inoltre, molte università offrono borse di studio interne basate sul merito accademico o su criteri economici. Un'altra opzione è richiedere un prestito studentesco, che ti permetterebbe di coprire le spese universitarie e di rimborsare il prestito una volta terminati gli studi. Infine, potresti considerare di lavorare part-time durante gli studi per contribuire alle spese. Ti consiglio di informarti presso l'università che sceglierai per conoscere tutte le opportunità disponibili.",
+      "role": "assistant"
+    },
+    {
+      "content": "HO UN ISEE DI € 20000,00 SECONDO TE AVENDO UNA BUONA MEDIA POTREI USUFRUIRE DI UNA BORDA DI STUDIO?",
+      "role": "user"
+    },
+    {
+      "content": "Con un ISEE di € 20.000,00 e una buona media, potresti avere buone possibilità di ottenere una borsa di studio. Le borse di studio in Italia sono spesso assegnate in base al reddito familiare e al merito accademico. Ti consiglio di informarti presso l'università che sceglierai per conoscere i dettagli specifici dei requisiti e delle scadenze per la richiesta di borse di studio. Inoltre, puoi consultare il sito web dell'INPS o della tua regione per ulteriori informazioni sulle opportunità di finanziamento disponibili.",
+      "role": "assistant"
+    },
+    {
+      "content": "Grazie, non ho altre domande. A presto",
+      "role": "user"
+    },
+    {
+      "content": "Arrivederci! Se hai altre domande in futuro, non esitare a contattarmi. Buona fortuna per il tuo percorso universitario!",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-28T11:44:25"
+}

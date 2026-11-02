@@ -1,0 +1,519 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T13:04:35",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "laurea triennale ingegneria roma tre eccanica",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Investigative",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "laurea triennale ingegneria roma tre eccanica",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "laurea triennale ingegneria roma tre eccanica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "laurea triennale ingegneria roma tre eccanica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "laurea triennale ingegneria roma tre eccanica",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            2,
+            2,
+            1,
+            2,
+            1,
+            1,
+            -1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33602] PHYSICS - FISICA",
+      "Sapienza Università di Roma | [29996] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE) - ROMA AZIENDA POLICLINICO UMBERTO I",
+      "University of Trento | [0337H] INGEGNERIA ENERGETICA"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29996] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE) - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecniche di fisiopatologia cardiocircolatoria e perfusione cardiovascolare (abilitante alla professione sanitaria di Tecnico di fisiopatologia cardiocircolatoria e perfusione cardiovascolare) - Roma Azienda Policlinico Umberto",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[29996] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE) - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [29996] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE) - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29996",
+          "https://corsidilaurea.uniroma1.it/it/course/29996/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/29996/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29996/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29996/study-plan"
+        ],
+        "text": "Tecniche di fisiopatologia cardiocircolatoria e perfusione cardiovascolare (abilitante alla professione sanitaria di Tecnico di fisiopatologia cardiocircolatoria e perfusione cardiovascolare) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29996\nClasse di laurea: L/SNT3\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Odontoiatria, Farmacia e Medicina\nDipartimento: SCIENZE MEDICHE E CARDIOVASCOLARI\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05418"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Trento\",\"course\":\"[0513G] FISICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 90)\"]}\nEXCERPT: ti della fisica e nelle attività di laboratorio, con particolare riferimento ai fenomeni elettrici e all’ottica moderna.\nIl terzo anno di corso consente allo/a studente/ssa di completare la propria preparazione nell’ambito dei fondamenti della meccanica quantistica e nell’ambit",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 90)"
+          ],
+          "course": "[0513G] FISICA",
+          "id": "S1C10",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C10",
+        "option": "University of Trento | [0513G] FISICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10113",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10113/insegnamenti/50444",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10113/insegnamenti/50444?schemaid=8543"
+        ],
+        "text": "ti della fisica e nelle attività di laboratorio, con particolare riferimento ai fenomeni elettrici e all’ottica moderna.\nIl terzo anno di corso consente allo/a studente/ssa di completare la propria preparazione nell’ambito dei fondamenti della meccanica quantistica e nell’ambito microfisico e della struttura della materia. Gli insegnamenti affini e integrativi consentono inoltre allo studente di informarsi sugli sviluppi più recenti della fisica in ambito teorico e dei fondamenti della fisica, della fisica nucleare e subnucleare, dell’elettronica e delle applicazioni della fisica alla biologia. I programmi dei corsi impartiti consentono allo studente di acquisire le conoscenze relative ai principali contenuti della fisica. In particolare si punta a far rielaborare le conoscenze acquisite. Particolare attenzione è dedicata a stimolare il ruolo attivo nello studio per esempio privilegiando l'apprendimento di uno stesso argomento da fonti diversificate e qualificate. I criteri di valutazione puntano pertanto a verificare proprio il grado di rielaborazione delle conoscenze, rielaborazione che apparirà tanto più sofisticata quanto maggiore è stata la comprensione."
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0518H] FISICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 45)\"]}\nEXCERPT: izzare fluentemente la lingua inglese in forma scritta e orale, con riferimento anche ai lessici disciplinari e tecnici.\n2. Il corso di laurea magistrale in Fisica è erogato interamente in lingua inglese. È previsto un solo pe",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo A - via Sommarive, 14 (Utenza sostenibile: 45)"
+          ],
+          "course": "[0518H] FISICA",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0518H] FISICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169/insegnamenti/50528",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169/insegnamenti/50528?schemaid=8621"
+        ],
+        "text": "izzare fluentemente la lingua inglese in forma scritta e orale, con riferimento anche ai lessici disciplinari e tecnici.\n2. Il corso di laurea magistrale in Fisica è erogato interamente in lingua inglese. È previsto un solo percorso formativo con due insegnamenti comuni e obbligatori, a cui si aggiungono le attività formative caratterizzanti, scelte dallo studente entro un elenco di attività offerte negli ambiti della fisica nucleare e subnucleare e della fisica della materia, e le attività affini e a libera scelta. Gli insegnamenti comuni e obbligatori sono finalizzati da una parte all’acquisizione di conoscenze avanzate della meccanica quantistica, con particolare riferimento ai suoi aspetti teorici, e dall’altra all’acquisizione di competenze di fisica sperimentale dedicate alla conoscenza operativa delle più recenti e sofisticate metodiche di misura e analisi dei dati. Le attività caratterizzanti sono finalizzate all’acquisizione di conoscenze approfondite nel campo della fisica teorica, computazionale e sperimentale in relazione agli sviluppi più recenti della fisica in ambito teorico e dei fondamenti della fisica, della fisica nucleare e subnucleare, della struttura della materia, della fisica sperimentale e le sue applicazioni."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria delle Nanotecnologie - Nanotechnology Engineering\nAnno accademico: 2026-2027\nCodice corso: 33496\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33496",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/study-plan"
+        ],
+        "text": "Ingegneria delle Nanotecnologie - Nanotechnology Engineering\nAnno accademico: 2026-2027\nCodice corso: 33496\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0337H] INGEGNERIA ENERGETICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)\"]}\nEXCERPT: [0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Technologies for energy efficiency\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Anno di corso\n1°",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)"
+          ],
+          "course": "[0337H] INGEGNERIA ENERGETICA",
+          "id": "S1C4",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C4",
+        "option": "University of Trento | [0337H] INGEGNERIA ENERGETICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362?schemaid=8534",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363?schemaid=8531",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Technologies for energy efficiency\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33602] PHYSICS - FISICA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Physics - Fisica\nAnno accademico: 2026-2027\nCodice corso: 33602\nClasse di laurea: LM-17\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Scien",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33602] PHYSICS - FISICA",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33602] PHYSICS - FISICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33602",
+          "https://corsidilaurea.uniroma1.it/it/course/33602/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33602/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33602/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33602/study-plan"
+        ],
+        "text": "Physics - Fisica\nAnno accademico: 2026-2027\nCodice corso: 33602\nClasse di laurea: LM-17\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: FISICA\nSede: Roma\nLingua: Inglese, Inglese\nPercorso di studio internazionale: Titolo multiplo: italo-francese-portoghese Titolo multiplo: italo-francese-spagnolo-svedese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 33602"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Rovereto - Via Fortunato Zeni, 8 (Utenza sostenibile: 80)\"]}\nEXCERPT: gegneria industriale e della ingegneria informatica ed elettronica che costituiscono i pilastri formativi del nuovo CdS.\nRappresentano inoltre complemento formativo essenziale gli insegnamenti delle discipline biomediche relative ",
+        "facts": {
+          "cities": [
+            "Polo di collina - Rovereto - Via Fortunato Zeni, 8 (Utenza sostenibile: 80)"
+          ],
+          "course": "[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50417?schemaid=8611",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti/50418?schemaid=8614",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10761/insegnamenti?annoOrdinamento=2024"
+        ],
+        "text": "gegneria industriale e della ingegneria informatica ed elettronica che costituiscono i pilastri formativi del nuovo CdS.\nRappresentano inoltre complemento formativo essenziale gli insegnamenti delle discipline biomediche relative ai temi della fisiologia e biologia e delle discipline mediche per la costruzione di competenze mirate allo sviluppo di tecnologie e strumenti per la medicina personalizzata e di precisione. La formazione multi e interdisciplinare sarà infine garantita da un corpus di attività affini ed integrative orientate al consolidamento delle competenze ingegneristiche nei settori della biomeccanica, dell'informatica, della robotica medica e della dinamica dei fluidi. L'insieme di questi insegnamenti fornirà al/la Laureato/a le competenze fondamentali per lo sviluppo e valutazione di strumentazione, dispositivi e impianti medicali, sui biomateriali e le relative metodiche di fabbricazione avanzate, l'elaborazione di dati e segnali biomedici, la fisiologia dei sistemi, i principi della diagnostica per la medicina personalizzata e la rappresentazione della conoscenza medico-biologica attraverso modellistica avanzata. Tali competenze costituiscono le basi conoscitive per lo sviluppo delle tecnologie abilitanti alla moderna medicina centrata sull'individuo."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)\",\"type\":\"Classe di laurea: L-23\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conosce",
+        "facts": {
+          "cities": [],
+          "course": "[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-23",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33481",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/study-plan"
+        ],
+        "text": "Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[0327G] INGEGNERIA INDUSTRIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9\"]}\nEXCERPT: [0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9"
+          ],
+          "course": "[0327G] INGEGNERIA INDUSTRIALE",
+          "id": "S1C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C8",
+        "option": "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428?schemaid=8540",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429?schemaid=8541",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430?schemaid=8539",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[30024] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA\",\"type\":\"Classe di laurea: L/SNT4\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro (abilitante alla professione sanitaria di Tecnico della prevenzione nell'ambiente e nei luoghi di lavoro) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 30024\nClasse di laurea: L/S",
+        "facts": {
+          "cities": [],
+          "course": "[30024] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT4",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [30024] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/30024",
+          "https://corsidilaurea.uniroma1.it/it/course/30024/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/30024/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/30024/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/30024/study-plan"
+        ],
+        "text": "Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro (abilitante alla professione sanitaria di Tecnico della prevenzione nell'ambiente e nei luoghi di lavoro) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 30024\nClasse di laurea: L/SNT4\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "engineering_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "fluidodinamica,terodinamica applicata alle macchine, fisica tecnica"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Hai ragione, mi scuso per l'errore. Le opzioni che ti ho mostrato non sono adatte per chi proviene da un corso di laurea triennale in ingegneria meccanica. Ti suggerisco di considerare il corso di laurea magistrale in Ingegneria Energetica all'Università di Trento. Questo corso si concentra su tecnologie rinnovabili e innovative per l'efficienza energetica, che potrebbe essere in linea con i tuoi interessi per la fluidodinamica e la termodinamica applicata alle macchine."
+    },
+    "ctx_chars": 1534,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29996] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE) - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecniche di fisiopatologia cardiocircolatoria e perfusione cardiovascolare (abilitante alla professione sanitaria di Tecnico di fisiopatologia cardiocircolatoria e perfusione cardiovascolare) - Roma Azienda Policlinico Umberto\n\n{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0337H] INGEGNERIA ENERGETICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)\"]}\nEXCERPT: [0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Technologies for energy efficiency\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Anno di corso\n1°\n\n{\"id\"\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "fluidodinamica,terodinamica applicata alle macchine, fisica tecnica",
+    "rendered_reply": "Hai ragione, mi scuso per l'errore. Le opzioni che ti ho mostrato non sono adatte per chi proviene da un corso di laurea triennale in ingegneria meccanica. Ti suggerisco di considerare il corso di laurea magistrale in Ingegneria Energetica all'Università di Trento. Questo corso si concentra su tecnologie rinnovabili e innovative per l'efficienza energetica, che potrebbe essere in linea con i tuoi interessi per la fluidodinamica e la termodinamica applicata alle macchine.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "fluidodinamica,terodinamica applicata alle macchine, fisica tecnica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      2,
+      2,
+      2,
+      1,
+      2,
+      1,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "41228a4dd955",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "laurea triennale ingegneria roma tre eccanica",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi attirano di piu fluidodinamica , terodinamica applicata alle macchine, fisica tecnica",
+      "role": "user"
+    },
+    {
+      "content": "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "conoscere sempre nuove cose vorrei iscrivermi alla magistrale",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato a iscriverti a una magistrale. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma , sapienza o roma tre",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato a Roma. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbsastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbstanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Hai un forte interesse per la fisica e l'ingegneria, in particolare per la fluidodinamica, la termodinamica applicata alle macchine e la fisica tecnica. Ti piace molto capire come funzionano le cose e sperimentare nuove idee. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33602] PHYSICS - FISICA 2. Sapienza Università di Roma | [29996] TECNICHE DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI FISIOPATOLOGIA CARDIOCIRCOLATORIA E PERFUSIONE CARDIOVASCOLARE) - ROMA AZIENDA POLICLINICO UMBERTO I 3. University of Trento | [0337H] INGEGNERIA ENERGETICA Ti piacerebbe saperne di più su uno di questi corsi?",
+      "role": "assistant"
+    },
+    {
+      "content": "ma scusa io precedentemente ti ho detto che sto in un corso triennale in ingegneria meccanica non posso fsre fisica alla magistrale o tecniche di fisiopatologia cardiocircolatoria",
+      "role": "user"
+    },
+    {
+      "content": "Hai ragione, mi scuso per l'errore. Le opzioni che ti ho mostrato non sono adatte per chi proviene da un corso di laurea triennale in ingegneria meccanica. Ti suggerisco di considerare il corso di laurea magistrale in Ingegneria Energetica all'Università di Trento. Questo corso si concentra su tecnologie rinnovabili e innovative per l'efficienza energetica, che potrebbe essere in linea con i tuoi interessi per la fluidodinamica e la termodinamica applicata alle macchine.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T13:11:02"
+}

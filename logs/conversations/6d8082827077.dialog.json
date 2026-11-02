@@ -1,0 +1,551 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-24T15:45:57",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "ragioneria",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Enterprising"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ragioneria",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ragioneria",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ragioneria",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ragioneria",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            2,
+            2,
+            2,
+            1,
+            2,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+      "Sapienza Università di Roma | [34097] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+      "Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFac",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33502",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/study-plan"
+        ],
+        "text": "Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14824"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Messina\",\"course\":\"[1064] ENGINEERING IN COMPUTER SCIENCE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: [1064] ENGINEERING IN COMPUTER SCIENCE Corso di Laurea Magistrale Inglese",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[1064] ENGINEERING IN COMPUTER SCIENCE",
+          "id": "S1C10",
+          "region": "Sicilia",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C10",
+        "option": "University of Messina | [1064] ENGINEERING IN COMPUTER SCIENCE",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10664",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10664/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10664/insegnamenti/9999?annoOrdinamento=2024",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10664/insegnamenti/9999?schemaid=12336",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10664?annoOrdinamento=2024"
+        ],
+        "text": "[1064] ENGINEERING IN COMPUTER SCIENCE Corso di Laurea Magistrale Inglese"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 80)\"]}\nEXCERPT: [0342H] ARTIFICIAL INTELLIGENCE SYSTEMS Laurea Magistrale Inglese AI and Innovation\nINFO INSEGNAMENTI SALVA PDF\nAI and Innovation Systems Methodologies and Applications Neurocognitive Architectures Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 80)"
+          ],
+          "course": "[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0342H] ARTIFICIAL INTELLIGENCE SYSTEMS",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50530?schemaid=8564",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50531?schemaid=8562",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50532?schemaid=8561",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti/50533?schemaid=8563",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10738/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS Laurea Magistrale Inglese AI and Innovation\nINFO INSEGNAMENTI SALVA PDF\nAI and Innovation Systems Methodologies and Applications Neurocognitive Architectures Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33508] COMPUTER SCIENCE - INFORMATICA\",\"type\":\"Classe di laurea: LM-18\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Computer Science - Informatica\nAnno accademico: 2026-2027\nCodice corso: 33508\nClasse di laurea: LM-18\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33508] COMPUTER SCIENCE - INFORMATICA",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-18",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33508] COMPUTER SCIENCE - INFORMATICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33508",
+          "https://corsidilaurea.uniroma1.it/it/course/33508/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33508/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33508/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33508/study-plan"
+        ],
+        "text": "Computer Science - Informatica\nAnno accademico: 2026-2027\nCodice corso: 33508\nClasse di laurea: LM-18\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ENG"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34097] FILOSOFIA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 34097\nClasse di laurea: LM-78\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Ingegneria dell'informazio",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[34097] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [34097] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/34097",
+          "https://corsidilaurea.uniroma1.it/it/course/34097/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/34097/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/34097/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/34097/study-plan"
+        ],
+        "text": "Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 34097\nClasse di laurea: LM-78\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nFacoltà: Ingegneria dell'informazione, informatica e statistica, Lettere e Filosofia\nDipartimento: FILOSOFIA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 34097"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Siena\",\"course\":\"[D305] ARTIFICIAL INTELLIGENCE AND AUTOMATION ENGINEERING\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: 05] ARTIFICIAL INTELLIGENCE AND AUTOMATION ENGINEERING Corso di Laurea Magistrale Inglese Track \"ROBOTICS AND AUOMATION\"\nCORSO GENERICO Track \"INTELLIGENT SYSTEMS\"\nTrack \"ROBOTICS AND AUOMATION\"\nAnno di corso\n1° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D305] ARTIFICIAL INTELLIGENCE AND AUTOMATION ENGINEERING",
+          "id": "S1C5",
+          "region": "Toscana",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C5",
+        "option": "University of Siena | [D305] ARTIFICIAL INTELLIGENCE AND AUTOMATION ENGINEERING",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/1#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/1?schemaid=11568",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/2#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/2?schemaid=11569",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11059/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "05] ARTIFICIAL INTELLIGENCE AND AUTOMATION ENGINEERING Corso di Laurea Magistrale Inglese Track \"ROBOTICS AND AUOMATION\"\nCORSO GENERICO Track \"INTELLIGENT SYSTEMS\"\nTrack \"ROBOTICS AND AUOMATION\"\nAnno di corso\n1° ANNO\n- A.A."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[688M] COMPUTATIONAL COGNITIVE SCIENCE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 2)\"]}\nEXCERPT: [688M] COMPUTATIONAL COGNITIVE SCIENCE Laurea Magistrale Inglese Italiano\n\nANALISTA DI BIG-DATA NELLE NEUROSCIENZE COGNITIVE PRESA DI DECISIONE IN AMBITO SANITARIO",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 2)"
+          ],
+          "course": "[688M] COMPUTATIONAL COGNITIVE SCIENCE",
+          "id": "S1C6",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C6",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [688M] COMPUTATIONAL COGNITIVE SCIENCE",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2306",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti/21822",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti/21824",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2306/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[688M] COMPUTATIONAL COGNITIVE SCIENCE Laurea Magistrale Inglese Italiano\n\nANALISTA DI BIG-DATA NELLE NEUROSCIENZE COGNITIVE PRESA DI DECISIONE IN AMBITO SANITARIO"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33526\nClasse di laurea: L-5\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Lettere e Filosofia, Ingegneria dell'informazione, informatica e statistica\nDipart",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33526",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33526/study-plan"
+        ],
+        "text": "Filosofia e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33526\nClasse di laurea: L-5\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Lettere e Filosofia, Ingegneria dell'informazione, informatica e statistica\nDipartimento: FILOSOFIA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14621"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of L'Aquila\",\"course\":\"[F4I] INFORMATICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [F4I] INFORMATICA Laurea Magistrale Inglese AICoNDA - ARTIFICIAL INTELLIGENCE, COMPLEX NETWORKS, AND DATA ANALYTICS",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[F4I] INFORMATICA",
+          "id": "S1C8",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C8",
+        "option": "University of L'Aquila | [F4I] INFORMATICA",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/10#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/10?schemaid=11316",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/11#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/11?schemaid=11317",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/12#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/12?schemaid=11318",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/6#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/6?schemaid=11313",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/8#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/8?schemaid=11314",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/9#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti/9?schemaid=11315",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10013/insegnamenti?annoOrdinamento=2017"
+        ],
+        "text": "[F4I] INFORMATICA Laurea Magistrale Inglese AICoNDA - ARTIFICIAL INTELLIGENCE, COMPLEX NETWORKS, AND DATA ANALYTICS"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "computer_science"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "AI"
+    },
+    "control": {
+      "intent": "selection",
+      "option_number": 1
+    },
+    "ctx_chars": 4558,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFac\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 80)\"]}\nEXCERPT: [0342H] ARTIFICIAL INTELLIGENCE SYSTEMS Laurea Magistrale Inglese AI and Innovation\nINFO INSEGNAMENTI SALVA PDF\nAI and Innovation Systems Methodologies and Applications Neurocognitive Architectures Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A.\n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_selected",
+    "profile_update": {},
+    "query": "AI",
+    "rendered_reply": "Hai scelto: Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "AI"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 1,
+    "selected_option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+    "shown_options": [
+      "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+      "Sapienza Università di Roma | [34097] FILOSOFIA E INTELLIGENZA ARTIFICIALE",
+      "Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE"
+    ],
+    "source_turn": 14
+  },
+  "session_id": "6d8082827077",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao mi chjiamo tamara sono una ragazza di roma che ha 24 anni cercavo lavoro ma non ho trovato niente di siddisfacente quindi ho deciso di iniziare l’università . le superiori che ho fatto è ragionaeria. ho bisoghno di sceglere un corso di laurea che mi aiuti nel mondo lavorativo io voglio governare AI e non essere passiva. mi piace la ricerca . che università mi consiglieresti?",
+      "role": "user"
+    },
+    {
+      "content": "Ciao Tamara, sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il corso di laurea più adatto alle tue esigenze e aspirazioni. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "come dicevo ho finito le scuole superiori 4 anni fa e ora voglio iniziare l’università ma mi devi aiutare a scegliere . considera che mi piace la matemtica e vporrei che laurea mi aiutasse a trovare un lavoro nel mondo del AI voglio goverìnare AI e non essere governata che facolta mi consigli ?",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "matematica e AI",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano la matematica e l'intelligenza artificiale. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piacere costruire dei LLM europei cosi da mantenere la sovranità europea",
+      "role": "user"
+    },
+    {
+      "content": "Mi sembra che tu abbia un interesse molto specifico e interessante nel campo dell'intelligenza artificiale, in particolare nella costruzione di modelli linguistici europei. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "ùmolto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Hai un forte interesse per la matematica e l'intelligenza artificiale, e desideri costruire modelli linguistici europei per mantenere la sovranità europea. Ti piacciono molto attività come capire come funzionano le cose, cercare informazioni, analizzare problemi, esprimere idee in forme creative, sperimentare e creare qualcosa di nuovo, proporre idee, prendere iniziativa e organizzare progetti. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE 2. Sapienza Università di Roma | [34097] FILOSOFIA E INTELLIGENZA ARTIFICIALE 3. Sapienza Università di Roma | [33526] FILOSOFIA E INTELLIGENZA ARTIFICIALE Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "il numero 1",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-24T15:58:21"
+}

@@ -1,0 +1,543 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T15:40:01",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "ho finito la triennale in psicologia alla Sapienza di Roma",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "psychology"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Enterprising",
+        "Conventional"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ho finito la triennale in psicologia alla Sapienza di Roma",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ho finito la triennale in psicologia alla Sapienza di Roma",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ho finito la triennale in psicologia alla Sapienza di Roma",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "ho finito la triennale in psicologia alla Sapienza di Roma",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "psychology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 7
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            -1,
+            -1,
+            -1,
+            -1,
+            -1,
+            2,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 15
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE",
+      "Sapienza Università di Roma | [33575] NEUROSCIENZE COGNITIVE E RIABILITAZIONE PSICOLOGICA",
+      "Sapienza Università di Roma | [34186] PSICOLOGIA CLINICA"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Cognitive neuroscience - Neuroscienze cognitive\nAnno accademico: 2026-2027\nCodice corso: 33574\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medici",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33574",
+          "https://corsidilaurea.uniroma1.it/it/course/33574/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33574/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33574/study-plan"
+        ],
+        "text": "Cognitive neuroscience - Neuroscienze cognitive\nAnno accademico: 2026-2027\nCodice corso: 33574\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 12948"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 12)\"]}\nEXCERPT: [687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE Laurea Magistrale Inglese",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 12)"
+          ],
+          "course": "[687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE",
+          "id": "S1C10",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C10",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2305",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2305/insegnamenti/21860"
+        ],
+        "text": "[687M] PSYCHOLOGY OF WELL-BEING AND PERFORMANCE Laurea Magistrale Inglese"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84\"]}\nEXCERPT: [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Laurea\nINFO INSEGNAMENTI Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2015\nStato Aperto Crediti\n180 CFU Tipologia Corsi di laurea triennale Categoria Psicologia e Neuroscien",
+        "facts": {
+          "cities": [
+            "Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84"
+          ],
+          "course": "[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10123/insegnamenti/50438?schemaid=8225"
+        ],
+        "text": "[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Laurea\nINFO INSEGNAMENTI Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2015\nStato Aperto Crediti\n180 CFU Tipologia Corsi di laurea triennale Categoria Psicologia e Neuroscienze Normativa Riforma 270/04\nClasse di laurea L-24 - Classe delle lauree in Scienze e tecniche psicologiche Corso Interateneo No Accesso Programmato (230 Posti)\nSede Polo di Rovereto - Palazzo Piomarta - corso Bettini, 84\nDipartimento Dipartimento di Psicologia e Scienze Cognitive Verifica conoscenze richieste per l'accesso No Programma, testi e obiettivi Obiettivi formativi specifici del corso e descrizione del percorso formativo Il corso di laurea in Scienze e Tecniche di Psicologia Cognitiva vuole fornire una solida base metodologica per gli studenti che intendono proseguire nella laurea magistrale di Psicologia o nel master di Cognitive Science. I laureati nei corsi di laurea della classe devono:\n- avere acquisito le conoscenze di base e caratterizzanti nell’ambito della psicologia cognitiva, dei suoi metodi e procedure di indagine scientifica e delle potenzialità applicative."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33573] APPLIED DYNAMIC AND CLINICAL PSYCHOLOGY - PSICOLOGIA DINAMICA E CLINICA APPLICATA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Dynamic and Clinical Psychology - Psicologia Dinamica e Clinica Applicata\nAnno accademico: 2026-2027\nCodice corso: 33573\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e p",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33573] APPLIED DYNAMIC AND CLINICAL PSYCHOLOGY - PSICOLOGIA DINAMICA E CLINICA APPLICATA",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33573] APPLIED DYNAMIC AND CLINICAL PSYCHOLOGY - PSICOLOGIA DINAMICA E CLINICA APPLICATA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33573",
+          "https://corsidilaurea.uniroma1.it/it/course/33573/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33573/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33573/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33573/study-plan"
+        ],
+        "text": "Applied Dynamic and Clinical Psychology - Psicologia Dinamica e Clinica Applicata\nAnno accademico: 2026-2027\nCodice corso: 33573\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: Psicologia Dinamica, Clinica e Salute\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 12947"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[0685] PSICOLOGIA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"CHIETI (Utenza sostenibile: 120)\"]}\nEXCERPT: [0685] PSICOLOGIA Laurea Magistrale NEUROSCIENZE COGNITIVE cambia\nPSICOLOGIA DELLO SVILUPPO NEUROSCIENZE COGNITIVE PSICOLOGIA SOCIALE, DEL LAVORO E DELLE ORGANIZZAZIONI Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "CHIETI (Utenza sostenibile: 120)"
+          ],
+          "course": "[0685] PSICOLOGIA",
+          "id": "S1C4",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C4",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [0685] PSICOLOGIA",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/9",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/22018",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/22020",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti/22022",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/9/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0685] PSICOLOGIA Laurea Magistrale NEUROSCIENZE COGNITIVE cambia\nPSICOLOGIA DELLO SVILUPPO NEUROSCIENZE COGNITIVE PSICOLOGIA SOCIALE, DEL LAVORO E DELLE ORGANIZZAZIONI Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33575] NEUROSCIENZE COGNITIVE E RIABILITAZIONE PSICOLOGICA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Neuroscienze Cognitive e Riabilitazione Psicologica\nAnno accademico: 2026-2027\nCodice corso: 33575\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medicina ",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33575] NEUROSCIENZE COGNITIVE E RIABILITAZIONE PSICOLOGICA",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33575] NEUROSCIENZE COGNITIVE E RIABILITAZIONE PSICOLOGICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33575",
+          "https://corsidilaurea.uniroma1.it/it/course/33575/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33575/study-plan"
+        ],
+        "text": "Neuroscienze Cognitive e Riabilitazione Psicologica\nAnno accademico: 2026-2027\nCodice corso: 33575\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA\nSede: Roma\nLingua: Italiano\nPercorso di studio internazionale: Doppio titolo: italo-colombiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 33575"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34186] PSICOLOGIA CLINICA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Psicologia clinica\nAnno accademico: 2026-2027\nCodice corso: 34186\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: Psicol",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[34186] PSICOLOGIA CLINICA",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Laurea magistrale",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [34186] PSICOLOGIA CLINICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/34186",
+          "https://corsidilaurea.uniroma1.it/it/course/34186/study-plan"
+        ],
+        "text": "Psicologia clinica\nAnno accademico: 2026-2027\nCodice corso: 34186\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: Psicologia Dinamica, Clinica e Salute\nSede: Roma\nLingua: Italiano\nPercorso di studio internazionale: Doppio titolo: italo-albanese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 34186"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Foggia\",\"course\":\"[1807] SCIENZE E TECNICHE PSICOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1807] SCIENZE E TECNICHE PSICOLOGICHE",
+          "id": "S1C7",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C7",
+        "option": "University of Foggia | [1807] SCIENZE E TECNICHE PSICOLOGICHE",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535/insegnamenti/9999",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10535/insegnamenti/9999?schemaid=2791"
+        ],
+        "text": "[1807] SCIENZE E TECNICHE PSICOLOGICHE Corso di Laurea"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of L'Aquila\",\"course\":\"[P4Q] PSICOLOGIA CLINICA, APPLICATA E DEGLI INTERVENTI\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [P4Q] PSICOLOGIA CLINICA, APPLICATA E DEGLI INTERVENTI Laurea Magistrale NEUROSCIENZE COGNITIVE E COMPORTAMENTALI",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[P4Q] PSICOLOGIA CLINICA, APPLICATA E DEGLI INTERVENTI",
+          "id": "S1C8",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C8",
+        "option": "University of L'Aquila | [P4Q] PSICOLOGIA CLINICA, APPLICATA E DEGLI INTERVENTI",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417/insegnamenti/1?schemaid=11305",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417/insegnamenti/2?schemaid=11306",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10417/insegnamenti/3?schemaid=11307"
+        ],
+        "text": "[P4Q] PSICOLOGIA CLINICA, APPLICATA E DEGLI INTERVENTI Laurea Magistrale NEUROSCIENZE COGNITIVE E COMPORTAMENTALI"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA DEI PROCESSI DI SVILUPPO E SOCIALIZZAZIONE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Prevalentemente a distanza\nCodice prova: 05429",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33571] SCIENZE E TECNICHE PSICOLOGICHE – EROGATO IN MODALITÀ PREVALENTEMENTE A DISTANZA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33571",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33571/study-plan"
+        ],
+        "text": "Scienze e tecniche psicologiche – erogato in modalità prevalentemente a distanza\nAnno accademico: 2026-2027\nCodice corso: 33571\nClasse di laurea: L-24\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: PSICOLOGIA DEI PROCESSI DI SVILUPPO E SOCIALIZZAZIONE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Prevalentemente a distanza\nCodice prova: 05429"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "psychology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "psicologia cognitiva"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Non posso aiutarti a decidere per quale partito politico votare. Posso aiutarti a trovare informazioni sui corsi di laurea o su altre questioni accademiche. Se hai altre domande sugli studi universitari, sarò felice di aiutarti."
+    },
+    "ctx_chars": 1448,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Cognitive neuroscience - Neuroscienze cognitive\nAnno accademico: 2026-2027\nCodice corso: 33574\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medici\n\n{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33575] NEUROSCIENZE COGNITIVE E RIABILITAZIONE PSICOLOGICA\",\"type\":\"Laurea magistrale\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Neuroscienze Cognitive e Riabilitazione Psicologica\nAnno accademico: 2026-2027\nCodice corso: 33575\nClasse di laurea: LM-51\nTipologia di corso: Laurea magistrale\nDurata: 2 anni\nModalità di accesso: Valutazione comparativa dei titoli e prova di ammissione\nFacoltà: Medicina \n\n{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34186] PSICOLOGIA CLINICA\",\"type\":\"Laurea magistrale\",\"type_status\":\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "psicologia cognitiva",
+    "rendered_reply": "Non posso aiutarti a decidere per quale partito politico votare. Posso aiutarti a trovare informazioni sui corsi di laurea o su altre questioni accademiche. Se hai altre domande sugli studi universitari, sarò felice di aiutarti.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "psicologia cognitiva"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      2,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      2
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 1,
+    "selected_option": "Sapienza Università di Roma | [33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE",
+    "shown_options": [
+      "Sapienza Università di Roma | [33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE",
+      "Sapienza Università di Roma | [33575] NEUROSCIENZE COGNITIVE E RIABILITAZIONE PSICOLOGICA",
+      "Sapienza Università di Roma | [34186] PSICOLOGIA CLINICA"
+    ],
+    "source_turn": 16
+  },
+  "session_id": "c44f77cb0f8c",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi che fa per te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Sto studiando psicologia e vorrei un università rispettosa dei diritti umani e democrazia",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso il tuo interesse per la psicologia. Tuttavia, la domanda è su quale scuola, corso o laurea stai frequentando o hai concluso da poco. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ho finito la triennale in psicologia alla Sapienza di Roma",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "psicologia cognitiva",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso il tuo interesse per la psicologia cognitiva. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "L’antifascismo",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso questo interesse. Tuttavia, la domanda è su cosa ti piacerebbe approfondire o imparare a fare all'università. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "tematiche legate al fascismo",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso i tuoi interessi. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "si Roma",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Hai mostrato interesse per la psicologia cognitiva e per tematiche legate al fascismo. Ti propongo quindi alcuni corsi di laurea magistrale in psicologia cognitiva e affini. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE 2. Sapienza Università di Roma | [33575] NEUROSCIENZE COGNITIVE E RIABILITAZIONE PSICOLOGICA 3. Sapienza Università di Roma | [34186] PSICOLOGIA CLINICA Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "1",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: Sapienza Università di Roma | [33574] COGNITIVE NEUROSCIENCE - NEUROSCIENZE COGNITIVE.",
+      "role": "assistant"
+    },
+    {
+      "content": "Per quale partito politico dovrei votare il prossimo anno?",
+      "role": "user"
+    },
+    {
+      "content": "Non posso aiutarti a decidere per quale partito politico votare. Posso aiutarti a trovare informazioni sui corsi di laurea o su altre questioni accademiche. Se hai altre domande sugli studi universitari, sarò felice di aiutarti.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T15:45:10"
+}

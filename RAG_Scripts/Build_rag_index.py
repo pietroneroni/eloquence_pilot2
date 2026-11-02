@@ -71,6 +71,7 @@ FILESTEM_TO_REGION = {
     "merged_outputUniversitàFoggia": "Puglia",
     "merged_outputUniversitàMessina": "Sicilia",
     "merged_outputUniversitàSalerno": "Campania",
+    "merged_outputUniversitàSapienza": "Lazio",
     "merged_outputUniversitàSassari": "Sardegna",
     "merged_outputUniversitàSiena": "Toscana",
     "merged_outputUniversitàTrento": "Trentino-Alto Adige",
@@ -101,6 +102,14 @@ REGION_TO_MACRO = {
 
 # Drop obvious noise / test blocks
 _TEST_NOISE_RX = re.compile(r"\b(testare il rag|nome corso di test|example\.test)\b", re.I)
+_DECLARED_TYPE_RX = re.compile(
+    r"(?im)^\s*((?:Corso di )?Laurea(?: Magistrale(?: a ciclo unico)?| Triennale)?"
+    r"|Corso di Dottorato|Master universitario di (?:Primo|Secondo) Livello"
+    r"|Corso di Perfezionamento|Corso di Alta Formazione)\b"
+)
+_CITY_LINE_RX = re.compile(
+    r"(?im)^\s*(?:sede(?: didattica| del corso)?|campus city|teaching location)\s*:\s*([^\n]+)"
+)
 
 # -----------------------------
 # Data model
@@ -224,6 +233,17 @@ def parse_block(block: str):
             meta["COURSE_NAME"] = m.group("name").strip()
 
     return meta, content
+
+
+def enrich_course_metadata(meta: dict, content: str) -> None:
+    """Preserve explicit course level and teaching locations present in a source block."""
+    if not meta.get("TYPE"):
+        declared_type = _DECLARED_TYPE_RX.search(content or "")
+        if declared_type:
+            meta["TYPE"] = declared_type.group(1).strip()
+    cities = [match.group(1).strip() for match in _CITY_LINE_RX.finditer(content or "")]
+    if cities:
+        meta["CITIES"] = sorted(dict.fromkeys(cities))
 
 
 def should_keep_block(meta: dict, content: str) -> bool:
@@ -400,6 +420,7 @@ def build_faiss_index(
 
         for bi, block in enumerate(iter_blocks(text)):
             meta, content = parse_block(block)
+            enrich_course_metadata(meta, content)
             meta["LANGUAGE"] = lang
 
             if "UNIVERSITY" in meta:

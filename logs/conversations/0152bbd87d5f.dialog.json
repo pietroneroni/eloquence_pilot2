@@ -1,0 +1,639 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T11:25:21",
+  "dialog_language": "English",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "BSc in Electrical Engineering",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology",
+        "cognitive_science_linguistics"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Artistic",
+        "Realistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "BSc in Electrical Engineering",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "BSc in Electrical Engineering",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology",
+            "cognitive_science_linguistics"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "BSc in Electrical Engineering",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology",
+            "cognitive_science_linguistics"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "BSc in Electrical Engineering",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology",
+            "cognitive_science_linguistics"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            0,
+            2,
+            1,
+            1,
+            0,
+            0,
+            -2,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 15
+    }
+  ],
+  "model_id": "university-counselor-ENG:latest",
+  "rag_state": {
+    "advice_intro_plural": "I suggest these options:",
+    "advice_intro_singular": "I suggest this option:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Salerno | [06224] ELECTRONIC ENGINEERING",
+      "University of Trento | [SC] COGNITIVE SCIENCES",
+      "University of L'Aquila | [I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[06224] ELECTRONIC ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: ND ENERGY STUDY PLAN COHORT 2024 - ELECTRONICS FOR \"SOUND DESIGN\"\nYear of course\n1° YEAR\n- A.Y. 2024/2025\n2° YEAR\n- A.Y.\n2025/2026\n1° YEAR MANDATORY\n[0622400003] ANTENNAS\n9 CFU\n90 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER\n[0622400010] COMPLEMENTS OF AUTOMATIC CONTROL\n9 CFU\n90 hours RELATED/INTE",
+        "facts": {
+          "cities": [],
+          "course": "[06224] ELECTRONIC ENGINEERING",
+          "id": "S1C1",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C1",
+        "option": "University of Salerno | [06224] ELECTRONIC ENGINEERING",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500267",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500267/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500267/insegnamenti/10000?schemaid=17044",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500267/insegnamenti/10001?schemaid=17045"
+        ],
+        "text": "ND ENERGY STUDY PLAN COHORT 2024 - ELECTRONICS FOR \"SOUND DESIGN\"\nYear of course\n1° YEAR\n- A.Y. 2024/2025\n2° YEAR\n- A.Y.\n2025/2026\n1° YEAR MANDATORY\n[0622400003] ANTENNAS\n9 CFU\n90 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER\n[0622400010] COMPLEMENTS OF AUTOMATIC CONTROL\n9 CFU\n90 hours RELATED/INTEGRATIVE (LM-29)\nFIRST SEMESTER\n[0622400037] ELECTRONIC CONVERTERS FOR ENERGY AND TRANSPORT\n12 CFU\n120 hours RELATED/INTEGRATIVE (LM-29)\nSECOND SEMESTER\n[0622400041] ANALOG SYSTEM ELECTRONICS\n6 CFU\n60 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER\n[0622400042] ENGLISH\n3 CFU\n60 hours OTHER (LM-29)\nSECOND SEMESTER\n[0622400029] OPTICS\n6 CFU\n60 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER\n[0622400044] VIRTUAL INSTRUMENTATION FOR SIGNAL ACQUISITION\n9 CFU\n90 hours CHARACTERIZING (LM-29)\nSECOND SEMESTER PROFILE INTERNET OF THINGS\n[0622400038] COMPUTER NETWORKS\n9 CFU\n90 hours RELATED/INTEGRATIVE (LM-29)\nSECOND SEMESTER PROFILE ENERGY\n[0622400004] POWER ELECTRONIC CIRCUITS\n9 CFU\n90 hours RELATED/INTEGRATIVE (LM-29)\nSECOND SEMESTER\n2° YEAR MANDATORY\n[0622400032] ELECTROMAGNETIC COMPATIBILITY\n6 CFU\n60 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER\n[0622400031] DIGITAL SYSTEM ELECTRONICS\n9 CFU\n90 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER\n[0622400008] PHOTOVOLTAICS AND OPTOELECTRONICS\n9 CFU\n90 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER\n[0622400024] FINAL PROJECT\n15 CFU\n450 hours LANGUAGE/FINAL PROJECT (LM-29)\nSECOND SEMESTER\n[0622400046] INTERFACING SYSTEMS FOR INDUSTRIAL AUTOMATION\n6 CFU\n60 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER RECOMMENDED COURSES (BETWEEN 6 AND 12 CFU)\nMore information\n[0622400017] COMPLEMENTS OF ELECTROMAGNETISM\n6 CFU\n60 hours STUDENT CHOICE (LM-29)\nSECOND SEMESTER\n[0622400013] VISION-BASED MEASUREMENTS\n6 CFU\n60 hours STUDENT CHOICE (LM-29)\nSECOND SEMESTER\n[0622400039] NANOELECTRONICS AND SENSORS\n6 CFU\n60 hours STUDENT CHOICE (LM-29)\nSECOND SEMESTER\n[0622400043] NETWORKS AND PROTOCOLS FOR THE \"INTERNET OF THINGS\""
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of L'Aquila\",\"course\":\"[I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: [I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES Master's degree English APPLIED TELECOMMUNICATIONS AND ENGINEERING MANAGEMENT (International)",
+        "facts": {
+          "cities": [],
+          "course": "[I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES",
+          "id": "S1C10",
+          "region": "Abruzzo",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C10",
+        "option": "University of L'Aquila | [I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388/insegnamenti/1?schemaid=11350",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388/insegnamenti/2?schemaid=11351",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10388/insegnamenti/3?schemaid=11352"
+        ],
+        "text": "[I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES Master's degree English APPLIED TELECOMMUNICATIONS AND ENGINEERING MANAGEMENT (International)"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0337H] ENERGY ENGINEERING\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0337H] ENERGY ENGINEERING Master's Degree Interateneo Technologies for energy efficiency\nINFO TEACHING SAVE PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Year of study\n1° YEAR\n- A.A. 2024/2025\n2° YEAR\n- A.A.",
+        "facts": {
+          "cities": [],
+          "course": "[0337H] ENERGY ENGINEERING",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0337H] ENERGY ENGINEERING",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362?schemaid=8534",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363?schemaid=8531",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0337H] ENERGY ENGINEERING Master's Degree Interateneo Technologies for energy efficiency\nINFO TEACHING SAVE PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Year of study\n1° YEAR\n- A.A. 2024/2025\n2° YEAR\n- A.A."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[SC] COGNITIVE SCIENCES\",\"type\":\"Doctoral Program\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [SC] COGNITIVE SCIENCES Doctoral Program (D.M.45)\n\nINFO General information for the current academic year Duration\n3 years Curriculum\n2024\nStatus Open Credits\n0 ECTS credits Type Doctoral programs Category Cognitive Sciences Regulation Reorganization of doctoral programs Interuniversity Course No Open",
+        "facts": {
+          "cities": [],
+          "course": "[SC] COGNITIVE SCIENCES",
+          "id": "S1C3",
+          "region": "Trentino-Alto Adige",
+          "type": "Doctoral Program",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C3",
+        "option": "University of Trento | [SC] COGNITIVE SCIENCES",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10777"
+        ],
+        "text": "[SC] COGNITIVE SCIENCES Doctoral Program (D.M.45)\n\nINFO General information for the current academic year Duration\n3 years Curriculum\n2024\nStatus Open Credits\n0 ECTS credits Type Doctoral programs Category Cognitive Sciences Regulation Reorganization of doctoral programs Interuniversity Course No Open Access Location Rovereto Campus - Palazzo Piomarta - corso Bettini, 84\nDepartment Department of Psychology and Cognitive Sciences Knowledge verification required for access No"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of L'Aquila\",\"course\":\"[M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: main content MASTER'S DEGREES\n[F4C] ATMOSPHERIC SCIENCE AND TECHNOLOGY FOR METEOROLOGY AND CLIMATE English\n[C4B] CULTURAL HERITAGE\n[F4L] ENVIRONMENTAL BIOLOGY AND ECOSYSTEM MANAGEMENT\n[F4B] HEALTH AND NUTRITION BIOLOGY\n[B4D] MEDICAL AND PHARMACEUTICAL BIOTECHNOLOGIES English Italian\n[F4Z] APPLIED DATA",
+        "facts": {
+          "cities": [],
+          "course": "[M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian",
+          "id": "S1C4",
+          "region": "Abruzzo",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C4",
+        "option": "University of L'Aquila | [M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/1#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/1?schemaid=11296",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/2#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/2?schemaid=11299",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/3#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/3?schemaid=11300",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/5#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/5?schemaid=11298",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/6#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/6?schemaid=11297",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti?annoOrdinamento=2018",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024?gruppo=1563187033318"
+        ],
+        "text": "main content MASTER'S DEGREES\n[F4C] ATMOSPHERIC SCIENCE AND TECHNOLOGY FOR METEOROLOGY AND CLIMATE English\n[C4B] CULTURAL HERITAGE\n[F4L] ENVIRONMENTAL BIOLOGY AND ECOSYSTEM MANAGEMENT\n[F4B] HEALTH AND NUTRITION BIOLOGY\n[B4D] MEDICAL AND PHARMACEUTICAL BIOTECHNOLOGIES English Italian\n[F4Z] APPLIED DATA SCIENCE English\n[C4I] PHILOSOPHY\n[F4F] PHYSICS English\n[F4I] COMPUTER SCIENCE English\n[I4H] CHEMICAL ENGINEERING\n[I4S] CONTROL AND AUTOMATION SYSTEMS ENGINEERING English\n[I4B] INFRASTRUCTURE ENGINEERING English Italian\n[I4Z] STRUCTURES AND CONSTRUCTION ENGINEERING English Italian\n[I4L] ELECTRICAL ENGINEERING\n[I4E] ELECTRONIC ENGINEERING\n[I4G] MANAGEMENT ENGINEERING\n[I4F] COMPUTER ENGINEERING English\n[I4W] MATHEMATICAL ENGINEERING English\n[I4M] MECHANICAL ENGINEERING English Italian\n[I4R] ENVIRONMENTAL AND TERRITORIAL ENGINEERING\n[C4Y] LANGUAGES AND CULTURES FOR COMMUNICATION AND INTERNATIONAL COOPERATION\n[F4M] MATHEMATICS English\n[I4Y] MATHEMATICAL MODELLING English\n[F4S] NEUROSCIENCES English\n[S4P] SOCIAL AND EDUCATIONAL SERVICES AND INTERVENTIONS PLANNING AND MANAGEMENT\n[P4Q] CLINICAL, APPLIED AND INTERVENTION PSYCHOLOGY\n[E4A] SPORT SCIENCE AND TECHNOLOGY\n[F4D] CHEMICAL SCIENCES\n[D4A] PREVENTIVE HEALTH PROFESSIONS SCIENCES\n[D4D] ASSISTIVE HEALTH PROFESSIONS SCIENCES\n[D4R] DIAGNOSTIC HEALTH PROFESSIONS SCIENCES\n[D4U] NURSING AND OBSTETRICS SCIENCES\n[E4P] PREVENTIVE AND ADAPTIVE SPORT SCIENCES\n[D4F] REHABILITATIVE HEALTH PROFESSIONS SCIENCES\n[C4S] LITERARY AND CULTURAL STUDIES\n[I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES English"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[0205F] JURISPRUDENCE Engineering, computer science and technologies\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: main content Master's degree courses in a single cycle Economics, Management and Law\n[0336F] CIVIL ENGINEERING-ARCHITECTURE Medical-scientific and biological sciences\n[1001S] MEDICINE AND SURGERY InteruniversityJoint title",
+        "facts": {
+          "cities": [],
+          "course": "[0205F] JURISPRUDENCE Engineering, computer science and technologies",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [0205F] JURISPRUDENCE Engineering, computer science and technologies",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055/insegnamenti/50371",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055/insegnamenti/50371?schemaid=8041",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1679583500227"
+        ],
+        "text": "main content Master's degree courses in a single cycle Economics, Management and Law\n[0336F] CIVIL ENGINEERING-ARCHITECTURE Medical-scientific and biological sciences\n[1001S] MEDICINE AND SURGERY InteruniversityJoint title"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[L610] LOGOPEDIA\",\"type\":\"COURSE\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: hours Student's choice (L/SNT2)\n3° YEAR MANDATORY\n[LOG19] REHABILITATION OF PATIENTS WITH OBSTRUCTIVE SLEEP APNEA (OSAS)\n3 CFU\n30 hours Characterizing (L/SNT2)\n[LOG20] LOGOPEDIC THEORIES AND TECHNIQUES I\n7 CFU\n70 hours Characterizing (L/SNT2)\n[LOG21] BUSINESS ORGANIZATION AND TEAM WORK\n2 CFU\n20 hours Characterizing (",
+        "facts": {
+          "cities": [],
+          "course": "[L610] LOGOPEDIA",
+          "id": "S1C6",
+          "region": "Abruzzo",
+          "type": "COURSE",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C6",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [L610] LOGOPEDIA",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/1784",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/1784/insegnamenti/21852"
+        ],
+        "text": "hours Student's choice (L/SNT2)\n3° YEAR MANDATORY\n[LOG19] REHABILITATION OF PATIENTS WITH OBSTRUCTIVE SLEEP APNEA (OSAS)\n3 CFU\n30 hours Characterizing (L/SNT2)\n[LOG20] LOGOPEDIC THEORIES AND TECHNIQUES I\n7 CFU\n70 hours Characterizing (L/SNT2)\n[LOG21] BUSINESS ORGANIZATION AND TEAM WORK\n2 CFU\n20 hours Characterizing (L/SNT2)\n[LOG22] LOGOPEDIC AND PSYCHOMOTOR REHABILITATION\n8 CFU\n80 hours Characterizing, Complementary/Integrative (L/SNT2)\n[LOG23] LOGOPEDIC THEORIES AND TECHNIQUES 2\n\n9 CFU\n90 hours Characterizing (L/SNT2)\n[LOG24] SEMINAR: ASSESSMENT AND MANAGEMENT OF VOICE DISORDERS\n2 CFU\n20 hours Other (L/SNT2)\n[LOG25] SEMINAR: ASSESSMENT AND MANAGEMENT IN COMMUNICATION DISORDERS IN AUTISM\n2 CFU\n20 hours Other (L/SNT2)\n[LOG26] THIRD YEAR TRAINING\n25 CFU\n250 hours Characterizing (L/SNT2)\n[LOG27] FINAL EXAM\n6 CFU\n1 hour Language/Final Exam (L/SNT2)"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Siena\",\"course\":\"[ME008] LOGOPEDICS (ENABLING QUALIFICATION FOR THE HEALTHCARE PROFESSION OF SPEECH THERAPIST)\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: 21] TRAINING COURSE ON HEALTH AND SAFETY IN WORKPLACES - HIGH RISK - PURSUANT TO ARTICLE 37 OF DECRETO LEGISLATIVO 81/08\n16 hours Fictitious period - Safety SPP course\n[2016664] COMPONENT OF LOGOPEDICS IN RESPIRATORY AND SWALLOWING CONTEXT\n5 CFU\n50 hours Second Semester\n[2017476] SCIENTIFIC ENGLISH MOD. 2\n\n2 CFU\n20 ho",
+        "facts": {
+          "cities": [],
+          "course": "[ME008] LOGOPEDICS (ENABLING QUALIFICATION FOR THE HEALTHCARE PROFESSION OF SPEECH THERAPIST)",
+          "id": "S1C7",
+          "region": "Toscana",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "University of Siena"
+        },
+        "id": "S1C7",
+        "option": "University of Siena | [ME008] LOGOPEDICS (ENABLING QUALIFICATION FOR THE HEALTHCARE PROFESSION OF SPEECH THERAPIST)",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10363",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10363/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10363/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10363/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10363/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10363/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "21] TRAINING COURSE ON HEALTH AND SAFETY IN WORKPLACES - HIGH RISK - PURSUANT TO ARTICLE 37 OF DECRETO LEGISLATIVO 81/08\n16 hours Fictitious period - Safety SPP course\n[2016664] COMPONENT OF LOGOPEDICS IN RESPIRATORY AND SWALLOWING CONTEXT\n5 CFU\n50 hours Second Semester\n[2017476] SCIENTIFIC ENGLISH MOD. 2\n\n2 CFU\n20 hours"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[0345H] MATERIALS ENGINEERING\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: gies for managing materials throughout the entire life cycle, with particular attention to sustainability and recycling.\nIn particular, the courses offered in both characteristic and related disciplines allow consolidating the basic competencies of materials engineers on different material classes, their manufacturing",
+        "facts": {
+          "cities": [],
+          "course": "[0345H] MATERIALS ENGINEERING",
+          "id": "S1C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C8",
+        "option": "University of Trento | [0345H] MATERIALS ENGINEERING",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti/50508#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti/50508?schemaid=8610",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti/50510#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti/50510?schemaid=8609",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "gies for managing materials throughout the entire life cycle, with particular attention to sustainability and recycling.\nIn particular, the courses offered in both characteristic and related disciplines allow consolidating the basic competencies of materials engineers on different material classes, their manufacturing processes, advanced and \"smart\" properties and applications, and enable acquiring interdisciplinary competencies that contribute to consolidating technical preparation and increasing the ability of graduates to interact within different company functions throughout the product design and development phase, as well as in managing its life cycle and defining enabling technologies for production systems. At the second year, students are also offered the possibility to choose between differentiated in-depth curricula that, integrating innovation and entrepreneurial aspects, focus on application contexts of different areas, considered strategic and fully consistent with the overall educational project of the study course. In particular, examples include in-depth studies on manufacturing processes and product development, sustainable use of energy, materials and technologies for biomedical and functional applications, and sustainable materials."
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Salerno\",\"course\":\"[05223] CHIMICA\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: t, enjoyment through diverse materials, and adult encouragement. Must avoid adding new info - just distill what's given.\nWord count is critical here. I'll aim for 80-90 words to be safe. Let me structure it: start with core benefits (language/concentration/creativity), mention fun aspect with variety, end with call to",
+        "facts": {
+          "cities": [],
+          "course": "[05223] CHIMICA",
+          "id": "S1C9",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C9",
+        "option": "University of Salerno | [05223] CHIMICA",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti/10000?schemaid=16694",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti/10001?schemaid=16695",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500261/insegnamenti?annoOrdinamento=2016"
+        ],
+        "text": "t, enjoyment through diverse materials, and adult encouragement. Must avoid adding new info - just distill what's given.\nWord count is critical here. I'll aim for 80-90 words to be safe. Let me structure it: start with core benefits (language/concentration/creativity), mention fun aspect with variety, end with call to action for caregivers.\n\nWait, should I specify \"parents and teachers\" or just say \"caregivers\"? The text says both, so I'll keep it precise. Also must not say \"studies show\" since text doesn't cite sources - just state facts as presented.\n\n*checks draft* \"Enhances language skills, concentration, and creativity\" covers first three points. \"Enjoyable when exposed to diverse books\" captures the fun aspect. \"Regular encouragement from parents/teachers supports holistic development\" ties it together without exceeding word limit.\n\n*counts words* 78 words - perfect. No fluff, all key elements from text. User seems to need this for educational purpose, maybe a teacher preparing materials? Keeping it professional but simple matches their likely need.\n\nDouble-checking: no markdown, pure English, under 100 words. Nailed it.\n</thinking>"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "engineering_technology",
+      "cognitive_science_linguistics"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "electrical engineering signal processing linguistics"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "To apply to the University of Salerno's MSc program in [06224] ELECTRONIC ENGINEERING, you will need to follow the university's admission procedures. The specific details for the application process, including required documents and deadlines, are not available. However, you can typically find this information on the university's official website or by contacting their admissions office. The program includes courses like Antennas and Complements of Automatic Control. If you need more detailed information, I recommend visiting the University of Salerno's website or reaching out to their admissions department."
+    },
+    "ctx_chars": 1363,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[06224] ELECTRONIC ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: ND ENERGY STUDY PLAN COHORT 2024 - ELECTRONICS FOR \"SOUND DESIGN\"\nYear of course\n1° YEAR\n- A.Y. 2024/2025\n2° YEAR\n- A.Y.\n2025/2026\n1° YEAR MANDATORY\n[0622400003] ANTENNAS\n9 CFU\n90 hours CHARACTERIZING (LM-29)\nFIRST SEMESTER\n[0622400010] COMPLEMENTS OF AUTOMATIC CONTROL\n9 CFU\n90 hours RELATED/INTE\n\n{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[SC] COGNITIVE SCIENCES\",\"type\":\"Doctoral Program\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [SC] COGNITIVE SCIENCES Doctoral Program (D.M.45)\n\nINFO General information for the current academic year Duration\n3 years Curriculum\n2024\nStatus Open Credits\n0 ECTS credits Type Doctoral programs Category Cognitive Sciences Regulation Reorganization of doctoral programs Interuniversity Course No Open\n\n{\"id\":\"S1C10\",\"university\":\"University of L'Aquila\",\"course\":\"[I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES\",\"type\":\"Master\n[...log text clipped...]",
+    "current_question": "How much do you enjoy keeping activities ordered, planned, and under control?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "electrical engineering signal processing linguistics",
+    "rendered_reply": "To apply to the University of Salerno's MSc program in [06224] ELECTRONIC ENGINEERING, you will need to follow the university's admission procedures. The specific details for the application process, including required documents and deadlines, are not available. However, you can typically find this information on the university's official website or by contacting their admissions office. The program includes courses like Antennas and Complements of Automatic Control. If you need more detailed information, I recommend visiting the University of Salerno's website or reaching out to their admissions department.",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "electrical engineering signal processing linguistics"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      0,
+      2,
+      1,
+      1,
+      0,
+      0,
+      -2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "0152bbd87d5f",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "can help me with give me advice how to study in italy im from morocco",
+      "role": "user"
+    },
+    {
+      "content": "Hello! I'm an AI assistant here to help you with university guidance in Italy. Let's start by learning more about your background and goals. What are you studying now, or what was your most recent study path?",
+      "role": "assistant"
+    },
+    {
+      "content": "data and ai engineering",
+      "role": "user"
+    },
+    {
+      "content": "I see that you are interested in data and AI engineering. However, I need to know your most recent or current formal education to better assist you. Could you please clarify what you are studying now or what you have studied in the past?",
+      "role": "assistant"
+    },
+    {
+      "content": "i had engineer degree in mecatronics",
+      "role": "user"
+    },
+    {
+      "content": "Which subjects or university areas catch your interest the most?",
+      "role": "assistant"
+    },
+    {
+      "content": "i dont knoz",
+      "role": "user"
+    },
+    {
+      "content": "I understand that you're not sure about your specific interests yet. That's okay! Let's focus on your background. You mentioned that you have an engineering degree in mechatronics. This is a great starting point. Do you have any particular subjects or areas within engineering that you enjoyed the most or would like to explore further in your studies in Italy?",
+      "role": "assistant"
+    },
+    {
+      "content": "Hello, what is this demo about?",
+      "role": "user"
+    },
+    {
+      "content": "Hello! I'm an AI assistant here to help you with university guidance in Italy. Let's start with some questions to understand your preferences better. What are you studying now, or what was your most recent study path?",
+      "role": "assistant"
+    },
+    {
+      "content": "I am about to finish my BSc studies in Electrical Engineering",
+      "role": "user"
+    },
+    {
+      "content": "Which subjects or university areas catch your interest the most?",
+      "role": "assistant"
+    },
+    {
+      "content": "I liked signal processing and I am also interested in languages",
+      "role": "user"
+    },
+    {
+      "content": "When you think about university, what would you like to learn more about or learn how to do?",
+      "role": "assistant"
+    },
+    {
+      "content": "I’d like to learn to make practical human-machine dialogue interaction systems in natural languages",
+      "role": "user"
+    },
+    {
+      "content": "Do you have a preferred Italian region or macro-area, or are you flexible about location?",
+      "role": "assistant"
+    },
+    {
+      "content": "I am flexible",
+      "role": "user"
+    },
+    {
+      "content": "Great, that's helpful to know. Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends. How much do you enjoy practical, hands-on activities, such as building, repairing, or working with tools and concrete objects?",
+      "role": "assistant"
+    },
+    {
+      "content": "Usually when I have to repair something I am in a hurry and I don’t eant to invest much time or thought into it, but if I did things like that more often, I may get interested more",
+      "role": "user"
+    },
+    {
+      "content": "I see. Practical, hands-on activities include building, repairing, or working with tools and concrete objects. Do you have a specific example in mind?",
+      "role": "assistant"
+    },
+    {
+      "content": "I don’t know, repairing something mechanical",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy understanding how things, systems, or phenomena work?",
+      "role": "assistant"
+    },
+    {
+      "content": "It is interesting - both at practical (mechanical) level and at deeper, more physical/mathematical levels",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy researching information, analyzing problems, and reasoning logically?",
+      "role": "assistant"
+    },
+    {
+      "content": "I quite enjoy all that, in areas that I find interesting",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy expressing ideas or emotions through creative forms such as writing, art, music, or design?",
+      "role": "assistant"
+    },
+    {
+      "content": "I enjoy that as well, however I don’t feel I’ve been much good in things like design",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy experimenting and creating something new from open-ended ideas?",
+      "role": "assistant"
+    },
+    {
+      "content": "I’d like to do that, but as I said, I’m not sure that’s one of my strong points",
+      "role": "user"
+    },
+    {
+      "content": "Experimenting and creating something new from open-ended ideas includes inventing and designing, or coming up with new ways to solve problems. How much do you enjoy experimenting and creating something new from open-ended ideas?",
+      "role": "assistant"
+    },
+    {
+      "content": "Didn’t I just answer that?",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy working closely with people in a helping, supportive, or listening role?",
+      "role": "assistant"
+    },
+    {
+      "content": "I might enjoy that simply because I haven’t been doing much of that, but I’m afraid that if you do that regularly and a lot, you soon lose the initial zeal and it starts to induce fatigue.",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy proposing ideas, taking initiative, and organizing projects or activities?",
+      "role": "assistant"
+    },
+    {
+      "content": "I don’t enjoy that and I’m not good at it.",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy keeping activities ordered, planned, and under control?",
+      "role": "assistant"
+    },
+    {
+      "content": "They usually come faster than I’m able to keep them under control, but I like order in general.",
+      "role": "user"
+    },
+    {
+      "content": "Based on your background in Electrical Engineering and your interest in signal processing and languages, you might enjoy courses that combine technical skills with linguistic applications. Your investigative and artistic interests suggest you could enjoy exploring how to create practical human-machine dialogue interaction systems in natural languages. I suggest these options: 1. University of Salerno | [06224] ELECTRONIC ENGINEERING 2. University of Trento | [SC] COGNITIVE SCIENCES 3. University of L'Aquila | [I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES Would you like more information about these courses or any other specific aspects of university life in Italy?",
+      "role": "assistant"
+    },
+    {
+      "content": "Where is each of these cities?",
+      "role": "user"
+    },
+    {
+      "content": "The University of Salerno is in the Campania region, the University of Trento is in the Trentino-Alto Adige region, and the University of L'Aquila is in the Abruzzo region. The exact city is not available.",
+      "role": "assistant"
+    },
+    {
+      "content": "Salerno is near Napoli?",
+      "role": "user"
+    },
+    {
+      "content": "Yes, Salerno is in the Campania region, which is the same region as Napoli. It is about 50 kilometers southeast of Napoli.",
+      "role": "assistant"
+    },
+    {
+      "content": "Where is Abruzzo?",
+      "role": "user"
+    },
+    {
+      "content": "Abruzzo is a region in central Italy. The University of L'Aquila is located in this region.",
+      "role": "assistant"
+    },
+    {
+      "content": "What is the nearest major city?",
+      "role": "user"
+    },
+    {
+      "content": "The nearest major city to the University of L'Aquila is Rome, which is about 130 kilometers northwest. The nearest major city to the University of Trento is Bolzano, which is about 50 kilometers south.",
+      "role": "assistant"
+    },
+    {
+      "content": "OK, what can you tell me about the Trento study programme?",
+      "role": "user"
+    },
+    {
+      "content": "The University of Trento offers a [SC] COGNITIVE SCIENCES Doctoral Program. This program is designed to provide advanced training in cognitive sciences, which aligns well with your interest in signal processing and languages. The program is structured over 3 years and is open for the current academic year. However, the specific curriculum details and credits are not available. The program is located in the Trentino-Alto Adige region, which is known for its high-quality educational institutions and scenic environment.",
+      "role": "assistant"
+    },
+    {
+      "content": "I need to finish MSc studies first",
+      "role": "user"
+    },
+    {
+      "content": "I understand. Would you like to explore more about the options I mentioned or discuss other aspects of university life in Italy?",
+      "role": "assistant"
+    },
+    {
+      "content": "Where should I enrol for the MSc studies?",
+      "role": "user"
+    },
+    {
+      "content": "The University of Salerno offers a Master's Degree in [06224] ELECTRONIC ENGINEERING, which includes courses like Antennas and Complements of Automatic Control. The University of L'Aquila offers a Master's Degree in [I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES, which includes an international program in Applied Telecommunications and Engineering Management. The University of Trento offers a Doctoral Program in [SC] COGNITIVE SCIENCES, which is a 3-year program. However, the specific curriculum details and credits are not available. If you are interested in a Master's Degree, you might want to consider the options at the University of Salerno or the University of L'Aquila. If you are interested in a Doctoral Program, the University of Trento's program in Cognitive Sciences could be a good fit. If you are interested in a different broad area, please let me know.",
+      "role": "assistant"
+    },
+    {
+      "content": "Do I need MSc studies for a PhD study programme according to Italian laws?",
+      "role": "user"
+    },
+    {
+      "content": "In Italy, a Master's degree is typically required before enrolling in a PhD program. This means you would need to complete your MSc studies before pursuing a PhD. The University of Trento offers a Doctoral Program in [SC] COGNITIVE SCIENCES, which is a 3-year program. However, the specific curriculum details and credits are not available. The University of L'Aquila offers a Master's Degree in [I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES, which includes an international program in Applied Telecommunications and Engineering Management. The University of Salerno offers a Master's Degree in [06224] ELECTRONIC ENGINEERING, which includes courses like Antennas and Complements of Automatic Control. If you are interested in a Master's Degree, you might want to consider the options at the University of Salerno or the University of L'Aquila. If you are interested in a Doctoral Program, the University of Trento's program in Cognitive Sciences could be a good fit. If you are interested in a different broad area, please let me know.",
+      "role": "assistant"
+    },
+    {
+      "content": "What about MSc studies in Trento?",
+      "role": "user"
+    },
+    {
+      "content": "The University of Trento offers a Doctoral Program in [SC] COGNITIVE SCIENCES, which is a 3-year program. However, the specific curriculum details and credits are not available. If you are interested in a Master's Degree, you might want to consider the options at the University of Salerno or the University of L'Aquila. If you are interested in a different broad area, please let me know.",
+      "role": "assistant"
+    },
+    {
+      "content": "How do I apply to the U of Salerno MSc programme?",
+      "role": "user"
+    },
+    {
+      "content": "To apply to the University of Salerno's MSc program in [06224] ELECTRONIC ENGINEERING, you will need to follow the university's admission procedures. The specific details for the application process, including required documents and deadlines, are not available. However, you can typically find this information on the university's official website or by contacting their admissions office. The program includes courses like Antennas and Complements of Automatic Control. If you need more detailed information, I recommend visiting the University of Salerno's website or reaching out to their admissions department.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T11:40:32"
+}

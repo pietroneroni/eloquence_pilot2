@@ -1,0 +1,616 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T10:34:22",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo Tasso di Roma",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "communication_digital_media"
+      ],
+      "riasec_attitudes": [
+        "Enterprising",
+        "Conventional",
+        "Social"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo Tasso di Roma",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities",
+            "cultural_heritage"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo Tasso di Roma",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "communication_digital_media"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo Tasso di Roma",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "communication_digital_media"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo Tasso di Roma",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "communication_digital_media"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            1,
+            -1,
+            -1,
+            -1,
+            1,
+            2,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Sassari | [A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Comunicazione multimediale e giornalismo",
+      "Sapienza Università di Roma | [33616] COMUNICAZIONE, TECNOLOGIE E CULTURE DIGITALI",
+      "University of Foggia | [1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI COMUNICAZIONE E TECNOLOGIE DIGITALI"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[30021] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA) - VITERBO ASL VITERBO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Viterbo\"]}\nEXCERPT: Tecniche di radiologia medica, per immagini e radioterapia (abilitante alla professione sanitaria di Tecnico di radiologia medica) - Viterbo ASL Viterbo\nAnno accademico: 2026-2027\nCodice corso: 30021\nClasse di laurea: L/SNT3\nTipologia d",
+        "facts": {
+          "cities": [
+            "Viterbo"
+          ],
+          "course": "[30021] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA) - VITERBO ASL VITERBO",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [30021] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA) - VITERBO ASL VITERBO",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/30021",
+          "https://corsidilaurea.uniroma1.it/it/course/30021/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/30021/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/30021/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/30021/study-plan"
+        ],
+        "text": "Tecniche di radiologia medica, per immagini e radioterapia (abilitante alla professione sanitaria di Tecnico di radiologia medica) - Viterbo ASL Viterbo\nAnno accademico: 2026-2027\nCodice corso: 30021\nClasse di laurea: L/SNT3\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Psicologia\nDipartimento: SCIENZE MEDICO-CHIRURGICHE E DI MEDICINA TRASLAZIONALE\nSede: Viterbo\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05418"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Sassari\",\"course\":\"[1191] BIOTECNOLOGIE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: contenuto principale Corsi di laurea Medica\n[A147] BIOTECNOLOGIE E ANALISI BIOINFORMATICHE\n[1222] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA)\n[1219] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE)\n( FINO AL 2021  - DAL 2022 )\n[A146]",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[1191] BIOTECNOLOGIE",
+          "id": "S1C10",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C10",
+        "option": "University of Sassari | [1191] BIOTECNOLOGIE",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10320",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1670320551176"
+        ],
+        "text": "contenuto principale Corsi di laurea Medica\n[A147] BIOTECNOLOGIE E ANALISI BIOINFORMATICHE\n[1222] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA)\n[1219] INFERMIERISTICA (ABILITANTE ALLA PROFESSIONE SANITARIA DI INFERMIERE)\n( FINO AL 2021  - DAL 2022 )\n[A146] INGEGNERIA INDUSTRIALE\n[A106] INGEGNERIA INFORMATICA\n( FINO AL 2021  - DAL 2022 )\n[A030] LOGOPEDIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI LOGOPEDISTA)\n[1220] OSTETRICIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI OSTETRICA/O)\n[1193] SCIENZE BIOLOGICHE\n[A119] SCIENZE MOTORIE, SPORTIVE E BENESSERE DELL'UOMO\n[A162] TECNICHE AUDIOMETRICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI AUDIOMETRISTA)\n[1224] TECNICHE DI LABORATORIO BIOMEDICO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI LABORATORIO BIOMEDICO)\n[A004] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\n Scienze\n[1195] CHIMICA\n[1177] SCIENZE NATURALI Umanistica\n[A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE\n[1218] LETTERE\n[A140] LINGUE, CULTURE E TECNICHE PER IL TURISMO\n[1192] MEDIAZIONE LINGUISTICA E CULTURALE\n[A116] PROGETTAZIONE, GESTIONE E PROMOZIONE TURISTICA DI ITINERARI DELLA CULTURA E DELL'AMBIENTE\n( FINO AL 2022  - DAL 2023 )\n[1171] SCIENZE DEI BENI CULTURALI\n[A031] SCIENZE DELL'EDUCAZIONE\n( FINO AL 2021  - DAL 2022 )\n[A073] SCIENZE E TECNICHE PSICOLOGICHE DEI PROCESSI COGNITIVI\n( FINO AL 2022  - DAL 2023 )\n[A079] SERVIZIO SOCIALE Progettazione\n[A144] DESIGN\n( FINO AL 2023  - DAL 2024 )\n[1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO\n( FINO AL 2023  - DAL 2024 )\n[1213] URBANISTICA."
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Sassari\",\"course\":\"[A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Comunicazione multimediale e giornalismo\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Corso di Laurea Comunicazione multimediale e giornalismo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nComunicazione multimediale e giornalismo Comunicazione politica e istituzionale PERC",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Comunicazione multimediale e giornalismo",
+          "id": "S1C2",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C2",
+        "option": "University of Sassari | [A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Comunicazione multimediale e giornalismo",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti/1",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti/2",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10801/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Corso di Laurea Comunicazione multimediale e giornalismo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nComunicazione multimediale e giornalismo Comunicazione politica e istituzionale PERCORSO COMUNE\n[40002055] COMUNICAZIONE D'IMPRESA\n6 CFU\n30 ore Secondo Semestre Tipo insegnamento: [OPZ] - Opzionale\n[40002056] SOCIOLOGIA DELLA CITTÀ\n6 CFU\n60 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40002637] TEORIE E TECNICHE DEI MEDIA\n6 CFU\n30 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40002638] DIRITTO DELL'INFORMAZIONE\n6 CFU\n30 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A001665] METODO E TECNICHE DELLA RICERCA SOCIALE\n6 CFU\n30 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A002366] LINGUAGGIO POLITICO E COMUNICAZIONE\n6 CFU\n30 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33616] COMUNICAZIONE, TECNOLOGIE E CULTURE DIGITALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Comunicazione, tecnologie e culture digitali\nAnno accademico: 2026-2027\nCodice corso: 33616\nClasse di laurea: L-20\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33616] COMUNICAZIONE, TECNOLOGIE E CULTURE DIGITALI",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33616] COMUNICAZIONE, TECNOLOGIE E CULTURE DIGITALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33616",
+          "https://corsidilaurea.uniroma1.it/it/course/33616/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33616/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33616/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33616/study-plan"
+        ],
+        "text": "Comunicazione, tecnologie e culture digitali\nAnno accademico: 2026-2027\nCodice corso: 33616\nClasse di laurea: L-20\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Politiche, Sociologia, Comunicazione\nDipartimento: COMUNICAZIONE E RICERCA SOCIALE\nSede: Roma\nLingua: Italiano\nPercorso di studio internazionale: Doppio titolo: italo-albanese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05423"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Foggia\",\"course\":\"[1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI COMUNICAZIONE E TECNOLOGIE DIGITALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Puglia\",\"cities\":[\"FOGGIA\"]}\nEXCERPT: [1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI Corso di Laurea COMUNICAZIONE E TECNOLOGIE DIGITALI",
+        "facts": {
+          "cities": [
+            "FOGGIA"
+          ],
+          "course": "[1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI COMUNICAZIONE E TECNOLOGIE DIGITALI",
+          "id": "S1C4",
+          "region": "Puglia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Foggia"
+        },
+        "id": "S1C4",
+        "option": "University of Foggia | [1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI COMUNICAZIONE E TECNOLOGIE DIGITALI",
+        "sources": [
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10531",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10531/insegnamenti",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10531/insegnamenti/1#1",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10531/insegnamenti/1?schemaid=2822",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10531/insegnamenti/2#1",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10531/insegnamenti/2?schemaid=2823",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024/10531/insegnamenti?annoOrdinamento=2021",
+          "https://unifg.coursecatalogue.cineca.it/corsi/2024?area=AR_ECO"
+        ],
+        "text": "[1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI Corso di Laurea COMUNICAZIONE E TECNOLOGIE DIGITALI"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29883] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA) - CORSO DI LAUREA G - ROMA OSPEDALE S. SPIRITO\",\"type\":\"Classe di laurea: L/SNT3\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Tecniche di radiologia medica, per immagini e radioterapia (abilitante alla professione sanitaria di Tecnico di radiologia medica) - Corso di laurea G - Roma Ospedale S. Spirito\nAnno accademico: 2026-2027\nCodice corso: 29883\nClasse di laurea: L/SNT3\nModalit",
+        "facts": {
+          "cities": [],
+          "course": "[29883] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA) - CORSO DI LAUREA G - ROMA OSPEDALE S. SPIRITO",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT3",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [29883] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA) - CORSO DI LAUREA G - ROMA OSPEDALE S. SPIRITO",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29883",
+          "https://corsidilaurea.uniroma1.it/it/course/29883/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/29883/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29883/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29883/study-plan"
+        ],
+        "text": "Tecniche di radiologia medica, per immagini e radioterapia (abilitante alla professione sanitaria di Tecnico di radiologia medica) - Corso di laurea G - Roma Ospedale S. Spirito\nAnno accademico: 2026-2027\nCodice corso: 29883\nClasse di laurea: L/SNT3\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Sassari\",\"course\":\"[A004] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: I TECNICHE RADIOLOGICHE\n5 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000454] RADIODIAGNOSTICA 1\n9 CFU\n108 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000458] SCIENZE MEDICHE GENERALI 1\n\n6 CFU\n72 ore Primo Semestre T",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A004] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+          "id": "S1C6",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C6",
+        "option": "University of Sassari | [A004] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA)",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10688",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10688/insegnamenti/9999"
+        ],
+        "text": "I TECNICHE RADIOLOGICHE\n5 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000454] RADIODIAGNOSTICA 1\n9 CFU\n108 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000458] SCIENZE MEDICHE GENERALI 1\n\n6 CFU\n72 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000459] RADIODIAGNOSTICA 2\n\n10 CFU\n120 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000462] SCIENZE MEDICHE GENERALI 2\n\n7 CFU\n84 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[3000936] SCIENZE BIOMEDICHE\n8 CFU\n96 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40000377] SCIENZE UMANE E PSICOPEDAGOGICHE\n3 CFU\n36 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40000424] LINGUA INGLESE\n6 CFU\n72 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40004077] ATTIVITA' A SCELTA DELLO STUDENTE\n3 CFU\n66 ore Tipo insegnamento: [OBB] - Obbligatoria\n[40004092] TIROCINIO I ANNO\n20 CFU\n500 ore Tipo insegnamento: [OBB] - Obbligatoria\n[A000032] SCIENZE BIOMEDICHE DI BASE\n7 CFU\n84 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000444] SCIENZE PROPEDEUTICHE\n8 CFU\n96 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000445] BASI RADIOLOGICHE\n6 CFU\n72 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33615] COMUNICAZIONE PUBBLICA E D'IMPRESA\",\"type\":\"Classe di laurea: L-20\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Comunicazione pubblica e d'impresa\nAnno accademico: 2026-2027\nCodice corso: 33615\nClasse di laurea: L-20\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33615] COMUNICAZIONE PUBBLICA E D'IMPRESA",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-20",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33615] COMUNICAZIONE PUBBLICA E D'IMPRESA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33615",
+          "https://corsidilaurea.uniroma1.it/it/course/33615/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33615/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33615/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33615/study-plan"
+        ],
+        "text": "Comunicazione pubblica e d'impresa\nAnno accademico: 2026-2027\nCodice corso: 33615\nClasse di laurea: L-20\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Messina\",\"course\":\"[MP033] ESPERTO DELLA COMUNICAZIONE DIGITALE NELLA P.A. E NELL'IMPRESA Master di Primo Livello\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: [MP033] ESPERTO DELLA COMUNICAZIONE DIGITALE NELLA P.A. E NELL'IMPRESA Master di Primo Livello\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n1 anni Ordinamento\n2020\nStato Aperto Lingua Italiano Tipologia Master di Primo Livello Normativa D.M. 270/2004\nCo",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[MP033] ESPERTO DELLA COMUNICAZIONE DIGITALE NELLA P.A. E NELL'IMPRESA Master di Primo Livello",
+          "id": "S1C8",
+          "region": "Sicilia",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C8",
+        "option": "University of Messina | [MP033] ESPERTO DELLA COMUNICAZIONE DIGITALE NELLA P.A. E NELL'IMPRESA Master di Primo Livello",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10517",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10517?annoOrdinamento=2020"
+        ],
+        "text": "[MP033] ESPERTO DELLA COMUNICAZIONE DIGITALE NELLA P.A. E NELL'IMPRESA Master di Primo Livello\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n1 anni Ordinamento\n2020\nStato Aperto Lingua Italiano Tipologia Master di Primo Livello Normativa D.M. 270/2004\nCorso Interateneo No Accesso Libero Sede MESSINA Dipartimento CIVILTA' ANTICHE E MODERNE Verifica conoscenze richieste per l'accesso No Docenti del corso Visualizza lista Requisiti di accesso Titoli opzionali (a scelta fra i seguenti)\n[ L2 ]\nLaurea di Primo Livello\n[ LS ]\nLaurea Specialistica\n[ LM ]\nLaurea Magistrale\n[ TS ]\nTitolo straniero\n[ L1 ]\nLaurea"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29994] TECNICHE AUDIOPROTESICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI AUDIOPROTESISTA) - ROMA AZIENDA POLICLINICO UMBERTO I\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecniche audioprotesiche (abilitante alla professione sanitaria di Audioprotesista) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29994\nClasse di laurea: L/SNT3\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFaco",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[29994] TECNICHE AUDIOPROTESICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI AUDIOPROTESISTA) - ROMA AZIENDA POLICLINICO UMBERTO I",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [29994] TECNICHE AUDIOPROTESICHE (ABILITANTE ALLA PROFESSIONE SANITARIA DI AUDIOPROTESISTA) - ROMA AZIENDA POLICLINICO UMBERTO I",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29994",
+          "https://corsidilaurea.uniroma1.it/it/course/29994/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/29994/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29994/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29994/study-plan"
+        ],
+        "text": "Tecniche audioprotesiche (abilitante alla professione sanitaria di Audioprotesista) - Roma Azienda Policlinico Umberto I\nAnno accademico: 2026-2027\nCodice corso: 29994\nClasse di laurea: L/SNT3\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Medicina e Odontoiatria, Farmacia e Medicina\nDipartimento: ORGANI DI SENSO\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 05418"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "communication_digital_media"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "giornalismo radiotelevisivo sportivo"
+    },
+    "control": {
+      "intent": "acknowledgement",
+      "reply": "Di nulla! Se hai altre domande o hai bisogno di ulteriori informazioni, non esitare a chiedere."
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[30021] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DI RADIOLOGIA MEDICA) - VITERBO ASL VITERBO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Viterbo\"]}\nEXCERPT: Tecniche di radiologia medica, per immagini e radioterapia (abilitante alla professione sanitaria di Tecnico di radiologia medica) - Viterbo ASL Viterbo\nAnno accademico: 2026-2027\nCodice corso: 30021\nClasse di laurea: L/SNT3\nTipologia d\n\n{\"id\":\"S1C2\",\"university\":\"University of Sassari\",\"course\":\"[A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Comunicazione multimediale e giornalismo\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Corso di Laurea Comunicazione multimediale e giornalismo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nComunicazione multimediale e giornalismo Comunicazione politica e istituzionale PERC\n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"cours\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_ack",
+    "profile_update": {},
+    "query": "giornalismo radiotelevisivo sportivo",
+    "rendered_reply": "Di nulla! Se hai altre domande o hai bisogno di ulteriori informazioni, non esitare a chiedere.",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "giornalismo radiotelevisivo sportivo"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      -1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      2
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 3,
+    "selected_option": "University of Foggia | [1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI COMUNICAZIONE E TECNOLOGIE DIGITALI",
+    "shown_options": [
+      "University of Sassari | [A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Comunicazione multimediale e giornalismo",
+      "Sapienza Università di Roma | [33616] COMUNICAZIONE, TECNOLOGIE E CULTURE DIGITALI",
+      "University of Foggia | [1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI COMUNICAZIONE E TECNOLOGIE DIGITALI"
+    ],
+    "source_turn": 15
+  },
+  "session_id": "74dea7f644f7",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ho appena fatto la maturità al liceo Tasso di Roma",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Congratulazioni per aver completato la maturità! Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "io vorrei diventare un giornalista radiotelevisivo sportivo, vorrei frequentare un’università non troppo distante da rima",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi hai appena completato la maturità al liceo Tasso di Roma. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "forse lettere, perchè vorrei diventare un giornalista radiotelevisivo sportivo",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato alla comunicazione digitale e ai media. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei imparare come variare bene le parole e i discorsi in una telecronaca",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei interessato alla comunicazione digitale e ai media. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei studiare preferibilmente in Italia, in una città, che non deve essere una megalopoli ma comunque una città con molta “vita”",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi preferisci studiare in Italia, in una città con molta vita ma non una megalopoli. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "dipende dai fenomeni, non vado matto ad esempio per la tecnologia ma per esempio la metereologia, la geopolitica, la storia sono tutti ambiti molto interessanti",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi che meglio si adatta ai tuoi interessi e alle tue aspirazioni. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, mi hai parlato dei tuoi interessi. Ora, però, vorrei sapere da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "ho appena fatto la maturità al liceo Tasso di Roma",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "io vorrei diventare un giornalista radiotelevisivo sportivo, vorrei frequentare un’università non troppo distante da Roma",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso i tuoi interessi. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "forse lettere, perchè vorrei diventare un giornalista radiotelevisivo sportivo",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti piacerebbe approfondire il giornalismo radiotelevisivo sportivo. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "Roma",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi vorresti studiare in un'università non troppo distante da Roma. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "dipende, non molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "pocoù",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Ti piacerebbe diventare un giornalista radiotelevisivo sportivo, quindi ti ho suggerito corsi di laurea che potrebbero aiutarti a raggiungere questo obiettivo. Le tue preferenze indicano che sei una persona intraprendente, convenzionale e sociale. Le opzioni non documentate a Roma sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. University of Sassari | [A108] COMUNICAZIONE PUBBLICA E PROFESSIONI DELL'INFORMAZIONE Comunicazione multimediale e giornalismo 2. Sapienza Università di Roma | [33616] COMUNICAZIONE, TECNOLOGIE E CULTURE DIGITALI 3. University of Foggia | [1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI COMUNICAZIONE E TECNOLOGIE DIGITALI Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "3",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: University of Foggia | [1101] COMUNICAZIONE, RELAZIONI PUBBLICHE E TECNOLOGIE DIGITALI COMUNICAZIONE E TECNOLOGIE DIGITALI.",
+      "role": "assistant"
+    },
+    {
+      "content": "come posso arrivare alla scuola partendo dal 2 municipio a roma",
+      "role": "user"
+    },
+    {
+      "content": "L'Università di Foggia si trova a Foggia, in Puglia. Per arrivare a Foggia partendo dal 2° municipio di Roma, puoi prendere un treno o un autobus. La stazione ferroviaria di Foggia è ben collegata con Roma, e ci sono diversi treni al giorno. Puoi anche considerare di prendere un autobus da una delle stazioni di Roma, come la Stazione Tiburtina, che offre collegamenti diretti a Foggia. Ti consiglio di verificare gli orari e le opzioni di viaggio in anticipo per pianificare il tuo viaggio.",
+      "role": "assistant"
+    },
+    {
+      "content": "conviene partire da roma tiburtina o da roma termini a livello di affluenza di passeggeri e di frequenza di treni",
+      "role": "user"
+    },
+    {
+      "content": "La stazione di Roma Tiburtina è generalmente più affollata e offre una maggiore frequenza di treni, specialmente per le destinazioni nazionali. Tuttavia, anche la stazione di Roma Termini è ben collegata e offre molte opzioni di viaggio. Per Foggia, entrambi gli snodi ferroviari offrono collegamenti diretti, quindi la scelta dipende più dalla tua convenienza personale in termini di accessibilità e orari dei treni. Ti consiglio di verificare gli orari specifici su un sito di prenotazione treni per trovare la soluzione migliore per te.",
+      "role": "assistant"
+    },
+    {
+      "content": "ok,grazie",
+      "role": "user"
+    },
+    {
+      "content": "Di nulla! Se hai altre domande o hai bisogno di ulteriori informazioni, non esitare a chiedere.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T10:42:56"
+}

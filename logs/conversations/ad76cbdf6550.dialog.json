@@ -1,0 +1,519 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-24T14:18:24",
+  "dialog_language": "English",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "currently studying computer science in the masters",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Enterprising",
+        "Social"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "currently studying computer science in the masters",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "currently studying computer science in the masters",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "currently studying computer science in the masters",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            2,
+            1,
+            -2,
+            2,
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ENG:latest",
+  "rag_state": {
+    "advice_intro_plural": "I suggest these options:",
+    "advice_intro_singular": "I suggest this option:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "Germany",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Trento | [0625H] DATA SCIENCE",
+      "University of Trento | [0709H] HUMAN-COMPUTER INTERACTION - HUMAN-MACHINE INTERACTION"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[02228] DATA SCIENCE AND INNOVATION MANAGEMENT\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: [02221] BUSINESS CONSULTING AND MANAGEMENT\n[02222] ECONOMICS\n[02231] ECONOMICS, GOVERNMENT AND ADMINISTRATION\n[12225] GLOBAL STUDIES AND EUROPEAN UNION\n[02224] STATISTICAL SCIENCES FOR FINANCE Medical\n[07222] INNOVATIONS FOR MEDITERRANEAN AGRICULTURAL PRODUCTION\n[10221] NURSING AND OBSTETRI",
+        "facts": {
+          "cities": [],
+          "course": "[02228] DATA SCIENCE AND INNOVATION MANAGEMENT",
+          "id": "S1C1",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C1",
+        "option": "University of Salerno | [02228] DATA SCIENCE AND INNOVATION MANAGEMENT",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti/10001?schemaid=16684",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti/10002?schemaid=16683",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti?annoOrdinamento=2022",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562230985873"
+        ],
+        "text": "[02221] BUSINESS CONSULTING AND MANAGEMENT\n[02222] ECONOMICS\n[02231] ECONOMICS, GOVERNMENT AND ADMINISTRATION\n[12225] GLOBAL STUDIES AND EUROPEAN UNION\n[02224] STATISTICAL SCIENCES FOR FINANCE Medical\n[07222] INNOVATIONS FOR MEDITERRANEAN AGRICULTURAL PRODUCTION\n[10221] NURSING AND OBSTETRIC SCIENCES Educational Sciences\n[44225] COMMUNITY PSYCHOLOGY FOR EDUCATIONAL, WELL-BEING AND SPORT CONTEXTS\n[44224] SCIENCE OF PERMANENT EDUCATION AND CONTINUING TRAINING\n[44222] SCIENCE OF MOTOR-SPORT EVALUATION AND ANALYSIS AND DESIGN TECHNIQUES FOR SPORT FOR DISABLED PERSONS\n[44221] PEDAGOGICAL SCIENCES Sciences\n[05221] BIOLOGY\n[05223] CHEMISTRY\n[05226] PHYSICS\n[05225] COMPUTER SCIENCE\n[05222] MATHEMATICS\n[05224] ENVIRONMENTAL SCIENCES\n[05227] INFORMATION SECURITY AND CLOUD TECHNOLOGIES Sociological\n[03231] CORPORATE COMMUNICATION AND MEDIA English Italian\n[03232] DIGITAL MARKETING English Italian\n[12228] MANAGEMENT OF TOURISM SYSTEMS FOR SUSTAINABLE DEVELOPMENT\n[12227] MANAGEMENT OF SPORT AND MOTOR ACTIVITIES FOR SOCIAL WELL-BEING\n[12226] TERRITORIAL POLICIES AND INTERNATIONAL COOPERATION\n[03229] SOCIOLOGY AND POLICIES FOR TERRITORY Engineering\n[06232] INFORMATION ENGINEERING FOR DIGITAL MEDICINE English\n[06233] ELECTRICAL ENGINEERING FOR DIGITAL ENERGY English Italian\n[06228] FOOD ENGINEERING English\n[06222] CHEMICAL ENGINEERING\n[06221] CIVIL ENGINEERING\n[06224] ELECTRONIC ENGINEERING\n[06226] MANAGEMENT ENGINEERING\n[06227] COMPUTER ENGINEERING\n[06223] MECHANICAL ENGINEERING\n[06225] ENVIRONMENTAL AND TERRITORIAL ENGINEERING\n[06230] SMART INDUSTRY ENGINEERING English Humanities\n[03223] ARCHAEOLOGY AND ANCIENT CULTURES\n[03221] MODERN LINGUISTICS\n[03222] LINGUISTICS, LITERATURES AND HISTORY OF ANTIQUITY\n[03226] PHILOSOPHY\n[03220] MANAGEMENT AND VALUATION OF ARCHIVES AND LIBRARIES\n[43221] MODERN LANGUAGES AND LITERATURES\n[03240] LINGUISTICS AND TEACHING OF ITALIAN IN INTERNATIONAL CONTEXT Interuniversity\n[43222] SCIENCE OF PERFORMANCE AND MULTIMEDIA PRODUCTION\n[03224] HISTORY AND CRITICISM OF ART"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Salerno\",\"course\":\"[02727] DATA SCIENCE AND DIGITAL INNOVATION FOR INSURANCE & FINANCIAL SERVICES\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: Main content Master Economic-Statistical\n[02726] MANAGEMENT OF HEALTHCARE ENTERPRISES AND ORGANIZATIONS\n[02718] MANAGEMENT OF HEALTHCARE ENTERPRISES AND ORGANIZATIONS - EXPERIENCE LAB\n[02719] MANAGEMENT OF HEALTHCARE ENTERPRISES AND ORGANIZATIONS - EXPERIENCE LAB (BIENNIUM)\n[02714] ECONOMICS",
+        "facts": {
+          "cities": [],
+          "course": "[02727] DATA SCIENCE AND DIGITAL INNOVATION FOR INSURANCE & FINANCIAL SERVICES",
+          "id": "S1C10",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "University of Salerno"
+        },
+        "id": "S1C10",
+        "option": "University of Salerno | [02727] DATA SCIENCE AND DIGITAL INNOVATION FOR INSURANCE & FINANCIAL SERVICES",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500696",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562231222576"
+        ],
+        "text": "Main content Master Economic-Statistical\n[02726] MANAGEMENT OF HEALTHCARE ENTERPRISES AND ORGANIZATIONS\n[02718] MANAGEMENT OF HEALTHCARE ENTERPRISES AND ORGANIZATIONS - EXPERIENCE LAB\n[02719] MANAGEMENT OF HEALTHCARE ENTERPRISES AND ORGANIZATIONS - EXPERIENCE LAB (BIENNIUM)\n[02714] ECONOMICS, FINANCE AND RISK MANAGEMENT\n[02723] ECONOMICS, FINANCE AND RISK MANAGEMENT\n[02724] ECONOMICS, FINANCE AND RISK MANAGEMENT - EXECUTIVE\n[02728] ETHICS OF ARTIFICIAL INTELLIGENCE SYSTEMS (MACHINE ETHICS)\n[02725] MASTER IN ADVANCED ANALYTICS FOR INSURTECH Legal\n[01712] ANTI-CORRUPTION, DATA PROTECTION AND CYBERSECURITY Medical\n[10709] BIOMETRY\n[07710] MICROBIOLOGICAL CONTROLS: QUALITY AND SAFETY IN PRODUCTION PROCESSES\n[10710] FORENSIC DENTISTRY Sciences\n[05704] NEW METHODOLOGIES FOR TEACHING MODERN PHYSICS Sociological\n[03727] TERRITORIAL WELFARE MANAGEMENT\n[03730] SUPERVISION FOR SOCIAL SERVICES (SUPISS)\nEngineering\n[06706] CINETURISM 3.0 & DESTINATION MANAGEMENT."
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Salerno\",\"course\":\"[06127] COMPUTER ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: [06127] COMPUTER ENGINEERING BACHELOR'S DEGREE SOFTWARE - COHORT 2024\n\nNETWORKS - COHORT 2024\nSOFTWARE - COHORT 2024\nSYSTEMS - COHORT 2024\nYear of study\n1ST YEAR\n- A.Y. 2024/2025\n2ND YEAR\n- A.Y. 2025/2026\n3RD YEAR\n- A.Y. 2026/2027\n1ST YEAR MANDATORY\n[0612700112] MATHEMATICAL ANALYSIS 1\n\n9 CF",
+        "facts": {
+          "cities": [],
+          "course": "[06127] COMPUTER ENGINEERING",
+          "id": "S1C2",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C2",
+        "option": "University of Salerno | [06127] COMPUTER ENGINEERING",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10000?schemaid=17153",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10001?schemaid=17154",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10002?schemaid=17152",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[06127] COMPUTER ENGINEERING BACHELOR'S DEGREE SOFTWARE - COHORT 2024\n\nNETWORKS - COHORT 2024\nSOFTWARE - COHORT 2024\nSYSTEMS - COHORT 2024\nYear of study\n1ST YEAR\n- A.Y. 2024/2025\n2ND YEAR\n- A.Y. 2025/2026\n3RD YEAR\n- A.Y. 2026/2027\n1ST YEAR MANDATORY\n[0612700112] MATHEMATICAL ANALYSIS 1\n\n9 CFU\n72 hours BASE (L-8)\nFIRST SEMESTER\n[0612700135] MATHEMATICAL ANALYSIS 2\n\n6 CFU\n48 hours BASE (L-8)\nSECOND SEMESTER\n[0612700011] ELECTRONIC COMPUTERS\n9 CFU\n72 hours CHARACTERIZING (L-8)\nSECOND SEMESTER\n[0612700104] PHYSICS 1\n\n6 CFU\n48 hours BASE (L-8)\nFIRST SEMESTER\n[0612700105] PHYSICS 2"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0625H] DATA SCIENCE\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: 6 CFU\n48 hours\n[145718] DEEP LEARNING LAB\n6 CFU\n48 hours\n[145793] DESIGNING AND PROGRAMMING THE INTERNET OF THINGS (IOT)\n6 CFU\n48 hours\n[146200] DIGITAL EPIDEMIOLOGY\n6 CFU\n48 hours\n[145699] DIGITAL SOCIAL DATA\n6 CFU\n48 hours\n[154119] FUNDAMENTAL HANDS ON FUNCTIONAL NEUROIMAGING ANALYSIS\n6 CF",
+        "facts": {
+          "cities": [],
+          "course": "[0625H] DATA SCIENCE",
+          "id": "S1C3",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C3",
+        "option": "University of Trento | [0625H] DATA SCIENCE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50369#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50369?schemaid=8039",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50370#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti/50370?schemaid=8040",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10760/insegnamenti?annoOrdinamento=2024"
+        ],
+        "text": "6 CFU\n48 hours\n[145718] DEEP LEARNING LAB\n6 CFU\n48 hours\n[145793] DESIGNING AND PROGRAMMING THE INTERNET OF THINGS (IOT)\n6 CFU\n48 hours\n[146200] DIGITAL EPIDEMIOLOGY\n6 CFU\n48 hours\n[145699] DIGITAL SOCIAL DATA\n6 CFU\n48 hours\n[154119] FUNDAMENTAL HANDS ON FUNCTIONAL NEUROIMAGING ANALYSIS\n6 CFU\n42 hours\n[145898] GEOSPATIAL ANALYSIS AND REPRESENTATION FOR DATA SCIENCE\n6 CFU\n36 hours\n[145972] HIGH PERFORMANCE COMPUTING FOR DATA SCIENCE\n6 CFU\n48 hours\n[146114] KNOWLEDGE GRAPH ENGINEERING\n6 CFU\n48 hours\n[145796] LABORATORY OF CUSTOMER AND BUSINESS ANALYTICS\n6 CFU\n48 hours\n[154144] MACHINE LEARNING FOR NLP II\n6 CFU\n42 hours\n[145573] NETWORK-BASED DATA ANALYSIS\n6 CFU\n48 hours\n[145714] SOCIAL DYNAMICS LAB\n6 CFU\n48 hours\n[145899] STUDIES ON HUMAN BEHAVIOUR\n6 CFU\n48 hours"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Salerno\",\"course\":\"[06227] COMPUTER ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: TEMS COHORT 2024\nMULTIMEDIA SYSTEMS AND APPLICATIONS - COHORT 2024\nYear of study\n1° YEAR\n- A.Y. 2024/2025\n2° YEAR\n- A.Y.\n2025/2026\n1° YEAR COMPULSORY\n[0622700091] ALGORITHMS AND PROTOCOLS FOR SECURITY\n9 CFU\n72 hours CHARACTERIZING (LM-32)\nSECOND SEMESTER\n[0622700042] AUTOMATION\n9 CFU\n72 hour",
+        "facts": {
+          "cities": [],
+          "course": "[06227] COMPUTER ENGINEERING",
+          "id": "S1C4",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C4",
+        "option": "University of Salerno | [06227] COMPUTER ENGINEERING",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10000?schemaid=17174",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10001?schemaid=17175",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10002?schemaid=17178",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10003?schemaid=17177",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10004?schemaid=17176",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10005?schemaid=17179"
+        ],
+        "text": "TEMS COHORT 2024\nMULTIMEDIA SYSTEMS AND APPLICATIONS - COHORT 2024\nYear of study\n1° YEAR\n- A.Y. 2024/2025\n2° YEAR\n- A.Y.\n2025/2026\n1° YEAR COMPULSORY\n[0622700091] ALGORITHMS AND PROTOCOLS FOR SECURITY\n9 CFU\n72 hours CHARACTERIZING (LM-32)\nSECOND SEMESTER\n[0622700042] AUTOMATION\n9 CFU\n72 hours CHARACTERIZING (LM-32)\nFIRST SEMESTER\n[0622700123] DATA SCIENCE\n9 CFU\n72 hours AFFINE/INTEGRATIVE (LM-32)\nFIRST SEMESTER\n[0622700081] DESIGN AND ANALYSIS OF ALGORITHMS\n9 CFU\n72 hours AFFINE/INTEGRATIVE (LM-32)\nFIRST SEMESTER\n[0622700066] MACHINE LEARNING\n9 CFU\n72 hours CHARACTERIZING (LM-32)\nSECOND SEMESTER\n[0622700026] EMBEDDED SYSTEMS\n9 CFU\n72 hours CHARACTERIZING (LM-32)\nSECOND SEMESTER\n[0622700122] SOFTWARE ARCHITECTURE DESIGN\n6 CFU\n48 hours CHARACTERIZING (LM-32)\nSECOND SEMESTER\n2° YEAR COMPULSORY\n[0622700109] AGILE SOFTWARE PROCESSES AND DEVOPS\n6 CFU\n48 hours CHARACTERIZING (LM-32)\nSECOND SEMESTER\n[0622700108] CLOUD SYSTEMS AND ADVANCED NETWORKING\n6 CFU\n48 hours AFFINE/INTEGRATIVE (LM-32)\nFIRST SEMESTER\n[0622700106] DATA MANAGEMENT SYSTEMS\n9 CFU\n72 hours CHARACTERIZING (LM-32)\nFIRST SEMESTER\n[0622700039] ENGLISH LANGUAGE\n3 CFU\n24 hours OTHER (LM-32)\nFIRST SEMESTER\n[0622700030] WORK ORIENTATION\n1 CFU\n8 hours OTHER (LM-32)\nSECOND SEMESTER\n[0622700011] FINAL EXAMINATION\n17 CFU\n425 hours LANGUAGE/FINAL EXAMINATION (LM-32)\n[0622700107] SOFTWARE ARCHITECTURES FOR ENTERPRISE SYSTEMS\n6 CFU\n48 hours CHARACTERIZING (LM-32)\nFIRST SEMESTER CURRICULUM CHOICE COURSES (6 CFU)\nMore information\n[0622700073] HIGH PERFORMANCE COMPUTING\n6 CFU\n48 hours STUDENT CHOICE (LM-32)\nSECOND SEMESTER\n[0622700104] SEMANTIC TECHNOLOGIES\n6 CFU\n48 hours STUDENT CHOICE (LM-32)\nSECOND SEMESTER CHOICE COURSES (6-12 CFU)\nMore information\n[0622700071] INNOVATION AND TECHNOLOGY MANAGEMENT\n6 CFU\n48 hours STUDENT CHOICE (LM-32)\nSECOND SEMESTER\n[0622700076] REMOTE SENSING\n6 CFU\n48 hours STUDENT CHOICE (LM-32)\nSECOND SEMESTER\n[0622700113] RENEWABLE ENERGY SMART MANAGEMENT\n6 CFU\n48 hours STUDENT CHOICE (LM-32)\nFIRST SEMESTER CURRICULUM CHOICE COURSES (DIGITAL MEDICINE INFORMATION ENGINEERING) (6-15 CFU)\nMore information CURRICULUM CHOICE COURSES (DIGITAL MEDICINE INFORMATION ENGINEERING) (6-15 CFU)\nMore information\n[0623200008] DIGITAL HEALTH SYSTEMS AND APPLICATIONS\n9 CFU\n72 hours CHARACTERIZING (LM-32)\nOffering course: [06232] - INFORMATION ENGINEERING FOR DIGITAL MEDICINE\n[0623200007] MEDICAL IMAGING\n6 CFU\n48 hours CHARACTERIZING (LM-32)\nOffering course: [06232] - INFORMATION ENGINEERING FOR DIGITAL MEDICINE\n[0623200018] NATURAL COMPUTATION\n6 CFU\n48 hours STUDENT CHOICE (LM-32)\nOffering course: [06232] - INFORMATION ENGINEERING FOR DIGITAL MEDICINE\n[0623200017] PHYSICS FOR BIOMEDICAL APPLICATIONS\n6 CFU\n48 hours STUDENT CHOICE (LM-32)\nOffering course: [06232] - INFORMATION ENGINEERING FOR DIGITAL MEDICINE FREE CHOICE (6-12 CFU)\nMore information More information"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Doctoral Course\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES English\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] PROJECT CULTURE: CREATIVITY, HERITAGE, ENVIRONMENT English\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS ",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S1C5",
+          "region": "Abruzzo",
+          "type": "Doctoral Course",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C5",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES English\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] PROJECT CULTURE: CREATIVITY, HERITAGE, ENVIRONMENT English\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS English\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES English\n[D3GS] GEOSCIENCES English\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY English\n[D3KINE] KINESIOLOGY English\n[D3LLCC] LANGUAGES, LITERATURES AND CULTURES IN CONTACT\n[D3MT] TRANSLATIONAL MEDICINE English Italian\n[D3NI] NEUROSCIENCES AND IMAGING English\n[D3OMIT] MOLECULAR ONCOLOGY AND TUMOR IMMUNOLOGY English\n[D3PSI] PSYCHOLOGY English\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT English\n[D3SBF] BIOMOLECULAR AND PHARMACEUTICAL SCIENCES English\n[D3SGST] LEGAL SCIENCES FOR SUSTAINABILITY, ECOLOGICAL TRANSITION AND INNOVATION English\n[D3SS] SOCIAL SCIENCES German English French"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0709H] HUMAN-COMPUTER INTERACTION - HUMAN-MACHINE INTERACTION\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: organizational, economic and social contexts;\n- Ability to conduct basic and applied research activities independently.\nWith these objectives, the Master's in Human-Computer Interaction is structured into three strongly interconnected learning areas:\n- Socio-cognitive area, with themes of mi",
+        "facts": {
+          "cities": [],
+          "course": "[0709H] HUMAN-COMPUTER INTERACTION - HUMAN-MACHINE INTERACTION",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0709H] HUMAN-COMPUTER INTERACTION - HUMAN-MACHINE INTERACTION",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559/insegnamenti/50456",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10559/insegnamenti/50456?schemaid=8241"
+        ],
+        "text": "organizational, economic and social contexts;\n- Ability to conduct basic and applied research activities independently.\nWith these objectives, the Master's in Human-Computer Interaction is structured into three strongly interconnected learning areas:\n- Socio-cognitive area, with themes of mind-brain interaction and cognitive constraints, enabling and rehabilitative technologies, social interaction, inclusive design;\n- Computer science area, with themes of user-centered design, participatory design, human-computer interaction, prototyping of interactive systems, affective computing, e-learning;\n- Methodological area, with themes of quantitative and qualitative research methodology, visual design, ethics and epistemology of design. The internship can be carried out in one of the University's laboratories with an academic supervisor, or at companies, with an academic supervisor and a company supervisor. The thesis has a dual purpose: assessment of acquired skills and theoretical-conceptual deepening of topics related to cognitive aspects of interaction design, typically accompanied by an empirical component."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Salerno\",\"course\":\"[88611] DATA SCIENCE ACCOUNTING & MANAGEMENT\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: main content Doctorates Economic-Statistical\n[88612] ECONOMICS AND POLICIES OF MARKETS AND BUSINESSES Legal\n[88610] LEGAL SCIENCES Medical\n[88617] TRANSLATIONAL MEDICINE OF DEVELOPMENT AND ACTIVE AGING\n[88618] PHARMACEUTICAL SCIENCES Sciences\n[88602] PHYSICS AND EMERGING TECHNOLOGIES\n[88601]",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[88611] DATA SCIENCE ACCOUNTING & MANAGEMENT",
+          "id": "S1C7",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C7",
+        "option": "University of Salerno | [88611] DATA SCIENCE ACCOUNTING & MANAGEMENT",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10000?schemaid=17519",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10001?schemaid=17520",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10002?schemaid=17521",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti?annoOrdinamento=2024",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562231313284"
+        ],
+        "text": "main content Doctorates Economic-Statistical\n[88612] ECONOMICS AND POLICIES OF MARKETS AND BUSINESSES Legal\n[88610] LEGAL SCIENCES Medical\n[88617] TRANSLATIONAL MEDICINE OF DEVELOPMENT AND ACTIVE AGING\n[88618] PHARMACEUTICAL SCIENCES Sciences\n[88602] PHYSICS AND EMERGING TECHNOLOGIES\n[88601] COMPUTER SCIENCE\n[88603] MATHEMATICS\n[88604] CHEMICAL, BIOLOGICAL AND ENVIRONMENTAL SCIENCES Sociological\n[88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES\n[88622] POLICY AND COMMUNICATION-POLICOM\n[88613] HUMAN SCIENCES."
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[0116G] BUSINESS MANAGEMENT\",\"type\":\"Bachelor's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0116G] BUSINESS MANAGEMENT Bachelor's Degree Part time\nCOURSE INFO SAVE PDF\nGeneral Part time Year of study\n1° YEAR\n- A.Y. 2024/2025\n2° YEAR\n- A.Y. 2025/2026\n3° YEAR\n- A.Y. 2026/2027\n1° YEAR MANDATORY COURSES AND TRAINING ACTIVITIES More information\n[COCS_EN_B1] ENGLISH B1 PLACEMENT TEST\n\nA",
+        "facts": {
+          "cities": [],
+          "course": "[0116G] BUSINESS MANAGEMENT",
+          "id": "S1C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Bachelor's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C8",
+        "option": "University of Trento | [0116G] BUSINESS MANAGEMENT",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10128",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10128/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10128/insegnamenti/50488#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10128/insegnamenti/50488?schemaid=8271",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10128/insegnamenti/50488?schemaid=8272",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10128/insegnamenti?annoOrdinamento=2011"
+        ],
+        "text": "[0116G] BUSINESS MANAGEMENT Bachelor's Degree Part time\nCOURSE INFO SAVE PDF\nGeneral Part time Year of study\n1° YEAR\n- A.Y. 2024/2025\n2° YEAR\n- A.Y. 2025/2026\n3° YEAR\n- A.Y. 2026/2027\n1° YEAR MANDATORY COURSES AND TRAINING ACTIVITIES More information\n[COCS_EN_B1] ENGLISH B1 PLACEMENT TEST\n\nAnnual activity\n[PSPO_EN_B1] ENGLISH B1 LANGUAGE TEST\n\n6 CFU Annual activity More information CHOICE LANGUAGE PLACEMENT TEST More information\n[COCS_FR_B1] FRENCH B1 PLACEMENT TEST\n\nAnnual activity\n[COCS_ES_B1] SPANISH B1 PLACEMENT TEST\n\nAnnual activity\n[COCS_DE_B1] GERMAN B1 PLACEMENT TEST\n\nAnnual activity More information PT - MATHEMATICS AND COMPUTER SCIENCE TEST\n[124010] COMPUTER SCIENCE TEST\nFirst Trimester\n[124012] MATHEMATICS TEST\n40 hours First Trimester PT - ECDL COMPUTER SCIENCE\n[124011] COMPUTER SCIENCE (ECDL FULL)"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of L'Aquila\",\"course\":\"[M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: main content MASTER'S DEGREES\n[F4C] ATMOSPHERIC SCIENCE AND TECHNOLOGY FOR METEOROLOGY AND CLIMATE English\n[C4B] CULTURAL HERITAGE\n[F4L] ENVIRONMENTAL BIOLOGY AND ECOSYSTEM MANAGEMENT\n[F4B] HEALTH AND NUTRITION BIOLOGY\n[B4D] MEDICAL AND PHARMACEUTICAL BIOTECHNOLOGIES English Italian\n[F4Z] AP",
+        "facts": {
+          "cities": [],
+          "course": "[M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian",
+          "id": "S1C9",
+          "region": "Abruzzo",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C9",
+        "option": "University of L'Aquila | [M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/1#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/1?schemaid=11296",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/2#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/2?schemaid=11299",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/3#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/3?schemaid=11300",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/5#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/5?schemaid=11298",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/6#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/6?schemaid=11297",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti?annoOrdinamento=2018",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024?gruppo=1563187033318"
+        ],
+        "text": "main content MASTER'S DEGREES\n[F4C] ATMOSPHERIC SCIENCE AND TECHNOLOGY FOR METEOROLOGY AND CLIMATE English\n[C4B] CULTURAL HERITAGE\n[F4L] ENVIRONMENTAL BIOLOGY AND ECOSYSTEM MANAGEMENT\n[F4B] HEALTH AND NUTRITION BIOLOGY\n[B4D] MEDICAL AND PHARMACEUTICAL BIOTECHNOLOGIES English Italian\n[F4Z] APPLIED DATA SCIENCE English\n[C4I] PHILOSOPHY\n[F4F] PHYSICS English\n[F4I] COMPUTER SCIENCE English\n[I4H] CHEMICAL ENGINEERING\n[I4S] CONTROL AND AUTOMATION SYSTEMS ENGINEERING English\n[I4B] INFRASTRUCTURE ENGINEERING English Italian\n[I4Z] STRUCTURES AND CONSTRUCTION ENGINEERING English Italian\n[I4L] ELECTRICAL ENGINEERING\n[I4E] ELECTRONIC ENGINEERING\n[I4G] MANAGEMENT ENGINEERING\n[I4F] COMPUTER ENGINEERING English\n[I4W] MATHEMATICAL ENGINEERING English\n[I4M] MECHANICAL ENGINEERING English Italian\n[I4R] ENVIRONMENTAL AND TERRITORIAL ENGINEERING\n[C4Y] LANGUAGES AND CULTURES FOR COMMUNICATION AND INTERNATIONAL COOPERATION\n[F4M] MATHEMATICS English\n[I4Y] MATHEMATICAL MODELLING English\n[F4S] NEUROSCIENCES English\n[S4P] SOCIAL AND EDUCATIONAL SERVICES AND INTERVENTIONS PLANNING AND MANAGEMENT\n[P4Q] CLINICAL, APPLIED AND INTERVENTION PSYCHOLOGY\n[E4A] SPORT SCIENCE AND TECHNOLOGY\n[F4D] CHEMICAL SCIENCES\n[D4A] PREVENTIVE HEALTH PROFESSIONS SCIENCES\n[D4D] ASSISTIVE HEALTH PROFESSIONS SCIENCES\n[D4R] DIAGNOSTIC HEALTH PROFESSIONS SCIENCES\n[D4U] NURSING AND OBSTETRICS SCIENCES\n[E4P] PREVENTIVE AND ADAPTIVE SPORT SCIENCES\n[D4F] REHABILITATIVE HEALTH PROFESSIONS SCIENCES\n[C4S] LITERARY AND CULTURAL STUDIES\n[I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES English"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "computer_science"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Would you like more information about these programs or any other specific details?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C3",
+        "S1C6"
+      ],
+      "recap": "You are interested in machine learning, data science, and their applications in sports and manufacturing. You enjoy researching how new things work, experimenting, and organizing yourself. Based on your interests and preferences, I suggest exploring the following programs:"
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[02228] DATA SCIENCE AND INNOVATION MANAGEMENT\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: [02221] BUSINESS CONSULTING AND MANAGEMENT\n[02222] ECONOMICS\n[02231] ECONOMICS, GOVERNMENT AND ADMINISTRATION\n[12225] GLOBAL STUDIES AND EUROPEAN UNION\n[02224] STATISTICAL SCIENCES FOR FINANCE Medical\n[07222] INNOVATIONS FOR MEDITERRANEAN AGRICULTURAL PRODUCTION\n[10221] NURSING AND OBSTETRI\n\n{\"id\":\"S1C2\",\"university\":\"University of Salerno\",\"course\":\"[06127] COMPUTER ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: [06127] COMPUTER ENGINEERING BACHELOR'S DEGREE SOFTWARE - COHORT 2024\n\nNETWORKS - COHORT 2024\nSOFTWARE - COHORT 2024\nSYSTEMS - COHORT 2024\nYear of study\n1ST YEAR\n- A.Y. 2024/2025\n2ND YEAR\n- A.Y. 2025/2026\n3RD YEAR\n- A.Y. 2026/2027\n1ST YEAR MANDATORY\n[0612700112] MATHEMATICAL ANALYSIS 1\n\n9 CF\n\n{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0625H] DATA SCIENCE\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\"\n[...log text clipped...]",
+    "current_question": "How much do you enjoy keeping activities ordered, planned, and under control?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "machine learning, data science, sports, manufacturing",
+    "rendered_reply": "You are interested in machine learning, data science, and their applications in sports and manufacturing. You enjoy researching how new things work, experimenting, and organizing yourself. Based on your interests and preferences, I suggest exploring the following programs:\n\nI suggest these options:\n1. University of Trento | [0625H] DATA SCIENCE\n2. University of Trento | [0709H] HUMAN-COMPUTER INTERACTION - HUMAN-MACHINE INTERACTION\n\nWould you like more information about these programs or any other specific details?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "Germany",
+        "strict": false
+      },
+      "query": "machine learning, data science, sports, manufacturing"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      -1,
+      2,
+      1,
+      -2,
+      2,
+      1,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "ad76cbdf6550",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Hi",
+      "role": "user"
+    },
+    {
+      "content": "Hello! I'm an AI assistant here to help you with university guidance in Italy. Let's start by discussing your background. What are you studying now, or what was your most recent study path?",
+      "role": "assistant"
+    },
+    {
+      "content": "currently studying computer science in the masters",
+      "role": "user"
+    },
+    {
+      "content": "Which subjects or university areas catch your interest the most?",
+      "role": "assistant"
+    },
+    {
+      "content": "machine learning, data science combined with domains of sports and manufacturing",
+      "role": "user"
+    },
+    {
+      "content": "When you think about university, what would you like to learn more about or learn how to do?",
+      "role": "assistant"
+    },
+    {
+      "content": "how to do",
+      "role": "user"
+    },
+    {
+      "content": "Great! Let's explore your interests in machine learning, data science, sports, and manufacturing. Do you have a preferred Italian region or macro-area, or are you flexible about location?",
+      "role": "assistant"
+    },
+    {
+      "content": "actually mroe focused on germany cause i live there",
+      "role": "user"
+    },
+    {
+      "content": "I see. Let's focus on Germany then. Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends. How much do you enjoy practical, hands-on activities, such as building, repairing, or working with tools and concrete objects?",
+      "role": "assistant"
+    },
+    {
+      "content": "not reallz",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy understanding how things, systems, or phenomena work?",
+      "role": "assistant"
+    },
+    {
+      "content": "i relly like to research how new things work yes",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy researching information, analyzing problems, and reasoning logically?",
+      "role": "assistant"
+    },
+    {
+      "content": "researching information more, reasoning has gotten easier therefore I like it more together with a colleague or AI",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy expressing ideas or emotions through creative forms such as writing, art, music, or design?",
+      "role": "assistant"
+    },
+    {
+      "content": "not reallt at all",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy experimenting and creating something new from open-ended ideas?",
+      "role": "assistant"
+    },
+    {
+      "content": "i love this",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy working closely with people in a helping, supportive, or listening role?",
+      "role": "assistant"
+    },
+    {
+      "content": "i like to support where i can cause i have a helper syndrome. listening is also fine as long as i can help in the end",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy proposing ideas, taking initiative, and organizing projects or activities?",
+      "role": "assistant"
+    },
+    {
+      "content": "i like this too, but on the projects/activities that I also enjoy. for those i do not enjoy i dont like to really be engaged",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy keeping activities ordered, planned, and under control?",
+      "role": "assistant"
+    },
+    {
+      "content": "maily prettz much. like to organize myself as good as I can",
+      "role": "user"
+    },
+    {
+      "content": "You are interested in machine learning, data science, and their applications in sports and manufacturing. You enjoy researching how new things work, experimenting, and organizing yourself. Based on your interests and preferences, I suggest exploring the following programs: I suggest these options: 1. University of Trento | [0625H] DATA SCIENCE 2. University of Trento | [0709H] HUMAN-COMPUTER INTERACTION - HUMAN-MACHINE INTERACTION Would you like more information about these programs or any other specific details?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-24T14:23:15"
+}

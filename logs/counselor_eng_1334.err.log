@@ -1,17 +1,596 @@
-[2026-07-08 09:43:38] INFO:owui-session-server:Starting session server on 0.0.0.0:1334
-[2026-07-08 09:43:38] INFO:owui-session-server:Models: university-counselor-ENG:latest
-[2026-07-08 09:43:38] INFO:owui-session-server:Aliases: {'university-counselor-ENG:latest': 'university-counselor-ENG:latest', 'university-counselor-ENG': 'university-counselor-ENG:latest', 'university-counselor:latest': 'university-counselor-ENG:latest', 'university-counselor': 'university-counselor-ENG:latest'}
-[2026-07-08 09:43:38] INFO:owui-session-server:Process model mode: ENG
-[2026-07-08 09:43:38] INFO:owui-session-server:OpenAI-compatible backend base: http://127.0.0.1:58099/v1
-[2026-07-08 09:43:38] INFO:owui-session-server:Agent thinking enabled: False
-[2026-07-08 09:43:38] INFO:owui-session-server:Context budget guard enabled: True
-[2026-07-08 09:43:38] INFO:owui-session-server:Context budget: max_model_len=4096 max_input_tokens=3300 max_chat_messages=10 listener_task_chars=3200
-[2026-07-08 09:43:38] INFO:owui-session-server:Counselor backend for university-counselor-ENG:latest: openai:gemma-4-31B-it
-INFO:     Started server process [2065997]
+[2026-10-23 11:10:28] INFO:owui-session-server:Starting session server on 0.0.0.0:1334
+[2026-10-23 11:10:28] INFO:owui-session-server:Models: university-counselor-ENG:latest
+[2026-10-23 11:10:28] INFO:owui-session-server:Aliases: {'university-counselor-ENG:latest': 'university-counselor-ENG:latest', 'university-counselor-ENG': 'university-counselor-ENG:latest', 'university-counselor:latest': 'university-counselor-ENG:latest', 'university-counselor': 'university-counselor-ENG:latest'}
+[2026-10-23 11:10:28] INFO:owui-session-server:Process model mode: ENG
+[2026-10-23 11:10:28] INFO:owui-session-server:OpenAI-compatible backend base: http://127.0.0.1:58091/v1
+[2026-10-23 11:10:28] INFO:owui-session-server:Agent thinking enabled: False
+[2026-10-23 11:10:28] INFO:owui-session-server:Counselor temperature: 0.15
+[2026-10-23 11:10:28] INFO:owui-session-server:Turn-control validation retries: 1
+[2026-10-23 11:10:28] INFO:owui-session-server:Context budget guard enabled: True
+[2026-10-23 11:10:28] INFO:owui-session-server:Context budget: max_model_len=16384 max_input_tokens=10000 max_chat_messages=10 listener_task_chars=3200
+[2026-10-23 11:10:28] INFO:owui-session-server:Counselor backend for university-counselor-ENG:latest: openai:Mistral-Small-3.1-24B-Instruct-2503
+INFO:     Started server process [315042]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:1334 (Press CTRL+C to quit)
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [2065997]
+[2026-10-23 11:25:21] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-23 11:25:23] INFO:owui-session-server:Using LanceDB index for eng: /home/pietroneroni/eloquence_pilot2/RAG_University_Eng/Embeddings/lancedb table=universities
+[2026-10-23 11:25:23] INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cpu
+[2026-10-23 11:25:23] INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: intfloat/multilingual-e5-base
+[2026-10-23 11:25:26] INFO:owui-session-server:Created counselor session 0152bbd87d5f model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-23 11:25:26] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=new messages=9 stream=True
+[2026-10-23 11:25:26] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1871, budget=10000
+[2026-10-23 11:25:27] WARNING:owui-session-server:Rejected model response: session=0152bbd87d5f phase=greet raw='<TURN_CONTROL>{"intent":"greet","reply":"Hello! I\'m an AI assistant here to help you with university guidance in Italy. Let\'s start by discussing your background. What is your current level of education?"}</TURN_CONTROL>'
+[2026-10-23 11:25:27] WARNING:owui-session-server:Invalid model control: phase=greet attempt=1/2 error=reply must not contain a question; the application appends the questionnaire item.
+[2026-10-23 11:25:27] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1969, budget=10000
+[2026-10-23 11:25:28] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=5 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:25:53] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=11 stream=True
+[2026-10-23 11:25:53] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=4, approx_input_tokens=4056, budget=10000
+[2026-10-23 11:25:55] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=6 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:26:15] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=13 stream=True
+[2026-10-23 11:26:15] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=6, approx_input_tokens=4129, budget=10000
+[2026-10-23 11:26:17] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=7 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:26:50] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=15 stream=True
+[2026-10-23 11:26:50] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4238, budget=10000
+[2026-10-23 11:26:52] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=8 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:27:03] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=17 stream=True
+[2026-10-23 11:27:03] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4270, budget=10000
+[2026-10-23 11:27:04] WARNING:owui-session-server:Rejected model response: session=0152bbd87d5f phase=background_validate_final raw='<TURN_CONTROL>{"intent":"background_valid","retrieval":{"query":"electrical engineering signal processing linguistics","location":{"region":null,"city":null,"strict":false,"requirement":""}}}</TURN_CONTROL>'
+[2026-10-23 11:27:04] WARNING:owui-session-server:Invalid model control: phase=background_validate_final attempt=1/2 error=Missing fields: ['patch']
+[2026-10-23 11:27:04] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4352, budget=10000
+[2026-10-23 11:27:06] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=9 phase=background_finalize log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:28:14] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=19 stream=True
+[2026-10-23 11:28:14] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=12, approx_input_tokens=3448, budget=10000
+[2026-10-23 11:28:15] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=10 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:28:34] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=21 stream=True
+[2026-10-23 11:28:34] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=14, approx_input_tokens=3516, budget=10000
+[2026-10-23 11:28:34] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=11 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:29:14] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=23 stream=True
+[2026-10-23 11:29:14] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=16, approx_input_tokens=3517, budget=10000
+[2026-10-23 11:29:14] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=12 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:29:49] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=25 stream=True
+[2026-10-23 11:29:49] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=18, approx_input_tokens=3549, budget=10000
+[2026-10-23 11:29:50] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=13 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:30:32] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=27 stream=True
+[2026-10-23 11:30:32] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=20, approx_input_tokens=3620, budget=10000
+[2026-10-23 11:30:32] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=14 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:30:58] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=29 stream=True
+[2026-10-23 11:30:58] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=22, approx_input_tokens=3657, budget=10000
+[2026-10-23 11:30:59] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=15 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:31:35] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=31 stream=True
+[2026-10-23 11:31:35] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=24, approx_input_tokens=3737, budget=10000
+[2026-10-23 11:31:35] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=16 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:32:58] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=33 stream=True
+[2026-10-23 11:32:58] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=26, approx_input_tokens=3842, budget=10000
+[2026-10-23 11:32:58] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=17 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:34:21] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=35 stream=True
+[2026-10-23 11:34:21] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=28, approx_input_tokens=3839, budget=10000
+[2026-10-23 11:34:22] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=18 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:35:09] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=37 stream=True
+[2026-10-23 11:35:09] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=30, approx_input_tokens=3898, budget=10000
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.63it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.62it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 27.48it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 19.51it/s]
+[2026-10-23 11:35:16] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=32, approx_input_tokens=6213, budget=10000
+[2026-10-23 11:35:18] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=19 phase=advice log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:35:41] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=39 stream=True
+[2026-10-23 11:35:41] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=34, approx_input_tokens=4636, budget=10000
+[2026-10-23 11:35:42] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=36, approx_input_tokens=4653, budget=10000
+[2026-10-23 11:35:43] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=20 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:36:14] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=41 stream=True
+[2026-10-23 11:36:14] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=38, approx_input_tokens=4684, budget=10000
+[2026-10-23 11:36:15] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=40, approx_input_tokens=4732, budget=10000
+[2026-10-23 11:36:16] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=21 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:36:25] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=43 stream=True
+[2026-10-23 11:36:25] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=42, approx_input_tokens=4737, budget=10000
+[2026-10-23 11:36:26] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=44, approx_input_tokens=4786, budget=10000
+[2026-10-23 11:36:27] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=22 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:36:40] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=45 stream=True
+[2026-10-23 11:36:40] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=46, approx_input_tokens=4792, budget=10000
+[2026-10-23 11:36:40] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=48, approx_input_tokens=4841, budget=10000
+[2026-10-23 11:36:42] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=23 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:37:13] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=47 stream=True
+[2026-10-23 11:37:13] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=50, approx_input_tokens=4890, budget=10000
+[2026-10-23 11:37:14] WARNING:owui-session-server:Rejected model response: session=0152bbd87d5f phase=qa_statement raw='<TURN_CONTROL>{"intent":"content_request","field_of_interest":["cognitive_science_linguistics"]}</TURN_CONTROL>'
+[2026-10-23 11:37:14] WARNING:owui-session-server:Invalid model control: phase=qa_statement attempt=1/2 error=Unexpected fields: ['field_of_interest']
+[2026-10-23 11:37:14] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=50, approx_input_tokens=4976, budget=10000
+[2026-10-23 11:37:14] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=52, approx_input_tokens=4938, budget=10000
+[2026-10-23 11:37:16] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=24 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:37:50] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=49 stream=True
+[2026-10-23 11:37:50] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=54, approx_input_tokens=5058, budget=10000
+[2026-10-23 11:37:51] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=25 phase=qa_ack log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:38:08] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=51 stream=True
+[2026-10-23 11:38:08] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=56, approx_input_tokens=5144, budget=10000
+[2026-10-23 11:38:09] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=58, approx_input_tokens=5155, budget=10000
+[2026-10-23 11:38:13] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=26 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:39:19] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=53 stream=True
+[2026-10-23 11:39:19] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=60, approx_input_tokens=5411, budget=10000
+[2026-10-23 11:39:19] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=62, approx_input_tokens=5460, budget=10000
+[2026-10-23 11:39:24] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=27 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:39:42] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=55 stream=True
+[2026-10-23 11:39:42] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=64, approx_input_tokens=5729, budget=10000
+[2026-10-23 11:39:42] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=66, approx_input_tokens=5777, budget=10000
+[2026-10-23 11:39:44] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=28 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-23 11:40:29] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=0152bbd87d5f status=existing messages=57 stream=True
+[2026-10-23 11:40:29] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=68, approx_input_tokens=5875, budget=10000
+[2026-10-23 11:40:30] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=70, approx_input_tokens=5924, budget=10000
+[2026-10-23 11:40:32] INFO:owui-session-server:Logged dialog turn session=0152bbd87d5f turn=29 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:42:58] INFO:owui-session-server:Removed expired session 0152bbd87d5f
+[2026-10-24 09:42:58] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-24 09:42:58] INFO:owui-session-server:Created counselor session 5745dc232fa8 model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-24 09:42:58] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=new messages=1 stream=True
+[2026-10-24 09:42:58] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1857, budget=10000
+[2026-10-24 09:42:59] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:43:15] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=3 stream=True
+[2026-10-24 09:43:15] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=4, approx_input_tokens=4018, budget=10000
+[2026-10-24 09:43:16] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=2 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:43:32] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=5 stream=True
+[2026-10-24 09:43:32] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=6, approx_input_tokens=4050, budget=10000
+[2026-10-24 09:43:34] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=3 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:43:48] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=7 stream=True
+[2026-10-24 09:43:48] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4114, budget=10000
+[2026-10-24 09:43:50] WARNING:owui-session-server:Rejected model response: session=5745dc232fa8 phase=background_validate raw='<TURN_CONTROL>{"intent":"background_valid","reply":"I can help you explore your options.","patch":{"explicit":{"academic_background":"MSc Computer Science"},"inferred":{"field_of_interest":["computer_science","ai"]}},"retrieval":{"query":"computer science ai","location":{"region":null,"city":null,"strict":false,"requirement":""}}}</TURN_CONTROL>'
+[2026-10-24 09:43:50] WARNING:owui-session-server:Invalid model control: phase=background_validate attempt=1/2 error=Unknown study-interest label.
+[2026-10-24 09:43:50] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4196, budget=10000
+[2026-10-24 09:43:51] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=4 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:44:00] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=9 stream=True
+[2026-10-24 09:44:00] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4162, budget=10000
+[2026-10-24 09:44:02] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=5 phase=background_finalize log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:44:31] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=11 stream=True
+[2026-10-24 09:44:31] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=12, approx_input_tokens=3342, budget=10000
+[2026-10-24 09:44:32] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=6 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:44:43] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=13 stream=True
+[2026-10-24 09:44:43] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=14, approx_input_tokens=3355, budget=10000
+[2026-10-24 09:44:44] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=7 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:45:05] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=15 stream=True
+[2026-10-24 09:45:05] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=16, approx_input_tokens=3417, budget=10000
+[2026-10-24 09:45:05] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=8 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:45:16] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=17 stream=True
+[2026-10-24 09:45:16] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=18, approx_input_tokens=3442, budget=10000
+[2026-10-24 09:45:16] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=9 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:45:30] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=19 stream=True
+[2026-10-24 09:45:30] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=20, approx_input_tokens=3478, budget=10000
+[2026-10-24 09:45:30] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=10 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:45:35] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=21 stream=True
+[2026-10-24 09:45:35] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=22, approx_input_tokens=3495, budget=10000
+[2026-10-24 09:45:36] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=11 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:45:45] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=23 stream=True
+[2026-10-24 09:45:45] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=24, approx_input_tokens=3524, budget=10000
+[2026-10-24 09:45:46] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=12 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:45:54] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=25 stream=True
+[2026-10-24 09:45:54] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=26, approx_input_tokens=3553, budget=10000
+[2026-10-24 09:45:54] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=13 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:46:10] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=27 stream=True
+[2026-10-24 09:46:10] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=28, approx_input_tokens=3581, budget=10000
+[2026-10-24 09:46:11] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=14 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:46:24] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=29 stream=True
+[2026-10-24 09:46:24] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=30, approx_input_tokens=3638, budget=10000
+[2026-10-24 09:46:25] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=15 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:46:27] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=31 stream=True
+[2026-10-24 09:46:27] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=32, approx_input_tokens=3686, budget=10000
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 18.96it/s]
+[2026-10-24 09:46:28] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=34, approx_input_tokens=5435, budget=10000
+[2026-10-24 09:46:30] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=16 phase=advice log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:46:49] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=33 stream=True
+[2026-10-24 09:46:49] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=36, approx_input_tokens=4307, budget=10000
+[2026-10-24 09:46:50] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=38, approx_input_tokens=3751, budget=10000
+[2026-10-24 09:46:54] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=17 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:47:55] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=35 stream=True
+[2026-10-24 09:47:55] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=40, approx_input_tokens=4614, budget=10000
+[2026-10-24 09:47:56] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=42, approx_input_tokens=4080, budget=10000
+[2026-10-24 09:47:58] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=18 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:48:43] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=37 stream=True
+[2026-10-24 09:48:43] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=44, approx_input_tokens=4793, budget=10000
+[2026-10-24 09:48:44] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=46, approx_input_tokens=4260, budget=10000
+[2026-10-24 09:48:46] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=19 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:49:03] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=39 stream=True
+[2026-10-24 09:49:03] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=48, approx_input_tokens=4976, budget=10000
+[2026-10-24 09:49:04] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=50, approx_input_tokens=4442, budget=10000
+[2026-10-24 09:49:07] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=20 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:49:40] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=41 stream=True
+[2026-10-24 09:49:40] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=52, approx_input_tokens=5194, budget=10000
+[2026-10-24 09:49:40] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=54, approx_input_tokens=4661, budget=10000
+[2026-10-24 09:49:43] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=21 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:49:55] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=43 stream=True
+[2026-10-24 09:49:55] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=56, approx_input_tokens=5391, budget=10000
+[2026-10-24 09:49:55] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=58, approx_input_tokens=4858, budget=10000
+[2026-10-24 09:49:58] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=22 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:50:12] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=45 stream=True
+[2026-10-24 09:50:12] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=60, approx_input_tokens=5536, budget=10000
+[2026-10-24 09:50:12] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=62, approx_input_tokens=5002, budget=10000
+[2026-10-24 09:50:16] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=23 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:51:20] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=5745dc232fa8 status=existing messages=47 stream=True
+[2026-10-24 09:51:20] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=64, approx_input_tokens=5834, budget=10000
+[2026-10-24 09:51:21] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=66, approx_input_tokens=5300, budget=10000
+[2026-10-24 09:51:22] INFO:owui-session-server:Logged dialog turn session=5745dc232fa8 turn=24 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:52:17] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-24 09:52:17] INFO:owui-session-server:Created counselor session ea9b87cd9dd3 model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-24 09:52:17] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=new messages=1 stream=True
+[2026-10-24 09:52:17] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1864, budget=10000
+[2026-10-24 09:52:18] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:52:35] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=3 stream=True
+[2026-10-24 09:52:35] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=4, approx_input_tokens=4032, budget=10000
+[2026-10-24 09:52:36] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=2 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:53:18] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=5 stream=True
+[2026-10-24 09:53:18] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=6, approx_input_tokens=4108, budget=10000
+[2026-10-24 09:53:19] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=3 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:53:58] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=7 stream=True
+[2026-10-24 09:53:58] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4171, budget=10000
+[2026-10-24 09:53:59] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=4 phase=background_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:54:24] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=9 stream=True
+[2026-10-24 09:54:24] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4231, budget=10000
+[2026-10-24 09:54:25] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=5 phase=background_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:54:50] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=11 stream=True
+[2026-10-24 09:54:50] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=12, approx_input_tokens=4304, budget=10000
+[2026-10-24 09:54:52] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=6 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:55:30] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=13 stream=True
+[2026-10-24 09:55:30] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=14, approx_input_tokens=4361, budget=10000
+[2026-10-24 09:55:31] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=7 phase=background_finalize log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:55:58] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=15 stream=True
+[2026-10-24 09:55:58] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=16, approx_input_tokens=3456, budget=10000
+[2026-10-24 09:55:59] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=8 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:56:10] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=17 stream=True
+[2026-10-24 09:56:10] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=18, approx_input_tokens=3466, budget=10000
+[2026-10-24 09:56:12] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=9 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:56:52] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=19 stream=True
+[2026-10-24 09:56:52] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=20, approx_input_tokens=3558, budget=10000
+[2026-10-24 09:56:53] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=10 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:57:13] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=21 stream=True
+[2026-10-24 09:57:13] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=22, approx_input_tokens=3651, budget=10000
+[2026-10-24 09:57:14] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=11 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 09:57:20] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ea9b87cd9dd3 status=existing messages=23 stream=True
+[2026-10-24 09:57:20] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=24, approx_input_tokens=3676, budget=10000
+[2026-10-24 09:57:21] INFO:owui-session-server:Logged dialog turn session=ea9b87cd9dd3 turn=12 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:18:24] INFO:owui-session-server:Removed expired session 5745dc232fa8
+[2026-10-24 14:18:24] INFO:owui-session-server:Removed expired session ea9b87cd9dd3
+[2026-10-24 14:18:24] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-24 14:18:24] INFO:owui-session-server:Created counselor session ad76cbdf6550 model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-24 14:18:24] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=new messages=1 stream=True
+[2026-10-24 14:18:24] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1856, budget=10000
+[2026-10-24 14:18:25] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:18:51] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=3 stream=True
+[2026-10-24 14:18:51] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=4, approx_input_tokens=4026, budget=10000
+[2026-10-24 14:18:53] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=2 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:19:15] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=5 stream=True
+[2026-10-24 14:19:15] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=6, approx_input_tokens=4107, budget=10000
+[2026-10-24 14:19:17] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=3 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:19:34] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=7 stream=True
+[2026-10-24 14:19:34] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4162, budget=10000
+[2026-10-24 14:19:36] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=4 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:20:01] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=9 stream=True
+[2026-10-24 14:20:01] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4243, budget=10000
+[2026-10-24 14:20:03] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=5 phase=background_finalize log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:20:30] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=11 stream=True
+[2026-10-24 14:20:30] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=12, approx_input_tokens=3352, budget=10000
+[2026-10-24 14:20:31] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=6 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:20:50] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=13 stream=True
+[2026-10-24 14:20:50] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=14, approx_input_tokens=3382, budget=10000
+[2026-10-24 14:20:51] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=7 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:21:19] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=15 stream=True
+[2026-10-24 14:21:19] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=16, approx_input_tokens=3464, budget=10000
+[2026-10-24 14:21:20] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=8 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:21:30] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=17 stream=True
+[2026-10-24 14:21:30] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=18, approx_input_tokens=3478, budget=10000
+[2026-10-24 14:21:30] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=9 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:21:37] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=19 stream=True
+[2026-10-24 14:21:37] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=20, approx_input_tokens=3495, budget=10000
+[2026-10-24 14:21:37] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=10 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:22:12] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=21 stream=True
+[2026-10-24 14:22:12] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=22, approx_input_tokens=3587, budget=10000
+[2026-10-24 14:22:12] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=11 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:22:48] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=23 stream=True
+[2026-10-24 14:22:48] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=24, approx_input_tokens=3652, budget=10000
+[2026-10-24 14:22:48] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=12 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:23:12] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=25 stream=True
+[2026-10-24 14:23:12] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=26, approx_input_tokens=3666, budget=10000
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.81it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.80it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 45.16it/s]
+[2026-10-24 14:23:13] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=28, approx_input_tokens=5931, budget=10000
+[2026-10-24 14:23:15] INFO:owui-session-server:Logged dialog turn session=ad76cbdf6550 turn=13 phase=advice log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-24 14:23:59] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=ad76cbdf6550 status=existing messages=27 stream=True
+[2026-10-24 14:23:59] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=30, approx_input_tokens=4325, budget=10000
+[2026-10-24 14:24:00] WARNING:owui-session-server:Rejected model response: session=ad76cbdf6550 phase=qa_statement raw='<TURN_CONTROL>{"intent":"profile_update","temporary":false,"location_changed":false,"field_of_interest":["data_science"],"retrieval":{"query":"machine learning, data science, sports, manufacturing","location":{"region":null,"city":null,"strict":false,"requirement":"Germany"}}}</TURN_CONTROL>'
+[2026-10-24 14:24:00] WARNING:owui-session-server:Invalid model control: phase=qa_statement attempt=1/2 error=Unknown study-interest label.
+[2026-10-24 14:24:00] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=30, approx_input_tokens=4408, budget=10000
+[2026-10-24 14:24:01] WARNING:owui-session-server:Rejected model response: session=ad76cbdf6550 phase=qa_statement raw='<TURN_CONTROL>{"intent":"profile_update","temporary":false,"location_changed":false,"field_of_interest":["data_science"],"retrieval":{"query":"machine learning, data science, sports, manufacturing","location":{"region":null,"city":null,"strict":false,"requirement":"Germany"}}}</TURN_CONTROL>'
+[2026-10-24 14:24:01] WARNING:owui-session-server:Invalid model control: phase=qa_statement attempt=2/2 error=Unknown study-interest label.
+[2026-10-24 14:24:01] ERROR:owui-session-server:Error while processing session ad76cbdf6550
+Traceback (most recent call last):
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/owui_session_server.py", line 1461, in chat_completions
+    assistant_text = run_counselor_turn(session, last_user_text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/owui_session_server.py", line 1161, in run_counselor_turn
+    events = session.agent(user_text, return_events=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pietroneroni/eloquence_pilot2/venv/lib/python3.12/site-packages/sdialog/agents.py", line 359, in __call__
+    response, response_events = self._get_llm_response(self.memory)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/owui_session_server.py", line 965, in _wrapped_get_llm_response
+    response.content = postprocess(response.content)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/owui_session_server.py", line 540, in _postprocess
+    visible = sanitize_expert_output(text)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/agents_setup.py", line 221, in sanitize_expert_output
+    t = strip_and_apply_turn_control(t)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/AgentWithRag.py", line 703, in strip_and_apply_turn_control
+    payload = parse_turn_control(text, state.phase)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/AgentWithRag.py", line 588, in parse_turn_control
+    payload["field_of_interest"] = _validate_fields(payload["field_of_interest"])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/AgentWithRag.py", line 466, in _validate_fields
+    _require(all(isinstance(v, str) and v in FIELD_OF_INTEREST_LABELS for v in value), "Unknown study-interest label.")
+  File "/home/pietroneroni/eloquence_pilot2/university_counseling/AgentWithRag.py", line 450, in _require
+    raise TurnControlError(message)
+university_counseling.AgentWithRag.TurnControlError: Unknown study-interest label.
+[2026-10-25 09:45:34] INFO:owui-session-server:Removed expired session ad76cbdf6550
+[2026-10-25 09:45:34] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-25 09:45:34] INFO:owui-session-server:Created counselor session a9b9fa4f9b0d model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-25 09:45:34] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=new messages=1 stream=True
+[2026-10-25 09:45:34] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1856, budget=10000
+[2026-10-25 09:45:42] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:46:03] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=3 stream=True
+[2026-10-25 09:46:03] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=4, approx_input_tokens=4035, budget=10000
+[2026-10-25 09:46:05] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=2 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:46:21] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=5 stream=True
+[2026-10-25 09:46:21] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=6, approx_input_tokens=4091, budget=10000
+[2026-10-25 09:46:23] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=3 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:46:48] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=7 stream=True
+[2026-10-25 09:46:48] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4179, budget=10000
+[2026-10-25 09:46:50] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=4 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:47:00] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=9 stream=True
+[2026-10-25 09:47:00] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4239, budget=10000
+[2026-10-25 09:47:02] WARNING:owui-session-server:Rejected model response: session=a9b9fa4f9b0d phase=background_validate_final raw='<TURN_CONTROL>{"intent":"background_valid","reply":"Great, so you\'re open to studying anywhere in Italy.","patch":{"explicit":{},"inferred":{}},"retrieval":{"query":"physics","location":{"region":null,"city":null,"strict":false,"requirement":""}}}</TURN_CONTROL>'
+[2026-10-25 09:47:02] WARNING:owui-session-server:Invalid model control: phase=background_validate_final attempt=1/2 error=Missing fields: ['field_of_interest']
+[2026-10-25 09:47:02] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4324, budget=10000
+[2026-10-25 09:47:03] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=5 phase=background_finalize log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:47:45] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=11 stream=True
+[2026-10-25 09:47:45] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=12, approx_input_tokens=3414, budget=10000
+[2026-10-25 09:47:46] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=6 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:47:52] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=13 stream=True
+[2026-10-25 09:47:52] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=14, approx_input_tokens=3404, budget=10000
+[2026-10-25 09:47:53] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=7 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:48:15] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=15 stream=True
+[2026-10-25 09:48:15] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=16, approx_input_tokens=3483, budget=10000
+[2026-10-25 09:48:16] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=8 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:48:29] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=17 stream=True
+[2026-10-25 09:48:29] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=18, approx_input_tokens=3522, budget=10000
+[2026-10-25 09:48:30] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=9 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:48:39] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=19 stream=True
+[2026-10-25 09:48:39] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=20, approx_input_tokens=3534, budget=10000
+[2026-10-25 09:48:39] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=10 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:49:17] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=21 stream=True
+[2026-10-25 09:49:17] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=22, approx_input_tokens=3604, budget=10000
+[2026-10-25 09:49:17] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=11 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:49:44] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=23 stream=True
+[2026-10-25 09:49:44] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=24, approx_input_tokens=3649, budget=10000
+[2026-10-25 09:49:45] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=12 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 09:49:50] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=a9b9fa4f9b0d status=existing messages=25 stream=True
+[2026-10-25 09:49:50] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=26, approx_input_tokens=3647, budget=10000
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 15.38it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 37.67it/s]
+[2026-10-25 09:49:52] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=28, approx_input_tokens=5838, budget=10000
+[2026-10-25 09:49:53] INFO:owui-session-server:Logged dialog turn session=a9b9fa4f9b0d turn=13 phase=advice log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:31:21] INFO:owui-session-server:Removed expired session a9b9fa4f9b0d
+[2026-10-25 17:31:21] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-25 17:31:21] INFO:owui-session-server:Created counselor session e8037b07d476 model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-25 17:31:21] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=new messages=1 stream=True
+[2026-10-25 17:31:21] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1856, budget=10000
+[2026-10-25 17:31:22] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:31:56] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=3 stream=True
+[2026-10-25 17:31:56] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=4, approx_input_tokens=4028, budget=10000
+[2026-10-25 17:31:57] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=2 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:32:20] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=5 stream=True
+[2026-10-25 17:32:20] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=6, approx_input_tokens=4093, budget=10000
+[2026-10-25 17:32:22] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=3 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:33:12] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=7 stream=True
+[2026-10-25 17:33:12] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4173, budget=10000
+[2026-10-25 17:33:14] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=4 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:33:25] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=9 stream=True
+[2026-10-25 17:33:25] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4235, budget=10000
+[2026-10-25 17:33:27] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=5 phase=background_finalize log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:33:52] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=11 stream=True
+[2026-10-25 17:33:52] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=12, approx_input_tokens=3375, budget=10000
+[2026-10-25 17:33:53] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=6 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:33:56] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=13 stream=True
+[2026-10-25 17:33:56] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=14, approx_input_tokens=3381, budget=10000
+[2026-10-25 17:33:57] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=7 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:34:00] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=15 stream=True
+[2026-10-25 17:34:00] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=16, approx_input_tokens=3412, budget=10000
+[2026-10-25 17:34:00] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=8 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:34:09] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=17 stream=True
+[2026-10-25 17:34:09] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=18, approx_input_tokens=3456, budget=10000
+[2026-10-25 17:34:09] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=9 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:34:15] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=19 stream=True
+[2026-10-25 17:34:15] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=20, approx_input_tokens=3471, budget=10000
+[2026-10-25 17:34:15] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=10 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:34:22] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=21 stream=True
+[2026-10-25 17:34:22] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=22, approx_input_tokens=3500, budget=10000
+[2026-10-25 17:34:22] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=11 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:34:44] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=23 stream=True
+[2026-10-25 17:34:44] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=24, approx_input_tokens=3533, budget=10000
+[2026-10-25 17:34:45] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=12 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:34:54] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=25 stream=True
+[2026-10-25 17:34:54] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=26, approx_input_tokens=3595, budget=10000
+[2026-10-25 17:34:54] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=13 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:35:38] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=27 stream=True
+[2026-10-25 17:35:38] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=28, approx_input_tokens=3605, budget=10000
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 16.60it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 40.70it/s]
+[2026-10-25 17:35:39] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=30, approx_input_tokens=5715, budget=10000
+[2026-10-25 17:35:41] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=14 phase=advice log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:36:40] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=e8037b07d476 status=existing messages=29 stream=True
+[2026-10-25 17:36:40] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=32, approx_input_tokens=4335, budget=10000
+[2026-10-25 17:36:41] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=34, approx_input_tokens=4131, budget=10000
+[2026-10-25 17:36:44] INFO:owui-session-server:Logged dialog turn session=e8037b07d476 turn=15 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-25 17:41:47] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-25 17:41:47] INFO:owui-session-server:Created counselor session efb9ca8337bf model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-25 17:41:47] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=efb9ca8337bf status=new messages=1 stream=True
+[2026-10-25 17:41:47] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1856, budget=10000
+[2026-10-25 17:41:48] INFO:owui-session-server:Logged dialog turn session=efb9ca8337bf turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:27:02] INFO:owui-session-server:Removed expired session e8037b07d476
+[2026-10-28 13:27:02] INFO:owui-session-server:Removed expired session efb9ca8337bf
+[2026-10-28 13:27:02] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-28 13:27:02] INFO:owui-session-server:Created counselor session 4f958c661f0d model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-28 13:27:02] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=new messages=1 stream=True
+[2026-10-28 13:27:02] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1918, budget=10000
+[2026-10-28 13:27:03] WARNING:owui-session-server:Rejected model response: session=4f958c661f0d phase=greet raw='<TURN_CONTROL>{"intent":"greet","reply":"Welcome! I\'m an AI assistant here to help you with university guidance in Italy. Let\'s start with your background. What is your current level of education?"}</TURN_CONTROL>'
+[2026-10-28 13:27:03] WARNING:owui-session-server:Invalid model control: phase=greet attempt=1/2 error=reply must not contain a question; the application appends the questionnaire item.
+[2026-10-28 13:27:03] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=2015, budget=10000
+[2026-10-28 13:27:03] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:27:54] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=3 stream=True
+[2026-10-28 13:27:54] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=4, approx_input_tokens=4102, budget=10000
+[2026-10-28 13:27:56] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=2 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:28:27] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=5 stream=True
+[2026-10-28 13:28:27] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=6, approx_input_tokens=4171, budget=10000
+[2026-10-28 13:28:29] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=3 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:29:37] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=7 stream=True
+[2026-10-28 13:29:37] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4265, budget=10000
+[2026-10-28 13:29:38] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=4 phase=background_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:30:05] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=9 stream=True
+[2026-10-28 13:30:05] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4325, budget=10000
+[2026-10-28 13:30:06] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=5 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:30:17] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=11 stream=True
+[2026-10-28 13:30:17] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=12, approx_input_tokens=4357, budget=10000
+[2026-10-28 13:30:18] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=6 phase=background_finalize log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:30:55] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=13 stream=True
+[2026-10-28 13:30:55] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=14, approx_input_tokens=3425, budget=10000
+[2026-10-28 13:30:56] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=7 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:31:08] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=15 stream=True
+[2026-10-28 13:31:08] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=16, approx_input_tokens=3436, budget=10000
+[2026-10-28 13:31:09] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=8 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:31:20] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=17 stream=True
+[2026-10-28 13:31:20] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=18, approx_input_tokens=3471, budget=10000
+[2026-10-28 13:31:20] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=9 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:31:38] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=19 stream=True
+[2026-10-28 13:31:38] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=20, approx_input_tokens=3512, budget=10000
+[2026-10-28 13:31:38] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=10 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:31:46] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=21 stream=True
+[2026-10-28 13:31:46] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=22, approx_input_tokens=3527, budget=10000
+[2026-10-28 13:31:47] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=11 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:32:04] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=23 stream=True
+[2026-10-28 13:32:04] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=24, approx_input_tokens=3565, budget=10000
+[2026-10-28 13:32:05] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=12 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:32:19] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=25 stream=True
+[2026-10-28 13:32:19] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=26, approx_input_tokens=3602, budget=10000
+[2026-10-28 13:32:20] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=13 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:32:33] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=27 stream=True
+[2026-10-28 13:32:33] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=28, approx_input_tokens=3620, budget=10000
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 16.25it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 39.70it/s]
+[2026-10-28 13:32:35] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=30, approx_input_tokens=5765, budget=10000
+[2026-10-28 13:32:36] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=14 phase=advice log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:33:08] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=29 stream=True
+[2026-10-28 13:33:08] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=32, approx_input_tokens=4268, budget=10000
+[2026-10-28 13:33:09] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=15 phase=qa_ack log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:34:29] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=31 stream=True
+[2026-10-28 13:34:29] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=34, approx_input_tokens=4336, budget=10000
+[2026-10-28 13:34:29] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=36, approx_input_tokens=4147, budget=10000
+[2026-10-28 13:34:34] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=16 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:37:25] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=33 stream=True
+[2026-10-28 13:37:25] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=38, approx_input_tokens=4767, budget=10000
+[2026-10-28 13:37:26] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=40, approx_input_tokens=4578, budget=10000
+[2026-10-28 13:37:28] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=17 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 13:38:24] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=4f958c661f0d status=existing messages=35 stream=True
+[2026-10-28 13:38:24] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=42, approx_input_tokens=4944, budget=10000
+[2026-10-28 13:38:24] INFO:owui-session-server:Logged dialog turn session=4f958c661f0d turn=18 phase=qa_end log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:12:15] INFO:sdialog.util:Loading OpenAI model: Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-28 14:12:15] INFO:owui-session-server:Created counselor session 74a0dfb62968 model=university-counselor-ENG:latest lang=English rag=eng backend=openai:Mistral-Small-3.1-24B-Instruct-2503
+[2026-10-28 14:12:15] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=new messages=1 stream=True
+[2026-10-28 14:12:15] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1887, budget=10000
+[2026-10-28 14:12:16] WARNING:owui-session-server:Rejected model response: session=74a0dfb62968 phase=greet raw='<TURN_CONTROL>{"intent":"greet","reply":"Hello! I\'m an AI assistant here to help you with your university guidance. Let\'s start by discussing your background. What is your current educational level?"}</TURN_CONTROL>'
+[2026-10-28 14:12:16] WARNING:owui-session-server:Invalid model control: phase=greet attempt=1/2 error=reply must not contain a question; the application appends the questionnaire item.
+[2026-10-28 14:12:16] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=3, approx_input_tokens=1985, budget=10000
+[2026-10-28 14:12:16] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=1 phase=greet log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:13:24] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=3 stream=True
+[2026-10-28 14:13:24] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=4, approx_input_tokens=4057, budget=10000
+[2026-10-28 14:13:25] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=2 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:14:01] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=5 stream=True
+[2026-10-28 14:14:01] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=6, approx_input_tokens=4101, budget=10000
+[2026-10-28 14:14:03] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=3 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:15:06] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=7 stream=True
+[2026-10-28 14:15:06] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=8, approx_input_tokens=4221, budget=10000
+[2026-10-28 14:15:08] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=4 phase=background_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:15:20] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=9 stream=True
+[2026-10-28 14:15:20] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=10, approx_input_tokens=4258, budget=10000
+[2026-10-28 14:15:22] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=5 phase=background_finalize log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:16:18] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=11 stream=True
+[2026-10-28 14:16:18] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=12, approx_input_tokens=3365, budget=10000
+[2026-10-28 14:16:18] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=6 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:16:26] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=13 stream=True
+[2026-10-28 14:16:26] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=14, approx_input_tokens=3366, budget=10000
+[2026-10-28 14:16:27] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=7 phase=riasec_answer_retry log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:17:02] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=15 stream=True
+[2026-10-28 14:17:02] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=16, approx_input_tokens=3439, budget=10000
+[2026-10-28 14:17:02] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=8 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:17:21] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=17 stream=True
+[2026-10-28 14:17:21] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=18, approx_input_tokens=3474, budget=10000
+[2026-10-28 14:17:21] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=9 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:18:12] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=19 stream=True
+[2026-10-28 14:18:12] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=20, approx_input_tokens=3537, budget=10000
+[2026-10-28 14:18:13] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=10 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:18:25] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=21 stream=True
+[2026-10-28 14:18:25] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=22, approx_input_tokens=3547, budget=10000
+[2026-10-28 14:18:25] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=11 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:19:24] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=23 stream=True
+[2026-10-28 14:19:24] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=24, approx_input_tokens=3579, budget=10000
+[2026-10-28 14:19:24] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=12 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:19:31] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=25 stream=True
+[2026-10-28 14:19:31] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=26, approx_input_tokens=3605, budget=10000
+[2026-10-28 14:19:31] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=13 phase=riasec_answer_valid log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:19:50] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=27 stream=True
+[2026-10-28 14:19:50] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=28, approx_input_tokens=3640, budget=10000
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 15.22it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 42.14it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 49.67it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 51.00it/s]
+[2026-10-28 14:19:51] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=30, approx_input_tokens=5794, budget=10000
+[2026-10-28 14:19:54] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=14 phase=advice log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:24:54] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=29 stream=True
+[2026-10-28 14:24:54] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=32, approx_input_tokens=4340, budget=10000
+[2026-10-28 14:24:55] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=34, approx_input_tokens=4180, budget=10000
+[2026-10-28 14:24:56] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=15 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:26:27] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=31 stream=True
+[2026-10-28 14:26:27] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=36, approx_input_tokens=4453, budget=10000
+[2026-10-28 14:26:27] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=38, approx_input_tokens=4317, budget=10000
+[2026-10-28 14:26:30] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=16 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:28:21] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=33 stream=True
+[2026-10-28 14:28:21] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=40, approx_input_tokens=4702, budget=10000
+[2026-10-28 14:28:22] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=42, approx_input_tokens=4565, budget=10000
+[2026-10-28 14:28:26] WARNING:owui-session-server:Rejected model response: session=74a0dfb62968 phase=qa_other raw='I apologize for any confusion. I did consider your interest in physics and informatics, but the options I presented were based on the available information and your expressed preferences. The courses in biological sciences and biotechnology include significant components of informatics and data analysis, which align with your interest in solving complex problems and creating tools that help people. The information engineering course at the University of Sassari also directly addresses your interest in informatics. If you have specific aspects of physics or informatics you are particularly interested in, please let me know so I can provide more tailored suggestions.\n\n<TURN_CONTROL>{"intent":"answer","reply":"I apologize for any confusion. I did consider your interest in physics and informatics, but the options I presented were based on the available information and your expressed preferences. The courses in biological sciences and biotechnology include significant components of informatics and data analysis, which align with your interest in solving complex problems and creating tools that help people. The information engineering course at the University of Sassari also directly addresses your interest in informatics. If you have specific aspects of physics or informatics you are particularly interested in, please let me know so I can provide more tailored suggestions."}</TURN_CONTROL>'
+[2026-10-28 14:28:26] WARNING:owui-session-server:Invalid model control: phase=qa_other attempt=1/2 error=Return only one <TURN_CONTROL>{...}</TURN_CONTROL> block, without Markdown or extra text.
+[2026-10-28 14:28:26] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=42, approx_input_tokens=4665, budget=10000
+[2026-10-28 14:28:28] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=17 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:29:26] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=35 stream=True
+[2026-10-28 14:29:26] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=44, approx_input_tokens=4948, budget=10000
+[2026-10-28 14:29:27] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=46, approx_input_tokens=4812, budget=10000
+[2026-10-28 14:29:29] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=18 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:31:23] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=37 stream=True
+[2026-10-28 14:31:23] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=48, approx_input_tokens=5191, budget=10000
+[2026-10-28 14:31:23] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=50, approx_input_tokens=5055, budget=10000
+[2026-10-28 14:31:25] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=19 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:33:26] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=39 stream=True
+[2026-10-28 14:33:26] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=52, approx_input_tokens=5357, budget=10000
+[2026-10-28 14:33:26] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=54, approx_input_tokens=5221, budget=10000
+[2026-10-28 14:33:29] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=20 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:35:03] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=41 stream=True
+[2026-10-28 14:35:03] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=56, approx_input_tokens=5635, budget=10000
+[2026-10-28 14:35:04] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=58, approx_input_tokens=5499, budget=10000
+[2026-10-28 14:35:07] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=21 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:36:07] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=43 stream=True
+[2026-10-28 14:36:07] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=60, approx_input_tokens=5861, budget=10000
+[2026-10-28 14:36:08] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=22 phase=qa_end log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:44:39] INFO:owui-session-server:Removed expired session 4f958c661f0d
+[2026-10-28 14:44:39] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=45 stream=True
+[2026-10-28 14:44:39] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=62, approx_input_tokens=5893, budget=10000
+[2026-10-28 14:44:40] WARNING:owui-session-server:Rejected model response: session=74a0dfb62968 phase=qa_statement raw='<TURN_CONTROL>{"intent":"content_request","reply":"","field_of_interest":["life_sciences","computer_science","physical_sciences"]}</TURN_CONTROL>'
+[2026-10-28 14:44:40] WARNING:owui-session-server:Invalid model control: phase=qa_statement attempt=1/2 error=Unexpected fields: ['field_of_interest', 'reply']
+[2026-10-28 14:44:40] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=62, approx_input_tokens=5982, budget=10000
+[2026-10-28 14:44:40] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=64, approx_input_tokens=5757, budget=10000
+[2026-10-28 14:44:42] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=23 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl
+[2026-10-28 14:48:03] INFO:owui-session-server:POST /v1/chat/completions model=university-counselor-ENG:latest lang=English rag=eng session=74a0dfb62968 status=existing messages=47 stream=True
+[2026-10-28 14:48:03] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=66, approx_input_tokens=6134, budget=10000
+[2026-10-28 14:48:03] INFO:owui-session-server:Context budget guard[langchain]: no trim, messages=68, approx_input_tokens=5998, budget=10000
+[2026-10-28 14:48:05] INFO:owui-session-server:Logged dialog turn session=74a0dfb62968 turn=24 phase=qa_other log=/home/pietroneroni/eloquence_pilot2/logs/dialog_eng_1334.jsonl

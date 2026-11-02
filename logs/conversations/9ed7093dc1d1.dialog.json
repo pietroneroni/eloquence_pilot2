@@ -1,0 +1,520 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T12:27:14",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo classico",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "arts_design"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Investigative",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo classico",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo classico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo classico",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo classico",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "arts_design"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33427] SCIENZE DELL'ARCHITETTURA",
+      "Sapienza Università di Roma | [33426] DESIGN",
+      "Sapienza Università di Roma | [34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33427] SCIENZE DELL'ARCHITETTURA\",\"type\":\"Classe di laurea: L-17\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze dell'architettura\nAnno accademico: 2026-2027\nCodice corso: 33427\nClasse di laurea: L-17\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33427] SCIENZE DELL'ARCHITETTURA",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-17",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33427] SCIENZE DELL'ARCHITETTURA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33427",
+          "https://corsidilaurea.uniroma1.it/it/course/33427/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33427/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33427/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33427/study-plan"
+        ],
+        "text": "Scienze dell'architettura\nAnno accademico: 2026-2027\nCodice corso: 33427\nClasse di laurea: L-17\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[30024] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA\",\"type\":\"Classe di laurea: L/SNT4\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro (abilitante alla professione sanitaria di Tecnico della prevenzione nell'ambiente e nei luoghi di lavoro) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 30024\nClasse di laurea: L/SNT4\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[30024] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT4",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [30024] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO (ABILITANTE ALLA PROFESSIONE SANITARIA DI TECNICO DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO) - ROMA AZIENDA OSPEDALIERA SANT’ANDREA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/30024",
+          "https://corsidilaurea.uniroma1.it/it/course/30024/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/30024/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/30024/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/30024/study-plan"
+        ],
+        "text": "Tecniche della prevenzione nell'ambiente e nei luoghi di lavoro (abilitante alla professione sanitaria di Tecnico della prevenzione nell'ambiente e nei luoghi di lavoro) - Roma Azienda Ospedaliera Sant’Andrea\nAnno accademico: 2026-2027\nCodice corso: 30024\nClasse di laurea: L/SNT4\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: a far acquisire allo studente conoscenze teoriche e pratiche necessarie per lo svolgimento dell'attività professionale.\nIn particolare, riguardano:\n● l'insegnamento di Scienza e Tecnica delle Costruzioni, che permette di acquisire conoscenze e capacità di comprensione degli aspetti te",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S1C2",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C2",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "a far acquisire allo studente conoscenze teoriche e pratiche necessarie per lo svolgimento dell'attività professionale.\nIn particolare, riguardano:\n● l'insegnamento di Scienza e Tecnica delle Costruzioni, che permette di acquisire conoscenze e capacità di comprensione degli aspetti teorici di base, sempre introdotti a partire da problemi elementari concreti, in cui lo studente acquisirà nozioni sulla progettazione strutturale applicata alle principali tipologie costruttive e sul relativo funzionamento strutturale nei riguardi delle diverse possibili sollecitazioni. L'insegnamento di Meccanica delle Terre e delle Rocce, che mira a far acquisire allo studente i fondamenti delle proprietà fisico-meccaniche di tali materiali naturali in relazione alla resistenza e alla stabilità dei terreni e dei versanti;\n● l'insegnamento di Architettura, Urbanistica e Protezione del Territorio, in cui lo studente sviluppa conoscenza e capacità di comprensione dei temi delle costruzioni rivolti al costruito storico, contemporaneo e da prefigurare, nella loro individualità architettonica e integrazione nel contesto urbano."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33426] DESIGN\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità ",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33426] DESIGN",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33426] DESIGN",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33426",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33426/study-plan"
+        ],
+        "text": "Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura\nDipartimento: PIANIFICAZIONE, DESIGN, TECNOLOGIA DELL'ARCHITETTURA\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 25805"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Sassari\",\"course\":\"[A144] DESIGN\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[A144] DESIGN",
+          "id": "S1C4",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C4",
+        "option": "University of Sassari | [A144] DESIGN",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10900?annoOrdinamento=2024"
+        ],
+        "text": "ia\n[A003420] IMMAGINI II\n6 CFU\n60 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A003426] DESIGN WORKSHOP 2\n2 CFU Tipo insegnamento: [OBB] - Obbligatoria\n[A003436] DESIGN DELLA CULTURA MATERIALE\n12 CFU\n136 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Sassari\",\"course\":\"[1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"ALGHERO\"]}\nEXCERPT: [1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)",
+        "facts": {
+          "cities": [
+            "ALGHERO"
+          ],
+          "course": "[1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO",
+          "id": "S1C5",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C5",
+        "option": "University of Sassari | [1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2021",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402/insegnamenti/9999?annoOrdinamento=2024",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2021",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10402?annoOrdinamento=2024"
+        ],
+        "text": "[1212] SCIENZE DELL'ARCHITETTURA E DEL PROGETTO Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33522] STUDI STORICO-ARTISTICI\",\"type\":\"Classe di laurea: L-1\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Studi storico-artistici\nAnno accademico: 2026-2027\nCodice corso: 33522\nClasse di laurea: L-1\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33522] STUDI STORICO-ARTISTICI",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-1",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33522] STUDI STORICO-ARTISTICI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33522",
+          "https://corsidilaurea.uniroma1.it/it/course/33522/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33522/study-plan"
+        ],
+        "text": "Studi storico-artistici\nAnno accademico: 2026-2027\nCodice corso: 33522\nClasse di laurea: L-1\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Professioni tecniche per l'edilizia e il territorio – corso professionalizzante\nAnno accademico: 2026-2027\nCodice corso: 34179\nClasse di laurea: L-P01\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura, Ingegneria civile e industriale\nDipartimento: INGEGNERIA CIVILE, EDILE E AMBIENTALE\nSede: Roma\nLingua: It",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/34179",
+          "https://corsidilaurea.uniroma1.it/it/course/34179/study-plan"
+        ],
+        "text": "Professioni tecniche per l'edilizia e il territorio – corso professionalizzante\nAnno accademico: 2026-2027\nCodice corso: 34179\nClasse di laurea: L-P01\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Architettura, Ingegneria civile e industriale\nDipartimento: INGEGNERIA CIVILE, EDILE E AMBIENTALE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 34179"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Salerno\",\"course\":\"[03128] SCIENZE DEI BENI CULTURALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03128] SCIENZE DEI BENI CULTURALI",
+          "id": "S1C8",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C8",
+        "option": "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000?schemaid=17229",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001?schemaid=17231",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002?schemaid=17230",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti?annoOrdinamento=2017"
+        ],
+        "text": "[03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33428] GESTIONE DEL PROCESSO EDILIZIO - PROJECT MANAGEMENT\",\"type\":\"Classe di laurea: L-23\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Gestione del Processo Edilizio - Project Management\nAnno accademico: 2026-2027\nCodice corso: 33428\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33428] GESTIONE DEL PROCESSO EDILIZIO - PROJECT MANAGEMENT",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-23",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33428] GESTIONE DEL PROCESSO EDILIZIO - PROJECT MANAGEMENT",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33428",
+          "https://corsidilaurea.uniroma1.it/it/course/33428/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33428/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33428/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33428/study-plan"
+        ],
+        "text": "Gestione del Processo Edilizio - Project Management\nAnno accademico: 2026-2027\nCodice corso: 33428\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "arts_design"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Se desideri ulteriori dettagli su questi corsi, fammi sapere!",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C3",
+        "S1C7"
+      ],
+      "recap": "Ti interessano le materie in ambito tecnico artistico e architettura. Ti piacciono molto le attività pratiche e manuali, capire come funzionano le cose, ragionare in modo logico, esprimere idee in forme creative, sperimentare e creare qualcosa di nuovo, lavorare a stretto contatto con le persone, proporre idee e organizzare progetti, e avere attività ordinate e pianificate."
+    },
+    "ctx_chars": 4708,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33427] SCIENZE DELL'ARCHITETTURA\",\"type\":\"Classe di laurea: L-17\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Scienze dell'architettura\nAnno accademico: 2026-2027\nCodice corso: 33427\nClasse di laurea: L-17\nModalità di accesso: Prova di ammissione\nLingua: ITA\n\n{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: a far acquisire allo studente conoscenze teoriche e pratiche necessarie per lo svolgimento dell'attività professionale.\nIn particolare, riguardano:\n● l'insegnamento di Scienza e Tecnica delle Costruzioni, che permette di acquisire conoscenze e capacità di comprensione degli aspetti te\n\n{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33426] DESIGN\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Design\nAnno accademico: 2026-2027\nCodice corso: 33426\nClasse di laurea: L-4\nTipo\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "architettura",
+    "rendered_reply": "Ti interessano le materie in ambito tecnico artistico e architettura. Ti piacciono molto le attività pratiche e manuali, capire come funzionano le cose, ragionare in modo logico, esprimere idee in forme creative, sperimentare e creare qualcosa di nuovo, lavorare a stretto contatto con le persone, proporre idee e organizzare progetti, e avere attività ordinate e pianificate.\n\nTi suggerisco queste opzioni:\n1. Sapienza Università di Roma | [33427] SCIENZE DELL'ARCHITETTURA\n2. Sapienza Università di Roma | [33426] DESIGN\n3. Sapienza Università di Roma | [34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE\n\nSe desideri ulteriori dettagli su questi corsi, fammi sapere!",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "architettura"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "9ed7093dc1d1",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "liceo classico",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "tecnico artistico",
+      "role": "user"
+    },
+    {
+      "content": "Mi hai detto che hai frequentato il liceo classico. Ora vorrei sapere quali materie o ambiti universitari ti attirano di più. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "varie materie in ambito tecnico artistico",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano varie materie in ambito tecnico artistico. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "vorrei fare architettura",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano le materie in ambito tecnico artistico e architettura. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "lazio",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti piacerebbe studiare in Lazio. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Ti interessano le materie in ambito tecnico artistico e architettura. Ti piacciono molto le attività pratiche e manuali, capire come funzionano le cose, ragionare in modo logico, esprimere idee in forme creative, sperimentare e creare qualcosa di nuovo, lavorare a stretto contatto con le persone, proporre idee e organizzare progetti, e avere attività ordinate e pianificate. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33427] SCIENZE DELL'ARCHITETTURA 2. Sapienza Università di Roma | [33426] DESIGN 3. Sapienza Università di Roma | [34179] PROFESSIONI TECNICHE PER L'EDILIZIA E IL TERRITORIO – CORSO PROFESSIONALIZZANTE Se desideri ulteriori dettagli su questi corsi, fammi sapere!",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T12:31:17"
+}

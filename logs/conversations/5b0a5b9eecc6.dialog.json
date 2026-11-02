@@ -1,0 +1,557 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T10:49:53",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "laurea triennale in sociologia e scienze umane, laurea magistrale in innovazione sociale, Federico II di Napoli",
+      "region": "Campania"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "social_sciences"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Conventional",
+        "Realistic"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "laurea triennale in sociologia e scienze umane",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "social_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "laurea triennale in sociologia e scienze umane",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "social_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "laurea triennale in sociologia e scienze umane",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "social_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 8
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "laurea triennale in sociologia e scienze umane, laurea magistrale in innovazione sociale, Federico II di Napoli",
+          "region": "Campania"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "social_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 9
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            2,
+            -1,
+            1,
+            -1,
+            -1,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 17
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Napoli",
+      "region": "Campania",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Salerno | [88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES",
+      "University of Salerno | [03123] SOCIOLOGIA",
+      "University of Salerno | [03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES Corso di Dottorato (D.M.226/2021)\n\nDIDACTICS, SPECIAL PEDAGOGY AND TECHNOLOGY FOR INCLUSIVE EDUCATION METHODOLOGY OF EDUCATIONAL RESEARCH MIND, KNOWLEDGE, SOCIETY. PSYCHOLOG",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES",
+          "id": "S1C1",
+          "region": "Campania",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C1",
+        "option": "University of Salerno | [88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti/10000?schemaid=17533",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti/10001?schemaid=17534",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti/10002?schemaid=17535",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti/10003#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti/10003?schemaid=17536",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500688/insegnamenti?annoOrdinamento=2024"
+        ],
+        "text": "[88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES Corso di Dottorato (D.M.226/2021)\n\nDIDACTICS, SPECIAL PEDAGOGY AND TECHNOLOGY FOR INCLUSIVE EDUCATION METHODOLOGY OF EDUCATIONAL RESEARCH MIND, KNOWLEDGE, SOCIETY. PSYCHOLOGY AND PHILOSOPHY AS COMPLEMENTARY THEORIES OF COMPLEX COGNITIVE SYSTEMS SOCIOLOGY AND SOCIAL RESEARCH"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Trento\",\"course\":\"[0611G] SOCIOLOGIA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Sociologia - via Verdi, 26\"]}\nEXCERPT: [0611G] SOCIOLOGIA Laurea\nINFO INSEGNAMENTI SALVA PDF\nPercorso: SOCIETA' CIVILE, AMBIENTE E SOSTENIBILITA'\nPercorso: CULTURA, MEDIA E COMUNICAZIONE Percorso: PROGETTAZIONE E INNOVAZIONE SOCIALE Percorso: RICERCA E ANALISI SULLA SOCIETA'",
+        "facts": {
+          "cities": [
+            "Polo di città - Sociologia - via Verdi, 26"
+          ],
+          "course": "[0611G] SOCIOLOGIA",
+          "id": "S1C10",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C10",
+        "option": "University of Trento | [0611G] SOCIOLOGIA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378?schemaid=8052",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379?schemaid=8053",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380?schemaid=8051",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381?schemaid=8054",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0611G] SOCIOLOGIA Laurea\nINFO INSEGNAMENTI SALVA PDF\nPercorso: SOCIETA' CIVILE, AMBIENTE E SOSTENIBILITA'\nPercorso: CULTURA, MEDIA E COMUNICAZIONE Percorso: PROGETTAZIONE E INNOVAZIONE SOCIALE Percorso: RICERCA E ANALISI SULLA SOCIETA'"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: U\n60 ore Primo Semestre\n[2001566] MACROECONOMICS (BASIC)\n\n8 CFU\n60 ore Secondo Semestre\n[2001570] MICROECONOMICS (BASIC)\n8 CFU\n60 ore Primo Semestre\n[2012239] MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2012240] INTERNATIONAL AND EUROPEAN TRADE LAW\n6 CFU",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+          "id": "S1C2",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C2",
+        "option": "University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/1#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/1?schemaid=11605",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/2#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/2?schemaid=11606",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/3#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/3?schemaid=11607",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti?annoOrdinamento=2021"
+        ],
+        "text": "U\n60 ore Primo Semestre\n[2001566] MACROECONOMICS (BASIC)\n\n8 CFU\n60 ore Secondo Semestre\n[2001570] MICROECONOMICS (BASIC)\n8 CFU\n60 ore Primo Semestre\n[2012239] MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2012240] INTERNATIONAL AND EUROPEAN TRADE LAW\n6 CFU\n45 ore Secondo Semestre\n[2015936] ENGLISH FOR ECONOMICS AND MANAGEMENT\n3 CFU\n45 ore Primo Semestre\n[2015938] CORPORATE SOCIAL RESPONSIBILITY\n8 CFU\n60 ore Primo Semestre\n[2015940] ECONOMICS OF INNOVATION AND DIGITAL MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2015947] DATA ANALYSIS FOR SOCIAL SCIENTISTS\n8 CFU\n60 ore Secondo Semestre\n[2015949] METHODS FOR SOCIAL SCIENCE ANALYSIS\n8 CFU\n60 ore Primo Semestre\n[2015951] BEHAVIOUR AND EXPERIMENTS IN SOCIAL SCIENCES\n8 CFU\n60 ore Primo Semestre\n[2015952] GLOBALIZATION AND INEQUALITY\n8 CFU\n60 ore Secondo Semestre\n[2015956] LAW AND ECONOMICS\n8 CFU\n60 ore Secondo Semestre\n[2016240] REMAINING FREE CREDITS\n4 CFU\n30 ore\n[2016655] LINGUA ITALIANA\n2 CFU\n15 ore Primo Semestre\n[2017769] LINGUA ITALIANA\n2 CFU\n15 ore"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[88611] DATA SCIENCE ACCOUNTING & MANAGEMENT\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: contenuto principale Dottorati Economico-Statistica\n[88612] ECONOMIA E POLITICHE DEI MERCATI E DELLE IMPRESE Giuridica\n[88610] SCIENZE GIURIDICHE Medica\n[88617] MEDICINA TRASLAZIONALE DELLO SVILUPPO E DELL'INVECCHIAMENTO ATTIVO\n[88618] SCIENZE DEL FARM",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[88611] DATA SCIENCE ACCOUNTING & MANAGEMENT",
+          "id": "S1C3",
+          "region": "Campania",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C3",
+        "option": "University of Salerno | [88611] DATA SCIENCE ACCOUNTING & MANAGEMENT",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10000?schemaid=17519",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10001?schemaid=17520",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti/10002?schemaid=17521",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500662/insegnamenti?annoOrdinamento=2024",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562231313284"
+        ],
+        "text": "contenuto principale Dottorati Economico-Statistica\n[88612] ECONOMIA E POLITICHE DEI MERCATI E DELLE IMPRESE Giuridica\n[88610] SCIENZE GIURIDICHE Medica\n[88617] MEDICINA TRASLAZIONALE DELLO SVILUPPO E DELL'INVECCHIAMENTO ATTIVO\n[88618] SCIENZE DEL FARMACO Scienze\n[88602] FISICA E TECNOLOGIE EMERGENTI\n[88601] INFORMATICA\n[88603] MATEMATICA\n[88604] SCIENZE CHIMICHE,BIOLOGICHE E AMBIENTALI Sociologica\n[88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES\n[88622] POLITICA E COMUNICAZIONE-POLICOM\n[88613] SCIENZE E CULTURE DELL'UMANO."
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Salerno\",\"course\":\"[03129] SCIENZE DEL SERVIZIO SOCIALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03129] SCIENZE DEL SERVIZIO SOCIALE CORSO DI LAUREA",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03129] SCIENZE DEL SERVIZIO SOCIALE",
+          "id": "S1C4",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C4",
+        "option": "University of Salerno | [03129] SCIENZE DEL SERVIZIO SOCIALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500644",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500644/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500644/insegnamenti/9999?schemaid=17224"
+        ],
+        "text": "[03129] SCIENZE DEL SERVIZIO SOCIALE CORSO DI LAUREA"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[SRSSSS] SOCIOLOGIA E RICERCA SOCIALE (SCUOLA IN SCIENZE SOCIALI)\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: Corso di Dottorato\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n4 anni Ordinamento\n2023\nStato Aperto Crediti\n0 CFU Tipologia Corsi di dottorato Categoria Umanistica Normativa Ante Riforma Corso Interateneo No Accesso Libero Dipartimento Dipartimento di Socio",
+        "facts": {
+          "cities": [],
+          "course": "[SRSSSS] SOCIOLOGIA E RICERCA SOCIALE (SCUOLA IN SCIENZE SOCIALI)",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [SRSSSS] SOCIOLOGIA E RICERCA SOCIALE (SCUOLA IN SCIENZE SOCIALI)",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10772"
+        ],
+        "text": "Corso di Dottorato\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n4 anni Ordinamento\n2023\nStato Aperto Crediti\n0 CFU Tipologia Corsi di dottorato Categoria Umanistica Normativa Ante Riforma Corso Interateneo No Accesso Libero Dipartimento Dipartimento di Sociologia e Ricerca Sociale Verifica conoscenze richieste per l'accesso No"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Salerno\",\"course\":\"[03123] SOCIOLOGIA\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03123] SOCIOLOGIA CORSO DI LAUREA\n\nLAVORO, TERRITORIO E SOCIETA'\nWELFARE E TERZO SETTORE",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03123] SOCIOLOGIA",
+          "id": "S1C6",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C6",
+        "option": "University of Salerno | [03123] SOCIOLOGIA",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti/10002?schemaid=16899",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti/10003#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti/10003?schemaid=16900",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500175/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "[03123] SOCIOLOGIA CORSO DI LAUREA\n\nLAVORO, TERRITORIO E SOCIETA'\nWELFARE E TERZO SETTORE"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Trento\",\"course\":\"[0621H] SOCIOLOGY AND SOCIAL RESEARCH - SOCIOLOGIA E RICERCA SOCIALE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Sociologia - via Verdi, 26\"]}\nEXCERPT: [0621H] SOCIOLOGY AND SOCIAL RESEARCH - SOCIOLOGIA E RICERCA SOCIALE Laurea Magistrale Inglese\nINFO INSEGNAMENTI SALVA PDF\nStandard Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "Polo di città - Sociologia - via Verdi, 26"
+          ],
+          "course": "[0621H] SOCIOLOGY AND SOCIAL RESEARCH - SOCIOLOGIA E RICERCA SOCIALE",
+          "id": "S1C7",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C7",
+        "option": "University of Trento | [0621H] SOCIOLOGY AND SOCIAL RESEARCH - SOCIOLOGIA E RICERCA SOCIALE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10567",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10567/insegnamenti/50387",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10567/insegnamenti/50387?schemaid=8059"
+        ],
+        "text": "[0621H] SOCIOLOGY AND SOCIAL RESEARCH - SOCIOLOGIA E RICERCA SOCIALE Laurea Magistrale Inglese\nINFO INSEGNAMENTI SALVA PDF\nStandard Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Salerno\",\"course\":\"[02228] DATA SCIENCE E GESTIONE DELL'INNOVAZIONE\",\"type\":\"Corso di Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: contenuto principale Magistrali Economico-Statistica\n[02221] CONSULENZA E MANAGEMENT AZIENDALE\n[02222] ECONOMIA\n[02231] ECONOMIA GOVERNO E AMMINISTRAZIONE\n[12225] GLOBAL STUDIES AND EU\n[02224] SCIENZE STATISTICHE PER LA FINANZA Medica\n[07222] INNOVAZIONI PER LE PRODUZIONI AGRARIE MEDITERRANEE\n[10221] SCIENZE INFERMIERISTICHE E OSTETRICHE Scienze della Formazione\n[44225] PSICOLOGIA ",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[02228] DATA SCIENCE E GESTIONE DELL'INNOVAZIONE",
+          "id": "S1C8",
+          "region": "Campania",
+          "type": "Corso di Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C8",
+        "option": "University of Salerno | [02228] DATA SCIENCE E GESTIONE DELL'INNOVAZIONE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti/10001?schemaid=16684",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti/10002?schemaid=16683",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500638/insegnamenti?annoOrdinamento=2022",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024?gruppo=1562230985873"
+        ],
+        "text": "contenuto principale Magistrali Economico-Statistica\n[02221] CONSULENZA E MANAGEMENT AZIENDALE\n[02222] ECONOMIA\n[02231] ECONOMIA GOVERNO E AMMINISTRAZIONE\n[12225] GLOBAL STUDIES AND EU\n[02224] SCIENZE STATISTICHE PER LA FINANZA Medica\n[07222] INNOVAZIONI PER LE PRODUZIONI AGRARIE MEDITERRANEE\n[10221] SCIENZE INFERMIERISTICHE E OSTETRICHE Scienze della Formazione\n[44225] PSICOLOGIA DI COMUNITA' PER I CONTESTI FORMATIVI, PER IL BENESSERE E PER LO SPORT\n[44224] SCIENZE DELL'EDUCAZIONE PERMANENTE E DELLA FORMAZIONE CONTINUA\n[44222] SCIENZE DELLA VALUTAZIONE MOTORIO-SPORTIVA E TECNICHE DI ANALISI E PROGETTAZIONE DELLO SPORT PER DISABILI\n[44221] SCIENZE PEDAGOGICHE Scienze\n[05221] BIOLOGIA\n[05223] CHIMICA\n[05226] FISICA\n[05225] INFORMATICA\n[05222] MATEMATICA\n[05224] SCIENZE AMBIENTALI\n[05227] SICUREZZA INFORMATICA E TECNOLOGIE CLOUD Sociologica\n[03231] CORPORATE COMMUNICATION E MEDIA Inglese Italiano\n[03232] DIGITAL MARKETING Inglese Italiano\n[12228] MANAGEMENT DEI SISTEMI TURISTICI PER LO SVILUPPO SOSTENIBILE\n[12227] MANAGEMENT DELLE ATTIVITÀ SPORTIVE E MOTORIE PER IL BENESSERE SOCIALE\n[12226] POLITICHE TERRITORIALI E COOPERAZIONE INTERNAZIONALE\n[03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO Ingegneria\n[06232] INFORMATION ENGINEERING FOR DIGITAL MEDICINE Inglese\n[06233] ELECTRICAL ENGINEERING FOR DIGITAL ENERGY Inglese Italiano\n[06228] INGEGNERIA ALIMENTARE Inglese\n[06222] INGEGNERIA CHIMICA\n[06221] INGEGNERIA CIVILE\n[06224] INGEGNERIA ELETTRONICA\n[06226] INGEGNERIA GESTIONALE\n[06227] INGEGNERIA INFORMATICA\n[06223] INGEGNERIA MECCANICA\n[06225] INGEGNERIA PER L'AMBIENTE ED IL TERRITORIO\n[06230] SMART INDUSTRY ENGINEERING Inglese Umanistica\n[03223] ARCHEOLOGIA E CULTURE ANTICHE\n[03221] FILOLOGIA MODERNA\n[03222] FILOLOGIA, LETTERATURE E STORIA DELL'ANTICHITÀ\n[03226] FILOSOFIA\n[03220] GESTIONE E VALORIZZAZIONE DEGLI ARCHIVI E DELLE BIBLIOTECHE\n[43221] LINGUE E LETTERATURE MODERNE\n[03240] LINGUISTICA E DIDATTICA DELL'ITALIANO NEL CONTESTO INTERNAZIONALE Interateneo\n[43222] SCIENZE DELLO SPETTACOLO E DELLA PRODUZIONE MULTIMEDIALE\n[03224] STORIA E CRITICA D'ARTE"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Salerno\",\"course\":\"[03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO\",\"type\":\"Corso di Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO CORSO DI LAUREA MAGISTRALE DIGITAL SOCIETY",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO",
+          "id": "S1C9",
+          "region": "Campania",
+          "type": "Corso di Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C9",
+        "option": "University of Salerno | [03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500181",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500181/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500181/insegnamenti/10004?schemaid=17167",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500181/insegnamenti/10005?schemaid=17166"
+        ],
+        "text": "[03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO CORSO DI LAUREA MAGISTRALE DIGITAL SOCIETY"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "social_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Quale di questi temi ti sembra più interessante per la tua tesi?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C6",
+        "S1C9"
+      ],
+      "recap": "Hai un forte interesse per le scienze sociali e per approfondire temi di pedagogia generale, ma sempre rimanendo in ambito sociologico."
+    },
+    "ctx_chars": 4557,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Salerno\",\"course\":\"[88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES Corso di Dottorato (D.M.226/2021)\n\nDIDACTICS, SPECIAL PEDAGOGY AND TECHNOLOGY FOR INCLUSIVE EDUCATION METHODOLOGY OF EDUCATIONAL RESEARCH MIND, KNOWLEDGE, SOCIETY. PSYCHOLOG\n\n{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: U\n60 ore Primo Semestre\n[2001566] MACROECONOMICS (BASIC)\n\n8 CFU\n60 ore Secondo Semestre\n[2001570] MICROECONOMICS (BASIC)\n8 CFU\n60 ore Primo Semestre\n[2012239] MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2012240] INTERNATIONAL AND EUROPEAN TRADE LAW\n6 CFU\n\n{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[88611] DATA SCIENCE ACCOUNTING & MANAGEMEN\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "social sciences",
+    "rendered_reply": "Hai un forte interesse per le scienze sociali e per approfondire temi di pedagogia generale, ma sempre rimanendo in ambito sociologico.\n\nLe opzioni non documentate a Napoli sono presentate come alternative, non come sedi necessariamente vicine.\n\nTi suggerisco queste opzioni:\n1. University of Salerno | [88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES\n2. University of Salerno | [03123] SOCIOLOGIA\n3. University of Salerno | [03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO\n\nQuale di questi temi ti sembra più interessante per la tua tesi?",
+    "retrieval_request": {
+      "location": {
+        "city": "Napoli",
+        "region": "Campania",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "social sciences"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      1,
+      2,
+      2,
+      -1,
+      1,
+      -1,
+      -1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "5b0a5b9eecc6",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "vorrei scegliere il tema per la mia tesi di laurea magistrale in innovazione sociale, ma vorrei unire pedagogia e sociologia che tema mi consiglieresti?",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a scegliere il tema per la tua tesi di laurea magistrale in innovazione sociale. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "laurea magistrale innovazione sociale",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, stai già frequentando una laurea magistrale in innovazione sociale. Per aiutarti meglio, però, ho bisogno di sapere da che percorso arrivi: che scuola, corso o laurea hai frequentato o concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "laurea triennale in sociologia e scienze umane come scuola superiore",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, grazie per aver chiarito. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "sociologia",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano sia la sociologia che la pedagogia. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "devo scegliere un tema per la tesi",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, ma per aiutarti meglio, mi serve sapere che cosa ti piacerebbe approfondire o imparare a fare all'università. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "approfondire temi di pedagogia generale ma sempre rimanendo in ambito sociologico",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano sia la sociologia che la pedagogia. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "studio già alla federico ii di napoli",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi studi già alla Federico II di Napoli. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Hai un forte interesse per le scienze sociali e per approfondire temi di pedagogia generale, ma sempre rimanendo in ambito sociologico. Le opzioni non documentate a Napoli sono presentate come alternative, non come sedi necessariamente vicine. Ti suggerisco queste opzioni: 1. University of Salerno | [88619] EDUCATIONAL AND SOCIAL RESEARCH. SOCIETY AND TEACHING-LEARNING STUDIES 2. University of Salerno | [03123] SOCIOLOGIA 3. University of Salerno | [03229] SOCIOLOGIA E POLITICHE PER IL TERRITORIO Quale di questi temi ti sembra più interessante per la tua tesi?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T10:56:19"
+}

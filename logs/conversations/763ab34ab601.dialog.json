@@ -1,0 +1,464 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T13:47:13",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "scuola di cucina",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "life_sciences"
+      ],
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola di cucina",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola di cucina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola di cucina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "scuola di cucina",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33456] BIOTECNOLOGIE",
+      "University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI",
+      "University of Siena | [ME001] BIOTECNOLOGIE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33456] BIOTECNOLOGIE\",\"type\":\"Classe di laurea: L-2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie\nAnno accademico: 2026-2027\nCodice corso: 33456\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33456] BIOTECNOLOGIE",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-2",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33456] BIOTECNOLOGIE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33456",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33456/study-plan"
+        ],
+        "text": "Biotecnologie\nAnno accademico: 2026-2027\nCodice corso: 33456\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of L'Aquila\",\"course\":\"[F4B] BIOLOGIA DELLA SALUTE E DELLA NUTRIZIONE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[\"L'Aquila - Università degli Studi\"]}\nEXCERPT: [F4B] BIOLOGIA DELLA SALUTE E DELLA NUTRIZIONE Laurea Magistrale BIOSANITARIO",
+        "facts": {
+          "cities": [
+            "L'Aquila - Università degli Studi"
+          ],
+          "course": "[F4B] BIOLOGIA DELLA SALUTE E DELLA NUTRIZIONE",
+          "id": "S1C10",
+          "region": "Abruzzo",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C10",
+        "option": "University of L'Aquila | [F4B] BIOLOGIA DELLA SALUTE E DELLA NUTRIZIONE",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10149",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/1#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/1?schemaid=11421",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/2#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti/2?schemaid=11422",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10149/insegnamenti?annoOrdinamento=2014"
+        ],
+        "text": "[F4B] BIOLOGIA DELLA SALUTE E DELLA NUTRIZIONE Laurea Magistrale BIOSANITARIO"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: e\n[2015987] TRAINING COURSE ON HEALTH AND SAFETY AT WORK – HIGH RISK – UNDER ART. 37 OF ITALIAN LEGISLATIVE DECREE 81/08\nPeriodo fittizio - corso Sicurezza SPP\n[2016796] MOLECULAR BIOLOGY OF CANCER\n6 CFU\n48 ore Primo Semestre\n[2017979] DATA ANALYSIS AND VISUALIZATION IN BIOCHEMISTRY\n6 CF",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY",
+          "id": "S1C2",
+          "region": "Toscana",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C2",
+        "option": "University of Siena | [D303] SUSTAINABLE INDUSTRIAL PHARMACEUTICAL BIOTECHNOLOGY",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11057",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11057/insegnamenti/9999"
+        ],
+        "text": "e\n[2015987] TRAINING COURSE ON HEALTH AND SAFETY AT WORK – HIGH RISK – UNDER ART. 37 OF ITALIAN LEGISLATIVE DECREE 81/08\nPeriodo fittizio - corso Sicurezza SPP\n[2016796] MOLECULAR BIOLOGY OF CANCER\n6 CFU\n48 ore Primo Semestre\n[2017979] DATA ANALYSIS AND VISUALIZATION IN BIOCHEMISTRY\n6 CFU\n36 ore Primo Semestre"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Messina\",\"course\":\"[3263] BIOTECNOLOGIE MEDICHE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: [3263] BIOTECNOLOGIE MEDICHE Corso di Laurea Magistrale Inglese Italiano",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[3263] BIOTECNOLOGIE MEDICHE",
+          "id": "S1C3",
+          "region": "Sicilia",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C3",
+        "option": "University of Messina | [3263] BIOTECNOLOGIE MEDICHE",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10491",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/9999?annoOrdinamento=2024",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10491/insegnamenti/9999?schemaid=12261",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10491?annoOrdinamento=2024"
+        ],
+        "text": "[3263] BIOTECNOLOGIE MEDICHE Corso di Laurea Magistrale Inglese Italiano"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEER",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S1C4",
+          "region": "Abruzzo",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C4",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE Inglese\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY Inglese\n[D3KINE] KINESIOLOGY Inglese\n[D3LLCC] LINGUE, LETTERATURE E CULTURE IN CONTATTO\n[D3MT] MEDICINA TRASLAZIONALE Inglese Italiano\n[D3NI] NEUROSCIENZE E IMAGING Inglese\n[D3OMIT] ONCOLOGIA MOLECOLARE E IMMUNOLOGIA DEI TUMORI Inglese\n[D3PSI] PSICOLOGIA Inglese\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT Inglese\n[D3SBF] SCIENZE BIOMOLECOLARI E FARMACEUTICHE Inglese\n[D3SGST] SCIENZE GIURIDICHE PER LA SOSTENIBILITÀ, LA TRANSIZIONE ECOLOGICA E L’INNOVAZIONE Inglese\n[D3SS] SOCIAL SCIENCES Tedesco Inglese Francese"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 75)\"]}\nEXCERPT: accurata del metabolismo cellulare in condizioni fisiologiche normali e delle sue alterazioni in condizioni patologiche.\nTale approccio implica una forte \"integrazione\" delle conoscenze biologiche con quelle matematiche, fisiche, chimiche ed informatiche, in grado di portare contributi rilevanti ad una comprensione est",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 75)"
+          ],
+          "course": "[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10116",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10116/insegnamenti/50426",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10116/insegnamenti/50426?schemaid=8544"
+        ],
+        "text": "accurata del metabolismo cellulare in condizioni fisiologiche normali e delle sue alterazioni in condizioni patologiche.\nTale approccio implica una forte \"integrazione\" delle conoscenze biologiche con quelle matematiche, fisiche, chimiche ed informatiche, in grado di portare contributi rilevanti ad una comprensione estesa dei sistemi biologici. Il Corso di Laurea in Scienze e Tecnologie Biomolecolari si articola su un unico percorso formativo. Un adeguato numero di crediti a scelta e lo svolgimento di tirocini formativi offrono comunque agli studenti la possibilità di definire un proprio piano di studio. I due primi anni sono rivolti all'acquisizione:\n-di solide conoscenze negli aspetti fondamentali delle scienze biologiche;\n-di adeguate conoscenze in chimica, matematica, fisica ed informatica;\n-di buone conoscenze sulle normative nazionali e dell'Unione Europea concernenti la bioetica, il biodiritto, la tutela delle invenzioni e la sicurezza nel settore biotecnologico;\n-di una buona conoscenza della lingua Inglese, scritta e parlata. Il terzo anno è dedicato all'acquisizione di conoscenze avanzate sugli strumenti concettuali e tecnico-pratici delle biotecnologie e della biologia dei sistemi."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C6",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C6",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33461] BIOTECNOLOGIE MEDICHE\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie mediche\nAnno accademico: 2026-2027\nCodice corso: 33461\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33461] BIOTECNOLOGIE MEDICHE",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33461] BIOTECNOLOGIE MEDICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33461",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/study-plan"
+        ],
+        "text": "Biotecnologie mediche\nAnno accademico: 2026-2027\nCodice corso: 33461\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Sassari\",\"course\":\"[1193] SCIENZE BIOLOGICHE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [1193] SCIENZE BIOLOGICHE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[A004265] INTRODUZIONE ALLA CHIMICA GENERALE E ALLA CHIMICA ORGANICA (OFA)\n\n20 ore Tipo insegnamento: [OPZ] - Opzionale\n[A004266] MATEMATICA (OFA)\n\n20 ore Tipo insegnamento: [OPZ] - Opzionale\n[A004267] FISICA (CORSO 0 - OFA)",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[1193] SCIENZE BIOLOGICHE",
+          "id": "S1C8",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C8",
+        "option": "University of Sassari | [1193] SCIENZE BIOLOGICHE",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276/insegnamenti/9999"
+        ],
+        "text": "[1193] SCIENZE BIOLOGICHE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE\n[A004265] INTRODUZIONE ALLA CHIMICA GENERALE E ALLA CHIMICA ORGANICA (OFA)\n\n20 ore Tipo insegnamento: [OPZ] - Opzionale\n[A004266] MATEMATICA (OFA)\n\n20 ore Tipo insegnamento: [OPZ] - Opzionale\n[A004267] FISICA (CORSO 0 - OFA)"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Siena\",\"course\":\"[ME001] BIOTECNOLOGIE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\n16 ore Periodo fittizio - corso Sicurezza SPP\n[2014919] BIOLOGIA ED ELEMENTI DI GENETICA\n8 CFU\n64 ore Primo Semestre\n[2014922] FISIOLOGIA UMANA\n6 CFU\n48 ore Primo Semestre\n[2018159] BIOFISICA E FISICA CELLULARE\n6 CFU\n48 ore Secondo Semestre",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[ME001] BIOTECNOLOGIE",
+          "id": "S1C9",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C9",
+        "option": "University of Siena | [ME001] BIOTECNOLOGIE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10256",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10256/insegnamenti/9999"
+        ],
+        "text": "FORMAZIONE IN MATERIA DI SALUTE E SICUREZZA NEI LUOGHI DI LAVORO - RISCHIO ALTO - AI SENSI DELL'ART. 37 DEL D.LGS. 81/08\n16 ore Periodo fittizio - corso Sicurezza SPP\n[2014919] BIOLOGIA ED ELEMENTI DI GENETICA\n8 CFU\n64 ore Primo Semestre\n[2014922] FISIOLOGIA UMANA\n6 CFU\n48 ore Primo Semestre\n[2018159] BIOFISICA E FISICA CELLULARE\n6 CFU\n48 ore Secondo Semestre"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "life_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "biotecnologia"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Il corso di Biotecnologie presso la Sapienza Università di Roma è una laurea di primo livello (Classe di laurea: L-2) e richiede una prova di ammissione. Il corso di Scienze e Tecnologie Biomolecolari presso l'Università di Trento è una laurea triennale che integra conoscenze biologiche con quelle matematiche, fisiche, chimiche e informatiche. Il corso di Biotecnologie presso l'Università di Siena è un corso di laurea che include materie come Biologia, Genetica, Fisiologia Umana e Biofisica. Se hai altre domande su questi corsi, fammi sapere!"
+    },
+    "ctx_chars": 1450,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33456] BIOTECNOLOGIE\",\"type\":\"Classe di laurea: L-2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie\nAnno accademico: 2026-2027\nCodice corso: 33456\nClasse di laurea: L-2\nModalità di accesso: Prova di ammissione\nLingua: ITA\n\n{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 75)\"]}\nEXCERPT: accurata del metabolismo cellulare in condizioni fisiologiche normali e delle sue alterazioni in condizioni patologiche.\nTale approccio implica una forte \"integrazione\" delle conoscenze biologiche con quelle matematiche, fisiche, chimiche ed informatiche, in grado di portare contributi rilevanti ad una comprensione est\n\n{\"id\":\"S1C9\",\"university\":\"University of Siena\",\"course\":\"[ME001] BIOTECNOLOGIE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: FORMAZIONE IN MATERIA DI SALUTE\n[...log text clipped...]",
+    "current_question": "Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "biotecnologia",
+    "rendered_reply": "Il corso di Biotecnologie presso la Sapienza Università di Roma è una laurea di primo livello (Classe di laurea: L-2) e richiede una prova di ammissione. Il corso di Scienze e Tecnologie Biomolecolari presso l'Università di Trento è una laurea triennale che integra conoscenze biologiche con quelle matematiche, fisiche, chimiche e informatiche. Il corso di Biotecnologie presso l'Università di Siena è un corso di laurea che include materie come Biologia, Genetica, Fisiologia Umana e Biofisica. Se hai altre domande su questi corsi, fammi sapere!",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "biotecnologia"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": true,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": []
+  },
+  "selected_option_event": null,
+  "session_id": "763ab34ab601",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "cia",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "come sei stato sviluppato",
+      "role": "user"
+    },
+    {
+      "content": "La mia domanda era su quale percorso di studi hai seguito o stai seguendo. Non ho bisogno di sapere come sono stato sviluppato. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "scuol di cucina conclusa 150 anni fa",
+      "role": "user"
+    },
+    {
+      "content": "Quindi hai completato una scuola di cucina. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai per la manipolazione di ogm",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti interessano le biotecnologie. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai",
+      "role": "user"
+    },
+    {
+      "content": "Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai",
+      "role": "user"
+    },
+    {
+      "content": "Per esempio, ti piace costruire o riparare oggetti, o lavorare con strumenti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai",
+      "role": "user"
+    },
+    {
+      "content": "Per esempio, ti piace costruire o riparare oggetti, o lavorare con strumenti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai",
+      "role": "user"
+    },
+    {
+      "content": "Per esempio, ti piace costruire o riparare oggetti, o lavorare con strumenti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai",
+      "role": "user"
+    },
+    {
+      "content": "Per esempio, ti piace costruire o riparare oggetti, o lavorare con strumenti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai",
+      "role": "user"
+    },
+    {
+      "content": "Per esempio, ti piace costruire o riparare oggetti, o lavorare con strumenti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "ai",
+      "role": "user"
+    },
+    {
+      "content": "Hai espresso interesse per le biotecnologie, in particolare per la manipolazione di OGM. Ti propongo alcuni corsi che potrebbero interessarti. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33456] BIOTECNOLOGIE 2. University of Trento | [0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI 3. University of Siena | [ME001] BIOTECNOLOGIE Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "aiaiai",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di Biotecnologie presso la Sapienza Università di Roma è una laurea di primo livello (Classe di laurea: L-2) e richiede una prova di ammissione. Il corso di Scienze e Tecnologie Biomolecolari presso l'Università di Trento è una laurea triennale che integra conoscenze biologiche con quelle matematiche, fisiche, chimiche e informatiche. Il corso di Biotecnologie presso l'Università di Siena è un corso di laurea che include materie come Biologia, Genetica, Fisiologia Umana e Biofisica. Se hai altre domande su questi corsi, fammi sapere!",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T13:49:04"
+}

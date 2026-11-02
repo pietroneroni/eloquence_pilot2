@@ -1,0 +1,536 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T12:45:59",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico scienze applicate",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Enterprising",
+        "Realistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "life_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico scienze applicate",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            2,
+            -1,
+            2,
+            -1,
+            2,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Trento | [0514G] INFORMATICA",
+      "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+      "University of Salerno | [06127] INGEGNERIA INFORMATICA"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: [0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ ",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)"
+          ],
+          "course": "[0514G] INFORMATICA",
+          "id": "S1C1",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C1",
+        "option": "University of Trento | [0514G] INFORMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50345?schemaid=8558",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti/50346?schemaid=8530",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10114/insegnamenti?annoOrdinamento=2008"
+        ],
+        "text": "[0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[146055] CALCULUS 1\n\n12 CFU\n108 ore Primo Semestre\n[145992] COMPUTER ARCHITECTURES\n6 CFU\n48 ore Secondo Semestre\n[146140] COMPUTER PROGRAMMING 1\n\n12 CFU\n96 ore Primo Semestre\n[146062] COMPUTER PROGRAMMING 2\n\n6 CFU\n48 ore Secondo Semestre\n[146168] FUNCTIONAL PROGRAMMING\n6 CFU\n48 ore Secondo Semestre\n[146056] GEOMETRY AND LINEAR ALGEBRA\n6 CFU\n56 ore Primo Semestre\n[146289] MATHEMATICS FOR INFORMATICS\n6 CFU\n48 ore Secondo Semestre\n[146060] PROBABILITY\n6 CFU\n48 ore Secondo Semestre SCEGLIERE 1 INSEGNAMENTO TRA I SEGUENTI (3 CFU)\nMaggiori informazioni\n[145326] INGLESE LIVELLO C1\n\n3 CFU\n50 ore Attività a durata annuale\n[140189] PROVA DI CONOSCENZA LINGUA ITALIANA (A1)"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Salerno\",\"course\":\"[12125] STUDI DIPLOMATICI, INTERNAZIONALI E SULLA SICUREZZA GLOBALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: O. UN MIX DI SAPERI ACCADEMICI INEDITO E INNOVATIVO, COME ATTESTATO DAI DUE CURRICULA CHE DECLINANO L’OFFERTA FORMATIVA.\nIL CURRICULUM IN STUDI DIPLOMATICI E STRATEGIE PER LA GLOBAL SECURITY FORNISCE I SAPERI E LE COMPETENZE DI BASE NELL’AMBITO DELLA CYBERSECURITY: DALLE TECNICHE MATEMATICHE PER LA MODELLAZIONE DEI SISTEMI AI PRINCIPI ARCHITETTURALI E LE TECNICHE DI PROGETTAZIONE DELLE APPLICAZIONI SOFTWARE, DALLE PRIMITIVE CRITTOGRAFICHE UTILIZZATE PER GARANTIRE LA S",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[12125] STUDI DIPLOMATICI, INTERNAZIONALI E SULLA SICUREZZA GLOBALE",
+          "id": "S1C10",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C10",
+        "option": "University of Salerno | [12125] STUDI DIPLOMATICI, INTERNAZIONALI E SULLA SICUREZZA GLOBALE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500544",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500544/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500544/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500544/insegnamenti/10000?schemaid=16673",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500544/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500544/insegnamenti/10001?schemaid=16674",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500544/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "O. UN MIX DI SAPERI ACCADEMICI INEDITO E INNOVATIVO, COME ATTESTATO DAI DUE CURRICULA CHE DECLINANO L’OFFERTA FORMATIVA.\nIL CURRICULUM IN STUDI DIPLOMATICI E STRATEGIE PER LA GLOBAL SECURITY FORNISCE I SAPERI E LE COMPETENZE DI BASE NELL’AMBITO DELLA CYBERSECURITY: DALLE TECNICHE MATEMATICHE PER LA MODELLAZIONE DEI SISTEMI AI PRINCIPI ARCHITETTURALI E LE TECNICHE DI PROGETTAZIONE DELLE APPLICAZIONI SOFTWARE, DALLE PRIMITIVE CRITTOGRAFICHE UTILIZZATE PER GARANTIRE LA SICUREZZA DEI SISTEMI ALLE COMPETENZE PER COMPRENDERE E IMPLEMENTARE TECNICHE DI PREVENZIONE E GESTIONE DI RISCHI PER LA SICUREZZA IN AMBITO ORGANIZZATIVO ED ECONOMICO. IL CURRICULUM IN GEOPOLITICA PER LA SICUREZZA DEL MEDITERRANEO FORNISCE I SAPERI E LE COMPETENZE INDISPENSABILI NELL’AMBITO DELLA SICUREZZA APPLICATA AL SOFTPOWER, CON PARTICOLARE RIGUARDO ALL'AREA GEOPOLITICA DEL “MEDITERRANEO ALLARGATO”."
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova d",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+          "id": "S1C2",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C2",
+        "option": "Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33502",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33502/study-plan"
+        ],
+        "text": "Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova di ammissione\nFacoltà: Ingegneria dell'informazione, informatica e statistica\nDipartimento: INFORMATICA\nSede: Roma\nLingua: Inglese\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14824"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)\"]}\nEXCERPT: 6145] FUNDAMENTALS OF COMMUNICATIONS\n12 CFU\n96 ore\n[146146] FUNDAMENTALS OF ELECTRONICS\n12 CFU\n96 ore\n[146142] PHYSICS 2\n6 CFU\n48 ore\n[146314] PROCESSING SYSTEMS\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 188)"
+          ],
+          "course": "[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+          "id": "S1C3",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C3",
+        "option": "University of Trento | [0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50458?schemaid=8538",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50459?schemaid=8535",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50460?schemaid=8536",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti/50461?schemaid=8537",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10712/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "6145] FUNDAMENTALS OF COMMUNICATIONS\n12 CFU\n96 ore\n[146146] FUNDAMENTALS OF ELECTRONICS\n12 CFU\n96 ore\n[146142] PHYSICS 2\n6 CFU\n48 ore\n[146314] PROCESSING SYSTEMS\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146125] ADVANCED PROGRAMMING\n6 CFU\n48 ore\n[145996] EMBEDDED SOFTWARE FOR THE INTERNET OF THINGS\n6 CFU\n48 ore\n[146130] FUNDAMENTALS OF ROBOTICS\n12 CFU\n96 ore\n[146147] OPERATING SYSTEMS\n12 CFU\n96 ore\n[146148] SOFTWARE ENGINEERING\n12 CFU\n96 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146135] DIGITAL SIGNAL CODING\n6 CFU\n48 ore\n[146069] NEXT GENERATION NETWORKS\n6 CFU\n48 ore\n[146311] REMOTE SENSING SYSTEMS AND IMAGE ANALYSIS\n6 CFU\n48 ore\n[146134] VISION AND RECOGNITION\n6 CFU\n48 ore SCEGLIERE 12 CREDITI TRA I SEGUENTI INSEGNAMENTI (OFFERTI AL 2° E AL 3° ANNO) (12 CFU)\n[146138] ADVANCED LOGIC DESIGN\n6 CFU\n48 ore\n[146163] BASICS OF OPTOELECTRONICS\n6 CFU\n48 ore\n[146150] DIGITAL ELECTRONIC CIRCUITS\n6 CFU\n48 ore\n[146198] HIGH-FREQUENCY CIRCUITS FOR SYSTEMS-ON-CHIP\n6 CFU\n48 ore\n[146209] INTRODUCTION TO PARALLEL COMPUTING\n6 CFU\n48 ore\n[146304] LABORATORY OF SYSTEMS ON CHIP\n6 CFU\n48 ore\n3° ANNO INSEGNAMENTI E ATTIVITÀ FORMATIVE OBBLIGATORIE\n[145993] DATABASES\n6 CFU\n48 ore\n[146070] PROVA FINALE\n6 CFU\n[146071] TIROCINI FORMATIVI E DI ORIENTAMENTO\n9 CFU"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE\",\"type\":\"Classe di laurea: L-29\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea",
+        "facts": {
+          "cities": [],
+          "course": "[33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-29",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33457] MOLECULAR BIOLOGY, MEDICINAL CHEMISTRY AND COMPUTER SCIENCE FOR PHARMACEUTICAL APPLICATIONS - BIOLOGIA MOLECOLARE, CHIMICA FARMACEUTICA E INFORMATICA PER APPLICAZIONI FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33457",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33457/study-plan"
+        ],
+        "text": "Molecular Biology, Medicinal Chemistry and Computer Science for Pharmaceutical Applications - Biologia molecolare, Chimica farmaceutica e Informatica per applicazioni farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33457\nClasse di laurea: L-29\nModalità di accesso: Prova di ammissione\nLingua: ENG"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: ile, le nozioni sul calcolo differenziale e integrale e i metodi elementari per la soluzione di equazioni differenziali.\nL'insegnamento di Fondamenti di Fisica si propone di introdurre i concetti di base riguardanti le grandezze fisiche, la lor",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S1C5",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C5",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "ile, le nozioni sul calcolo differenziale e integrale e i metodi elementari per la soluzione di equazioni differenziali.\nL'insegnamento di Fondamenti di Fisica si propone di introdurre i concetti di base riguardanti le grandezze fisiche, la loro misura, la meccanica del punto materiale, dei corpi rigidi, dei fluidi e la termodinamica. L'insegnamento di Chimica dei Materiali fornirà nozioni di chimica generale inorganica ed organica, struttura dell'atomo e tavola periodica, legami chimici, stati di aggregazione della materia (solido, liquido, gassoso), equilibri acido-base, elettrochimica e materiali per le tecnologie innovative. Nel percorso formativo, gli studenti acquisiscono, inoltre, i concetti fondamentali dell'informatica e della sua applicazione pratica attraverso l'uso di fogli di calcolo per risolvere problemi reali e compiere analisi dati, creazione grafici e rappresentazioni visive volte a facilitare la comunicazione e l'interpretazione dei risultati. A questi insegnamenti si aggiunge la conoscenza e la comprensione, in forma scritta e orale, della lingua inglese a livello QCER B1 o superiore, con riferimento anche ai lessici disciplinari."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Salerno\",\"course\":\"[06127] INGEGNERIA INFORMATICA\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [06127] INGEGNERIA INFORMATICA CORSO DI LAUREA SOFTWARE - COORTE 2024\n\nNETWORKS - COORTE 2024\nSOFTWARE - COORTE 2024\nSYSTEMS - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGAT",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[06127] INGEGNERIA INFORMATICA",
+          "id": "S1C6",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C6",
+        "option": "University of Salerno | [06127] INGEGNERIA INFORMATICA",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10000?schemaid=17153",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10001?schemaid=17154",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10002?schemaid=17152",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[06127] INGEGNERIA INFORMATICA CORSO DI LAUREA SOFTWARE - COORTE 2024\n\nNETWORKS - COORTE 2024\nSOFTWARE - COORTE 2024\nSYSTEMS - COORTE 2024\nAnno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO OBBLIGATORI\n[0612700112] ANALISI MATEMATICA 1\n\n9 CFU\n72 ore BASE (L-8)\nPRIMO SEMESTRE\n[0612700135] ANALISI MATEMATICA 2\n\n6 CFU\n48 ore BASE (L-8)\nSECONDO SEMESTRE\n[0612700011] CALCOLATORI ELETTRONICI\n9 CFU\n72 ore CARATTERIZZANTE (L-8)\nSECONDO SEMESTRE\n[0612700104] FISICA 1\n\n6 CFU\n48 ore BASE (L-8)\nPRIMO SEMESTRE\n[0612700105] FISICA 2"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Siena\",\"course\":\"[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea\n\nELETTRONICA PERCORSO GENERICO IE003 2024\nSISTEMI E AUTOMAZIONE SISTEMI INFORMATICI TELECOMUNICAZIONI",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE",
+          "id": "S1C7",
+          "region": "Toscana",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C7",
+        "option": "University of Siena | [IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/3",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/4",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999?schemaid=11507",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[IE003] INGEGNERIA INFORMATICA E DELL'INFORMAZIONE Corso di Laurea\n\nELETTRONICA PERCORSO GENERICO IE003 2024\nSISTEMI E AUTOMAZIONE SISTEMI INFORMATICI TELECOMUNICAZIONI"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Siena\",\"course\":\"[SE003] FISICA E TECNOLOGIE AVANZATE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: 5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[SE003] FISICA E TECNOLOGIE AVANZATE",
+          "id": "S1C8",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C8",
+        "option": "University of Siena | [SE003] FISICA E TECNOLOGIE AVANZATE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=11699"
+        ],
+        "text": "5 CFU\n144 ore Ciclo Annuale Unico\n[2008097] CALCOLO NUMERICO 1\n\n6 CFU\n60 ore Primo Semestre\n[2008098] CALCOLO NUMERICO 2\n6 CFU\n60 ore Secondo Semestre\n[2008103] LABORATORIO DI FISICA 3\n\n12 CFU\n128 ore Primo Semestre\n[2013712] ACUSTICA\n12 CFU\n160 ore Ciclo Annuale Unico\n[2016768] MECCANICA STATISTICA\n6 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1\n\n3 CFU"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Salerno\",\"course\":\"[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ CORSO DI LAUREA",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ",
+          "id": "S1C9",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C9",
+        "option": "University of Salerno | [05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500637",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500637/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500637/insegnamenti/9999?schemaid=17189"
+        ],
+        "text": "[05129] SCIENZE E NANOTECNOLOGIE PER LA SOSTENIBILITÀ CORSO DI LAUREA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "computer_science"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Quale di questi corsi ti sembra più interessante?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C2",
+        "S1C6"
+      ],
+      "recap": "Hai un forte interesse per l'informatica e la matematica, e ti piace molto capire come funzionano le cose e creare qualcosa di nuovo. Ti piacerebbe contribuire all’innovazione e al progresso scientifico."
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Trento\",\"course\":\"[0514G] INFORMATICA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9 (Utenza sostenibile: 158)\"]}\nEXCERPT: [0514G] INFORMATICA Laurea Computer Science\nINFO INSEGNAMENTI SALVA PDF\nComputer Science Scienze e Tecnologie Informatiche Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A. 2026/2027\n1° ANNO INSEGNAMENTI E ATTIVITÀ \n\n{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Applied Computer Science and Artificial Intelligence – Informatica Applicata e Intelligenza Artificiale\nAnno accademico: 2026-2027\nCodice corso: 33502\nClasse di laurea: L-31\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova d\n\n{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELET\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "computer science",
+    "rendered_reply": "Hai un forte interesse per l'informatica e la matematica, e ti piace molto capire come funzionano le cose e creare qualcosa di nuovo. Ti piacerebbe contribuire all’innovazione e al progresso scientifico.\n\nTi suggerisco queste opzioni:\n1. University of Trento | [0514G] INFORMATICA\n2. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE\n3. University of Salerno | [06127] INGEGNERIA INFORMATICA\n\nQuale di questi corsi ti sembra più interessante?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "computer science"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      1,
+      2,
+      2,
+      -1,
+      2,
+      -1,
+      2
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "26e87e25f8d1",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Ciao come puoi aiutarmi?",
+      "role": "user"
+    },
+    {
+      "content": "Benvenuto! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Cominciamo! Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Ho frequentato.un liceo scietnfitico scienze applicate in sud italia, provicina di caserta. Sto cercando un ateneo buono in ambito scientifico",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "Matematica e/o informatica",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, mi hai dato un'idea più chiara. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "Avere una mente aperta, capace di dare un contributo all’innovazione e al progresso scientifico",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "Va bene qualsiasi cosa, basta che non costi molto",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi sei flessibile sulla sede universitaria. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza, non moltissimo ma sono curioso",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "moltissimo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "10/10",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "Poco, sono un musicista, ma non sono molto creativo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "Molto, sono curioso e “smanettone”",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piace ma non troppo, non lo vedo come una cosa fondamentale del mio lavoro",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto, vorrei essere team leader",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "sono una persona molto ordinata e organizzata, ma mi piace anche un po’ di flessibilità nella vita",
+      "role": "user"
+    },
+    {
+      "content": "Hai un forte interesse per l'informatica e la matematica, e ti piace molto capire come funzionano le cose e creare qualcosa di nuovo. Ti piacerebbe contribuire all’innovazione e al progresso scientifico. Ti suggerisco queste opzioni: 1. University of Trento | [0514G] INFORMATICA 2. Sapienza Università di Roma | [33502] APPLIED COMPUTER SCIENCE AND ARTIFICIAL INTELLIGENCE – INFORMATICA APPLICATA E INTELLIGENZA ARTIFICIALE 3. University of Salerno | [06127] INGEGNERIA INFORMATICA Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T12:50:53"
+}

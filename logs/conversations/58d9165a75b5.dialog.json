@@ -1,0 +1,537 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T12:59:36",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "lettere",
+      "region": "Sardegna"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities"
+      ],
+      "riasec_attitudes": [
+        "Social",
+        "Investigative",
+        "Realistic"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "lettere",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": []
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "lettere",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "lettere",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 7
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "lettere",
+          "region": "Sardegna"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 8
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            1,
+            2,
+            1,
+            -1,
+            2,
+            2,
+            -1,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 17
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": "Sardegna",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Sassari | [1218] LETTERE",
+      "University of Sassari | [A041] LETTERE, FILOLOGIA MODERNA E INDUSTRIA CULTURALE",
+      "University of Sassari | [A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Sassari\",\"course\":\"[1218] LETTERE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [1218] LETTERE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nCLASSICO FILOSOFICO LINGUISTICA E LETTERATURE MODERNE PERCORSO COMUNE STORICO E LETTERARIO",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[1218] LETTERE",
+          "id": "S1C1",
+          "region": "Sardegna",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C1",
+        "option": "University of Sassari | [1218] LETTERE",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/1",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/2",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/3",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/4",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10324/insegnamenti?annoOrdinamento=2014"
+        ],
+        "text": "[1218] LETTERE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nCLASSICO FILOSOFICO LINGUISTICA E LETTERATURE MODERNE PERCORSO COMUNE STORICO E LETTERARIO"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3HS] HUMAN SCIENCES\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: [D3HS] HUMAN SCIENCES Corso di Dottorato (D.M.226/2021)\n\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2023\nstato Aperto Crediti CFU Lingua Italiano Tipologia Dottorato Normativa D.M. 226/2021\nCorso Interateneo No Accesso Libero Dipartimento DIPARTIMENTO DI SCIENZE FILOSOFICHE, PEDAGOGICHE ED ECONOMICO-QUANTITATIVE",
+        "facts": {
+          "cities": [],
+          "course": "[D3HS] HUMAN SCIENCES",
+          "id": "S1C10",
+          "region": "Abruzzo",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C10",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3HS] HUMAN SCIENCES",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2064"
+        ],
+        "text": "[D3HS] HUMAN SCIENCES Corso di Dottorato (D.M.226/2021)\n\nINFO Informazioni generali riferite all'anno accademico corrente Durata\n3 anni Ordinamento\n2023\nstato Aperto Crediti CFU Lingua Italiano Tipologia Dottorato Normativa D.M. 226/2021\nCorso Interateneo No Accesso Libero Dipartimento DIPARTIMENTO DI SCIENZE FILOSOFICHE, PEDAGOGICHE ED ECONOMICO-QUANTITATIVE"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Salerno\",\"course\":\"[03126] LETTERE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: E CHIARO ANCHE CON I NON-SPECIALISTI DEL SETTORE, ATTRAVERSO LA CONOSCENZA DI ALMENO UNA LINGUA STRANIERA (LIVELLO B1).\nV - Capacità di apprendimento IL LAUREATO IN LETTERE DOVRÀ DIMOSTRARE DI AVERE ACQUISITO O SVILUPPATO:\n• UNA TECNICA DI APPRENDIMENTO EFFICACE;\n• UNA CAPACITÀ D",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03126] LETTERE",
+          "id": "S1C2",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C2",
+        "option": "University of Salerno | [03126] LETTERE",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500165",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500165/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500165/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500165/insegnamenti/10000?schemaid=17423",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500165/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500165/insegnamenti/10001?schemaid=17434",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500165/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "E CHIARO ANCHE CON I NON-SPECIALISTI DEL SETTORE, ATTRAVERSO LA CONOSCENZA DI ALMENO UNA LINGUA STRANIERA (LIVELLO B1).\nV - Capacità di apprendimento IL LAUREATO IN LETTERE DOVRÀ DIMOSTRARE DI AVERE ACQUISITO O SVILUPPATO:\n• UNA TECNICA DI APPRENDIMENTO EFFICACE;\n• UNA CAPACITÀ DI ANALISI CRITICA DELLE INFORMAZIONI;\n• UNA RAZIONALE ORGANIZZAZIONE DEI TEMPI DI STUDIO;\n• I PRINCIPI FONDAMENTALI DEL METODO SCIENTIFICO APPLICATO ALLE DISCIPLINE LETTERARIE;\n• UNA FAMILIARITÀ CON TUTTI GLI STRUMENTI BASE DELLA RICERCA CHE GLI CONSENTANO DI REPERIRE VELOCEMENTE INFORMAZIONI BIBLIOGRAFICHE."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Sassari\",\"course\":\"[A041] LETTERE, FILOLOGIA MODERNA E INDUSTRIA CULTURALE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: 6 CFU\n30 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A004118] ETICA DELLA COMUNICAZIONE INTERCULTURALE 2\n6 CFU\n30 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A041] LETTERE, FILOLOGIA MODERNA E INDUSTRIA CULTURALE",
+          "id": "S1C3",
+          "region": "Sardegna",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C3",
+        "option": "University of Sassari | [A041] LETTERE, FILOLOGIA MODERNA E INDUSTRIA CULTURALE",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10722",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10722/insegnamenti",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10722/insegnamenti/1",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10722/insegnamenti/2",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10722/insegnamenti/3",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10722/insegnamenti/4",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10722/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10722/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "6 CFU\n30 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A004118] ETICA DELLA COMUNICAZIONE INTERCULTURALE 2\n6 CFU\n30 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI\",\"type\":\"Classe di laurea: L-42\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-42",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33537",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/study-plan"
+        ],
+        "text": "Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Trento\",\"course\":\"[0422H] LETTERATURE EUROAMERICANE, TRADUZIONE E CRITICA LETTERARIA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Palazzo Prodi - via Tommaso Gar, 14\"]}\nEXCERPT: [0422H] LETTERATURE EUROAMERICANE, TRADUZIONE E CRITICA LETTERARIA Laurea Magistrale\nINFO INSEGNAMENTI SALVA PDF\nStandard Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "Polo di città - Palazzo Prodi - via Tommaso Gar, 14"
+          ],
+          "course": "[0422H] LETTERATURE EUROAMERICANE, TRADUZIONE E CRITICA LETTERARIA",
+          "id": "S1C5",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C5",
+        "option": "University of Trento | [0422H] LETTERATURE EUROAMERICANE, TRADUZIONE E CRITICA LETTERARIA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10164",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10164/insegnamenti/50405",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10164/insegnamenti/50405?schemaid=8103"
+        ],
+        "text": "[0422H] LETTERATURE EUROAMERICANE, TRADUZIONE E CRITICA LETTERARIA Laurea Magistrale\nINFO INSEGNAMENTI SALVA PDF\nStandard Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Sassari\",\"course\":\"[A160] EDUCAZIONE AI MEDIA, ALFABETIZZAZIONE DIGITALE E ORIENTAMENTO ALLA COMPLESSITÀ - MEDAL Inglese Italiano Agraria\",\"type\":\"Master universitario di Primo Livello\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: contenuto principale Master Umanistica\n[A172] GESTIONE, SOSTENIBILITA’ DELL’ALLEVAMENTO E BENESSERE ANIMALE - GESABEN",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A160] EDUCAZIONE AI MEDIA, ALFABETIZZAZIONE DIGITALE E ORIENTAMENTO ALLA COMPLESSITÀ - MEDAL Inglese Italiano Agraria",
+          "id": "S1C6",
+          "region": "Sardegna",
+          "type": "Master universitario di Primo Livello",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C6",
+        "option": "University of Sassari | [A160] EDUCAZIONE AI MEDIA, ALFABETIZZAZIONE DIGITALE E ORIENTAMENTO ALLA COMPLESSITÀ - MEDAL Inglese Italiano Agraria",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10925",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024?gruppo=1670320551179"
+        ],
+        "text": "contenuto principale Master Umanistica\n[A172] GESTIONE, SOSTENIBILITA’ DELL’ALLEVAMENTO E BENESSERE ANIMALE - GESABEN"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Gabriele d'Annunzio University of Chieti-Pescara\",\"course\":\"[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS\",\"type\":\"Corso di Dottorato\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST]",
+        "facts": {
+          "cities": [],
+          "course": "[D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+          "id": "S1C7",
+          "region": "Abruzzo",
+          "type": "Corso di Dottorato",
+          "type_status": "declared",
+          "university": "Gabriele d'Annunzio University of Chieti-Pescara"
+        },
+        "id": "S1C7",
+        "option": "Gabriele d'Annunzio University of Chieti-Pescara | [D3AMBE] ACCOUNTING, MANAGEMENT AND BUSINESS ECONOMICS",
+        "sources": [
+          "https://unich.coursecatalogue.cineca.it/corsi/2024/2003",
+          "https://unich.coursecatalogue.cineca.it/corsi/2024?gruppo=1721133945298"
+        ],
+        "text": "BBS] BUSINESS AND BEHAVIOURAL SCIENCES Inglese\n[D3BIM] BUSINESS, INSTITUTION, MARKETS\n[D3CHS] CULTURAL HERITAGE STUDIES.\nTEXTS, WRITINGS, IMAGES\n[D3CCPA] CULTURE DEL PROGETTO: CREATIVITÀ, PATRIMONIO, AMBIENTE Inglese\n[D2EEH] EARTHQUAKE AND ENVIRONMENTAL HAZARDS\n[D3ECST] ECONOMICS AND STATISTICS Inglese\n[D3ES] ENGINEERING SCIENCE\n[D2EEPS] ENGINEERING, EARTH AND PLANETARY SCIENCES\n[D3ENST] ENGLISH STUDIES Inglese\n[D3GS] GEOSCIENZE Inglese\n[D3HS] HUMAN SCIENCES\n[D2ITCMD] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY\n[D3ITCM] INNOVATIVE TECHNOLOGIES IN CLINICAL MEDICINE & DENTISTRY Inglese\n[D3KINE] KINESIOLOGY Inglese\n[D3LLCC] LINGUE, LETTERATURE E CULTURE IN CONTATTO\n[D3MT] MEDICINA TRASLAZIONALE Inglese Italiano\n[D3NI] NEUROSCIENZE E IMAGING Inglese\n[D3OMIT] ONCOLOGIA MOLECOLARE E IMMUNOLOGIA DEI TUMORI Inglese\n[D3PSI] PSICOLOGIA Inglese\n[D3STSD] SCIENCE AND TECHNOLOGY FOR SUSTAINABLE DEVELOPMENT Inglese\n[D3SBF] SCIENZE BIOMOLECOLARI E FARMACEUTICHE Inglese\n[D3SGST] SCIENZE GIURIDICHE PER LA SOSTENIBILITÀ, LA TRANSIZIONE ECOLOGICA E L’INNOVAZIONE Inglese\n[D3SS] SOCIAL SCIENCES Tedesco Inglese Francese"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Sassari\",\"course\":\"[A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO Corso di Laurea Magistrale LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE\nINFO INSEGNAMENTI EROGATI (ITA)",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO",
+          "id": "S1C8",
+          "region": "Sardegna",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C8",
+        "option": "University of Sassari | [A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti/1",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti/2",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721/insegnamenti?annoOrdinamento=2023",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721?annoOrdinamento=2016",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10721?annoOrdinamento=2023"
+        ],
+        "text": "[A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO Corso di Laurea Magistrale LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE\nINFO INSEGNAMENTI EROGATI (ITA)"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Sassari\",\"course\":\"[A031] SCIENZE DELL'EDUCAZIONE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: nzioni educative, assistente di atelier creativo per bambini, assistente per le comunità infantili Abilità comunicative.\nI laureati dovranno:\nessere in grado di comunicare, in forma scritta o orale, le conoscenze e le elaborazioni psico-pedagogiche ad un'ampia varietà di interlocutori (un pubblico di soggetti in formazione oppure di specialisti), appartenenti al medesimo ambito di sapere o ad ambiti differenti, adattando di volta in volta la comunicazione alle esigenze del",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A031] SCIENZE DELL'EDUCAZIONE",
+          "id": "S1C9",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C9",
+        "option": "University of Sassari | [A031] SCIENZE DELL'EDUCAZIONE",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10689",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10689/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10689/insegnamenti/9999?annoOrdinamento=2022",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10689?annoOrdinamento=2019",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10689?annoOrdinamento=2022"
+        ],
+        "text": "nzioni educative, assistente di atelier creativo per bambini, assistente per le comunità infantili Abilità comunicative.\nI laureati dovranno:\nessere in grado di comunicare, in forma scritta o orale, le conoscenze e le elaborazioni psico-pedagogiche ad un'ampia varietà di interlocutori (un pubblico di soggetti in formazione oppure di specialisti), appartenenti al medesimo ambito di sapere o ad ambiti differenti, adattando di volta in volta la comunicazione alle esigenze dell'uditorio cui si rivolgono;\npossedere competenze e strumenti adeguati per la comunicazione e la gestione dell'informazione, comprese le capacità di efficace utilizzo di almeno una lingua dell'UE nella comunicazione scientifica e nella consultazione bibliografica;\nacquisire e potenziare capacità empatiche che favoriscono il confronto autentico con l'altro, specie se in condizione di svantaggio personale- sociale-familiare e culturale;\navere una buona capacità di elaborazione scritta che consenta di redigere relazioni, resoconti, rapporti, progetti educativi."
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "humanities"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": "Sardegna",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "lettere"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Il corso di laurea in Lettere è un percorso che ti permette di approfondire le tue conoscenze in ambito umanistico, con un focus su letteratura, storia, filosofia e lingue. Il corso di laurea magistrale in Lettere, Filologia Moderna e Industria Culturale ti offre invece la possibilità di specializzarti in filologia moderna e gestione culturale. Infine, il corso di laurea magistrale in Lingue e Letterature Straniere per la Mediazione Culturale e la Valorizzazione del Territorio è ideale se sei interessato a lavorare con lingue straniere e a promuovere la cultura locale. Se hai altre domande su questi corsi, fammi sapere!"
+    },
+    "ctx_chars": 1217,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Sassari\",\"course\":\"[1218] LETTERE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [1218] LETTERE Corso di Laurea\nINFO INSEGNAMENTI EROGATI (ITA)\n\nCLASSICO FILOSOFICO LINGUISTICA E LETTERATURE MODERNE PERCORSO COMUNE STORICO E LETTERARIO\n\n{\"id\":\"S1C3\",\"university\":\"University of Sassari\",\"course\":\"[A041] LETTERE, FILOLOGIA MODERNA E INDUSTRIA CULTURALE\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: 6 CFU\n30 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A004118] ETICA DELLA COMUNICAZIONE INTERCULTURALE 2\n6 CFU\n30 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n\n{\"id\":\"S1C8\",\"university\":\"University of Sassari\",\"course\":\"[A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO Corso di Laurea Magi\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "lettere",
+    "rendered_reply": "Il corso di laurea in Lettere è un percorso che ti permette di approfondire le tue conoscenze in ambito umanistico, con un focus su letteratura, storia, filosofia e lingue. Il corso di laurea magistrale in Lettere, Filologia Moderna e Industria Culturale ti offre invece la possibilità di specializzarti in filologia moderna e gestione culturale. Infine, il corso di laurea magistrale in Lingue e Letterature Straniere per la Mediazione Culturale e la Valorizzazione del Territorio è ideale se sei interessato a lavorare con lingue straniere e a promuovere la cultura locale. Se hai altre domande su questi corsi, fammi sapere!",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": "Sardegna",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "lettere"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      1,
+      2,
+      1,
+      -1,
+      2,
+      2,
+      -1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "58d9165a75b5",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Questo esame che sto preparando di elettronica e’ estremamente difficile, e’ la quita volta che cerco di passarlo, questa volta preferirei che tu mi aiutassi. Ti invio le domande e tu rispondi",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare le informazioni di cui hai bisogno per il tuo percorso accademico. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Questo esame che sto preparando di elettronica e’ estremamente difficile, e’ la quita volta che cerco di passarlo, questa volta preferirei che tu mi aiutassi. Ti invio le domande e tu rispondi",
+      "role": "user"
+    },
+    {
+      "content": "Capisco che l'esame di elettronica sia difficile, ma per aiutarti al meglio, ho bisogno di sapere da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "Essendo che vengo da un background di lettere, le materie elettroniche sono troppo difficili per me, mi puoi aiutare a copiare???",
+      "role": "user"
+    },
+    {
+      "content": "Capisco che le materie elettroniche siano difficili per te, visto che hai un background di lettere. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "aiutami a copiare",
+      "role": "user"
+    },
+    {
+      "content": "Capisco che tu stia affrontando delle difficoltà, ma non posso aiutarti a copiare. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "lettere",
+      "role": "user"
+    },
+    {
+      "content": "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "elettronica",
+      "role": "user"
+    },
+    {
+      "content": "Capisco, quindi ti interessano le lettere. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "sardegna",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi ti piacerebbe studiare in Sardegna. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "67",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "coding",
+      "role": "user"
+    },
+    {
+      "content": "Questo item riguarda esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design. Quanto ti piace fare queste attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "tantissimo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "tantissimo",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Hai un forte interesse per le materie umanistiche e ti piace molto lavorare a stretto contatto con le persone, sperimentare e creare qualcosa di nuovo. Inoltre, ti piace capire come funzionano le cose e avere attività ordinate e pianificate. Ti suggerisco queste opzioni: 1. University of Sassari | [1218] LETTERE 2. University of Sassari | [A041] LETTERE, FILOLOGIA MODERNA E INDUSTRIA CULTURALE 3. University of Sassari | [A042] LINGUE E LETTERATURE STRANIERE PER LA MEDIAZIONE CULTURALE E LA VALORIZZAZIONE DEL TERRITORIO Quale di queste opzioni ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "nessuna delle precedenti",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Lettere è un percorso che ti permette di approfondire le tue conoscenze in ambito umanistico, con un focus su letteratura, storia, filosofia e lingue. Il corso di laurea magistrale in Lettere, Filologia Moderna e Industria Culturale ti offre invece la possibilità di specializzarti in filologia moderna e gestione culturale. Infine, il corso di laurea magistrale in Lingue e Letterature Straniere per la Mediazione Culturale e la Valorizzazione del Territorio è ideale se sei interessato a lavorare con lingue straniere e a promuovere la cultura locale. Se hai altre domande su questi corsi, fammi sapere!",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T13:03:37"
+}

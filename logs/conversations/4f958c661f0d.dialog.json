@@ -1,0 +1,565 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-28T13:27:02",
+  "dialog_language": "English",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "second year student in information engineering",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Conventional",
+        "Artistic"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "second year student in information engineering",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "second year student in information engineering",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "second year student in information engineering",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "second year student in information engineering",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -1,
+            1,
+            2,
+            0,
+            2,
+            -2,
+            -1,
+            2
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ENG:latest",
+  "rag_state": {
+    "advice_intro_plural": "I suggest these options:",
+    "advice_intro_singular": "I suggest this option:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of L'Aquila | [I3N] INFORMATION ENGINEERING COMMON",
+      "University of Siena | [IE003] COMPUTER ENGINEERING AND INFORMATION ENGINEERING",
+      "University of Salerno | [06127] INFORMATICS ENGINEERING"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of L'Aquila\",\"course\":\"[I3N] INFORMATION ENGINEERING COMMON\",\"type\":\"Bachelor's Degree\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: [I3N] INFORMATION ENGINEERING Bachelor's Degree COMMON",
+        "facts": {
+          "cities": [],
+          "course": "[I3N] INFORMATION ENGINEERING COMMON",
+          "id": "S1C1",
+          "region": "Abruzzo",
+          "type": "Bachelor's Degree",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C1",
+        "option": "University of L'Aquila | [I3N] INFORMATION ENGINEERING COMMON",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/5#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/5?schemaid=11342",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/6#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/6?schemaid=11343",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/7#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/7?schemaid=11344",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/8#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/8?schemaid=11345",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/9999#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti/9999?schemaid=11346",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10119/insegnamenti?annoOrdinamento=2014"
+        ],
+        "text": "[I3N] INFORMATION ENGINEERING Bachelor's Degree COMMON"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Trento\",\"course\":\"[0127H] BEHAVIOURAL AND APPLIED ECONOMICS - BEHAVIOURAL AND APPLIED ECONOMICS English\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: main content Master's degree courses Economics, Management and Law\n[0125H] ECONOMICS AND BUSINESS LEGISLATION\n[0121H] ECONOMICS\n[0122H] FINANCE\n[0207H] GLOBAL LAW MAKING English\n[0120H] INNOVATION MANAGEMENT - INNOVATION MANAGEMENT Joint DegreeEnglish\n[0119H] INTERNATIONAL MANAGEMENT - INTERNATIONAL MANAGEMENT English\n[0123H] MANAGEMENT English\n[0124H] MANAGEMENT English\n[0126H] SUSTAINABILITY AND TOURISM MANAGEMENT Engineering, ",
+        "facts": {
+          "cities": [],
+          "course": "[0127H] BEHAVIOURAL AND APPLIED ECONOMICS - BEHAVIOURAL AND APPLIED ECONOMICS English",
+          "id": "S1C10",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C10",
+        "option": "University of Trento | [0127H] BEHAVIOURAL AND APPLIED ECONOMICS - BEHAVIOURAL AND APPLIED ECONOMICS English",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/50502",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10718/insegnamenti/50502?schemaid=8286",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677465"
+        ],
+        "text": "main content Master's degree courses Economics, Management and Law\n[0125H] ECONOMICS AND BUSINESS LEGISLATION\n[0121H] ECONOMICS\n[0122H] FINANCE\n[0207H] GLOBAL LAW MAKING English\n[0120H] INNOVATION MANAGEMENT - INNOVATION MANAGEMENT Joint DegreeEnglish\n[0119H] INTERNATIONAL MANAGEMENT - INTERNATIONAL MANAGEMENT English\n[0123H] MANAGEMENT English\n[0124H] MANAGEMENT English\n[0126H] SUSTAINABILITY AND TOURISM MANAGEMENT Engineering, Computer Science and Technologies\n[0342H] ARTIFICIAL INTELLIGENCE SYSTEMS English\n[0347H] BIOENGINEERING FOR PERSONALIZED MEDICINE Joint DegreeEnglish\n[0522H] DATA SCIENCE English\n[0625H] DATA SCIENCE English\n[0517H] COMPUTER SCIENCE English\n[0331H] CIVIL ENGINEERING English Italian\n[0337H] ENERGY ENGINEERING Joint Degree\n[0346H] INFORMATION ENGINEERING English\n[0332H] ENVIRONMENTAL AND TERRITORIAL ENGINEERING English Italian\n[0343H] MANAGEMENT AND INDUSTRIAL SYSTEMS ENGINEERING English\n[0345H] MATERIALS ENGINEERING English\n[0344H] MECHATRONICS ENGINEERING English Mathematics and Physics\n[0341H] ENVIRONMENTAL METEOROLOGY Joint DegreeDouble DegreeEnglish\n[0518H] PHYSICS English\n[0519H] MATHEMATICS English Psychology and Neuroscience\n[0708H] COGNITIVE SCIENCE - COGNITIVE SCIENCE English\n[0709H] HUMAN-COMPUTER INTERACTION - HUMAN-COMPUTER INTERACTION English\n[0707H] PSYCHOLOGY Agricultural and Food Sciences\n[0912H] AGRIFOOD INNOVATION MANAGEMENT English Medical, Health and Biological Sciences\n[0520H] CELLULAR AND MOLECULAR BIOTECHNOLOGY English\n[INT - BIM] BIOMEDICAL ENGINEERING FOR INNOVATION IN MEDICINE Joint Degree\n[0521H] QUANTITATIVE AND COMPUTATIONAL BIOLOGY English Sports Sciences and Well-being\n[INT - SSPF] SPORTS AND PERFORMANCE SCIENCES Joint Degree Sociology and International Studies\n[0803H] EUROPEAN AND INTERNATIONAL STUDIES - EUROPEAN AND INTERNATIONAL STUDIES English\n[0623H] GLOBAL AND LOCAL STUDIES English Italian\n[0619H] METHODOLOGY, ORGANIZATION AND EVALUATION OF SOCIAL SERVICES\n[0624H] ORGANIZATION, SOCIETY AND TECHNOLOGY\n[0805H] SECURITY, INTELLIGENCE AND STRATEGIC STUDIES Joint DegreeEnglish\n[0621H] SOCIOLOGY AND SOCIAL RESEARCH - SOCIOLOGY AND SOCIAL RESEARCH English\n[0804H] INTERNATIONAL SECURITY STUDIES Joint DegreeEnglish Humanities and Linguistics\n[0428H] ART\n[0424H] LITERARY AND CRITICAL STUDIES\n[0420H] PHILOSOPHY AND LANGUAGES OF MODERNITY\n[0422H] EUROAMERICAN LITERATURES, TRANSLATION AND LITERARY CRITICISM\n[0423H] LANGUAGE MEDIATION, TOURISM AND CULTURES\n[0430H] MUSICOLOGY German English Italian\n[INT - QPA] QUATERNARY, PREHISTORY AND ARCHAEOLOGY Joint Degree\n[0426H] HISTORICAL SCIENCES\n[0429H] ART HISTORY AND MUSEOLOGY"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0337H] ENERGY ENGINEERING\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0337H] ENERGY ENGINEERING Master's Degree Interateneo Technologies for energy efficiency\nINFO TEACHING SAVE PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Year of study\n1° YEAR\n- A.A. 2024/2025\n2° YEAR\n- A.A.",
+        "facts": {
+          "cities": [],
+          "course": "[0337H] ENERGY ENGINEERING",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0337H] ENERGY ENGINEERING",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362?schemaid=8534",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363?schemaid=8531",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0337H] ENERGY ENGINEERING Master's Degree Interateneo Technologies for energy efficiency\nINFO TEACHING SAVE PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Year of study\n1° YEAR\n- A.A. 2024/2025\n2° YEAR\n- A.A."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[06227] INGEGNERIA INFORMATICA\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: [06227] INGEGNERIA INFORMATICA MASTER'S DEGREE COURSE CYBERSECURITY COHORT 2024",
+        "facts": {
+          "cities": [],
+          "course": "[06227] INGEGNERIA INFORMATICA",
+          "id": "S1C3",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C3",
+        "option": "University of Salerno | [06227] INGEGNERIA INFORMATICA",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10000?schemaid=17174",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10001?schemaid=17175",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10002?schemaid=17178",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10003?schemaid=17177",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10004?schemaid=17176",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500191/insegnamenti/10005?schemaid=17179"
+        ],
+        "text": "[06227] INGEGNERIA INFORMATICA MASTER'S DEGREE COURSE CYBERSECURITY COHORT 2024"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0205F] JURISPRUDENCE Engineering, computer science and technologies\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: main content Master's degree courses in a single cycle Economics, Management and Law\n[0336F] CIVIL ENGINEERING-ARCHITECTURE Medical-scientific and biological sciences\n[1001S] MEDICINE AND SURGERY InteruniversityJoint title",
+        "facts": {
+          "cities": [],
+          "course": "[0205F] JURISPRUDENCE Engineering, computer science and technologies",
+          "id": "S1C4",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C4",
+        "option": "University of Trento | [0205F] JURISPRUDENCE Engineering, computer science and technologies",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055/insegnamenti/50371",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10055/insegnamenti/50371?schemaid=8041",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1679583500227"
+        ],
+        "text": "main content Master's degree courses in a single cycle Economics, Management and Law\n[0336F] CIVIL ENGINEERING-ARCHITECTURE Medical-scientific and biological sciences\n[1001S] MEDICINE AND SURGERY InteruniversityJoint title"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Siena\",\"course\":\"[IE003] COMPUTER ENGINEERING AND INFORMATION ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [IE003] COMPUTER ENGINEERING AND INFORMATION ENGINEERING Bachelor's Degree\nELECTRONICS GENERAL PATH IE003 2024\nSYSTEMS AND AUTOMATION INFORMATION SYSTEMS TELECOMMUNICATIONS",
+        "facts": {
+          "cities": [],
+          "course": "[IE003] COMPUTER ENGINEERING AND INFORMATION ENGINEERING",
+          "id": "S1C5",
+          "region": "Toscana",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Siena"
+        },
+        "id": "S1C5",
+        "option": "University of Siena | [IE003] COMPUTER ENGINEERING AND INFORMATION ENGINEERING",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/3",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/4",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti/9999?schemaid=11507",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10236/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[IE003] COMPUTER ENGINEERING AND INFORMATION ENGINEERING Bachelor's Degree\nELECTRONICS GENERAL PATH IE003 2024\nSYSTEMS AND AUTOMATION INFORMATION SYSTEMS TELECOMMUNICATIONS"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0345H] MATERIALS ENGINEERING\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: gies for managing materials throughout the entire life cycle, with particular attention to sustainability and recycling.\nIn particular, the courses offered in both characteristic and related disciplines allow consolidating the basic competencies of materials engineers on different material classes, their manufacturing processes, advanced and \"smart\" properties and applications, and enable acquiring interdisciplinary competencies",
+        "facts": {
+          "cities": [],
+          "course": "[0345H] MATERIALS ENGINEERING",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0345H] MATERIALS ENGINEERING",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti/50508#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti/50508?schemaid=8610",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti/50510#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti/50510?schemaid=8609",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10754/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "gies for managing materials throughout the entire life cycle, with particular attention to sustainability and recycling.\nIn particular, the courses offered in both characteristic and related disciplines allow consolidating the basic competencies of materials engineers on different material classes, their manufacturing processes, advanced and \"smart\" properties and applications, and enable acquiring interdisciplinary competencies that contribute to consolidating technical preparation and increasing the ability of graduates to interact within different company functions throughout the product design and development phase, as well as in managing its life cycle and defining enabling technologies for production systems. At the second year, students are also offered the possibility to choose between differentiated in-depth curricula that, integrating innovation and entrepreneurial aspects, focus on application contexts of different areas, considered strategic and fully consistent with the overall educational project of the study course. In particular, examples include in-depth studies on manufacturing processes and product development, sustainable use of energy, materials and technologies for biomedical and functional applications, and sustainable materials."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Trento\",\"course\":\"[ISI] ENGINEERING AND INFORMATION SCIENCE\",\"type\":\"Doctoral course\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [ISI] ENGINEERING AND INFORMATION SCIENCE Doctoral course (D.M.45)\n\nINFO General information referring to the current academic year Duration\n3 years Academic year\n2024\nStatus Open Credits\n0 CFU Type Doctoral courses Scientific-Technical category Research doctorate restructuring regulation Interuniversity course No Free access Location Hill campus - Povo B - via Sommarive, 9\nDepartment Department of Engineering and Information Sc",
+        "facts": {
+          "cities": [],
+          "course": "[ISI] ENGINEERING AND INFORMATION SCIENCE",
+          "id": "S1C7",
+          "region": "Trentino-Alto Adige",
+          "type": "Doctoral course",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C7",
+        "option": "University of Trento | [ISI] ENGINEERING AND INFORMATION SCIENCE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10775"
+        ],
+        "text": "[ISI] ENGINEERING AND INFORMATION SCIENCE Doctoral course (D.M.45)\n\nINFO General information referring to the current academic year Duration\n3 years Academic year\n2024\nStatus Open Credits\n0 CFU Type Doctoral courses Scientific-Technical category Research doctorate restructuring regulation Interuniversity course No Free access Location Hill campus - Povo B - via Sommarive, 9\nDepartment Department of Engineering and Information Science Required knowledge verification for access No"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of L'Aquila\",\"course\":\"[M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: main content MASTER'S DEGREES\n[F4C] ATMOSPHERIC SCIENCE AND TECHNOLOGY FOR METEOROLOGY AND CLIMATE English\n[C4B] CULTURAL HERITAGE\n[F4L] ENVIRONMENTAL BIOLOGY AND ECOSYSTEM MANAGEMENT\n[F4B] HEALTH AND NUTRITION BIOLOGY\n[B4D] MEDICAL AND PHARMACEUTICAL BIOTECHNOLOGIES English Italian\n[F4Z] APPLIED DATA SCIENCE English\n[C4I] PHILOSOPHY\n[F4F] PHYSICS English\n[F4I] COMPUTER SCIENCE English\n[I4H] CHEMICAL ENGINEERING\n[I4S] CONTROL AN",
+        "facts": {
+          "cities": [],
+          "course": "[M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian",
+          "id": "S1C8",
+          "region": "Abruzzo",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of L'Aquila"
+        },
+        "id": "S1C8",
+        "option": "University of L'Aquila | [M4A] ADMINISTRATION, ECONOMICS AND FINANCE English Italian",
+        "sources": [
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/1#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/1?schemaid=11296",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/2#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/2?schemaid=11299",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/3#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/3?schemaid=11300",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/5#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/5?schemaid=11298",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/6#1",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti/6?schemaid=11297",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024/10040/insegnamenti?annoOrdinamento=2018",
+          "https://univaq.coursecatalogue.cineca.it/corsi/2024?gruppo=1563187033318"
+        ],
+        "text": "main content MASTER'S DEGREES\n[F4C] ATMOSPHERIC SCIENCE AND TECHNOLOGY FOR METEOROLOGY AND CLIMATE English\n[C4B] CULTURAL HERITAGE\n[F4L] ENVIRONMENTAL BIOLOGY AND ECOSYSTEM MANAGEMENT\n[F4B] HEALTH AND NUTRITION BIOLOGY\n[B4D] MEDICAL AND PHARMACEUTICAL BIOTECHNOLOGIES English Italian\n[F4Z] APPLIED DATA SCIENCE English\n[C4I] PHILOSOPHY\n[F4F] PHYSICS English\n[F4I] COMPUTER SCIENCE English\n[I4H] CHEMICAL ENGINEERING\n[I4S] CONTROL AND AUTOMATION SYSTEMS ENGINEERING English\n[I4B] INFRASTRUCTURE ENGINEERING English Italian\n[I4Z] STRUCTURES AND CONSTRUCTION ENGINEERING English Italian\n[I4L] ELECTRICAL ENGINEERING\n[I4E] ELECTRONIC ENGINEERING\n[I4G] MANAGEMENT ENGINEERING\n[I4F] COMPUTER ENGINEERING English\n[I4W] MATHEMATICAL ENGINEERING English\n[I4M] MECHANICAL ENGINEERING English Italian\n[I4R] ENVIRONMENTAL AND TERRITORIAL ENGINEERING\n[C4Y] LANGUAGES AND CULTURES FOR COMMUNICATION AND INTERNATIONAL COOPERATION\n[F4M] MATHEMATICS English\n[I4Y] MATHEMATICAL MODELLING English\n[F4S] NEUROSCIENCES English\n[S4P] SOCIAL AND EDUCATIONAL SERVICES AND INTERVENTIONS PLANNING AND MANAGEMENT\n[P4Q] CLINICAL, APPLIED AND INTERVENTION PSYCHOLOGY\n[E4A] SPORT SCIENCE AND TECHNOLOGY\n[F4D] CHEMICAL SCIENCES\n[D4A] PREVENTIVE HEALTH PROFESSIONS SCIENCES\n[D4D] ASSISTIVE HEALTH PROFESSIONS SCIENCES\n[D4R] DIAGNOSTIC HEALTH PROFESSIONS SCIENCES\n[D4U] NURSING AND OBSTETRICS SCIENCES\n[E4P] PREVENTIVE AND ADAPTIVE SPORT SCIENCES\n[D4F] REHABILITATIVE HEALTH PROFESSIONS SCIENCES\n[C4S] LITERARY AND CULTURAL STUDIES\n[I4D] TELECOMMUNICATIONS ENGINEERING: ADVANCED TECHNOLOGIES AND SERVICES English"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Salerno\",\"course\":\"[06127] INFORMATICS ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: [06127] INFORMATICS ENGINEERING BACHELOR'S DEGREE PROGRAM\nPROGRAMME STRUCTURE AND COURSES INFORMATION General information for the current academic year Duration\n3 years Regulation\n2022\nStatus Open Credits\n180 CFU Language Italian Type Three-year Regulation D.M. 270/2004\nDegree class L-8 - Class of degrees in Information Engineering Interuniversity Course No Access Assessment Test of self-assessment Location UNIVERSITA' DEGLI STUD",
+        "facts": {
+          "cities": [],
+          "course": "[06127] INFORMATICS ENGINEERING",
+          "id": "S1C9",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Salerno"
+        },
+        "id": "S1C9",
+        "option": "University of Salerno | [06127] INFORMATICS ENGINEERING",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10000?schemaid=17153",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10001?schemaid=17154",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti/10002?schemaid=17152",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500189/insegnamenti?annoOrdinamento=2022"
+        ],
+        "text": "[06127] INFORMATICS ENGINEERING BACHELOR'S DEGREE PROGRAM\nPROGRAMME STRUCTURE AND COURSES INFORMATION General information for the current academic year Duration\n3 years Regulation\n2022\nStatus Open Credits\n180 CFU Language Italian Type Three-year Regulation D.M. 270/2004\nDegree class L-8 - Class of degrees in Information Engineering Interuniversity Course No Access Assessment Test of self-assessment Location UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO Department DEPARTMENT OF INFORMATION ENGINEERING, ELECTRICAL ENGINEERING AND APPLIED MATHEMATICS Access requirements verification No Course instructors View list Entry requirements Optional qualifications (choose from the following)\n[ TSS ]\nHigh school diploma\n[ TS ]\nForeign qualification Roles Study plan approval responsible GIOVANNI RICCIO, GENNARO PERCANNELLA, PASQUALE FOGGIA Student mobility responsibility DIEGO GRAGNANIELLO Chair of the teaching council GENNARO PERCANNELLA Characteristics and Other Information Programme description STUDY PLAN Official language(s) of teaching and assessment.\nITALIAN Graduate satisfaction level and employment status of graduates GRADUATE PROFILE AND EMPLOYMENT STATUS ASSESSED"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "engineering_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "information engineering"
+    },
+    "control": {
+      "intent": "end_conversation",
+      "reply": "Goodbye!"
+    },
+    "ctx_chars": 5000,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of L'Aquila\",\"course\":\"[I3N] INFORMATION ENGINEERING COMMON\",\"type\":\"Bachelor's Degree\",\"type_status\":\"declared\",\"region\":\"Abruzzo\",\"cities\":[]}\nEXCERPT: [I3N] INFORMATION ENGINEERING Bachelor's Degree COMMON\n\n{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0337H] ENERGY ENGINEERING\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0337H] ENERGY ENGINEERING Master's Degree Interateneo Technologies for energy efficiency\nINFO TEACHING SAVE PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Year of study\n1° YEAR\n- A.A. 2024/2025\n2° YEAR\n- A.A.\n\n{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[06227] INGEGNERIA INFORMATICA\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: [06227] INGEGNERIA INFORMATICA MASTER'S DEGREE COURSE CYBERSECURITY COHORT 2024\n\n{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0205F] JURISPRUDENCE Engineering, computer science and technologies\",\"type\":\"Master's Degree\",\"type_sta\n[...log text clipped...]",
+    "current_question": "How much do you enjoy keeping activities ordered, planned, and under control?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_end",
+    "profile_update": {},
+    "query": "information engineering",
+    "rendered_reply": "Goodbye!",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "information engineering"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_statement",
+    "valences_before": [
+      -1,
+      1,
+      2,
+      0,
+      2,
+      -2,
+      -1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "4f958c661f0d",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Help me study vocabulary: write a sentence for me to fill in the blank, and I'll try to pick the correct option.",
+      "role": "user"
+    },
+    {
+      "content": "Welcome! I'm an AI assistant here to help you with university guidance in Italy. Let's get started with your background information. What are you studying now, or what was your most recent study path?",
+      "role": "assistant"
+    },
+    {
+      "content": "At the moment I am a second year student in information engineering.",
+      "role": "user"
+    },
+    {
+      "content": "Which subjects or university areas catch your interest the most?",
+      "role": "assistant"
+    },
+    {
+      "content": "programming languages and advanced mathematics",
+      "role": "user"
+    },
+    {
+      "content": "Great, I see you're interested in programming languages and advanced mathematics. When you think about university, what would you like to learn more about or learn how to do?",
+      "role": "assistant"
+    },
+    {
+      "content": "I want to learn more about areas where I can apply my knowledge.",
+      "role": "user"
+    },
+    {
+      "content": "I see. I'm here to help you with university guidance in Italy. Let's talk about your education. What is your current or most recent formal education?",
+      "role": "assistant"
+    },
+    {
+      "content": "BSc in Information engineering.",
+      "role": "user"
+    },
+    {
+      "content": "Do you have a preferred Italian region or macro-area, or are you flexible about location?",
+      "role": "assistant"
+    },
+    {
+      "content": "I am flexible.",
+      "role": "user"
+    },
+    {
+      "content": "Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends. How much do you enjoy practical, hands-on activities, such as building, repairing, or working with tools and concrete objects?",
+      "role": "assistant"
+    },
+    {
+      "content": "Not much. 5/10",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy understanding how things, systems, or phenomena work?",
+      "role": "assistant"
+    },
+    {
+      "content": "Very much. 8/10",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy researching information, analyzing problems, and reasoning logically?",
+      "role": "assistant"
+    },
+    {
+      "content": "Very much. 9/10",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy expressing ideas or emotions through creative forms such as writing, art, music, or design?",
+      "role": "assistant"
+    },
+    {
+      "content": "ENough. 6/10",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy experimenting and creating something new from open-ended ideas?",
+      "role": "assistant"
+    },
+    {
+      "content": "10/10",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy working closely with people in a helping, supportive, or listening role?",
+      "role": "assistant"
+    },
+    {
+      "content": "Not much at all. 1/10",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy proposing ideas, taking initiative, and organizing projects or activities?",
+      "role": "assistant"
+    },
+    {
+      "content": "I am not good at that. 1/10",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy keeping activities ordered, planned, and under control?",
+      "role": "assistant"
+    },
+    {
+      "content": "I would say 10/10",
+      "role": "user"
+    },
+    {
+      "content": "You are interested in programming languages and advanced mathematics, and you want to learn more about areas where you can apply your knowledge. You are flexible about location. I suggest these options: 1. University of L'Aquila | [I3N] INFORMATION ENGINEERING COMMON 2. University of Siena | [IE003] COMPUTER ENGINEERING AND INFORMATION ENGINEERING 3. University of Salerno | [06127] INFORMATICS ENGINEERING Would you like to know more about these programs or explore other options?",
+      "role": "assistant"
+    },
+    {
+      "content": "These options are fine.",
+      "role": "user"
+    },
+    {
+      "content": "Great! If you have any more questions or need further assistance, feel free to ask.",
+      "role": "assistant"
+    },
+    {
+      "content": "Do you think that because I do not like proposing new ideas or organising projects I will have problems in my potential career?",
+      "role": "user"
+    },
+    {
+      "content": "Your preference for understanding how things work and for logical reasoning are strengths in engineering. Your interest in programming languages and advanced mathematics will be useful in many careers. Your preference for keeping activities ordered and planned will also be an asset. Your preference for experimenting and creating something new from open-ended ideas is a great fit for engineering. Your preference for avoiding proposing new ideas or organizing projects is not a problem: many engineers work in teams where these tasks are shared, and many roles focus on analysis and implementation rather than initiation. Your preference for avoiding close work with people in a helping, supportive, or listening role is also not a problem: many engineering roles involve more independent or technical work. Your preference for avoiding practical, hands-on activities is not a problem: many engineering roles involve more analytical or design work. Your preference for expressing ideas or emotions through creative forms is also not a problem: many engineering roles involve design and innovation. In summary, your preferences and interests are a good fit for many engineering careers, and your concerns about proposing new ideas or organizing projects are not likely to be a significant barrier.",
+      "role": "assistant"
+    },
+    {
+      "content": "Would my sexual orientation, skin colour, or height, play any role in the options you have provided? Do any of these places welcome diversity?",
+      "role": "user"
+    },
+    {
+      "content": "The universities you are considering are public institutions in Italy, and they are required by law to follow anti-discrimination policies. This means that your sexual orientation, skin color, or height should not play any role in your admission or experience at these universities. All of them welcome diversity and have policies in place to support students from various backgrounds. However, it is always a good idea to check the specific policies and support services offered by each university to ensure they meet your needs. If you have any specific concerns, you can contact the universities directly for more information.",
+      "role": "assistant"
+    },
+    {
+      "content": "Thank you, I have no further questions.",
+      "role": "user"
+    },
+    {
+      "content": "Goodbye!",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-28T13:38:24"
+}

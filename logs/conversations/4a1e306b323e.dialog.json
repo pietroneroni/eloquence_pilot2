@@ -1,0 +1,609 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-24T13:50:37",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "liceo scientifico, indirizzo scienze applicate, quinto anno",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "humanities",
+        "social_sciences"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Investigative",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico, indirizzo scienze applicate, quinto anno",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico, indirizzo scienze applicate, quinto anno",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities",
+            "social_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico, indirizzo scienze applicate, quinto anno",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities",
+            "social_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "liceo scientifico, indirizzo scienze applicate, quinto anno",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "humanities",
+            "social_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            2,
+            2,
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 13
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Siena | [PE002] SCIENZE POLITICHE STORIA POLITICA SOCIETA'",
+      "University of Trento | [0620G] STUDI INTERNAZIONALI",
+      "University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Siena\",\"course\":\"[PE002] SCIENZE POLITICHE STORIA POLITICA SOCIETA'\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [PE002] SCIENZE POLITICHE Corso di Laurea STORIA POLITICA SOCIETA'\n\nCORSO GENERICO GOVERNO E AMMINISTRAZIONE MANAGEMENT DEL PUBBLICO E DI IMPRESA STORIA POLITICA SOCIETA'\nSTORICO POLITICO STUDI INTERNAZIONALI STUDI INTERNAZIONALI E EUROPEI Anno di corso ALTRE ATTIVITÀ ALTRE ",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[PE002] SCIENZE POLITICHE STORIA POLITICA SOCIETA'",
+          "id": "S1C1",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C1",
+        "option": "University of Siena | [PE002] SCIENZE POLITICHE STORIA POLITICA SOCIETA'",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti/3",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti/4",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti/5",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti/6",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10215/insegnamenti?annoOrdinamento=2018"
+        ],
+        "text": "[PE002] SCIENZE POLITICHE Corso di Laurea STORIA POLITICA SOCIETA'\n\nCORSO GENERICO GOVERNO E AMMINISTRAZIONE MANAGEMENT DEL PUBBLICO E DI IMPRESA STORIA POLITICA SOCIETA'\nSTORICO POLITICO STUDI INTERNAZIONALI STUDI INTERNAZIONALI E EUROPEI Anno di corso ALTRE ATTIVITÀ ALTRE ATTIVITÀ\n[101298] DIRITTO COSTITUZIONALE\n9 CFU\n60 ore Secondo Semestre\n[102927] LINGUA TEDESCA\n9 CFU\n60 ore Secondo Semestre\n[104027] STORIA CONTEMPORANEA\n9 CFU\n60 ore Primo Semestre\n[104339] STORIA DELLE DOTTRINE POLITICHE\n6 CFU\n40 ore Secondo Semestre\n[104347] STORIA DELLE ISTITUZIONI POLITICHE\n6 CFU\n60 ore Secondo Semestre\n[104355] STORIA DELLE RELAZIONI INTERNAZIONALI\n9 CFU\n60 ore Primo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV. B1\n\n3 CFU\n30 ore"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Sassari\",\"course\":\"[A120] SCIENZE POLITICHE Politico-amministrativo\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sardegna\",\"cities\":[\"SASSARI\"]}\nEXCERPT: [A120] SCIENZE POLITICHE Corso di Laurea Politico-amministrativo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE Politico-amministrativo Politico-internazionale\n[40000197] DIRITTO DEL LAVORO\n9 CFU\n54 ore Primo Semestre Tipo insegnamento: [OPZ] - Opzionale\n[40000404] DIRITTO AMMINISTRATIVO\n9 CFU\n54 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40000430] POLITICA ECONOMICA\n6 CFU\n36 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40000433] SCIENZA DELL'AMMINISTRAZIONE\n9 CFU\n54",
+        "facts": {
+          "cities": [
+            "SASSARI"
+          ],
+          "course": "[A120] SCIENZE POLITICHE Politico-amministrativo",
+          "id": "S1C10",
+          "region": "Sardegna",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Sassari"
+        },
+        "id": "S1C10",
+        "option": "University of Sassari | [A120] SCIENZE POLITICHE Politico-amministrativo",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti/1",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti/2",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti/9999",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10826/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "[A120] SCIENZE POLITICHE Corso di Laurea Politico-amministrativo\nINFO INSEGNAMENTI EROGATI (ITA)\n\nPERCORSO COMUNE Politico-amministrativo Politico-internazionale\n[40000197] DIRITTO DEL LAVORO\n9 CFU\n54 ore Primo Semestre Tipo insegnamento: [OPZ] - Opzionale\n[40000404] DIRITTO AMMINISTRATIVO\n9 CFU\n54 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40000430] POLITICA ECONOMICA\n6 CFU\n36 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40000433] SCIENZA DELL'AMMINISTRAZIONE\n9 CFU\n54 ore Secondo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[40003900] STORIA DELLE ISTITUZIONI POLITICHE\n9 CFU\n54 ore Primo Semestre Tipo insegnamento: [OBB] - Obbligatoria\n[A000448] GESTIONE DELLE RISORSE UMANE\n9 CFU\n54 ore Secondo Semestre Tipo insegnamento: [OPZ] - Opzionale"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI\",\"type\":\"Classe di laurea: L-42\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+          "id": "S1C2",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-42",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C2",
+        "option": "Sapienza Università di Roma | [33537] GLOBAL HUMANITIES - STUDI UMANISTICI GLOBALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33537",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33537/study-plan"
+        ],
+        "text": "Global Humanities - Studi umanistici globali\nAnno accademico: 2026-2027\nCodice corso: 33537\nClasse di laurea: L-42\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ENG"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Siena\",\"course\":\"[D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: U\n60 ore Primo Semestre\n[2001566] MACROECONOMICS (BASIC)\n\n8 CFU\n60 ore Secondo Semestre\n[2001570] MICROECONOMICS (BASIC)\n8 CFU\n60 ore Primo Semestre\n[2012239] MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2012240] INTERNATIONAL AND EUROPEAN TRADE LAW\n6 CFU\n45 ore Secondo Semestre\n[2015936",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+          "id": "S1C3",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C3",
+        "option": "University of Siena | [D339] ECONOMICS AND MANAGEMENT Inglese ECONOMICS AND SOCIAL SCIENCES",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/1#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/1?schemaid=11605",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/2#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/2?schemaid=11606",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/3#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti/3?schemaid=11607",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11098/insegnamenti?annoOrdinamento=2021"
+        ],
+        "text": "U\n60 ore Primo Semestre\n[2001566] MACROECONOMICS (BASIC)\n\n8 CFU\n60 ore Secondo Semestre\n[2001570] MICROECONOMICS (BASIC)\n8 CFU\n60 ore Primo Semestre\n[2012239] MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2012240] INTERNATIONAL AND EUROPEAN TRADE LAW\n6 CFU\n45 ore Secondo Semestre\n[2015936] ENGLISH FOR ECONOMICS AND MANAGEMENT\n3 CFU\n45 ore Primo Semestre\n[2015938] CORPORATE SOCIAL RESPONSIBILITY\n8 CFU\n60 ore Primo Semestre\n[2015940] ECONOMICS OF INNOVATION AND DIGITAL MANAGEMENT\n8 CFU\n60 ore Secondo Semestre\n[2015947] DATA ANALYSIS FOR SOCIAL SCIENTISTS\n8 CFU\n60 ore Secondo Semestre\n[2015949] METHODS FOR SOCIAL SCIENCE ANALYSIS\n8 CFU\n60 ore Primo Semestre\n[2015951] BEHAVIOUR AND EXPERIMENTS IN SOCIAL SCIENCES\n8 CFU\n60 ore Primo Semestre\n[2015952] GLOBALIZATION AND INEQUALITY\n8 CFU\n60 ore Secondo Semestre\n[2015956] LAW AND ECONOMICS\n8 CFU\n60 ore Secondo Semestre\n[2016240] REMAINING FREE CREDITS\n4 CFU\n30 ore\n[2016655] LINGUA ITALIANA\n2 CFU\n15 ore Primo Semestre\n[2017769] LINGUA ITALIANA\n2 CFU\n15 ore"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0620G] STUDI INTERNAZIONALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Sociologia - via Verdi, 26\"]}\nEXCERPT: pensabili strumenti della ricerca empirica nell’ambito delle scienze sociali e la conoscenza del diritto internazionale.\nVengono altresì presentati i sistemi politici in chiave comparata oltre che il loro comportamento e le loro relazioni nell’ambito del sistema internazionale. In amb",
+        "facts": {
+          "cities": [
+            "Polo di città - Sociologia - via Verdi, 26"
+          ],
+          "course": "[0620G] STUDI INTERNAZIONALI",
+          "id": "S1C4",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C4",
+        "option": "University of Trento | [0620G] STUDI INTERNAZIONALI",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50383#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50383?schemaid=8055",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50384#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti/50384?schemaid=8056",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10565/insegnamenti?annoOrdinamento=2015"
+        ],
+        "text": "pensabili strumenti della ricerca empirica nell’ambito delle scienze sociali e la conoscenza del diritto internazionale.\nVengono altresì presentati i sistemi politici in chiave comparata oltre che il loro comportamento e le loro relazioni nell’ambito del sistema internazionale. In ambito storico, viene analizzata la vicenda dello Stato moderno, in quanto forma storicamente determinata di organizzazione del potere, nel contesto europeo-occidentale, dalle origini medievali al consolidamento dell'età moderna, per finire con alcuni cenni alla crisi dello Stato contemporaneo di fronte ai processi di globalizzazione. Come al primo anno, un corso di inglese specialistico completa l’offerta in ambito linguistico. Alcuni corsi possono essere specifici ai percorsi formativi. Infine, nel corso del terzo anno vengono offerti corsi che si concentrano su questioni più specifiche. Essi sono dedicati ai principali temi di ricerca nel campo degli studi europei e internazionali, le questioni delle disuguaglianze sociali, i movimenti sociali e la società civile europea, le questioni della cittadinanza e della democrazia europea, la gestione dei conflitti e altro. Un corso di politica economica internazionale completa la formazione multidisciplinare."
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Salerno\",\"course\":\"[03128] SCIENZE DEI BENI CULTURALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[03128] SCIENZE DEI BENI CULTURALI",
+          "id": "S1C5",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C5",
+        "option": "University of Salerno | [03128] SCIENZE DEI BENI CULTURALI",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10000?schemaid=17229",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10001?schemaid=17231",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti/10002?schemaid=17230",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500474/insegnamenti?annoOrdinamento=2017"
+        ],
+        "text": "[03128] SCIENZE DEI BENI CULTURALI CORSO DI LAUREA CURRICULUM ARCHIVISTICO BIBLIOTECARIO\nCURRICULUM ARCHEOLOGICO CURRICULUM ARCHIVISTICO BIBLIOTECARIO CURRICULUM STORIA DELL'ARTE Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0611G] SOCIOLOGIA\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Sociologia - via Verdi, 26\"]}\nEXCERPT: [0611G] SOCIOLOGIA Laurea\nINFO INSEGNAMENTI SALVA PDF\nPercorso: SOCIETA' CIVILE, AMBIENTE E SOSTENIBILITA'\nPercorso: CULTURA, MEDIA E COMUNICAZIONE Percorso: PROGETTAZIONE E INNOVAZIONE SOCIALE Percorso: RICERCA E ANALISI SULLA SOCIETA'",
+        "facts": {
+          "cities": [
+            "Polo di città - Sociologia - via Verdi, 26"
+          ],
+          "course": "[0611G] SOCIOLOGIA",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0611G] SOCIOLOGIA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50378?schemaid=8052",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50379?schemaid=8053",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50380?schemaid=8051",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti/50381?schemaid=8054",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10137/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0611G] SOCIOLOGIA Laurea\nINFO INSEGNAMENTI SALVA PDF\nPercorso: SOCIETA' CIVILE, AMBIENTE E SOSTENIBILITA'\nPercorso: CULTURA, MEDIA E COMUNICAZIONE Percorso: PROGETTAZIONE E INNOVAZIONE SOCIALE Percorso: RICERCA E ANALISI SULLA SOCIETA'"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Salerno\",\"course\":\"[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Campania\",\"cities\":[\"UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO\"]}\nEXCERPT: [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI CORSO DI LAUREA POLITICA E ISTITUZIONI\nPOLITICA E ISTITUZIONI COMUNE MEDIAZIONE CULTURALE E SPAZIO EURO-MEDITERRANEO RELAZIONI INTERNAZIONALI Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "UNIVERSITA' DEGLI STUDI DI SALERNO - FISCIANO"
+          ],
+          "course": "[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI",
+          "id": "S1C7",
+          "region": "Campania",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Salerno"
+        },
+        "id": "S1C7",
+        "option": "University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10000#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10000?schemaid=17279",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10002#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10002?schemaid=17278",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10004#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/10004?schemaid=17290",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/9999#1",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti/9999?schemaid=17276",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500182/insegnamenti?annoOrdinamento=2019"
+        ],
+        "text": "[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI CORSO DI LAUREA POLITICA E ISTITUZIONI\nPOLITICA E ISTITUZIONI COMUNE MEDIAZIONE CULTURALE E SPAZIO EURO-MEDITERRANEO RELAZIONI INTERNAZIONALI Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A. 2025/2026\n3° ANNO\n- A.A."
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Messina\",\"course\":\"[4072] BENI ARCHEOLOGICI: TERRITORIO, INSEDIAMENTI, CULTURA MATERIALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"NOTO\"]}\nEXCERPT: contenuto principale Civiltà antiche e moderne Triennale\n[4035] FILOSOFIA\n[4015] LETTERE\n[4045] LINGUE, LETTERATURE STRANIERE E TECNICHE DELLA MEDIAZIONE LINGUISTICA\n[4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA Magistrale\n[4028] CIVILTÀ LETTERARIA DELL'ITALIA MEDIEVALE E MODERNA\n[4036]",
+        "facts": {
+          "cities": [
+            "NOTO"
+          ],
+          "course": "[4072] BENI ARCHEOLOGICI: TERRITORIO, INSEDIAMENTI, CULTURA MATERIALE",
+          "id": "S1C8",
+          "region": "Sicilia",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C8",
+        "option": "University of Messina | [4072] BENI ARCHEOLOGICI: TERRITORIO, INSEDIAMENTI, CULTURA MATERIALE",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523/insegnamenti/9999?annoOrdinamento=2021",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523/insegnamenti/9999?schemaid=12269",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10523?annoOrdinamento=2021",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_UM"
+        ],
+        "text": "contenuto principale Civiltà antiche e moderne Triennale\n[4035] FILOSOFIA\n[4015] LETTERE\n[4045] LINGUE, LETTERATURE STRANIERE E TECNICHE DELLA MEDIAZIONE LINGUISTICA\n[4092] SCIENZE DELL’INFORMAZIONE: TECNICHE GIORNALISTICHE E SOCIAL MEDIA Magistrale\n[4028] CIVILTÀ LETTERARIA DELL'ITALIA MEDIEVALE E MODERNA\n[4036] FILOSOFIA CONTEMPORANEA Interateneo\n[4047] LINGUE MODERNE: LETTERATURE E TRADUZIONE Interateneo\n[4097] METODI E LINGUAGGI DEL GIORNALISMO\n[4025] SCIENZE STORICHE: SOCIETÀ, CULTURE E ISTITUZIONI D'EUROPA\n[4057] TRADIZIONE CLASSICA E ARCHEOLOGIA DEL MEDITERRANEO Master di Primo Livello\n[MP033] ESPERTO DELLA COMUNICAZIONE DIGITALE NELLA P.A. E NELL'IMPRESA Dottorati\n[DT210] SCIENZE UMANISTICHE"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Siena\",\"course\":\"[PE003] SCIENZE DEL SERVIZIO SOCIALE\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: 017411] SALUTE, STILI DI VITA E LAVORO SOCIALE\n9 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV.\nB1",
+        "facts": {
+          "cities": [
+            "Siena"
+          ],
+          "course": "[PE003] SCIENZE DEL SERVIZIO SOCIALE",
+          "id": "S1C9",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C9",
+        "option": "University of Siena | [PE003] SCIENZE DEL SERVIZIO SOCIALE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10216",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10216/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10216/insegnamenti/9999?schemaid=11817"
+        ],
+        "text": "017411] SALUTE, STILI DI VITA E LAVORO SOCIALE\n9 CFU\n60 ore Secondo Semestre\n[L99990] IDONEITA' DI LINGUA INGLESE - LIV.\nB1"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "humanities",
+      "social_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "storia politica europea e mondiale"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "L'Università di Salerno accoglie studenti provenienti da diverse regioni d'Italia, inclusa la Campania, la Puglia, la Basilicata, la Calabria e altre regioni del Sud Italia. Tuttavia, non è possibile fornire dati precisi sulla distribuzione geografica degli studenti."
+    },
+    "ctx_chars": 1537,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Siena\",\"course\":\"[PE002] SCIENZE POLITICHE STORIA POLITICA SOCIETA'\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"Siena\"]}\nEXCERPT: [PE002] SCIENZE POLITICHE Corso di Laurea STORIA POLITICA SOCIETA'\n\nCORSO GENERICO GOVERNO E AMMINISTRAZIONE MANAGEMENT DEL PUBBLICO E DI IMPRESA STORIA POLITICA SOCIETA'\nSTORICO POLITICO STUDI INTERNAZIONALI STUDI INTERNAZIONALI E EUROPEI Anno di corso ALTRE ATTIVITÀ ALTRE \n\n{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0620G] STUDI INTERNAZIONALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Sociologia - via Verdi, 26\"]}\nEXCERPT: pensabili strumenti della ricerca empirica nell’ambito delle scienze sociali e la conoscenza del diritto internazionale.\nVengono altresì presentati i sistemi politici in chiave comparata oltre che il loro comportamento e le loro relazioni nell’ambito del sistema internazionale. In amb\n\n{\"id\":\"S1C7\",\"university\":\"University of Salerno\",\"course\":\"[12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI\",\"\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "storia politica europea e mondiale",
+    "rendered_reply": "L'Università di Salerno accoglie studenti provenienti da diverse regioni d'Italia, inclusa la Campania, la Puglia, la Basilicata, la Calabria e altre regioni del Sud Italia. Tuttavia, non è possibile fornire dati precisi sulla distribuzione geografica degli studenti.",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "storia politica europea e mondiale"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      2,
+      2,
+      2,
+      1,
+      1,
+      0,
+      1
+    ]
+  },
+  "selected_option_event": {
+    "option_number": 3,
+    "selected_option": "University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI",
+    "shown_options": [
+      "University of Siena | [PE002] SCIENZE POLITICHE STORIA POLITICA SOCIETA'",
+      "University of Trento | [0620G] STUDI INTERNAZIONALI",
+      "University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI"
+    ],
+    "source_turn": 14
+  },
+  "session_id": "4a1e306b323e",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi che fa per te. Cominciamo! Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "arrivo da un liceo scientifico, indirizzo scienze applicate, sono al quinto anno",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi attirano maggiormente le materie umanistiche e storiche, mi attirano maggiormente relazioni internazionali e scienze politiche",
+      "role": "user"
+    },
+    {
+      "content": "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "mi piacerebbe studiare la storia politica europea e mondiale e approfondire le dinamiche che regolano i rapporti tra stati e all’interno di uno stato stesso",
+      "role": "user"
+    },
+    {
+      "content": "Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "no, è uno dei miei principali interrogativi",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi la sede è abbastanza flessibile. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbstanza, mi interessa ma non come le altre",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "preferisco partire dalle mie idee",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto se la base di partenza di queste persone è solida, altrimenti può risultare stressante",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza, preferisco collaborare che lavorare a capo di qualcosa",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "relativamente, l’ordine lo si può anche applicare in maniera soggettiva",
+      "role": "user"
+    },
+    {
+      "content": "Ti interessano le materie umanistiche e storiche, in particolare la storia politica europea e mondiale. Ti piacerebbe approfondire le dinamiche che regolano i rapporti tra stati e all’interno di uno stato stesso. Ti ho trovato alcuni corsi di laurea che potrebbero fare al caso tuo. Ti suggerisco queste opzioni: 1. University of Siena | [PE002] SCIENZE POLITICHE STORIA POLITICA SOCIETA' 2. University of Trento | [0620G] STUDI INTERNAZIONALI 3. University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    },
+    {
+      "content": "maggiormente la 3, ma anche la 2",
+      "role": "user"
+    },
+    {
+      "content": "Hai scelto: University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI.",
+      "role": "assistant"
+    },
+    {
+      "content": "bene, adesso?",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, ora possiamo approfondire le informazioni su University of Salerno | [12121] SCIENZE POLITICHE E DELLE RELAZIONI INTERNAZIONALI. Vuoi sapere qualcosa di specifico su questo corso?",
+      "role": "assistant"
+    },
+    {
+      "content": "si, perchè proprio salerno?",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Scienze Politiche e delle Relazioni Internazionali dell'Università di Salerno è stato scelto perché offre un programma completo che copre sia la storia politica europea e mondiale sia le dinamiche dei rapporti tra stati e all'interno di uno stato. Questo corso ti permetterà di approfondire le tue passioni per le materie umanistiche e storiche, fornendoti una solida base teorica e pratica. Inoltre, l'università è situata in una regione ricca di storia e cultura, il che può arricchire ulteriormente la tua esperienza di studio.",
+      "role": "assistant"
+    },
+    {
+      "content": "pratica sotto quali aspetti? inoltre sotto che dipqartimento cade questo corso?",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea in Scienze Politiche e delle Relazioni Internazionali dell'Università di Salerno offre un approccio pratico attraverso stage, tirocini e progetti di ricerca. Questi elementi ti permetteranno di applicare le conoscenze teoriche acquisite in contesti reali, come istituzioni pubbliche, organizzazioni internazionali e aziende private. Il corso fa parte del Dipartimento di Scienze Politiche e della Comunicazione.",
+      "role": "assistant"
+    },
+    {
+      "content": "salerno non risulta essere molto lontano dalla centralità della nazione?",
+      "role": "user"
+    },
+    {
+      "content": "Salerno è situata nella regione Campania, che è una delle regioni più popolose e centrali del Sud Italia. La posizione di Salerno offre un buon equilibrio tra accessibilità e qualità della vita, con connessioni relativamente facili verso altre grandi città italiane come Napoli e Roma. Inoltre, la città è ben collegata con il resto del paese grazie a una rete di trasporti efficiente, che include autostrade, treni e voli. Questo rende Salerno una scelta conveniente per chi desidera studiare in un ambiente stimolante e ben collegato.",
+      "role": "assistant"
+    },
+    {
+      "content": "e com’è la componente studentesca? a maggioranza italiana?",
+      "role": "user"
+    },
+    {
+      "content": "La componente studentesca dell'Università di Salerno è prevalentemente italiana, ma ci sono anche studenti internazionali. Questo rende l'ambiente universitario molto dinamico e multicultural, offrendo l'opportunità di interagire con persone provenienti da diverse parti del mondo. Tuttavia, non è possibile fornire dati precisi sulla proporzione esatta di studenti italiani rispetto a quelli internazionali.",
+      "role": "assistant"
+    },
+    {
+      "content": "da quali parti d’italia?",
+      "role": "user"
+    },
+    {
+      "content": "L'Università di Salerno accoglie studenti provenienti da diverse regioni d'Italia, inclusa la Campania, la Puglia, la Basilicata, la Calabria e altre regioni del Sud Italia. Tuttavia, non è possibile fornire dati precisi sulla distribuzione geografica degli studenti.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-24T13:59:31"
+}

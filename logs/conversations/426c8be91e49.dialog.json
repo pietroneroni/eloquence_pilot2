@@ -1,0 +1,527 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T13:11:49",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "Diploma di geometra e diploma in meccatronica",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "riasec_attitudes": [
+        "Realistic",
+        "Investigative",
+        "Conventional"
+      ],
+      "riasec_confidence": "medium"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Diploma di geometra e diploma in meccatronica",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Diploma di geometra e diploma in meccatronica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Diploma di geometra e diploma in meccatronica",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Diploma di geometra e diploma in meccatronica",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            2,
+            1,
+            -1,
+            2,
+            -2,
+            0,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 15
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33474] INGEGNERIA AEROSPAZIALE",
+      "Sapienza Università di Roma | [33479] INGEGNERIA MECCANICA",
+      "University of Trento | [0327G] INGEGNERIA INDUSTRIALE"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33474] INGEGNERIA AEROSPAZIALE\",\"type\":\"Classe di laurea: L-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria Aerospaziale\nAnno accademico: 2026-2027\nCodice corso: 33474\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33474] INGEGNERIA AEROSPAZIALE",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33474] INGEGNERIA AEROSPAZIALE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33474",
+          "https://corsidilaurea.uniroma1.it/it/course/33474/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33474/study-plan"
+        ],
+        "text": "Ingegneria Aerospaziale\nAnno accademico: 2026-2027\nCodice corso: 33474\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[29983] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA H - ASL ROMA 4 - BRACCIANO (RM)\",\"type\":\"Classe di laurea: L/SNT2\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea H - ASL Roma 4 - Bracciano (RM)\nAnno accademico: 2026-2027\nCodice corso: 29983\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[29983] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA H - ASL ROMA 4 - BRACCIANO (RM)",
+          "id": "S1C10",
+          "region": "Lazio",
+          "type": "Classe di laurea: L/SNT2",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C10",
+        "option": "Sapienza Università di Roma | [29983] FISIOTERAPIA (ABILITANTE ALLA PROFESSIONE SANITARIA DI FISIOTERAPISTA) - CORSO DI LAUREA H - ASL ROMA 4 - BRACCIANO (RM)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/29983",
+          "https://corsidilaurea.uniroma1.it/it/course/29983/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/29983/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/29983/study-plan"
+        ],
+        "text": "Fisioterapia (abilitante alla professione sanitaria di Fisioterapista) - Corso di laurea H - ASL Roma 4 - Bracciano (RM)\nAnno accademico: 2026-2027\nCodice corso: 29983\nClasse di laurea: L/SNT2\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)\",\"type\":\"Classe di laurea: L-23\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+          "id": "S1C2",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-23",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C2",
+        "option": "Sapienza Università di Roma | [33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33481",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/study-plan"
+        ],
+        "text": "Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0327G] INGEGNERIA INDUSTRIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9\"]}\nEXCERPT: [0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9"
+          ],
+          "course": "[0327G] INGEGNERIA INDUSTRIALE",
+          "id": "S1C3",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C3",
+        "option": "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428?schemaid=8540",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429?schemaid=8541",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430?schemaid=8539",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33479] INGEGNERIA MECCANICA\",\"type\":\"Classe di laurea: L-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria Meccanica\nAnno accademico: 2026-2027\nCodice corso: 33479\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33479] INGEGNERIA MECCANICA",
+          "id": "S1C4",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C4",
+        "option": "Sapienza Università di Roma | [33479] INGEGNERIA MECCANICA",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33479",
+          "https://corsidilaurea.uniroma1.it/it/course/33479/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33479/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33479/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33479/study-plan"
+        ],
+        "text": "Ingegneria Meccanica\nAnno accademico: 2026-2027\nCodice corso: 33479\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: arte geologiche e sui processi geomorfologici che influenzano lo sviluppo e la stabilità del paesaggio e del territorio.\n● lo studio dei materiali geologici e dei loro equivalenti industriali, delle loro proprietà chimiche, fisiche e meccaniche, della loro struttura cristallina, delle fasi minerali, e della loro importanza per l'impie",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S1C5",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C5",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "arte geologiche e sui processi geomorfologici che influenzano lo sviluppo e la stabilità del paesaggio e del territorio.\n● lo studio dei materiali geologici e dei loro equivalenti industriali, delle loro proprietà chimiche, fisiche e meccaniche, della loro struttura cristallina, delle fasi minerali, e della loro importanza per l'impiego nell'edilizia (materiali ceramici e laterizi; leganti e cementi; vetri; basi di metallurgia e leghe)."
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Messina\",\"course\":\"[1080] INGEGNERIA BIOMEDICA\",\"type\":\"Classe di laurea: L-8\",\"type_status\":\"declared\",\"region\":\"Sicilia\",\"cities\":[\"MESSINA\"]}\nEXCERPT: contenuto principale Ingegneria Triennale\n[1024] INGEGNERIA CIVILE Inglese Italiano\n[1032] INGEGNERIA ELETTRONICA E INFORMATICA\n[1070] INGEGNERIA GESTIONALE\n[1052] INGEGNERIA INDUSTRIALE\n[1043] SCIENZE E TECNOLOGIE DELLA NAVIGAZIONE Magistrale\n[1081R] BIOINGEGNERIA\n[1064] ENGINEERING IN COMPUTER SCIENCE Inglese\n[1023] INGEGNERIA CIVIL",
+        "facts": {
+          "cities": [
+            "MESSINA"
+          ],
+          "course": "[1080] INGEGNERIA BIOMEDICA",
+          "id": "S1C6",
+          "region": "Sicilia",
+          "type": "Classe di laurea: L-8",
+          "type_status": "declared",
+          "university": "University of Messina"
+        },
+        "id": "S1C6",
+        "option": "University of Messina | [1080] INGEGNERIA BIOMEDICA",
+        "sources": [
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999?annoOrdinamento=2021",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522/insegnamenti/9999?schemaid=12318",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024/10522?annoOrdinamento=2021",
+          "https://unime.coursecatalogue.cineca.it/corsi/2024?area=AR_ING"
+        ],
+        "text": "contenuto principale Ingegneria Triennale\n[1024] INGEGNERIA CIVILE Inglese Italiano\n[1032] INGEGNERIA ELETTRONICA E INFORMATICA\n[1070] INGEGNERIA GESTIONALE\n[1052] INGEGNERIA INDUSTRIALE\n[1043] SCIENZE E TECNOLOGIE DELLA NAVIGAZIONE Magistrale\n[1081R] BIOINGEGNERIA\n[1064] ENGINEERING IN COMPUTER SCIENCE Inglese\n[1023] INGEGNERIA CIVILE\n[1034] INGEGNERIA ELETTRONICA PER L'INDUSTRIA Inglese Italiano\n[1071] INGEGNERIA GESTIONALE\n[1055] INGEGNERIA MECCANICA\n[1044] SCIENZE E LOGISTICA DEL TRASPORTO MARITTIMO ED AEREO Inglese Italiano Master di Secondo Livello\n[MS040] LA DIGITALIZZAZIONE DELLE INFRASTRUTTURE DI TRASPORTO PER LA GESTIONE DELLA MANUTENZIONE E DELLA MOBILITÀ SOSTENIBILE Dottorati\n[DT214] INGEGNERIA"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33480] INGEGNERIA MECCANICA PER LA TRANSIZIONE VERDE (SEDE DI LATINA)\",\"type\":\"Classe di laurea: L-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria Meccanica per la Transizione Verde (sede di Latina)\nAnno accademico: 2026-2027\nCodice corso: 33480\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33480] INGEGNERIA MECCANICA PER LA TRANSIZIONE VERDE (SEDE DI LATINA)",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33480] INGEGNERIA MECCANICA PER LA TRANSIZIONE VERDE (SEDE DI LATINA)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33480",
+          "https://corsidilaurea.uniroma1.it/it/course/33480/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33480/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33480/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33480/study-plan"
+        ],
+        "text": "Ingegneria Meccanica per la Transizione Verde (sede di Latina)\nAnno accademico: 2026-2027\nCodice corso: 33480\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33471] INGEGNERIA CIVILE\",\"type\":\"Classe di laurea: L-7\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria Civile\nAnno accademico: 2026-2027\nCodice corso: 33471\nClasse di laurea: L-7\nModalità di accesso: Prova di ammissione\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33471] INGEGNERIA CIVILE",
+          "id": "S1C8",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-7",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C8",
+        "option": "Sapienza Università di Roma | [33471] INGEGNERIA CIVILE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33471",
+          "https://corsidilaurea.uniroma1.it/it/course/33471/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33471/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33471/study-plan"
+        ],
+        "text": "Ingegneria Civile\nAnno accademico: 2026-2027\nCodice corso: 33471\nClasse di laurea: L-7\nModalità di accesso: Prova di ammissione\nLingua: ITA"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Trento\",\"course\":\"[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)\"]}\nEXCERPT: contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[0327G] INGEGNERIA INDUSTRIALE\n[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA Inglese Italiano\n[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA InterateneoInglese Italiano\n[0326G] INGEGNERIA PE",
+        "facts": {
+          "cities": [
+            "Polo di città - Economia - via Inama, 5 (Utenza sostenibile: 140)"
+          ],
+          "course": "[0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+          "id": "S1C9",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C9",
+        "option": "University of Trento | [0115G] AMMINISTRAZIONE AZIENDALE E DIRITTO",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50482?schemaid=8270",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti/50483?schemaid=8268",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10126/insegnamenti?annoOrdinamento=2011",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1647269677464"
+        ],
+        "text": "contenuto principale Corsi di laurea triennale Economia, Management e Diritto\n[0206G] COMPARATIVE, EUROPEAN AND INTERNATIONAL LEGAL STUDIES Inglese\n[0117G] ECONOMIA E MANAGEMENT\n[0116G] GESTIONE AZIENDALE Ingegneria, informatica e tecnologie\n[0514G] INFORMATICA\n[0325G] INGEGNERIA CIVILE\n[0327G] INGEGNERIA INDUSTRIALE\n[0339G] INGEGNERIA INFORMATICA, DELLE COMUNICAZIONI ED ELETTRONICA Inglese Italiano\n[INT - ISMP] INGEGNERIA DEI SISTEMI MEDICALI PER LA PERSONA InterateneoInglese Italiano\n[0326G] INGEGNERIA PER L'AMBIENTE E IL TERRITORIO Matematica e Fisica\n[0513G] FISICA\n[0515G] MATEMATICA Psicologia e Neuroscienze\n[0704G] INTERFACCE E TECNOLOGIE DELLA COMUNICAZIONE\n[0705G] SCIENZE E TECNICHE DI PSICOLOGIA COGNITIVA Scienze e tecnologie agroalimentari\n[0911G] VITICOLTURA ED ENOLOGIA Scienze medico-sanitarie e biologiche\n[0710G] EDUCAZIONE PROFESSIONALE (ABILITANTE ALLA PROFESSIONE SANITARIA DI EDUCATORE PROFESSIONALE)\n[0516G] SCIENZE E TECNOLOGIE BIOMOLECOLARI\n[INT - TPAL] TECNICHE DELLA PREVENZIONE NELL'AMBIENTE E NEI LUOGHI DI LAVORO InterateneoTitolo congiunto\n[INT-TLB] TECNICHE DI LABORATORIO BIOMEDICO Interateneo\n[INT-TRMIR] TECNICHE DI RADIOLOGIA MEDICA, PER IMMAGINI E RADIOTERAPIA Interateneo Scienze motorie e del benessere\n[0711G] SCIENZE MOTORIE, SPORT E BENESSERE InterateneoTitolo congiunto Sociologia e Studi internazionali\n[0622G] SERVIZIO SOCIALE\n[0611G] SOCIOLOGIA\n[0620G] STUDI INTERNAZIONALI Studi umanistici e linguistici\n[0417G] BENI CULTURALI\n[0416G] FILOSOFIA\n[0427G] LINGUE MODERNE Tedesco Inglese Francese Italiano Spagnolo\n[0419G] STUDI STORICI E FILOLOGICO-LETTERARI"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "engineering_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "followup_question": "Quale di questi corsi ti sembra più interessante?",
+      "intent": "recommend",
+      "note": "",
+      "option_ids": [
+        "S1C1",
+        "S1C4",
+        "S1C3"
+      ],
+      "recap": "Dato il tuo interesse per l'ingegneria aerospaziale e meccanica, ti consiglio di considerare corsi che ti permettano di approfondire queste aree."
+    },
+    "ctx_chars": 4732,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33474] INGEGNERIA AEROSPAZIALE\",\"type\":\"Classe di laurea: L-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria Aerospaziale\nAnno accademico: 2026-2027\nCodice corso: 33474\nClasse di laurea: L-9\nModalità di accesso: Prova di ammissione\nLingua: ITA\n\n{\"id\":\"S1C2\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)\",\"type\":\"Classe di laurea: L-23\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA\n\n{\"id\":\"S1C3\",\"university\":\"University of Trento\",\"course\":\"[0327G] INGEGNERIA INDUSTRIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9\"]}\nEXCERPT: [0327G] INGEGNERIA INDUSTRIALE Laurea\nI\n[...log text clipped...]",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "advice",
+    "profile_update": {},
+    "query": "aerospazio, meccanica",
+    "rendered_reply": "Dato il tuo interesse per l'ingegneria aerospaziale e meccanica, ti consiglio di considerare corsi che ti permettano di approfondire queste aree.\n\nLe informazioni disponibili per questa ricerca non contengono opzioni con sede documentata a Roma; questo non significa che non ne esistano. I corsi mostrati sono alternative in altre sedi.\n\nTi suggerisco queste opzioni:\n1. Sapienza Università di Roma | [33474] INGEGNERIA AEROSPAZIALE\n2. Sapienza Università di Roma | [33479] INGEGNERIA MECCANICA\n3. University of Trento | [0327G] INGEGNERIA INDUSTRIALE\n\nQuale di questi corsi ti sembra più interessante?",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "aerospazio, meccanica"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "advice",
+    "valences_before": [
+      2,
+      2,
+      1,
+      -1,
+      2,
+      -2,
+      0
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "426c8be91e49",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi più adatto a te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "io mi sono diplomato come geometra pr5 e poi ho conseguito un secondo diploma in meccatronica",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "tutto cio 10 anni fa circa",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, grazie per aver condiviso la tua esperienza. Ora, vorrei sapere quali materie o ambiti universitari ti attirano di più. Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "ingegneria di base, mi ha sempre attirato l’aereospazio e la meccanica",
+      "role": "user"
+    },
+    {
+      "content": "Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "pensando al mio attuale lavoro qualcosa che mi permetta di avanzare",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi vorresti approfondire le tue conoscenze in ingegneria aerospaziale e meccanica per migliorare la tua carriera. Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma e attualmente lavoro come meccanico di moto da corsa in pista per un team al mondiale",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto, quindi preferisci studiare a Roma. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "ok",
+      "role": "user"
+    },
+    {
+      "content": "Mi riferisco a attività come costruire, riparare o lavorare con strumenti e oggetti concreti. Ti piace molto, abbastanza, poco, per niente, o dipende?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "molto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "per niente",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "proporre idee e prendere iniziativa ok.. organizzare progetti o attività poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Dato il tuo interesse per l'ingegneria aerospaziale e meccanica, ti consiglio di considerare corsi che ti permettano di approfondire queste aree. Le informazioni disponibili per questa ricerca non contengono opzioni con sede documentata a Roma; questo non significa che non ne esistano. I corsi mostrati sono alternative in altre sedi. Ti suggerisco queste opzioni: 1. Sapienza Università di Roma | [33474] INGEGNERIA AEROSPAZIALE 2. Sapienza Università di Roma | [33479] INGEGNERIA MECCANICA 3. University of Trento | [0327G] INGEGNERIA INDUSTRIALE Quale di questi corsi ti sembra più interessante?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T13:18:57"
+}

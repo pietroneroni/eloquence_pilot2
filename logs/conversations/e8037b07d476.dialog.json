@@ -1,0 +1,496 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-25T17:31:21",
+  "dialog_language": "English",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "Master in Theoretical Physics",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "physical_sciences"
+      ],
+      "riasec_attitudes": [
+        "Investigative",
+        "Social",
+        "Artistic"
+      ],
+      "riasec_confidence": "low"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Master in Theoretical Physics",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Master in Theoretical Physics",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 3
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Master in Theoretical Physics",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Master in Theoretical Physics",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "physical_sciences"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            -2,
+            2,
+            2,
+            1,
+            2,
+            2,
+            1,
+            1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 14
+    }
+  ],
+  "model_id": "university-counselor-ENG:latest",
+  "rag_state": {
+    "advice_intro_plural": "I suggest these options:",
+    "advice_intro_singular": "I suggest this option:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "University of Trento | [0518H] PHYSICS",
+      "University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES",
+      "University of Trento | [SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"University of Trento\",\"course\":\"[0518H] PHYSICS\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0518H] PHYSICS Master's Degree English\nCOURSE INFORMATION SAVE PDF\nstandard Academic year\n1st YEAR\n- A.Y. 2024/2025\n2nd YEAR\n- A.Y.",
+        "facts": {
+          "cities": [],
+          "course": "[0518H] PHYSICS",
+          "id": "S1C1",
+          "region": "Trentino-Alto Adige",
+          "type": "Master's Degree",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C1",
+        "option": "University of Trento | [0518H] PHYSICS",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169/insegnamenti/50528",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10169/insegnamenti/50528?schemaid=8621"
+        ],
+        "text": "[0518H] PHYSICS Master's Degree English\nCOURSE INFORMATION SAVE PDF\nstandard Academic year\n1st YEAR\n- A.Y. 2024/2025\n2nd YEAR\n- A.Y."
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Siena\",\"course\":\"[SE002] CHEMICAL SCIENCES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [SE002] CHEMICAL SCIENCES Bachelor's Degree Course\n\nStudy Plan Academic Year\n1° YEAR\n- Academic Year 2024/2025\nOTHER ACTIVITIES\n1° YEAR MANDATORY LECTURE SCHEDULE\n[2000988] ANALYTICAL CHEMISTRY 1 WITH LABORATORY\n9 CFU\n96 hours Second Semester\n[2014490] GENERAL AND INORGANIC CHEMISTRY WITH STOICHIOMETRY\n12 CFU\n120 hours First Semester\n[108613] ORGANIC CHEMISTRY ",
+        "facts": {
+          "cities": [],
+          "course": "[SE002] CHEMICAL SCIENCES",
+          "id": "S1C10",
+          "region": "Toscana",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Siena"
+        },
+        "id": "S1C10",
+        "option": "University of Siena | [SE002] CHEMICAL SCIENCES",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10225/insegnamenti/9999?schemaid=11629"
+        ],
+        "text": "[SE002] CHEMICAL SCIENCES Bachelor's Degree Course\n\nStudy Plan Academic Year\n1° YEAR\n- Academic Year 2024/2025\nOTHER ACTIVITIES\n1° YEAR MANDATORY LECTURE SCHEDULE\n[2000988] ANALYTICAL CHEMISTRY 1 WITH LABORATORY\n9 CFU\n96 hours Second Semester\n[2014490] GENERAL AND INORGANIC CHEMISTRY WITH STOICHIOMETRY\n12 CFU\n120 hours First Semester\n[108613] ORGANIC CHEMISTRY 1\n\n6 CFU\n54 hours Second Semester\n[108944] PHYSICS 1\n\n6 CFU\n48 hours First Semester\n[108945] PHYSICS 2\n\n6 CFU\n48 hours Second Semester\n[2016199] FUNDAMENTALS OF INFORMATICS\n6 CFU\n60 hours First Semester\n[2000983] ENGLISH (B2/2)\n\n3 CFU\n24 hours\n[108630] MATHEMATICS 1\n\n6 CFU\n48 hours First Semester\n[2016200] MATHEMATICS 2\n\n6 CFU\n48 hours Second Semester COURSE WORK SAFETY\n[2012739] TRAINING COURSE ON HEALTH AND SAFETY IN THE WORKPLACE - HIGH RISK - PURSUANT TO ARTICLE 37 OF LEGISLATIVE DECREES 81/08\n\nFictitious period - Safety Course SPP SELF-ASSESSMENT TEST\n[2016670] ACCESS TEST\nOTHER ACTIVITIES\n[2019006] GOOD VIBRATIONS: LANGUAGE COINCIDENCES BETWEEN CHEMISTRY AND MUSIC\n1 CFU\n16 hours First Semester\n[100851] BIOLOGICAL CHEMISTRY\n6 CFU\n48 hours Second Semester\n[2000607] FINAL EXAM\n13 CFU\n[2000994] PHYSICAL CHEMISTRY 2"
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[SE003] PHYSICS AND ADVANCED TECHNOLOGIES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [SE003] PHYSICS AND ADVANCED TECHNOLOGIES Bachelor's Degree Course\n\nGENERAL COURSE Year of course\n1° ANNO\n- A.A. 2024/2025\nOTHER ACTIVITIES\n1° ANNO MANDATORY LECTURE SCHEDULE\n[2013643] LINEAR ALGEBRA AND GEOMETRY\n9 CFU\n106 hours First Semester\n[2018163] CALCULUS 1\n\n9 CFU\n90 hours First Semester\n[2018164] CALCULUS 2\n\n6 CFU",
+        "facts": {
+          "cities": [],
+          "course": "[SE003] PHYSICS AND ADVANCED TECHNOLOGIES",
+          "id": "S1C2",
+          "region": "Toscana",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Siena"
+        },
+        "id": "S1C2",
+        "option": "University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10228/insegnamenti/9999?schemaid=11699"
+        ],
+        "text": "[SE003] PHYSICS AND ADVANCED TECHNOLOGIES Bachelor's Degree Course\n\nGENERAL COURSE Year of course\n1° ANNO\n- A.A. 2024/2025\nOTHER ACTIVITIES\n1° ANNO MANDATORY LECTURE SCHEDULE\n[2013643] LINEAR ALGEBRA AND GEOMETRY\n9 CFU\n106 hours First Semester\n[2018163] CALCULUS 1\n\n9 CFU\n90 hours First Semester\n[2018164] CALCULUS 2\n\n6 CFU\n70 hours Second Semester\n[100838] CHEMISTRY\n6 CFU\n48 hours First Semester\n[108615] COMPLEMENTARY PHYSICS 1\n\n12 CFU\n120 hours Second Semester\n[108944] PHYSICS 1\n\n6 CFU\n56 hours First Semester\n[2017485] PHYSICS LABORATORY 1 WITH PROGRAMMING ELEMENTS\n12 CFU\n128 hours Annual Cycle\nSAFETY TRAINING COURSE\n[2012739] SAFETY TRAINING COURSE IN HEALTH AND SAFETY AT WORKPLACES - HIGH RISK - PURSUANT TO ARTICLE 37 OF DECRETO LEGISLATIVO 81/08"
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"University of Salerno\",\"course\":\"[10122] PHYSIOTHERAPY (ENABLING FOR THE HEALTH PROFESSION OF PHYSIOTHERAPIST)\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: DEGREE PROGRAMME\nPHYSIOTHERAPY Year of study\n1st YEAR\n- A.A. 2024/2025\n2nd YEAR\n- A.A. 2025/2026\n3rd YEAR\n- A.A.",
+        "facts": {
+          "cities": [],
+          "course": "[10122] PHYSIOTHERAPY (ENABLING FOR THE HEALTH PROFESSION OF PHYSIOTHERAPIST)",
+          "id": "S1C3",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "University of Salerno"
+        },
+        "id": "S1C3",
+        "option": "University of Salerno | [10122] PHYSIOTHERAPY (ENABLING FOR THE HEALTH PROFESSION OF PHYSIOTHERAPIST)",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500332",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500332/insegnamenti/9999",
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500332/insegnamenti/9999?schemaid=17261"
+        ],
+        "text": "DEGREE PROGRAMME\nPHYSIOTHERAPY Year of study\n1st YEAR\n- A.A. 2024/2025\n2nd YEAR\n- A.A. 2025/2026\n3rd YEAR\n- A.A."
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Salerno\",\"course\":\"[05704] NEW METHODOLOGIES FOR TEACHING MODERN PHYSICS SECOND LEVEL MASTER\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Campania\",\"cities\":[]}\nEXCERPT: ademic Board Chair CANIO NOCE Course Director CANIO NOCE Characteristics and Other Info Specific Educational Objectives.\nTHE MASTER IS DESIGNED TO TRAIN TRAINERS AND AIMS TO PROVIDE A POST-DEGREE TITLE TO SECONDARY SCHOOL TEACHERS OF FIRST AND SECOND DEGREE, WITH THE INTENTION OF ENRICHING THEIR PROFESSIONAL PROFILE WITH SPECIFIC COMPETENCIES FOR THE ",
+        "facts": {
+          "cities": [],
+          "course": "[05704] NEW METHODOLOGIES FOR TEACHING MODERN PHYSICS SECOND LEVEL MASTER",
+          "id": "S1C4",
+          "region": "Campania",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "University of Salerno"
+        },
+        "id": "S1C4",
+        "option": "University of Salerno | [05704] NEW METHODOLOGIES FOR TEACHING MODERN PHYSICS SECOND LEVEL MASTER",
+        "sources": [
+          "https://unisa.coursecatalogue.cineca.it/corsi/2024/500538"
+        ],
+        "text": "ademic Board Chair CANIO NOCE Course Director CANIO NOCE Characteristics and Other Info Specific Educational Objectives.\nTHE MASTER IS DESIGNED TO TRAIN TRAINERS AND AIMS TO PROVIDE A POST-DEGREE TITLE TO SECONDARY SCHOOL TEACHERS OF FIRST AND SECOND DEGREE, WITH THE INTENTION OF ENRICHING THEIR PROFESSIONAL PROFILE WITH SPECIFIC COMPETENCIES FOR THE TEACHING OF MODERN PHYSICS, BOTH FROM A CONCEPTUAL AND LABORATORY PERSPECTIVE. IT ALSO AIMS TO OFFER HIGH SPECIALIZATION IN THE FIELD OF INNOVATION IN MODERN PHYSICS TEACHING, ALSO THROUGH THE USE OF DIGITAL TOOLS."
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"University of Sassari\",\"course\":\"[1193] BIOLOGICAL SCIENCES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Sardegna\",\"cities\":[]}\nEXCERPT: [1193] BIOLOGICAL SCIENCES Bachelor's Degree\nINFORMATION ON OFFERED COURSES (ITA)\n\nCOMMON PATH\n[A004265] INTRODUCTION TO GENERAL CHEMISTRY AND ORGANIC CHEMISTRY (OFA)\n\n20 hours Teaching type: [OPZ] - Optional\n[A004266] MATHEMATICS (OFA)\n\n20 hours Teaching type: [OPZ] - Optional\n[A004267] PHYSICS (COURSE 0 - OFA)",
+        "facts": {
+          "cities": [],
+          "course": "[1193] BIOLOGICAL SCIENCES",
+          "id": "S1C5",
+          "region": "Sardegna",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Sassari"
+        },
+        "id": "S1C5",
+        "option": "University of Sassari | [1193] BIOLOGICAL SCIENCES",
+        "sources": [
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276",
+          "https://uniss.coursecatalogue.cineca.it/corsi/2024/10276/insegnamenti/9999"
+        ],
+        "text": "[1193] BIOLOGICAL SCIENCES Bachelor's Degree\nINFORMATION ON OFFERED COURSES (ITA)\n\nCOMMON PATH\n[A004265] INTRODUCTION TO GENERAL CHEMISTRY AND ORGANIC CHEMISTRY (OFA)\n\n20 hours Teaching type: [OPZ] - Optional\n[A004266] MATHEMATICS (OFA)\n\n20 hours Teaching type: [OPZ] - Optional\n[A004267] PHYSICS (COURSE 0 - OFA)"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0519H] MATHEMATICS\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0519H] MATHEMATICS Master's Degree English Teaching and Scientific Communication\nINFO INSEGNAMENTI SALVA PDF\nMathematics and Statistics for Life and Social Sciences Cryptography Advanced Mathematics Teaching and Scientific Communication Year of study\n1st YEAR\n- Academic Year 2024/2025\n1st YEAR MANDATORY COURSES AND TRAINING ACTIVITIES\n[145151] MATHEMATICAL MO",
+        "facts": {
+          "cities": [],
+          "course": "[0519H] MATHEMATICS",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0519H] MATHEMATICS",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50440?schemaid=8582",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50441?schemaid=8583",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50442?schemaid=8585",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10170/insegnamenti/50443?schemaid=8584"
+        ],
+        "text": "[0519H] MATHEMATICS Master's Degree English Teaching and Scientific Communication\nINFO INSEGNAMENTI SALVA PDF\nMathematics and Statistics for Life and Social Sciences Cryptography Advanced Mathematics Teaching and Scientific Communication Year of study\n1st YEAR\n- Academic Year 2024/2025\n1st YEAR MANDATORY COURSES AND TRAINING ACTIVITIES\n[145151] MATHEMATICAL MODELS FOR THE PHYSICAL, NATURAL AND SOCIAL SCIENCES\n6 CFU\n42 hours First Semester\n[145155] MODERN PHYSICS\n12 CFU\n84 hours Annual activity\n[145194] ADDITIONAL LINGUISTIC KNOWLEDGE (ENGLISH B2)"
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"University of Siena\",\"course\":\"[D129] GEOSCIENCES GENERAL COURSE\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [D129] GEOSCIENCES General Course of Study GENERAL COURSE\n\nGENERAL COURSE GEOLOGY AND GEOLOGICAL TECHNOLOGIES GEOLOGY AND TERRITORY Course year\n1° YEAR\n- A.Y. 2024/2025\nOTHER ACTIVITIES\n1° YEAR MANDATORY LECTURE SCHEDULE\n[2000976] OTHER USEFUL KNOWLEDGE FOR WORKFORCE INTEGRATION\n1 CFU\n[100838] CHEMISTRY\n9 CFU\n84 hours First Semester\n[101884] PHYSICS\n9 CFU\n72 h",
+        "facts": {
+          "cities": [],
+          "course": "[D129] GEOSCIENCES GENERAL COURSE",
+          "id": "S1C7",
+          "region": "Toscana",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Siena"
+        },
+        "id": "S1C7",
+        "option": "University of Siena | [D129] GEOSCIENCES GENERAL COURSE",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti/1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti/2",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti/9999#1",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti/9999?schemaid=11700",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/10894/insegnamenti?annoOrdinamento=2021"
+        ],
+        "text": "[D129] GEOSCIENCES General Course of Study GENERAL COURSE\n\nGENERAL COURSE GEOLOGY AND GEOLOGICAL TECHNOLOGIES GEOLOGY AND TERRITORY Course year\n1° YEAR\n- A.Y. 2024/2025\nOTHER ACTIVITIES\n1° YEAR MANDATORY LECTURE SCHEDULE\n[2000976] OTHER USEFUL KNOWLEDGE FOR WORKFORCE INTEGRATION\n1 CFU\n[100838] CHEMISTRY\n9 CFU\n84 hours First Semester\n[101884] PHYSICS\n9 CFU\n72 hours Second Semester\n[102074] GEOLOGY\n6 CFU\n56 hours First Semester\n[2018161] SEDIMENTARY GEOLOGY\n6 CFU\n56 hours First Semester\n[L99990] ENGLISH LANGUAGE PROFICIENCY - LEVEL B1\n\n3 CFU\n[103018] MATHEMATICS\n9 CFU\n80 hours First Semester\n[103192] MINERALOGY\n6 CFU\n64 hours Second Semester\n[103333] PALEONTOLOGY\n9 CFU\n64 hours Second Semester ENTRY TEST\n[2016670] ENTRY TEST\nSAFETY TRAINING COURSE\n[2012739] SAFETY TRAINING COURSE IN HEALTH AND SAFETY IN WORKPLACES - HIGH RISK - PURSUANT TO ARTICLE 37 OF D.LGS. 81/08"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST\",\"type\":\"Doctoral Course\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST Doctoral Course (D.M.226/2021)\n\nINFO General information referring to the current academic year Duration\n3 years Order\n2024\nStatus Open Credits\n0 CFU Type Doctoral courses Scientific-Technical Category D.M. 226/2021\nInteruniversity Course No Open Access Location Hill Campus - Povo A - via ",
+        "facts": {
+          "cities": [],
+          "course": "[SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST",
+          "id": "S1C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Doctoral Course",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C8",
+        "option": "University of Trento | [SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10781"
+        ],
+        "text": "[SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST Doctoral Course (D.M.226/2021)\n\nINFO General information referring to the current academic year Duration\n3 years Order\n2024\nStatus Open Credits\n0 CFU Type Doctoral courses Scientific-Technical Category D.M. 226/2021\nInteruniversity Course No Open Access Location Hill Campus - Povo A - via Sommarive, 14\nDepartment Department of Physics Verification of required knowledge for access No"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"University of Trento\",\"course\":\"[CBS] COGNITIVE AND BRAIN SCIENCES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: main content Doctoral courses Cognitive Sciences\n[SC] COGNITIVE SCIENCES Humanistic\n[CEU] EUROPEAN CULTURES. ENVIRONMENT, SPACES, HISTORIES, ARTS, IDEAS\n[ECOFIN] ECONOMICS AND FINANCE InteruniversityJoint title\n[EMSSS] ECONOMICS AND MANAGEMENT (SCHOOL IN SOCIAL SCIENCES)\n[FTSC] FORMS OF TEXT AND CULTURAL EXCHANGE\n[FSC] FORMS OF CULTURAL EXCHANGE\n[SRSSSS] SOCIO",
+        "facts": {
+          "cities": [],
+          "course": "[CBS] COGNITIVE AND BRAIN SCIENCES",
+          "id": "S1C9",
+          "region": "Trentino-Alto Adige",
+          "type": "unknown",
+          "type_status": "conflicting",
+          "university": "University of Trento"
+        },
+        "id": "S1C9",
+        "option": "University of Trento | [CBS] COGNITIVE AND BRAIN SCIENCES",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10764",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024?gruppo=1718264921824"
+        ],
+        "text": "main content Doctoral courses Cognitive Sciences\n[SC] COGNITIVE SCIENCES Humanistic\n[CEU] EUROPEAN CULTURES. ENVIRONMENT, SPACES, HISTORIES, ARTS, IDEAS\n[ECOFIN] ECONOMICS AND FINANCE InteruniversityJoint title\n[EMSSS] ECONOMICS AND MANAGEMENT (SCHOOL IN SOCIAL SCIENCES)\n[FTSC] FORMS OF TEXT AND CULTURAL EXCHANGE\n[FSC] FORMS OF CULTURAL EXCHANGE\n[SRSSSS] SOCIOLOGY AND SOCIAL RESEARCH (SCHOOL IN SOCIAL SCIENCES)\n[SGCE] COMPARATIVE AND EUROPEAN LEGAL STUDIES\n[SI] INTERNATIONAL STUDIES\n[SUSTEEMS] SUSTAINABILITY: ECONOMICS, ENVIRONMENT, MANAGEMENT AND SOCIETY Scientific-Technological\n[SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST\n[FI] PHYSICS\n[ICAM] CIVIL, ENVIRONMENTAL AND MECHANICAL ENGINEERING\n[ISI] ENGINEERING AND INFORMATION SCIENCE\n[INNIND] INDUSTRIAL INNOVATION\n[MAT] MATHEMATICS Interuniversity\n[MMSE] MATERIALS, MECHATRONICS AND SYSTEMS ENGINEERING\n[SAA] AGRIFOOD AND ENVIRONMENTAL SCIENCES\n[SB] MOLECULAR SCIENCES"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "physical_sciences"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "theoretical physics"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "The University of Trento's [0518H] PHYSICS Master's Degree is well-regarded for its strong research focus and connections to industry, which can lead to opportunities in both academia and industry. The University of Siena's [SE003] PHYSICS AND ADVANCED TECHNOLOGIES program is known for its interdisciplinary approach, combining physics with advanced technologies, which can open doors to innovative fields. The [SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST at the University of Trento is highly specialized and can lead to careers in space research and technology development. The exact employment outcomes can vary, but all these programs have a strong reputation for preparing students for successful careers in their respective fields."
+    },
+    "ctx_chars": 1422,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"University of Trento\",\"course\":\"[0518H] PHYSICS\",\"type\":\"Master's Degree\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [0518H] PHYSICS Master's Degree English\nCOURSE INFORMATION SAVE PDF\nstandard Academic year\n1st YEAR\n- A.Y. 2024/2025\n2nd YEAR\n- A.Y.\n\n{\"id\":\"S1C2\",\"university\":\"University of Siena\",\"course\":\"[SE003] PHYSICS AND ADVANCED TECHNOLOGIES\",\"type\":\"unknown\",\"type_status\":\"conflicting\",\"region\":\"Toscana\",\"cities\":[]}\nEXCERPT: [SE003] PHYSICS AND ADVANCED TECHNOLOGIES Bachelor's Degree Course\n\nGENERAL COURSE Year of course\n1° ANNO\n- A.A. 2024/2025\nOTHER ACTIVITIES\n1° ANNO MANDATORY LECTURE SCHEDULE\n[2013643] LINEAR ALGEBRA AND GEOMETRY\n9 CFU\n106 hours First Semester\n[2018163] CALCULUS 1\n\n9 CFU\n90 hours First Semester\n[2018164] CALCULUS 2\n\n6 CFU\n\n{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST\",\"type\":\"Doctoral Course\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[]}\nEXCERPT: [SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHN\n[...log text clipped...]",
+    "current_question": "How much do you enjoy keeping activities ordered, planned, and under control?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "theoretical physics",
+    "rendered_reply": "The University of Trento's [0518H] PHYSICS Master's Degree is well-regarded for its strong research focus and connections to industry, which can lead to opportunities in both academia and industry. The University of Siena's [SE003] PHYSICS AND ADVANCED TECHNOLOGIES program is known for its interdisciplinary approach, combining physics with advanced technologies, which can open doors to innovative fields. The [SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST at the University of Trento is highly specialized and can lead to careers in space research and technology development. The exact employment outcomes can vary, but all these programs have a strong reputation for preparing students for successful careers in their respective fields.",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "theoretical physics"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      -2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "e8037b07d476",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "Hi",
+      "role": "user"
+    },
+    {
+      "content": "Hello! I'm an AI assistant here to help you with university guidance in Italy. Let's start by discussing your background. What are you studying now, or what was your most recent study path?",
+      "role": "assistant"
+    },
+    {
+      "content": "I am studying theoretical physics in a master program",
+      "role": "user"
+    },
+    {
+      "content": "Which subjects or university areas catch your interest the most?",
+      "role": "assistant"
+    },
+    {
+      "content": "Quantum field theory and theoretical condesed matter",
+      "role": "user"
+    },
+    {
+      "content": "Great, I see you have a strong interest in theoretical physics. When you think about university, what would you like to learn more about or learn how to do?",
+      "role": "assistant"
+    },
+    {
+      "content": "in What career outside of academia can I use this",
+      "role": "user"
+    },
+    {
+      "content": "Your interest in quantum field theory and theoretical condensed matter is quite specialized. Do you have a preferred Italian region or macro-area, or are you flexible about location?",
+      "role": "assistant"
+    },
+    {
+      "content": "its fine wherever",
+      "role": "user"
+    },
+    {
+      "content": "Great, I understand that you are open to studying anywhere in Italy. Now I will ask 8 short questions about how much different activities appeal to you. You do not need to prove you are good at them: I mainly care about how much you would enjoy doing them. You can answer briefly, saying whether you like it a lot, somewhat, a little, not at all, or whether it depends. How much do you enjoy practical, hands-on activities, such as building, repairing, or working with tools and concrete objects?",
+      "role": "assistant"
+    },
+    {
+      "content": "nothing at all",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy understanding how things, systems, or phenomena work?",
+      "role": "assistant"
+    },
+    {
+      "content": "a lot",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy researching information, analyzing problems, and reasoning logically?",
+      "role": "assistant"
+    },
+    {
+      "content": "a lot",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy expressing ideas or emotions through creative forms such as writing, art, music, or design?",
+      "role": "assistant"
+    },
+    {
+      "content": "reasonably so",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy experimenting and creating something new from open-ended ideas?",
+      "role": "assistant"
+    },
+    {
+      "content": "A lot",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy working closely with people in a helping, supportive, or listening role?",
+      "role": "assistant"
+    },
+    {
+      "content": "a lot",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy proposing ideas, taking initiative, and organizing projects or activities?",
+      "role": "assistant"
+    },
+    {
+      "content": "More or lesas",
+      "role": "user"
+    },
+    {
+      "content": "I see. Do you enjoy proposing ideas, taking initiative, and organizing projects or activities, or do you prefer to follow instructions and work on tasks that are already planned out for you?",
+      "role": "assistant"
+    },
+    {
+      "content": "The first one",
+      "role": "user"
+    },
+    {
+      "content": "How much do you enjoy keeping activities ordered, planned, and under control?",
+      "role": "assistant"
+    },
+    {
+      "content": "a lot",
+      "role": "user"
+    },
+    {
+      "content": "You have a strong interest in theoretical physics, especially in quantum field theory and theoretical condensed matter. Given your investigative, social, and artistic attitudes, you might enjoy courses that combine theoretical study with practical applications and creative problem-solving. I suggest these options: 1. University of Trento | [0518H] PHYSICS 2. University of Siena | [SE003] PHYSICS AND ADVANCED TECHNOLOGIES 3. University of Trento | [SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST Would you like more information about these programs, or is there another area of physics you are interested in exploring?",
+      "role": "assistant"
+    },
+    {
+      "content": "What of these courses perform better after achieving the course",
+      "role": "user"
+    },
+    {
+      "content": "The University of Trento's [0518H] PHYSICS Master's Degree is well-regarded for its strong research focus and connections to industry, which can lead to opportunities in both academia and industry. The University of Siena's [SE003] PHYSICS AND ADVANCED TECHNOLOGIES program is known for its interdisciplinary approach, combining physics with advanced technologies, which can open doors to innovative fields. The [SST] NATIONAL INTEREST DOCTORATE IN SPACE SCIENCE AND TECHNOLOGY - SST at the University of Trento is highly specialized and can lead to careers in space research and technology development. The exact employment outcomes can vary, but all these programs have a strong reputation for preparing students for successful careers in their respective fields.",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-25T17:36:44"
+}

@@ -1,0 +1,128 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-23T10:50:51",
+  "dialog_language": "English",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "Computer science",
+      "region": null
+    },
+    "inferred": {
+      "field_of_interest": [
+        "computer_science"
+      ],
+      "riasec_attitudes": null,
+      "riasec_confidence": null
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "Computer science",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    }
+  ],
+  "model_id": "university-counselor-ENG:latest",
+  "rag_state": {
+    "advice_intro_plural": "",
+    "advice_intro_singular": "",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": null,
+      "region": null,
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [],
+    "candidates": {},
+    "choice_options": [],
+    "confirmed_fields": [],
+    "confirmed_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": ""
+    },
+    "control": {
+      "intent": "background_valid",
+      "patch": {
+        "explicit": {
+          "academic_background": "Computer science"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "computer_science"
+          ]
+        }
+      },
+      "reply": "Great, so you're interested in computer science.",
+      "retrieval": {
+        "location": {
+          "city": null,
+          "region": null,
+          "requirement": "",
+          "strict": false
+        },
+        "query": "computer science"
+      }
+    },
+    "ctx_chars": 0,
+    "ctx_preview": "",
+    "current_question": "What are you studying now, or what was your most recent study path?",
+    "expected_verbatim": "Which subjects or university areas catch your interest the most?",
+    "final_top_n": 3,
+    "phase": "background_answer_valid",
+    "profile_update": {},
+    "query": "",
+    "rendered_reply": "Great, so you're interested in computer science.\nWhich subjects or university areas catch your interest the most?",
+    "retrieval_request": {
+      "location": {
+        "city": null,
+        "region": null,
+        "requirement": "",
+        "strict": false
+      },
+      "query": "computer science"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "background_validate",
+    "valences_before": []
+  },
+  "selected_option_event": null,
+  "session_id": "5115c993ef7b",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "hi",
+      "role": "user"
+    },
+    {
+      "content": "Hello! I'm an AI assistant here to help you with your university guidance. Let's start by discussing your background. What are you studying now, or what was your most recent study path?",
+      "role": "assistant"
+    },
+    {
+      "content": "Computer science",
+      "role": "user"
+    },
+    {
+      "content": "Great, so you're interested in computer science. Which subjects or university areas catch your interest the most?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-23T10:51:01"
+}

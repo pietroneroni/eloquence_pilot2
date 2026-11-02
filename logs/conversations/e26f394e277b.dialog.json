@@ -1,0 +1,579 @@
+{
+  "backend_model": "openai:Mistral-Small-3.1-24B-Instruct-2503",
+  "created_at": "2026-10-24T16:36:36",
+  "dialog_language": "Italian",
+  "listener_memory": {
+    "explicit": {
+      "academic_background": "3a media",
+      "region": "Lazio"
+    },
+    "inferred": {
+      "field_of_interest": [
+        "engineering_technology"
+      ],
+      "riasec_attitudes": [
+        "Artistic",
+        "Realistic",
+        "Social"
+      ],
+      "riasec_confidence": "high"
+    }
+  },
+  "listener_patch_events": [
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "3a media",
+          "region": null
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 2
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "3a media",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 4
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "3a media",
+          "region": null
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_answer_valid",
+      "source_turn": 5
+    },
+    {
+      "patch": {
+        "explicit": {
+          "academic_background": "3a media",
+          "region": "Lazio"
+        },
+        "inferred": {
+          "field_of_interest": [
+            "engineering_technology"
+          ]
+        }
+      },
+      "phase": "background_finalize",
+      "source_turn": 6
+    },
+    {
+      "patch": {
+        "inferred": {
+          "riasec_question_valences": [
+            2,
+            1,
+            -1,
+            2,
+            2,
+            1,
+            -1,
+            -1
+          ]
+        }
+      },
+      "phase": "riasec_finalize",
+      "source_turn": 15
+    }
+  ],
+  "model_id": "university-counselor-ITA:latest",
+  "rag_state": {
+    "advice_intro_plural": "Ti suggerisco queste opzioni:",
+    "advice_intro_singular": "Ti suggerisco questa opzione:",
+    "advice_is_followup": false,
+    "advice_location_policy": {
+      "city": "Roma",
+      "region": "Lazio",
+      "requirement": "",
+      "strict": false
+    },
+    "advice_options": [
+      "Sapienza Università di Roma | [33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI"
+    ],
+    "candidates": {
+      "S1C1": {
+        "block": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecnologie per la Conservazione e il Restauro dei Beni Culturali\nAnno accademico: 2026-2027\nCodice corso: 33594\nClasse di laurea: L-43\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze ",
+        "facts": {
+          "cities": [
+            "Roma"
+          ],
+          "course": "[33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI",
+          "id": "S1C1",
+          "region": "Lazio",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C1",
+        "option": "Sapienza Università di Roma | [33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33594",
+          "https://corsidilaurea.uniroma1.it/it/course/33594/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33594/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33594/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33594/study-plan"
+        ],
+        "text": "Tecnologie per la Conservazione e il Restauro dei Beni Culturali\nAnno accademico: 2026-2027\nCodice corso: 33594\nClasse di laurea: L-43\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze Matematiche, Fisiche e Naturali\nDipartimento: BIOLOGIA AMBIENTALE\nSede: Roma\nLingua: Italiano\nModalità di erogazione: Convenzionale - In presenza\nCodice prova: 14619"
+      },
+      "S1C10": {
+        "block": "{\"id\":\"S1C10\",\"university\":\"University of Siena\",\"course\":\"[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO\",\"type\":\"Corso di Laurea\",\"type_status\":\"declared\",\"region\":\"Toscana\",\"cities\":[\"San Giovanni Valdarno\"]}\nEXCERPT: arte geologiche e sui processi geomorfologici che influenzano lo sviluppo e la stabilità del paesaggio e del territorio.\n● lo studio dei materiali geologici e dei loro equivalenti industriali, delle loro proprietà chimiche, fisiche e meccaniche, della loro struttura cristallina, delle fasi minerali, e della loro importanza per l'impiego nell'edilizia (materiali ceramici e laterizi; leganti e cementi; vetri; basi di metallurgia e leghe).",
+        "facts": {
+          "cities": [
+            "San Giovanni Valdarno"
+          ],
+          "course": "[D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+          "id": "S1C10",
+          "region": "Toscana",
+          "type": "Corso di Laurea",
+          "type_status": "declared",
+          "university": "University of Siena"
+        },
+        "id": "S1C10",
+        "option": "University of Siena | [D506] TECNOLOGIE PER L’AMBIENTE, LE COSTRUZIONI E IL TERRITORIO",
+        "sources": [
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999",
+          "https://unisi.coursecatalogue.cineca.it/corsi/2024/11295/insegnamenti/9999?schemaid=11702"
+        ],
+        "text": "arte geologiche e sui processi geomorfologici che influenzano lo sviluppo e la stabilità del paesaggio e del territorio.\n● lo studio dei materiali geologici e dei loro equivalenti industriali, delle loro proprietà chimiche, fisiche e meccaniche, della loro struttura cristallina, delle fasi minerali, e della loro importanza per l'impiego nell'edilizia (materiali ceramici e laterizi; leganti e cementi; vetri; basi di metallurgia e leghe)."
+      },
+      "S1C2": {
+        "block": "{\"id\":\"S1C2\",\"university\":\"University of Trento\",\"course\":\"[0517H] INFORMATICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9\"]}\nEXCERPT: emi e reti, alla bio-informatica, alla multimedialità, ai sistemi dedicati, all'ingegneria dei servizi o alla sicurezza.\nIl corso di studio prevede l'acquisizione di conoscenze, metodologie e tecnologie specialistiche informatiche che permettono al laureato la piani",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9"
+          ],
+          "course": "[0517H] INFORMATICA",
+          "id": "S1C2",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C2",
+        "option": "University of Trento | [0517H] INFORMATICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50539#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50539?schemaid=8571",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50540#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti/50540?schemaid=8570",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10117/insegnamenti?annoOrdinamento=2011"
+        ],
+        "text": "emi e reti, alla bio-informatica, alla multimedialità, ai sistemi dedicati, all'ingegneria dei servizi o alla sicurezza.\nIl corso di studio prevede l'acquisizione di conoscenze, metodologie e tecnologie specialistiche informatiche che permettono al laureato la pianificazione, la progettazione, lo sviluppo, la direzione lavori, la stima, il collaudo e la gestione di impianti e sistemi complessi o innovativi per la generazione, la trasmissione e l'elaborazione delle informazioni. Durante il percorso formativo, dopo aver acquisito le suddette conoscenze e competenze lo studente potrà scegliere se consolidare ulteriormente le proprie competenze in un percorso sulle scienze e tecnologie informatiche, che fornisce metodologie avanzate, innovative o sperimentali per poter affrontare problemi tecnologici particolarmente complessi a livello industriale od eventualmente intraprendere un dottorato di ricerca. In alternativa lo studente potrà intraprendere dei percorsi interdisciplinari, finalizzati al completamento della propria preparazione informatica con conoscenze economico/manageriali sull'innovazione tecnologica e sull'imprenditorialità nel settore dell'ICT, piuttosto che con lo studio interdisciplinare, o che portino ad un doppio titolo con un'università straniera."
+      },
+      "S1C3": {
+        "block": "{\"id\":\"S1C3\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING\",\"type\":\"unknown\",\"type_status\":\"unknown\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria delle Nanotecnologie - Nanotechnology Engineering\nAnno accademico: 2026-2027\nCodice corso: 33496\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG",
+        "facts": {
+          "cities": [],
+          "course": "[33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING",
+          "id": "S1C3",
+          "region": "Lazio",
+          "type": "unknown",
+          "type_status": "unknown",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C3",
+        "option": "Sapienza Università di Roma | [33496] INGEGNERIA DELLE NANOTECNOLOGIE - NANOTECHNOLOGY ENGINEERING",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33496",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33496/study-plan"
+        ],
+        "text": "Ingegneria delle Nanotecnologie - Nanotechnology Engineering\nAnno accademico: 2026-2027\nCodice corso: 33496\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA, ENG"
+      },
+      "S1C4": {
+        "block": "{\"id\":\"S1C4\",\"university\":\"University of Trento\",\"course\":\"[0337H] INGEGNERIA ENERGETICA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)\"]}\nEXCERPT: [0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Technologies for energy efficiency\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A.",
+        "facts": {
+          "cities": [
+            "Polo di collina - Mesiano - Via Mesiano, 77 (Utenza sostenibile: 50)"
+          ],
+          "course": "[0337H] INGEGNERIA ENERGETICA",
+          "id": "S1C4",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C4",
+        "option": "University of Trento | [0337H] INGEGNERIA ENERGETICA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50362?schemaid=8534",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti/50363?schemaid=8531",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10437/insegnamenti?annoOrdinamento=2023"
+        ],
+        "text": "[0337H] INGEGNERIA ENERGETICA Laurea Magistrale Interateneo Technologies for energy efficiency\nINFO INSEGNAMENTI SALVA PDF\nRenewable and innovative technologies for energy supply Technologies for energy efficiency Anno di corso\n1° ANNO\n- A.A. 2024/2025\n2° ANNO\n- A.A."
+      },
+      "S1C5": {
+        "block": "{\"id\":\"S1C5\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33460] BIOTECNOLOGIE FARMACEUTICHE\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie Farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33460\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33460] BIOTECNOLOGIE FARMACEUTICHE",
+          "id": "S1C5",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C5",
+        "option": "Sapienza Università di Roma | [33460] BIOTECNOLOGIE FARMACEUTICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33460",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33460/study-plan"
+        ],
+        "text": "Biotecnologie Farmaceutiche\nAnno accademico: 2026-2027\nCodice corso: 33460\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      },
+      "S1C6": {
+        "block": "{\"id\":\"S1C6\",\"university\":\"University of Trento\",\"course\":\"[0624H] ORGANIZZAZIONE,SOCIETÀ E TECNOLOGIA\",\"type\":\"Laurea Magistrale\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di città - Sociologia - via Verdi, 26\"]}\nEXCERPT: legami con stakeholders e mondo del lavoro; - conoscenze linguistiche, con particolare riferimento alla lingua inglese.\nMantenendo un profilo interdisciplinare, la laurea magistrale in Organizzazione, Società e Tecnologia forma laureate/i magistrali che possano assolvere a funzioni di elevata res",
+        "facts": {
+          "cities": [
+            "Polo di città - Sociologia - via Verdi, 26"
+          ],
+          "course": "[0624H] ORGANIZZAZIONE,SOCIETÀ E TECNOLOGIA",
+          "id": "S1C6",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea Magistrale",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C6",
+        "option": "University of Trento | [0624H] ORGANIZZAZIONE,SOCIETÀ E TECNOLOGIA",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10750",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10750/insegnamenti/50391",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10750/insegnamenti/50391?schemaid=8062"
+        ],
+        "text": "legami con stakeholders e mondo del lavoro; - conoscenze linguistiche, con particolare riferimento alla lingua inglese.\nMantenendo un profilo interdisciplinare, la laurea magistrale in Organizzazione, Società e Tecnologia forma laureate/i magistrali che possano assolvere a funzioni di elevata responsabilità in istituzioni ed organizzazioni pubbliche o private. La/il laureata/o magistrale OST sarà in grado di decifrare esigenze organizzative, criticità e vulnerabilità nelle dinamiche personali e interpersonali dei membri di un'organizzazione e team di lavoro. La/il laureata/o magistrale OST lavorando in sinergia con altre figure professionali coinvolte nella progettazione e implementazione di nuove tecnologie (manager, ingegneri, informatici, designer) sarà dunque in grado di armonizzare pratiche e dinamiche sociali nell'adozione e nello sviluppo di innovazioni tecnologiche all'interno di specifici contesti lavorativi, organizzativi e sociali. Durante il primo anno di corso vengono impartiti i principali insegnamenti teorici relativi agli ambiti della sociologia dell’organizzazione e del lavoro, della psicologia delle organizzazioni, degli studi sociali su scienza e tecnologia (di carattere storico, sociologico e filosofico), nonché insegnamenti di carattere metodologico."
+      },
+      "S1C7": {
+        "block": "{\"id\":\"S1C7\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)\",\"type\":\"Classe di laurea: L-23\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+          "id": "S1C7",
+          "region": "Lazio",
+          "type": "Classe di laurea: L-23",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C7",
+        "option": "Sapienza Università di Roma | [33481] INGEGNERIA DELL’INNOVAZIONE TECNOLOGICA E DIGITALE PER L’AMBIENTE COSTRUITO (SEDE DI RIETI)",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33481",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33481/study-plan"
+        ],
+        "text": "Ingegneria dell’Innovazione Tecnologica e Digitale per l’Ambiente Costruito (sede di Rieti)\nAnno accademico: 2026-2027\nCodice corso: 33481\nClasse di laurea: L-23\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nLingua: ITA"
+      },
+      "S1C8": {
+        "block": "{\"id\":\"S1C8\",\"university\":\"University of Trento\",\"course\":\"[0327G] INGEGNERIA INDUSTRIALE\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Trentino-Alto Adige\",\"cities\":[\"Polo di collina - Povo B - via Sommarive, 9\"]}\nEXCERPT: [0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile",
+        "facts": {
+          "cities": [
+            "Polo di collina - Povo B - via Sommarive, 9"
+          ],
+          "course": "[0327G] INGEGNERIA INDUSTRIALE",
+          "id": "S1C8",
+          "region": "Trentino-Alto Adige",
+          "type": "Laurea",
+          "type_status": "declared",
+          "university": "University of Trento"
+        },
+        "id": "S1C8",
+        "option": "University of Trento | [0327G] INGEGNERIA INDUSTRIALE",
+        "sources": [
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50428?schemaid=8540",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50429?schemaid=8541",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430#1",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti/50430?schemaid=8539",
+          "https://unitn.coursecatalogue.cineca.it/corsi/2024/10131/insegnamenti?annoOrdinamento=2020"
+        ],
+        "text": "[0327G] INGEGNERIA INDUSTRIALE Laurea\nINFO INSEGNAMENTI SALVA PDF\nGestionale Robotica e Meccatronica Materiali per l'industria sostenibile"
+      },
+      "S1C9": {
+        "block": "{\"id\":\"S1C9\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33461] BIOTECNOLOGIE MEDICHE\",\"type\":\"Classe di laurea: LM-9\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[]}\nEXCERPT: Biotecnologie mediche\nAnno accademico: 2026-2027\nCodice corso: 33461\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA",
+        "facts": {
+          "cities": [],
+          "course": "[33461] BIOTECNOLOGIE MEDICHE",
+          "id": "S1C9",
+          "region": "Lazio",
+          "type": "Classe di laurea: LM-9",
+          "type_status": "declared",
+          "university": "Sapienza Università di Roma"
+        },
+        "id": "S1C9",
+        "option": "Sapienza Università di Roma | [33461] BIOTECNOLOGIE MEDICHE",
+        "sources": [
+          "https://corsidilaurea.uniroma1.it/it/course/33461",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/objectives",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/presentation",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/professional-opportunities",
+          "https://corsidilaurea.uniroma1.it/it/course/33461/study-plan"
+        ],
+        "text": "Biotecnologie mediche\nAnno accademico: 2026-2027\nCodice corso: 33461\nClasse di laurea: LM-9\nModalità di accesso: Verifica dei requisiti e della preparazione personale\nLingua: ITA"
+      }
+    },
+    "choice_options": [],
+    "confirmed_fields": [
+      "engineering_technology"
+    ],
+    "confirmed_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "tecnologia"
+    },
+    "control": {
+      "intent": "answer",
+      "reply": "Non ho capito la tua domanda. Vuoi sapere di più su un corso di laurea in tecnologia?"
+    },
+    "ctx_chars": 492,
+    "ctx_preview": "{\"id\":\"S1C1\",\"university\":\"Sapienza Università di Roma\",\"course\":\"[33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI\",\"type\":\"Laurea\",\"type_status\":\"declared\",\"region\":\"Lazio\",\"cities\":[\"Roma\"]}\nEXCERPT: Tecnologie per la Conservazione e il Restauro dei Beni Culturali\nAnno accademico: 2026-2027\nCodice corso: 33594\nClasse di laurea: L-43\nTipologia di corso: Laurea\nDurata: 3 anni\nModalità di accesso: Prova in ingresso per la verifica delle conoscenze\nFacoltà: Scienze ",
+    "current_question": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+    "expected_verbatim": "",
+    "final_top_n": 3,
+    "phase": "qa_other",
+    "profile_update": {},
+    "query": "tecnologia",
+    "rendered_reply": "Non ho capito la tua domanda. Vuoi sapere di più su un corso di laurea in tecnologia?",
+    "retrieval_request": {
+      "location": {
+        "city": "Roma",
+        "region": "Lazio",
+        "requirement": "",
+        "strict": false
+      },
+      "query": "tecnologia"
+    },
+    "retrieval_version": "instructed_v6",
+    "riasec_opted_out": false,
+    "search_query": "",
+    "source_phase": "qa_other",
+    "valences_before": [
+      2,
+      1,
+      -1,
+      2,
+      2,
+      1,
+      -1
+    ]
+  },
+  "selected_option_event": null,
+  "session_id": "e26f394e277b",
+  "session_key": null,
+  "turns": [
+    {
+      "content": "ciao",
+      "role": "user"
+    },
+    {
+      "content": "Ciao! Sono un'assistente AI per l'orientamento universitario. Sono qui per aiutarti a trovare il percorso di studi che fa per te. Da che percorso arrivi: che scuola, corso o laurea stai frequentando o hai concluso da poco?",
+      "role": "assistant"
+    },
+    {
+      "content": "3a media",
+      "role": "user"
+    },
+    {
+      "content": "Quali materie o ambiti universitari ti attirano di più?",
+      "role": "assistant"
+    },
+    {
+      "content": "educazione fisica",
+      "role": "user"
+    },
+    {
+      "content": "Interessante! Ma volevo sapere quali materie o ambiti universitari ti attirano di più. Ad esempio, ti piace l'economia, la comunicazione, le scienze o altro?",
+      "role": "assistant"
+    },
+    {
+      "content": "tecnologia",
+      "role": "user"
+    },
+    {
+      "content": "Grazie per aver condiviso i tuoi interessi. Pensando all'università, che cosa ti piacerebbe approfondire o imparare a fare?",
+      "role": "assistant"
+    },
+    {
+      "content": "studiare",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto! Hai già in mente una zona d'Italia in cui ti piacerebbe studiare, oppure la sede per te è abbastanza flessibile?",
+      "role": "assistant"
+    },
+    {
+      "content": "roma",
+      "role": "user"
+    },
+    {
+      "content": "Perfetto! Roma è una scelta interessante. Ora ti farò 8 brevi domande su quanto ti attirano diverse attività. Non devi dimostrare di essere bravo/a: mi interessa soprattutto quanto ti piacerebbe farle. Puoi rispondere con una frase breve, indicando se ti piace molto, abbastanza, poco, per niente, o se dipende. Quanto ti attira fare attività pratiche e manuali, come costruire, riparare o lavorare con strumenti e oggetti concreti?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace capire come funzionano cose, sistemi o fenomeni?",
+      "role": "assistant"
+    },
+    {
+      "content": "abbastanza",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace cercare informazioni, analizzare problemi e ragionare in modo logico?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace esprimere idee o emozioni in forme creative, come scrittura, arte, musica o design?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace sperimentare e creare qualcosa di nuovo partendo da idee aperte?",
+      "role": "assistant"
+    },
+    {
+      "content": "tanto",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto?",
+      "role": "assistant"
+    },
+    {
+      "content": "nn so rispondere",
+      "role": "user"
+    },
+    {
+      "content": "Questo significa che non sei sicuro se ti piace lavorare a stretto contatto con le persone in un ruolo di aiuto, supporto o ascolto? Ad esempio, ti piace aiutare gli altri, dare consigli, o lavorare in un team per raggiungere un obiettivo comune?",
+      "role": "assistant"
+    },
+    {
+      "content": "lavorare in un team",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace proporre idee, prendere iniziativa e organizzare progetti o attività?",
+      "role": "assistant"
+    },
+    {
+      "content": "un po",
+      "role": "user"
+    },
+    {
+      "content": "Quanto ti piace avere attività ordinate, pianificate e sotto controllo?",
+      "role": "assistant"
+    },
+    {
+      "content": "poco",
+      "role": "user"
+    },
+    {
+      "content": "Ti ho suggerito un corso di laurea triennale a Roma che potrebbe interessarti, dato il tuo interesse per la tecnologia e la tua inclinazione per attività pratiche e creative. Ti suggerisco questa opzione: 1. Sapienza Università di Roma | [33594] TECNOLOGIE PER LA CONSERVAZIONE E IL RESTAURO DEI BENI CULTURALI Vuoi saperne di più su questo corso?",
+      "role": "assistant"
+    },
+    {
+      "content": "e invece per il. liceo",
+      "role": "user"
+    },
+    {
+      "content": "Per il liceo, ci sono diverse opzioni che potrebbero interessarti, dato il tuo interesse per la tecnologia e le attività pratiche. In particolare, potresti considerare un liceo scientifico o un liceo tecnologico. Il liceo scientifico offre un percorso di studi che include materie scientifiche e tecnologiche, mentre il liceo tecnologico si concentra su competenze pratiche e tecniche. Se hai un interesse specifico per un settore tecnologico, come l'informatica o l'elettronica, potresti voler esplorare un liceo tecnologico con un indirizzo specifico in quel campo. Vuoi saperne di più su queste opzioni?",
+      "role": "assistant"
+    },
+    {
+      "content": "si",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea triennale in Tecnologie per la Conservazione e il Restauro dei Beni Culturali presso la Sapienza Università di Roma è un percorso di studi che dura tre anni. Questo corso fa parte della classe di laurea L-43 e richiede una prova di ingresso per verificare le conoscenze. La facoltà di riferimento è quella delle Scienze. Se hai altre domande su questo corso o su altre opzioni, fammi sapere!",
+      "role": "assistant"
+    },
+    {
+      "content": "ok grazie ciao ciao",
+      "role": "user"
+    },
+    {
+      "content": "Arrivederci!",
+      "role": "assistant"
+    },
+    {
+      "content": "67",
+      "role": "user"
+    },
+    {
+      "content": "Il corso di laurea triennale in Tecnologie per la Conservazione e il Restauro dei Beni Culturali presso la Sapienza Università di Roma è un percorso di studi che dura tre anni. Questo corso fa parte della classe di laurea L-43 e richiede una prova di ingresso per verificare le conoscenze. La facoltà di riferimento è quella delle Scienze. Se hai altre domande su questo corso, fammi sapere!",
+      "role": "assistant"
+    },
+    {
+      "content": "yurtiubvjuyhtgbkjyh",
+      "role": "user"
+    },
+    {
+      "content": "Non ho capito la tua domanda. Vuoi sapere di più su un corso di laurea in tecnologia?",
+      "role": "assistant"
+    },
+    {
+      "content": "mnoikyghuj",
+      "role": "user"
+    },
+    {
+      "content": "Non ho capito la tua domanda. Vuoi sapere di più su un corso di laurea in tecnologia?",
+      "role": "assistant"
+    },
+    {
+      "content": "nojtgrfhbihfv",
+      "role": "user"
+    },
+    {
+      "content": "Non ho capito la tua domanda. Vuoi sapere di più su un corso di laurea in tecnologia?",
+      "role": "assistant"
+    }
+  ],
+  "updated_at": "2026-10-24T16:42:16"
+}
